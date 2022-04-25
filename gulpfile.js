@@ -21,6 +21,7 @@ const ttf2woff2 = require("gulp-ttf2woff2");
 const gulpif = require("gulp-if");
 const babel = require("gulp-babel");
 const typograf = require("gulp-typograf");
+const ts = require("gulp-typescript");
 
 // Pproduction build
 
@@ -36,7 +37,7 @@ function clear() {
 // CSS
 
 function scss() {
-  const srcScss = "src/scss/**/*.scss";
+  const srcScss = "src/scss/**/*.{scss, sass}";
   return src(srcScss, { sourcemaps: isDev })
     .pipe(newer("build/css/main.min.css"))
     .pipe(plumber())
@@ -93,6 +94,7 @@ function js() {
   return src(["src/js/**/*.*"], { sourcemaps: isDev })
     .pipe(newer("build/js/main.min.js"))
     .pipe(plumber())
+    .pipe(ts({ noImplicitAny: true, outFile: "main.min.js" }))
     .pipe(babel({ presets: ["@babel/preset-env"] }))
     .pipe(gulpif(isBuild, terser()))
     .pipe(concat("main.min.js"))
@@ -103,7 +105,7 @@ function js() {
 // Watch files
 
 function watchFiles() {
-  watch("src/scss/**/*.scss", scss);
+  watch("src/scss/**/*.{scss, sass}", scss);
   watch("src/**/*.html", html);
   watch("src/img/**/*.*", img);
   watch("src/fonts/**/*.*", font);
