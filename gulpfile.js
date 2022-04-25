@@ -36,8 +36,8 @@ function clear() {
 // CSS
 
 function scss() {
-  const source = "src/scss/**/*.scss";
-  return src(source, { sourcemaps: isDev })
+  const srcScss = "src/scss/**/*.scss";
+  return src(srcScss, { sourcemaps: isDev })
     .pipe(newer("build/css/main.min.css"))
     .pipe(plumber())
     .pipe(gulpif(isDev, sass())) // Options: nested, expanded, compact, compressed.
