@@ -52,7 +52,7 @@ function scss() {
 // Optimize images
 
 function img() {
-	const imgSrc = "src/img/**/*.{png, jpg, gif, svg, ico, webp}";
+	const imgSrc = "src/img/**/*.{png, jpg, jpeg, gif, svg, ico, webp}";
 	return src(imgSrc)
 		.pipe(newer("build/img/"))
 		.pipe(webp())
@@ -65,10 +65,10 @@ function img() {
 // Fonts
 
 function font() {
-	const fontSrc = "src/fonts/**/*.*";
+	const fontSrc = "src/fonts/**/*.{woff,woff2,eot,ttf,otf,otc,ttc,svg}";
 	return src(fontSrc)
 		.pipe(newer("build/fonts/"))
-		.pipe(fonter({ formats: ["woff", "eot", "otf", "ttf", "svg"] }))
+		.pipe(fonter({ formats: ["woff", "eot", "ttf", "svg"] }))
 		.pipe(dest("build/fonts/"))
 		.pipe(ttf2woff2())
 		.pipe(dest("build/fonts/"));
@@ -106,8 +106,8 @@ function js() {
 function watchFiles() {
 	watch("src/scss/**/*.{scss, sass}", scss);
 	watch("src/**/*.html", html);
-	watch("src/img/**/*.{png, jpg, gif, svg, ico, webp}", img);
-	watch("src/fonts/**/*.*", font);
+	watch("src/img/**/*.{png, jpg, jpeg, gif, svg, ico, webp}", img);
+	watch("src/fonts/**/*.{woff,woff2,eot,ttf,otf,otc,ttc,svg}", font);
 	watch("src/js/**/*.*", js);
 }
 
