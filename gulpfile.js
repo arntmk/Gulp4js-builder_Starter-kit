@@ -110,7 +110,7 @@ function Svg() {
 		.pipe(replace("&gt;", ">"))
 		.pipe(
 			svgSprite({
-				mode: { stack: { sprite: "src/img/sprite.svg", example: true } },
+				mode: { symbol: { sprite: "src/img/sprite.svg", example: true } },
 			})
 		)
 		.pipe(dest("build/img/svg/"));
