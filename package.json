@@ -23,7 +23,9 @@
     "gulp",
     "html",
     "scss",
+    "sass",
     "js",
+    "ts",
     "img",
     "fonts"
   ],

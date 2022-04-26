@@ -31,96 +31,95 @@ const isDev = !isBuild;
 // Cleaner
 
 function clear() {
-  return src("build/*", { read: false }).pipe(clean());
+	return src("build/*", { read: false }).pipe(clean());
 }
 
 // CSS
 
 function scss() {
-  const srcScss = "src/scss/**/*.{scss, sass}";
-  return src(srcScss, { sourcemaps: isDev })
-    .pipe(newer("build/css/main.min.css"))
-    .pipe(plumber())
-    .pipe(gulpif(isDev, sass())) // Options: nested, expanded, compact, compressed.
-    .pipe(gulpif(isBuild, sass({ outputStyle: "compressed" })))
-    .pipe(webpCSS())
-    .pipe(autoprefixer({ grid: true }))
-    .pipe(concat("main.min.css"))
-    .pipe(dest("build/css/", { sourcemaps: isDev }))
-    .pipe(browsersync.stream());
+	const cssSrc = "src/scss/**/*.{scss, sass}";
+	return src(cssSrc, { sourcemaps: isDev })
+		.pipe(plumber())
+		.pipe(gulpif(isDev, sass())) // Options: nested, expanded, compact, compressed.
+		.pipe(gulpif(isBuild, sass({ outputStyle: "compressed" })))
+		.pipe(webpCSS())
+		.pipe(autoprefixer({ grid: true }))
+		.pipe(concat("main.min.css"))
+		.pipe(dest("build/css/", { sourcemaps: isDev }))
+		.pipe(browsersync.stream());
 }
 
 // Optimize images
 
 function img() {
-  const srcImg = "src/img/**/**";
-  return src(srcImg)
-    .pipe(newer("build/img/"))
-    .pipe(webp())
-    .pipe(dest("build/img/"))
-    .pipe(src(srcImg))
-    .pipe(imagemin())
-    .pipe(dest("build/img/"));
+	const imgSrc = "src/img/**/*.{png, jpg, gif, svg, ico, webp}";
+	return src(imgSrc)
+		.pipe(newer("build/img/"))
+		.pipe(webp())
+		.pipe(dest("build/img/"))
+		.pipe(src(imgSrc))
+		.pipe(gulpif(isBuild, imagemin()))
+		.pipe(dest("build/img/"));
 }
 
 // Fonts
 
 function font() {
-  const srcFont = "src/fonts/**/**";
-  return src(srcFont)
-    .pipe(newer("build/fonts/"))
-    .pipe(fonter({ formats: ["ttf", "otf", "eot", "woff", "svg"] }))
-    .pipe(dest("build/fonts/"))
-    .pipe(ttf2woff2())
-    .pipe(dest("build/fonts/"));
+	const fontSrc = "src/fonts/**/*.*";
+	return src(fontSrc)
+		.pipe(newer("build/fonts/"))
+		.pipe(fonter({ formats: ["ttf", "otf", "eot", "woff", "svg"] }))
+		.pipe(dest("build/fonts/"))
+		.pipe(ttf2woff2())
+		.pipe(dest("build/fonts/"));
 }
 
 // html
 
 function html() {
-  return src("src/*.html")
-    .pipe(plumber())
-    .pipe(fileinclude({ prefix: "@@" }))
-    .pipe(webpHTML())
-    .pipe(typograf({ locale: ["ru", "en-US"] }))
-    .pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
-    .pipe(dest("build/"))
-    .pipe(browsersync.stream());
+	return src("src/*.html")
+		.pipe(plumber())
+		.pipe(fileinclude({ prefix: "@@" }))
+		.pipe(webpHTML())
+		.pipe(typograf({ locale: ["ru", "en-US"] }))
+		.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
+		.pipe(dest("build/"))
+		.pipe(browsersync.stream());
 }
 
 // JavaScript
 
 function js() {
-  return src(["src/js/**/*.*"], { sourcemaps: isDev })
-    .pipe(newer("build/js/main.min.js"))
-    .pipe(plumber())
-    .pipe(ts({ noImplicitAny: true, outFile: "main.min.js" }))
-    .pipe(babel({ presets: ["@babel/preset-env"] }))
-    .pipe(gulpif(isBuild, terser()))
-    .pipe(concat("main.min.js"))
-    .pipe(dest("build/js", { sourcemaps: isDev }))
-    .pipe(browsersync.stream());
+	return src(["src/js/**/*.*"], { sourcemaps: isDev })
+		.pipe(newer("build/js/main.min.js"))
+		.pipe(plumber())
+		.pipe(ts({ noImplicitAny: true, outFile: "main.min.js" }))
+		.pipe(babel({ presets: ["@babel/preset-env"] }))
+		.pipe(gulpif(isBuild, terser()))
+		.pipe(concat("main.min.js"))
+		.pipe(dest("build/js", { sourcemaps: isDev }))
+		.pipe(browsersync.stream());
 }
 
 // Watch files
 
 function watchFiles() {
-  watch("src/scss/**/*.{scss, sass}", scss);
-  watch("src/**/*.html", html);
-  watch("src/img/**/*.*", img);
-  watch("src/fonts/**/*.*", font);
-  watch("src/js/**/*.*", js);
+	watch("src/scss/**/*.{scss, sass}", scss);
+	watch("src/**/*.html", html);
+	watch("src/img/**/*.{png, jpg, gif, svg, ico, webp}", img);
+	watch("src/fonts/**/*.*", font);
+	watch("src/js/**/*.*", js);
 }
 
 // BrowserSync
 
 function browserSync() {
-  browsersync.init({
-    server: { baseDir: "build/" },
-    notify: false,
-    online: true,
-    port: 3015,
-  });
+	browsersync.init({
+		server: { baseDir: "build/" },
+		notify: false,
+		online: true,
+		port: 3015,
+	});
 }
 
 exports.watch = parallel(watchFiles, browserSync);
