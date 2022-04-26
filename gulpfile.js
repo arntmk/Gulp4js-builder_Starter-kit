@@ -68,7 +68,7 @@ function font() {
 	const fontSrc = "src/fonts/**/*.*";
 	return src(fontSrc)
 		.pipe(newer("build/fonts/"))
-		.pipe(fonter({ formats: ["ttf", "otf", "eot", "woff", "svg"] }))
+		.pipe(fonter({ formats: ["woff", "eot", "otf", "ttf", "svg"] }))
 		.pipe(dest("build/fonts/"))
 		.pipe(ttf2woff2())
 		.pipe(dest("build/fonts/"));
