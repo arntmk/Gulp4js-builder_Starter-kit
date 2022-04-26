@@ -110,7 +110,7 @@ function Svg() {
 		.pipe(replace("&gt;", ">"))
 		.pipe(
 			svgSprite({
-				mode: { symbol: { sprite: "src/img/sprite.svg", example: true } },
+				mode: { symbol: { sprite: "sprite.svg", example: true } },
 			})
 		)
 		.pipe(dest("build/img/svg/"));
@@ -174,4 +174,4 @@ function browserSync() {
 
 exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, parallel(html, scss, img, js, font));
-exports.svg = parallel(Svg);
+exports.svg = Svg;
