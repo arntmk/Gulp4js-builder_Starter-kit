@@ -27,7 +27,8 @@
     "js",
     "ts",
     "img",
-    "fonts"
+    "fonts",
+		"svg"
   ],
   "author": "OLEH SEMCHUK",
   "license": "WTFPL",
@@ -52,12 +53,17 @@
   },
   "dependencies": {
     "browser-sync": "^2.27.9",
+    "gulp-cheerio": "^1.0.0",
     "gulp-clean": "^0.4.0",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-replace": "^1.1.3",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svgmin": "^4.1.0",
     "gulp-typograf": "^4.0.3",
     "gulp-version-number": "^0.2.4"
   }
