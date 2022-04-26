@@ -22,6 +22,7 @@ const gulpif = require("gulp-if");
 const babel = require("gulp-babel");
 const typograf = require("gulp-typograf");
 const ts = require("gulp-typescript");
+const vn = require("gulp-version-number");
 
 // Pproduction build
 
@@ -82,6 +83,9 @@ function html() {
 		.pipe(fileinclude({ prefix: "@@" }))
 		.pipe(webpHTML())
 		.pipe(typograf({ locale: ["ru", "en-US"] }))
+		.pipe(
+			vn({ value: "%DT%", append: { key: "_v", cover: 0, to: ["css", "js"] } })
+		)
 		.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
 		.pipe(dest("build/"))
 		.pipe(browsersync.stream());

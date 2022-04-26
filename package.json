@@ -58,6 +58,7 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-typograf": "^4.0.3"
+    "gulp-typograf": "^4.0.3",
+    "gulp-version-number": "^0.2.4"
   }
 }
