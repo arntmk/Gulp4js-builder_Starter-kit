@@ -51,7 +51,7 @@ function scss() {
 		.pipe(webpCSS())
 		.pipe(groupCSSMedia())
 		.pipe(autoprefixer({ grid: true }))
-		.pipe(concat("main.min.css"))
+		.pipe(concat("style.min.css"))
 		.pipe(dest("build/css/", { sourcemaps: isDev }))
 		.pipe(browsersync.stream());
 }
