@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include("html/_head.html")
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>New Project</title>
+		<meta name="description" content="Gulp4js-Pack Start" />
+		<meta name="keywords" content="HTML, CSS, JavaScript" />
+		<meta name="author" content="OLEH SEMCHUK" />
+		<link rel="icon" href="./img/icon/favicon.ico?v=1.1" />
+		<link rel="stylesheet" href="./css/style.min.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
 	<body>
+		@@include("html/_header.html")
 		<h1>My Test website</h1>
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam facilis
 			itaque sunt odit sequi consequuntur quibusdam ipsum ipsa. Enim
 			sapientelabore voluptates nostrum quasi ab dolor at ipsam nam qui.
 		</p>
+		@@include("html/_main.html")
 		<ul class="ul1">
 			<li>HTML5!222!!!</li>
 			<li>CSS3 (scss)</li>
@@ -21,5 +37,6 @@
 		<div class="box1">Hi</div>
 		<div class="box2">Hi</div>
 		@@include("html/_footer.html")
+		<script src="./js/main.min.js"></script>
 	</body>
 </html>

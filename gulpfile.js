@@ -25,7 +25,7 @@ const ts = require("gulp-typescript"); //Конвертатор TypeScript.
 const vn = require("gulp-version-number"); //Build version.
 const groupCSSMedia = require("gulp-group-css-media-queries"); //Групування медія запитів.
 const svgmin = require("gulp-svgmin"); //Мінімізація svg.
-const cheerio = require("gulp-cheerio"); //видалення лишніх атрибутів svg.
+const cheerio = require("gulp-cheerio"); //Видалення лишніх атрибутів svg (Вбудовані стилі).
 const replace = require("gulp-replace"); //Заміна символи після gulp-cheerio.
 const svgSprite = require("gulp-svg-sprite"); //Об'єднання спрайтів.
 
