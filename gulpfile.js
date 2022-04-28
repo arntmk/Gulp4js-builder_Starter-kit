@@ -24,9 +24,11 @@ const typograf = require("gulp-typograf"); //Правопис.
 const ts = require("gulp-typescript"); //Конвертатор TypeScript.
 const vn = require("gulp-version-number"); //Build version.
 const groupCSSMedia = require("gulp-group-css-media-queries"); //Групування медія запитів.
+const shorthand = require("gulp-shorthand"); //Оптимізація коду.
+const csso = require("gulp-csso"); //Мінімізація css.
 const svgmin = require("gulp-svgmin"); //Мінімізація svg.
-const cheerio = require("gulp-cheerio"); //Видалення лишніх атрибутів svg (Вбудовані стилі).
-const replace = require("gulp-replace"); //Заміна символи після gulp-cheerio.
+const cheerio = require("gulp-cheerio"); //Видалення лишніх атрибутів svg (Вбудованих стилів).
+const replace = require("gulp-replace"); //Заміна символів після gulp-cheerio.
 const svgSprite = require("gulp-svg-sprite"); //Об'єднання спрайтів.
 
 // Pproduction build
@@ -37,7 +39,7 @@ const isDev = !isBuild;
 // Cleaner
 
 function clear() {
-	return src("build/*", { read: false }).pipe(clean());
+	return src("build/*", { read: false }).pipe(gulpif(isBuild, clean()));
 }
 
 // CSS
@@ -46,11 +48,12 @@ function scss() {
 	const cssSrc = "src/scss/**/*.{scss,sass}";
 	return src(cssSrc, { sourcemaps: isDev })
 		.pipe(plumber())
-		.pipe(gulpif(isDev, sass())) // Options: nested, expanded, compact, compressed.
-		.pipe(gulpif(isBuild, sass({ outputStyle: "compressed" })))
+		.pipe(sass())
 		.pipe(webpCSS())
-		.pipe(groupCSSMedia())
 		.pipe(autoprefixer({ grid: true }))
+		.pipe(shorthand())
+		.pipe(groupCSSMedia())
+		.pipe(gulpif(isBuild, csso()))
 		.pipe(concat("style.min.css"))
 		.pipe(dest("build/css/", { sourcemaps: isDev }))
 		.pipe(browsersync.stream());
