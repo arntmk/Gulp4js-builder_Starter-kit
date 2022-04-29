@@ -1,10 +1,10 @@
 @font-face {
-	font-family: Tapestry-Regular;
+	font-family: Tapestry-Regular; /* extralight, light, medium, sembold, bold, extrabold, black */
 	font-display: swap;
 	src: url('./fonts/Tapestry-Regular.eot') format('eot'),
 		url('./fonts/Tapestry-Regular.woff2') format('woff2'),
 		url('./fonts/Tapestry-Regular.woff') format('woff'),
 		url('./fonts/Tapestry-Regular.ttf') format('ttf');
-	font-weight: normal; /* 100 to 900 */
+	font-weight: normal; /* (100) 200 to 900 (400)*/
 	font-style: normal;
 }
