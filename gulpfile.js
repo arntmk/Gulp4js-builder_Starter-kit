@@ -85,7 +85,7 @@ function img() {
 // Fonts
 
 function font() {
-	const fontSrc = 'src/fonts/**/*.{ttf,otf}';
+	const fontSrc = 'src/fonts/**/*.{otf,ttf}';
 	return src(fontSrc)
 		.pipe(newer('build/fonts/'))
 		.pipe(fonter({ formats: ['woff', 'eot', 'ttf'] }))
@@ -160,7 +160,7 @@ function watchFiles() {
 	watch('src/scss/**/*.{scss,sass}', scss);
 	watch('src/**/*.html', html);
 	watch('src/img/**/*.{png,jpg,jpeg,gif,svg,ico,webp}', img);
-	watch('src/fonts/**/*.{woff,woff2,eot,ttf,otf,otc,ttc,svg}', font);
+	//watch('src/fonts/**/*.{woff,woff2,eot,ttf,otf,otc,ttc,svg}', font);
 	watch('src/js/**/*.{js,jsx,ts,tsx,vue}', js);
 }
 
