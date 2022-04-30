@@ -8,11 +8,11 @@
 			content="width=device-width, initial-scale=1.0 user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0"
 		/>
 		<title>New Project</title>
+		<link rel="stylesheet" href="./css/style.min.css" />
+		<link rel="icon" href="./img/icon/favicon.ico?v=1.1" />
 		<meta name="description" content="Gulp4js-Pack Start" />
 		<meta name="keywords" content="HTML, CSS, JavaScript" />
 		<meta name="author" content="OLEH SEMCHUK" />
-		<link rel="icon" href="./img/icon/favicon.ico?v=1.1" />
-		<link rel="stylesheet" href="./css/style.min.css" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
 			rel="stylesheet"
@@ -21,14 +21,22 @@
 		<!--<meta http-equiv="refresh" content="5; url=index.html" /> -->
 	</head>
 	<body>
-		<!-- Header -->
-		@@include("html/_header.html")
+		<header>
+			<!-- Header -->
+			@@include("html/_header.html")
+		</header>
+		<nav>
+			<!-- Navbar -->
+			@@include("html/_Navbar.html")
+		</nav>
 		<main>
 			<!-- Main Section-->
 			@@include("html/_main.html")
 		</main>
-		<!-- Footer -->
-		@@include("html/_footer.html")
+		<footer>
+			<!-- Footer -->
+			@@include("html/_footer.html")
+		</footer>
 		<script src="./js/main.min.js"></script>
 	</body>
 </html>
