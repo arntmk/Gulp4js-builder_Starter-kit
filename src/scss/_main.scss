@@ -1,10 +1,19 @@
+body {
+	background: linear-gradient(to right, white, green);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-size: 18px;
+	font-family: arial;
+	line-height: 1.5;
+}
+
 h1 {
-	font-family: "Press Start 2P";
+	font-family: 'Press Start 2P';
 	text-shadow: 5px 5px 5px gray;
 }
 
 .ul1 li::before {
-	content: "✔";
+	content: '✔';
 	color: aqua;
 }
 ul {

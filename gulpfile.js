@@ -20,8 +20,8 @@ const fonter = require('gulp-fonter'); //Конвертатор шрифтів.
 const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор woff2.
 const gulpif = require('gulp-if'); //Режим dev or production.
 const babel = require('gulp-babel'); //Підтримка старих версій браузерів JS.
-const typograf = require('gulp-typograf'); //Правопис.
-const ts = require('gulp-typescript'); //Конвертатор TypeScript.
+//const typograf = require('gulp-typograf'); //Правопис.
+//const ts = require('gulp-typescript'); //Конвертатор TypeScript.
 const vn = require('gulp-version-number'); //Build version.
 const groupCSSMedia = require('gulp-group-css-media-queries'); //Групування медія запитів.
 const shorthand = require('gulp-shorthand'); //Оптимізація коду.
@@ -122,36 +122,40 @@ function Svg() {
 // html
 
 function html() {
-	return src('src/*.html')
-		.pipe(plumber())
-		.pipe(fileinclude({ prefix: '@@' }))
-		.pipe(webpHTML())
-		.pipe(typograf({ locale: ['ru', 'en-US'] }))
-		.pipe(
-			gulpif(
-				isBuild,
-				vn({
-					value: '%DT%',
-					append: { key: '_v', cover: 0, to: ['css', 'js'] },
-				})
+	return (
+		src('src/*.html')
+			.pipe(plumber())
+			.pipe(fileinclude({ prefix: '@@' }))
+			.pipe(webpHTML())
+			//.pipe(typograf({ locale: ['ru', 'en-US'] }))
+			.pipe(
+				gulpif(
+					isBuild,
+					vn({
+						value: '%DT%',
+						append: { key: '_v', cover: 0, to: ['css', 'js'] },
+					})
+				)
 			)
-		)
-		.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
-		.pipe(dest('build/'))
-		.pipe(browsersync.stream());
+			.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
+			.pipe(dest('build/'))
+			.pipe(browsersync.stream())
+	);
 }
 
 // JavaScript
 
 function js() {
-	return src(['src/js/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
-		.pipe(plumber())
-		.pipe(ts({ noImplicitAny: true, outFile: 'main.min.js' }))
-		.pipe(babel({ presets: ['@babel/preset-env'] }))
-		.pipe(gulpif(isBuild, terser()))
-		.pipe(concat('main.min.js'))
-		.pipe(dest('build/js', { sourcemaps: isDev }))
-		.pipe(browsersync.stream());
+	return (
+		src(['src/js/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
+			.pipe(plumber())
+			//.pipe(ts({ noImplicitAny: true, outFile: 'main.min.js' }))
+			.pipe(babel({ presets: ['@babel/preset-env'] }))
+			.pipe(gulpif(isBuild, terser()))
+			.pipe(concat('main.min.js'))
+			.pipe(dest('build/js', { sourcemaps: isDev }))
+			.pipe(browsersync.stream())
+	);
 }
 
 // Watch files
