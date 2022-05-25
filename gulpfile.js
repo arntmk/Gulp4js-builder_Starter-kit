@@ -16,11 +16,11 @@ const webpCSS = require('gulp-webp-css-fixed'); // Авто суміснsіст�
 const newer = require('gulp-newer'); //Перевірка файлів.
 const terser = require('gulp-terser'); //Мінімізація JS.
 const plumber = require('gulp-plumber'); //Пошук помилок.
-const fonter = require('gulp-fonter'); //Конвертатор шрифтів.
+//const fonter = require('gulp-fonter'); //Конвертатор шрифтів woff.
 const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор woff2.
 const gulpif = require('gulp-if'); //Режим dev or production.
 const babel = require('gulp-babel'); //Підтримка старих версій браузерів JS.
-//const typograf = require('gulp-typograf'); //Правопис.
+const typograf = require('gulp-typograf'); //Правопис.
 //const ts = require('gulp-typescript'); //Конвертатор TypeScript.
 const vn = require('gulp-version-number'); //Build version.
 const groupCSSMedia = require('gulp-group-css-media-queries'); //Групування медія запитів.
@@ -79,19 +79,22 @@ function img() {
 				})
 			)
 		)
-		.pipe(dest('build/img/'));
+		.pipe(dest('build/img/'))
+		.pipe(browsersync.stream());
 }
 
 // Fonts
 
 function font() {
 	const fontSrc = 'src/fonts/**/*.{otf,ttf}';
-	return src(fontSrc)
-		.pipe(newer('build/fonts/'))
-		.pipe(fonter({ formats: ['woff', 'eot', 'ttf'] }))
-		.pipe(dest('build/fonts/'))
-		.pipe(ttf2woff2())
-		.pipe(dest('build/fonts/'));
+	return (
+		src(fontSrc)
+			.pipe(newer('build/fonts/'))
+			//.pipe(fonter({ formats: ['woff', 'eot', 'ttf'] }))
+			//.pipe(dest('build/fonts/'))
+			.pipe(ttf2woff2())
+			.pipe(dest('build/fonts/'))
+	);
 }
 
 // Svg Sprite
@@ -122,25 +125,23 @@ function Svg() {
 // html
 
 function html() {
-	return (
-		src('src/*.html')
-			.pipe(plumber())
-			.pipe(fileinclude({ prefix: '@@' }))
-			.pipe(webpHTML())
-			//.pipe(typograf({ locale: ['ru', 'en-US'] }))
-			.pipe(
-				gulpif(
-					isBuild,
-					vn({
-						value: '%DT%',
-						append: { key: '_v', cover: 0, to: ['css', 'js'] },
-					})
-				)
+	return src('src/*.html')
+		.pipe(plumber())
+		.pipe(fileinclude({ prefix: '@@' }))
+		.pipe(webpHTML())
+		.pipe(typograf({ locale: ['ru', 'en-US'] }))
+		.pipe(
+			gulpif(
+				isBuild,
+				vn({
+					value: '%DT%',
+					append: { key: '_v', cover: 0, to: ['css', 'js'] },
+				})
 			)
-			.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
-			.pipe(dest('build/'))
-			.pipe(browsersync.stream())
-	);
+		)
+		.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
+		.pipe(dest('build/'))
+		.pipe(browsersync.stream());
 }
 
 // JavaScript

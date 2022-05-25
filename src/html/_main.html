@@ -1,18 +1,140 @@
-<h1>My Test website</h1>
-<p>
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam facilis itaque
-	sunt odit sequi consequuntur quibusdam ipsum ipsa. Enim sapientelabore
-	voluptates nostrum quasi ab dolor at ipsam nam qui.
-</p>
-<ul class="ul1">
-	<li>HTML5!222!!!</li>
-	<li>CSS3 (scss)</li>
-	<li>JS (vue js)</li>
-</ul>
-<ul class="ul2">
-	<li>PHP</li>
-	<li>C#</li>
-	<li>C++</li>
-</ul>
-<div class="box1">Hi</div>
-<div class="box2">Hi</div>
+<section class="hero">
+	<div class="container">
+		<h1 class="hero__title">We prduce the&nbsp;best&nbsp;products</h1>
+		<p class="hero__descr">
+			Amet, mattis dapibus malesuada arcu dapibus nec efficitur et dictum.
+			In sit odio. Tempus leo, dictum.
+		</p>
+		<button class="btn-reset btn btn--light">Button</button>
+	</div>
+</section>
+<section class="about">
+	<div class="container">
+		<div class="about__top grid">
+			<div class="about__col">
+				<ul class="list-reset about__list">
+					<li class="about__item">
+						<div class="complited">
+							<div class="complited__value">20,000</div>
+							<div class="complited__descr">completed projects</div>
+						</div>
+					</li>
+					<li class="about__list">
+						<div class="complited">
+							<div class="complited__value">10,000</div>
+							<div class="complited__descr">prototypes</div>
+						</div>
+					</li>
+					<li class="about__list">
+						<div class="complited">
+							<div class="complited__value">347</div>
+							<div class="complited__descr">completed projects</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="about__col">
+				<h2 class="about__title">
+					Amet, mattis dapibus malesuada arcu dapibus nec efficitur et
+					dictum. In sit odio. Tempus leo, dictum.
+				</h2>
+				<div class="about__text">
+					<p class="about__descr">
+						Amet, mattis dapibus malesuada arcu dapibus nec efficitur et
+						dictum. In sit odio. </p>
+						<p class="about__descr"></p>
+						Tempus leo, dictum. Sit mattis mattis lorem
+						cursus velit sit sed et vitae quam, sed nulla dapibus venenatis
+						odio. Venenatis sapien aenean adipiscing lacinia nec lacinia
+						lacinia et quam, ultricies. Dictum. Ipsum sodales sit id nec sed
+						sodales mattis mollis quis, pellentesque habitasse ex.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="about__video">
+			<video src="./seraph.mp4" poster="./img/poster.jpg" muted preload="metadata" playsinline></video>
+			<button class="btn-reset about__play" aria-label="Play video"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="50" cy="50" r="50" fill="white"/>
+				<path d="M63 50L44.25 62.9904L44.25 37.0096L63 50Z" fill="#1D1D1F"/>
+				</svg>
+				</button>
+		</div>
+	</div>
+	<section class="portfolio">
+		<h2 class="visually-hidden">Portfolio</h2>
+		<div class="container">
+		<ul class="list-reset portfolio__list">
+			<li class="portfolio-item grid">
+				<div class="portfolio-item__col">
+					<h3 class="portfolio-item__title">Et odio</h3>
+					<p class="portfolio-item__desrc">Mauris eget nec nulla dolor ex. Sodales luctus pellentesque cras ornare lorem luctus lectus sed consectetur quam, est. Libero, odi</p>
+					<button class="btn-reset btn btn--dark">Button</button>
+				</div>
+				<div class="portfolio-item__col">
+					<img src="./img/port-1.jpg" alt="portfolio" class="portfolio-item__image">
+				</div>
+			</li>
+			<li class="portfolio-item portfolio-item--reverse grid">
+				<div class="portfolio-item__col">
+					<h3 class="portfolio-item__title">Integer dapibus dictum</h3>
+					<p class="portfolio-item__desrc">it pulvinar tempus amet dolor dui vulputate tortor, luctus lorem in nunc eleifend ipsum justo et venenatis dictumst. </p>
+					<button class="btn-reset btn btn--dark">Button</button>
+				</div>
+				<div class="portfolio-item__col">
+					<img src="./img/port-2.jpg" alt="portfolio" class="portfolio-item__image">
+				</div>
+			</li>
+		</ul>
+	</div>
+	</section>
+</section>
+<section class="quote">
+	<div class="container">
+		<h2 class="quote__title">Quoute</h2>
+		<blockquote class="quoute__content">
+			<p class="quote__text">Accumsan vulputate efficitur in amet, vestibulum ornare morbi accumsan leo, est. Consectetur ultricies. Sapien est. Dictumst. Sapien habitasse interdum in amet, lectus molestie vel ut. Malesuada efficitur mattis id mattis aenean interdum lectus quam, dapibus nec augue vulputate leo, ornare elit.</p>
+			<cite class="quote__author">Alex Lee / <span>Co-founder & SEO</span></cite>
+		</blockquote>
+	</div>
+</section>
+<section class="services">
+	<h2 class="visually-hidden">Services</h2>
+	<img src="/img/services.jpg" alt="" class="services__image" aria-hidden="true">
+	<div class="container">
+		<ul class="list-reset services__list">
+			<li class="services-item grid">
+			<div class="services-item__col">
+				<h3 class="services-item__title">Branding</h3>
+			</div>
+			<div class="services-item__col">
+				<p class="services-item__descr">Quam, tortor, interdum consectetur eleifend integer et. Accumsan vulputate efficitur in amet, vestibulum ornare morbi accumsan leo, est. Consectetur ultricies.</p>
+			</div>
+		</li>
+		<li class="services-item grid">
+			<div class="services-item__col">
+				<h3 class="services-item__title">Web-apps</h3>
+			</div>
+			<div class="services-item__col">
+				<p class="services-item__descr">Malesuada efficitur mattis id mattis aenean interdum lectus quam, dapibus nec augue vulputate leo, ornare elit. Pulvinar sed quam, arcu pulvinar nisi ipsum quis, sodales molestie ex.</p>
+			</div>
+		</li>
+		<li class="services-item grid">
+			<div class="services-item__col">
+				<h3 class="services-item__title">Design</h3>
+			</div>
+			<div class="services-item__col">
+				<p class="services-item__descr">Cras amet, sed sapien orci, leo, sit ornare risus tortor, ex. Mauris non orci, sed elit. Cursus ex. Aenean ipsum dolor augue tempus et molestie ipsum adipiscing leo, sit interdum venenatis odio.</p>
+			</div>
+		</li>
+		<li class="services-item grid">
+			<div class="services-item__col">
+				<h3 class="services-item__title">Strategy</h3>
+			</div>
+			<div class="services-item__col">
+				<p class="services-item__descr">Quam, tortor, interdum consectetur eleifend integer et. Accumsan vulputate efficitur in amet, vestibulum ornare morbi accumsan leo, est. Consectetur ultricies.</p>
+			</div>
+		</li>
+		</ul>
+	</div>
+</section>

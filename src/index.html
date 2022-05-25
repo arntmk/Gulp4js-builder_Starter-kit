@@ -21,14 +21,14 @@
 		<!--<meta http-equiv="refresh" content="5; url=index.html" /> -->
 	</head>
 	<body>
-		<header>
+		<header class="header">
 			<!-- Header -->
 			@@include("html/_header.html")
+			<nav>
+				<!-- Navbar -->
+				@@include("html/_Navbar.html")
+			</nav>
 		</header>
-		<nav>
-			<!-- Navbar -->
-			@@include("html/_Navbar.html")
-		</nav>
 		<main>
 			<!-- Main Section-->
 			@@include("html/_main.html")
@@ -37,6 +37,6 @@
 			<!-- Footer -->
 			@@include("html/_footer.html")
 		</footer>
-		<script src="./js/main.min.js"></script>
+		<script src="./js/main.min.js" defer></script>
 	</body>
 </html>
