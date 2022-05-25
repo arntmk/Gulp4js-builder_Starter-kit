@@ -1,2 +1,3 @@
 # Ignore
-#src/index.html
+build/index.html
+build/css/style.min.css
