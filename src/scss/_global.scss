@@ -1,19 +1,7 @@
 * {
 	margin: 0;
 }
-html {
-	box-sizing: border-box;
-}
-*,
-*::before *::after {
-	box-sizing: inherit;
-}
-a {
-	color: inherit;
-}
-img {
-	max-width: 100%;
-}
+
 body {
 	font-family: 'Inter', sans-serif;
 	overflow-x: hidden;

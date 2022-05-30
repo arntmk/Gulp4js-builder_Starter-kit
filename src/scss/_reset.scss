@@ -349,3 +349,22 @@ template {
 [hidden] {
 	display: none;
 }
+
+/* ========================================================================== */
+
+html {
+	box-sizing: border-box;
+}
+*,
+*::before *::after {
+	box-sizing: inherit;
+}
+a {
+	color: inherit;
+}
+img {
+	max-width: 100%;
+}
+body {
+	font-family: 'myfont', sans-serif;
+}
