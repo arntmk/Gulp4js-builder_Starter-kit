@@ -122,7 +122,7 @@ function Svg() {
 		.pipe(dest('build/img/svg/'));
 }
 
-// html
+// Html
 
 function html() {
 	return src('src/*.html')
@@ -148,13 +148,13 @@ function html() {
 
 function js() {
 	return (
-		src(['src/js/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
+		src(['src/scripts/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
 			.pipe(plumber())
 			//.pipe(ts({ noImplicitAny: true, outFile: 'main.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, terser()))
 			.pipe(concat('main.min.js'))
-			.pipe(dest('build/js', { sourcemaps: isDev }))
+			.pipe(dest('build/scripts', { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
 	);
 }
@@ -166,7 +166,7 @@ function watchFiles() {
 	watch('src/**/*.html', html);
 	watch('src/img/**/*.{png,jpg,jpeg,gif,svg,ico,webp}', img);
 	//watch('src/fonts/**/*.{woff,woff2,eot,ttf,otf,otc,ttc,svg}', font);
-	watch('src/js/**/*.{js,jsx,ts,tsx,vue}', js);
+	watch('src/scripts/**/*.{js,jsx,ts,tsx,vue}', js);
 }
 
 // BrowserSync
