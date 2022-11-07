@@ -9,8 +9,9 @@
 		"build": "gulp --production"
 	},
 	"browserslist": [
-		"last 5 version",
+		"last 3 version",
 		"> 1%",
+		"defaults and supports es6-module",
 		"maintained node versions",
 		"not dead"
 	],
