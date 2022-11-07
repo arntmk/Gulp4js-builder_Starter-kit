@@ -1,7 +1,7 @@
 # Assembly Gulp4 for front-end development
 
-# Commends:
+# Commends: npm run "..."
 
-		"start": "gulp watch"
-		"test": "gulp"
-		"build": "gulp --production"
+    	"start": "gulp watch"
+    	"test": "gulp"
+    	"build": "gulp --production"
