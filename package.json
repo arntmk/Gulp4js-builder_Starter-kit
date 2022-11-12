@@ -3,6 +3,7 @@
 	"version": "1.0.1",
 	"description": "frontend start project",
 	"main": "index.html",
+	"type": "commonjs",
 	"scripts": {
 		"start": "gulp watch",
 		"test": "gulp",
