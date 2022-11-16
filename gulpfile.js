@@ -16,8 +16,8 @@ const webpCSS = require('gulp-webp-css-fixed'); // Авто суміснsіст�
 const newer = require('gulp-newer'); //Перевірка файлів.
 const terser = require('gulp-terser'); //Мінімізація JS.
 const plumber = require('gulp-plumber'); //Пошук помилок.
-//const fonter = require('gulp-fonter'); //Конвертатор шрифтів woff.
-const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор woff2.
+//const fonter = require('gulp-fonter'); //Конвертатор шрифтів в woff.
+const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор в woff2.
 const gulpif = require('gulp-if'); //Режим dev or production.
 const babel = require('gulp-babel'); //Підтримка старих версій браузерів JS.
 const typograf = require('gulp-typograf'); //Правопис.
@@ -44,9 +44,9 @@ function clear() {
 
 // CSS
 
-function scss() {
-	const cssSrc = 'src/scss/**/*.{scss,sass}';
-	return src(cssSrc, { sourcemaps: isDev })
+function css() {
+	const SrcCss = 'src/scss/**/*.{scss,sass}';
+	return src(SrcCss, { sourcemaps: isDev })
 		.pipe(plumber())
 		.pipe(sass())
 		.pipe(webpCSS())
@@ -62,12 +62,12 @@ function scss() {
 // Optimize images
 
 function img() {
-	const imgSrc = 'src/img/**/*.{png,jpg,jpeg,gif,svg,ico,webp}';
-	return src(imgSrc)
+	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,gif,svg,ico,webp}';
+	return src(SrcImg)
 		.pipe(newer('build/img/'))
 		.pipe(webp())
 		.pipe(dest('build/img/'))
-		.pipe(src(imgSrc))
+		.pipe(src(SrcImg))
 		.pipe(
 			gulpif(
 				isBuild,
@@ -86,11 +86,11 @@ function img() {
 // Fonts
 
 function font() {
-	const fontSrc = 'src/fonts/**/*.{otf,ttf}';
+	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff}'; //eot,ttf,otf,otc,ttc
 	return (
-		src(fontSrc)
+		src(SrcFont)
 			.pipe(newer('build/fonts/'))
-			//.pipe(fonter({ formats: ['woff', 'eot', 'ttf'] }))
+			//.pipe(fonter({ formats: ['woff}'] }))
 			//.pipe(dest('build/fonts/'))
 			.pipe(ttf2woff2())
 			.pipe(dest('build/fonts/'))
@@ -100,8 +100,8 @@ function font() {
 // Svg Sprite
 
 function Svg() {
-	const SvgSrc = 'src/img/svg/*.svg';
-	return src(SvgSrc)
+	const SrcSvg = 'src/img/svg/*.svg';
+	return src(SrcSvg)
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
 			cheerio({
@@ -150,10 +150,10 @@ function js() {
 	return (
 		src(['src/scripts/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
 			.pipe(plumber())
-			//.pipe(ts({ noImplicitAny: true, outFile: 'main.min.js' }))
+			//.pipe(ts({ noImplicitAny: true, outFile: 'index.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, terser()))
-			.pipe(concat('main.min.js'))
+			.pipe(concat('index.min.js'))
 			.pipe(dest('build/scripts', { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
 	);
@@ -162,10 +162,10 @@ function js() {
 // Watch files
 
 function watchFiles() {
-	watch('src/scss/**/*.{scss,sass}', scss);
+	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/**/*.html', html);
 	watch('src/img/**/*.{png,jpg,jpeg,gif,svg,ico,webp}', img);
-	//watch('src/fonts/**/*.{woff,woff2,eot,ttf,otf,otc,ttc,svg}', font);
+	watch('src/fonts/**/*.{woff,woff2,svg}', font);
 	watch('src/scripts/**/*.{js,jsx,ts,tsx,vue}', js);
 }
 
@@ -181,5 +181,5 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, parallel(html, scss, img, js, font));
+exports.default = series(clear, font, parallel(html, css, js, img));
 exports.svg = Svg;

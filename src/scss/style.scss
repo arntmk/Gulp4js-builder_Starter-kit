@@ -1,3 +1,7 @@
+//libs
+//@import "./libs/vendor.scss";
+@import './libs/normalize';
+
 // Global SCSS imports
 @import './vars.scss';
 @import './reset.scss';
@@ -6,5 +10,6 @@
 
 // Sections SCSS files imports
 @import './header.scss';
+@import './navbar.scss';
 @import './main.scss';
 @import './footer.scss';

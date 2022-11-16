@@ -1,3 +1,4 @@
 # Ignore
 build/index.html
 build/css/style.min.css
+build/scripts/main.min.js

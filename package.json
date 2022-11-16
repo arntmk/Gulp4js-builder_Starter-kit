@@ -1,8 +1,8 @@
 {
 	"name": "gulp4js-pack",
-	"version": "1.0.1",
-	"description": "frontend start project",
-	"main": "index.html",
+	"version": "1.0.2",
+	"description": "gulp4js-pack for weblayout",
+	"main": "gulpfile.js",
 	"type": "commonjs",
 	"scripts": {
 		"start": "gulp watch",

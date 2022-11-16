@@ -1,5 +1,5 @@
 // Custom Scripts
-//@include('main.js')
+//@include('index.js')
 
 // Player
 const play = document.querySelector('.about__play');
