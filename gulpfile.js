@@ -41,12 +41,16 @@ const isDev = !isBuild;
 function clear() {
 	return src('build/*', { read: false }).pipe(gulpif(isBuild, clean()));
 }
+function clr() {
+	return src('build/*', { read: false }).pipe(clean());
+}
 
 // CSS
 
 function css() {
 	const SrcCss = 'src/scss/**/*.{scss,sass}';
 	return src(SrcCss, { sourcemaps: isDev })
+		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(plumber())
 		.pipe(sass())
 		.pipe(webpCSS())
@@ -62,7 +66,7 @@ function css() {
 // Optimize images
 
 function img() {
-	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,gif,svg,ico,webp}';
+	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,json}';
 	return src(SrcImg)
 		.pipe(newer('build/img/'))
 		.pipe(webp())
@@ -86,20 +90,21 @@ function img() {
 // Fonts
 
 function font() {
-	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff}'; //eot,ttf,otf,otc,ttc
+	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff,woff2}'; //eot,otf,ttf,otc,ttc
 	return (
 		src(SrcFont)
 			.pipe(newer('build/fonts/'))
 			//.pipe(fonter({ formats: ['woff}'] }))
 			//.pipe(dest('build/fonts/'))
-			.pipe(ttf2woff2())
+			//.pipe(ttf2woff2())
+			.pipe(gulpif(isBuild, ttf2woff2()))
 			.pipe(dest('build/fonts/'))
 	);
 }
 
 // Svg Sprite
 
-function Svg() {
+function svg() {
 	const SrcSvg = 'src/img/svg/*.svg';
 	return src(SrcSvg)
 		.pipe(svgmin({ js2svg: { pretty: true } }))
@@ -149,6 +154,7 @@ function html() {
 function js() {
 	return (
 		src(['src/scripts/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
+			.pipe(gulpif(isDev, newer('build/scripts/index.min.js')))
 			.pipe(plumber())
 			//.pipe(ts({ noImplicitAny: true, outFile: 'index.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
@@ -164,9 +170,9 @@ function js() {
 function watchFiles() {
 	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/**/*.html', html);
-	watch('src/img/**/*.{png,jpg,jpeg,gif,svg,ico,webp}', img);
-	watch('src/fonts/**/*.{woff,woff2,svg}', font);
 	watch('src/scripts/**/*.{js,jsx,ts,tsx,vue}', js);
+	watch('src/img/**/*.{png,jpg,jpeg}', img);
+	watch('src/fonts/**/*.{otf,ttf,woff,woff2}', font);
 }
 
 // BrowserSync
@@ -182,4 +188,6 @@ function browserSync() {
 
 exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, font, parallel(html, css, js, img));
-exports.svg = Svg;
+exports.svg = svg;
+exports.font = font;
+exports.clr = clr;

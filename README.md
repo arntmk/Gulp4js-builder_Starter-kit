@@ -3,5 +3,5 @@
 # Commends: npm run "..."
 
     	"start": "gulp watch"
-    	"test": "gulp"
+    	"dev": "gulp"
     	"build": "gulp --production"
