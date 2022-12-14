@@ -1,4 +1,4 @@
-/*! normalize.css v8.5.2  | MIT License | github.com/mvasilkov/systematize/blob/master/build/systematize.css */
+/* normalize.css v8.5.2  | MIT License | github.com/mvasilkov/systematize/blob/master/build/systematize.css */
 /* Document
    ========================================================================== */
 /*
@@ -8,11 +8,11 @@
  * 4. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.58;
-  -ms-overflow-style: scrollbar;
-  -webkit-text-size-adjust: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	line-height: 1.58;
+	-ms-overflow-style: scrollbar;
+	-webkit-text-size-adjust: 100%;
 }
 
 /* Sections
@@ -21,7 +21,7 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  margin: 0;
+	margin: 0;
 }
 
 /*
@@ -29,9 +29,9 @@ body {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-  font-weight: inherit;
+	font-size: 2em;
+	margin: 0.67em 0;
+	font-weight: inherit;
 }
 
 /* Grouping content
@@ -40,7 +40,7 @@ h1 {
  * Add the correct display in IE.
  */
 main {
-  display: block;
+	display: block;
 }
 
 /*
@@ -48,9 +48,9 @@ main {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
 }
 
 /*
@@ -58,9 +58,9 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas,
-    'DejaVu Sans Mono', Menlo, monospace;
-  font-size: 1em;
+	font-family: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas,
+		'DejaVu Sans Mono', Menlo, monospace;
+	font-size: 1em;
 }
 
 /* Text-level semantics
@@ -69,7 +69,7 @@ pre {
  * Remove the gray background on active links in IE 10.
  */
 a {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 /*
@@ -77,9 +77,9 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: 0;
-  text-decoration: underline;
-  text-decoration: underline dotted;
+	border-bottom: 0;
+	text-decoration: underline;
+	text-decoration: underline dotted;
 }
 
 /*
@@ -87,7 +87,7 @@ abbr[title] {
  */
 b,
 strong {
-  font-weight: bolder;
+	font-weight: bolder;
 }
 
 /*
@@ -97,16 +97,16 @@ strong {
 code,
 kbd,
 samp {
-  font-family: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas,
-    'DejaVu Sans Mono', Menlo, monospace;
-  font-size: 1em;
+	font-family: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas,
+		'DejaVu Sans Mono', Menlo, monospace;
+	font-size: 1em;
 }
 
 /*
  * Add the correct font size in all browsers.
  */
 small {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 /*
@@ -115,18 +115,18 @@ small {
  */
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sub {
-  bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 
 /*
@@ -134,13 +134,13 @@ sup {
  * 2. Restore the coloring undone by defining the text shadow (opinionated).
  */
 ::-moz-selection {
-  background-color: #b2d7ff;
-  text-shadow: none;
+	background-color: #b2d7ff;
+	text-shadow: none;
 }
 
 ::selection {
-  background-color: #b2d7ff;
-  text-shadow: none;
+	background-color: #b2d7ff;
+	text-shadow: none;
 }
 
 /* Embedded content
@@ -149,14 +149,14 @@ sup {
  * Remove the border on `iframe` elements in all browsers (opinionated).
  */
 iframe {
-  border: 0;
+	border: 0;
 }
 
 /*
  * Remove the border on images inside links in IE 10-.
  */
 img {
-  border-style: none;
+	border-style: none;
 }
 
 /* Tabular data
@@ -165,7 +165,7 @@ img {
  * Collapse border spacing
  */
 table {
-  border-collapse: collapse;
+	border-collapse: collapse;
 }
 
 /* Forms
@@ -179,10 +179,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.58;
-  margin: 0;
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.58;
+	margin: 0;
 }
 
 /*
@@ -190,7 +190,7 @@ textarea {
  */
 button,
 input {
-  overflow: visible;
+	overflow: visible;
 }
 
 /*
@@ -198,7 +198,7 @@ input {
  */
 button,
 select {
-  text-transform: none;
+	text-transform: none;
 }
 
 /*
@@ -208,7 +208,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  -webkit-appearance: button;
+	-webkit-appearance: button;
 }
 
 /*
@@ -218,8 +218,8 @@ button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
 [type='submit']::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+	border-style: none;
+	padding: 0;
 }
 
 /*
@@ -229,14 +229,14 @@ button:-moz-focusring,
 [type='button']:-moz-focusring,
 [type='reset']:-moz-focusring,
 [type='submit']:-moz-focusring {
-  outline: 1px dotted ButtonText;
+	outline: 1px dotted ButtonText;
 }
 
 /*
  * Correct the padding in Firefox.
  */
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+	padding: 0.35em 0.75em 0.625em;
 }
 
 /*
@@ -246,19 +246,19 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
 }
 
 /*
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
 progress {
-  vertical-align: baseline;
+	vertical-align: baseline;
 }
 
 /*
@@ -266,8 +266,8 @@ progress {
  * 2. Change the resize direction on textareas in all browsers (opinionated).
  */
 textarea {
-  overflow: auto;
-  resize: none;
+	overflow: auto;
+	resize: none;
 }
 
 /*
@@ -276,8 +276,8 @@ textarea {
  */
 [type='checkbox'],
 [type='radio'] {
-  box-sizing: border-box;
-  padding: 0;
+	box-sizing: border-box;
+	padding: 0;
 }
 
 /*
@@ -285,7 +285,7 @@ textarea {
  */
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button {
-  height: auto;
+	height: auto;
 }
 
 /*
@@ -293,15 +293,15 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type='search'] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
 }
 
 /*
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 [type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 /*
@@ -309,8 +309,8 @@ textarea {
 	  * 2. Change font properties to `inherit` in Safari.
    */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
+	-webkit-appearance: button;
+	font: inherit;
 }
 
 /* Interactive elements
@@ -319,14 +319,14 @@ textarea {
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
 details {
-  display: block;
+	display: block;
 }
 
 /*
  * Add the correct display in all browsers.
  */
 summary {
-  display: list-item;
+	display: list-item;
 }
 
 /* Scripting
@@ -335,7 +335,7 @@ summary {
  * Add the correct display in IE.
  */
 template {
-  display: none;
+	display: none;
 }
 
 /* User interaction
@@ -353,20 +353,20 @@ select,
 summary,
 textarea,
 [tabindex] {
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
 }
 
 /*
  * Add the correct display in IE 10-.
  */
 [hidden] {
-  display: none;
+	display: none;
 }
 
 /*
  * Suppress the focus outline on elements that cannot be accessed via keyboard.
  */
 [tabindex='-1']:focus {
-  outline: 0;
+	outline: 0;
 }
