@@ -153,14 +153,14 @@ function html() {
 
 function js() {
 	return (
-		src(['src/scripts/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
-			.pipe(gulpif(isDev, newer('build/scripts/index.min.js')))
+		src(['src/js/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
+			.pipe(gulpif(isDev, newer('build/js/index.min.js')))
 			.pipe(plumber())
 			//.pipe(ts({ noImplicitAny: true, outFile: 'index.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, terser()))
 			.pipe(concat('index.min.js'))
-			.pipe(dest('build/scripts', { sourcemaps: isDev }))
+			.pipe(dest('build/js', { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
 	);
 }
@@ -170,7 +170,7 @@ function js() {
 function watchFiles() {
 	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/**/*.html', html);
-	watch('src/scripts/**/*.{js,jsx,ts,tsx,vue}', js);
+	watch('src/js/**/*.{js,jsx,ts,tsx,vue}', js);
 	watch('src/img/**/*.{png,jpg,jpeg}', img);
 	watch('src/fonts/**/*.{otf,ttf,woff,woff2}', font);
 }

@@ -3,84 +3,100 @@ elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e
    ========================================================================== */
 *,
 *::before *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 html {
-  box-sizing: border-box;
-  font-size: 6.25%; /* (100% * 1px / 16px = 6.25 | 1rem = 1px) */
-  scroll-behavior: smooth;
-  scrollbar-color: #777 #ccc;
+	box-sizing: border-box;
+	font-size: 6.25%; /* (100% * 1px / 16px = 6.25 | 1rem = 1px) */
+	scroll-behavior: smooth;
+	scrollbar-color: #777 #ccc;
 }
 body {
-  min-width: 320px;
-  font-size: 16rem;
-  font-weight: 400;
-  color: #222;
-  background: #ccc;
-  overflow-x: hidden;
+	min-width: 320px;
+	font-size: 16rem;
+	font-weight: 400;
+	color: #222;
+	background: #ccc;
+	overflow-x: hidden;
 }
 a {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
 }
 img {
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 button,
 input[type='button'],
 [type='reset'],
 [type='submit'] {
-  /* background-color: transparent; */
-  color: inherit;
-  /* border-width: 0; */
-  /* padding: 0; */
-  cursor: pointer;
+	/* background-color: transparent; */
+	color: inherit;
+	/* border-width: 0; */
+	/* padding: 0; */
+	cursor: pointer;
 }
 figure {
-  margin: 0;
+	margin: 0;
 }
 input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-  margin: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
 }
 ul,
 ol,
 dd {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  list-style-position: inside;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	list-style-position: inside;
 }
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  /* font-size: inherit; */
-  font-weight: inherit;
+	margin: 0;
+	/* font-size: inherit; */
+	font-weight: inherit;
 }
 p {
-  margin: 0;
+	margin: 0;
 }
 cite {
-  font-style: normal;
+	font-style: normal;
 }
 fieldset {
-  /* border-width: 0; */
-  margin: 0;
+	/* border-width: 0; */
+	margin: 0;
 }
 ::-webkit-scrollbar {
-  width: 18px;
+	width: 18px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #666;
-  border-radius: 10px;
-  border: 5px solid transparent;
-  background-clip: content-box;
+	background-color: #666;
+	border-radius: 10px;
+	border: 5px solid transparent;
+	background-clip: content-box;
 }
 ::-webkit-scrollbar-track {
-  background-color: #1c1c1c;
+	background-color: #1c1c1c;
+}
+header {
+  top: 0;
+}
+main {
+  flex-grow: 1;
+}
+footer {
+  bottom: 0;
+}
+input,
+button,
+textarea {
+  font: inherit;
 }
