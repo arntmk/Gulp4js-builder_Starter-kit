@@ -154,12 +154,12 @@ function html() {
 function js() {
 	return (
 		src(['src/js/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
-			.pipe(gulpif(isDev, newer('build/js/index.min.js')))
+			.pipe(gulpif(isDev, newer('build/js/scripts.min.js')))
 			.pipe(plumber())
-			//.pipe(ts({ noImplicitAny: true, outFile: 'index.min.js' }))
+			//.pipe(ts({ noImplicitAny: true, outFile: 'scripts.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, terser()))
-			.pipe(concat('index.min.js'))
+			.pipe(concat('scripts.min.js'))
 			.pipe(dest('build/js', { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
 	);
