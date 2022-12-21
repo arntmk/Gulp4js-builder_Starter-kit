@@ -5,3 +5,5 @@
     	"start": "gulp watch"
     	"dev": "gulp"
     	"build": "gulp --production"
+
+    		Вийти з режиму: Ctrl+C+Y
