@@ -171,7 +171,7 @@ function watchFiles() {
 	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/**/*.html', html);
 	watch('src/js/**/*.{js,jsx,ts,tsx,vue}', js);
-	watch('src/img/**/*.{png,jpg,jpeg}', img);
+	watch('src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,json}', img);
 	watch('src/fonts/**/*.{otf,ttf,woff,woff2}', font);
 }
 
