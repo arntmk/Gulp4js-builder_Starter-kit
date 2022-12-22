@@ -5,6 +5,7 @@ elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e
 *::before *::after {
 	box-sizing: inherit;
 	margin-top: 0;
+	margin-left: 0;
 }
 html {
 	box-sizing: border-box;
@@ -19,6 +20,7 @@ body {
 	color: #222;
 	background: #ccc;
 	overflow-x: hidden;
+	overflow-anchor: none;
 }
 a {
 	color: inherit;
@@ -79,35 +81,34 @@ fieldset {
 }
 th,
 td {
-  border: 0.1em solid black;
-  padding: 0.5em;
-  text-align: center;
+	border: 0.1em solid black;
+	padding: 0.5em;
+	text-align: center;
 }
 header {
-  top: 0;
+	top: 0;
 }
 footer {
-  bottom: 0;
+	bottom: 0;
 }
 aside,
 nav,
 footer,
 header,
-section,
-main {
-  display: block;
+section {
+	display: block;
 }
 
 /* ========================================================================== */
 ::-webkit-scrollbar {
-  width: 18px;
+	width: 18px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #666;
-  border-radius: 10px;
-  border: 5px solid transparent;
-  background-clip: content-box;
+	background-color: #666;
+	border-radius: 10px;
+	border: 5px solid transparent;
+	background-clip: content-box;
 }
 ::-webkit-scrollbar-track {
-  background-color: #1c1c1c;
+	background-color: #1c1c1c;
 }
