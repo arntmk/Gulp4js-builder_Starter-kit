@@ -6,4 +6,4 @@
     	"dev": "gulp"
     	"build": "gulp --production"
 
-    		Вийти з режиму: Ctrl+C+Y
+    		Turn off Gulp watch: Ctrl+C+Y
