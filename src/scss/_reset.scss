@@ -21,7 +21,10 @@ body {
 	background: #ccc;
 	overflow-x: hidden;
 	overflow-anchor: none;
+	break-inside: avoid;
 }
+
+/* ========================================================================== */
 a {
 	color: inherit;
 	text-decoration: none;
@@ -42,12 +45,14 @@ input[type='button'],
 	/* padding: 0; */
 	cursor: pointer;
 }
-figure {
-	margin: 0;
-}
 input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
+	margin: 0;
+}
+figure,
+figcaption {
+	display: block;
 	margin: 0;
 }
 ul,
@@ -74,7 +79,8 @@ p {
 cite {
 	font-style: normal;
 }
-fieldset {
+fieldset,
+legend {
 	/* border-width: 0; */
 	/* padding: 0; */
 	margin: 0;
@@ -95,7 +101,8 @@ aside,
 nav,
 footer,
 header,
-section {
+section,
+article {
 	display: block;
 }
 
