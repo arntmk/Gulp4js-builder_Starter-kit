@@ -3,31 +3,31 @@ const { src, dest, parallel, series, watch } = require('gulp');
 // Load plugins
 
 const sass = require('gulp-sass')(require('sass')); //Препроцесор css.
-const autoprefixer = require('gulp-autoprefixer'); //Добавлення префіксів для сумісності.
-const concat = require('gulp-concat'); //Переіменування та обєднаття.
+const autoprefixer = require('gulp-autoprefixer'); //Додавання префіксів для сумісності.
+const concat = require('gulp-concat'); //Перейменування та об'єднання.
 const fileinclude = require('gulp-file-include'); //Створення категорій для html.
 const htmlmin = require('gulp-htmlmin'); //Мінімізація html.
 const browsersync = require('browser-sync').create(); //Сервер.
-const imagemin = require('gulp-imagemin'); //Оптимізація картинок.
+const imagemin = require('gulp-imagemin'); //Оптимізація зображення.
 const clean = require('gulp-clean'); //Видалення Build.
 const webp = require('gulp-webp'); //Конвертатор webp.
-const webpHTML = require('gulp-webp-html-fixed'); //Авто суміснsість webp(html).
-const webpCSS = require('gulp-webp-css-fixed'); // Авто суміснsість webp(css).
+const webpHTML = require('gulp-webp-html-fixed'); //Авто сумісність webp(html).
+const webpCSS = require('gulp-webp-css-fixed'); // Авто сумісність webp(css).
 const newer = require('gulp-newer'); //Перевірка файлів.
 const terser = require('gulp-terser'); //Мінімізація JS.
 const plumber = require('gulp-plumber'); //Пошук помилок.
 //const fonter = require('gulp-fonter'); //Конвертатор шрифтів в woff.
 const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор в woff2.
 const gulpif = require('gulp-if'); //Режим dev or production.
-const babel = require('gulp-babel'); //Підтримка старих версій браузерів JS.
+const babel = require('gulp-babel'); //Підтримка старих браузерів JS.
 const typograf = require('gulp-typograf'); //Правопис.
 //const ts = require('gulp-typescript'); //Конвертатор TypeScript.
 const vn = require('gulp-version-number'); //Build version.
-const groupCSSMedia = require('gulp-group-css-media-queries'); //Групування медія запитів.
+const groupCSSMedia = require('gulp-group-css-media-queries'); //Групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); //Оптимізація коду.
 const csso = require('gulp-csso'); //Мінімізація css.
 const svgmin = require('gulp-svgmin'); //Мінімізація svg.
-const cheerio = require('gulp-cheerio'); //Видалення лишніх атрибутів svg (Вбудованих стилів).
+const cheerio = require('gulp-cheerio'); //Видалення непотрібних атрибутів svg (Вбудовані стилі).
 const replace = require('gulp-replace'); //Заміна символів після gulp-cheerio.
 const svgSprite = require('gulp-svg-sprite'); //Об'єднання спрайтів.
 
@@ -154,12 +154,12 @@ function html() {
 function js() {
 	return (
 		src(['src/js/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
-			.pipe(gulpif(isDev, newer('build/js/scripts.min.js')))
+			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
 			.pipe(plumber())
-			//.pipe(ts({ noImplicitAny: true, outFile: 'scripts.min.js' }))
+			//.pipe(ts({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, terser()))
-			.pipe(concat('scripts.min.js'))
+			.pipe(concat('script.min.js'))
 			.pipe(dest('build/js', { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
 	);
