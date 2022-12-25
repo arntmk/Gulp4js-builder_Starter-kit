@@ -1,4 +1,4 @@
-//Meta-width-Function
+// Meta-width-Function
 function adaptiveSizePageScaleInit(definedStartWidth) {
 	let startWidth = definedStartWidth;
 	if (!(startWidth / 1)) {
