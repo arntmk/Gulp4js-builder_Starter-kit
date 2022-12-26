@@ -18,3 +18,9 @@
 
 	/* GENERAL */
 }
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bgcolor: #000;
+		--color: whitesmoke;
+	}
+}
