@@ -48,7 +48,7 @@ function clr() {
 // CSS
 
 function css() {
-	const SrcCss = 'src/scss/**/*.{scss,sass}';
+	const SrcCss = 'src/scss/style.{scss,sass}';
 	return src(SrcCss, { sourcemaps: isDev })
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(plumber())
@@ -66,7 +66,8 @@ function css() {
 // Optimize images
 
 function img() {
-	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,json}';
+	const SrcImg =
+		'src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,webmanifest,json}';
 	return src(SrcImg)
 		.pipe(newer('build/img/'))
 		.pipe(webp())
@@ -152,8 +153,9 @@ function html() {
 // JavaScript
 
 function js() {
+	const SrcJs = 'src/js/**/*.{js,jsx,ts,tsx,vue}';
 	return (
-		src(['src/js/**/*.{js,jsx,ts,tsx,vue}'], { sourcemaps: isDev })
+		src(SrcJs, { sourcemaps: isDev })
 			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
 			.pipe(plumber())
 			//.pipe(ts({ noImplicitAny: true, outFile: 'script.min.js' }))
@@ -171,8 +173,8 @@ function watchFiles() {
 	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/**/*.html', html);
 	watch('src/js/**/*.{js,jsx,ts,tsx,vue}', js);
-	watch('src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,json}', img);
-	watch('src/fonts/**/*.{otf,ttf,woff,woff2}', font);
+	watch('src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,webmanifest,json}', img);
+	watch('src/fonts/**/*.{otf,ttf,woff,woff2,svg}', font);
 }
 
 // BrowserSync
