@@ -132,6 +132,7 @@ function svg() {
 
 function html() {
 	return src('src/*.html')
+		.pipe(gulpif(isDev, newer('build/index.html')))
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@@' }))
 		.pipe(webpHTML())
