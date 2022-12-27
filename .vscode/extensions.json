@@ -13,6 +13,8 @@
     "glenn2223.live-sass",
     "esbenp.prettier-vscode",
     "alefragnani.project-manager",
-    "vscode-icons-team.vscode-icons"
+    "vscode-icons-team.vscode-icons",
+    "ecmel.vscode-html-css",
+    "ritwickdey.liveserver"
   ]
 }
