@@ -2,7 +2,7 @@ const { src, dest, parallel, series, watch } = require('gulp');
 
 // Load plugins
 
-const sass = require('gulp-sass')(require('sass')); //Препроцесор css.
+const sass = require('gulp-sass')(require('sass')); //Препроцесор для css.
 const autoprefixer = require('gulp-autoprefixer'); //Додавання префіксів для сумісності.
 const concat = require('gulp-concat'); //Перейменування та об'єднання.
 const fileinclude = require('gulp-file-include'); //Модульність для html.
