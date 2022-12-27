@@ -1,4 +1,5 @@
-// Custom Scripts
+// Custom Scripts imports
+
 // include('./libs/vendor.js')
-// include('index.js');
-// include('meta-width-function.js');
+// include('-1-index.js');
+// include('-2-meta-width-function.js');
