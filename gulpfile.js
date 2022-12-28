@@ -154,7 +154,8 @@ function html() {
 // JavaScript
 
 function js() {
-	const SrcJs = 'src/js/**/*.{js,jsx,ts,tsx,vue}';
+	// const SrcJs = 'src/js/**/*.{js,jsx,ts,tsx,vue}';
+	const SrcJs = require('./src/js/script.json');
 	return (
 		src(SrcJs, { sourcemaps: isDev })
 			.pipe(gulpif(isDev, newer('build/js/script.min.js')))

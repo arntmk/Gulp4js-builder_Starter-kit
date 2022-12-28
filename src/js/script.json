@@ -1,0 +1,5 @@
+[
+	"./src/js/libs/vendor.js",
+	"./src/js/meta-width-function.js",
+	"./src/js/index.js"
+]

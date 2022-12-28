@@ -1,4 +1,5 @@
 # Ignore
+src/js/script.json
 build/index.html
 build/css/style.min.css
 build/js/scripts.min.js
