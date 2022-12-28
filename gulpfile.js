@@ -69,20 +69,17 @@ function img() {
 	const SrcImg =
 		'src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,webmanifest,json}';
 	return src(SrcImg)
-		.pipe(newer('build/img/'))
 		.pipe(webp())
 		.pipe(dest('build/img/'))
 		.pipe(src(SrcImg))
+		.pipe(newer('build/img/'))
 		.pipe(
-			gulpif(
-				isBuild,
-				imagemin({
-					progressive: true,
-					plugins: [{ removeViewBox: true }],
-					interlaced: true,
-					optimizationLevel: 3, //0 to 7
-				})
-			)
+			imagemin({
+				progressive: true,
+				plugins: [{ removeViewBox: true }],
+				interlaced: true,
+				optimizationLevel: 3, //0 to 7
+			})
 		)
 		.pipe(dest('build/img/'))
 		.pipe(browsersync.stream());
