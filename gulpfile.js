@@ -91,11 +91,11 @@ function font() {
 	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff,woff2}'; //eot,otf,ttf,otc,ttc
 	return (
 		src(SrcFont)
-			.pipe(newer('build/fonts/'))
+			//.pipe(newer('build/fonts/'))
 			//.pipe(fonter({ formats: ['woff}'] }))
-			//.pipe(dest('build/fonts/'))
-			//.pipe(ttf2woff2())
-			.pipe(gulpif(isBuild, ttf2woff2()))
+			.pipe(gulpif(isDev, dest('build/fonts/')))
+			.pipe(newer('build/fonts/'))
+			.pipe(ttf2woff2())
 			.pipe(dest('build/fonts/'))
 	);
 }
