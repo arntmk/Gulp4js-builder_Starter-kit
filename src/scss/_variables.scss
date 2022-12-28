@@ -1,3 +1,4 @@
+/* Variables */
 :root {
 	/* COLOR */
 	--bgcolor: whitesmoke;
@@ -18,6 +19,8 @@
 
 	/* GENERAL */
 }
+
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bgcolor: #000;
