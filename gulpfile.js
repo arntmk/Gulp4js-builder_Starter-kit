@@ -71,7 +71,6 @@ function img() {
 	return src(SrcImg)
 		.pipe(webp())
 		.pipe(dest('build/img/'))
-		.pipe(src(SrcImg))
 		.pipe(newer('build/img/'))
 		.pipe(
 			imagemin({
