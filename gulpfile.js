@@ -39,10 +39,9 @@ const isDev = !isBuild;
 // Cleaner
 
 function clear() {
-	return src('build/*', { read: false }).pipe(gulpif(isBuild, clean()));
-}
-function clr() {
-	return src('build/*', { read: false }).pipe(clean());
+	return src('build/*', { read: false })
+		.pipe(gulpif(isBuild, clean()))
+		.pipe(gulpif(isDev, clean()));
 }
 
 // CSS
@@ -190,4 +189,4 @@ exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, font, parallel(html, css, js, img));
 exports.svg = svg;
 exports.font = font;
-exports.clr = clr;
+exports.clear = clear;
