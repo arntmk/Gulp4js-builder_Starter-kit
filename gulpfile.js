@@ -82,8 +82,8 @@ function css() {
 // Optimize images
 
 function img() {
-	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,webp,webmanifest,json}';
-	const SvgCopy = 'src/img/**/*.svg';
+	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,webp}';
+	const SvgCopy = 'src/img/**/*.{svg,webmanifest,json}';
 	return src(SrcImg)
 		.pipe(newer('build/img/'))
 		.pipe(webp())
@@ -100,6 +100,7 @@ function img() {
 		)
 		.pipe(dest('build/img/'))
 		.pipe(src(SvgCopy))
+		.pipe(newer('build/img/'))
 		.pipe(dest('build/img/'))
 		.pipe(browsersync.stream());
 }
@@ -109,6 +110,7 @@ function img() {
 function font() {
 	const SrcFont = 'src/fonts/**/*.{otf,woff,woff2}'; //eot,otf,ttf,otc,ttc
 	const SrcTtf = 'src/fonts/**/*.ttf';
+	const FontSvgCopy = 'src/fonts/**/*.svg';
 	return (
 		src(SrcFont)
 			// .pipe(newer('src/fonts/'))
@@ -121,6 +123,9 @@ function font() {
 			.pipe(src(SrcTtf))
 			.pipe(newer('src/fonts/'))
 			.pipe(ttf2woff2())
+			.pipe(dest('build/fonts/'))
+			.pipe(src(FontSvgCopy))
+			.pipe(newer('build/fonts/'))
 			.pipe(dest('build/fonts/'))
 	);
 }
