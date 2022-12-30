@@ -107,16 +107,17 @@ function img() {
 // Fonts
 
 function font() {
-	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff,woff2}'; //eot,otf,ttf,otc,ttc
+	const SrcFont = 'src/fonts/**/*.{otf,woff,woff2}'; //eot,otf,ttf,otc,ttc
 	const SrcTtf = 'src/fonts/**/*.ttf';
 	return (
 		src(SrcFont)
 			// .pipe(newer('src/fonts/'))
 			// .pipe(fonter({ formats: ['ttf'] }))
 			// .pipe(dest('src/fonts/'))
+			// .pipe(src(SrcTtf))
 			// .pipe(newer('src/fonts/'))
 			// .pipe(fonter({ formats: ['woff'] }))
-			// .pipe(dest('src/fonts/'))
+			// .pipe(dest('build/fonts/'))
 			.pipe(src(SrcTtf))
 			.pipe(newer('src/fonts/'))
 			.pipe(ttf2woff2())
