@@ -110,8 +110,13 @@ function font() {
 	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff,woff2}'; //eot,otf,ttf,otc,ttc
 	return (
 		src(SrcFont)
+			// .pipe(newer('src/fonts/'))
+			// .pipe(fonter({ formats: ['ttf'] }))
+			// .pipe(dest('src/fonts/'))
+			// .pipe(newer('src/fonts/'))
+			// .pipe(fonter({ formats: ['woff'] }))
+			// .pipe(dest('src/fonts/'))
 			.pipe(gulpif(isDev, newer('build/fonts/')))
-			//.pipe(fonter({ formats: ['woff}'] }))
 			.pipe(gulpif(isDev, dest('build/fonts/')))
 			.pipe(newer('build/fonts/'))
 			.pipe(ttf2woff2())
