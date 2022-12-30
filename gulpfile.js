@@ -46,7 +46,7 @@ function clr() {
 	const ClrJS = 'build/js/*';
 	const ClrHtml = 'build/*.html';
 	const ClrFonts = 'build/fonts/*.ttf';
-	const ClrImg = 'build//img/**/*.{ico,gif,svg,webmanifest,json}';
+	const ClrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
 	return src(ClrCss, { read: false })
 		.pipe(clean())
 		.pipe(src(ClrJS), { read: false })
