@@ -82,8 +82,8 @@ function css() {
 // Optimize images
 
 function img() {
-	const SrcImg =
-		'src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,webmanifest,json}';
+	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,webp,webmanifest,json}';
+	const SvgCopy = 'src/img/**/*.svg';
 	return src(SrcImg)
 		.pipe(newer('build/img/'))
 		.pipe(webp())
@@ -98,6 +98,8 @@ function img() {
 				optimizationLevel: 3, //0 to 7
 			})
 		)
+		.pipe(dest('build/img/'))
+		.pipe(src(SvgCopy))
 		.pipe(dest('build/img/'))
 		.pipe(browsersync.stream());
 }
