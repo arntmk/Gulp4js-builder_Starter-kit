@@ -39,9 +39,24 @@ const isDev = !isBuild;
 // Cleaner
 
 function clear() {
-	return src('build/*', { read: false })
-		.pipe(gulpif(isBuild, clean()))
-		.pipe(gulpif(isDev, clean()));
+	return src('build/*', { read: false }).pipe(gulpif(isBuild, clean()));
+}
+function clr() {
+	const ClrCss = 'build/css/*';
+	const ClrJS = 'build/js/*';
+	const ClrHtml = 'build/*.html';
+	const ClrFonts = 'build/fonts/*.ttf';
+	const ClrImg = 'build//img/**/*.{ico,gif,svg,webmanifest,json}';
+	return src(ClrCss, { read: false })
+		.pipe(clean())
+		.pipe(src(ClrJS), { read: false })
+		.pipe(clean())
+		.pipe(src(ClrHtml), { read: false })
+		.pipe(clean())
+		.pipe(src(ClrFonts), { read: false })
+		.pipe(clean())
+		.pipe(src(ClrImg), { read: false })
+		.pipe(clean());
 }
 
 // CSS
@@ -56,6 +71,7 @@ function css() {
 		.pipe(autoprefixer({ grid: true }))
 		.pipe(shorthand())
 		.pipe(groupCSSMedia())
+		.pipe(gulpif(isBuild, dest('build/css/')))
 		.pipe(gulpif(isBuild, csso()))
 		.pipe(concat('style.min.css'))
 		.pipe(dest('build/css/', { sourcemaps: isDev }))
@@ -68,8 +84,10 @@ function img() {
 	const SrcImg =
 		'src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,webmanifest,json}';
 	return src(SrcImg)
+		.pipe(newer('build/img/'))
 		.pipe(webp())
 		.pipe(dest('build/img/'))
+		.pipe(src(SrcImg))
 		.pipe(newer('build/img/'))
 		.pipe(
 			imagemin({
@@ -89,7 +107,7 @@ function font() {
 	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff,woff2}'; //eot,otf,ttf,otc,ttc
 	return (
 		src(SrcFont)
-			//.pipe(newer('build/fonts/'))
+			.pipe(gulpif(isDev, newer('build/fonts/')))
 			//.pipe(fonter({ formats: ['woff}'] }))
 			.pipe(gulpif(isDev, dest('build/fonts/')))
 			.pipe(newer('build/fonts/'))
@@ -103,6 +121,7 @@ function font() {
 function svg() {
 	const SrcSvg = 'src/img/svg/*.svg';
 	return src(SrcSvg)
+		.pipe(newer('build/img/svg/'))
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
 			cheerio({
@@ -157,6 +176,8 @@ function js() {
 			.pipe(plumber())
 			//.pipe(ts({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
+			.pipe(gulpif(isBuild, concat('script.js')))
+			.pipe(gulpif(isBuild, dest('build/js')))
 			.pipe(gulpif(isBuild, terser()))
 			.pipe(concat('script.min.js'))
 			.pipe(dest('build/js', { sourcemaps: isDev }))
@@ -189,4 +210,4 @@ exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, font, parallel(html, css, js, img));
 exports.svg = svg;
 exports.font = font;
-exports.clear = clear;
+exports.clr = clr;
