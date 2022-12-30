@@ -5,5 +5,6 @@
     	"start": "gulp watch"
     	"dev": "gulp"
     	"build": "gulp --production"
+    	"svg": "gulp svg"
 
     		Turn off Gulp watch: Ctrl+C+Y
