@@ -45,7 +45,7 @@ function clr() {
 	const ClrCss = 'build/css/*';
 	const ClrJS = 'build/js/*';
 	const ClrHtml = 'build/*.*';
-	const ClrFonts = 'build/fonts/*.ttf';
+	const ClrFonts = 'build/fonts/*.{otf,ttf}';
 	const ClrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
 	return src(ClrCss, { read: false })
 		.pipe(gulpif(isDev, clean()))
@@ -108,6 +108,7 @@ function img() {
 
 function font() {
 	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff,woff2}'; //eot,otf,ttf,otc,ttc
+	const SrcTtf = 'src/fonts/**/*.ttf';
 	return (
 		src(SrcFont)
 			// .pipe(newer('src/fonts/'))
@@ -116,9 +117,8 @@ function font() {
 			// .pipe(newer('src/fonts/'))
 			// .pipe(fonter({ formats: ['woff'] }))
 			// .pipe(dest('src/fonts/'))
-			.pipe(gulpif(isDev, newer('build/fonts/')))
-			.pipe(gulpif(isDev, dest('build/fonts/')))
-			.pipe(newer('build/fonts/'))
+			.pipe(src(SrcTtf))
+			.pipe(newer('src/fonts/'))
 			.pipe(ttf2woff2())
 			.pipe(dest('build/fonts/'))
 	);
