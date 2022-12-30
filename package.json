@@ -8,7 +8,8 @@
 		"start": "gulp watch",
 		"dev": "gulp",
 		"build": "gulp --production",
-		"svg": "gulp svg"
+		"svg": "gulp svg",
+		"clr": "gulp clr"
 	},
 	"browserslist": [
 		"last 3 version",

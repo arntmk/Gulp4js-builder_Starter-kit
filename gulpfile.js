@@ -21,7 +21,7 @@ const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор в woff2.
 const gulpif = require('gulp-if'); //Режим dev or production.
 const babel = require('gulp-babel'); //Підтримка старих браузерів JS.
 const typograf = require('gulp-typograf'); //Правопис.
-//const ts = require('gulp-typescript'); //Конвертатор TypeScript.
+//const typeSpt = require('gulp-typescript'); //Конвертатор TypeScript.
 const vn = require('gulp-version-number'); //Build version.
 const groupCSSMedia = require('gulp-group-css-media-queries'); //Групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); //Оптимізація коду.
@@ -44,19 +44,19 @@ function clear() {
 function clr() {
 	const ClrCss = 'build/css/*';
 	const ClrJS = 'build/js/*';
-	const ClrHtml = 'build/*.html';
+	const ClrHtml = 'build/*.*';
 	const ClrFonts = 'build/fonts/*.ttf';
 	const ClrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
 	return src(ClrCss, { read: false })
-		.pipe(clean())
+		.pipe(gulpif(isDev, clean()))
 		.pipe(src(ClrJS), { read: false })
-		.pipe(clean())
+		.pipe(gulpif(isDev, clean()))
 		.pipe(src(ClrHtml), { read: false })
-		.pipe(clean())
+		.pipe(gulpif(isDev, clean()))
 		.pipe(src(ClrFonts), { read: false })
-		.pipe(clean())
+		.pipe(gulpif(isDev, clean()))
 		.pipe(src(ClrImg), { read: false })
-		.pipe(clean());
+		.pipe(gulpif(isDev, clean()));
 }
 
 // CSS
@@ -177,7 +177,7 @@ function js() {
 		src(SrcJs, { sourcemaps: isDev })
 			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
 			.pipe(plumber())
-			//.pipe(ts({ noImplicitAny: true, outFile: 'script.min.js' }))
+			//.pipe(typeSpt({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, concat('script.js')))
 			.pipe(gulpif(isBuild, dest('build/js')))
@@ -210,7 +210,7 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, font, parallel(html, css, js, img));
+exports.default = series(clear, clr, font, parallel(html, css, js, img));
 exports.img = img;
 exports.svg = svg;
 exports.font = font;
