@@ -100,6 +100,7 @@ function img() {
 		)
 		.pipe(dest('build/img/'))
 		.pipe(src(SvgCopy))
+		.pipe(newer('build/img/'))
 		.pipe(dest('build/img/'))
 		.pipe(browsersync.stream());
 }
@@ -109,17 +110,23 @@ function img() {
 function font() {
 	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff,woff2}'; //eot,otf,ttf,otc,ttc
 	const SrcTtf = 'src/fonts/**/*.ttf';
+	const FontSvgCopy = 'src/fonts/**/*.svg';
 	return (
 		src(SrcFont)
 			// .pipe(newer('src/fonts/'))
 			// .pipe(fonter({ formats: ['ttf'] }))
 			// .pipe(dest('src/fonts/'))
-			// .pipe(newer('src/fonts/'))
+			// .pipe(newer('build/fonts/'))
 			// .pipe(fonter({ formats: ['woff'] }))
 			// .pipe(dest('src/fonts/'))
+			.pipe(gulpif(isDev, newer('build/fonts/')))
+			.pipe(gulpif(isDev, dest('build/fonts/')))
 			.pipe(src(SrcTtf))
-			.pipe(newer('src/fonts/'))
+			.pipe(newer('build/fonts/'))
 			.pipe(ttf2woff2())
+			.pipe(dest('build/fonts/'))
+			.pipe(src(FontSvgCopy))
+			.pipe(newer('build/fonts/'))
 			.pipe(dest('build/fonts/'))
 	);
 }
