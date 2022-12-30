@@ -108,8 +108,8 @@ function img() {
 // Fonts
 
 function font() {
-	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff,woff2}'; //eot,otf,ttf,otc,ttc
-	const SrcTtf = 'src/fonts/**/*.ttf';
+	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff}'; //eot,otf,ttf,otc,ttc
+	const ttfTowoff2 = 'src/fonts/**/*.{ttf,woff2}';
 	const FontSvgCopy = 'src/fonts/**/*.svg';
 	return (
 		src(SrcFont)
@@ -121,7 +121,7 @@ function font() {
 			// .pipe(dest('src/fonts/'))
 			.pipe(gulpif(isDev, newer('build/fonts/')))
 			.pipe(gulpif(isDev, dest('build/fonts/')))
-			.pipe(src(SrcTtf))
+			.pipe(src(ttfTowoff2))
 			.pipe(newer('build/fonts/'))
 			.pipe(ttf2woff2())
 			.pipe(dest('build/fonts/'))
