@@ -62,6 +62,7 @@ function clr() {
 // CSS
 
 function css() {
+	// const SrcCss = 'src/scss/**/*.{scss,sass}';
 	const SrcCss = 'src/scss/style.{scss,sass}';
 	return src(SrcCss, { sourcemaps: isDev })
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
