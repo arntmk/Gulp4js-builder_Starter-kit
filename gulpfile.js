@@ -59,26 +59,6 @@ function clr() {
 		.pipe(gulpif(isDev, clean()));
 }
 
-// CSS
-
-function css() {
-	// const SrcCss = 'src/scss/**/*.{scss,sass}';
-	const SrcCss = 'src/scss/style.{scss,sass}';
-	return src(SrcCss, { sourcemaps: isDev })
-		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
-		.pipe(plumber())
-		.pipe(sass())
-		.pipe(webpCSS())
-		.pipe(autoprefixer({ grid: true }))
-		.pipe(shorthand())
-		.pipe(groupCSSMedia())
-		.pipe(gulpif(isBuild, dest('build/css/')))
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(concat('style.min.css'))
-		.pipe(dest('build/css/', { sourcemaps: isDev }))
-		.pipe(browsersync.stream());
-}
-
 // Optimize images
 
 function img() {
@@ -180,6 +160,26 @@ function html() {
 		.pipe(browsersync.stream());
 }
 
+// CSS
+
+function css() {
+	// const SrcCss = 'src/scss/**/*.{scss,sass}';
+	const SrcCss = 'src/scss/style.{scss,sass}';
+	return src(SrcCss, { sourcemaps: isDev })
+		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
+		.pipe(plumber())
+		.pipe(sass())
+		.pipe(webpCSS())
+		.pipe(autoprefixer({ grid: true }))
+		.pipe(shorthand())
+		.pipe(groupCSSMedia())
+		.pipe(gulpif(isBuild, dest('build/css/')))
+		.pipe(gulpif(isBuild, csso()))
+		.pipe(concat('style.min.css'))
+		.pipe(dest('build/css/', { sourcemaps: isDev }))
+		.pipe(browsersync.stream());
+}
+
 // JavaScript
 
 function js() {
@@ -224,6 +224,6 @@ function browserSync() {
 exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, clr, font, parallel(html, css, js, img));
 exports.img = img;
-exports.svg = svg;
 exports.font = font;
+exports.svg = svg;
 exports.clr = clr;
