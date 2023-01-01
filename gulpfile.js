@@ -45,7 +45,7 @@ function clr() {
 	const ClrCss = 'build/css/*';
 	const ClrJS = 'build/js/*';
 	const ClrHtml = 'build/*.*';
-	const ClrFonts = 'build/fonts/*.{otf,ttf}';
+	const ClrFonts = 'build/fonts/*.otf';
 	const ClrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
 	return src(ClrCss, { read: false })
 		.pipe(gulpif(isDev, clean()))
@@ -82,8 +82,8 @@ function css() {
 // Optimize images
 
 function img() {
-	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,webp,webmanifest,json}';
-	const SvgCopy = 'src/img/**/*.svg';
+	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,webp}';
+	const SvgCopy = 'src/img/**/*.{svg,webmanifest,json}';
 	return src(SrcImg)
 		.pipe(newer('build/img/'))
 		.pipe(webp())
