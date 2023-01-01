@@ -43,21 +43,32 @@ function clear() {
 	return src('build/*', { read: false }).pipe(gulpif(isBuild, clean()));
 }
 function clr() {
-	const clrCss = 'build/css/*';
-	const clrJs = 'build/js/*';
-	const clrHtml = 'build/*.*';
-	const clrFont = 'build/font/*.{otf,svg}';
-	const clrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
-	return src(clrCss, { read: false })
-		.pipe(gulpif(isDev, clean()))
-		.pipe(src(clrJs), { read: false })
-		.pipe(gulpif(isDev, clean()))
-		.pipe(src(clrHtml), { read: false })
-		.pipe(gulpif(isDev, clean()))
-		.pipe(src(clrFont), { read: false })
-		.pipe(gulpif(isDev, clean()))
-		.pipe(src(clrImg), { read: false })
-		.pipe(gulpif(isDev, clean()));
+	return src(
+		[
+			'build/css/*',
+			'build/js/*',
+			'build/*.*',
+			'build/font/*.{otf,svg}',
+			'build/img/**/*.{ico,gif,svg,webmanifest,json}',
+		],
+		{ read: false }
+	).pipe(gulpif(isDev, clean()));
+
+	// const clrCss = 'build/css/*';
+	// const clrJs = 'build/js/*';
+	// const clrHtml = 'build/*.*';
+	// const clrFont = 'build/font/*.{otf,svg}';
+	// const clrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
+	// return src(clrCss, { read: false })
+	// 	.pipe(gulpif(isDev, clean()))
+	// 	.pipe(src(clrJs), { read: false })
+	// 	.pipe(gulpif(isDev, clean()))
+	// 	.pipe(src(clrHtml), { read: false })
+	// 	.pipe(gulpif(isDev, clean()))
+	// 	.pipe(src(clrFont), { read: false })
+	// 	.pipe(gulpif(isDev, clean()))
+	// 	.pipe(src(clrImg), { read: false })
+	// 	.pipe(gulpif(isDev, clean()));
 }
 
 // Optimize images
