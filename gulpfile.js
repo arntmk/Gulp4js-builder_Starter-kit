@@ -98,7 +98,7 @@ function font() {
 			// .pipe(dest('src/font/'))
 			// .pipe(newer('build/font/'))
 			// .pipe(fonter({ formats: ['woff'] }))
-			// .pipe(dest('src/font/'))
+			// .pipe(dest('build/font/'))
 			.pipe(gulpif(isDev, newer('build/font/')))
 			.pipe(gulpif(isDev, dest('build/font/')))
 			.pipe(src(ttfTowoff2))
