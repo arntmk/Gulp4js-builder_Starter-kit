@@ -40,7 +40,9 @@ const isDev = !isBuild;
 // Cleaner
 
 function clear() {
-	return src('build/*', { read: false }).pipe(gulpif(isBuild, clean()));
+	return src(['build/*', 'src/scss/_font.{scss,sass}'], { read: false }).pipe(
+		gulpif(isBuild, clean())
+	);
 }
 function clr() {
 	return src(
@@ -50,6 +52,7 @@ function clr() {
 			'build/*.*',
 			'build/font/*.{otf,svg}',
 			'build/img/**/*.{ico,gif,svg,webmanifest,json}',
+			'src/scss/_font.{scss,sass}',
 		],
 		{ read: false }
 	).pipe(gulpif(isDev, clean()));
@@ -100,31 +103,11 @@ function img() {
 // Fonts
 
 function font() {
-	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
-	const svgFontCopy = 'src/font/**/*.svg';
-	return src(ttfTOwoff2)
-		.pipe(newer('build/font/'))
-		.pipe(ttf2woff2())
-		.pipe(dest('build/font/'))
-		.pipe(src(svgFontCopy))
-		.pipe(newer('build/font/'))
-		.pipe(dest('build/font/'))
-		.pipe(gulpif(isDev, src(ttfTOwoff2)))
-		.pipe(gulpif(isDev, newer('build/font/')))
-		.pipe(gulpif(isDev, dest('build/font/')));
-}
-
-function delfont() {
-	return src(['build/font/*.ttf', 'src/scss/_font.{scss,sass}'], {
-		allowEmpty: true,
-		read: false,
-	}).pipe(clean());
-}
-
-function oldfont() {
 	// const otfTOtff = 'src/font/**/*.{otf,ttf}'; //Extra optimization /needs test/
 	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
 	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
+	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
+	const svgFontCopy = 'src/font/**/*.svg';
 	const fontCss = 'src/font/*.*';
 	return src(otfTOtff)
 		.pipe(newer('src/font/'))
@@ -134,7 +117,14 @@ function oldfont() {
 		.pipe(newer('build/font/'))
 		.pipe(fonter({ formats: ['woff'] }))
 		.pipe(dest('build/font/'))
-		.pipe(gulpif(isDev, src(ttfTOwoff)))
+		.pipe(src(ttfTOwoff2))
+		.pipe(newer('build/font/'))
+		.pipe(ttf2woff2())
+		.pipe(dest('build/font/'))
+		.pipe(src(svgFontCopy))
+		.pipe(newer('build/font/'))
+		.pipe(dest('build/font/'))
+		.pipe(gulpif(isDev, src(ttfTOwoff2)))
 		.pipe(gulpif(isDev, newer('build/font/')))
 		.pipe(gulpif(isDev, dest('build/font/')))
 		.pipe(src(fontCss))
@@ -144,6 +134,13 @@ function oldfont() {
 				filename: '_font.scss',
 			})
 		);
+}
+
+function delfont() {
+	return src(['build/font/*.ttf', 'src/scss/_font.{scss,sass}'], {
+		allowEmpty: true,
+		read: false,
+	}).pipe(clean());
 }
 
 // Svg Sprite
@@ -260,6 +257,6 @@ exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, clr, font, parallel(html, css, js, img));
 exports.img = img;
 exports.font = font;
-exports.everyfonts = series(delfont, oldfont);
+exports.everyfonts = series(delfont, font);
 exports.svg = svg;
 exports.clr = clr;
