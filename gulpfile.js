@@ -90,7 +90,7 @@ function img() {
 function font() {
 	const SrcFont = 'src/font/**/*.{otf,ttf,woff}'; //eot,otf,ttf,otc,ttc
 	const ttfTowoff2 = 'src/font/**/*.{ttf,woff2}';
-	const FontSvgCopy = 'src/font/**/*.svg';
+	const SvgFontCopy = 'src/font/**/*.svg';
 	return (
 		src(SrcFont)
 			// .pipe(newer('src/font/'))
@@ -105,7 +105,7 @@ function font() {
 			.pipe(newer('build/font/'))
 			.pipe(ttf2woff2())
 			.pipe(dest('build/font/'))
-			.pipe(src(FontSvgCopy))
+			.pipe(src(SvgFontCopy))
 			.pipe(newer('build/font/'))
 			.pipe(dest('build/font/'))
 	);
