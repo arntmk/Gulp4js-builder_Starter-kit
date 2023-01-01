@@ -16,7 +16,7 @@ const webpCSS = require('gulp-webp-css-fixed'); // Авто сумісність
 const newer = require('gulp-newer'); //Перевірка файлів.
 const terser = require('gulp-terser'); //Мінімізація JS.
 const plumber = require('gulp-plumber'); //Пошук помилок.
-//const fonter = require('gulp-fonter'); //Конвертатор шрифтів в woff.
+const fonter = require('gulp-fonter'); //Конвертатор шрифтів в woff.
 const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор в woff2.
 const gulpif = require('gulp-if'); //Режим dev or production.
 const babel = require('gulp-babel'); //Підтримка старих браузерів JS.
@@ -88,27 +88,31 @@ function img() {
 // Fonts
 
 function font() {
-	const SrcFont = 'src/font/**/*.{otf,ttf,woff}'; //eot,otf,ttf,otc,ttc
-	const ttfTowoff2 = 'src/font/**/*.{ttf,woff2}';
+	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
 	const SvgFontCopy = 'src/font/**/*.svg';
-	return (
-		src(SrcFont)
-			// .pipe(newer('src/font/'))
-			// .pipe(fonter({ formats: ['ttf'] }))
-			// .pipe(dest('src/font/'))
-			// .pipe(newer('build/font/'))
-			// .pipe(fonter({ formats: ['woff'] }))
-			// .pipe(dest('build/font/'))
-			.pipe(gulpif(isDev, newer('build/font/')))
-			.pipe(gulpif(isDev, dest('build/font/')))
-			.pipe(src(ttfTowoff2))
-			.pipe(newer('build/font/'))
-			.pipe(ttf2woff2())
-			.pipe(dest('build/font/'))
-			.pipe(src(SvgFontCopy))
-			.pipe(newer('build/font/'))
-			.pipe(dest('build/font/'))
-	);
+	return src(ttfTOwoff2)
+		.pipe(gulpif(isDev, newer('build/font/')))
+		.pipe(gulpif(isDev, dest('build/font/')))
+		.pipe(src(ttfTOwoff2))
+		.pipe(newer('build/font/'))
+		.pipe(ttf2woff2())
+		.pipe(dest('build/font/'))
+		.pipe(src(SvgFontCopy))
+		.pipe(newer('build/font/'))
+		.pipe(dest('build/font/'));
+}
+
+function oldfont() {
+	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
+	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
+	return src(otfTOtff)
+		.pipe(newer('src/font/'))
+		.pipe(fonter({ formats: ['ttf'] }))
+		.pipe(dest('src/font/'))
+		.pipe(src(ttfTOwoff))
+		.pipe(newer('build/font/'))
+		.pipe(fonter({ formats: ['woff'] }))
+		.pipe(dest('build/font/'));
 }
 
 // Svg Sprite
@@ -225,5 +229,6 @@ exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, clr, parallel(html, css, js, img, font));
 exports.img = img;
 exports.font = font;
+exports.oldfont = oldfont;
 exports.svg = svg;
 exports.clr = clr;
