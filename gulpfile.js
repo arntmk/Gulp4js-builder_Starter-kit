@@ -260,6 +260,6 @@ exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, clr, font, parallel(html, css, js, img));
 exports.img = img;
 exports.font = font;
-exports.allfont = series(delfont, oldfont);
+exports.everyfonts = series(delfont, oldfont);
 exports.svg = svg;
 exports.clr = clr;
