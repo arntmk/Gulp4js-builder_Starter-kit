@@ -161,8 +161,8 @@ function svg() {
 
 function html() {
 	return src('src/*.html')
-		.pipe(gulpif(isDev, newer('build/index.html')))
 		.pipe(plumber())
+		.pipe(gulpif(isDev, newer('build/index.html')))
 		.pipe(fileinclude({ prefix: '@@' }))
 		.pipe(webpHTML())
 		.pipe(typograf({ locale: ['ru', 'en-US'] }))
@@ -187,8 +187,8 @@ function js() {
 	const SrcJs = require('./src/js/modules.json');
 	return (
 		src(SrcJs, { sourcemaps: isDev })
-			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
 			.pipe(plumber())
+			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
 			//.pipe(typeSpt({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, concat('script.js')))
