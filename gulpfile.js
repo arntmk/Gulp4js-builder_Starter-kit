@@ -18,6 +18,7 @@ const terser = require('gulp-terser'); //Мінімізація JS.
 const plumber = require('gulp-plumber'); //Пошук помилок.
 const fonter = require('gulp-fonter'); //Конвертатор шрифтів в woff.
 const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор в woff2.
+const fontfacegen = require('gulp-fontfacegen'); //fontface gen.
 const gulpif = require('gulp-if'); //Режим dev or production.
 const babel = require('gulp-babel'); //Підтримка старих браузерів JS.
 const typograf = require('gulp-typograf'); //Правопис.
@@ -91,31 +92,47 @@ function font() {
 	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
 	const svgFontCopy = 'src/font/**/*.svg';
 	return src(ttfTOwoff2)
-		.pipe(gulpif(isDev, newer('build/font/')))
-		.pipe(gulpif(isDev, dest('build/font/')))
-		.pipe(src(ttfTOwoff2))
 		.pipe(newer('build/font/'))
 		.pipe(ttf2woff2())
 		.pipe(dest('build/font/'))
 		.pipe(src(svgFontCopy))
 		.pipe(newer('build/font/'))
-		.pipe(dest('build/font/'));
+		.pipe(dest('build/font/'))
+		.pipe(gulpif(isDev, src(ttfTOwoff2)))
+		.pipe(gulpif(isDev, newer('build/font/')))
+		.pipe(gulpif(isDev, dest('build/font/')));
 }
 
-function oldfonts() {
+function delfont() {
+	return src(
+		['build/font/*.ttf', 'src/scss/_font.{scss,sass}'],
+		{ allowEmpty: true },
+		{ read: false }
+	).pipe(clean());
+}
+
+function oldfont() {
 	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
 	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
+	const fontCss = 'src/font/*.*';
 	return src(otfTOtff)
 		.pipe(newer('src/font/'))
 		.pipe(fonter({ formats: ['ttf'] }))
 		.pipe(dest('src/font/'))
 		.pipe(src(ttfTOwoff))
-		.pipe(gulpif(isDev, newer('build/font/')))
-		.pipe(gulpif(isDev, dest('build/font/')))
-		.pipe(src(ttfTOwoff))
 		.pipe(newer('build/font/'))
 		.pipe(fonter({ formats: ['woff'] }))
-		.pipe(dest('build/font/'));
+		.pipe(dest('build/font/'))
+		.pipe(gulpif(isDev, src(ttfTOwoff)))
+		.pipe(gulpif(isDev, newer('build/font/')))
+		.pipe(gulpif(isDev, dest('build/font/')))
+		.pipe(src(fontCss))
+		.pipe(
+			fontfacegen({
+				filepath: 'src/scss',
+				filename: '_font.scss',
+			})
+		);
 }
 
 // Svg Sprite
@@ -232,6 +249,6 @@ exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, clr, font, parallel(html, css, js, img));
 exports.img = img;
 exports.font = font;
-exports.oldfonts = oldfonts;
+exports.oldfonts = series(delfont, oldfont);
 exports.svg = svg;
 exports.clr = clr;
