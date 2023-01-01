@@ -222,7 +222,7 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, clr, font, parallel(html, css, js, img));
+exports.default = series(clear, clr, parallel(html, css, js, img, font));
 exports.img = img;
 exports.font = font;
 exports.svg = svg;
