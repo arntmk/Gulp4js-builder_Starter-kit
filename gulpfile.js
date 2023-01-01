@@ -112,6 +112,7 @@ function delfont() {
 }
 
 function oldfont() {
+	// const otfTOtff = 'src/font/**/*.{otf,ttf}';
 	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
 	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
 	const fontCss = 'src/font/*.*';
