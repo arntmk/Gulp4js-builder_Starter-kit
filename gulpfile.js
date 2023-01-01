@@ -43,13 +43,13 @@ function clear() {
 }
 function clr() {
 	const clrCss = 'build/css/*';
-	const clrJS = 'build/js/*';
+	const clrJs = 'build/js/*';
 	const clrHtml = 'build/*.*';
 	const clrFont = 'build/font/*.{otf,svg}';
 	const clrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
 	return src(clrCss, { read: false })
 		.pipe(gulpif(isDev, clean()))
-		.pipe(src(clrJS), { read: false })
+		.pipe(src(clrJs), { read: false })
 		.pipe(gulpif(isDev, clean()))
 		.pipe(src(clrHtml), { read: false })
 		.pipe(gulpif(isDev, clean()))
