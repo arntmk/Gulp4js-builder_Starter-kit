@@ -42,33 +42,33 @@ function clear() {
 	return src('build/*', { read: false }).pipe(gulpif(isBuild, clean()));
 }
 function clr() {
-	const ClrCss = 'build/css/*';
-	const ClrJS = 'build/js/*';
-	const ClrHtml = 'build/*.*';
-	const ClrFont = 'build/font/*.{otf,svg}';
-	const ClrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
-	return src(ClrCss, { read: false })
+	const clrCss = 'build/css/*';
+	const clrJS = 'build/js/*';
+	const clrHtml = 'build/*.*';
+	const clrFont = 'build/font/*.{otf,svg}';
+	const clrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
+	return src(clrCss, { read: false })
 		.pipe(gulpif(isDev, clean()))
-		.pipe(src(ClrJS), { read: false })
+		.pipe(src(clrJS), { read: false })
 		.pipe(gulpif(isDev, clean()))
-		.pipe(src(ClrHtml), { read: false })
+		.pipe(src(clrHtml), { read: false })
 		.pipe(gulpif(isDev, clean()))
-		.pipe(src(ClrFont), { read: false })
+		.pipe(src(clrFont), { read: false })
 		.pipe(gulpif(isDev, clean()))
-		.pipe(src(ClrImg), { read: false })
+		.pipe(src(clrImg), { read: false })
 		.pipe(gulpif(isDev, clean()));
 }
 
 // Optimize images
 
 function img() {
-	const SrcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,webp}';
-	const SvgCopy = 'src/img/**/*.{svg,webmanifest,json}';
-	return src(SrcImg)
+	const srcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,webp}';
+	const srcCopy = 'src/img/**/*.{svg,webmanifest,json}';
+	return src(srcImg)
 		.pipe(newer('build/img/'))
 		.pipe(webp())
 		.pipe(dest('build/img/'))
-		.pipe(src(SrcImg))
+		.pipe(src(srcImg))
 		.pipe(newer('build/img/'))
 		.pipe(
 			imagemin({
@@ -79,7 +79,7 @@ function img() {
 			})
 		)
 		.pipe(dest('build/img/'))
-		.pipe(src(SvgCopy))
+		.pipe(src(srcCopy))
 		.pipe(newer('build/img/'))
 		.pipe(dest('build/img/'))
 		.pipe(browsersync.stream());
@@ -89,7 +89,7 @@ function img() {
 
 function font() {
 	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
-	const SvgFontCopy = 'src/font/**/*.svg';
+	const svgFontCopy = 'src/font/**/*.svg';
 	return src(ttfTOwoff2)
 		.pipe(gulpif(isDev, newer('build/font/')))
 		.pipe(gulpif(isDev, dest('build/font/')))
@@ -97,7 +97,7 @@ function font() {
 		.pipe(newer('build/font/'))
 		.pipe(ttf2woff2())
 		.pipe(dest('build/font/'))
-		.pipe(src(SvgFontCopy))
+		.pipe(src(svgFontCopy))
 		.pipe(newer('build/font/'))
 		.pipe(dest('build/font/'));
 }
@@ -118,8 +118,8 @@ function oldfont() {
 // Svg Sprite
 
 function svg() {
-	const SrcSvg = 'src/img/svg/*.svg';
-	return src(SrcSvg)
+	const srcSvg = 'src/img/svg/*.svg';
+	return src(srcSvg)
 		.pipe(newer('build/img/svg/'))
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
@@ -167,9 +167,9 @@ function html() {
 // CSS
 
 function css() {
-	// const SrcCss = 'src/scss/**/*.{scss,sass}';
-	const SrcCss = 'src/scss/style.{scss,sass}';
-	return src(SrcCss, { sourcemaps: isDev })
+	// const srcCss = 'src/scss/**/*.{scss,sass}';
+	const srcCss = 'src/scss/style.{scss,sass}';
+	return src(srcCss, { sourcemaps: isDev })
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(plumber())
 		.pipe(sass())
@@ -187,10 +187,10 @@ function css() {
 // JavaScript
 
 function js() {
-	// const SrcJs = 'src/js/**/*.{js,jsx,ts,tsx,vue}';
-	const SrcJs = require('./src/js/modules.json');
+	// const srcJs = 'src/js/**/*.{js,jsx,ts,tsx,vue}';
+	const srcJs = require('./src/js/modules.json');
 	return (
-		src(SrcJs, { sourcemaps: isDev })
+		src(srcJs, { sourcemaps: isDev })
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
 			//.pipe(typeSpt({ noImplicitAny: true, outFile: 'script.min.js' }))
