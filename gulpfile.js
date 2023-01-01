@@ -102,7 +102,7 @@ function font() {
 		.pipe(dest('build/font/'));
 }
 
-function oldfont() {
+function oldfonts() {
 	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
 	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
 	return src(otfTOtff)
@@ -229,6 +229,6 @@ exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, clr, font, parallel(html, css, js, img));
 exports.img = img;
 exports.font = font;
-exports.oldfont = oldfont;
+exports.oldfonts = oldfonts;
 exports.svg = svg;
 exports.clr = clr;
