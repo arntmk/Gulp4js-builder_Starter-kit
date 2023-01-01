@@ -110,6 +110,9 @@ function oldfonts() {
 		.pipe(fonter({ formats: ['ttf'] }))
 		.pipe(dest('src/font/'))
 		.pipe(src(ttfTOwoff))
+		.pipe(gulpif(isDev, newer('build/font/')))
+		.pipe(gulpif(isDev, dest('build/font/')))
+		.pipe(src(ttfTOwoff))
 		.pipe(newer('build/font/'))
 		.pipe(fonter({ formats: ['woff'] }))
 		.pipe(dest('build/font/'));
