@@ -45,7 +45,7 @@ function clr() {
 	const ClrCss = 'build/css/*';
 	const ClrJS = 'build/js/*';
 	const ClrHtml = 'build/*.*';
-	const ClrFonts = 'build/fonts/*.otf';
+	const ClrFont = 'build/font/*.otf';
 	const ClrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
 	return src(ClrCss, { read: false })
 		.pipe(gulpif(isDev, clean()))
@@ -53,7 +53,7 @@ function clr() {
 		.pipe(gulpif(isDev, clean()))
 		.pipe(src(ClrHtml), { read: false })
 		.pipe(gulpif(isDev, clean()))
-		.pipe(src(ClrFonts), { read: false })
+		.pipe(src(ClrFont), { read: false })
 		.pipe(gulpif(isDev, clean()))
 		.pipe(src(ClrImg), { read: false })
 		.pipe(gulpif(isDev, clean()));
@@ -88,26 +88,26 @@ function img() {
 // Fonts
 
 function font() {
-	const SrcFont = 'src/fonts/**/*.{otf,ttf,woff}'; //eot,otf,ttf,otc,ttc
-	const ttfTowoff2 = 'src/fonts/**/*.{ttf,woff2}';
-	const FontSvgCopy = 'src/fonts/**/*.svg';
+	const SrcFont = 'src/font/**/*.{otf,ttf,woff}'; //eot,otf,ttf,otc,ttc
+	const ttfTowoff2 = 'src/font/**/*.{ttf,woff2}';
+	const FontSvgCopy = 'src/font/**/*.svg';
 	return (
 		src(SrcFont)
-			// .pipe(newer('src/fonts/'))
+			// .pipe(newer('src/font/'))
 			// .pipe(fonter({ formats: ['ttf'] }))
-			// .pipe(dest('src/fonts/'))
-			// .pipe(newer('build/fonts/'))
+			// .pipe(dest('src/font/'))
+			// .pipe(newer('build/font/'))
 			// .pipe(fonter({ formats: ['woff'] }))
-			// .pipe(dest('src/fonts/'))
-			.pipe(gulpif(isDev, newer('build/fonts/')))
-			.pipe(gulpif(isDev, dest('build/fonts/')))
+			// .pipe(dest('src/font/'))
+			.pipe(gulpif(isDev, newer('build/font/')))
+			.pipe(gulpif(isDev, dest('build/font/')))
 			.pipe(src(ttfTowoff2))
-			.pipe(newer('build/fonts/'))
+			.pipe(newer('build/font/'))
 			.pipe(ttf2woff2())
-			.pipe(dest('build/fonts/'))
+			.pipe(dest('build/font/'))
 			.pipe(src(FontSvgCopy))
-			.pipe(newer('build/fonts/'))
-			.pipe(dest('build/fonts/'))
+			.pipe(newer('build/font/'))
+			.pipe(dest('build/font/'))
 	);
 }
 
@@ -207,7 +207,7 @@ function watchFiles() {
 	watch('src/**/*.html', html);
 	watch('src/js/**/*.{js,jsx,ts,tsx,vue}', js);
 	watch('src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,webmanifest,json}', img);
-	watch('src/fonts/**/*.{otf,ttf,woff,woff2,svg}', font);
+	watch('src/font/**/*.{otf,ttf,woff,woff2,svg}', font);
 }
 
 // BrowserSync
