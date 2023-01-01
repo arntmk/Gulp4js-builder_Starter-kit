@@ -106,7 +106,7 @@ function font() {
 	// const otfTOtff = 'src/font/**/*.{otf,ttf}'; //Extra optimization /needs test/
 	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
 	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
-	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
+	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff,woff2}';
 	const svgFontCopy = 'src/font/**/*.svg';
 	const fontCss = 'src/font/*.*';
 	return src(otfTOtff)
