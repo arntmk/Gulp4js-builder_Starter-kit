@@ -115,11 +115,10 @@ function font() {
 }
 
 function delfont() {
-	return src(
-		['build/font/*.ttf', 'src/scss/_font.{scss,sass}'],
-		{ allowEmpty: true },
-		{ read: false }
-	).pipe(clean());
+	return src(['build/font/*.ttf', 'src/scss/_font.{scss,sass}'], {
+		allowEmpty: true,
+		read: false,
+	}).pipe(clean());
 }
 
 function oldfont() {
