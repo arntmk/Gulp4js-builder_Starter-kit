@@ -45,7 +45,7 @@ function clr() {
 	const ClrCss = 'build/css/*';
 	const ClrJS = 'build/js/*';
 	const ClrHtml = 'build/*.*';
-	const ClrFont = 'build/font/*.otf';
+	const ClrFont = 'build/font/*.{otf,svg}';
 	const ClrImg = 'build/img/**/*.{ico,gif,svg,webmanifest,json}';
 	return src(ClrCss, { read: false })
 		.pipe(gulpif(isDev, clean()))
