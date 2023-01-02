@@ -189,23 +189,18 @@ function html() {
 function css() {
 	// const srcCss = 'src/scss/style.{scss,sass}';
 	const srcCss = 'src/scss/**/*.{scss,sass}';
-	const copyLibsCss = 'src/scss/libs/*.css';
 	return src(srcCss, { sourcemaps: isDev })
 		.pipe(plumber())
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(sass())
 		.pipe(autoprefixer({ grid: true }))
 		.pipe(webpCSS())
-		.pipe(shorthand())
-		.pipe(groupCSSMedia())
-		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
+		.pipe(gulpif(isBuild, shorthand()))
+		.pipe(gulpif(isBuild, groupCSSMedia()))
+		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isDev })))
 		.pipe(gulpif(isBuild, csso()))
 		.pipe(rename('style.min.css'))
-		.pipe(dest('build/css', { sourcemaps: isDev }))
-		.pipe(src(copyLibsCss))
-		.pipe(gulpif(isDev, changed('build/css/libs/', { extension: '.css' })))
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(dest('build/css/libs/'))
+		.pipe(dest('build/css/', { sourcemaps: isDev }))
 		.pipe(browsersync.stream());
 }
 
@@ -214,7 +209,6 @@ function css() {
 function js() {
 	// const srcJs = 'src/js/**/*.{js,jsx,ts,tsx,vue}';
 	const srcJs = require('./src/js/modules.json');
-	const copyLibsJs = 'src/js/libs/*.js';
 	return (
 		src(srcJs, { sourcemaps: isDev })
 			.pipe(plumber())
@@ -222,16 +216,25 @@ function js() {
 			//.pipe(typeSpt({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, concat('script.js')))
-			.pipe(gulpif(isBuild, dest('build/js', { sourcemaps: isBuild })))
+			.pipe(gulpif(isBuild, dest('build/js', { sourcemaps: isDev })))
 			.pipe(gulpif(isBuild, terser()))
 			.pipe(concat('script.min.js'))
-			.pipe(dest('build/js', { sourcemaps: isDev }))
-			.pipe(src(copyLibsJs))
-			.pipe(gulpif(isDev, changed('build/js/libs/', { extension: '.js' })))
-			.pipe(gulpif(isBuild, terser()))
-			.pipe(dest('build/js/libs/'))
+			.pipe(dest('build/js/', { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
 	);
+}
+
+function copy() {
+	const copyLibsJs = 'src/js/libs/*.js';
+	const copyLibsCss = 'src/scss/libs/*.css';
+	return src(copyLibsJs)
+		.pipe(gulpif(isDev, changed('build/js/libs/', { extension: '.js' })))
+		.pipe(gulpif(isBuild, terser()))
+		.pipe(dest('build/js/libs/'))
+		.pipe(src(copyLibsCss))
+		.pipe(gulpif(isDev, changed('build/css/libs/', { extension: '.css' })))
+		.pipe(gulpif(isBuild, csso()))
+		.pipe(dest('build/css/libs/'));
 }
 
 // Watch files
@@ -256,7 +259,7 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, clr, font, parallel(html, css, js, img));
+exports.default = series(clear, clr, font, parallel(html, css, js, img, copy));
 exports.img = img;
 exports.font = font;
 exports.fontgen = series(delfont, fontgen);

@@ -6,6 +6,7 @@
     	"dev": "gulp"
     	"build": "gulp --production"
     	"svg": "gulp svg"
+    	"fontgen": "gulp fontgen"
     	"clr": "gulp clr"
 
     	Turn off Gulp watch: Ctrl+C+Y
