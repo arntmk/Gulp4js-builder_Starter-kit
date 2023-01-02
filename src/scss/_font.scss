@@ -28,11 +28,11 @@
 @font-face {
 	font-family: 'Inter';
 	font-style: normal;
-	font-weight: 200;
+	font-weight: 500;
 	font-display: swap;
 	src: local(''),
-	url("../font/Inter-ExtraLight.woff2") format("woff2"),
-	url("../font/Inter-ExtraLight.woff") format("woff");
+	url("../font/Inter-Medium.woff2") format("woff2"),
+	url("../font/Inter-Medium.woff") format("woff");
 }
 @font-face {
 	font-family: 'Inter';
@@ -46,11 +46,11 @@
 @font-face {
 	font-family: 'Inter';
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 200;
 	font-display: swap;
 	src: local(''),
-	url("../font/Inter-Medium.woff2") format("woff2"),
-	url("../font/Inter-Medium.woff") format("woff");
+	url("../font/Inter-ExtraLight.woff2") format("woff2"),
+	url("../font/Inter-ExtraLight.woff") format("woff");
 }
 @font-face {
 	font-family: 'Inter';
