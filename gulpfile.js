@@ -8,6 +8,7 @@ const changed = require('gulp-changed'); //Перевірка файлів.
 const clean = require('gulp-clean'); //Видалення Build.
 const gulpif = require('gulp-if'); //Режим dev or production.
 const plumber = require('gulp-plumber'); //Пошук помилок.
+const rename = require('gulp-rename'); //Rename.
 
 const imagemin = require('gulp-imagemin'); //Оптимізація зображення.
 const webp = require('gulp-webp'); //Конвертатор webp.
@@ -16,18 +17,18 @@ const fonter = require('gulp-fonter'); //Конвертатор шрифтів �
 const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор в woff2.
 const fontfacegen = require('gulp-fontfacegen'); //fontface gen.
 
+const webpHTML = require('gulp-webp-html-fixed'); //Авто сумісність webp(html).
+const fileinclude = require('gulp-file-include'); //Модульність для html.
+const htmlmin = require('gulp-htmlmin'); //Мінімізація html.
+const typograf = require('gulp-typograf'); //Правопис.
+const vrnmbr = require('gulp-version-number'); //Build version.
+
 const sass = require('gulp-sass')(require('sass')); //Препроцесор для css.
 const autoprefixer = require('gulp-autoprefixer'); //Додавання префіксів для сумісності.
 const webpCSS = require('gulp-webp-css-fixed'); // Авто сумісність webp(css).
 const groupCSSMedia = require('gulp-group-css-media-queries'); //Групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); //Оптимізація коду.
 const csso = require('gulp-csso'); //Мінімізація css.
-
-const webpHTML = require('gulp-webp-html-fixed'); //Авто сумісність webp(html).
-const fileinclude = require('gulp-file-include'); //Модульність для html.
-const htmlmin = require('gulp-htmlmin'); //Мінімізація html.
-const typograf = require('gulp-typograf'); //Правопис.
-const vrnmbr = require('gulp-version-number'); //Build version.
 
 const terser = require('gulp-terser'); //Мінімізація JS.
 const babel = require('gulp-babel'); //Підтримка старих браузерів JS.
@@ -47,9 +48,7 @@ const isDev = !isBuild;
 // Cleaner
 
 function clear() {
-	return src(['build/*', 'src/scss/_font.{scss,sass}'], { read: false }).pipe(
-		gulpif(isBuild, clean())
-	);
+	return src('build/*', { read: false }).pipe(gulpif(isBuild, clean()));
 }
 function clr() {
 	return src(
@@ -57,9 +56,8 @@ function clr() {
 			// 'build/css/*',
 			// 'build/js/*',
 			// 'build/*.*',
-			// 'build/font/*.{otf,.ttf,svg}',
-			// 'build/img/**/*.{ico,gif,svg,webmanifest,json}',
-			'src/scss/_font.{scss,sass}',
+			'build/font/*.{otf,.ttf,svg}',
+			'build/img/**/*.{ico,gif,svg,webmanifest,json}',
 		],
 		{ read: false }
 	).pipe(gulpif(isDev, clean()));
@@ -106,7 +104,6 @@ function font() {
 	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
 	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff,woff2}';
 	const svgFontCopy = 'src/font/**/*.svg';
-	const fontCss = 'src/font/*.*';
 	return src(otfTOtff)
 		.pipe(changed('src/font/', { extension: '.ttf' }))
 		.pipe(fonter({ formats: ['ttf'] }))
@@ -121,14 +118,21 @@ function font() {
 		.pipe(dest('build/font/'))
 		.pipe(src(svgFontCopy))
 		.pipe(changed('build/font/'))
-		.pipe(dest('build/font/'))
-		.pipe(src(fontCss))
-		.pipe(
-			fontfacegen({
-				filepath: 'src/scss',
-				filename: '_font.scss',
-			})
-		);
+		.pipe(dest('build/font/'));
+}
+
+function fontgen() {
+	const fontCss = 'src/font/*.*';
+	return (
+		src(fontCss)
+			// .pipe(newer('src/font/'))
+			.pipe(
+				fontfacegen({
+					filepath: 'src/scss',
+					filename: '_font.scss',
+				})
+			)
+	);
 }
 
 // Svg Sprite
@@ -183,8 +187,8 @@ function html() {
 // CSS
 
 function css() {
-	// const srcCss = 'src/scss/**/*.{scss,sass}';
-	const srcCss = 'src/scss/style.{scss,sass}';
+	// const srcCss = 'src/scss/style.{scss,sass}';
+	const srcCss = 'src/scss/**/*.{scss,sass}';
 	const copyLibsCss = 'src/scss/libs/*.css';
 	return src(srcCss, { sourcemaps: isDev })
 		.pipe(plumber())
@@ -196,12 +200,12 @@ function css() {
 		.pipe(groupCSSMedia())
 		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
 		.pipe(gulpif(isBuild, csso()))
-		.pipe(concat('style.min.css'))
-		.pipe(dest('build/css/', { sourcemaps: isDev }))
+		.pipe(rename('style.min.css'))
+		.pipe(dest('build/css', { sourcemaps: isDev }))
 		.pipe(src(copyLibsCss))
-		.pipe(gulpif(isDev, changed('build/сss/libs/', { extension: '.css' })))
+		.pipe(gulpif(isDev, changed('build/css/libs/', { extension: '.css' })))
 		.pipe(gulpif(isBuild, csso()))
-		.pipe(dest('build/css/libs'))
+		.pipe(dest('build/css/libs/'))
 		.pipe(browsersync.stream());
 }
 
@@ -225,7 +229,7 @@ function js() {
 			.pipe(src(copyLibsJs))
 			.pipe(gulpif(isDev, changed('build/js/libs/', { extension: '.js' })))
 			.pipe(gulpif(isBuild, terser()))
-			.pipe(dest('build/js/libs'))
+			.pipe(dest('build/js/libs/'))
 			.pipe(browsersync.stream())
 	);
 }
@@ -255,7 +259,6 @@ exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, clr, font, parallel(html, css, js, img));
 exports.img = img;
 exports.font = font;
-exports.delfont = delfont;
-exports.everyfonts = series(delfont, font);
+exports.fontgen = series(delfont, fontgen);
 exports.svg = svg;
 exports.clr = clr;
