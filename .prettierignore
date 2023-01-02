@@ -1,5 +1,5 @@
 # Ignore
-/build
+build/
 build/index.html
 build/css/style.min.css
 build/js/scripts.min.js
