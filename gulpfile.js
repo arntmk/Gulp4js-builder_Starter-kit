@@ -189,7 +189,7 @@ function html() {
 function css() {
 	// const srcCss = 'src/scss/style.{scss,sass}';
 	const srcCss = 'src/scss/**/*.{scss,sass}';
-	return src(srcCss, { sourcemaps: isDev })
+	return src(srcCss, { sourcemaps: true })
 		.pipe(plumber())
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(sass())
@@ -197,7 +197,7 @@ function css() {
 		.pipe(webpCSS())
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(gulpif(isBuild, groupCSSMedia()))
-		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isDev })))
+		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
 		.pipe(gulpif(isBuild, csso()))
 		.pipe(rename('style.min.css'))
 		.pipe(dest('build/css/', { sourcemaps: isDev }))
@@ -210,13 +210,13 @@ function js() {
 	// const srcJs = 'src/js/**/*.{js,jsx,ts,tsx,vue}';
 	const srcJs = require('./src/js/modules.json');
 	return (
-		src(srcJs, { sourcemaps: isDev })
+		src(srcJs, { sourcemaps: true })
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
 			//.pipe(typeSpt({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, concat('script.js')))
-			.pipe(gulpif(isBuild, dest('build/js/', { sourcemaps: isDev })))
+			.pipe(gulpif(isBuild, dest('build/js/', { sourcemaps: isBuild })))
 			.pipe(gulpif(isBuild, terser()))
 			.pipe(concat('script.min.js'))
 			.pipe(dest('build/js/', { sourcemaps: isDev }))
