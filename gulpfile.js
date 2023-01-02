@@ -56,8 +56,8 @@ function clr() {
 			// 'build/css/*',
 			// 'build/js/*',
 			// 'build/*.*',
-			'build/font/*.{otf,.ttf,svg}',
-			'build/img/**/*.{ico,gif,svg,webmanifest,json}',
+			'build/font/*.{otf,ttf,svg}',
+			'build/img/**/*.{svg,webmanifest,json}',
 		],
 		{ read: false }
 	).pipe(gulpif(isDev, clean()));
