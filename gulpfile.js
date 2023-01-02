@@ -216,7 +216,7 @@ function js() {
 			//.pipe(typeSpt({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, concat('script.js')))
-			.pipe(gulpif(isBuild, dest('build/js', { sourcemaps: isDev })))
+			.pipe(gulpif(isBuild, dest('build/js/', { sourcemaps: isDev })))
 			.pipe(gulpif(isBuild, terser()))
 			.pipe(concat('script.min.js'))
 			.pipe(dest('build/js/', { sourcemaps: isDev }))
@@ -226,15 +226,15 @@ function js() {
 
 function copy() {
 	const copyLibsJs = 'src/js/libs/*.js';
-	const copyLibsCss = 'src/scss/libs/*.css';
+	// const copyLibsCss = 'src/scss/libs/*.css';
 	return src(copyLibsJs)
 		.pipe(gulpif(isDev, changed('build/js/libs/', { extension: '.js' })))
 		.pipe(gulpif(isBuild, terser()))
-		.pipe(dest('build/js/libs/'))
-		.pipe(src(copyLibsCss))
-		.pipe(gulpif(isDev, changed('build/css/libs/', { extension: '.css' })))
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(dest('build/css/libs/'));
+		.pipe(dest('build/js/libs/'));
+	// .pipe(src(copyLibsCss))
+	// .pipe(gulpif(isDev, changed('build/css/libs/', { extension: '.css' })))
+	// .pipe(gulpif(isBuild, csso()))
+	// .pipe(dest('build/css/libs/'));
 }
 
 // Watch files
