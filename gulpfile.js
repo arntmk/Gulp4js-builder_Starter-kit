@@ -75,7 +75,6 @@ function delfont() {
 function img() {
 	const srcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,webp}';
 	const srcCopy = 'src/img/**/*.{svg,webmanifest,json}';
-	const srcIco = 'src/*.ico';
 	return src(srcImg)
 		.pipe(changed('build/img/'))
 		.pipe(webp())
@@ -94,9 +93,6 @@ function img() {
 		.pipe(src(srcCopy))
 		.pipe(changed('build/img/'))
 		.pipe(dest('build/img/'))
-		.pipe(src(srcIco))
-		.pipe(changed('build/'))
-		.pipe(dest('build/'))
 		.pipe(browsersync.stream());
 }
 
@@ -168,6 +164,7 @@ function svg() {
 // Html
 
 function html() {
+	const srcIco = 'src/*.ico';
 	return src('src/*.html')
 		.pipe(plumber())
 		.pipe(gulpif(isDev, changed('build/html/pages/', { extension: '.html' })))
@@ -184,6 +181,9 @@ function html() {
 			)
 		)
 		.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
+		.pipe(dest('build/'))
+		.pipe(src(srcIco))
+		.pipe(changed('build/'))
 		.pipe(dest('build/'))
 		.pipe(browsersync.stream());
 }
