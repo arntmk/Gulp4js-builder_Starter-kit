@@ -10,17 +10,10 @@ elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e
 html {
 	box-sizing: border-box;
 	font-size: 6.25%; /* (100% * 1px / 16px = 6.25 | 1rem = 1px) */
-	scroll-behavior: smooth;
 }
 body {
-	min-width: 320px;
 	font-size: 16rem;
 	font-weight: 400;
-	color: var(--color);
-	background: var(--bgcolor);
-	overflow-x: hidden;
-	overflow-anchor: none;
-	break-inside: avoid-column;
 }
 
 /* ========================================================================== */

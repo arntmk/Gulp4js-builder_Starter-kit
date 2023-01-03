@@ -1,5 +1,6 @@
 /* ===============ScrollBar=============================================== */
 html {
+	scroll-behavior: smooth;
 	scrollbar-color: #777 #1c1c1c;
 }
 ::-webkit-scrollbar {
@@ -20,4 +21,13 @@ div.clearfix::after {
 	content: '';
 	display: block;
 	clear: both;
+}
+/* ======================================================================== */
+body {
+	min-width: 320px;
+	color: var(--color);
+	background: var(--bgcolor);
+	overflow-x: hidden;
+	overflow-anchor: none;
+	break-inside: avoid-column;
 }
