@@ -1,9 +1,9 @@
 /* Variables */
 :root {
 	/* COLOR */
-	--bgcolor: whitesmoke;
+	--bgcolor: #eeeeee;
 	--color: #222;
-	--header-bgcolor: #ccc;
+	--header-bgcolor: #eeeeee;
 	--header-color: #222;
 
 	/* BREAKPOINT */
@@ -16,8 +16,6 @@
 	--breakpoint-320: 320px; /* Old-Mobile */
 
 	/* FONT */
-	--font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		system-ui, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
 
 	/* GENERAL */
 }
@@ -26,6 +24,6 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bgcolor: #222;
-		--color: whitesmoke;
+		--color: #eeeeee;
 	}
 }
