@@ -9,14 +9,7 @@ elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e
 }
 html {
 	box-sizing: border-box;
-	font-size: 6.25%; /* (100% * 1px / 16px = 6.25 | 1rem = 1px) */
 }
-body {
-	font-size: 16rem;
-	font-weight: 400;
-}
-
-/* ========================================================================== */
 a {
 	color: inherit;
 	text-decoration: none;
@@ -51,11 +44,6 @@ textarea {
 input[type='button'] {
 	padding: 0.04em 0.3em;
 }
-figure,
-figcaption {
-	display: block;
-	margin: 0;
-}
 ul,
 ol,
 dl {
@@ -80,6 +68,11 @@ p {
 cite {
 	font-style: normal;
 }
+figure,
+figcaption {
+	display: block;
+	margin: 0;
+}
 fieldset,
 legend {
 	/* border-width: 0; */
@@ -92,12 +85,6 @@ td {
 	padding: 0.5em;
 	text-align: center;
 }
-header {
-	top: 0;
-}
-footer {
-	bottom: 0;
-}
 aside,
 nav,
 footer,
@@ -105,4 +92,10 @@ header,
 section,
 article {
 	display: block;
+}
+header {
+	top: 0;
+}
+footer {
+	bottom: 0;
 }
