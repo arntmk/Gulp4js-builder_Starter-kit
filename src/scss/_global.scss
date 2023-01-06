@@ -25,10 +25,10 @@ div.clearfix::after {
 /* ======================================================================== */
 html {
 	font-size: 6.25%; /* (100% * 1px / 16px = 6.25 | 1rem = 1px) */
-	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		system-ui, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
 }
 body {
+	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		system-ui, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
 	font-size: 16rem;
 	font-weight: 400;
 	color: var(--color);
