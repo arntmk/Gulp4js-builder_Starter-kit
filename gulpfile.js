@@ -116,7 +116,7 @@ function font() {
 }
 
 function fontgen() {
-	// const otfTOtff = 'src/font/**/*.{otf,ttf}'; //Extra optimization /needs test/
+	// const tffTOtff = 'src/font/**/*.{otf,ttf}'; //Extra optimization /needs test/
 	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
 	const fontCss = 'src/font/*.*';
 	return (
@@ -207,7 +207,7 @@ function css() {
 		.pipe(dest('build/css/', { sourcemaps: isDev }))
 		.pipe(browsersync.stream());
 }
-function LibsCss() {
+function c() {
 	const copyLibsCss = 'src/scss/libs/*.css';
 	return src(copyLibsCss)
 		.pipe(gulpif(isDev, changed('build/css/libs/', { extension: '.css' })))
@@ -234,7 +234,7 @@ function js() {
 			.pipe(browsersync.stream())
 	);
 }
-function LibsJs() {
+function j() {
 	const copyLibsJs = 'src/js/libs/*.js';
 	return src(copyLibsJs)
 		.pipe(gulpif(isDev, changed('build/js/libs/', { extension: '.js' })))
@@ -264,12 +264,7 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(
-	clear,
-	clr,
-	font,
-	parallel(html, css, js, img, LibsCss, LibsJs)
-);
+exports.default = series(clear, clr, font, parallel(html, css, js, img, c, j));
 exports.img = img;
 exports.font = font;
 exports.fontgen = series(delfont, fontgen);
