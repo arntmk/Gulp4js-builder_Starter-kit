@@ -99,16 +99,10 @@ function img() {
 // Fonts
 
 function font() {
-	// const otfTOtff = 'src/font/**/*.{otf,ttf}'; //Extra optimization /needs test/
-	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
 	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
-	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff,woff2}';
+	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
 	const svgFontCopy = 'src/font/**/*.svg';
-	return src(otfTOtff)
-		.pipe(changed('src/font/', { extension: '.ttf' }))
-		.pipe(fonter({ formats: ['ttf'] }))
-		.pipe(dest('src/font/'))
-		.pipe(src(ttfTOwoff))
+	return src(ttfTOwoff)
 		.pipe(changed('build/font/', { extension: '.woff' }))
 		.pipe(fonter({ formats: ['woff'] }))
 		.pipe(dest('build/font/'))
@@ -122,9 +116,15 @@ function font() {
 }
 
 function fontgen() {
+	// const otfTOtff = 'src/font/**/*.{otf,ttf}'; //Extra optimization /needs test/
+	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
 	const fontCss = 'src/font/*.*';
 	return (
-		src(fontCss)
+		src(otfTOtff)
+			.pipe(changed('src/font/', { extension: '.ttf' }))
+			.pipe(fonter({ formats: ['ttf'] }))
+			.pipe(dest('src/font/'))
+			.pipe(src(fontCss))
 			// .pipe(newer('src/font/'))
 			.pipe(
 				fontfacegen({
@@ -207,6 +207,13 @@ function css() {
 		.pipe(dest('build/css/', { sourcemaps: isDev }))
 		.pipe(browsersync.stream());
 }
+function LibsCss() {
+	const copyLibsCss = 'src/scss/libs/*.css';
+	return src(copyLibsCss)
+		.pipe(gulpif(isDev, changed('build/css/libs/', { extension: '.css' })))
+		.pipe(gulpif(isBuild, csso()))
+		.pipe(dest('build/css/libs/'));
+}
 
 // JavaScript
 
@@ -227,18 +234,12 @@ function js() {
 			.pipe(browsersync.stream())
 	);
 }
-
-function copy() {
+function LibsJs() {
 	const copyLibsJs = 'src/js/libs/*.js';
-	// const copyLibsCss = 'src/scss/libs/*.css';
 	return src(copyLibsJs)
 		.pipe(gulpif(isDev, changed('build/js/libs/', { extension: '.js' })))
 		.pipe(gulpif(isBuild, terser()))
 		.pipe(dest('build/js/libs/'));
-	// .pipe(src(copyLibsCss))
-	// .pipe(gulpif(isDev, changed('build/css/libs/', { extension: '.css' })))
-	// .pipe(gulpif(isBuild, csso()))
-	// .pipe(dest('build/css/libs/'));
 }
 
 // Watch files
@@ -263,7 +264,12 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, clr, font, parallel(html, css, js, img, copy));
+exports.default = series(
+	clear,
+	clr,
+	font,
+	parallel(html, css, js, img, LibsCss, LibsJs)
+);
 exports.img = img;
 exports.font = font;
 exports.fontgen = series(delfont, fontgen);
