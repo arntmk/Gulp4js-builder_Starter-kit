@@ -116,7 +116,7 @@ function font() {
 }
 
 function fontgen() {
-	// const tffTOtff = 'src/font/**/*.{otf,ttf}'; //Extra optimization /needs test/
+	// const tffTOtff = 'src/font/**/*.ttf'; //Extra optimization /needs test/
 	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
 	const fontCss = 'src/font/*.*';
 	return (
