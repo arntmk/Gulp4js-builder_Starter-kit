@@ -50,6 +50,7 @@ const isDev = !isBuild;
 function clear() {
 	return src('build/*', { read: false }).pipe(gulpif(isBuild, clean()));
 }
+
 function clr() {
 	return src(
 		[
@@ -207,6 +208,7 @@ function css() {
 		.pipe(dest('build/css/', { sourcemaps: isDev }))
 		.pipe(browsersync.stream());
 }
+
 function c() {
 	const copyLibsCss = 'src/scss/libs/*.css';
 	return src(copyLibsCss)
@@ -234,6 +236,7 @@ function js() {
 			.pipe(browsersync.stream())
 	);
 }
+
 function j() {
 	const copyLibsJs = 'src/js/libs/*.js';
 	return src(copyLibsJs)
