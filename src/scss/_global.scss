@@ -35,9 +35,15 @@ body {
 	font-style: normal;
 	color: var(--color);
 	background: var(--bgcolor);
+	min-width: 320px;
 	overflow-x: hidden;
 	overflow-anchor: none;
 	break-inside: avoid-column;
-	min-width: 320px;
+}
+header {
+	top: 0;
+}
+footer {
+	bottom: 0;
 }
 /* ======================================================================== */
