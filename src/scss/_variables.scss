@@ -1,9 +1,9 @@
 /* Variables */
 :root {
 	/* COLOR */
-	--bgcolor: #eeeeee;
+	--bgcolor: #eee;
 	--color: #222;
-	--header-bgcolor: #eeeeee;
+	--header-bgcolor: #eee;
 	--header-color: #222;
 
 	/* BREAKPOINT */
@@ -24,6 +24,6 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bgcolor: #222;
-		--color: #eeeeee;
+		--color: #eee;
 	}
 }
