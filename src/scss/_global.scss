@@ -26,8 +26,8 @@ div.clearfix::after {
 html {
 	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		system-ui, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
-	font-size: 6.25%; /* (100% * 1px / 16px = 6.25 | 1rem = 1px) */
 	line-height: 1.58;
+	font-size: 6.25%; /* (100% * 1px / 16px = 6.25 | 1rem = 1px) */
 }
 body {
 	font-size: 16rem;

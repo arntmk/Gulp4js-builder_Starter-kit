@@ -194,11 +194,13 @@ function html() {
 function css() {
 	// const srcCss = 'src/scss/style.{scss,sass}';
 	const srcCss = 'src/scss/**/*.{scss,sass}';
+	const copyLibsCss = 'src/scss/libs/*.css';
 	return src(srcCss, { sourcemaps: true })
 		.pipe(plumber())
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(sass())
 		.pipe(webpCSS())
+		.pipe(gulpif(isBuild, csso()))
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ grid: true }))
@@ -206,15 +208,11 @@ function css() {
 		.pipe(gulpif(isBuild, csso()))
 		.pipe(rename('style.min.css'))
 		.pipe(dest('build/css/', { sourcemaps: isDev }))
-		.pipe(browsersync.stream());
-}
-
-function c() {
-	const copyLibsCss = 'src/scss/libs/*.css';
-	return src(copyLibsCss)
-		.pipe(gulpif(isDev, changed('build/css/libs/', { extension: '.css' })))
+		.pipe(src(copyLibsCss))
+		.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
 		.pipe(gulpif(isBuild, csso()))
-		.pipe(dest('build/css/libs/'));
+		.pipe(dest('build/css/'))
+		.pipe(browsersync.stream());
 }
 
 // JavaScript
@@ -222,6 +220,7 @@ function c() {
 function js() {
 	// const srcJs = 'src/js/**/*.{js,jsx,ts,tsx,vue}';
 	const srcJs = require('./src/js/modules.json');
+	const copyLibsJs = 'src/js/libs/*.js';
 	return (
 		src(srcJs, { sourcemaps: true })
 			.pipe(plumber())
@@ -233,16 +232,12 @@ function js() {
 			.pipe(gulpif(isBuild, terser()))
 			.pipe(concat('script.min.js'))
 			.pipe(dest('build/js/', { sourcemaps: isDev }))
+			.pipe(src(copyLibsJs))
+			.pipe(gulpif(isDev, changed('build/js/', { extension: '.js' })))
+			.pipe(gulpif(isBuild, terser()))
+			.pipe(dest('build/js/'))
 			.pipe(browsersync.stream())
 	);
-}
-
-function j() {
-	const copyLibsJs = 'src/js/libs/*.js';
-	return src(copyLibsJs)
-		.pipe(gulpif(isDev, changed('build/js/libs/', { extension: '.js' })))
-		.pipe(gulpif(isBuild, terser()))
-		.pipe(dest('build/js/libs/'));
 }
 
 // Watch files
@@ -267,7 +262,7 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, clr, font, parallel(html, css, js, img, c, j));
+exports.default = series(clear, clr, font, parallel(html, css, js, img));
 exports.img = img;
 exports.font = font;
 exports.fontgen = series(delfont, fontgen);
