@@ -21,10 +21,11 @@ img {
 	height: auto;
 }
 button,
+select,
 input[type='button'],
 [type='reset'],
 [type='submit'] {
-	background-color: transparent;
+	background-color: #fff;
 	color: inherit;
 	/* border-width: 0; */
 	/* padding: 0; */
@@ -42,10 +43,6 @@ textarea {
 	padding: 0.06em 0.3em;
 	outline: none;
 	border: 0.05em solid #000;
-}
-select {
-	background-color: #fff;
-	cursor: pointer;
 }
 input[type='date'] {
 	padding: 0.03em 0.3em;
