@@ -24,7 +24,7 @@ button,
 input[type='button'],
 [type='reset'],
 [type='submit'] {
-	/* background-color: transparent; */
+	background-color: transparent;
 	color: inherit;
 	/* border-width: 0; */
 	/* padding: 0; */
@@ -40,9 +40,16 @@ input,
 select,
 textarea {
 	padding: 0.06em 0.3em;
+	outline: none;
+	border: 0.05em solid #000;
+}
+select {
+  background-color: #fff;
+	cursor: pointer;
 }
 input[type='button'] {
-	padding: 0.04em 0.3em;
+	padding: 0.03em 0.3em;
+	cursor: pointer;
 }
 ul,
 ol,
@@ -81,6 +88,7 @@ legend {
 }
 th,
 td {
+	background-color: #fff;
 	border: 0.05em solid #000;
 	padding: 0.5em;
 	text-align: center;

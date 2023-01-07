@@ -46,4 +46,17 @@ header {
 footer {
 	bottom: 0;
 }
+button:hover,
+button:focus-visible,
+input:hover,
+input:focus-visible {
+	border: 0.05em solid #ff4500;
+}
+select:hover,
+select:focus,
+textarea:hover,
+textarea:focus {
+	border: 0.05em solid #ff4500;
+}
+
 /* ======================================================================== */
