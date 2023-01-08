@@ -21,7 +21,6 @@ img {
 	height: auto;
 }
 button,
-select,
 input[type='button'],
 [type='reset'],
 [type='submit'] {
@@ -43,6 +42,11 @@ textarea {
 	padding: 0.06em 0.3em;
 	outline: none;
 	border: 0.05em solid #000;
+}
+select {
+	background-color: #fff;
+	color: inherit;
+	cursor: pointer;
 }
 input[type='date'] {
 	padding: 0.03em 0.3em;
