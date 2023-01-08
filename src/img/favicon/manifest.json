@@ -5,12 +5,12 @@
 	"theme_color": "#111111",
 	"icons": [
 		{
-			"src": "/img/favicon/vsc.png",
+			"src": "/img/favicon/vsc-icon.png",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "/img/favicon/vsc.png",
+			"src": "/img/favicon/vsc-icon.png",
 			"type": "image/png",
 			"sizes": "512x512"
 		}
