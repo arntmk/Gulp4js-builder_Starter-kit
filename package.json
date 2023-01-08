@@ -83,6 +83,7 @@
 		"trim-newlines": "4.0.1",
 		"semver-regex": "4.0.3",
 		"got": "12.1.0",
-		"fs-path": "0.0.25"
+		"fs-path": "0.0.25",
+		"nth-check": "2.1.1"
 	}
 }
