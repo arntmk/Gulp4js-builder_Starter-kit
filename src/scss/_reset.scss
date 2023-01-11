@@ -22,8 +22,8 @@ img {
 }
 button,
 input[type='button'],
-[type='reset'],
-[type='submit'] {
+input[type='reset'],
+input[type='submit'] {
 	background-color: #fff;
 	color: inherit;
 	/* border-width: 0; */
@@ -53,7 +53,7 @@ input[type='date'] {
 	cursor: pointer;
 }
 input[type='checkbox'],
-[type='radio'] {
+input[type='radio'] {
 	cursor: pointer;
 }
 ul,
