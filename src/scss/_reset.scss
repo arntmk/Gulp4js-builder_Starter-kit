@@ -1,25 +1,28 @@
-/* Reset.css, /*Typography.css
-elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e
-   ========================================================================== */
+/* ======== elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e ======= */
+/* =========================Reset===Typography============================= */
 *,
 *::before *::after {
 	box-sizing: inherit;
 	margin-top: 0;
 	margin-left: 0;
 }
+
 html {
 	box-sizing: border-box;
 }
+
 a {
 	color: inherit;
 	text-decoration: none;
 	cursor: pointer;
 }
+
 img {
 	display: block;
 	max-width: 100%;
 	height: auto;
 }
+
 button,
 input[type='button'],
 input[type='reset'],
@@ -30,11 +33,13 @@ input[type='submit'] {
 	/* padding: 0; */
 	cursor: pointer;
 }
+
 input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 	margin: 0;
 }
+
 button,
 input,
 select,
@@ -43,19 +48,23 @@ textarea {
 	outline: none;
 	border: 0.05em solid #000;
 }
+
 select {
 	background-color: #fff;
 	color: inherit;
 	cursor: pointer;
 }
+
 input[type='date'] {
 	padding: 0.03em 0.3em;
 	cursor: pointer;
 }
+
 input[type='checkbox'],
 [type='radio'] {
 	cursor: pointer;
 }
+
 ul,
 ol,
 dl {
@@ -64,6 +73,7 @@ dl {
 	list-style-type: none;
 	list-style-position: inside;
 }
+
 h1,
 h2,
 h3,
@@ -74,23 +84,28 @@ h6 {
 	/* font-size: inherit; */
 	font-weight: inherit;
 }
+
 p {
 	margin: 0;
 }
+
 cite {
 	font-style: normal;
 }
+
 figure,
 figcaption {
 	display: block;
 	margin: 0;
 }
+
 fieldset,
 legend {
 	/* border-width: 0; */
 	/* padding: 0; */
 	margin: 0;
 }
+
 th,
 td {
 	background-color: #fff;
@@ -98,6 +113,7 @@ td {
 	padding: 0.5em;
 	text-align: center;
 }
+
 aside,
 nav,
 footer,
