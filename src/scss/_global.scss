@@ -22,6 +22,24 @@ div.clearfix::after {
 	display: block;
 	clear: both;
 }
+/* =======================Linear-Gradient=================================== */
+div.gradient {
+	background: linear-gradient(to top, lightgreen, skyblue);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* background-image: url(); */
+	background-position: center;
+	background-size: cover;
+}
+/* =======================Animation=================================== */
+@keyframes fade {
+	0% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 /* ======================================================================== */
 html {
 	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -48,15 +66,23 @@ footer {
 }
 button:hover,
 button:focus-visible,
-input:hover,
-input:focus-visible {
-	border: 0.05em solid #ff4500;
+input[type='button']:hover,
+input[type='button']:focus-visible,
+input[type='reset']:hover,
+input[type='reset']:focus-visible,
+input[type='submit']:hover,
+input[type='submit']:focus-visible {
+	background-color: #ff4500;
+	animation: fade 0.8s ease;
 }
+input:hover,
+input:focus-visible,
 select:hover,
 select:focus,
 textarea:hover,
 textarea:focus {
 	border: 0.05em solid #ff4500;
+	transition: 0.5s ease;
 }
 
 /* ======================================================================== */
