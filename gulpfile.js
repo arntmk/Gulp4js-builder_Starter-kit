@@ -263,6 +263,7 @@ function browserSync() {
 
 exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, clr, font, parallel(html, css, js, img));
+exports.rebuild = parallel(html, css, js);
 exports.img = img;
 exports.font = font;
 exports.fontgen = series(delfont, fontgen);
