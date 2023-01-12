@@ -19,6 +19,7 @@ html {
 }
 
 /* =======================Utility Classes=================================== */
+/* display: flow-root; or*/
 /* Float clearfix */
 div.clearfix::after {
 	content: '';
@@ -58,6 +59,11 @@ div.clearfix::after {
 	flex-wrap: wrap;
 }
 
+/* Nowrap */
+.nowrap {
+	white-space: nowrap;
+}
+
 /* ======================================================================== */
 html {
 	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -84,6 +90,11 @@ header {
 
 footer {
 	bottom: 0;
+}
+
+::marker {
+	color: #000;
+	/* content: ''; */
 }
 
 button:hover,
