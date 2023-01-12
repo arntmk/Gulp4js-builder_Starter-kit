@@ -113,7 +113,8 @@ function font() {
 		.pipe(dest('build/font/'))
 		.pipe(src(svgFontCopy))
 		.pipe(changed('build/font/'))
-		.pipe(dest('build/font/'));
+		.pipe(dest('build/font/'))
+		.pipe(browsersync.stream());
 }
 
 function fontgen() {
