@@ -199,25 +199,27 @@ function css() {
 	// const srcCss = 'src/scss/style.{scss,sass}';
 	const srcCss = 'src/scss/**/*.{scss,sass}';
 	const copyLibsCss = 'src/scss/libs/*.css';
-	return src(srcCss, { sourcemaps: true })
-		.pipe(plumber())
-		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
-		.pipe(sass())
-		.pipe(webpCSS())
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(gulpif(isBuild, shorthand()))
-		.pipe(gulpif(isBuild, groupCSSMedia()))
-		.pipe(autoprefixer({ grid: true }))
-		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(rename('style.min.css'))
-		.pipe(dest('build/css/', { sourcemaps: isDev }))
-		.pipe(browsersync.stream())
-		.pipe(src(copyLibsCss))
-		.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(dest('build/css/'))
-		.pipe(browsersync.stream());
+	return (
+		src(srcCss, { sourcemaps: true })
+			.pipe(plumber())
+			.pipe(gulpif(isDev, newer('build/css/style.min.css')))
+			.pipe(sass())
+			.pipe(webpCSS())
+			.pipe(csso())
+			// .pipe(shorthand())
+			.pipe(gulpif(isBuild, groupCSSMedia()))
+			.pipe(autoprefixer({ grid: true }))
+			.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
+			.pipe(gulpif(isBuild, csso()))
+			.pipe(rename('style.min.css'))
+			.pipe(dest('build/css/', { sourcemaps: isDev }))
+			.pipe(browsersync.stream())
+			.pipe(src(copyLibsCss))
+			.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
+			.pipe(gulpif(isBuild, csso()))
+			.pipe(dest('build/css/'))
+			.pipe(browsersync.stream())
+	);
 }
 
 // JavaScript
