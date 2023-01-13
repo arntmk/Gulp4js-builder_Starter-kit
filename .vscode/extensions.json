@@ -1,21 +1,22 @@
 {
-  "recommendations": [
-    "formulahendry.auto-close-tag",
-    "formulahendry.auto-rename-tag",
-    "box-of-hats.bemhelper",
-    "naumovs.color-highlight",
-    "pranaygp.vscode-css-peek",
-    "diz.ecsstractor-port",
-    "editorconfig.editorconfig",
-    "solnurkarim.html-to-css-autocompletion",
-    "kisstkondoros.vscode-gutter-preview",
-    "ms-vscode.live-server",
-    "glenn2223.live-sass",
-    "esbenp.prettier-vscode",
-    "alefragnani.project-manager",
-    "vscode-icons-team.vscode-icons",
-    "ecmel.vscode-html-css",
-    "ritwickdey.liveserver",
-    "funkyremi.vscode-google-translate"
-  ]
+	"recommendations": [
+		"formulahendry.auto-close-tag",
+		"formulahendry.auto-rename-tag",
+		"box-of-hats.bemhelper",
+		"naumovs.color-highlight",
+		"pranaygp.vscode-css-peek",
+		"diz.ecsstractor-port",
+		"editorconfig.editorconfig",
+		"solnurkarim.html-to-css-autocompletion",
+		"kisstkondoros.vscode-gutter-preview",
+		"ms-vscode.live-server",
+		"glenn2223.live-sass",
+		"esbenp.prettier-vscode",
+		"alefragnani.project-manager",
+		"vscode-icons-team.vscode-icons",
+		"ecmel.vscode-html-css",
+		"ritwickdey.liveserver",
+		"funkyremi.vscode-google-translate",
+		"cipchk.cssrem"
+	]
 }
