@@ -34,6 +34,15 @@ div.clearfix::after {
 	background-attachment: fixed;
 }
 
+/* Background Image */
+.css-img {
+	/* background-image: url(); */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
 /* Animation */
 @keyframes fade {
 	0% {
@@ -59,15 +68,6 @@ div.clearfix::after {
 .offscreen {
 	position: absolute;
 	left: -10000px;
-}
-
-/* Background Image */
-.css-img {
-	/* background-image: url(); */
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
 }
 
 /* ======================================================================== */
