@@ -43,7 +43,8 @@ input::-moz-focus-inner {
 button,
 input,
 select,
-textarea {
+textarea,
+optgroup {
 	font: inherit;
 	padding: 0.06em 0.3em;
 	outline: none;
