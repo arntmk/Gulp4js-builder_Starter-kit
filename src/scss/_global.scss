@@ -19,13 +19,13 @@ html {
 }
 
 /* =======================Utility Classes=================================== */
-/* display: flow-root; or*/
 /* Float clearfix */
 div.clearfix::after {
 	content: '';
 	display: block;
 	clear: both;
 }
+/* or display: flow-root; */
 
 /* Linear-Gradient */
 .gradient {
