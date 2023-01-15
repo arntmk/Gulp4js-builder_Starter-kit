@@ -117,12 +117,9 @@ input[type='checkbox']:hover,
 	box-shadow: none;
 }
 
-input[type='button']:hover,
-input[type='button']:focus-visible,
-input[type='reset']:hover,
-input[type='reset']:focus-visible,
-input[type='submit']:hover,
-input[type='submit']:focus-visible {
+input:is([type='button']:hover, [type='button']:focus-visible),
+input:is([type='reset']:hover, [type='reset']:focus-visible),
+input:is([type='submit']:hover, [type='submit']:focus-visible) {
 	background-color: #ff4500;
 	box-shadow: 0 0 4px #ff4500;
 	animation: fade 0.9s ease;
