@@ -1,10 +1,13 @@
 /* ======== elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e ======= */
 /* =========================Reset===Typography============================= */
+* {
+	margin-top: 0;
+	margin-left: 0;
+}
+
 *,
 *::before *::after {
 	box-sizing: inherit;
-	margin-top: 0;
-	margin-left: 0;
 }
 
 html {
@@ -68,6 +71,10 @@ input[type='checkbox'],
 	height: 1em;
 	width: 1em;
 	accent-color: #0060df;
+}
+
+form {
+	cursor: default;
 }
 
 ul,
