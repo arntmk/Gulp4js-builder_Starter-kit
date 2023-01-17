@@ -93,11 +93,11 @@ function font() {
 
 function fontgen() {
 	// const tffTOtff = 'src/font/**/*.ttf'; //Extra optimization /needs test/
-	const otfTOtff = 'src/font/**/*.otf'; //eot,otf,ttf,otc,ttc
+	const otfTOtff = 'src/font/**/*.{otf,ttf}'; //eot,otf,ttf,otc,ttc
 	const fontCss = 'src/font/*.*';
 	return (
 		src(otfTOtff)
-			.pipe(changed('src/font/', { extension: '.ttf' }))
+			// .pipe(changed('src/font/', { extension: '.ttf' }))
 			.pipe(fonter({ formats: ['ttf'] }))
 			.pipe(dest('src/font/'))
 			.pipe(src(fontCss))
