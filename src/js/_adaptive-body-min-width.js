@@ -1,37 +1,38 @@
-// Meta-width-Function
+// Adaptive-body-min-width
 function adaptiveSizePageScaleInit(definedStartWidth) {
+	const page = document.documentElement;
+	let clientWidth = page.clientWidth;
+	let pageComputedWidth;
+	let resizeCoef;
+	let resizeCoefPercents;
 	let startWidth = definedStartWidth;
 	if (!(startWidth / 1)) {
 		let bodyMinWidthStr = getComputedStyle(document.body).minWidth;
 		let bodyMinWidthNumber = Number(bodyMinWidthStr.replace(/[^0-9]/g, ''));
 		startWidth = bodyMinWidthNumber;
 	}
-	let firstViewport;
-	function setNewMeta(startWidth) {
-		let screenWidth = screen.width;
-		if (screenWidth <= startWidth) {
-			if (!firstViewport) {
-				firstViewport = document.querySelector('meta[name="viewport"]');
-			}
-			let oldViewport = document.querySelector('meta[name="viewport"]');
-			let newViewport = document.createElement('meta');
-			newViewport.setAttribute('name', 'viewport');
-			newViewport.setAttribute('content', 'width=' + `${startWidth}`);
-			document.head.replaceChild(newViewport, oldViewport);
-		} else if (
-			firstViewport &&
-			document.querySelector('meta[name="viewport"]') != firstViewport
-		) {
-			let oldViewport = document.querySelector('meta[name="viewport"]');
-			document.head.replaceChild(firstViewport, oldViewport);
+	function scalePage(startWidth) {
+		clientWidth = page.clientWidth;
+		if (startWidth / 1 && clientWidth <= startWidth) {
+			pageComputedWidth = parseInt(getComputedStyle(page).width);
+			resizeCoef = clientWidth / pageComputedWidth;
+			resizeCoefPercents = 100 * resizeCoef;
+			page.style.transformOrigin = `top left`;
+			page.style.transform = `scale(${resizeCoef})`;
+			page.style.width = `${resizeCoefPercents}%`;
+			page.style.height = `${resizeCoefPercents}%`;
+		} else {
+			page.style.transform = ``;
+			page.style.transformOrigin = ``;
+			page.style.width = ``;
+			page.style.height = ``;
 		}
 	}
 	window.addEventListener('resize', function () {
-		setNewMeta(startWidth);
+		scalePage(startWidth);
 	});
-	setNewMeta(startWidth);
+	scalePage(startWidth);
 }
-
 function startOnSpecificBrowserInit() {
 	let userAgent = window.navigator.userAgent.toLowerCase();
 	let browser;
@@ -64,3 +65,5 @@ function startOnSpecificBrowserInit() {
 		adaptiveSizePageScaleInit();
 	}
 }
+
+startOnSpecificBrowserInit();
