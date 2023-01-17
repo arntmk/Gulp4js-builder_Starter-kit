@@ -228,7 +228,7 @@ function css() {
 // JavaScript
 
 function js() {
-	// const srcJs = 'src/js/**/*.{js,jsx,ts,tsx,vue}';
+	// const srcJs = 'src/js/*.{js,jsx,ts,tsx,vue}';
 	const srcJs = require('./src/js/modules.json');
 	const copyLibsJs = 'src/js/libs/*.js';
 	return (
