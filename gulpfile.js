@@ -11,6 +11,7 @@ const plumber = require('gulp-plumber'); //Пошук помилок.
 const rename = require('gulp-rename'); //Rename.
 
 const imagemin = require('gulp-imagemin'); //Оптимізація зображення.
+const imageminPngquant = require('imagemin-pngquant'); //Оптимізація png only.
 const webp = require('gulp-webp'); //Конвертатор webp.
 
 const fonter = require('gulp-fonter'); //Конвертатор шрифтів в woff.
@@ -153,8 +154,8 @@ function img() {
 				[
 					imagemin.gifsicle({ interlaced: true }),
 					imagemin.mozjpeg({ quality: 80, progressive: true }),
-					imagemin.optipng({ optimizationLevel: 5 }),
-					// imagemin.pngquant({ quality: [0.8, 0.9] }),
+					// imagemin.optipng({ optimizationLevel: 5 }),
+					imageminPngquant({ quality: [0.8, 1.0] }),
 					imagemin.svgo({
 						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
 					}),

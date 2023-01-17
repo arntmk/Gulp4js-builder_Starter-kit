@@ -75,7 +75,8 @@
 		"gulp-version-number": "^0.2.4",
 		"gulp-webp": "^4.0.1",
 		"gulp-webp-css-fixed": "^1.1.0",
-		"gulp-webp-html-fixed": "^1.0.0"
+		"gulp-webp-html-fixed": "^1.0.0",
+		"imagemin-pngquant": "^9.0.2"
 	},
 	"overrides": {
 		"chokidar": "3.5.3",
@@ -85,6 +86,7 @@
 		"lodash.template": "4.5.0",
 		"trim-newlines": "4.0.1",
 		"semver-regex": "4.0.3",
-		"got": "12.1.0"
+		"got": "12.1.0",
+		"xmldom": "0.6.0"
 	}
 }
