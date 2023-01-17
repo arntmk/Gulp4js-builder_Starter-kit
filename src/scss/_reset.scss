@@ -21,7 +21,12 @@ a {
 }
 
 img {
-	display: block;
+	// display: block;
+	vertical-align: middle;
+}
+
+img,
+svg {
 	max-width: 100%;
 	height: auto;
 }
@@ -49,20 +54,25 @@ select,
 textarea,
 optgroup {
 	font: inherit;
-	padding: 0.06em 0.3em;
+}
+
+button,
+input,
+select,
+textarea {
 	outline: none;
+	padding: 0.06em 0.3em;
 	border: 0.05rem solid #8f8f9d;
 }
 
+textarea,
 select {
 	background-color: #fff;
 	color: inherit;
-	cursor: pointer;
 }
 
 input[type='date'] {
 	padding: 0.03em 0.3em;
-	cursor: pointer;
 }
 
 input[type='checkbox'],
@@ -75,6 +85,12 @@ input[type='checkbox'],
 
 form {
 	cursor: default;
+}
+
+label,
+select,
+input[type='date'] {
+	cursor: pointer;
 }
 
 ul,
@@ -101,7 +117,8 @@ p {
 	margin: 0;
 }
 
-cite {
+cite,
+address {
 	font-style: normal;
 }
 

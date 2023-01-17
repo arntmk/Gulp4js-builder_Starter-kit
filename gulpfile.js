@@ -54,11 +54,11 @@ function clear() {
 function clr() {
 	return src(
 		[
-			// 'build/css/*',
-			// 'build/js/*',
-			// 'build/*.*',
-			'build/font/*.{otf,ttf,svg}',
-			'build/img/**/*.{svg,webmanifest,json}',
+			'build/css/*',
+			'build/js/*',
+			'build/*.*',
+			'build/font/**/*.{otf,ttf}',
+			'build/img/**/*.{webmanifest,json}',
 		],
 		{ read: false }
 	).pipe(gulpif(isDev, clean()));
@@ -74,28 +74,35 @@ function delfont() {
 // Optimize images
 
 function img() {
-	const srcImg = 'src/img/**/*.{png,jpg,jpeg,ico,gif,webp}';
-	const imgCopy = 'src/img/**/*.{svg,webmanifest,json}';
-	return src(srcImg)
+	const srcWebp = 'src/img/**/*.{png,jpg,jpeg}';
+	const srcImg = 'src/img/**/*.{png,jpg,jpeg,gif,svg}';
+	const imgCopy = 'src/img/**/*.{ico,webp,webmanifest,json}';
+	return src(srcWebp)
 		.pipe(changed('build/img/'))
 		.pipe(webp())
 		.pipe(dest('build/img/'))
 		.pipe(src(srcImg))
 		.pipe(changed('build/img/'))
 		.pipe(
-			imagemin({
-				progressive: true,
-				plugins: [{ removeViewBox: true }],
-				interlaced: true,
-				optimizationLevel: 3, //0 to 7
-			})
+			imagemin(
+				[
+					imagemin.gifsicle({ interlaced: true }),
+					imagemin.mozjpeg({ quality: 80, progressive: true }),
+					imagemin.optipng({ optimizationLevel: 5 }),
+					// imagemin.pngquant({ quality: [0.8, 0.9] }),
+					imagemin.svgo({
+						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+					}),
+				],
+				{
+					verbose: true,
+				}
+			)
 		)
 		.pipe(dest('build/img/'))
-		.pipe(browsersync.stream())
 		.pipe(src(imgCopy))
 		.pipe(changed('build/img/'))
-		.pipe(dest('build/img/'))
-		.pipe(browsersync.stream());
+		.pipe(dest('build/img/'));
 }
 
 // Fonts
@@ -112,11 +119,9 @@ function font() {
 		.pipe(changed('build/font/', { extension: '.woff2' }))
 		.pipe(ttf2woff2())
 		.pipe(dest('build/font/'))
-		.pipe(browsersync.stream())
 		.pipe(src(svgFontCopy))
 		.pipe(changed('build/font/'))
-		.pipe(dest('build/font/'))
-		.pipe(browsersync.stream());
+		.pipe(dest('build/font/'));
 }
 
 function fontgen() {
@@ -268,7 +273,7 @@ function browserSync() {
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, clr, font, parallel(html, css, js, img));
+exports.default = series(clear, font, parallel(html, css, js, img));
 exports.img = img;
 exports.font = font;
 exports.fontgen = series(delfont, fontgen);

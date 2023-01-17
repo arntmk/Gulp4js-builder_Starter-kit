@@ -3,4 +3,4 @@ build/
 build/index.html
 build/css/style.min.css
 build/js/scripts.min.js
-src/js/modules.json
+#src/js/modules.json

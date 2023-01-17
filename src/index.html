@@ -31,17 +31,20 @@
 			crossorigin
 		/>
 		<link rel="stylesheet" href="./css/style.min.css" />
-		<script defer src="./js/script.js"></script>
+		<script defer src="./js/script.min.js"></script>
 	</head>
-	<!-- (BEM) Block__Element-ChildElement--Modifier-ChildModifier -->
-	<body class="gradient">
-		<!-- Header -->
-		@@include("html/_header.html")
-		<main>
-			<!-- Main Section-->
-			@@include("html/_main.html")
-		</main>
-		<!-- Footer -->
-		@@include("html/_footer.html")
+	<!-- (BEM) Block__Element--Modifier -->
+	<!-- (BEM) Block-ChildBlock__Element-ChildElement--Modifier-ChildModifier -->
+	<body>
+		<div id="wrappar">
+			<!-- Header -->
+			@@include("html/_header.html")
+			<main class="gradient">
+				<!-- Main Section-->
+				@@include("html/_main.html")
+			</main>
+			<!-- Footer -->
+			@@include("html/_footer.html")
+		</div>
 	</body>
 </html>

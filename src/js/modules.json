@@ -1,5 +1,7 @@
 [
 	"./src/js/libs/vendor.js",
+	"./src/js/script.js",
 	"./src/js/meta-width-function.js",
-	"./src/js/script.js"
+	"./src/js/datetime.js",
+	"./src/js/*.{js,jsx,ts,tsx,vue}"
 ]
