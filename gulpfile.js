@@ -41,7 +41,7 @@ const cheerio = require('gulp-cheerio'); //Видалення непотрібн
 const replace = require('gulp-replace'); //Заміна символів після gulp-cheerio.
 const svgSprite = require('gulp-svg-sprite'); //Об'єднання спрайтів.
 
-// Pproduction build
+// Production build
 
 const isBuild = process.argv.includes('--production');
 const isDev = !isBuild;
