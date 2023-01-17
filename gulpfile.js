@@ -71,40 +71,6 @@ function delfont() {
 	}).pipe(clean());
 }
 
-// Optimize images
-
-function img() {
-	const srcWebp = 'src/img/**/*.{png,jpg,jpeg}';
-	const srcImg = 'src/img/**/*.{png,jpg,jpeg,gif,svg}';
-	const copyImg = 'src/img/**/*.{ico,webp,webmanifest,json}';
-	return src(srcWebp)
-		.pipe(changed('build/img/'))
-		.pipe(webp())
-		.pipe(dest('build/img/'))
-		.pipe(src(srcImg))
-		.pipe(changed('build/img/'))
-		.pipe(
-			imagemin(
-				[
-					imagemin.gifsicle({ interlaced: true }),
-					imagemin.mozjpeg({ quality: 80, progressive: true }),
-					imagemin.optipng({ optimizationLevel: 5 }),
-					// imagemin.pngquant({ quality: [0.8, 0.9] }),
-					imagemin.svgo({
-						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-					}),
-				],
-				{
-					verbose: true,
-				}
-			)
-		)
-		.pipe(dest('build/img/'))
-		.pipe(src(copyImg))
-		.pipe(changed('build/img/'))
-		.pipe(dest('build/img/'));
-}
-
 // Fonts
 
 function font() {
@@ -168,6 +134,40 @@ function svg() {
 			})
 		)
 		.pipe(dest('build/img/svg/'));
+}
+
+// Optimize images
+
+function img() {
+	const srcWebp = 'src/img/**/*.{png,jpg,jpeg}';
+	const srcImg = 'src/img/**/*.{png,jpg,jpeg,gif,svg}';
+	const copyImg = 'src/img/**/*.{ico,webp,webmanifest,json}';
+	return src(srcWebp)
+		.pipe(changed('build/img/'))
+		.pipe(webp())
+		.pipe(dest('build/img/'))
+		.pipe(src(srcImg))
+		.pipe(changed('build/img/'))
+		.pipe(
+			imagemin(
+				[
+					imagemin.gifsicle({ interlaced: true }),
+					imagemin.mozjpeg({ quality: 80, progressive: true }),
+					imagemin.optipng({ optimizationLevel: 5 }),
+					// imagemin.pngquant({ quality: [0.8, 0.9] }),
+					imagemin.svgo({
+						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+					}),
+				],
+				{
+					verbose: true,
+				}
+			)
+		)
+		.pipe(dest('build/img/'))
+		.pipe(src(copyImg))
+		.pipe(changed('build/img/'))
+		.pipe(dest('build/img/'));
 }
 
 // Html
