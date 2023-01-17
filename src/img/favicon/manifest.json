@@ -1,8 +1,8 @@
 {
 	"name": "New Project",
 	"description": "gulp4js-pack for weblayout",
-	"background_color": "#ccc",
-	"theme_color": "#111111",
+	"background_color": "#eee",
+	"theme_color": "#222",
 	"icons": [
 		{
 			"src": "/img/favicon/vsc-icon.png",
