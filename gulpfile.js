@@ -176,7 +176,7 @@ function html() {
 	const copyIcoTxt = 'src/*.{ico,txt}';
 	return src('src/*.html')
 		.pipe(plumber())
-		.pipe(gulpif(isDev, changed('build/html/pages/', { extension: '.html' })))
+		.pipe(gulpif(isDev, changed('build/', { extension: '.html' })))
 		.pipe(fileinclude({ prefix: '@@' }))
 		.pipe(webpHTML())
 		.pipe(typograf({ locale: ['ru', 'en-US'] }))
@@ -201,7 +201,6 @@ function html() {
 // CSS
 
 function css() {
-	// const srcCss = 'src/scss/style.{scss,sass}';
 	const srcCss = 'src/scss/**/*.{scss,sass}';
 	const copyLibsCss = 'src/scss/libs/*.css';
 	return src(srcCss, { sourcemaps: true })
@@ -228,7 +227,6 @@ function css() {
 // JavaScript
 
 function js() {
-	// const srcJs = 'src/js/*.{js,jsx,ts,tsx,vue}';
 	const srcJs = require('./src/js/modules.json');
 	const copyLibsJs = 'src/js/libs/*.js';
 	return (
@@ -243,11 +241,11 @@ function js() {
 			.pipe(concat('script.min.js'))
 			.pipe(dest('build/js/', { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
-			.pipe(src(copyLibsJs))
-			.pipe(gulpif(isDev, changed('build/js/', { extension: '.js' })))
-			.pipe(gulpif(isBuild, terser()))
-			.pipe(dest('build/js/'))
-			.pipe(browsersync.stream())
+		// .pipe(src(copyLibsJs))
+		// .pipe(gulpif(isDev, changed('build/js/', { extension: '.js' })))
+		// .pipe(gulpif(isBuild, terser()))
+		// .pipe(dest('build/js/'))
+		// .pipe(browsersync.stream())
 	);
 }
 

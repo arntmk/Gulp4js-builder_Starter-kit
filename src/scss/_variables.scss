@@ -2,9 +2,9 @@
 :root {
 	/* COLOR */
 	--bgcolor: #eee;
-	--color: #222;
+	--color: #1e1e1e;
 	--header-bgcolor: #eee;
-	--header-color: #222;
+	--header-color: #1e1e1e;
 
 	/* BREAKPOINT */
 	--breakpoint-1400: 1400px; /* Desktop */
@@ -18,12 +18,15 @@
 	/* FONT */
 
 	/* GENERAL */
+	--border: #8f8f9d;
 }
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bgcolor: #222;
+		--bgcolor: #1e1e1e;
 		--color: #eee;
+		--header-bgcolor: #252526;
+		--header-color: #eee;
 	}
 }
