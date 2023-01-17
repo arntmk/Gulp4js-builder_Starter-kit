@@ -76,7 +76,7 @@ function delfont() {
 function img() {
 	const srcWebp = 'src/img/**/*.{png,jpg,jpeg}';
 	const srcImg = 'src/img/**/*.{png,jpg,jpeg,gif,svg}';
-	const imgCopy = 'src/img/**/*.{ico,webp,webmanifest,json}';
+	const copyImg = 'src/img/**/*.{ico,webp,webmanifest,json}';
 	return src(srcWebp)
 		.pipe(changed('build/img/'))
 		.pipe(webp())
@@ -100,7 +100,7 @@ function img() {
 			)
 		)
 		.pipe(dest('build/img/'))
-		.pipe(src(imgCopy))
+		.pipe(src(copyImg))
 		.pipe(changed('build/img/'))
 		.pipe(dest('build/img/'));
 }
@@ -110,7 +110,7 @@ function img() {
 function font() {
 	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
 	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
-	const svgFontCopy = 'src/font/**/*.svg';
+	const copySvgFont = 'src/font/**/*.svg';
 	return src(ttfTOwoff)
 		.pipe(changed('build/font/', { extension: '.woff' }))
 		.pipe(fonter({ formats: ['woff'] }))
@@ -119,7 +119,7 @@ function font() {
 		.pipe(changed('build/font/', { extension: '.woff2' }))
 		.pipe(ttf2woff2())
 		.pipe(dest('build/font/'))
-		.pipe(src(svgFontCopy))
+		.pipe(src(copySvgFont))
 		.pipe(changed('build/font/'))
 		.pipe(dest('build/font/'));
 }
