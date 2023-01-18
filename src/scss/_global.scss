@@ -24,7 +24,8 @@ div.clearfix::after {
 	content: '';
 	display: block;
 	clear: both;
-	/* or display: flow-root; */
+	/* or */
+	/* display: flow-root; */
 }
 
 /* Linear-Gradient */
@@ -53,12 +54,6 @@ div.clearfix::after {
 	}
 }
 
-/* Flex */
-.flex {
-	display: flex;
-	flex-wrap: wrap;
-}
-
 /* Nowrap */
 .nowrap {
 	white-space: nowrap;
@@ -77,19 +72,19 @@ html {
 	line-height: 1.58;
 	font-size: 16px; /* (100% * 1px / 16px = 6.25% | 1rem = 1px) */
 	height: 100%;
+	overflow-anchor: none;
+	break-inside: avoid-column;
 }
 
 body {
 	font-size: clamp(0.82rem, 1.6vw, 1rem);
-	// font-size: 1rem;
+	font-size: 1rem;
 	font-weight: 400;
 	font-style: normal;
 	color: var(--color);
 	background: var(--bgcolor);
 	min-width: 320px;
 	overflow-x: hidden;
-	overflow-anchor: none;
-	break-inside: avoid-column;
 }
 
 header {
@@ -100,7 +95,7 @@ footer {
 	bottom: 0;
 }
 
-/* ul, ol markers */
+/* ul, ol, dl markers */
 ::marker {
 	color: #000;
 	/* content: ''; */
@@ -141,8 +136,14 @@ textarea:focus {
 
 /* ======================================================================== */
 /* ======================================================================== */
-div#wrappar {
+/* Flex */
+div#body-wrappar {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
 }
