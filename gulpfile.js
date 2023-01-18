@@ -177,7 +177,6 @@ function html() {
 	const copyIcoTxt = 'src/*.{ico,txt}';
 	return src('src/*.html')
 		.pipe(plumber())
-		.pipe(gulpif(isDev, changed('build/html/pages/', { extension: '.html' })))
 		.pipe(fileinclude({ prefix: '@@' }))
 		.pipe(webpHTML())
 		.pipe(typograf({ locale: ['ru', 'en-US'] }))
