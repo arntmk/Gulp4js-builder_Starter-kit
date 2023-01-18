@@ -175,30 +175,28 @@ function img() {
 
 function html() {
 	const copyIcoTxt = 'src/*.{ico,txt}';
-	return (
-		src('src/*.html')
-			.pipe(plumber())
-			// .pipe(gulpif(isDev, changed('build/', { extension: '.html' })))
-			.pipe(fileinclude({ prefix: '@@' }))
-			.pipe(webpHTML())
-			.pipe(typograf({ locale: ['ru', 'en-US'] }))
-			.pipe(
-				gulpif(
-					isBuild,
-					vrnmbr({
-						value: '%DT%',
-						append: { key: '_v', cover: 0, to: ['css', 'js'] },
-					})
-				)
+	return src('src/*.html')
+		.pipe(plumber())
+		.pipe(gulpif(isDev, changed('build/html/pages/', { extension: '.html' })))
+		.pipe(fileinclude({ prefix: '@@' }))
+		.pipe(webpHTML())
+		.pipe(typograf({ locale: ['ru', 'en-US'] }))
+		.pipe(
+			gulpif(
+				isBuild,
+				vrnmbr({
+					value: '%DT%',
+					append: { key: '_v', cover: 0, to: ['css', 'js'] },
+				})
 			)
-			.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
-			.pipe(dest('build/'))
-			.pipe(browsersync.stream())
-			.pipe(src(copyIcoTxt))
-			.pipe(changed('build/'))
-			.pipe(dest('build/'))
-			.pipe(browsersync.stream())
-	);
+		)
+		.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
+		.pipe(dest('build/'))
+		.pipe(browsersync.stream())
+		.pipe(src(copyIcoTxt))
+		.pipe(changed('build/'))
+		.pipe(dest('build/'))
+		.pipe(browsersync.stream());
 }
 
 // CSS
