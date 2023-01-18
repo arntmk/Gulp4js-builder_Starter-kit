@@ -1,6 +1,7 @@
 /* ======== elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e ======= */
 /* =========================Reset===Typography============================= */
 * {
+	box-sizing: inherit;
 	margin-top: 0;
 	margin-left: 0;
 }
@@ -62,7 +63,7 @@ select,
 textarea {
 	outline: none;
 	padding: 0.06em 0.3em;
-	border: 0.05rem solid #8f8f9d;
+	border: 0.0625rem solid #8f8f9d;
 }
 
 textarea,
@@ -138,7 +139,7 @@ legend {
 th,
 td {
 	background-color: #fff;
-	border: 0.05rem solid #8f8f9d;
+	border: 0.0625rem solid #8f8f9d;
 	padding: 0.5em;
 	text-align: center;
 }
