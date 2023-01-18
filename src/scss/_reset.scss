@@ -63,7 +63,7 @@ select,
 textarea {
 	outline: none;
 	padding: 0.06em 0.3em;
-	border: 0.0625rem solid #8f8f9d;
+	border: 0.0625rem solid var(--border);
 }
 
 textarea,
@@ -139,7 +139,7 @@ legend {
 th,
 td {
 	background-color: #fff;
-	border: 0.0625rem solid #8f8f9d;
+	border: 0.0625rem solid var(--border);
 	padding: 0.5em;
 	text-align: center;
 }
