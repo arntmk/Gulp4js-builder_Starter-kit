@@ -1,0 +1,19 @@
+// Images tags
+figure;
+img;
+figcaption;
+
+// Table tags
+table;
+thead;
+tbody;
+tfoot;
+//---------//
+caption;
+tr;
+th;
+td;
+
+// Froms tags
+fieldset;
+legend;
