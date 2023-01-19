@@ -153,6 +153,32 @@ textarea:focus {
 	padding: 0 var(--container-offset);
 	max-width: var(--container-width);
 }
+/* Container */
+@media (min-width: var(--breakpoint-1450)) {
+	.container {
+		max-width: 1320px;
+	}
+}
+@media (min-width: var(--breakpoint-1200)) {
+	.container {
+		max-width: 1140px;
+	}
+}
+@media (min-width: var(--breakpoint-992)) {
+	.container {
+		max-width: 960px;
+	}
+}
+@media (min-width: var(--breakpoint-768)) {
+	.container {
+		max-width: 720px;
+	}
+}
+@media (min-width: var(--breakpoint-576)) {
+	.container {
+		max-width: 540px;
+	}
+}
 
 /* Flex */
 div#wrappar {
