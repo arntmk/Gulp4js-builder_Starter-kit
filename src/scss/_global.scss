@@ -30,7 +30,8 @@ div.clearfix::after {
 
 /* Linear-Gradient */
 .gradient {
-	background: linear-gradient(to top, #eee, #4682b4);
+	// background: linear-gradient(to top, #eee, #4682b4);
+	background: radial-gradient(#eee, #4682b4);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
@@ -65,7 +66,7 @@ div.clearfix::after {
 	left: -10000px;
 }
 
-/* Center */
+/* Text-Center */
 .center {
 	text-align: center;
 }
@@ -77,6 +78,8 @@ html {
 	line-height: 1.58;
 	font-size: 16px; /* (100% * 1px / 16px = 6.25% | 1rem = 1px) */
 	height: 100vh;
+	overflow-anchor: none;
+	break-inside: avoid-column;
 }
 
 body {
@@ -88,8 +91,6 @@ body {
 	background: var(--bgcolor);
 	min-width: 320px;
 	overflow-x: hidden;
-	overflow-anchor: none;
-	break-inside: avoid-column;
 }
 
 header {
@@ -98,6 +99,7 @@ header {
 
 main {
 	flex-grow: 1;
+	// min-height: 100vh;
 }
 
 footer {
@@ -106,8 +108,8 @@ footer {
 
 /* ul, ol, dl markers */
 ::marker {
-	color: #000;
 	/* content: ''; */
+	color: #000;
 }
 
 /* ======================================================================== */
@@ -147,7 +149,7 @@ textarea:focus {
 /* ======================================================================== */
 /* Container */
 .container {
-	margin-inline: auto;
+	margin: 0 auto;
 	padding: 0 var(--container-offset);
 	max-width: var(--container-width);
 }
