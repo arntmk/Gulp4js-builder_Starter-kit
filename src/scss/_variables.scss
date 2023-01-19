@@ -22,6 +22,15 @@
 	--border: #8f8f9d;
 }
 
+/* BREAKPOINT */
+$breakpoint-1450: 1450px; /* Desktop */
+$breakpoint-1200: 1200px; /* Desktop */
+$breakpoint-992: 992px; /* Laptop */
+$breakpoint-768: 768px; /* Tablet */
+$breakpoint-576: 576px; /* Mobile */
+$breakpoint-480: 480px; /* Mobile */
+$breakpoint-320: 320px; /* Old-Mobile */
+
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
 	:root {

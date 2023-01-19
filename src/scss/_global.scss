@@ -154,27 +154,27 @@ textarea:focus {
 	max-width: var(--container-width);
 }
 /* Container */
-@media (min-width: var(--breakpoint-1450)) {
+@media (max-width: $breakpoint-1450) {
 	.container {
 		max-width: 1320px;
 	}
 }
-@media (min-width: var(--breakpoint-1200)) {
+@media (max-width: $breakpoint-1200) {
 	.container {
 		max-width: 1140px;
 	}
 }
-@media (min-width: var(--breakpoint-992)) {
+@media (max-width: $breakpoint-992) {
 	.container {
 		max-width: 960px;
 	}
 }
-@media (min-width: var(--breakpoint-768)) {
+@media (max-width: $breakpoint-768) {
 	.container {
 		max-width: 720px;
 	}
 }
-@media (min-width: var(--breakpoint-576)) {
+@media (max-width: $breakpoint-576) {
 	.container {
 		max-width: 540px;
 	}
