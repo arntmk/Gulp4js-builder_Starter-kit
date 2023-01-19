@@ -7,6 +7,9 @@
 	--header-color: #1e1e1e;
 
 	/* BREAKPOINT */
+	--content-width: 1770px;
+	--container-offset: 15px;
+	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 	--breakpoint-1450: 1450px; /* Desktop */
 	--breakpoint-1200: 1200px; /* Desktop */
 	--breakpoint-992: 992px; /* Laptop */
@@ -16,9 +19,6 @@
 	--breakpoint-320: 320px; /* Old-Mobile */
 
 	/* GENERAL */
-	--content-width: 1770px;
-	--container-offset: 15px;
-	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 	--border: #8f8f9d;
 }
 
