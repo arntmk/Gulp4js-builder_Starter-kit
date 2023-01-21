@@ -1,5 +1,6 @@
 // Libs
 @import './libs/vendor.scss';
+@import './libs/normalize.scss';
 // @import './mixins.scss';
 
 // Global SCSS imports
@@ -12,3 +13,5 @@
 @import './html/header.scss';
 @import './html/main.scss';
 @import './html/footer.scss';
+
+// @import './html/pages/**/*';
