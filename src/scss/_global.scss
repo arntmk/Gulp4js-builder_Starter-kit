@@ -56,7 +56,7 @@ footer {
 	bottom: 0;
 }
 
-/* ul, ol, dl markers */
+/* Markers: ul, ol, dl */
 ::marker {
 	/* content: ''; */
 	color: #000;
@@ -85,16 +85,6 @@ div.clearfix::after {
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
-}
-
-/* Animation */
-@keyframes fade {
-	0% {
-		opacity: 0.3;
-	}
-	100% {
-		opacity: 1;
-	}
 }
 
 /* Nowrap */
@@ -126,6 +116,18 @@ div.clearfix::after {
 }
 
 /* ======================================================================== */
+/* Animation */
+@keyframes fade {
+	0% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* ======================================================================== */
+/* Button, Input, Select, Textarea */
 button:hover,
 button:focus-visible {
 	border-color: transparent;
