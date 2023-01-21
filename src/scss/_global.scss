@@ -152,7 +152,7 @@ textarea:focus {
 .container {
 	margin: 0 auto;
 	padding: 0 clamp(10px, 1.5vw, var(--container-offset));
-	width: min(100%, var(--container--max-width));
+	width: min(100%, var(--container-width));
 
 	// max-width: var(--container-width);
 	// width: 100%;
