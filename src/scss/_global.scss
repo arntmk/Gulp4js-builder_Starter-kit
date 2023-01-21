@@ -18,6 +18,50 @@ html {
 	background-color: var(--scrollbar-bgcolor);
 }
 
+/* ======================================================================== */
+html,
+body {
+	height: 100%;
+	overflow-anchor: none;
+	break-inside: avoid-column;
+}
+
+html {
+	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		system-ui, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+	line-height: 1.58;
+	font-size: 16px; /* (100% * 1px / 16px = 6.25% | 1rem = 1px) */ /* 62.5% = (200px /or/ 20rem) */
+}
+
+body {
+	font-size: 1rem;
+	font-size: clamp(0.75rem, 1.5vw, 1rem); /* 18px */
+	font-weight: 400;
+	font-style: normal;
+	color: var(--color);
+	background: var(--bgcolor);
+	min-width: 320px;
+}
+
+header {
+	top: 0;
+}
+
+main {
+	flex: 1 1 auto;
+	/* min-height: 100vh; */
+}
+
+footer {
+	bottom: 0;
+}
+
+/* ul, ol, dl markers */
+::marker {
+	/* content: ''; */
+	color: #000;
+}
+
 /* =======================Utility Classes=================================== */
 /* Float clearfix */
 div.clearfix::after {
@@ -58,59 +102,27 @@ div.clearfix::after {
 	white-space: nowrap;
 }
 
+/* Text-Center */
+.center {
+	text-align: center;
+}
+
 /* Offscreen */
 .offscreen {
 	position: absolute;
 	left: -10000px;
 }
 
-/* Text-Center */
-.center {
-	text-align: center;
-}
-
-/* ======================================================================== */
-html,
-body {
-	height: 100%;
-}
-
-html {
-	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		system-ui, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
-	line-height: 1.58;
-	font-size: 16px; /* (100% * 1px / 16px = 6.25% | 1rem = 1px) */ /* 62.5% = (200px /or/ 20rem) */
-	overflow-anchor: none;
-	break-inside: avoid-column;
-}
-
-body {
-	font-size: 1rem;
-	font-size: clamp(0.75rem, 1.5vw, 1rem); /* 18px */
-	font-weight: 400;
-	font-style: normal;
-	color: var(--color);
-	background: var(--bgcolor);
-	min-width: 320px;
-}
-
-header {
-	top: 0;
-}
-
-main {
-	flex: 1 1 auto;
-	/* min-height: 100vh; */
-}
-
-footer {
-	bottom: 0;
-}
-
-/* ul, ol, dl markers */
-::marker {
-	/* content: ''; */
-	color: #000;
+/* Visually-Hidden */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }
 
 /* ======================================================================== */
@@ -181,6 +193,7 @@ textarea:focus {
 	}
 }
 
+/* Old-CSS Container */
 /* .container {
 	margin: 0 auto;
 	padding: 0 var(--container-offset);
