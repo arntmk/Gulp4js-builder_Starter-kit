@@ -58,11 +58,13 @@ body {
 }
 
 header {
-	position: sticky;
+	// position: fixed;
+	// width: 100%;
 	top: 0;
 }
 
 main {
+	// padding-top: 5rem;
 	flex: 1 1 auto;
 	// min-height: 100vh;
 }
