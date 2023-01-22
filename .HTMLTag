@@ -17,3 +17,6 @@ td;
 // Forms tags
 fieldset;
 legend;
+
+select;
+datalist;
