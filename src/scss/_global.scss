@@ -89,21 +89,6 @@ div.clearfix::after {
 	/* display: flow-root; */
 }
 
-/* Linear-Gradient */
-.gradient {
-	/* background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed; */
-	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
-}
-
-/* Background Image */
-.css-img {
-	/* background-image: url(); */
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
-}
-
 /* Nowrap */
 .nowrap {
 	white-space: nowrap;
@@ -180,6 +165,21 @@ textarea:focus {
 }
 
 /* ======================================================================== */
+/* Gradient */
+.gradient {
+	/* background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed; */
+	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
+}
+
+/* Background Image */
+.css-img {
+	/* background-image: url(); */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
 /* ======================================================================== */
 /* Container */
 .container {
@@ -229,3 +229,5 @@ div#wrappar {
 	display: flex;
 	flex-wrap: wrap;
 }
+/* ======================================================================== */
+/* ======================================================================== */
