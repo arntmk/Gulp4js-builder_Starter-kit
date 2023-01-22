@@ -1,5 +1,5 @@
 /* =========================Global======================================== */
-/* ScrollBar */
+/* ScrollBar for Wibesite*/
 html {
 	scroll-behavior: smooth;
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
@@ -16,6 +16,20 @@ html {
 }
 ::-webkit-scrollbar-track {
 	background-color: var(--scrollbar-bgcolor);
+}
+
+/* ScrollBar for Select and Textarea*/
+select,
+textarea {
+	scrollbar-color: #777 #fff;
+	scrollbar-width: thin;
+}
+select::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track,
+select::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+	background-color: #fff;
+	width: 17px;
 }
 
 /* ======================================================================== */
@@ -44,12 +58,13 @@ body {
 }
 
 header {
+	position: sticky;
 	top: 0;
 }
 
 main {
 	flex: 1 1 auto;
-	/* min-height: 100vh; */
+	// min-height: 100vh;
 }
 
 footer {
@@ -170,6 +185,11 @@ textarea:focus {
 	padding-inline: clamp(10px, 1.5vw, var(--container-offset));
 	width: min(100%, var(--container-width));
 
+	/* 	margin: 0 auto;
+	padding: 0 var(--container-offset);
+	max-width: var(--container-width);
+	width: 100%;
+ */
 	@media (max-width: $breakpoint-1450) {
 		max-width: 1320px;
 	}
@@ -195,20 +215,12 @@ textarea:focus {
 	}
 }
 
-/* Old-CSS Container */
-/* .container {
-	margin: 0 auto;
-	padding: 0 var(--container-offset);
-	max-width: var(--container-width);
-	width: 100%;
-} */
-
 /* Flex */
 div#wrappar {
 	display: flex;
 	flex-flow: column nowrap;
 	min-height: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 .flex {
