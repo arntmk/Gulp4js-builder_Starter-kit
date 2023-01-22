@@ -14,19 +14,19 @@
 select {
 	--selectHoverCol: #1e90ff;
 	--selectedCol: #999;
-	width: 30%;
+	width: 10%;
 	// padding: 0.3em;
 	background-color: #fff;
 	// -webkit-appearance: none;
 	// appearance: none;
 }
 
-select:focus {
-	border-radius: 0;
-	border-color: red;
-	background: #fff;
-	outline: none;
-}
+// select:focus {
+// 	border-radius: 0;
+// 	border-color: red;
+// 	background: #fff;
+// 	outline: none;
+// }
 
 option:hover {
 	background-color: var(--selectHoverCol);
@@ -37,7 +37,7 @@ option:checked {
 	box-shadow: 0 0 1em 100px var(--selectedCol) inset;
 }
 
-/* Scrollbar For Firefox and For Internet Explorer 10+ For WebKit Browsers */
+/* Scrollbar */
 select {
 	scrollbar-width: none;
 	-ms-overflow-style: none;
