@@ -1,0 +1,50 @@
+/* ===============Custom Select======================================= */
+.select-wrap {
+	position: relative;
+}
+
+.select-wrap:focus-within select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+/* ======================================================================== */
+select {
+	--selectHoverCol: #1e90ff;
+	--selectedCol: #999;
+	width: 30%;
+	// padding: 0.3em;
+	background-color: #fff;
+	// -webkit-appearance: none;
+	// appearance: none;
+}
+
+select:focus {
+	border-radius: 0;
+	border-color: red;
+	background: #fff;
+	outline: none;
+}
+
+option:hover {
+	background-color: var(--selectHoverCol);
+	color: #fff;
+}
+
+option:checked {
+	box-shadow: 0 0 1em 100px var(--selectedCol) inset;
+}
+
+/* Scrollbar For Firefox and For Internet Explorer 10+ For WebKit Browsers */
+select {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+select::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+/* ======================================================================== */

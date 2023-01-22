@@ -3,5 +3,6 @@
 	"./src/js/_script.js",
 	"./src/js/_adaptive-body-min-width.js",
 	"./src/js/_datetime.js",
+	"./src/js/_custom-select.js",
 	"./src/js/*.{js,jsx,ts,tsx,vue}"
 ]
