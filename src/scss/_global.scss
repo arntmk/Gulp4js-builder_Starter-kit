@@ -3,6 +3,7 @@
 html {
 	scroll-behavior: smooth;
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
+	scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
