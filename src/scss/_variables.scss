@@ -5,6 +5,12 @@
 	--color: #1e1e1e;
 	--header-bgcolor: #eee;
 	--header-color: #1e1e1e;
+	--border: #8f8f9d;
+	--scrollbar-color: #777;
+	--scrollbar-bgcolor: #1c1c1c;
+	--btn-bgcolor: #fff;
+	--checkbox-radio-color: #0060df;
+	--bgcolor-form-items: #fff;
 
 	/* CONTAINER & BREAKPOINT */
 	--content-width: 1770px; /* 1770+15+15=1800 */
@@ -19,9 +25,6 @@
 	--breakpoint-320: 320px; /* Old-Mobile */
 
 	/* GENERAL */
-	--border: #8f8f9d;
-	--scrollbar-color: #777;
-	--scrollbar-bgcolor: #1c1c1c;
 }
 
 /* Dark Mode */

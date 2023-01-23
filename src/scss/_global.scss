@@ -21,14 +21,14 @@ html {
 /* ScrollBar for Select and Textarea*/
 select,
 textarea {
-	scrollbar-color: #777 #fff;
+	scrollbar-color: var(--scrollbar-color) var(--bgcolor-form-items);
 	scrollbar-width: thin;
 }
 select::-webkit-scrollbar-track,
 textarea::-webkit-scrollbar-track,
 select::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
-	background-color: #fff;
+	background-color: var(--bgcolor-form-items);
 	width: 17px;
 }
 
@@ -222,7 +222,7 @@ div#wrappar {
 	display: flex;
 	flex-flow: column nowrap;
 	min-height: 100%;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .flex {

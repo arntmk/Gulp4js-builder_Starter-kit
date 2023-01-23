@@ -36,7 +36,7 @@ button,
 input[type='button'],
 [type='reset'],
 [type='submit'] {
-	background-color: #fff;
+	background-color: var(--btn-bgcolor);
 	color: inherit;
 	/* border-width: 0; */
 	/* padding: 0; */
@@ -68,7 +68,7 @@ textarea {
 
 textarea,
 select {
-	background-color: #fff;
+	background-color: var(--bgcolor-form-items);
 	color: inherit;
 }
 
@@ -85,7 +85,7 @@ input[type='checkbox'],
 	cursor: pointer;
 	height: 1em;
 	width: 1em;
-	accent-color: #0060df;
+	accent-color: var(--checkbox-radio-color);
 }
 
 form {
@@ -142,7 +142,7 @@ fieldset {
 
 th,
 td {
-	background-color: #fff;
+	background-color: var(--bgcolor-form-items);
 	border: 0.0625rem solid var(--border);
 	padding: 0.5em;
 	text-align: center;
