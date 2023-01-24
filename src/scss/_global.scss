@@ -24,7 +24,7 @@ html {
 /* ScrollBar for Select and Textarea*/
 select,
 textarea {
-	scrollbar-color: var(--scrollbar-color) var(--bgcolor-form-items);
+	scrollbar-color: var(--scrollbar-color) var(--form-items-bgcolor);
 	scrollbar-width: thin;
 }
 
@@ -32,7 +32,7 @@ select::-webkit-scrollbar-track,
 textarea::-webkit-scrollbar-track,
 select::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
-	background-color: var(--bgcolor-form-items);
+	background-color: var(--form-items-bgcolor);
 	width: 17px;
 }
 
@@ -76,12 +76,6 @@ main {
 
 footer {
 	bottom: 0;
-}
-
-/* Markers: ul, ol, dl */
-::marker {
-	/* content: ''; */
-	color: #000;
 }
 
 /* =======================Utility Classes=================================== */
@@ -133,8 +127,8 @@ div.clearfix::after {
 	}
 }
 
-/* ======================================================================== */
-/* Button, Input, Select, Textarea :Pseudo-classes */
+/* =======================:Pseudo-classes=================================== */
+/* Button, Input, Select, Textarea */
 button:hover,
 button:focus-visible {
 	border-color: transparent;
@@ -168,9 +162,15 @@ textarea:focus {
 	box-shadow: 0 0 0.25rem #ff4500;
 	transition: 0.4s ease;
 }
+/* =======================::Pseudo-elements================================= */
+/* Markers: ul, ol, dl */
+::marker {
+	/* content: ''; */
+	color: #000;
+}
 
 /* ======================================================================== */
-/* Container & Sticky Footer*/
+/* Sticky Footer & Container */
 div#wrappar {
 	display: flex;
 	flex-flow: column nowrap;

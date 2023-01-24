@@ -1,5 +1,17 @@
 /* ===================Variables=========================================== */
 :root {
+	/* CONTAINER & BREAKPOINT */
+	--content-width: 1770px; /* 1770+15+15=1800 */
+	--container-offset: 15px; /* 15*2 Left-Right = 30 */
+	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+	--breakpoint-1450: 1450px; /* Desktop+ */
+	--breakpoint-1200: 1200px; /* Desktop */
+	--breakpoint-992: 992px; /* Laptop */
+	--breakpoint-768: 768px; /* Tablet */
+	--breakpoint-576: 576px; /* Mobile */
+	--breakpoint-480: 480px; /* Small-Mobile */
+	--breakpoint-320: 320px; /* Old-Mobile */
+
 	/* COLOR */
 	--bgcolor: #eee;
 	--color: #1e1e1e;
@@ -8,23 +20,12 @@
 	--border: #8f8f9d;
 	--scrollbar-color: #777;
 	--scrollbar-bgcolor: #1c1c1c;
+	--form-items-bgcolor: #fff;
 	--btn-bgcolor: #fff;
-	--color-checkbox-radio: #0060df;
-	--bgcolor-form-items: #fff;
-
-	/* CONTAINER & BREAKPOINT */
-	--content-width: 1770px; /* 1770+15+15=1800 */
-	--container-offset: 15px; /* 15*2 Left-Right = 30 */
-	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-	--breakpoint-1450: 1450px; /* Desktop */
-	--breakpoint-1200: 1200px; /* Desktop */
-	--breakpoint-992: 992px; /* Laptop */
-	--breakpoint-768: 768px; /* Tablet */
-	--breakpoint-576: 576px; /* Mobile */
-	--breakpoint-480: 480px; /* Small-Mobile */
-	--breakpoint-320: 320px; /* Old-Mobile */
+	--checkbox-radio-color: #0060df;
 
 	/* GENERAL */
+	// margin and padding
 }
 
 /* Dark Mode */
@@ -43,7 +44,7 @@
 }
 
 /* SCSS BREAKPOINT */
-$breakpoint-1450: 1449.98 + px; /* Desktop */
+$breakpoint-1450: 1449.98 + px; /* Desktop+ */
 $breakpoint-1200: 1199.98 + px; /* Desktop */
 $breakpoint-992: 991.98 + px; /* Laptop */
 $breakpoint-768: 767.98 + px; /* Tablet */

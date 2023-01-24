@@ -106,7 +106,7 @@ hgroup {
 	display: block;
 }
 
-/* ==========================Table========================================= */
+/* ==========================Table======================================== */
 th,
 td {
 	background-color: #fff;
@@ -143,7 +143,7 @@ textarea {
 
 textarea,
 select {
-	background-color: var(--bgcolor-form-items);
+	background-color: var(--form-items-bgcolor);
 }
 
 select {
@@ -159,5 +159,5 @@ input[type='checkbox'],
 	cursor: pointer;
 	height: 1em;
 	width: 1em;
-	accent-color: var(--color-checkbox-radio);
+	accent-color: var(--checkbox-radio-color);
 }
