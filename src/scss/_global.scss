@@ -69,8 +69,8 @@ header {
 }
 
 main {
-	flex: 1 1 auto;
 	// padding-top: 5rem;
+	flex: 1 1 auto;
 	// min-height: 100vh;
 }
 
@@ -116,8 +116,8 @@ div.clearfix::after {
 	overflow: hidden;
 }
 
-/* ======================================================================== */
-/* Animation */
+/* ========================Animation======================================== */
+/* Opacity */
 @keyframes fade {
 	0% {
 		opacity: 0.3;
@@ -214,13 +214,6 @@ div#wrappar {
 }
 
 /* ======================================================================== */
-/* Flex */
-.flex {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-/* ======================================================================== */
 /* Gradient */
 .gradient {
 	/* background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed; */
@@ -234,6 +227,13 @@ div#wrappar {
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
+}
+
+/* ======================================================================== */
+/* Flex */
+.flex {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 /* ======================================================================== */
