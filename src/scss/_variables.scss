@@ -9,7 +9,7 @@
 	--scrollbar-color: #777;
 	--scrollbar-bgcolor: #1c1c1c;
 	--btn-bgcolor: #fff;
-	--checkbox-radio-color: #0060df;
+	--color-checkbox-radio: #0060df;
 	--bgcolor-form-items: #fff;
 
 	/* CONTAINER & BREAKPOINT */
@@ -21,7 +21,7 @@
 	--breakpoint-992: 992px; /* Laptop */
 	--breakpoint-768: 768px; /* Tablet */
 	--breakpoint-576: 576px; /* Mobile */
-	--breakpoint-480: 480px; /* Mobile */
+	--breakpoint-480: 480px; /* Small-Mobile */
 	--breakpoint-320: 320px; /* Old-Mobile */
 
 	/* GENERAL */
@@ -48,5 +48,5 @@ $breakpoint-1200: 1199.98 + px; /* Desktop */
 $breakpoint-992: 991.98 + px; /* Laptop */
 $breakpoint-768: 767.98 + px; /* Tablet */
 $breakpoint-576: 575.98 + px; /* Mobile */
-$breakpoint-480: 479.98 + px; /* Mobile */
+$breakpoint-480: 479.98 + px; /* Small-Mobile */
 $breakpoint-320: 319.98 + px; /* Old-Mobile */

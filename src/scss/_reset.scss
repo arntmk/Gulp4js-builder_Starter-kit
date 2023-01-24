@@ -1,7 +1,8 @@
 /* ======== elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e ======= */
-/* =========================Reset===Typography============================= */
+/* ======================================================================== */
+/* Reset */
+/* Typography*/
 * {
-	box-sizing: inherit;
 	margin-top: 0;
 	margin-left: 0;
 }
@@ -22,9 +23,9 @@ a {
 }
 
 img {
-	// display: block;
 	vertical-align: middle;
 	width: 100%;
+	// display: block;
 }
 
 img,
@@ -33,21 +34,10 @@ svg {
 	height: auto;
 }
 
-button,
-input[type='button'],
-[type='reset'],
-[type='submit'] {
-	background-color: var(--btn-bgcolor);
-	color: inherit;
-	/* border-width: 0; */
-	/* padding: 0; */
-	cursor: pointer;
-}
-
-input::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-	/* margin: 0; */
+figure,
+figcaption {
+	display: block;
+	margin: 0;
 }
 
 button,
@@ -56,41 +46,17 @@ select,
 textarea,
 optgroup {
 	font: inherit;
-}
-
-button,
-input,
-select,
-textarea {
-	outline: none;
-	padding: 0.06em 0.3em;
-	border: 0.0625rem solid var(--border);
-}
-
-textarea,
-select {
-	background-color: var(--bgcolor-form-items);
 	color: inherit;
-}
-
-select {
-	width: 12.4em;
-}
-
-input[type='date'] {
-	padding: 0.03em 0.3em;
-}
-
-input[type='checkbox'],
-[type='radio'] {
-	cursor: pointer;
-	height: 1em;
-	width: 1em;
-	accent-color: var(--checkbox-radio-color);
 }
 
 form {
 	cursor: default;
+}
+
+fieldset {
+	margin: 0;
+	/* border-width: 0; */
+	/* padding: 0; */
 }
 
 label,
@@ -115,8 +81,8 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	/* font-size: inherit; */
 	font-weight: inherit;
+	/* font-size: inherit; */
 }
 
 p {
@@ -129,26 +95,6 @@ address {
 	font-style: normal;
 }
 
-figure,
-figcaption {
-	display: block;
-	margin: 0;
-}
-
-fieldset {
-	/* border-width: 0; */
-	/* padding: 0; */
-	margin: 0;
-}
-
-th,
-td {
-	background-color: var(--bgcolor-form-items);
-	border: 0.0625rem solid var(--border);
-	padding: 0.5em;
-	text-align: center;
-}
-
 aside,
 nav,
 footer,
@@ -158,4 +104,60 @@ article,
 details,
 hgroup {
 	display: block;
+}
+
+/* ==========================Table========================================= */
+th,
+td {
+	background-color: #fff;
+	border: 0.0625rem solid var(--border);
+	padding: 0.5em;
+	text-align: center;
+}
+
+/* ==========================Form==========================================*/
+button,
+input[type='button'],
+[type='reset'],
+[type='submit'] {
+	background-color: var(--btn-bgcolor);
+	cursor: pointer;
+	/* border-width: 0; */
+	/* padding: 0; */
+}
+
+input::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+	/* margin: 0; */
+}
+
+button,
+input,
+select,
+textarea {
+	outline: none;
+	padding: 0.06em 0.3em;
+	border: 0.0625rem solid var(--border);
+}
+
+textarea,
+select {
+	background-color: var(--bgcolor-form-items);
+}
+
+select {
+	width: 12.4em;
+}
+
+input[type='date'] {
+	padding: 0.03em 0.3em;
+}
+
+input[type='checkbox'],
+[type='radio'] {
+	cursor: pointer;
+	height: 1em;
+	width: 1em;
+	accent-color: var(--color-checkbox-radio);
 }
