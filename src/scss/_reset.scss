@@ -1,7 +1,6 @@
 /* ======== elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e ======= */
-/* ======================================================================== */
-/* Reset */
-/* Typography*/
+/* Typography & Reset */
+/* ===========================Reset======================================== */
 * {
 	margin-top: 0;
 	margin-left: 0;
@@ -104,15 +103,6 @@ article,
 details,
 hgroup {
 	display: block;
-}
-
-/* ==========================Table======================================== */
-th,
-td {
-	background-color: #fff;
-	border: 0.0625rem solid var(--border);
-	padding: 0.5em;
-	text-align: center;
 }
 
 /* ==========================Form==========================================*/
