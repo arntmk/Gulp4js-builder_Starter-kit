@@ -166,9 +166,11 @@ function img() {
 			)
 		)
 		.pipe(dest('build/img/'))
+		.pipe(browsersync.stream())
 		.pipe(src(copyImg))
 		.pipe(changed('build/img/'))
-		.pipe(dest('build/img/'));
+		.pipe(dest('build/img/'))
+		.pipe(browsersync.stream());
 }
 
 // Html
