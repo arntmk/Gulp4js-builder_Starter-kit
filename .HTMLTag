@@ -5,14 +5,14 @@ figcaption;
 
 // Table tags
 table;
-thead;
-tbody;
-tfoot;
-//---------//
 caption;
 tr;
 th;
 td;
+//---------//
+thead;
+tbody;
+tfoot;
 
 // Forms tags
 fieldset;

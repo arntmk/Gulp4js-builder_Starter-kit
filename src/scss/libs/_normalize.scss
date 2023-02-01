@@ -8,9 +8,9 @@
  * 4. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-	font-family: -apple-system, 'Segoe UI', system-ui, Roboto, 'Helvetica Neue',
-		sans-serif;
-	line-height: 1.58;
+	font-family: var(--font-family), -apple-system, 'Segoe UI', system-ui, Roboto,
+		'Helvetica Neue', sans-serif;
+	line-height: 1.5;
 	-ms-overflow-style: scrollbar;
 	-webkit-text-size-adjust: none;
 }

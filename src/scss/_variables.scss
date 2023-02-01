@@ -1,6 +1,6 @@
 /* ===================Variables=========================================== */
 :root {
-	/* CONTAINER & BREAKPOINT */
+	/* CONTAINER & CSS BREAKPOINT */
 	--content-width: 1770px; /* 1770+15+15=1800 */
 	--container-offset: 15px; /* 15*2 Left-Right = 30 */
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
@@ -13,10 +13,10 @@
 	--breakpoint-320: 319.98 + px; /* Old-Mobile */
 
 	/* COLOR */
-	--bgcolor: #eee;
-	--color: #1e1e1e;
 	--header-bgcolor: #eee;
 	--header-color: #1e1e1e;
+	--bgcolor: #eee;
+	--color: #1e1e1e;
 	--border: #8f8f9d;
 	--scrollbar-color: #777;
 	--scrollbar-bgcolor: #1c1c1c;
@@ -25,7 +25,7 @@
 	--checkbox-radio-color: #0060df;
 
 	/* GENERAL */
-	// margin and padding
+	--font-family: 'Nunito';
 }
 
 /* Dark Mode */

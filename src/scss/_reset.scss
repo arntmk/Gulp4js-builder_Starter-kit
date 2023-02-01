@@ -1,18 +1,19 @@
 /* ======== elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e ======= */
 /* Typography & Reset */
 /* ===========================Reset======================================== */
-* {
-	margin-top: 0;
-	margin-left: 0;
+html {
+	box-sizing: border-box;
+	break-inside: avoid-column;
 }
 
 *,
-*::before *::after {
+*::before,
+*::after {
 	box-sizing: inherit;
-}
-
-html {
-	box-sizing: border-box;
+	break-inside: inherit;
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
 a {
@@ -21,16 +22,12 @@ a {
 	cursor: pointer;
 }
 
-img {
-	vertical-align: middle;
-	width: 100%;
-	// display: block;
-}
-
 img,
 svg {
+	vertical-align: middle;
 	max-width: 100%;
 	height: auto;
+	object-fit: cover;
 }
 
 figure,
@@ -52,16 +49,24 @@ form {
 	cursor: default;
 }
 
-fieldset {
-	margin: 0;
-	/* border-width: 0; */
-	/* padding: 0; */
-}
-
 label,
 select,
 input[type='date'] {
 	cursor: pointer;
+}
+
+input[type='checkbox'],
+[type='radio'] {
+	cursor: pointer;
+	height: 1em;
+	width: 1em;
+	accent-color: var(--checkbox-radio-color);
+}
+
+fieldset {
+	margin: 0;
+	border-width: 0;
+	padding: 0;
 }
 
 ul,
@@ -81,12 +86,11 @@ h5,
 h6 {
 	margin: 0;
 	font-weight: inherit;
-	/* font-size: inherit; */
+	font-size: inherit;
 }
 
 p {
 	margin: 0;
-	padding-right: 1em;
 }
 
 cite,
@@ -119,7 +123,6 @@ input[type='button'],
 input::-moz-focus-inner {
 	border-style: none;
 	padding: 0;
-	/* margin: 0; */
 }
 
 button,
@@ -142,12 +145,4 @@ select {
 
 input[type='date'] {
 	padding: 0.03em 0.3em;
-}
-
-input[type='checkbox'],
-[type='radio'] {
-	cursor: pointer;
-	height: 1em;
-	width: 1em;
-	accent-color: var(--checkbox-radio-color);
 }

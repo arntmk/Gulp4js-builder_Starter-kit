@@ -3,7 +3,6 @@
 html {
 	scroll-behavior: smooth;
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
-	scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
@@ -41,13 +40,12 @@ textarea::-webkit-scrollbar {
 html,
 body {
 	height: 100%;
-	line-height: 1.58; /* line-h: 24px / f-size: 16px = "1.5" */
+	line-height: 1.5; /* line-h: 24px / f-size: 16px = "1.5" */
 	overflow-anchor: none;
-	break-inside: avoid-column;
 }
 
 html {
-	font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+	font-family: var(--font-family), -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		system-ui, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
 	font-size: 16px; /* (100% * 1px / 16px = "6.25%" це | 1rem = 1px) */ /* ("62.5%" це | 20rem = 200px) */ /* 18px Max*/
 }
@@ -78,23 +76,13 @@ footer {
 	bottom: 0;
 }
 
-/* ==========================Table======================================== */
-th,
-td {
-	background-color: #fff;
-	border: 0.0625rem solid var(--border);
-	padding: 0.5em;
-	text-align: center;
-}
-
 /* =======================Utility Classes================================== */
 /* Float clearfix */
 div.clearfix::after {
 	content: '';
 	display: block;
 	clear: both;
-	/* or */
-	/* display: flow-root; */
+	/* Or  display: flow-root; */
 }
 
 /* Nowrap */
@@ -194,12 +182,14 @@ div#wrappar {
 	margin-inline: auto;
 	padding-inline: clamp(10px, 1.5vw, var(--container-offset)); /* 10px - 15px */
 	width: min(100%, var(--container-width));
+	box-sizing: border-box;
 
 	/*
 	margin: 0 auto;
 	padding: 0 var(--container-offset);
 	max-width: var(--container-width);
 	width: 100%;
+	box-sizing: border-box;
  */
 
 	@media (max-width: $breakpoint-1450) {

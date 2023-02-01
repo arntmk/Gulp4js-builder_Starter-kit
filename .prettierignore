@@ -1,4 +1,5 @@
 # Ignore
+.HTMLTag
 build/
 build/index.html
 build/css/style.min.css
