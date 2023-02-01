@@ -146,3 +146,12 @@ select {
 input[type='date'] {
 	padding: 0.03em 0.3em;
 }
+
+/* Table */
+th,
+td {
+	background-color: #fff;
+	border: 0.0625rem solid var(--border);
+	padding: 0.5em;
+	text-align: center;
+}
