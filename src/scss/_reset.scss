@@ -36,6 +36,11 @@ figcaption {
 	margin: 0;
 }
 
+input::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
 button,
 input,
 select,
@@ -118,11 +123,6 @@ input[type='button'],
 	cursor: pointer;
 	/* border-width: 0; */
 	/* padding: 0; */
-}
-
-input::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
 }
 
 button,
