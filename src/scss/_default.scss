@@ -175,7 +175,7 @@ div#wrappar {
 	display: flex;
 	flex-flow: column nowrap;
 	min-height: 100%;
-	overflow: hidden;
+	overflow: hidden; /* если используете на сайте position: sticky - уберите эту настройку */
 }
 
 .container {
