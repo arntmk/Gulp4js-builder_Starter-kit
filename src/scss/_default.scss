@@ -122,40 +122,32 @@ div.clearfix::after {
 
 /* =======================:Pseudo-classes=================================== */
 /* Button, Input, Select, Textarea */
-button:hover,
-button:focus-visible {
-	// border-color: transparent;
-	background-color: #ff4500;
-	box-shadow: 0 0 0.25rem #ff4500;
-	animation: fade 0.6s ease;
+button:is(:hover, :focus-visible),
+input:is([type='button']:hover, :focus-visible),
+input:is([type='reset']:hover, :focus-visible),
+input:is([type='submit']:hover, :focus-visible) {
+	color: #fff;
+	border-color: transparent;
+	background-color: #4682b4;
+	box-shadow: 0 0 0.25rem #4682b4;
+	animation: fade 0.3s ease-in-out;
 }
 
-input:is([type='button']:hover, [type='button']:focus-visible),
-input:is([type='reset']:hover, [type='reset']:focus-visible),
-input:is([type='submit']:hover, [type='submit']:focus-visible) {
-	background-color: #ff4500;
-	box-shadow: 0 0 0.25rem #ff4500;
-	animation: fade 0.6s ease;
+input:is(:hover, :focus-visible),
+select:is(:hover, :focus),
+textarea:is(:hover, :focus) {
+	border: 0.0625rem solid #4682b4;
+	box-shadow: 0 0 0.25rem #4682b4;
+	transition: 0.3s ease-in-out;
 }
 
-input[type='checkbox']:hover,
-[type='radio']:hover,
-[type='checkbox']:focus-visible,
-[type='radio']:focus-visible {
+input:is(
+		[type='checkbox']:hover,
+		:focus-visible,
+		[type='radio']:hover,
+		:focus-visible
+	) {
 	box-shadow: none;
-}
-
-button:hover,
-button:focus-visible,
-input:hover,
-input:focus-visible,
-select:hover,
-select:focus,
-textarea:hover,
-textarea:focus {
-	border: 0.0625rem solid #ff4500;
-	box-shadow: 0 0 0.25rem #ff4500;
-	transition: 0.4s ease;
 }
 
 /* ======================================================================== */

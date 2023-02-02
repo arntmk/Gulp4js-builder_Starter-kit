@@ -85,9 +85,15 @@ figcaption {
 	display: block;
 }
 
-/* ==========================Form==========================================*/
+/* ======================Normalize-Form==================================*/
 form {
 	cursor: default;
+}
+
+label,
+select,
+input[type='date'] {
+	cursor: pointer;
 }
 
 button,
@@ -97,12 +103,6 @@ textarea,
 optgroup {
 	color: inherit;
 	font: inherit;
-}
-
-label,
-select,
-input[type='date'] {
-	cursor: pointer;
 }
 
 input[type='checkbox'],
@@ -122,12 +122,20 @@ textarea {
 	outline: none;
 }
 
-input[type='date'] {
-	padding: 0.03em 0.3em;
+button,
+input[type='button'],
+[type='reset'],
+[type='submit'] {
+	background-color: #fff;
+	cursor: pointer;
+	/* background-color: transparent; */
+	/* border-width: 0; */
+	/* padding: 0; */
 }
 
-select {
-	width: 12.4em;
+input::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
 }
 
 textarea,
@@ -135,19 +143,12 @@ select {
 	background-color: #fff;
 }
 
-button,
-input[type='button'],
-[type='reset'],
-[type='submit'] {
-	background-color: #fff;
-	cursor: pointer;
-	// border-width: 0;
-	/* padding: 0; */
+select {
+	width: 12.45em;
 }
 
-input::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
+input[type='date'] {
+	padding: 0.03em 0.3em;
 }
 
 /* Table */
