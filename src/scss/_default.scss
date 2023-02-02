@@ -115,6 +115,11 @@ div.clearfix::after {
 	color: inherit;
 }
 
+::selection {
+	color: #fff;
+	background-color: #3399ff;
+}
+
 /* =======================:Pseudo-classes=================================== */
 /* Button, Input, Select, Textarea */
 button:hover,

@@ -116,16 +116,6 @@ hgroup {
 
 /* ==========================Form==========================================*/
 button,
-input[type='button'],
-[type='reset'],
-[type='submit'] {
-	background-color: var(--btn-bgcolor);
-	cursor: pointer;
-	/* border-width: 0; */
-	/* padding: 0; */
-}
-
-button,
 input,
 select,
 textarea {
@@ -134,17 +124,27 @@ textarea {
 	border: 0.0625rem solid var(--border);
 }
 
-textarea,
-select {
-	background-color: var(--form-items-bgcolor);
+input[type='date'] {
+	padding: 0.03em 0.3em;
 }
 
 select {
 	width: 12.4em;
 }
 
-input[type='date'] {
-	padding: 0.03em 0.3em;
+textarea,
+select {
+	background-color: var(--form-items-bgcolor);
+}
+
+button,
+input[type='button'],
+[type='reset'],
+[type='submit'] {
+	background-color: var(--btn-bgcolor);
+	cursor: pointer;
+	border-width: 0;
+	/* padding: 0; */
 }
 
 /* Table */
