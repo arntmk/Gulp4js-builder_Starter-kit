@@ -23,7 +23,7 @@ html {
 /* ScrollBar for Select and Textarea*/
 select,
 textarea {
-	scrollbar-color: var(--scrollbar-color) var(--form-items-bgcolor);
+	scrollbar-color: var(--scrollbar-color) #fff;
 	scrollbar-width: thin;
 }
 
@@ -117,7 +117,7 @@ div.clearfix::after {
 
 ::selection {
 	color: #fff;
-	background-color: #3399ff;
+	background-color: #4682b4;
 }
 
 /* =======================:Pseudo-classes=================================== */

@@ -2,85 +2,55 @@
 /* Typography & Reset */
 /* ===========================Reset======================================== */
 html {
-	box-sizing: border-box;
 	break-inside: avoid-column;
+	box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
 	break-inside: inherit;
-	margin: 0;
+	box-sizing: inherit;
 	padding: 0;
+	margin: 0;
 	border: 0;
 }
 
 a {
 	color: inherit;
-	text-decoration: none;
 	cursor: pointer;
+	text-decoration: none;
+}
+
+img {
+	vertical-align: middle;
+	object-fit: cover;
 }
 
 img,
 svg {
-	vertical-align: middle;
 	max-width: 100%;
 	height: auto;
-	object-fit: cover;
 }
 
-figure,
-figcaption {
+figure {
 	display: block;
 	margin: 0;
 }
 
-input::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-
-button,
-input,
-select,
-textarea,
-optgroup {
-	font: inherit;
-	color: inherit;
-}
-
-form {
-	cursor: default;
-}
-
-label,
-select,
-input[type='date'] {
-	cursor: pointer;
-}
-
-input[type='checkbox'],
-[type='radio'] {
-	cursor: pointer;
-	height: 1em;
-	width: 1em;
-	accent-color: var(--checkbox-radio-color);
-}
-
 fieldset {
-	margin: 0;
 	border-width: 0;
 	padding: 0;
+	margin: 0;
 }
 
 ul,
 ol,
 dl {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
 	list-style-position: inside;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
 
 h1,
@@ -89,9 +59,9 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
 	font-weight: inherit;
 	font-size: inherit;
+	margin: 0;
 }
 
 p {
@@ -103,25 +73,53 @@ address {
 	font-style: normal;
 }
 
-aside,
 nav,
+aside,
+hgroup,
 footer,
 header,
 section,
 article,
 details,
-hgroup {
+figcaption {
 	display: block;
 }
 
 /* ==========================Form==========================================*/
+form {
+	cursor: default;
+}
+
+button,
+input,
+select,
+textarea,
+optgroup {
+	color: inherit;
+	font: inherit;
+}
+
+label,
+select,
+input[type='date'] {
+	cursor: pointer;
+}
+
+input[type='checkbox'],
+[type='radio'] {
+	accent-color: #0060df;
+	cursor: pointer;
+	height: 1em;
+	width: 1em;
+}
+
 button,
 input,
 select,
 textarea {
-	outline: none;
+	border: 0.0625rem solid #8f8f9d;
 	padding: 0.06em 0.3em;
-	border: 0.0625rem solid var(--border);
+	outline: none;
 }
 
 input[type='date'] {
@@ -134,24 +132,29 @@ select {
 
 textarea,
 select {
-	background-color: var(--form-items-bgcolor);
+	background-color: #fff;
 }
 
 button,
 input[type='button'],
 [type='reset'],
 [type='submit'] {
-	background-color: var(--btn-bgcolor);
+	background-color: #fff;
 	cursor: pointer;
-	border-width: 0;
+	// border-width: 0;
 	/* padding: 0; */
+}
+
+input::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
 }
 
 /* Table */
 th,
 td {
+	border: 0.0625rem solid #8f8f9d;
 	background-color: #fff;
-	border: 0.0625rem solid var(--border);
-	padding: 0.5em;
 	text-align: center;
+	padding: 0.5em;
 }
