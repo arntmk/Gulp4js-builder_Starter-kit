@@ -123,14 +123,19 @@ div.clearfix::after {
 /* =======================:Pseudo-classes=================================== */
 /* Button, Input, Select, Textarea */
 button:is(:hover, :focus-visible),
-input:is([type='button']:hover, :focus-visible),
-input:is([type='reset']:hover, :focus-visible),
-input:is([type='submit']:hover, :focus-visible) {
+input:is([type='button']:hover, [type='button']:focus-visible),
+input:is([type='reset']:hover, [type='button']:focus-visible),
+input:is([type='submit']:hover, [type='button']:focus-visible) {
 	color: #fff;
 	border-color: transparent;
 	background-color: #4682b4;
 	box-shadow: 0 0 0.25rem #4682b4;
 	animation: fade 0.3s ease-in-out;
+}
+
+input:is([type='checkbox']:hover, :focus-visible),
+input:is([type='radio']:hover, :focus-visible) {
+	box-shadow: none;
 }
 
 input:is(:hover, :focus-visible),
@@ -139,15 +144,6 @@ textarea:is(:hover, :focus) {
 	border: 0.0625rem solid #4682b4;
 	box-shadow: 0 0 0.25rem #4682b4;
 	transition: 0.3s ease-in-out;
-}
-
-input:is(
-		[type='checkbox']:hover,
-		:focus-visible,
-		[type='radio']:hover,
-		:focus-visible
-	) {
-	box-shadow: none;
 }
 
 /* ======================================================================== */
