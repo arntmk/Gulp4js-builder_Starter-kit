@@ -4,11 +4,13 @@
 html {
 	break-inside: avoid-column;
 	box-sizing: border-box;
+	overflow-anchor: none;
 }
 
 *,
 *::before,
 *::after {
+	overflow-anchor: inherit;
 	break-inside: inherit;
 	box-sizing: inherit;
 	padding: 0;
@@ -24,13 +26,13 @@ a {
 
 img {
 	vertical-align: middle;
-	object-fit: cover;
 }
 
 img,
 svg {
 	max-width: 100%;
 	height: auto;
+	object-fit: cover;
 }
 
 figure {
