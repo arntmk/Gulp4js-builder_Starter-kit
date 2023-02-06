@@ -13,12 +13,10 @@
 	--breakpoint-320: 319.98 + px; /* Old-Mobile */
 
 	/* COLOR */
-	--header-bgcolor: #eee;
-	--header-color: #1e1e1e;
-	--bgcolor: #eee;
-	--color: #1e1e1e;
 	--scrollbar-color: #777;
 	--scrollbar-bgcolor: #1c1c1c;
+	--bgcolor: #4682b4;
+	--color: #1e1e1e;
 
 	/* FONT */
 	--font-family: 'Nunito';
@@ -28,9 +26,7 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bgcolor: #1e1e1e;
-		--color: #eee;
-		--header-bgcolor: #252526;
-		--header-color: #eee;
+		--color: #fff;
 	}
 }
 

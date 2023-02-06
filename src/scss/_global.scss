@@ -1,24 +1,63 @@
 /* =========================Global======================================== */
+/* Sticky Footer & Container */
+div#wrappar {
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 100%;
+	overflow: hidden; /* если используете на сайте position: sticky - уберите эту настройку */
+}
+
+main.main {
+	display: flex;
+	flex-flow: column nowrap;
+	flex: 1 0 auto;
+}
+
+div.container {
+	margin-inline: auto;
+	padding-inline: clamp(10px, 1.5vw, var(--container-offset)); /* 10px - 15px */
+	width: min(100%, var(--container-width));
+
+	@media (max-width: $breakpoint-1450) {
+		max-width: 1320px;
+	}
+
+	@media (max-width: $breakpoint-1200) {
+		max-width: 1140px;
+	}
+
+	@media (max-width: $breakpoint-992) {
+		max-width: 960px;
+	}
+
+	@media (max-width: $breakpoint-768) {
+		max-width: 720px;
+	}
+
+	@media (max-width: $breakpoint-576) {
+		max-width: 540px;
+	}
+
+	@media (max-width: $breakpoint-480) {
+		max-width: none;
+	}
+}
+
+/* ======================================================================== */
 /* Gradient */
-.gradient {
-	/* background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed; */
+.body {
+	// background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
 	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
 }
 
 /* Background Image */
-.css-img {
-	/* background-image: url(); */
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
-}
-
-/* Flex */
-.flex {
-	display: flex;
-	flex-wrap: wrap;
-}
+// .css-img {
+// 	background-image: url();
+// 	background-repeat: no-repeat;
+// 	background-attachment: fixed;
+// 	background-position: center;
+// 	background-size: cover;
+// }
 
 /* ======================================================================== */
 /* ======================================================================== */
