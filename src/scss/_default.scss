@@ -96,17 +96,6 @@ div.clearfix::after {
 	overflow: hidden;
 }
 
-/* ========================Animation======================================== */
-/* Opacity */
-@keyframes fade {
-	0% {
-		opacity: 0.3;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 /* =======================::Pseudo-elements================================= */
 /* Markers for: ul, ol, dl */
 ::marker {
