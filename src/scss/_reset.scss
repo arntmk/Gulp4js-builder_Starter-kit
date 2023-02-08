@@ -83,18 +83,22 @@ header,
 section,
 article,
 details,
+legend,
 figcaption {
 	display: block;
 }
 
-/* ======================Normalize-Form==================================*/
+input::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
 form {
 	cursor: default;
 }
 
 label,
-select,
-input[type='date'] {
+select {
 	cursor: pointer;
 }
 
@@ -105,59 +109,4 @@ textarea,
 optgroup {
 	color: inherit;
 	font: inherit;
-}
-
-input[type='checkbox'],
-[type='radio'] {
-	accent-color: #0060df;
-	cursor: pointer;
-	height: 1em;
-	width: 1em;
-}
-
-button,
-input,
-select,
-textarea {
-	border: 0.0625rem solid #8f8f9d;
-	padding: 0.06em 0.3em;
-	outline: none;
-}
-
-button,
-input[type='button'],
-[type='reset'],
-[type='submit'] {
-	background-color: #fff;
-	cursor: pointer;
-	/* background-color: transparent; */
-	/* border-width: 0; */
-	/* padding: 0; */
-}
-
-input::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-
-textarea,
-select {
-	background-color: #fff;
-}
-
-select {
-	width: 12.45em;
-}
-
-input[type='date'] {
-	padding: 0.03em 0.3em;
-}
-
-/* Table */
-th,
-td {
-	border: 0.0625rem solid #8f8f9d;
-	background-color: #fff;
-	text-align: center;
-	padding: 0.5em;
 }

@@ -96,6 +96,12 @@ div.clearfix::after {
 	overflow: hidden;
 }
 
+.btn-reset {
+	background-color: transparent;
+	border-width: 0;
+	padding: 0;
+}
+
 /* =======================::Pseudo-elements================================= */
 /* Markers for: ul, ol, dl */
 ::marker {
@@ -109,7 +115,7 @@ div.clearfix::after {
 }
 
 /* =======================:Pseudo-classes=================================== */
-/* Button, Input, Select, Textarea */
+/* Link, Button, Input, Select, Textarea */
 button:is(:hover, :focus-visible),
 input:is([type='button']:hover, [type='button']:focus-visible),
 input:is([type='reset']:hover, [type='button']:focus-visible),
@@ -121,8 +127,9 @@ input:is([type='submit']:hover, [type='button']:focus-visible) {
 	animation: fade 0.3s ease-in-out;
 }
 
-input:is([type='checkbox']:hover, :focus-visible),
-input:is([type='radio']:hover, :focus-visible) {
+input:is([type='checkbox']:hover, [type='checkbox']:focus-visible),
+input:is([type='radio']:hover, [type='radio']:focus-visible),
+input:is([type='range']:hover, [type='range']:focus-visible) {
 	box-shadow: none;
 }
 
@@ -132,4 +139,58 @@ textarea:is(:hover, :focus) {
 	border: 0.0625rem solid #4682b4;
 	box-shadow: 0 0 0.25rem #4682b4;
 	transition: 0.3s ease-in-out;
+}
+
+:is(a:hover, a:focus-visible) {
+	color: darken(#4682b4, 10%);
+	transition: 0.3s ease-in-out;
+}
+
+/* ======================Normalize-Form==================================*/
+button,
+input[type='button'],
+[type='reset'],
+[type='submit'] {
+	background-color: #fff;
+	cursor: pointer;
+}
+
+input[type='checkbox'],
+[type='radio'] {
+	accent-color: #0060df;
+	cursor: pointer;
+	height: 1em;
+	width: 1em;
+}
+
+button,
+input,
+select,
+textarea {
+	border: 0.0625rem solid #8f8f9d;
+	padding: 0.09em 0.3em;
+	outline: none;
+}
+
+input[type='file'] {
+	background-color: #fff;
+	cursor: pointer;
+}
+
+textarea,
+select {
+	background-color: #fff;
+}
+
+select {
+	width: 12.45em;
+}
+
+/* Table */
+th,
+td {
+	border: 0.0625rem solid #8f8f9d;
+	background-color: #fff;
+	text-align: center;
+	padding: 0.5em;
 }
