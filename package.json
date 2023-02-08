@@ -14,7 +14,7 @@
 	},
 	"browserslist": [
 		"last 3 version",
-		"> 0.75%",
+		"> 1%",
 		"defaults and supports es6-module",
 		"maintained node versions",
 		"not dead"
