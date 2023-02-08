@@ -26,13 +26,14 @@ a {
 
 img {
 	vertical-align: middle;
+	object-fit: cover;
 }
 
 img,
-svg {
+svg,
+video {
 	max-width: 100%;
 	height: auto;
-	object-fit: cover;
 }
 
 figure {
@@ -99,6 +100,7 @@ textarea,
 optgroup {
 	color: inherit;
 	font: inherit;
+	line-height: inherit;
 }
 
 input::-moz-focus-inner {
@@ -109,12 +111,7 @@ input::-moz-focus-inner {
 label,
 select,
 input[type='range'],
-input[type='date']::-webkit-calendar-picker-indicator,
-input[type='datetime-local']::-webkit-calendar-picker-indicator,
-input[type='time']::-webkit-calendar-picker-indicator,
-input[type='month']::-webkit-calendar-picker-indicator,
-input[type='week']::-webkit-calendar-picker-indicator,
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
+input::-webkit-calendar-picker-indicator,
+input::-webkit-inner-spin-button {
 	cursor: pointer;
 }
