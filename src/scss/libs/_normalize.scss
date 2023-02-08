@@ -7,8 +7,8 @@
  */
 
  html {
-	box-sizing: border-box;
-	background-repeat: no-repeat;
+	box-sizing: border-box;	/* 1 */
+	background-repeat: no-repeat;	/* 2 */
 }
 
 *,
