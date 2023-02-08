@@ -129,7 +129,8 @@ input:is([type='submit']:hover, [type='button']:focus-visible) {
 
 input:is([type='checkbox']:hover, [type='checkbox']:focus-visible),
 input:is([type='radio']:hover, [type='radio']:focus-visible),
-input:is([type='range']:hover, [type='range']:focus-visible) {
+input:is([type='range']:hover, [type='range']:focus-visible),
+input:is([type='file']:hover, [type='file']:focus-visible) {
 	box-shadow: none;
 }
 
@@ -151,7 +152,7 @@ button,
 input[type='button'],
 [type='reset'],
 [type='submit'] {
-	background-color: #fff;
+	background-color: #f0f0f0;
 	cursor: pointer;
 }
 
@@ -174,7 +175,16 @@ textarea {
 
 input[type='file'] {
 	background-color: #fff;
+}
+
+input[type='file']::file-selector-button {
+	background-color: #f0f0f0;
+	border: thin solid #8f8f9d;
+	border-radius: 0.1875rem;
+	padding: 0.09em 1em;
 	cursor: pointer;
+	color: inherit;
+	font: inherit;
 }
 
 textarea,

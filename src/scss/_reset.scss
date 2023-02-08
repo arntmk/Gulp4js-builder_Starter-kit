@@ -88,18 +88,8 @@ figcaption {
 	display: block;
 }
 
-input::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-
 form {
 	cursor: default;
-}
-
-label,
-select {
-	cursor: pointer;
 }
 
 button,
@@ -109,4 +99,22 @@ textarea,
 optgroup {
 	color: inherit;
 	font: inherit;
+}
+
+input::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+label,
+select,
+input[type='range'],
+input[type='date']::-webkit-calendar-picker-indicator,
+input[type='datetime-local']::-webkit-calendar-picker-indicator,
+input[type='time']::-webkit-calendar-picker-indicator,
+input[type='month']::-webkit-calendar-picker-indicator,
+input[type='week']::-webkit-calendar-picker-indicator,
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+	cursor: pointer;
 }
