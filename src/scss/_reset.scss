@@ -2,6 +2,7 @@
 /* Typography & Reset */
 /* ===========================Reset======================================== */
 html {
+	background-repeat: no-repeat;
 	break-inside: avoid-column;
 	box-sizing: border-box;
 	overflow-anchor: none;
@@ -10,6 +11,7 @@ html {
 *,
 *::before,
 *::after {
+	background-repeat: inherit;
 	overflow-anchor: inherit;
 	break-inside: inherit;
 	box-sizing: inherit;

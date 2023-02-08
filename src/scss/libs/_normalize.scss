@@ -6,11 +6,16 @@
  * 2. Backgrounds do not repeat by default (opinionated).
  */
 
+ html {
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+}
+
 *,
 ::before,
 ::after {
-  box-sizing: border-box; /* 1 */
-  background-repeat: no-repeat; /* 2 */
+  box-sizing: inherit; /* 1 */
+  background-repeat: inherit; /* 2 */
 }
 
 /**
@@ -81,6 +86,7 @@
  */
 
 :where(hr) {
+	box-sizing: content-box; /* 2 */
   color: inherit; /* 1 */
   height: 0; /* 2 */
 }
@@ -219,7 +225,7 @@
  */
 
 :where(fieldset) {
-  border: 1px solid #a0a0a0;
+  border: 0.0625rem solid #a0a0a0;
 }
 
 /**
@@ -284,6 +290,31 @@
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
+
+:where(button, input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i]))::-moz-focus-inner {
+  border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus outline styles unset by the previous rule in Firefox.
+ */
+
+:where(button, input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i]))::-moz-focusring {
+  outline: 0.0625rem dotted ButtonText;
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+
+:where(:-moz-ui-invalid) {
+  box-shadow: none;
 }
 
 /* Interactive
