@@ -96,6 +96,7 @@
  */
 
 :where(nav) :where(ol, ul) {
+	list-style-position: inside;
   list-style-type: none;
   padding: 0;
 }
