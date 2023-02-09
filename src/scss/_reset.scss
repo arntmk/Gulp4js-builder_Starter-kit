@@ -27,17 +27,10 @@ a {
 }
 
 img,
-svg,
-video {
-	vertical-align: middle;
-	object-fit: cover;
+svg {
 	max-width: 100%;
 	height: auto;
-}
-
-figure {
-	display: block;
-	margin: 0;
+	object-fit: cover;
 }
 
 fieldset {
@@ -66,7 +59,8 @@ h6 {
 	margin: 0;
 }
 
-p {
+p,
+figure {
 	margin: 0;
 }
 
@@ -84,6 +78,7 @@ header,
 section,
 article,
 details,
+figure,
 figcaption {
 	display: block;
 }
