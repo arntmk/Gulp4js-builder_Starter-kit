@@ -77,8 +77,15 @@
  */
 
 :where(dl, ol, ul) :where(dl, ol, ul) {
-	list-style-position: inside;
   margin: 0;
+}
+
+/**
+ * Prevent the list style to broke in Chrome.
+ */
+
+:where(dl, ol, ul) {
+	list-style-position: inside;
 }
 
 /**
