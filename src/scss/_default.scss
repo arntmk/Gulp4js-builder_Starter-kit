@@ -59,49 +59,6 @@ body {
 	background: var(--bgcolor);
 }
 
-/* =======================Utility Classes================================== */
-/* Float clearfix */
-div.clearfix::after {
-	content: '';
-	display: block;
-	clear: both;
-	/* Or  display: flow-root; */
-}
-
-/* Nowrap */
-.nowrap {
-	white-space: nowrap;
-}
-
-/* Text-Center */
-.center {
-	text-align: center;
-}
-
-/* Offscreen */
-.offscreen {
-	position: absolute;
-	left: -10000px;
-}
-
-/* Visually-Hidden */
-.visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-}
-
-.btn-reset {
-	background-color: transparent;
-	border-width: 0;
-	padding: 0;
-}
-
 /* =======================::Pseudo-elements================================= */
 /* Markers for: ul, ol, dl */
 ::marker {
@@ -138,7 +95,7 @@ input:is([type='file']:hover, [type='file']:focus-visible) {
 input:is(:hover, :focus-visible),
 select:is(:hover, :focus),
 textarea:is(:hover, :focus) {
-	border: 0.0625rem solid #4682b4;
+	border: thin solid #4682b4;
 	box-shadow: 0 0 0.25rem #4682b4;
 	transition: 0.3s ease-in-out;
 }
@@ -148,7 +105,7 @@ textarea:is(:hover, :focus) {
 	transition: 0.3s ease-in-out;
 }
 
-/* ======================Normalize-Form==================================*/
+/* ======================Normalize-Form================================== */
 button,
 input[type='button'],
 [type='reset'],
@@ -165,43 +122,74 @@ input[type='checkbox'],
 	width: 1em;
 }
 
-button,
-input,
-select,
-textarea {
-	border: 0.0625rem solid #8f8f9d;
-	padding: 0.09em 0.3em;
-	outline: none;
-}
-
-input[type='file'] {
-	background-color: #fff;
-}
-
 input[type='file']::file-selector-button {
 	background-color: #f0f0f0;
 	border: thin solid #8f8f9d;
 	border-radius: 0.1875rem;
 	padding: 0.09em 1em;
 	cursor: pointer;
+	letter-spacing: inherit;
+	line-height: inherit;
 	color: inherit;
 	font: inherit;
-}
-
-textarea,
-select {
-	background-color: #fff;
 }
 
 select {
 	width: 12.45em;
 }
 
+/* ======================Normalize-Table================================= */
 /* Table */
 th,
 td {
-	border: 0.0625rem solid #8f8f9d;
+	border: thin solid #8f8f9d;
 	background-color: #fff;
 	text-align: center;
 	padding: 0.5em;
+}
+
+/* ======================Normalize-Form================================== */
+/**
+ * 1. Change the inconsistent appearance in all browsers (opinionated).
+ * 2. Add typography inheritance in all browsers (opinionated).
+ */
+
+:where(button, input, select, textarea) {
+	background-color: #fff; /* 1 */
+	border: thin solid #8f8f9d; /* 1 */
+	color: inherit; /* 1 */
+	font: inherit; /* 2 */
+	letter-spacing: inherit; /* 2 */
+	padding: 0.25em 0.375em; /* 1 */
+	line-height: inherit;
+	outline: none;
+}
+
+/**
+ * Change the inconsistent appearance in all browsers (opinionated).
+ */
+
+:where(select) {
+	appearance: none;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
+		#fff no-repeat right center / 1.5em;
+	border-radius: 0;
+	padding-right: 1em;
+}
+
+/**
+ * Don't show the arrow for multiple choice selects
+ */
+
+:where(select[multiple]) {
+	background-image: none;
+}
+
+/**
+ * Remove the border and padding in all browsers (opinionated).
+ */
+
+:where([type='color' i], [type='range' i]) {
+	border-width: 0;
+	padding: 0;
 }

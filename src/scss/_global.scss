@@ -54,6 +54,49 @@ div.container {
 	}
 }
 
+/* =======================Utility Classes=================================== */
+/* Float clearfix */
+div.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+	/* Or  display: flow-root; */
+}
+
+/* Nowrap */
+.nowrap {
+	white-space: nowrap;
+}
+
+/* Text-Center */
+.center {
+	text-align: center;
+}
+
+/* Offscreen */
+.offscreen {
+	position: absolute;
+	left: -10000px;
+}
+
+/* Visually-Hidden */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.btn-reset {
+	background-color: transparent;
+	border-width: 0;
+	padding: 0;
+}
+
 /* ======================================================================== */
 /* Gradient */
 .body {

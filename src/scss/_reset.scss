@@ -26,14 +26,11 @@ a {
 	text-decoration: none;
 }
 
-img {
-	vertical-align: middle;
-	object-fit: cover;
-}
-
 img,
 svg,
 video {
+	vertical-align: middle;
+	object-fit: cover;
 	max-width: 100%;
 	height: auto;
 }
@@ -91,23 +88,11 @@ figcaption {
 	display: block;
 }
 
-form {
-	cursor: default;
-}
-
-button,
-input,
-select,
-textarea,
 optgroup {
+	letter-spacing: inherit;
+	line-height: inherit;
 	color: inherit;
 	font: inherit;
-	line-height: inherit;
-}
-
-input::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
 }
 
 label,
