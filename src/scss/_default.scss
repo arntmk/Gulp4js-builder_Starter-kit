@@ -6,13 +6,13 @@ html {
 }
 
 ::-webkit-scrollbar {
-	width: 18px;
+	width: 1.125rem;
 }
 
 ::-webkit-scrollbar-thumb {
 	background-color: var(--scrollbar-color);
-	border-radius: 10px;
-	border: 5px solid transparent;
+	border-radius: 0.625rem;
+	border: 0.3125rem solid transparent;
 	background-clip: content-box;
 }
 
@@ -32,7 +32,7 @@ textarea::-webkit-scrollbar-track,
 select::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
 	background-color: var(--form-items-bgcolor);
-	width: 17px;
+	width: 1.0625rem;
 }
 
 /* =======================::Pseudo-elements================================= */
@@ -193,12 +193,11 @@ select,
 }
 
 /**
- * Styles range in all browsers (opinionated).
+ * Style input range in Firefox (opinionated).
  */
 
-/* Input Track */
+/* Input Range Track */
 [type='range' i] {
-	appearance: none;
 	vertical-align: super;
 	width: 9.375em;
 	height: 0.4375em;
@@ -206,23 +205,21 @@ select,
 	border-radius: 0.3125rem;
 }
 
-/* Input Thumb */
-[type='range' i]::-webkit-slider-thumb {
-	appearance: none;
-	height: 1em;
-	width: 1em;
+/* Input Range Thumb */
+[type='range' i]::-moz-range-thumb {
+	height: 0.85em;
+	width: 0.8em;
 	background: #0075ff;
 	border-radius: 50%;
-	border-width: 0;
+	border: thin solid #0075ff;
 	box-shadow: 0 0 0.125rem 0 #555;
 }
 
-[type='range']::-moz-range-thumb {
-	appearance: none;
-	height: 1em;
-	width: 1em;
+/* Input Range Progress */
+[type='range' i]::-moz-range-progress {
+	height: 0.45em;
 	background: #0075ff;
-	border-radius: 50%;
-	border-width: 0;
-	box-shadow: 0 0 0.125rem 0 #555;
+	border-radius: 3.125rem;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
 }
