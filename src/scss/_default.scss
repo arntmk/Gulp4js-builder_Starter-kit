@@ -100,19 +100,19 @@ a:is(:hover, :focus-visible) {
 	width: 1em;
 }
 
-:where(optgroup) {
-	letter-spacing: inherit;
-	line-height: inherit;
-	color: inherit;
-	font: inherit;
-}
-
 label,
 select,
 [type='range' i],
 ::-webkit-calendar-picker-indicator,
 ::-webkit-inner-spin-button {
 	cursor: pointer;
+}
+
+:where(optgroup) {
+	letter-spacing: inherit;
+	line-height: inherit;
+	color: inherit;
+	font: inherit;
 }
 
 [type='file' i]::file-selector-button {
