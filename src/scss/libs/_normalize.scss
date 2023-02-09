@@ -81,14 +81,6 @@
 }
 
 /**
- * Prevent the list style to broke in Chrome.
- */
-
-:where(dl, ol, ul) {
-	list-style-position: inside;
-}
-
-/**
  * 1. Correct the inheritance of border color in Firefox.
  * 2. Add the correct box sizing in Firefox.
  */
@@ -106,6 +98,14 @@
 :where(nav) :where(ol, ul) {
   list-style-type: none;
   padding: 0;
+}
+
+/**
+ * Prevent the list style to broke in Chrome.
+ */
+
+ :where(dl, ol, ul) {
+	list-style-position: inside;
 }
 
 /**
