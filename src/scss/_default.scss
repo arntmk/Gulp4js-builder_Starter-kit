@@ -193,3 +193,52 @@ select,
 	border-width: 0;
 	padding: 0;
 }
+
+/**
+ * Track Styles in all browsers (opinionated).
+ */
+
+[type='range'] {
+	appearance: none;
+	margin-right: 0.9375em;
+	width: 9.375em;
+	height: 0.4375em;
+	background: rgba(255, 255, 255, 0.6);
+	border-radius: 0.3125rem;
+}
+
+/* Input Thumb */
+[type='range']::-webkit-slider-thumb {
+	appearance: none;
+	height: 1.25em;
+	width: 1.25em;
+	border-radius: 50%;
+	border-width: 0;
+	background: #0075ff;
+	box-shadow: 0 0 0.125rem 0 #555;
+}
+
+[type='range']::-moz-range-thumb {
+	appearance: none;
+	height: 1.25em;
+	width: 1.25em;
+	border-radius: 50%;
+	border-width: 0;
+	background: #0075ff;
+	box-shadow: 0 0 0.125rem 0 #555;
+}
+
+/* Input Track */
+[type='range']::-webkit-slider-runnable-track {
+	appearance: none;
+	box-shadow: none;
+	border: none;
+	background: transparent;
+}
+
+[type='range']::-moz-range-track {
+	appearance: none;
+	box-shadow: none;
+	border: none;
+	background: transparent;
+}
