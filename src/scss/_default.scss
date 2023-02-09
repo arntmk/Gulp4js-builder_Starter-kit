@@ -193,7 +193,7 @@ select,
 }
 
 /**
- * Style input range in Firefox (opinionated).
+ * Style range for Firefox (opinionated).
  */
 
 /* Input Range Track */
@@ -202,6 +202,7 @@ select,
 	width: 9.375em;
 	height: 0.4375em;
 	background: rgba(255, 255, 255, 0.6);
+	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
 }
 
@@ -212,7 +213,7 @@ select,
 	background: #0075ff;
 	border-radius: 50%;
 	border: thin solid #0075ff;
-	box-shadow: 0 0 0.125rem 0 #555;
+	box-shadow: 0 0 0.125rem 0 #0075ff;
 }
 
 /* Input Range Progress */
