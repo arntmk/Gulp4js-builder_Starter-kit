@@ -75,9 +75,9 @@ body {
 /* =======================:Pseudo-classes=================================== */
 /* Link, Button, Input, Select, Textarea */
 button:is(:hover, :focus-visible),
-input:is([type='button']:hover, [type='button']:focus-visible),
-input:is([type='reset']:hover, [type='button']:focus-visible),
-input:is([type='submit']:hover, [type='button']:focus-visible) {
+:is([type='button' i]:hover, [type='button' i]:focus-visible),
+:is([type='reset' i]:hover, [type='button' i]:focus-visible),
+:is([type='submit' i]:hover, [type='button' i]:focus-visible) {
 	color: #fff;
 	border-color: transparent;
 	background-color: #4682b4;
@@ -85,11 +85,17 @@ input:is([type='submit']:hover, [type='button']:focus-visible) {
 	animation: fade 0.3s ease-in-out;
 }
 
-input:is([type='checkbox']:hover, [type='checkbox']:focus-visible),
-input:is([type='radio']:hover, [type='radio']:focus-visible),
-input:is([type='range']:hover, [type='range']:focus-visible),
-input:is([type='file']:hover, [type='file']:focus-visible) {
+:is([type='checkbox' i]:hover, [type='checkbox' i]:focus-visible),
+:is([type='radio' i]:hover, [type='radio' i]:focus-visible),
+:is([type='range' i]:hover, [type='range' i]:focus-visible),
+:is([type='color' i]:hover, [type='color' i]:focus-visible),
+:is([type='file' i]:hover, [type='file' i]:focus-visible) {
 	box-shadow: none;
+}
+
+:is([type='range']:hover, [type='range']:focus-visible),
+:is([type='color']:hover, [type='color']:focus-visible) {
+	border-width: 0;
 }
 
 input:is(:hover, :focus-visible),
@@ -100,29 +106,40 @@ textarea:is(:hover, :focus) {
 	transition: 0.3s ease-in-out;
 }
 
-:is(a:hover, a:focus-visible) {
+a:is(:hover, :focus-visible) {
 	color: darken(#4682b4, 10%);
 	transition: 0.3s ease-in-out;
 }
 
 /* ======================Normalize-Form================================== */
-button,
-input[type='button'],
-[type='reset'],
-[type='submit'] {
+:is(button, [type='button' i], [type='reset' i], [type='submit' i]) {
 	background-color: #f0f0f0;
 	cursor: pointer;
 }
 
-input[type='checkbox'],
-[type='radio'] {
+:where([type='checkbox' i], [type='radio' i]) {
 	accent-color: #0060df;
 	cursor: pointer;
 	height: 1em;
 	width: 1em;
 }
 
-input[type='file']::file-selector-button {
+:where(optgroup) {
+	letter-spacing: inherit;
+	line-height: inherit;
+	color: inherit;
+	font: inherit;
+}
+
+label,
+select,
+[type='range' i],
+::-webkit-calendar-picker-indicator,
+::-webkit-inner-spin-button {
+	cursor: pointer;
+}
+
+[type='file' i]::file-selector-button {
 	background-color: #f0f0f0;
 	border: thin solid #8f8f9d;
 	border-radius: 0.1875rem;
@@ -134,14 +151,9 @@ input[type='file']::file-selector-button {
 	font: inherit;
 }
 
-select {
-	width: 12.45em;
-}
-
 /* ======================Normalize-Table================================= */
 /* Table */
-th,
-td {
+:where(th, td) {
 	border: thin solid #8f8f9d;
 	background-color: #fff;
 	text-align: center;
@@ -160,8 +172,8 @@ td {
 	color: inherit; /* 1 */
 	font: inherit; /* 2 */
 	letter-spacing: inherit; /* 2 */
-	padding: 0.25em 0.375em; /* 1 */
 	line-height: inherit;
+	padding: 0.25em 0.375em; /* 1 */
 	outline: none;
 }
 
@@ -172,9 +184,21 @@ td {
 :where(select) {
 	appearance: none;
 	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
-		#fff no-repeat right center / 1.5em;
+		#fff no-repeat right center / 1.7em;
 	border-radius: 0;
 	padding-right: 1em;
+	width: 12.45em;
+}
+
+:where(#datalist) {
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
+		#fff no-repeat right center / 1.7em;
+	border-radius: 0;
+	padding-right: 1em;
+	&:hover,
+	&:focus {
+		background: url('') #fff no-repeat right center;
+	}
 }
 
 /**

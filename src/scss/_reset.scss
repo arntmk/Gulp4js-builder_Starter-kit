@@ -87,18 +87,3 @@ details,
 figcaption {
 	display: block;
 }
-
-optgroup {
-	letter-spacing: inherit;
-	line-height: inherit;
-	color: inherit;
-	font: inherit;
-}
-
-label,
-select,
-input[type='range'],
-input::-webkit-calendar-picker-indicator,
-input::-webkit-inner-spin-button {
-	cursor: pointer;
-}
