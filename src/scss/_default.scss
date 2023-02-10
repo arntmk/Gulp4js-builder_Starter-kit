@@ -204,8 +204,8 @@ select,
 
 /* Input Range Thumb */
 [type='range' i]::-moz-range-thumb {
-	height: 0.85em;
-	width: 0.8em;
+	height: 0.8em;
+	width: 0.77em;
 	background: #0075ff;
 	border-radius: 50%;
 	border: thin solid #0075ff;
@@ -214,7 +214,7 @@ select,
 
 /* Input Range Progress */
 [type='range' i]::-moz-range-progress {
-	height: 0.45em;
+	height: 0.43em;
 	background: #0075ff;
 	border-radius: 3.125rem;
 	border-bottom-right-radius: 0;
