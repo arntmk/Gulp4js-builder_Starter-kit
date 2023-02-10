@@ -41,13 +41,13 @@ html {
 	font: inherit;
 }
 
+:where(img, svg) {
+	object-fit: cover;
+}
+
 :where(iframe, img, svg, input, video, select, textarea) {
 	max-width: 100%;
 	height: auto;
-}
-
-:where(img, svg) {
-	object-fit: cover;
 }
 
 :where(ul, ol, dl) {
