@@ -23,7 +23,7 @@ html {
 /* ScrollBar for Select and Textarea*/
 select,
 textarea {
-	scrollbar-color: var(--scrollbar-color) #fff;
+	scrollbar-color: var(--scrollbar-color) var(--form-bgcolor);
 	scrollbar-width: thin;
 }
 
@@ -31,7 +31,7 @@ select::-webkit-scrollbar-track,
 textarea::-webkit-scrollbar-track,
 select::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
-	background-color: var(--form-items-bgcolor);
+	background-color: var(--form-bgcolor);
 	width: 1.0625rem;
 }
 
@@ -63,7 +63,14 @@ button:is(:hover, :focus-visible),
 }
 
 :is([type='checkbox' i]:hover, [type='checkbox' i]:focus-visible),
-:is([type='radio' i]:hover, [type='radio' i]:focus-visible) {
+:is([type='radio' i]:hover, [type='radio' i]:focus-visible),
+:is([type='color' i]:hover, [type='color' i]:focus-visible) {
+	box-shadow: none;
+	border-width: 0;
+}
+
+:is([type='range' i]:hover, [type='range' i]:focus-visible) {
+	border: thin solid #b2b2b2;
 	box-shadow: none;
 }
 
@@ -86,30 +93,22 @@ a:is(:hover, :focus-visible) {
 	cursor: pointer;
 }
 
-:where([type='checkbox' i], [type='radio' i]) {
+:is([type='checkbox' i], [type='radio' i]) {
 	accent-color: #0060df;
 	height: 1em;
 	width: 1em;
 }
 
-label,
-select,
-[type='range' i],
-[type='checkbox' i],
-[type='radio' i],
+:is(label, select, [type='range' i], [type='checkbox' i], [type='radio' i]) {
+	cursor: pointer;
+}
+
 ::-webkit-calendar-picker-indicator,
 ::-webkit-inner-spin-button {
 	cursor: pointer;
 }
 
-:where(optgroup) {
-	letter-spacing: inherit;
-	line-height: inherit;
-	color: inherit;
-	font: inherit;
-}
-
-[type='file' i]::file-selector-button {
+:is([type='file' i])::file-selector-button {
 	background-color: #f0f0f0;
 	border: thin solid #8f8f9d;
 	border-radius: 0.1875rem;
@@ -145,6 +144,13 @@ select,
 	line-height: inherit;
 	padding: 0.25em 0.375em; /* 1 */
 	outline: none;
+}
+
+:where(optgroup) {
+	letter-spacing: inherit;
+	line-height: inherit;
+	color: inherit;
+	font: inherit;
 }
 
 /**
@@ -193,7 +199,7 @@ select,
  */
 
 /* Input Range Track */
-[type='range' i] {
+:is([type='range' i]) {
 	accent-color: #0075ff;
 	height: 0.4375em;
 	width: 9.375em;
@@ -203,7 +209,7 @@ select,
 }
 
 /* Input Range Thumb */
-[type='range' i]::-moz-range-thumb {
+:is([type='range' i])::-moz-range-thumb {
 	height: 0.8em;
 	width: 0.77em;
 	background: #0075ff;
@@ -213,7 +219,7 @@ select,
 }
 
 /* Input Range Progress */
-[type='range' i]::-moz-range-progress {
+:is([type='range' i])::-moz-range-progress {
 	height: 0.43em;
 	background: #0075ff;
 	border-radius: 3.125rem;
@@ -222,39 +228,44 @@ select,
 }
 
 /* Input Range Thumb */
-[type='range' i]::-webkit-slider-thumb {
+:is([type='range' i])::-webkit-slider-thumb {
 	border-radius: 50%;
 	border: thin solid #0075ff;
 	box-shadow: 0 0 0.125rem 0 #0075ff;
-}
-
-:is([type='range' i]:hover, [type='range' i]:focus-visible),
-:is([type='color' i]:hover, [type='color' i]:focus-visible) {
-	border: thin solid #b2b2b2;
-	box-shadow: none;
 }
 
 /**
  * Style progress in all browsers (opinionated).
  */
 
-progress {
+:is(progress) {
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 0.9375rem;
 	accent-color: #0075ff;
 }
 
-progress::-webkit-progress-bar {
+:is(progress)::-webkit-progress-bar {
 	border-radius: 0.9375rem;
 	background-color: rgba(255, 255, 255, 0.6);
 }
 
-progress::-moz-progress-bar {
+:is(progress)::-moz-progress-bar {
 	background-color: #0075ff;
 	border-radius: 0.9375rem;
 }
 
-progress::-webkit-progress-value {
+:is(progress)::-webkit-progress-value {
 	background-color: #0075ff;
 	border-radius: 0.9375rem;
+}
+
+/**
+ * Style input color in all browsers (opinionated).
+ */
+
+:is([type='color']) {
+	background-color: transparent;
+	cursor: pointer;
+	width: 4rem;
+	height: 2rem;
 }
