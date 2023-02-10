@@ -67,11 +67,6 @@ button:is(:hover, :focus-visible),
 	box-shadow: none;
 }
 
-:is([type='range']:hover, [type='range']:focus-visible),
-:is([type='color']:hover, [type='color']:focus-visible) {
-	border-width: 0;
-}
-
 input:is(:hover, :focus-visible),
 select:is(:hover, :focus),
 textarea:is(:hover, :focus) {
@@ -93,7 +88,6 @@ a:is(:hover, :focus-visible) {
 
 :where([type='checkbox' i], [type='radio' i]) {
 	accent-color: #0060df;
-	cursor: pointer;
 	height: 1em;
 	width: 1em;
 }
@@ -101,6 +95,8 @@ a:is(:hover, :focus-visible) {
 label,
 select,
 [type='range' i],
+[type='checkbox' i],
+[type='radio' i],
 ::-webkit-calendar-picker-indicator,
 ::-webkit-inner-spin-button {
 	cursor: pointer;
@@ -193,14 +189,14 @@ select,
 }
 
 /**
- * Style range for Firefox (opinionated).
+ * Style input range in all browsers (opinionated).
  */
 
 /* Input Range Track */
 [type='range' i] {
-	vertical-align: super;
-	width: 9.375em;
+	accent-color: #0075ff;
 	height: 0.4375em;
+	width: 9.375em;
 	background: rgba(255, 255, 255, 0.6);
 	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
@@ -223,4 +219,17 @@ select,
 	border-radius: 3.125rem;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
+}
+
+/* Input Range Thumb */
+[type='range' i]::-webkit-slider-thumb {
+	border-radius: 50%;
+	border: thin solid #0075ff;
+	box-shadow: 0 0 0.125rem 0 #0075ff;
+}
+
+:is([type='range' i]:hover, [type='range' i]:focus-visible),
+:is([type='color' i]:hover, [type='color' i]:focus-visible) {
+	border: thin solid #b2b2b2;
+	box-shadow: none;
 }
