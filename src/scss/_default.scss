@@ -64,10 +64,17 @@ button:is(:hover, :focus-visible),
 
 :is([type='range' i]:hover, [type='range' i]:focus-visible) {
 	border: thin solid #9a9a9a;
+	border-left: none;
 }
 
 :is([type='range' i]:active, [type='range' i]:active) {
 	border: thin solid #c1c1c1;
+	border-left: none;
+}
+
+#datalist:is(:hover, :focus) {
+	border: thin solid #4682b4;
+	box-shadow: 0 0 0.25rem #4682b4;
 }
 
 :is([type='date']:hover, [type='date']:focus-visible),
@@ -181,13 +188,14 @@ button,
 }
 
 :where(#datalist) {
-	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
-		#fff no-repeat right center / 1.7em;
+	background: url('') #fff no-repeat;
 	border-radius: 0;
-	padding-right: 1em;
+	padding-right: 0.25rem;
+	padding-bottom: 0.38rem;
 	&:hover,
 	&:focus {
-		background: url('') #fff no-repeat;
+		background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
+			#fff no-repeat right center / 1.7em;
 	}
 }
 
@@ -219,6 +227,7 @@ button,
 	width: 9.375em;
 	background: rgba(255, 255, 255, 0.8);
 	border: thin solid #b2b2b2;
+	border-left: none;
 	border-radius: 0.3125rem;
 }
 
@@ -239,6 +248,8 @@ button,
 	border-radius: 3.125rem;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
+	box-sizing: border-box;
+	border: thin solid #3b75ba;
 }
 
 /* Input Range Thumb */
