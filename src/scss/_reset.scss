@@ -18,51 +18,58 @@ html {
 	margin-top: 0;
 }
 
-a {
+:where(a) {
 	color: inherit;
 	cursor: pointer;
 	text-decoration: none;
 }
 
-img,
-svg {
+:where(button) {
+	background-color: transparent;
+	border-width: 0;
+	padding: 0;
+}
+
+:where(button, input, select, textarea) {
+	outline: none;
+}
+
+:where(button, input, select, textarea, optgroup) {
+	letter-spacing: inherit;
+	line-height: inherit;
+	color: inherit;
+	font: inherit;
+}
+
+:where(iframe, img, svg, input, video, select, textarea) {
 	max-width: 100%;
 	height: auto;
 	object-fit: cover;
 }
 
-fieldset {
-	border-width: 0;
-	padding: 0;
-	margin: 0;
-}
-
-ul,
-ol,
-dl {
+:where(ul, ol, dl) {
 	list-style-position: inside;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:where(h1, h2, h3, h4, h5, h6) {
 	font-weight: inherit;
 	font-size: inherit;
 	margin: 0;
 }
 
-p,
-figure {
+:where(p, figure) {
 	margin: 0;
 }
 
-cite,
-address {
+:where(cite, address) {
 	font-style: normal;
+}
+
+:where(fieldset) {
+	border-width: 0;
+	padding: 0;
+	margin: 0;
 }

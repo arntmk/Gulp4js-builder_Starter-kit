@@ -50,7 +50,7 @@ textarea::-webkit-scrollbar {
 }
 
 /* =======================:Pseudo-classes=================================== */
-/* Link, Button, Input, Select, Textarea */
+/* Link, Button, Input, Select, Datalist, Textarea */
 button:is(:hover, :focus-visible),
 :is([type='button' i]:hover, [type='button' i]:focus-visible),
 :is([type='reset' i]:hover, [type='button' i]:focus-visible),
@@ -88,32 +88,41 @@ a:is(:hover, :focus-visible) {
 }
 
 /* ======================Normalize-Form================================== */
-:is(button, [type='button' i], [type='reset' i], [type='submit' i]) {
-	background-color: #f0f0f0;
-	cursor: pointer;
-}
-
-:is([type='checkbox' i], [type='radio' i]) {
+[type='checkbox' i],
+[type='radio' i] {
 	accent-color: #0060df;
 	height: 1em;
 	width: 1em;
 }
 
-:is(label, select, [type='range' i], [type='checkbox' i], [type='radio' i]) {
-	cursor: pointer;
+[type='color'] {
+	background-color: transparent;
+	width: 4rem;
+	height: 2rem;
 }
 
+label,
+select,
+button,
+[type='button' i],
+[type='reset' i],
+[type='submit' i],
+[type='range' i],
+[type='checkbox' i],
+[type='radio' i],
+[type='color'],
+[type='file' i]::file-selector-button,
 ::-webkit-calendar-picker-indicator,
-::-webkit-inner-spin-button {
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
 	cursor: pointer;
 }
 
-:is([type='file' i])::file-selector-button {
+[type='file' i]::file-selector-button {
 	background-color: #f0f0f0;
 	border: thin solid #8f8f9d;
 	border-radius: 0.1875rem;
 	padding: 0.09em 1em;
-	cursor: pointer;
 	letter-spacing: inherit;
 	line-height: inherit;
 	color: inherit;
@@ -199,7 +208,7 @@ a:is(:hover, :focus-visible) {
  */
 
 /* Input Range Track */
-:is([type='range' i]) {
+[type='range' i] {
 	accent-color: #0075ff;
 	height: 0.4375em;
 	width: 9.375em;
@@ -209,7 +218,7 @@ a:is(:hover, :focus-visible) {
 }
 
 /* Input Range Thumb */
-:is([type='range' i])::-moz-range-thumb {
+[type='range' i]::-moz-range-thumb {
 	height: 0.8em;
 	width: 0.77em;
 	background: #0075ff;
@@ -219,7 +228,7 @@ a:is(:hover, :focus-visible) {
 }
 
 /* Input Range Progress */
-:is([type='range' i])::-moz-range-progress {
+[type='range' i]::-moz-range-progress {
 	height: 0.43em;
 	background: #0075ff;
 	border-radius: 3.125rem;
@@ -228,7 +237,7 @@ a:is(:hover, :focus-visible) {
 }
 
 /* Input Range Thumb */
-:is([type='range' i])::-webkit-slider-thumb {
+[type='range' i]::-webkit-slider-thumb {
 	border-radius: 50%;
 	border: thin solid #0075ff;
 	box-shadow: 0 0 0.125rem 0 #0075ff;
@@ -238,34 +247,24 @@ a:is(:hover, :focus-visible) {
  * Style progress in all browsers (opinionated).
  */
 
-:is(progress) {
+progress {
+	border-width: 0;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 0.9375rem;
 	accent-color: #0075ff;
 }
 
-:is(progress)::-webkit-progress-bar {
+progress::-webkit-progress-bar {
 	border-radius: 0.9375rem;
 	background-color: rgba(255, 255, 255, 0.6);
 }
 
-:is(progress)::-moz-progress-bar {
+progress::-moz-progress-bar {
 	background-color: #0075ff;
 	border-radius: 0.9375rem;
 }
 
-:is(progress)::-webkit-progress-value {
+progress::-webkit-progress-value {
 	background-color: #0075ff;
 	border-radius: 0.9375rem;
-}
-
-/**
- * Style input color in all browsers (opinionated).
- */
-
-:is([type='color']) {
-	background-color: transparent;
-	cursor: pointer;
-	width: 4rem;
-	height: 2rem;
 }
