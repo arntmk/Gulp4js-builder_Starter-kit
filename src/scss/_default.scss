@@ -62,19 +62,27 @@ button:is(:hover, :focus-visible),
 	animation: fade 0.3s ease-in-out;
 }
 
-:is([type='checkbox' i]:hover, [type='checkbox' i]:focus-visible),
-:is([type='radio' i]:hover, [type='radio' i]:focus-visible),
-:is([type='color' i]:hover, [type='color' i]:focus-visible) {
-	box-shadow: none;
-	border-width: 0;
-}
-
 :is([type='range' i]:hover, [type='range' i]:focus-visible) {
-	border: thin solid #b2b2b2;
-	box-shadow: none;
+	border: thin solid #9a9a9a;
 }
 
-input:is(:hover, :focus-visible),
+:is([type='range' i]:active, [type='range' i]:active) {
+	border: thin solid #c1c1c1;
+}
+
+:is([type='date']:hover, [type='date']:focus-visible),
+:is([type='datetime-local']:hover, [type='datetime-local']:focus-visible),
+:is([type='email']:hover, [type='email']:focus-visible),
+:is([type='file']:hover, [type='file']:focus-visible),
+:is([type='hidden']:hover, [type='hidden']:focus-visible),
+:is([type='image']:hover, [type='image']:focus-visible),
+:is([type='month']:hover, [type='month']:focus-visible),
+:is([type='number']:hover, [type='number']:focus-visible),
+:is([type='tel']:hover, [type='tel']:focus-visible),
+:is([type='text']:hover, [type='text']:focus-visible),
+:is([type='time']:hover, [type='time']:focus-visible),
+:is([type='url']:hover, [type='url']:focus-visible),
+:is([type='week']:hover, [type='week']:focus-visible),
 select:is(:hover, :focus),
 textarea:is(:hover, :focus) {
 	border: thin solid #4682b4;
@@ -88,6 +96,10 @@ a:is(:hover, :focus-visible) {
 }
 
 /* ======================Normalize-Form================================== */
+form {
+	cursor: default;
+}
+
 [type='checkbox' i],
 [type='radio' i] {
 	accent-color: #0060df;
@@ -155,13 +167,6 @@ button,
 	outline: none;
 }
 
-:where(optgroup) {
-	letter-spacing: inherit;
-	line-height: inherit;
-	color: inherit;
-	font: inherit;
-}
-
 /**
  * Change the inconsistent appearance in all browsers (opinionated).
  */
@@ -212,7 +217,7 @@ button,
 	accent-color: #0075ff;
 	height: 0.4375em;
 	width: 9.375em;
-	background: rgba(255, 255, 255, 0.6);
+	background: rgba(255, 255, 255, 0.8);
 	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
 }
@@ -244,19 +249,19 @@ button,
 }
 
 /**
- * Style progress in all browsers (opinionated).
+ * Style progress bar in all browsers (opinionated).
  */
 
 progress {
 	border-width: 0;
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.8);
 	border-radius: 0.9375rem;
 	accent-color: #0075ff;
 }
 
 progress::-webkit-progress-bar {
 	border-radius: 0.9375rem;
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.8);
 }
 
 progress::-moz-progress-bar {
