@@ -64,7 +64,7 @@
  * Remove the border and padding in all browsers (opinionated).
  */
 
-:where([type='color' i], [type='range' i]) {
+:where([type='color'], [type='range']) {
 	border-width: 0;
 	padding: 0;
 }
@@ -74,7 +74,7 @@
  */
 
 /* Input Range Track */
-[type='range' i] {
+[type='range'] {
 	accent-color: #0075ff;
 	height: 0.4375em;
 	width: 9.375em;
@@ -85,7 +85,7 @@
 }
 
 /* Input Range Thumb */
-[type='range' i]::-moz-range-thumb {
+[type='range']::-moz-range-thumb {
 	height: 0.81rem;
 	width: 0.81rem;
 	background: #0075ff;
@@ -95,7 +95,7 @@
 }
 
 /* Input Range Progress */
-[type='range' i]::-moz-range-progress {
+[type='range']::-moz-range-progress {
 	height: 0.43em;
 	background: #0075ff;
 	border-radius: 3.125rem;
@@ -115,6 +115,7 @@ progress {
 	border-radius: 0.9375rem;
 	appearance: none;
 	accent-color: #0075ff;
+	vertical-align: middle;
 }
 
 progress::-webkit-progress-bar {
@@ -136,19 +137,19 @@ progress::-webkit-progress-value {
  * Styling color input in all browsers (opinionated).
  */
 
-[type='color' i] {
+[type='color'] {
 	background-color: transparent;
 	width: 6em;
 }
 
-[type='color' i]::-webkit-color-swatch {
+[type='color']::-webkit-color-swatch {
 	border-style: none;
 	border-radius: 0.9375rem;
 	height: 2em;
 	box-sizing: border-box;
 }
 
-[type='color' i]::-moz-color-swatch {
+[type='color']::-moz-color-swatch {
 	border-style: none;
 	border-radius: 0.9375rem;
 	height: 2em;
@@ -160,8 +161,9 @@ progress::-webkit-progress-value {
  * Styling checkbox and radio input in all browsers (opinionated).
  */
 
-[type='checkbox' i],
-[type='radio' i] {
+[type='checkbox'],
+[type='radio'] {
+	vertical-align: middle;
 	accent-color: #0060df;
 	height: 1em;
 	width: 1em;
@@ -171,11 +173,18 @@ progress::-webkit-progress-value {
  * Styling input file in all browsers (opinionated).
  */
 
-[type='file' i]::file-selector-button {
-	background-color: #f0f0f0;
+[type='file'] {
+	background-color: transparent;
+	border-width: 0;
+	width: 20em;
+}
+
+[type='file']::file-selector-button {
+	background-color: #fff;
 	border: thin solid #8f8f9d;
 	border-radius: 0.1875rem;
 	padding: 0.09em 1em;
+	width: 7em;
 	letter-spacing: inherit;
 	line-height: inherit;
 	color: inherit;
@@ -185,6 +194,12 @@ progress::-webkit-progress-value {
 /**
  * Styling textarea in webkit browsers (opinionated).
  */
+
+textarea {
+	vertical-align: middle;
+	width: 18em;
+	height: 18em;
+}
 
 textarea::-webkit-resizer {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3e%3cpath d='M796.8 990L990 796.8v-82.9L713.9 990h82.9zm-351.9 0L990 444.9V362L361.9 990h83zM10 990h82.9L990 92.9V10L10 990z'/%3e%3c/svg%3e")
@@ -196,7 +211,7 @@ textarea::-webkit-resizer {
  * Styling input date in webkit browsers (opinionated).
  */
 
-[type='date' i] {
+[type='date'] {
 	width: 10em;
 }
 

@@ -72,10 +72,14 @@ button:is(:hover, :focus-visible),
 	border-left: none;
 }
 
-input:not(#datalist, [type='color'], [type='checkbox'], [type='radio']):is(
-		:hover,
-		:focus-visible
-	),
+input:not(
+		#datalist,
+		[type='file'],
+		[type='color'],
+		[type='checkbox'],
+		[type='radio']
+	):is(:hover, :focus-visible),
+[type='file']::file-selector-button:is(:hover, :focus-visible),
 select:is(:hover, :focus),
 textarea:is(:hover, :focus) {
 	border: thin solid #4682b4;
