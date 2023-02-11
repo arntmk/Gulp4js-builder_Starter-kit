@@ -116,7 +116,6 @@ function fontgen() {
 function svg() {
 	const srcSvg = 'src/img/svg/*.svg';
 	return src(srcSvg)
-		.pipe(changed('build/img/svg/'))
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
 			cheerio({
