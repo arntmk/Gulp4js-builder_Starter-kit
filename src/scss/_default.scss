@@ -77,19 +77,10 @@ button:is(:hover, :focus-visible),
 	box-shadow: 0 0 0.25rem #4682b4;
 }
 
-:is([type='date']:hover, [type='date']:focus-visible),
-:is([type='datetime-local']:hover, [type='datetime-local']:focus-visible),
-:is([type='email']:hover, [type='email']:focus-visible),
-:is([type='file']:hover, [type='file']:focus-visible),
-:is([type='hidden']:hover, [type='hidden']:focus-visible),
-:is([type='image']:hover, [type='image']:focus-visible),
-:is([type='month']:hover, [type='month']:focus-visible),
-:is([type='number']:hover, [type='number']:focus-visible),
-:is([type='tel']:hover, [type='tel']:focus-visible),
-:is([type='text']:hover, [type='text']:focus-visible),
-:is([type='time']:hover, [type='time']:focus-visible),
-:is([type='url']:hover, [type='url']:focus-visible),
-:is([type='week']:hover, [type='week']:focus-visible),
+input:not(#datalist, [type='color'], [type='checkbox'], [type='radio']):is(
+		:hover,
+		:focus-visible
+	),
 select:is(:hover, :focus),
 textarea:is(:hover, :focus) {
 	border: thin solid #4682b4;
@@ -107,19 +98,7 @@ form {
 	cursor: default;
 }
 
-[type='checkbox' i],
-[type='radio' i] {
-	accent-color: #0060df;
-	height: 1em;
-	width: 1em;
-}
-
-[type='color'] {
-	background-color: transparent;
-	width: 4rem;
-	height: 2rem;
-}
-
+a,
 label,
 select,
 button,
@@ -131,21 +110,10 @@ button,
 [type='radio' i],
 [type='color'],
 [type='file' i]::file-selector-button,
-::-webkit-calendar-picker-indicator,
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button,
+::-webkit-calendar-picker-indicator {
 	cursor: pointer;
-}
-
-[type='file' i]::file-selector-button {
-	background-color: #f0f0f0;
-	border: thin solid #8f8f9d;
-	border-radius: 0.1875rem;
-	padding: 0.09em 1em;
-	letter-spacing: inherit;
-	line-height: inherit;
-	color: inherit;
-	font: inherit;
 }
 
 /* ======================Normalize-Table================================= */
@@ -180,21 +148,33 @@ button,
 
 :where(select) {
 	appearance: none;
-	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M4 0h6L7 5'/%3E%3C/svg%3E")
 		#fff no-repeat right center / 1.7em;
 	border-radius: 0;
-	padding-right: 1em;
+	padding-right: 1.5em;
 	width: 12.45em;
+}
+
+#datalist::-webkit-calendar-picker-indicator {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	pointer-events: none;
+	color: transparent;
 }
 
 :where(#datalist) {
 	background: url('') #fff no-repeat;
 	border-radius: 0;
-	padding-right: 0.25rem;
-	padding-bottom: 0.38rem;
+	padding-right: 1.5em;
 	&:hover,
 	&:focus {
-		background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
+		background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M4 0h6L7 5'/%3E%3C/svg%3E")
 			#fff no-repeat right center / 1.7em;
 	}
 }
@@ -233,12 +213,12 @@ button,
 
 /* Input Range Thumb */
 [type='range' i]::-moz-range-thumb {
-	height: 0.8em;
-	width: 0.77em;
+	height: 0.81rem;
+	width: 0.81rem;
 	background: #0075ff;
 	border-radius: 50%;
 	border: thin solid #0075ff;
-	box-shadow: 0 0 0.125rem 0 #0075ff;
+	// box-shadow: 0 0 0.125rem 0 #0075ff;
 }
 
 /* Input Range Progress */
@@ -252,13 +232,6 @@ button,
 	border: thin solid #3b75ba;
 }
 
-/* Input Range Thumb */
-[type='range' i]::-webkit-slider-thumb {
-	border-radius: 50%;
-	border: thin solid #0075ff;
-	box-shadow: 0 0 0.125rem 0 #0075ff;
-}
-
 /**
  * Style progress bar in all browsers (opinionated).
  */
@@ -267,6 +240,7 @@ progress {
 	border-width: 0;
 	background-color: rgba(255, 255, 255, 0.8);
 	border-radius: 0.9375rem;
+	appearance: none;
 	accent-color: #0075ff;
 }
 
@@ -283,4 +257,54 @@ progress::-moz-progress-bar {
 progress::-webkit-progress-value {
 	background-color: #0075ff;
 	border-radius: 0.9375rem;
+}
+
+/**
+ * Style color input in all browsers (opinionated).
+ */
+
+[type='color'] {
+	background-color: transparent;
+	width: 6em;
+}
+
+[type='color']::-webkit-color-swatch {
+	border-style: none;
+	border-radius: 0.9375rem;
+	height: 2em;
+	box-sizing: border-box;
+}
+
+[type='color']::-moz-color-swatch {
+	border-style: none;
+	border-radius: 0.9375rem;
+	height: 2em;
+	box-sizing: border-box;
+	margin-top: 0.1875rem;
+}
+
+/**
+ * Style checkbox and radio input in all browsers (opinionated).
+ */
+
+[type='checkbox' i],
+[type='radio' i] {
+	accent-color: #0060df;
+	height: 1em;
+	width: 1em;
+}
+
+/**
+ * Style input file in all browsers (opinionated).
+ */
+
+[type='file' i]::file-selector-button {
+	background-color: #f0f0f0;
+	border: thin solid #8f8f9d;
+	border-radius: 0.1875rem;
+	padding: 0.09em 1em;
+	letter-spacing: inherit;
+	line-height: inherit;
+	color: inherit;
+	font: inherit;
 }
