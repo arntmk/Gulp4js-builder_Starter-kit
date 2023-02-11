@@ -90,10 +90,10 @@ button,
 [type='range' i],
 [type='checkbox' i],
 [type='radio' i],
-[type='color'],
+[type='color' i],
 [type='file' i]::file-selector-button,
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button,
+[type='number' i]::-webkit-inner-spin-button,
+[type='number' i]::-webkit-outer-spin-button,
 ::-webkit-calendar-picker-indicator {
 	cursor: pointer;
 }
