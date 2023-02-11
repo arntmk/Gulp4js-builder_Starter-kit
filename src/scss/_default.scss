@@ -72,11 +72,6 @@ button:is(:hover, :focus-visible),
 	border-left: none;
 }
 
-#datalist:is(:hover, :focus) {
-	border: thin solid #4682b4;
-	box-shadow: 0 0 0.25rem #4682b4;
-}
-
 input:not(#datalist, [type='color'], [type='checkbox'], [type='radio']):is(
 		:hover,
 		:focus-visible
@@ -91,6 +86,11 @@ textarea:is(:hover, :focus) {
 a:is(:hover, :focus-visible) {
 	color: darken(#4682b4, 10%);
 	transition: 0.3s ease-in-out;
+}
+
+#datalist:is(:hover, :focus) {
+	border: thin solid #4682b4;
+	box-shadow: 0 0 0.25rem #4682b4;
 }
 
 /* ======================Normalize-Form================================== */
@@ -197,7 +197,7 @@ button,
 }
 
 /**
- * Style input range in all browsers (opinionated).
+ * Styling input range in all browsers (opinionated).
  */
 
 /* Input Range Track */
@@ -233,7 +233,7 @@ button,
 }
 
 /**
- * Style progress bar in all browsers (opinionated).
+ * Styling progress bar in all browsers (opinionated).
  */
 
 progress {
@@ -260,7 +260,7 @@ progress::-webkit-progress-value {
 }
 
 /**
- * Style color input in all browsers (opinionated).
+ * Styling color input in all browsers (opinionated).
  */
 
 [type='color'] {
@@ -284,7 +284,7 @@ progress::-webkit-progress-value {
 }
 
 /**
- * Style checkbox and radio input in all browsers (opinionated).
+ * Styling checkbox and radio input in all browsers (opinionated).
  */
 
 [type='checkbox' i],
@@ -295,7 +295,7 @@ progress::-webkit-progress-value {
 }
 
 /**
- * Style input file in all browsers (opinionated).
+ * Styling input file in all browsers (opinionated).
  */
 
 [type='file' i]::file-selector-button {
@@ -307,4 +307,13 @@ progress::-webkit-progress-value {
 	line-height: inherit;
 	color: inherit;
 	font: inherit;
+}
+
+/**
+ * Styling textarea in webkit browsers (opinionated).
+ */
+
+textarea::-webkit-resizer {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon --%3e%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 1000 1000' enable-background='new 0 0 1000 1000' xml:space='preserve'%3e%3cmetadata%3e Svg Vector Icons : http://www.onlinewebfonts.com/icon %3c/metadata%3e%3cg%3e%3cpath d='M796.8,990L990,796.8v-82.9L713.9,990H796.8z'/%3e%3cpath d='M444.9,990L990,444.9v-82.9L361.9,990H444.9z'/%3e%3cpath d='M10,990h82.9L990,92.9V10L10,990z'/%3e%3c/g%3e%3c/svg%3e")
+		#fff no-repeat right bottom / 0.5rem;
 }
