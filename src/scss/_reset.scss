@@ -75,3 +75,25 @@ html {
 	padding: 0;
 	margin: 0;
 }
+
+form {
+	cursor: default;
+}
+
+a,
+label,
+select,
+button,
+[type='button' i],
+[type='reset' i],
+[type='submit' i],
+[type='range' i],
+[type='checkbox' i],
+[type='radio' i],
+[type='color'],
+[type='file' i]::file-selector-button,
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button,
+::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+}

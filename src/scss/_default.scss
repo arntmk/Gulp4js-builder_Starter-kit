@@ -93,29 +93,6 @@ a:is(:hover, :focus-visible) {
 	box-shadow: 0 0 0.25rem #4682b4;
 }
 
-/* ======================Normalize-Form================================== */
-form {
-	cursor: default;
-}
-
-a,
-label,
-select,
-button,
-[type='button' i],
-[type='reset' i],
-[type='submit' i],
-[type='range' i],
-[type='checkbox' i],
-[type='radio' i],
-[type='color'],
-[type='file' i]::file-selector-button,
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button,
-::-webkit-calendar-picker-indicator {
-	cursor: pointer;
-}
-
 /* ======================Normalize-Table================================= */
 /* Table */
 :where(th, td) {
