@@ -191,3 +191,16 @@ textarea::-webkit-resizer {
 		no-repeat right bottom / 0.5rem;
 	background-color: var(--form-bgcolor);
 }
+
+/**
+ * Styling input date in webkit browsers (opinionated).
+ */
+
+[type='date' i] {
+	width: 10em;
+}
+
+::-webkit-calendar-picker-indicator {
+	height: 1.1875em;
+	width: 1.375em;
+}
