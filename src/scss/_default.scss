@@ -27,18 +27,20 @@ textarea {
 	scrollbar-width: thin;
 }
 
-select::-webkit-scrollbar-track,
-textarea::-webkit-scrollbar-track,
 select::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
-	background-color: var(--form-bgcolor);
 	width: 1.0625rem;
+}
+
+select::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
+	background-color: var(--form-bgcolor);
 }
 
 /* =======================::Pseudo-elements================================= */
 /* Markers for: ul, ol */
 ::marker {
-	/* content: ''; */
+	content: '';
 	color: inherit;
 }
 
@@ -52,24 +54,14 @@ textarea::-webkit-scrollbar {
 /* =======================:Pseudo-classes=================================== */
 /* Link, Button, Input, Select, Datalist, Textarea */
 button:is(:hover, :focus-visible),
-:is([type='button' i]:hover, [type='button' i]:focus-visible),
-:is([type='reset' i]:hover, [type='button' i]:focus-visible),
-:is([type='submit' i]:hover, [type='button' i]:focus-visible) {
+:is([type='button']:hover, [type='button']:focus-visible),
+:is([type='reset']:hover, [type='button']:focus-visible),
+:is([type='submit']:hover, [type='button']:focus-visible) {
 	color: #fff;
 	border-color: transparent;
 	background-color: #4682b4;
 	box-shadow: 0 0 0.25rem #4682b4;
 	animation: fade 0.3s ease-in-out;
-}
-
-:is([type='range' i]:hover, [type='range' i]:focus-visible) {
-	border: thin solid #9a9a9a;
-	border-left: none;
-}
-
-:is([type='range' i]:active, [type='range' i]:active) {
-	border: thin solid #c1c1c1;
-	border-left: none;
 }
 
 input:not(
@@ -90,11 +82,6 @@ textarea:is(:hover, :focus) {
 a:is(:hover, :focus-visible) {
 	color: darken(#4682b4, 10%);
 	transition: 0.3s ease-in-out;
-}
-
-#datalist:is(:hover, :focus) {
-	border: thin solid #4682b4;
-	box-shadow: 0 0 0.25rem #4682b4;
 }
 
 /* =========================Table======================================= */

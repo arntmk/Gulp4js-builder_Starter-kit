@@ -4,7 +4,7 @@
 	--content-width: 1770px; /* 1770+15+15=1800 */
 	--container-offset: 15px; /* 15*2 Left-Right = 30 */
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-	--breakpoint-1450: 1449.98 + px; /* Desktop+ */
+	--breakpoint-1450: 1449.98 + px; /* Desktop XL */
 	--breakpoint-1200: 1199.98 + px; /* Desktop */
 	--breakpoint-992: 991.98 + px; /* Laptop */
 	--breakpoint-768: 767.98 + px; /* Tablet */
@@ -26,35 +26,30 @@
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bgcolor: #1e1e1e;
-		--color: #fff;
+		--scrollbar-color: #777;
+		--scrollbar-bgcolor: #1c1c1c;
+		--bgcolor: #4682b4;
+		--color: #1e1e1e;
+		--form-bgcolor: #fff;
 	}
 }
-
-/* Reduced Motion */
-/*
- * 1. Remove animations when motion is reduced (opinionated).
- * 2. Remove fixed background attachments when motion is reduced (opinionated).
- * 3. Remove timed scrolling behaviors when motion is reduced (opinionated).
- * 4. Remove transitions when motion is reduced (opinionated).
- */
 
 @media (prefers-reduced-motion: reduce) {
 	*,
 	::before,
 	::after {
-		animation-delay: -1ms !important; /* 1 */
-		animation-duration: 1ms !important; /* 1 */
-		animation-iteration-count: 1 !important; /* 1 */
-		background-attachment: initial !important; /* 2 */
-		scroll-behavior: auto !important; /* 3 */
-		transition-delay: 0s !important; /* 4 */
-		transition-duration: 0s !important; /* 4 */
+		animation-delay: -1ms !important;
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		background-attachment: initial !important;
+		scroll-behavior: auto !important;
+		transition-delay: 0s !important;
+		transition-duration: 0s !important;
 	}
 }
 
 /* SCSS BREAKPOINT */
-$breakpoint-1450: 1449.98 + px; /* Desktop+ */
+$breakpoint-1450: 1449.98 + px; /* Desktop XL */
 $breakpoint-1200: 1199.98 + px; /* Desktop */
 $breakpoint-992: 991.98 + px; /* Laptop */
 $breakpoint-768: 767.98 + px; /* Tablet */
