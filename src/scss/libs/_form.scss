@@ -285,7 +285,8 @@ input[type='search']::-webkit-search-cancel-button {
 		no-repeat right center;
 }
 
-[type='search'] {
+[type='search']:hover,
+[type='search']:focus {
 	border: thin solid #4682b4;
 	box-shadow: 0 0 0.25rem #4682b4;
 	transition: 0.3s ease-in-out;
