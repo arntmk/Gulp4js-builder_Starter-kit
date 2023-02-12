@@ -66,6 +66,7 @@ button:is(:hover, :focus-visible),
 
 input:not(
 		#datalist,
+		[type='range'],
 		[type='search'],
 		[type='file'],
 		[type='color'],
