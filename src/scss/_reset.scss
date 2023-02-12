@@ -76,8 +76,12 @@ html {
 	margin: 0;
 }
 
-form {
+:where(form) {
 	cursor: default;
+}
+
+:where(progress, textarea, [type='checkbox'], [type='radio'], [type='color']) {
+	vertical-align: middle;
 }
 
 a,
