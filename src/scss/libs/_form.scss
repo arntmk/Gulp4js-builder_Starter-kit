@@ -27,33 +27,6 @@
 	width: 12.45em;
 }
 
-#datalist::-webkit-calendar-picker-indicator {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-	pointer-events: none;
-	color: transparent;
-}
-
-:where(#datalist) {
-	background: url('') #fff no-repeat;
-	width: 12.45em;
-	padding-right: 1.5em;
-	&:hover,
-	&:focus {
-		background: #fff
-			url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M4 0h6L7 5'/%3E%3C/svg%3E")
-			no-repeat right center / 1.7em;
-		border: thin solid #4682b4;
-		box-shadow: 0 0 0.25rem #4682b4;
-	}
-}
-
 /**
  * Don't show the arrow for multiple choice selects
  */
@@ -69,6 +42,37 @@
 :where([type='color'], [type='range']) {
 	border-width: 0;
 	padding: 0;
+}
+
+/**
+ * Change the inconsistent appearance in all browsers (opinionated).
+ */
+
+#datalist::-webkit-calendar-picker-indicator {
+	-webkit-appearance: none;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	pointer-events: none;
+	color: transparent;
+}
+
+:where(#datalist) {
+	width: 12.45em;
+	padding-right: 1.5em;
+	&:hover,
+	&:focus {
+		background: #fff
+			url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M4 0h6L7 5'/%3E%3C/svg%3E")
+			no-repeat right center / 1.7em;
+		border: thin solid #4682b4;
+		box-shadow: 0 0 0.25rem #4682b4;
+	}
 }
 
 /**
@@ -278,4 +282,10 @@ input[type='search']::-webkit-search-cancel-button {
 	background-image: transparent
 		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>")
 		no-repeat right center;
+}
+
+[type='search'] {
+	border: thin solid #4682b4;
+	box-shadow: 0 0 0.25rem #4682b4;
+	transition: 0.3s ease-in-out;
 }

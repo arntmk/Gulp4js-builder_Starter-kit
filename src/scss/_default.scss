@@ -53,6 +53,11 @@ textarea::-webkit-scrollbar-track {
 
 /* =======================:Pseudo-classes=================================== */
 /* Link, Button, Input, Select, Datalist, Textarea */
+a:is(:hover, :focus-visible) {
+	color: darken(#4682b4, 10%);
+	transition: 0.3s ease-in-out;
+}
+
 button:is(:hover, :focus-visible),
 :is([type='button']:hover, [type='button']:focus-visible),
 :is([type='reset']:hover, [type='button']:focus-visible),
@@ -66,8 +71,8 @@ button:is(:hover, :focus-visible),
 
 input:not(
 		#datalist,
-		[type='range'],
 		[type='search'],
+		[type='range'],
 		[type='file'],
 		[type='color'],
 		[type='checkbox'],
@@ -78,11 +83,6 @@ select:is(:hover, :focus),
 textarea:is(:hover, :focus) {
 	border: thin solid #4682b4;
 	box-shadow: 0 0 0.25rem #4682b4;
-	transition: 0.3s ease-in-out;
-}
-
-a:is(:hover, :focus-visible) {
-	color: darken(#4682b4, 10%);
 	transition: 0.3s ease-in-out;
 }
 
