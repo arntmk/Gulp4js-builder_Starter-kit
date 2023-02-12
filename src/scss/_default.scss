@@ -66,6 +66,7 @@ button:is(:hover, :focus-visible),
 
 input:not(
 		#datalist,
+		[type='search'],
 		[type='file'],
 		[type='color'],
 		[type='checkbox'],
