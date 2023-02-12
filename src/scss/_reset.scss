@@ -80,7 +80,7 @@ html {
 	cursor: default;
 }
 
-:where(progress, textarea, [type='checkbox'], [type='radio'], [type='color']) {
+:where(progress, textarea, [type='checkbox'], [type='radio']) {
 	vertical-align: middle;
 }
 
@@ -98,6 +98,7 @@ button,
 [type='file']::file-selector-button,
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button,
+[type='search']::-webkit-search-cancel-button,
 ::-webkit-calendar-picker-indicator {
 	cursor: pointer;
 }
