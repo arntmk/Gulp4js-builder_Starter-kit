@@ -1,15 +1,25 @@
-/* =========================Global======================================== */
-/* GENERAL */
+/* =========================Global========================================== */
+/* General & Typography*/
 html,
 body {
 	height: 100%;
 }
 
 html {
-	font-family: var(--font-family), -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		system-ui, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+	font-family: var(--font-family), system-ui, -apple-system, 'Segoe UI',
+		'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	font-size: 16px; /* (100% * 1px / 16px = "6.25%" це | 1rem = 1px) */ /* (1000% / 16px = "62.5%" це | 20rem = 200px) */
 	line-height: 1.5; /* 24px / 16px = "1.5" */
+}
+
+code,
+kbd,
+samp,
+pre {
+	font-family: ui-monospace, 'Menlo', 'Consolas', 'Roboto Mono',
+		'Ubuntu Monospace', 'Noto Mono', 'Oxygen Mono', 'Liberation Mono', monospace,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 body {
@@ -23,7 +33,60 @@ body {
 	// accent-color: #0060df;
 }
 
-/* ======================================================================== */
+/* =========================================================================== */
+/* ScrollBar for Wibesite*/
+html {
+	scroll-behavior: smooth;
+	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
+}
+
+::-webkit-scrollbar {
+	width: 1.125rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-color);
+	border-radius: 0.625rem;
+	border: 0.3125rem solid transparent;
+	background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--scrollbar-bgcolor);
+}
+
+/* ScrollBar for Select and Textarea*/
+select,
+textarea {
+	scrollbar-color: var(--scrollbar-color) var(--form-bgcolor);
+	scrollbar-width: thin;
+}
+
+select::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+	width: 1.0625rem;
+}
+
+select::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
+	background-color: var(--form-bgcolor);
+}
+
+/* =======================::Pseudo-elements================================= */
+/* Markers for: ul, ol */
+::marker {
+	content: '';
+	color: inherit;
+}
+
+/* Selection */
+::selection {
+	color: #fff;
+	background-color: #4682b4;
+	text-shadow: none;
+}
+
+/* =========================================================================== */
 /* Sticky Footer & Container */
 div#wrappar {
 	display: flex;
