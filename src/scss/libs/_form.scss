@@ -24,8 +24,8 @@ textarea {
 select {
 	-webkit-appearance: none;
 	background-image: #fff
-		url('data:image/svg+xml,\00003csvg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\00003cpath fill="black" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z">\00003c/path>\00003c/svg>')
-		no-repeat 98% center / 1.5em;
+		url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
+		no-repeat 98% center / 1.4em;
 	padding-right: 1.6em;
 	width: 12.45em;
 }
