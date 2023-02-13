@@ -79,7 +79,7 @@ html {
 	cursor: default;
 }
 
-:where(progress, textarea, [type='checkbox'], [type='radio']) {
+:where(textarea, [type='checkbox'], [type='radio']) {
 	vertical-align: middle;
 }
 
