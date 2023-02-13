@@ -101,13 +101,3 @@ button,
 ::-webkit-calendar-picker-indicator {
 	cursor: pointer;
 }
-
-select option {
-	color: inherit;
-	background-color: #fff;
-}
-
-select option:checked {
-	color: #fff;
-	background-color: #767676;
-}

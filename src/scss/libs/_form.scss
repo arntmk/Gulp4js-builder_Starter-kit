@@ -4,7 +4,7 @@
  * 2. Add typography inheritance in all browsers (opinionated).
  */
 
-:where(button, input, select, textarea) {
+:is(button, input, select, textarea) {
 	background-color: #fff; /* 1 */
 	border: thin solid #8f8f9d; /* 1 */
 	color: inherit; /* 1 */
@@ -18,7 +18,7 @@
  * Change the inconsistent appearance in all browsers (opinionated).
  */
 
-:where(select) {
+select {
 	appearance: none;
 	background: #fff
 		url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M4 0h6L7 5'/%3E%3C/svg%3E")
@@ -27,11 +27,21 @@
 	width: 12.45em;
 }
 
+select option {
+	color: inherit;
+	background-color: #fff;
+}
+
+select option:checked {
+	color: #fff;
+	background-color: #767676;
+}
+
 /**
  * Don't show the arrow for multiple choice selects
  */
 
-:where(select[multiple]) {
+select[multiple] {
 	background-image: none;
 }
 
@@ -39,7 +49,7 @@
  * Remove the border and padding in all browsers (opinionated).
  */
 
-:where([type='color'], [type='range']) {
+:is([type='color'], [type='range']) {
 	border-width: 0;
 	padding: 0;
 }
@@ -62,7 +72,7 @@
 	color: transparent;
 }
 
-:where(#datalist) {
+#datalist {
 	width: 12.45em;
 	padding-right: 1.5em;
 	&:hover,
