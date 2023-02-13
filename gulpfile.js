@@ -180,7 +180,7 @@ function html() {
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@@' }))
 		.pipe(webpHTML())
-		.pipe(typograf({ locale: ['ru', 'en-US'] }))
+		.pipe(typograf({ locale: ['ru', 'en-US', 'ua'] }))
 		.pipe(
 			gulpif(
 				isBuild,
