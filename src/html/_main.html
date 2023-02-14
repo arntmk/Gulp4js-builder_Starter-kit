@@ -44,8 +44,8 @@
 				name=""
 				id=""
 				required
-				minlength="4"
-				maxlength="50"
+				autocomplete="username"
+				pattern=".{4,20}"
 				placeholder="Text"
 			/>
 			<input type="reset" value="Reset" />
@@ -56,7 +56,7 @@
 				type="number"
 				name=""
 				id=""
-				onkeypress="return /^[0-9|\b|/.]+$/.test(String.fromCharCode(event.keyCode || event.which))"
+				onkeypress="return /^[0-9|\b|\.]+$/.test(String.fromCharCode(event.keyCode || event.which))"
 			/>
 			<!-- <input type="number" name="" id="" onkeypress="return false" /> -->
 			<br />
@@ -92,12 +92,17 @@
 				name=""
 				id=""
 				required
-				minlength="4"
-				maxlength="50"
+				pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[!@#$%^&*_=+-]).{8,30}"
 				placeholder="Password"
 			/>
 			<br />
-			<input type="email" name="" id="" required placeholder="Email" />
+			<input
+				type="email"
+				name=""
+				id=""
+				required="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+				placeholder="Email"
+			/>
 			<br />
 			<select name="" id="" class="select">
 				<option value="">Oleg</option>
