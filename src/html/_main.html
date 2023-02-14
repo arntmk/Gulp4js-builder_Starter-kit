@@ -56,7 +56,7 @@
 				type="number"
 				name="number"
 				id=""
-				onkeypress="return /^[0-9.]+$/.test(String.fromCharCode(event.keyCode || event.which))"
+				onkeypress="return /^[0-9|\b|/.]+$/.test(String.fromCharCode(event.keyCode || event.which))"
 			/>
 			<!-- <input type="number" name="" id="" onkeypress="return false" /> -->
 			<br />
