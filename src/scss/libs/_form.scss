@@ -154,14 +154,14 @@ progress {
 	border-radius: 0.9375rem;
 }
 
-progress::-webkit-progress-bar {
-	border-radius: 0.9375rem;
-	background-color: rgba(255, 255, 255, 0.8);
-}
-
 progress::-moz-progress-bar {
 	background-color: #0075ff;
 	border-radius: 0.9375rem;
+}
+
+progress::-webkit-progress-bar {
+	border-radius: 0.9375rem;
+	background-color: rgba(255, 255, 255, 0.8);
 }
 
 progress::-webkit-progress-value {
