@@ -29,7 +29,7 @@ html {
 }
 
 :where(button, input, select, textarea) {
-	outline: none;
+	outline-color: transparent;
 }
 
 :where(button, input, select, textarea, optgroup) {
