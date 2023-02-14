@@ -37,6 +37,7 @@ body {
 /* ScrollBar for Wibesite*/
 html {
 	scroll-behavior: smooth;
+	scroll-padding-top: 4.6875rem;
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
 }
 
