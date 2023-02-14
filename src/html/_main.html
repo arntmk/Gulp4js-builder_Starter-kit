@@ -52,7 +52,13 @@
 			<input type="submit" value="Submit" />
 			<input type="button" value="Button" />
 			<button>Button</button>
-			<input type="number" name="" id="" onkeypress="return false" />
+			<input
+				type="number"
+				name="number"
+				id=""
+				onkeypress="return /^[0-9.]+$/.test(String.fromCharCode(event.keyCode || event.which))"
+			/>
+			<!-- <input type="number" name="" id="" onkeypress="return false" /> -->
 			<br />
 			<!-- <input type="week" name="" id="" /> -->
 			<input type="file" name="" id="" />
