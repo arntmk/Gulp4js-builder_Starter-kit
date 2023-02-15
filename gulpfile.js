@@ -268,6 +268,7 @@ function browserSync() {
 		notify: false,
 		online: true,
 		port: 3015,
+		browser: ['chrome'], //, 'firefox'
 	});
 }
 
