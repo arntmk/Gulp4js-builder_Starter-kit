@@ -1,17 +1,22 @@
-// Custom Scripts imports
+// input[type="number"] Only
 
-// function NumberOnly(e) {
-// 	const keyCode = e.keyCode || e.which;
-// 	const NumberOnly = document.querySelectorAll('NumberOnly');
-// 	NumberOnly.innerHTML = '';
+const numericInputs = document.querySelectorAll('[inputmode="numeric"]');
 
-// 	//Regex for Valid Characters i.e. Numbers.
-// 	const regex = /^[0-9.]+$/;
+numericInputs.forEach((input) => {
+	validateInput(input);
+});
 
-// 	//Validate TextBox value against the Regex.
-// 	const isValid = regex.test(String.fromCharCode(keyCode));
-// 	// if (!isValid) {
-// 	// 		NumberOnly.innerHTML = "Only Numbers allowed.";
-// 	// }
-// 	return isValid;
-// }
+function validateInput(el) {
+	el.addEventListener('beforeinput', function (e) {
+		let beforeValue = el.value;
+		e.target.addEventListener(
+			'input',
+			function () {
+				if (el.validity.patternMismatch) {
+					el.value = beforeValue;
+				}
+			},
+			{ once: true }
+		);
+	});
+}
