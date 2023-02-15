@@ -23,7 +23,7 @@ textarea {
 
 select {
 	-webkit-appearance: none;
-	background-image: #fff
+	background: #fff
 		url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
 		no-repeat 98% center / 1.4em;
 	padding-right: 1.6em;
@@ -235,9 +235,9 @@ textarea {
 }
 
 textarea::-webkit-resizer {
-	background-image: url("data:image/svg+xml;utf8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3e%3cpath d='M796.8 990L990 796.8v-82.9L713.9 990h82.9zm-351.9 0L990 444.9V362L361.9 990h83zM10 990h82.9L990 92.9V10L10 990z'/%3e%3c/svg%3e")
+	background: transparent
+		url("data:image/svg+xml;utf8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3e%3cpath d='M796.8 990L990 796.8v-82.9L713.9 990h82.9zm-351.9 0L990 444.9V362L361.9 990h83zM10 990h82.9L990 92.9V10L10 990z'/%3e%3c/svg%3e")
 		no-repeat right bottom / 0.5rem;
-	background-color: transparent;
 }
 
 /**
@@ -279,7 +279,7 @@ input[type='search']::-webkit-search-cancel-button {
 	height: 1.1em;
 	width: 1.1em;
 	margin-left: 0.4em;
-	background-image: transparent
+	background: transparent
 		url("data:image/svg+xml;utf8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'%3e%3cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3e%3c/svg%3e")
 		no-repeat right center;
 }
@@ -296,7 +296,7 @@ input[type='search']::-webkit-search-cancel-button {
 // 	padding-right: 1.5em;
 // 	&:hover,
 // 	&:focus {
-// 		background-image: #fff
+// 		background: #fff
 // 			url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>")
 // 			no-repeat right center / 1.1em;
 // 		border: thin solid #4682b4;
@@ -304,3 +304,20 @@ input[type='search']::-webkit-search-cancel-button {
 // 		background-position-x: 97%;
 // 	}
 // }
+
+/**
+ * Styling input password in all browsers (opinionated).
+ */
+::-ms-reveal,
+::-ms-clear {
+	display: none;
+}
+
+[type='password'] {
+	&:hover,
+	&:focus {
+		background: #fff
+			url("data:image/svg+xml;charset=UTF-8, %3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath d='M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.209 0-4 1.792-4 4 0 2.209 1.791 4 4 4s4-1.791 4-4c0-2.208-1.791-4-4-4z'/%3e%3c/svg%3e")
+			no-repeat 97% center / 1em;
+	}
+}
