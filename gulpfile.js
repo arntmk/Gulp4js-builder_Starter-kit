@@ -266,8 +266,11 @@ function browserSync() {
 	browsersync.init({
 		server: { baseDir: 'build/' },
 		notify: false,
-		online: true,
+		online: false,
 		port: 3015,
+		ui: false,
+		logFileChanges: false,
+		logConnections: false,
 		browser: ['chrome'], //, 'firefox'
 	});
 }
