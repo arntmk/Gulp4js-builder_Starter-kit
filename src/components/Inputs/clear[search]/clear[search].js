@@ -1,7 +1,7 @@
 // Toggle search cleaning
 
-const searchInput = document.querySelector('#txtsearchinput'),
-  clearButton = document.querySelector('#deltxtinput');
+const searchInput = document.querySelector('#txtsearchinput');
+const clearButton = document.querySelector('#deltxtinput');
 
 clearButton.addEventListener('click', function () {
   searchInput.value = '';
