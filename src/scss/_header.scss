@@ -5,15 +5,16 @@
 		justify-content: space-between;
 		align-items: center;
 	}
-	&__logo {
-		font-size: 2rem;
-	}
+}
+.container {
+}
+.logo {
+	font-size: 2rem;
 }
 .nav {
-	&__ul {
-		display: flex;
-		gap: 2.1875rem;
-	}
+	display: flex;
+	gap: 2.1875rem;
+	margin-left: auto;
 	&__li {
 	}
 	&__li-link {

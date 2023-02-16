@@ -1,0 +1,24 @@
+.header {
+	margin-bottom: 1.25rem;
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+.container {
+}
+.logo {
+	font-size: 2rem;
+}
+.nav {
+	display: flex;
+	gap: 2.1875rem;
+	margin-left: auto;
+	&__li {
+	}
+	&__li-link {
+	}
+}
+.burger {
+}
