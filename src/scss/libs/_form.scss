@@ -67,7 +67,6 @@ select[multiple] {
  */
 
 #datalist::-webkit-calendar-picker-indicator {
-	-webkit-appearance: none;
 	position: absolute;
 	width: 0.0625rem;
 	height: 0.0625rem;
@@ -89,6 +88,19 @@ select[multiple] {
 			url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
 			no-repeat 102% center / 1.9em;
 		border-color: transparent;
+		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
+		animation: datalist 0.3s ease-in-out;
+	}
+}
+
+/* box-shadow */
+@keyframes datalist {
+	0% {
+		color: transparent;
+		box-shadow: 0 0 0 0.0625rem transparent, 0 0 0.625rem transparent;
+	}
+	100% {
+		color: inherit;
 		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
 	}
 }
