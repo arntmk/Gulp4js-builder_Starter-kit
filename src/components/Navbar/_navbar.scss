@@ -1,11 +1,12 @@
 .header {
 	margin-bottom: 1.25rem;
-	&__nav {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
 }
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .container {
 }
 .logo {
