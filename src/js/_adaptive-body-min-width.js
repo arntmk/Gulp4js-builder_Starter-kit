@@ -1,4 +1,4 @@
-// Adaptive-body-min-width
+// ===Adaptive-body-min-width===
 function adaptiveSizePageScaleInit(definedStartWidth) {
 	const page = document.documentElement;
 	let clientWidth = page.clientWidth;

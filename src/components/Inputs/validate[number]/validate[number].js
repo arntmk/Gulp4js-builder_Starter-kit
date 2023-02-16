@@ -1,4 +1,4 @@
-// Only Numbers
+// ===Validate Numbers===
 
 const numericInputs = document.querySelectorAll('[inputmode="numeric"]');
 
