@@ -89,14 +89,26 @@
 			/>
 			<button>Button</button>
 			<br />
-			<input
+			<!-- <input
 				type="password"
 				name=""
 				id=""
 				required
 				pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[!@#$%^&*_=+-]).{8,30}"
 				placeholder="Password"
-			/>
+			/> -->
+			<div class="password-wrap">
+				<label for="password">Password:</label>
+				<input
+					type="password"
+					name="password"
+					id="password"
+					required
+					pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[!@#$%^&*_=+-]).{8,30}"
+					placeholder="Password"
+				/>
+				<span class="eye-open eye-close hidden" id="togglePassword"></span>
+			</div>
 			<br />
 			<input
 				type="email"
