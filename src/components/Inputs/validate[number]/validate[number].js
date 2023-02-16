@@ -1,4 +1,4 @@
-// input[type="number"] Only
+// Only Numbers
 
 const numericInputs = document.querySelectorAll('[inputmode="numeric"]');
 

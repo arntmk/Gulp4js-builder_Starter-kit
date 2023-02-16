@@ -2,6 +2,5 @@
 	"./src/js/libs/_vendor.js",
 	"./src/js/_script.js",
 	"./src/js/_adaptive-body-min-width.js",
-	"./src/js/_form.js",
 	"./src/js/*.{js,jsx,ts,tsx,vue}"
 ]
