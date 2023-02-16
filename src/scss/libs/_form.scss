@@ -39,17 +39,6 @@ select {
 	width: 12.45em;
 }
 
-select option {
-	color: inherit;
-	background-color: #fff;
-	cursor: pointer;
-}
-
-select option:hover {
-	color: #fff;
-	background-color: #0060df;
-}
-
 select option:checked {
 	color: inherit;
 	background-color: #e0e0e6;
