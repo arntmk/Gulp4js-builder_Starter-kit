@@ -1,61 +1,118 @@
-/* The container must be positioned relative: */
-.custom-select {
+/* https://www.youtube.com/watch?v=NRxSb5hCS58 */
+/* https://www.darkcode.info/2022/05/how-to-create-custom-select-menu-using.html */
+/* https://www.youtube.com/watch?v=z0avfnlBRto */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #c7ecee;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-wrapper {
+  width: 300px;
+  cursor: pointer;
   position: relative;
-  font-family: Arial;
 }
 
-.custom-select select {
-  display: none; /*hide original SELECT element: */
+.select {
+  border: thin solid #8f8f9d;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  color: #201e1e;
+  font-weight: 500;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.select-selected {
-  background-color: DodgerBlue;
-}
-
-/* Style the arrow inside the select element: */
-.select-selected:after {
+.options-list {
+  border: 0 solid transparent;
   position: absolute;
-  content: '';
-  top: 14px;
-  right: 10px;
-  width: 0;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  margin-top: 2px;
+  padding: 0 20px;
+  max-height: 190px;
+  overflow-y: auto;
+  /* overflow-y: hidden; */
+  transition: 0.3s linear 0.2s;
   height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
 }
 
-/* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
+.option {
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 14px;
+  transition: 0.05s linear;
 }
 
-/* style the items (options), including the selected item: */
-.select-items div,
-.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+.option:hover,
+.option.selected {
+  color: #00a8ff;
+  /* background-color: #00a8ff; */
+}
+
+.options-list::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+.options-list::-webkit-scrollbar-thumb {
+  background-color: #00a8ff;
+  border-radius: 0.625rem;
+}
+
+.options-list {
+  scrollbar-color: #00a8ff transparent;
+  scrollbar-width: thin;
+}
+
+.options-list.active {
+  height: 190px;
+  border: thin solid #8f8f9d;
+}
+
+.select-ico {
+  display: block;
+  height: 1em;
+  width: 1em;
+  background: #f9f9f9
+    url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
+    no-repeat right center / 1.4em;
+  padding-right: 1.6em;
+  transition: 0.3s linear;
+}
+
+.select.active .select-ico {
+  transform: rotate(-180deg);
+}
+
+/* ============================= */
+
+:where(button) {
+  font: inherit;
+  outline-color: transparent;
+  background-color: transparent;
+  border-width: 0;
+  padding: 0;
   cursor: pointer;
 }
 
-/* Style items (options): */
-.select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/* Hide the items when the select box is closed: */
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover,
-.same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+:where(ul, ol, dl) {
+  list-style-position: inside;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
