@@ -18,7 +18,7 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 .search-wrap input[type='search'] {
-	padding-right: 25px;
+	padding-right: 1.5625rem;
 }
 
 /* Basic clear button styling */
