@@ -24,7 +24,7 @@ pre {
 
 body {
 	font-size: 1rem;
-	font-size: clamp(0.75rem, 1.5vw, 1rem);
+	font-size: clamp(0.75rem, 1.5vw + 1rem, 1rem);
 	font-weight: 400;
 	font-style: normal;
 	min-width: 320px;
