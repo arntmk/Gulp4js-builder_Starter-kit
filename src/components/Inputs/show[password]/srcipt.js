@@ -16,6 +16,7 @@ password.addEventListener('input', function () {
 	togglePassword.classList.toggle('hidden', !this.value);
 });
 
+// ===============================================
 // prevent form submit
 // const form = document.querySelector('form');
 // form.addEventListener('submit', function (e) {
