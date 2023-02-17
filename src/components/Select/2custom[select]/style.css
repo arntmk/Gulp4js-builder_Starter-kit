@@ -17,6 +17,25 @@ body {
   justify-content: center;
 }
 
+:where(button) {
+  font: inherit;
+  outline-color: transparent;
+  background-color: transparent;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:where(ul, ol, dl) {
+  list-style-position: inside;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ============================= */
+
+
 .select-wrapper {
   width: 300px;
   cursor: pointer;
@@ -99,20 +118,3 @@ body {
   transform: rotate(-180deg);
 }
 
-/* ============================= */
-
-:where(button) {
-  font: inherit;
-  outline-color: transparent;
-  background-color: transparent;
-  border-width: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-:where(ul, ol, dl) {
-  list-style-position: inside;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
