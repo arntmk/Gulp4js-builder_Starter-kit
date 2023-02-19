@@ -25,3 +25,32 @@ clearButton.addEventListener('click', function () {
 searchInput.addEventListener('input', function () {
 	clearButton.classList.toggle('hidden', !this.value);
 });
+
+// ===Validate Numbers===
+const numericInputs = document.querySelectorAll("[inputmode='numeric']");
+
+numericInputs.forEach((input) => {
+	validateInput(input);
+});
+
+function validateInput(el) {
+	el.addEventListener('beforeinput', function (e) {
+		let beforeValue = el.value;
+		e.target.addEventListener(
+			'input',
+			function () {
+				if (el.validity.patternMismatch) {
+					el.value = beforeValue;
+				}
+			},
+			{ once: true }
+		);
+	});
+}
+
+document.querySelector('[inputmode="numeric"]').onkeypress = function Validate(
+	e
+) {
+	const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
+	return isNumber;
+};

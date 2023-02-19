@@ -1,6 +1,6 @@
 // ===Validate Numbers===
 
-const numericInputs = document.querySelectorAll('[inputmode="numeric"]');
+const numericInputs = document.querySelectorAll("[inputmode='numeric']");
 
 numericInputs.forEach((input) => {
 	validateInput(input);
@@ -20,3 +20,10 @@ function validateInput(el) {
 		);
 	});
 }
+
+document.querySelector('[inputmode="numeric"]').onkeypress = function Validate(
+	e
+) {
+	const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
+	return isNumber;
+};
