@@ -1,6 +1,6 @@
 // ===Validate Numbers===
 
-const numericInputs = document.querySelectorAll("[inputmode='numeric']");
+const numericInputs = document.querySelectorAll('[inputmode="numeric"]');
 
 numericInputs.forEach((input) => {
 	validateInput(input);
