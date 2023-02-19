@@ -13,7 +13,7 @@
 		"clr": "gulp clr"
 	},
 	"browserslist": [
-		"last 2 version",
+		"last 3 version",
 		"> 1%",
 		"defaults and supports es6-module",
 		"maintained node versions",
