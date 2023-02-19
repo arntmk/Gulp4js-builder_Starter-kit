@@ -267,11 +267,11 @@ textarea::-webkit-resizer {
  * Styling input number in all browsers (opinionated).
  */
 input[type='number'] {
-	appearance: textfield;
+	-webkit-appearance: textfield;
 }
 input[type='number']:hover,
 input[type='number']:focus {
-	appearance: auto;
+	-webkit-appearance: auto;
 }
 
 /**
