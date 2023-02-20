@@ -79,6 +79,14 @@
 }
 
 /**
+ * Prevent the list style to broke in Chrome, Edge, and Safari.
+ */
+
+ :where(dl, ol, ul) {
+	list-style-position: inside;
+}
+
+/**
  * 1. Correct the border color in all browsers.
  * 2. Add the correct box sizing in Firefox.
  */
@@ -98,14 +106,6 @@
   list-style-type: none;
   padding: 0;
 	margin: 0;
-}
-
-/**
- * Prevent the list style to broke in Chrome, Edge, and Safari.
- */
-
- :where(dl, ol, ul) {
-	list-style-position: inside;
 }
 
 /**
