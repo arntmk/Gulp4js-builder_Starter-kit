@@ -124,7 +124,7 @@ body.lock {
 		height: 100%;
 		width: 60%;
 		background-color: #f15412;
-		overflow: auto;
+		overflow-y: auto;
 	}
 
 	.nav__li-link {
