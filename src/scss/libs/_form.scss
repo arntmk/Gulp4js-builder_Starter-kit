@@ -13,10 +13,7 @@
  * 2. Add typography inheritance in all browsers (opinionated).
  */
 
-button,
-input,
-select,
-textarea {
+:where(button, input, select, textarea) {
 	background-color: #fff; /* 1 */
 	border: thin solid #8f8f9d; /* 1 */
 	padding: 0.25em 0.375em; /* 1 */
