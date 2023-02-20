@@ -1,4 +1,4 @@
-/* ========================Global============================================ */
+/* -------------------Global------------------------- */
 /* General & Typography*/
 html,
 body {
@@ -34,7 +34,7 @@ body {
 	// accent-color: #0060df;
 }
 
-/* ========================================================================== */
+/* -------------------------------------------- */
 /* ScrollBar for Wibesite*/
 html {
 	scroll-behavior: smooth;
@@ -56,7 +56,7 @@ html {
 	background-color: var(--scrollbar-bgcolor);
 }
 
-/* ScrollBar for Select and Textarea*/
+/* ScrollBar for Select and Textarea */
 select,
 textarea {
 	scrollbar-color: var(--scrollbar-color) var(--form-bgcolor);
@@ -74,7 +74,7 @@ textarea::-webkit-scrollbar-track {
 }
 
 /* ::Pseudo-elements
- * ========================================================================== */
+/* -------------------------------------------- */
 /* Markers for: ul, ol */
 ::marker {
 	// content: '';
@@ -88,7 +88,7 @@ textarea::-webkit-scrollbar-track {
 	text-shadow: none;
 }
 
-/* ========================================================================== */
+/* -------------------------------------------- */
 /* Sticky Footer & Container */
 div#wrappar {
 	display: flex;
@@ -134,7 +134,7 @@ div.container {
 }
 
 /* Animation
- * ========================================================================== */
+/* -------------------------------------------- */
 /* Opacity */
 @keyframes fade {
 	0% {
@@ -146,7 +146,7 @@ div.container {
 }
 
 /* Utility Classes
- * ========================================================================== */
+/* -------------------------------------------- */
 /* Float clearfix */
 div.clearfix::after {
 	content: '';
@@ -183,7 +183,7 @@ div.clearfix::after {
 	padding: 0;
 }
 
-/* ========================================================================== */
+/* -------------------------------------------- */
 /* Gradient */
 .body {
 	// background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
@@ -199,5 +199,5 @@ div.clearfix::after {
 // 	background-size: cover;
 // }
 
-/* ========================================================================== */
-/* ========================================================================== */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
