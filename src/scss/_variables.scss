@@ -15,8 +15,9 @@
 	/* COLOR */
 	--scrollbar-color: #777;
 	--scrollbar-bgcolor: #1c1c1c;
-	--bgcolor: #4682b4;
-	--color: #1e1e1e;
+	--bg-color: #4682b4;
+	--text-color: #1e1e1e;
+	--accent-color: #4682b4;
 	--form-bgcolor: #fff;
 
 	/* FONT */
@@ -28,8 +29,9 @@
 	:root {
 		--scrollbar-color: #777;
 		--scrollbar-bgcolor: #1c1c1c;
-		--bgcolor: #4682b4;
-		--color: #1e1e1e;
+		--bg-color: #4682b4;
+		--text-color: #1e1e1e;
+		--accent-color: #4682b4;
 		--form-bgcolor: #fff;
 	}
 }
@@ -49,10 +51,10 @@
 }
 
 /* SCSS BREAKPOINT */
-$breakpoint-1450: 1449.98 + px; /* Desktop XL */
-$breakpoint-1200: 1199.98 + px; /* Desktop */
-$breakpoint-992: 991.98 + px; /* Laptop */
-$breakpoint-768: 767.98 + px; /* Tablet */
-$breakpoint-576: 575.98 + px; /* Mobile */
-$breakpoint-480: 479.98 + px; /* Small-Mobile */
-$breakpoint-320: 319.98 + px; /* Old-Mobile */
+$breakpoint-1450: 1449.98 + px;
+$breakpoint-1200: 1199.98 + px;
+$breakpoint-992: 991.98 + px;
+$breakpoint-768: 767.98 + px;
+$breakpoint-576: 575.98 + px;
+$breakpoint-480: 479.98 + px;
+$breakpoint-320: 319.98 + px;
