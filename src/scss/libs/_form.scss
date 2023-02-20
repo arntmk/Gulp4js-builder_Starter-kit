@@ -87,18 +87,7 @@ select option:checked {
 			no-repeat 102% center / 1.9em;
 		border-color: transparent;
 		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
-		animation: datalist 0.3s ease-in-out;
-	}
-}
-
-/* box-shadow */
-@keyframes datalist {
-	0% {
-		box-shadow: 0 0 0 0.0625rem transparent, 0 0 0.625rem transparent;
-	}
-	100% {
-		border-color: transparent;
-		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
+		transition: box-shadow 0.3s ease-in-out;
 	}
 }
 
