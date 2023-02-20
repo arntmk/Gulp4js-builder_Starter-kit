@@ -4,3 +4,13 @@ html {
 	scroll-behavior: smooth;
 	scroll-padding-top: var(--scroll-padding, 50px);
 }
+
+header {
+	position: fixed; /* or sticky */
+	top: 0;
+	width: 100%;
+}
+
+main {
+	margin-top: 5.5rem;
+}
