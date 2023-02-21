@@ -16,7 +16,7 @@
 }
 .swiper-slide {
 	width: 100%;
-	cursor: pointer;
+	cursor: grab;
 }
 
 .swiper-button {
