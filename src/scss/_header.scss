@@ -129,3 +129,10 @@ main {
 		line-height: 70px;
 	}
 }
+
+@media (max-width: 480px) {
+	.nav__li-link {
+		font-size: 25px;
+		line-height: 60px;
+	}
+}
