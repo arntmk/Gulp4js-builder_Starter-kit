@@ -169,6 +169,12 @@ div.clearfix::after {
 	text-align: center;
 }
 
+/* Offscreen */
+.offscreen {
+	position: absolute;
+	left: -100%;
+}
+
 /* Visually-Hidden */
 .visually-hidden {
 	position: absolute;
