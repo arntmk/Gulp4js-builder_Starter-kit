@@ -1,132 +1,131 @@
 body {
-  font-size: 1rem;
+	font-size: 1rem;
 }
 
 input {
-  font: inherit;
+	font: inherit;
 }
 
 label {
-  cursor: pointer;
+	cursor: pointer;
 }
 
-/* ==============Radio=================================== */
+/* ____________________Radio________________________ */
 
 .radio-wrapper {
-  padding-left: 35px;
-  margin-bottom: 12px;
+	padding-left: 35px;
+	margin-bottom: 12px;
 }
 
 .real-radio {
-  -webkit-appearance: none;
-  position: absolute;
+	-webkit-appearance: none;
+	position: absolute;
 }
 
 .custom-radio {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  width: 1em;
-  height: 1em;
-  background-color: #fff;
-  border: 0.0625rem solid gray;
-  border-radius: 50%;
-  margin-right: 0.3125rem;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 1em;
+	height: 1em;
+	background-color: #fff;
+	border: 0.0625rem solid gray;
+	border-radius: 50%;
+	margin-right: 0.3125rem;
 }
 
 .custom-radio::before {
-  content: '';
-  position: absolute;
-  inset: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  display: inline-block;
-  width: 0.75em;
-  height: 0.75em;
-  background-color: #0060df;
-  border-radius: 50%;
-  transition: 0.2s ease-in-out;
+	content: '';
+	position: absolute;
+	inset: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
+	background-color: #0060df;
+	border-radius: 50%;
+	transition: 0.2s ease-in-out;
 }
 
 .real-radio:checked + .custom-radio {
-  border-color: #0060df;
+	border-color: #0060df;
 }
 
 .real-radio:checked + .custom-radio::before {
-  transform: translate(-50%, -50%) scale(1);
+	transform: translate(-50%, -50%) scale(1);
 }
 
 label:is(:hover, :focus-visible) .custom-radio {
-  background-color: #ccc;
-  border-color: transparent;
-  box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
-  transition: 0.3s ease-in-out;
+	background-color: #ccc;
+	border-color: transparent;
+	box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
+	transition: 0.3s ease-in-out;
 }
 
-/* ================Checkbox================================= */
-
+/* ____________________Checkbox________________________ */
 .checkbox-wrapper {
-  padding-left: 35px;
-  margin-bottom: 12px;
+	padding-left: 35px;
+	margin-bottom: 12px;
 }
 
 .real-checkbox {
-  -webkit-appearance: none;
-  position: absolute;
+	-webkit-appearance: none;
+	position: absolute;
 }
 
 .custom-checkbox {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  width: 1em;
-  height: 1em;
-  background-color: #fff;
-  border: 0.0625rem solid gray;
-  margin-right: 0.3125rem;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 1em;
+	height: 1em;
+	background-color: #fff;
+	border: 0.0625rem solid gray;
+	margin-right: 0.3125rem;
 }
 
 .custom-checkbox::before {
-  content: '';
-  position: absolute;
-  inset: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 1em;
-  height: 1em;
-  background-color: #0060df;
-  transition: 0.2s ease-in-out;
-  border-radius: 50%;
+	content: '';
+	position: absolute;
+	inset: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	width: 1em;
+	height: 1em;
+	background-color: #0060df;
+	transition: 0.2s ease-in-out;
+	border-radius: 50%;
 }
 
 .real-checkbox:checked + .custom-checkbox {
-  border-color: #0060df;
+	border-color: #0060df;
 }
 
 .real-checkbox:checked + .custom-checkbox::before {
-  transform: translate(-50%, -50%) scale(1);
-  border-radius: 5%;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E")
-    #0060df no-repeat center / contain;
+	transform: translate(-50%, -50%) scale(1);
+	border-radius: 5%;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E")
+		#0060df no-repeat center / contain;
 }
 
 label:is(:hover, :focus-visible) .custom-checkbox {
-  background-color: #ccc;
-  border-color: transparent;
-  box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
-  transition: 0.3s ease-in-out;
+	background-color: #ccc;
+	border-color: transparent;
+	box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
+	transition: 0.3s ease-in-out;
 }
 
-/* disabled */
+/* Disabled */
 
 .real-checkbox:disabled + .custom-checkbox {
-  border-color: gray;
+	border-color: gray;
 }
 
 .real-checkbox:disabled + .custom-checkbox::before {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E")
-    gray no-repeat center / contain;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E")
+		gray no-repeat center / contain;
 }
 
 label:is(:hover, :focus-visible) .real-checkbox:disabled + .custom-checkbox {
-  box-shadow: none;
-  transition: 0.3s ease-in-out;
+	box-shadow: none;
+	transition: 0.3s ease-in-out;
 }
