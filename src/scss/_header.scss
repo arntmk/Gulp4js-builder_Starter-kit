@@ -125,14 +125,7 @@ main {
 
 	.nav__li-link {
 		display: inline-block;
-		font-size: 30px;
-		line-height: 70px;
-	}
-}
-
-@media (max-width: 480px) {
-	.nav__li-link {
-		font-size: 25px;
-		line-height: 60px;
+		font-size: clamp(1.563rem, 1.339rem + 1.12vw, 1.875rem); /* 30px */
+		line-height: 2.33; /* 70px */
 	}
 }
