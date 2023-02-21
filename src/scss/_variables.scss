@@ -13,6 +13,9 @@
 	--breakpoint-480: 479.98 + px; /* Small-Mobile */
 	--breakpoint-320: 319.98 + px; /* Old-Mobile */
 
+	/* FONT */
+	--font-family: 'Nunito';
+
 	/* COLOR */
 	--scrollbar-color: #777;
 	--scrollbar-bgcolor: #1c1c1c;
@@ -20,9 +23,6 @@
 	--text-color: #1e1e1e;
 	--accent-color: #4682b4;
 	--form-bgcolor: #fff;
-
-	/* FONT */
-	--font-family: 'Nunito';
 }
 
 /* Dark Mode */
