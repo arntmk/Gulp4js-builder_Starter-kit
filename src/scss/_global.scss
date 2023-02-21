@@ -32,6 +32,10 @@ body {
 	background: var(--bg-color);
 	caret-color: #f15412;
 	// accent-color: #0060df;
+
+	&.lock {
+		overflow: hidden;
+	}
 }
 
 /* ____________________________________________ */

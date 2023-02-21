@@ -25,6 +25,10 @@ ul {
 	list-style-type: none;
 }
 
+body.lock {
+	overflow: hidden;
+}
+
 /* ____________________________________________ */
 /* ____________________________________________ */
 header {
@@ -58,10 +62,6 @@ main {
 }
 
 /* ____________________________________________ */
-body.lock {
-	overflow: hidden;
-}
-
 .menu-button {
 	display: none;
 }
