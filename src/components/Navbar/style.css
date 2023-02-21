@@ -1,3 +1,32 @@
+@charset "UTF-8";
+/* ____________________________________________ */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Hibana', sans-serif;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
 header {
 	position: fixed;
 	top: 0;
@@ -9,7 +38,7 @@ main {
 	margin-top: 5.2rem;
 }
 
-/* -------------------------------------------- */
+/* ____________________________________________ */
 .header {
 	background-color: #1e1e1e;
 }
@@ -25,10 +54,10 @@ main {
 	background-color: #34b3f1;
 	border-radius: 30%;
 	padding: 5px;
-	text-decoration: none;
+	max-width: 200px;
 }
 
-/* -------------------------------------------- */
+/* ____________________________________________ */
 body.lock {
 	overflow: hidden;
 }
