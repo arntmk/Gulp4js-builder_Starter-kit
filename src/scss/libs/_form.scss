@@ -65,16 +65,10 @@ select option:checked {
 
 #datalist::-webkit-calendar-picker-indicator {
 	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-	display: none;
+	visibility: hidden;
 	pointer-events: none;
 	color: transparent;
+	opacity: 0;
 }
 
 #datalist {
@@ -87,7 +81,7 @@ select option:checked {
 			no-repeat 102% center / 1.9em;
 		border-color: transparent;
 		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
-		transition: box-shadow 0.3s ease-in-out;
+		transition: border-color 0.3s ease-in-out;
 	}
 }
 
