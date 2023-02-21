@@ -1,0 +1,27 @@
+/* https://swiperjs.com/get-started#download-assets */
+
+.section__swiper {
+}
+.container {
+}
+.swiper-title {
+	text-align: center;
+}
+.swiper__swiper {
+	overflow-x: hidden;
+}
+
+.swiper-wrapper {
+	display: flex;
+}
+.swiper-slide {
+	width: 100%;
+	cursor: pointer;
+}
+
+.swiper-button {
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}
