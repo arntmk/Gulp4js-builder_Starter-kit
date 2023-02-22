@@ -1,9 +1,9 @@
 // ===Toggle Password Visibility===
 
-const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector('#password');
+const togglePassword = document?.querySelector('#togglePassword');
+const password = document?.querySelector('#password');
 
-togglePassword.addEventListener('click', function (e) {
+togglePassword?.addEventListener('click', function (e) {
 	// toggle the type attribute
 	const type =
 		password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -12,8 +12,8 @@ togglePassword.addEventListener('click', function (e) {
 	this.classList.toggle('eye-close');
 });
 
-password.addEventListener('input', function () {
-	togglePassword.classList.toggle('hidden', !this.value);
+password?.addEventListener('input', function () {
+	togglePassword.classList?.toggle('hidden', !this.value);
 });
 
 // ===============================================
