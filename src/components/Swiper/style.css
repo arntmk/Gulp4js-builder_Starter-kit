@@ -15,11 +15,11 @@
 	display: flex;
 }
 .swiper-slide {
-	width: 100%;
 	cursor: grab;
 }
 
 .swiper-button {
+	cursor: pointer;
 }
 .swiper-button-prev {
 }
