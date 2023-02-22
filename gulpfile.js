@@ -242,11 +242,11 @@ function js() {
 			.pipe(concat('script.min.js'))
 			.pipe(dest('build/js/', { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
-		// .pipe(src(copyLibsJs))
-		// .pipe(gulpif(isDev, changed('build/js/', { extension: '.js' })))
-		// .pipe(gulpif(isBuild, terser()))
-		// .pipe(dest('build/js/'))
-		// .pipe(browsersync.stream())
+			.pipe(src(copyLibsJs))
+			.pipe(gulpif(isDev, changed('build/js/', { extension: '.js' })))
+			.pipe(gulpif(isBuild, terser()))
+			.pipe(dest('build/js/'))
+			.pipe(browsersync.stream())
 	);
 }
 
