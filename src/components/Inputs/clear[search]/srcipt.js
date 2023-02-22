@@ -1,5 +1,4 @@
 // ===Toggle search cleaning===
-
 const searchInput = document?.querySelector('#txtsearchinput');
 const clearButton = document?.querySelector('#deltxtinput');
 

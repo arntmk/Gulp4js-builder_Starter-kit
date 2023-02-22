@@ -31,17 +31,17 @@ if (menu && menuBtn) {
 
 /* =========================================== */
 
-const anchors = document.querySelectorAll('a[href*="#"]');
+// const anchors = document.querySelectorAll('a[href*="#"]');
 
-anchors.forEach((anchor) => {
-	anchor.addEventListener('click', (event) => {
-		event.preventDefault();
+// anchors.forEach((anchor) => {
+// 	anchor.addEventListener('click', (event) => {
+// 		event.preventDefault();
 
-		const blockID = anchor.getAttribute('href').substring(1);
+// 		const blockID = anchor.getAttribute('href').substring(1);
 
-		document.getElementById(blockID).scrollIntoView({
-			behavior: 'smooth',
-			block: 'start',
-		});
-	});
-});
+// 		document.getElementById(blockID).scrollIntoView({
+// 			behavior: 'smooth',
+// 			block: 'start',
+// 		});
+// 	});
+// });
