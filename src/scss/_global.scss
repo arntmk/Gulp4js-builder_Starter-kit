@@ -9,7 +9,7 @@ html {
 }
 
 body {
-	font-size: clamp(0.75rem, 1.5vw + 1rem, 1rem);
+	font-size: clamp(0.875rem, 1.5vw, 1rem);
 	font-weight: 400;
 	font-style: normal;
 	min-width: 320px;
@@ -62,7 +62,7 @@ textarea::-webkit-scrollbar-track {
 }
 
 /* ____________________________________________ */
-/* Sticky Footer & Container */
+/* Sticky Footer */
 html,
 body {
 	height: 100%;
@@ -112,18 +112,6 @@ div.container {
 	}
 }
 
-/* Animation
-/* ____________________________________________ */
-/* Opacity */
-@keyframes fade {
-	0% {
-		opacity: 0.3;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 /* Utility Classes
 /* ____________________________________________ */
 /* Float clearfix */
@@ -168,12 +156,15 @@ div.clearfix::after {
 	padding: 0;
 }
 
-/* ____________________________________________ */
+/* ____________________Delete________________________ */
 /* Gradient */
 .main {
 	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
-	// background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
 }
+
+// .main {
+// 	background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
+// }
 
 /* Background Image */
 // .css-img {
@@ -185,4 +176,5 @@ div.clearfix::after {
 // }
 
 /* ____________________________________________ */
+/* ________________Generel_____________________ */
 /* ____________________________________________ */
