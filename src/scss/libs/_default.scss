@@ -99,9 +99,8 @@ select option:checked {
 	accent-color: #0075ff;
 	height: 0.4375em;
 	width: 9.375em;
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(239, 239, 239, 0.8);
 	border: thin solid #b2b2b2;
-	border-left-width: 0;
 	border-radius: 0.3125rem;
 }
 
@@ -111,9 +110,6 @@ select option:checked {
 	width: 0.94rem;
 	background: #0075ff;
 	border-width: 0;
-	// border-radius: 50%;
-	// border: thin solid #0075ff;
-	// box-shadow: 0 0 0.125rem 0 #0075ff;
 }
 
 /* Input Range Progress */
@@ -129,12 +125,10 @@ select option:checked {
 
 [type='range']:is(:hover, :focus) {
 	border: thin solid #9a9a9a;
-	border-left-width: 0;
 }
 
 [type='range']:active {
 	border: thin solid #c1c1c1;
-	border-left-width: 0;
 }
 
 /* ____________________________________________ */
