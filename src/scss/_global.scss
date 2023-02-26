@@ -40,13 +40,13 @@ html {
 }
 
 ::-webkit-scrollbar {
-	width: 1.125rem;
+	width: 18px;
 }
 
 ::-webkit-scrollbar-thumb {
 	background-color: var(--scrollbar-color);
-	border-radius: 0.625rem;
-	border: 0.3125rem solid transparent;
+	border-radius: 10px;
+	border: 5px solid transparent;
 	background-clip: content-box;
 }
 
@@ -63,27 +63,12 @@ textarea {
 
 select::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
-	width: 1.0625rem;
+	width: 17px;
 }
 
 select::-webkit-scrollbar-track,
 textarea::-webkit-scrollbar-track {
 	background-color: var(--form-bgcolor);
-}
-
-/* ::Pseudo-elements
-/* ____________________________________________ */
-/* Markers for: ul, ol */
-::marker {
-	// content: '';
-	color: inherit;
-}
-
-/* Selection */
-::selection {
-	color: #fff;
-	background-color: #4682b4;
-	text-shadow: none;
 }
 
 /* ____________________________________________ */

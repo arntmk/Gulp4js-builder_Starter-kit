@@ -37,3 +37,19 @@
 		transition: all 0.3s ease-in-out;
 	}
 }
+
+/* ____________________________________________ */
+/* ::Pseudo-elements
+/* ____________________________________________ */
+/* Markers for: ul, ol */
+::marker {
+	// content: '';
+	color: inherit;
+}
+
+/* Selection */
+::selection {
+	color: #fff;
+	background-color: #4682b4;
+	text-shadow: none;
+}
