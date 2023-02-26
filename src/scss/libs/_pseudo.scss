@@ -18,6 +18,7 @@
 		animation: fade 0.3s ease-in-out;
 	}
 
+	summary:is(:hover, :focus-visible),
 	select:is(:hover, :focus),
 	textarea:is(:hover, :focus),
 	[type='file']::file-selector-button:is(:hover, :focus-visible),

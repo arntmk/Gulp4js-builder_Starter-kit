@@ -9,6 +9,65 @@
 	padding: 0.5em;
 }
 
+/* Accordion */
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+	padding: 5px;
+	border: thin solid #8f8f9d;
+	background-color: #fff;
+}
+
+summary::after {
+	content: '';
+	height: 2rem;
+	width: 2rem;
+	background: transparent
+		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
+		no-repeat right center / 1.9em;
+	transition: transform 0.3s ease-in-out;
+}
+
+details[open] summary::after {
+	transform: rotate(90deg);
+}
+
+details {
+	width: 25em;
+	margin-bottom: 0.625rem;
+}
+
+details .content {
+	margin-top: 5px;
+	padding: 5px;
+	border: thin solid #8f8f9d;
+	background-color: #fff;
+}
+
+/* Animation */
+details summary ~ .content {
+	overflow: hidden;
+}
+
+@keyframes smooth {
+	0% {
+		max-height: 0;
+	}
+	100% {
+		max-height: 100vh;
+	}
+}
+
+details[open] summary ~ .content {
+	animation: smooth 0.3s ease-in-out;
+}
+
 /* ____________________Form________________________ */
 /**
  * 1. Change the inconsistent appearance in all browsers (opinionated).
