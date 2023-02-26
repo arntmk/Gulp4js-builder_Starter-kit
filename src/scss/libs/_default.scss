@@ -24,14 +24,6 @@
 }
 
 /**
- * Don't show the arrow for multiple choice selects
- */
-
-select[multiple] {
-	background-image: none;
-}
-
-/**
  * Remove the border and padding in all browsers (opinionated).
  */
 
@@ -39,6 +31,15 @@ select[multiple] {
 [type='range'] {
 	border-width: 0;
 	padding: 0;
+}
+
+/* ____________________________________________ */
+/**
+ * Don't show the arrow for multiple choice selects
+ */
+
+select[multiple] {
+	background-image: none;
 }
 
 /**
@@ -59,6 +60,7 @@ select option:checked {
 	background-color: #e0e0e6;
 }
 
+/* ____________________________________________ */
 /**
  * Change the inconsistent appearance in all browsers (opinionated).
  */
@@ -85,6 +87,7 @@ select option:checked {
 	}
 }
 
+/* ____________________________________________ */
 /**
  * Styling input range in all browsers (opinionated).
  */
@@ -132,6 +135,7 @@ select option:checked {
 	border-left-width: 0;
 }
 
+/* ____________________________________________ */
 /**
  * Styling progress bar in all browsers (opinionated).
  */
@@ -159,6 +163,7 @@ progress::-webkit-progress-value {
 	border-radius: 0.9375rem;
 }
 
+/* ____________________________________________ */
 /**
  * Styling input checkbox and radio in all browsers (opinionated).
  */
@@ -170,6 +175,7 @@ progress::-webkit-progress-value {
 	width: 1.1em;
 }
 
+/* ____________________________________________ */
 /**
  * Styling input color in all browsers (opinionated).
  */
@@ -194,6 +200,7 @@ progress::-webkit-progress-value {
 	margin-top: 0.1875rem;
 }
 
+/* ____________________________________________ */
 /**
  * Styling input file in all browsers (opinionated).
  */
@@ -215,6 +222,7 @@ progress::-webkit-progress-value {
 	font: inherit;
 }
 
+/* ____________________________________________ */
 /**
  * Styling textarea in webkit browsers (opinionated).
  */
@@ -230,6 +238,7 @@ textarea::-webkit-resizer {
 		no-repeat right bottom / 0.5rem;
 }
 
+/* ____________________________________________ */
 /**
  * Styling input date in webkit browsers (opinionated).
  */
@@ -243,6 +252,7 @@ textarea::-webkit-resizer {
 	width: 1.375em;
 }
 
+/* ____________________________________________ */
 /**
  * Styling input number in all browsers (opinionated).
  */
@@ -254,8 +264,9 @@ input[type='number']:focus {
 	-webkit-appearance: auto;
 }
 
+/* ____________________________________________ */
 /**
- * JavaSsript Default.
+ * JavaScript Default.
  */
 /* ____________________________________________ */
 /**
