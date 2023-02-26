@@ -143,8 +143,8 @@ function img() {
 	const srcImg = 'src/img/**/*.{png,jpg,jpeg,gif,svg}';
 	const copyImg = 'src/img/**/*.{ico,webp,webmanifest,json}';
 	return src(srcWebp)
-		.pipe(changed('build/img/'))
-		.pipe(webp())
+		.pipe(changed('build/img/', { extension: '.webp' }))
+		.pipe(webp({ quality: 100 }))
 		.pipe(dest('build/img/'))
 		.pipe(src(srcImg))
 		.pipe(changed('build/img/'))
@@ -180,7 +180,12 @@ function html() {
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@@' }))
 		.pipe(webpHTML())
-		.pipe(typograf({ locale: ['ru', 'en-US', 'ua'] }))
+		.pipe(
+			typograf({
+				locale: ['ru', 'en-US', 'ua', 'en'],
+				htmlEntity: { type: 'name' },
+			})
+		)
 		.pipe(
 			gulpif(
 				isBuild,
