@@ -1,10 +1,11 @@
 /* ____________________Variables________________________ */
 :root {
-	/* CONTAINER & CSS BREAKPOINT */
-	--content-width: 1770px; /* 1770+15+15=1800 */
-	--container-offset: 15px; /* 15*2 Left-Right = 30 */
+	/* CONTAINER */
+	--content-width: 73.125rem; /* 1770+15+15=1800 */
+	--container-offset: 0.9375rem; /* 15*2 Left-Right = 30 */
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
+	/* CSS BREAKPOINT  */
 	--breakpoint-1450: 1449.98 + px; /* Desktop XL */
 	--breakpoint-1200: 1199.98 + px; /* Desktop */
 	--breakpoint-992: 991.98 + px; /* Laptop */
@@ -37,6 +38,7 @@
 	}
 }
 
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
 	*,
 	::before,

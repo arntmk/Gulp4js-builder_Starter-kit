@@ -1,10 +1,5 @@
 /* ____________________Global________________________ */
 /* General & Typography*/
-html,
-body {
-	height: 100%;
-}
-
 html {
 	font-family: var(--font-family), system-ui, -apple-system, 'Segoe UI',
 		'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif,
@@ -94,6 +89,11 @@ textarea::-webkit-scrollbar-track {
 
 /* ____________________________________________ */
 /* Sticky Footer & Container */
+html,
+body {
+	height: 100%;
+}
+
 div#wrappar {
 	display: flex;
 	flex-flow: column nowrap;
@@ -104,9 +104,10 @@ div#wrappar {
 main.main {
 	display: flex;
 	flex-flow: column nowrap;
-	flex: 1 0 auto;
+	flex: 1 1 auto;
 }
 
+/* Container */
 div.container {
 	margin-inline: auto;
 	padding-inline: clamp(10px, 1.5vw, var(--container-offset)); /* 10px - 15px */
@@ -196,8 +197,8 @@ div.clearfix::after {
 /* ____________________________________________ */
 /* Gradient */
 .main {
-	// background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
 	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
+	// background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
 }
 
 /* Background Image */
@@ -205,7 +206,7 @@ div.clearfix::after {
 // 	background-image: url();
 // 	background-repeat: no-repeat;
 // 	background-attachment: fixed;
-// 	background-position: center;
+// 	background-position: right center;
 // 	background-size: cover;
 // }
 
