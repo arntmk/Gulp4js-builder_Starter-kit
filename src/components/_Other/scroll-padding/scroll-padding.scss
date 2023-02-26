@@ -1,4 +1,5 @@
 /* https://www.youtube.com/watch?v=iGUSTyG-CYw&list=PLig1Jrpe_hzoJqsT81rjMw3qRV1AKGOsf&index=58 */
+/* https://www.cyberforum.ru/javascript-beginners/thread2798921.html */
 
 html {
 	scroll-behavior: smooth;
@@ -9,9 +10,15 @@ header {
 	position: fixed; /* or sticky */
 	top: 0;
 	width: 100%;
-	z-index: 2;
+	background-color: transparent;
+	transition: background-color 0.3s ease-in-out;
+	z-index: 1;
 }
 
 main {
 	margin-top: 5.5rem;
+}
+
+.is_scrolled .header {
+	background-color: rgba(253, 184, 39, 0.9);
 }
