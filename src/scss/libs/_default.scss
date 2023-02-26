@@ -120,8 +120,8 @@ select option:checked {
 	border-radius: 3.125rem;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
-	box-sizing: border-box;
 	border: thin solid #3b75ba;
+	box-sizing: border-box;
 }
 
 [type='range']:is(:hover, :focus) {
@@ -195,8 +195,8 @@ progress::-webkit-progress-value {
 	border-style: none;
 	border-radius: 0.9375rem;
 	height: 2em;
-	box-sizing: border-box;
 	margin-top: 0.1875rem;
+	box-sizing: border-box;
 }
 
 /* ____________________________________________ */
@@ -246,7 +246,7 @@ textarea::-webkit-resizer {
 	width: 10em;
 }
 
-::-webkit-calendar-picker-indicator {
+[type='date']::-webkit-calendar-picker-indicator {
 	height: 1.1875em;
 	width: 1.375em;
 }
@@ -264,9 +264,7 @@ input[type='number']:focus {
 }
 
 /* ____________________________________________ */
-/**
- * JavaScript Default.
- */
+/* ___________JavaScript Default_______________ */
 /* ____________________________________________ */
 /**
  * Styling input search in all browsers (opinionated).
@@ -310,6 +308,7 @@ input[type='search']::-webkit-search-results-decoration {
 	display: none;
 }
 
+/* ____________________________________________ */
 /**
  * Styling input password in all browsers (opinionated).
  */

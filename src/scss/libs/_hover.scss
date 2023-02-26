@@ -8,33 +8,30 @@
 		transition: all 0.3s ease-in-out;
 	}
 
-	button:is(:hover, :focus-visible),
 	:is([type='button']:hover, [type='button']:focus-visible),
 	:is([type='reset']:hover, [type='reset']:focus-visible),
 	:is([type='submit']:hover, [type='submit']:focus-visible) {
 		color: #fff;
-		border-color: transparent;
 		background-color: #4682b4;
+		border-color: transparent;
 		box-shadow: 0 0 0.625rem #4f6e86;
-		transition: all 0.3s ease-in-out;
+		animation: fade 0.3s ease-in-out;
 	}
 
+	select:is(:hover, :focus),
+	textarea:is(:hover, :focus),
+	[type='file']::file-selector-button:is(:hover, :focus-visible),
 	input:not(
-			#datalist,
 			[type='button'],
 			[type='reset'],
 			[type='submit'],
+			#datalist,
 			[type='range'],
 			[type='file'],
 			[type='color'],
 			[type='checkbox'],
 			[type='radio']
-		):is(:hover, :focus-visible),
-	[type='file']::file-selector-button:is(:hover, :focus-visible),
-	select:is(:hover, :focus),
-	textarea:is(:hover, :focus) {
-		// border: thin solid #4682b4;
-		// box-shadow: 0 0 0.25rem #4682b4;
+		):is(:hover, :focus-visible) {
 		border-color: transparent;
 		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
 		transition: all 0.3s ease-in-out;
