@@ -5,7 +5,7 @@
 @media (any-hover: hover) {
 	a:is(:hover, :focus-visible) {
 		color: darken(#4682b4, 10%);
-		transition: 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
 	}
 
 	button:is(:hover, :focus-visible),
@@ -16,7 +16,7 @@
 		border-color: transparent;
 		background-color: #4682b4;
 		box-shadow: 0 0 0.625rem #4f6e86;
-		transition: 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
 	}
 
 	input:not(

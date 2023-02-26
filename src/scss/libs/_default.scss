@@ -280,6 +280,11 @@ input[type='search']::-webkit-search-results-decoration {
 	-webkit-appearance: none;
 }
 
+/* Remove Microsoft Edge clear button */
+::-ms-clear {
+	display: none;
+}
+
 /* Basic search wrapper and input styling */
 .search-wrap {
 	display: flex;
@@ -308,8 +313,7 @@ input[type='search']::-webkit-search-results-decoration {
 /**
  * Styling input password in all browsers (opinionated).
  */
-::-ms-reveal,
-::-ms-clear {
+::-ms-reveal {
 	display: none;
 }
 

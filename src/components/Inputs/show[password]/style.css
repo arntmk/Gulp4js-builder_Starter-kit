@@ -3,8 +3,7 @@
 /**
  * Styling input password in all browsers (opinionated).
  */
-::-ms-reveal,
-::-ms-clear {
+::-ms-reveal {
 	display: none;
 }
 
