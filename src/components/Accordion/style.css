@@ -72,5 +72,5 @@ details .content {
 details[open] > *:not(summary) {
 	will-change: max-height;
 	overflow: hidden;
-	animation: smooth 0.3s linear;
+	animation: smooth 1s linear;
 }
