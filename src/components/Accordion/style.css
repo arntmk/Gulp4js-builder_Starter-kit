@@ -60,11 +60,9 @@ details .content {
 /* Animation */
 @keyframes smooth {
 	0% {
-		opacity: 0;
 		max-height: 0;
 	}
 	100% {
-		opacity: 1;
 		max-height: 100vh;
 	}
 }
