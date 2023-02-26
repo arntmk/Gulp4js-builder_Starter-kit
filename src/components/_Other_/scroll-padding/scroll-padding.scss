@@ -6,7 +6,7 @@ html {
 	scroll-padding-top: var(--scroll-padding, 50px);
 }
 
-header {
+.header {
 	position: fixed; /* or sticky */
 	top: 0;
 	width: 100%;
@@ -15,7 +15,7 @@ header {
 	z-index: 1;
 }
 
-main {
+.main {
 	margin-top: 5.5rem;
 }
 
