@@ -84,5 +84,5 @@ details .content {
 details[open] summary ~ .content {
 	will-change: max-height;
 	overflow: hidden;
-	animation: smooth 0.3s ease-in-out;
+	animation: smooth 0.3s;
 }

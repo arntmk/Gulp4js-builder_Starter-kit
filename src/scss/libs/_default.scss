@@ -75,10 +75,9 @@ details .content {
 }
 
 details[open] summary ~ .content {
-	box-sizing: content-box;
 	will-change: max-height;
 	overflow: hidden;
-	animation: smooth 1.3s ease-in-out;
+	animation: smooth 1.3s;
 }
 
 /* ____________________Form________________________ */
