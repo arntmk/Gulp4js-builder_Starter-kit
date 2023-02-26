@@ -1,8 +1,8 @@
 /* ____________________Variables________________________ */
 :root {
 	/* CONTAINER */
-	--content-width: 73.125rem; /* 1770+15+15=1800 */
-	--container-offset: 0.9375rem; /* 15*2 Left-Right = 30 */
+	--content-width: 1170px; /* 1770+15+15=1800 */
+	--container-offset: 15px; /* 15*2 Left-Right = 30 */
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
 	/* CSS BREAKPOINT  */
