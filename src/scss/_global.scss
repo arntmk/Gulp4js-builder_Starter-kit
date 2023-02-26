@@ -8,17 +8,7 @@ html {
 	line-height: 1.5; /* 24px / 16px = "1.5" */
 }
 
-code,
-kbd,
-samp,
-pre {
-	font-family: ui-monospace, 'Menlo', 'Consolas', 'Roboto Mono',
-		'Ubuntu Monospace', 'Noto Mono', 'Oxygen Mono', 'Liberation Mono', monospace,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
 body {
-	font-size: 1rem;
 	font-size: clamp(0.75rem, 1.5vw + 1rem, 1rem);
 	font-weight: 400;
 	font-style: normal;
@@ -26,7 +16,7 @@ body {
 	color: var(--text-color);
 	background: var(--bg-color);
 	caret-color: #f15412;
-	// accent-color: #0060df;
+	accent-color: #0060df;
 
 	&.lock {
 		overflow: hidden;

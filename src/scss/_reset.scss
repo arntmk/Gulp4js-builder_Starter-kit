@@ -1,6 +1,15 @@
 /* -------- elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e --------- */
 /* ____________________Typography & Reset________________________ */
 
+code,
+kbd,
+samp,
+pre {
+	font-family: ui-monospace, 'Menlo', 'Consolas', 'Roboto Mono',
+		'Ubuntu Monospace', 'Noto Mono', 'Oxygen Mono', 'Liberation Mono', monospace,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
 html {
 	background-repeat: no-repeat;
 	break-inside: avoid-column;
