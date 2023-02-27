@@ -212,11 +212,12 @@ input[type='range']::-webkit-slider-runnable-track {
 
 /* ____________________________________________ */
 /**
- * Styling progress bar in all browsers (opinionated).
+ * Styling progress-bar in all browsers (opinionated).
  */
 
 progress {
 	-webkit-appearance: none;
+	height: 0.7em;
 	accent-color: #0075ff;
 	background-color: rgba(255, 255, 255, 0.8);
 	border-radius: 0.9375rem;
