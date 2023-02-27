@@ -1,4 +1,5 @@
-// https://www.youtube.com/watch?v=7teaFMUczXk
+/* ____________________________________________ */
+// ===Hamburger menu===
 
 const menu = document.querySelector('.navbar');
 const menuBtn = document.querySelector('.menu-button');

@@ -1,4 +1,6 @@
-// ==Accordion==
+/* ____________________________________________ */
+// ===Accordion===
+
 const accordion = document.querySelectorAll('details');
 
 accordion.forEach((el) => {

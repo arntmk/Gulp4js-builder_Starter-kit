@@ -1,4 +1,6 @@
+/* ____________________________________________ */
 // ===Toggle Password Visibility===
+
 const togglePassword = document?.querySelector('#togglePassword');
 const password = document?.querySelector('#password');
 
@@ -15,7 +17,9 @@ password?.addEventListener('input', function () {
 	togglePassword.classList?.toggle('hidden', !this.value);
 });
 
+/* ____________________________________________ */
 // ===Toggle search cleaning===
+
 const searchInput = document?.querySelector('#txtsearchinput');
 const clearButton = document?.querySelector('#deltxtinput');
 
@@ -28,7 +32,9 @@ searchInput?.addEventListener('input', function () {
 	clearButton.classList?.toggle('hidden', !this.value);
 });
 
+/* ____________________________________________ */
 // ===Validate Numbers===
+
 const numericInputs = document?.querySelectorAll('[inputmode="numeric"]');
 
 numericInputs.forEach((input) => {
@@ -56,3 +62,34 @@ document.querySelector('[inputmode="numeric"]').onkeypress = function Validate(
 	const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
 	return isNumber;
 };
+
+/* ____________________________________________ */
+// ==Accordion==
+
+const accordion = document.querySelectorAll('details');
+
+accordion.forEach((el) => {
+	el.addEventListener('click', (e) => {
+		const self = e.currentTarget;
+		const content = self.querySelector('.content');
+
+		self.classList.toggle('open');
+
+		if (self.classList.contains('open')) {
+			content.style.maxHeight = content.scrollHeight + 'px';
+		} else {
+			content.style.maxHeight = null;
+		}
+	});
+});
+
+accordion.forEach((targetDetail) => {
+	targetDetail.addEventListener('click', () => {
+		accordion.forEach((detail) => {
+			if (detail !== targetDetail) {
+				detail.removeAttribute('open');
+				detail.classList.remove('open');
+			}
+		});
+	});
+});
