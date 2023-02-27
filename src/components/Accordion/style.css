@@ -1,10 +1,18 @@
 /* https://habr.com/ru/post/527062/ */
 /* https://css-tricks.com/how-to-animate-the-details-element/ */
 /* https://www.youtube.com/watch?v=k6Dn2jYjH0I */
+/* https://stackoverflow.com/questions/16751345/automatically-close-all-the-other-details-tags-after-opening-a-specific-detai */
 
 html {
 	box-sizing: border-box;
 	background: #d4d1d1;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 * {
@@ -55,12 +63,13 @@ details .content {
 	padding: 5px;
 	border: thin solid #8f8f9d;
 	background-color: #fff;
+	will-change: max-height;
 }
 
 /* Animation */
 @keyframes smooth {
 	0% {
-		opacity: 0.3;
+		opacity: 0.5;
 		max-height: 0;
 	}
 	100% {
@@ -70,7 +79,6 @@ details .content {
 }
 
 details[open] > *:not(summary) {
-	will-change: max-height;
 	overflow: hidden;
-	animation: smooth 1s linear;
+	animation: smooth 1.5s ease-in-out forwards;
 }

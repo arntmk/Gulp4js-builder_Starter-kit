@@ -1,5 +1,3 @@
-// Custom Scripts imports
-
 // ==Accordion==
 const accordion = document.querySelectorAll('details');
 

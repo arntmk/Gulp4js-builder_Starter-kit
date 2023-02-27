@@ -48,12 +48,13 @@ details .content {
 	padding: 5px;
 	border: thin solid #8f8f9d;
 	background-color: #fff;
+	will-change: max-height;
 }
 
 /* Animation */
 @keyframes smooth {
 	0% {
-		opacity: 0.3;
+		opacity: 0.5;
 		max-height: 0;
 	}
 	100% {
@@ -63,9 +64,8 @@ details .content {
 }
 
 details[open] > *:not(summary) {
-	will-change: max-height;
 	overflow: hidden;
-	animation: smooth 1s linear;
+	animation: smooth 1.5s ease-in-out forwards;
 }
 
 /* ____________________Form________________________ */
