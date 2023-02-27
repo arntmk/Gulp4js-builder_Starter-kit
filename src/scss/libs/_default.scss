@@ -152,29 +152,35 @@ select option:checked {
 /**
  * Styling input range in all browsers (opinionated).
  */
+[type='range'],
+[type='range']::-webkit-slider-runnable-track,
+[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+}
 
 /* Input Range Track */
 [type='range'] {
 	accent-color: #0075ff;
 	height: 0.4375em;
 	width: 9.375em;
-	background: rgba(239, 239, 239, 0.8);
+	background-color: rgba(239, 239, 239, 0.8);
 	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
 }
 
 /* Input Range Thumb */
 [type='range']::-moz-range-thumb {
+	appearance: none;
 	height: 0.94rem;
 	width: 0.94rem;
-	background: #0075ff;
+	background-color: #0075ff;
 	border-width: 0;
 }
 
 /* Input Range Progress */
 [type='range']::-moz-range-progress {
 	height: 0.4375em;
-	background: #0075ff;
+	background-color: #0075ff;
 	border-radius: 3.125rem;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
@@ -188,6 +194,30 @@ select option:checked {
 
 [type='range']:active {
 	border: thin solid #c1c1c1;
+}
+
+/* WebKit */
+input[type='range']::-webkit-slider-thumb {
+	height: 0.94rem;
+	width: 0.94rem;
+	background-color: #0075ff;
+	border-width: 0;
+	border-radius: 50%;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	background: transparent;
+	box-sizing: border-box;
+}
+
+input[type='range']::-webkit-progress-bar {
+	height: 0.4375em;
+	background-color: #0075ff;
+	border-radius: 3.125rem;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	border: thin solid #3b75ba;
+	box-sizing: border-box;
 }
 
 /* ____________________________________________ */
