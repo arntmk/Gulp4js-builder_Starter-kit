@@ -36,6 +36,7 @@ html {
 	background-color: rgba(239, 239, 239, 0.8);
 	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
+	transition: border 0.3s ease-in-out;
 	box-sizing: content-box;
 }
 
