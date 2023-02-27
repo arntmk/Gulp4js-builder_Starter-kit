@@ -210,16 +210,6 @@ input[type='range']::-webkit-slider-runnable-track {
 	box-sizing: border-box;
 }
 
-input[type='range']::-webkit-progress-bar {
-	height: 0.4375em;
-	background-color: #0075ff;
-	border-radius: 3.125rem;
-	border-bottom-right-radius: 0;
-	border-top-right-radius: 0;
-	border: thin solid #3b75ba;
-	box-sizing: border-box;
-}
-
 /* ____________________________________________ */
 /**
  * Styling progress bar in all browsers (opinionated).
