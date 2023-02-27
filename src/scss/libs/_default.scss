@@ -158,7 +158,7 @@ select option:checked {
 	-webkit-appearance: none;
 }
 
-/* Input Range Track */
+/* Range Track */
 [type='range'] {
 	accent-color: #0075ff;
 	height: 0.4375em;
@@ -166,9 +166,10 @@ select option:checked {
 	background-color: rgba(239, 239, 239, 0.8);
 	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
+	box-sizing: content-box;
 }
 
-/* Input Range Thumb */
+/* Range Thumb / mozilla */
 [type='range']::-moz-range-thumb {
 	appearance: none;
 	height: 0.94rem;
@@ -177,7 +178,7 @@ select option:checked {
 	border-width: 0;
 }
 
-/* Input Range Progress */
+/* Progress-bar / mozilla */
 [type='range']::-moz-range-progress {
 	height: 0.4375em;
 	background-color: #0075ff;
@@ -188,6 +189,7 @@ select option:checked {
 	box-sizing: border-box;
 }
 
+/* hover, focus, active */
 [type='range']:is(:hover, :focus) {
 	border: thin solid #9a9a9a;
 }
@@ -203,11 +205,28 @@ input[type='range']::-webkit-slider-thumb {
 	background-color: #0075ff;
 	border-width: 0;
 	border-radius: 50%;
+	margin-top: calc(max((1em - 1px - 1px) * 0.5, 12px) - 2em * 0.5);
 }
 
 input[type='range']::-webkit-slider-runnable-track {
-	background: transparent;
-	box-sizing: border-box;
+	height: 0.4375em;
+	width: 9.375em;
+	background-color: rgba(239, 239, 239, 0.8);
+	border: thin solid #b2b2b2;
+	border-radius: 0.3125rem;
+	border-width: 0;
+}
+
+/* Progress support JS / WebKit */
+input[type='range']#webkit-progress {
+	--range: calc(var(--max) - var(--min));
+	--ratio: calc((var(--value) - var(--min)) / var(--range));
+	--sx: calc(0.4 * 2em + var(--ratio) * (100% - 1em));
+}
+
+input[type='range']#webkit-progress::-webkit-slider-runnable-track {
+	background: linear-gradient(#007cf8, #007cf8) 0 / var(--sx) 100% no-repeat,
+		#efefef;
 }
 
 /* ____________________________________________ */
