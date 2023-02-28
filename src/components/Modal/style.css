@@ -1,0 +1,89 @@
+/* https://www.youtube.com/watch?v=TAB_v6yBXIE&list=PLig1Jrpe_hzoJqsT81rjMw3qRV1AKGOsf&index=58 */
+/* https://whistlr.info/2021/in-defence-of-dialog/ */
+/* https://stackoverflow.com/questions/50037663/how-to-close-a-native-html-dialog-when-clicking-outside-with-javascript */
+/* https://codepen.io/dvdvdmt/pen/BaavWbp */
+/* https://www.google.com/search?q=html++tag+dialog+close+on+click+outside */
+/* https://stackoverflow.com/questions/24991072/how-to-fade-in-a-html5-dialog */
+
+/* ____________________________________________ */
+/* extra styling */
+body {
+	min-height: 100vh;
+	margin: 2rem;
+	font-family: system-ui;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	color: inherit;
+}
+
+h1 em {
+	color: #27962d;
+	text-decoration: underline;
+	text-underline-offset: 0.25em;
+}
+
+.button {
+	border: 0;
+	cursor: pointer;
+	background: #b63d3d;
+	color: #fff;
+	font-weight: 700;
+	padding: 10px 15px;
+}
+
+.close-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.button:hover,
+.button:focus {
+	background: #614949;
+}
+
+form {
+	display: grid;
+	gap: 1em;
+}
+
+body.lock {
+	overflow: hidden;
+}
+
+/* ____________________Modal________________________ */
+dialog {
+	border-radius: 15px;
+	position: relative;
+	padding: 0;
+	max-width: 50ch;
+	border: thin solid transparent;
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+}
+
+dialog::backdrop {
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(1.5px);
+}
+
+.modal-wrapper {
+	padding: 25px;
+}
+
+/* animation */
+dialog[open] {
+	/* cubic-bezier(.33,1.44,.83,.22) */
+	overflow: hidden;
+	animation: dialog-fadeIn 1s ease-out normal;
+}
+
+@keyframes dialog-fadeIn {
+	from {
+		opacity: 0.8;
+		transform: translateY(-200%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
