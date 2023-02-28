@@ -50,7 +50,7 @@ html {
 }
 
 /* Progress-bar / mozilla */
-[type='range']::-moz-range-progress {
+/* [type='range']::-moz-range-progress {
 	height: 0.4375em;
 	background-color: #0075ff;
 	border-radius: 3.125rem;
@@ -58,7 +58,7 @@ html {
 	border-top-right-radius: 0;
 	border: thin solid #3b75ba;
 	box-sizing: border-box;
-}
+} */
 
 /* hover, focus, active */
 [type='range']:is(:hover, :focus) {
@@ -95,6 +95,7 @@ input[type='range']#webkit-progress {
 	--sx: calc(0.4 * 2em + var(--ratio) * (100% - 1em));
 }
 
+input[type='range']#webkit-progress,
 input[type='range']#webkit-progress::-webkit-slider-runnable-track {
 	background: linear-gradient(#007cf8, #007cf8) 0 / var(--sx) 100% no-repeat,
 		#efefef;
