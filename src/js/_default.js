@@ -2,7 +2,7 @@
 // ===Toggle Password Visibility===
 
 const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector('#password');
+const password = document.querySelector('input[type="password"]');
 
 if (togglePassword && password) {
 	togglePassword.addEventListener('click', function (e) {
@@ -22,7 +22,7 @@ if (togglePassword && password) {
 /* ____________________________________________ */
 // ===Toggle search cleaning===
 
-const searchInput = document.querySelector('#txtsearchinput');
+const searchInput = document.querySelector('input[type="search"]');
 const clearButton = document.querySelector('#deltxtinput');
 
 if (searchInput && clearButton) {

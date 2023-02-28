@@ -1,7 +1,7 @@
 /* ____________________________________________ */
 // ===Toggle search cleaning===
 
-const searchInput = document.querySelector('#txtsearchinput');
+const searchInput = document.querySelector('input[type="search"]');
 const clearButton = document.querySelector('#deltxtinput');
 
 if (searchInput && clearButton) {

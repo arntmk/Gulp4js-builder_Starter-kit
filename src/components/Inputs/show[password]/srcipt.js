@@ -2,7 +2,7 @@
 // ===Toggle Password Visibility===
 
 const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector('#password');
+const password = document.querySelector('input[type="password"]');
 
 if (togglePassword && password) {
 	togglePassword.addEventListener('click', function (e) {
