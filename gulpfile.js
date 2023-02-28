@@ -11,14 +11,14 @@ const plumber = require('gulp-plumber'); //Пошук помилок.
 const rename = require('gulp-rename'); //Rename.
 
 const imagemin = require('gulp-imagemin'); //Оптимізація зображення.
-const imageminPngquant = require('imagemin-pngquant'); //Оптимізація png only.
+// const imageminPngquant = require('imagemin-pngquant'); //Оптимізація png only.
 const webp = require('gulp-webp'); //Конвертатор webp.
 
 const fonter = require('gulp-fonter'); //Конвертатор шрифтів в woff.
 const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор в woff2.
 const fontfacegen = require('gulp-fontfacegen'); //fontface gen.
 
-const webpHTML = require('gulp-webp-html-fixed'); //Авто сумісність webp(html).
+// const webpHTML = require('gulp-webp-html-fixed'); //Авто сумісність webp(html).
 const fileinclude = require('gulp-file-include'); //Модульність для html.
 const htmlmin = require('gulp-htmlmin'); //Мінімізація html.
 const typograf = require('gulp-typograf'); //Правопис.
@@ -26,7 +26,7 @@ const vrnmbr = require('gulp-version-number'); //Build version.
 
 const sass = require('gulp-sass')(require('sass')); //Препроцесор для css.
 const autoprefixer = require('gulp-autoprefixer'); //Додавання префіксів для сумісності.
-const webpCSS = require('gulp-webp-css-fixed'); // Авто сумісність webp(css).
+// const webpCSS = require('gulp-webp-css-fixed'); // Авто сумісність webp(css).
 const groupCSSMedia = require('gulp-group-css-media-queries'); //Групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); //Оптимізація коду.
 const csso = require('gulp-csso'); //Мінімізація css.
@@ -78,17 +78,19 @@ function font() {
 	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
 	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
 	const copySvgFont = 'src/font/**/*.svg';
-	return src(ttfTOwoff)
-		.pipe(changed('build/font/', { extension: '.woff' }))
-		.pipe(fonter({ formats: ['woff'] }))
-		.pipe(dest('build/font/'))
-		.pipe(src(ttfTOwoff2))
-		.pipe(changed('build/font/', { extension: '.woff2' }))
-		.pipe(ttf2woff2())
-		.pipe(dest('build/font/'))
-		.pipe(src(copySvgFont))
-		.pipe(changed('build/font/'))
-		.pipe(dest('build/font/'));
+	return (
+		src(ttfTOwoff)
+			// .pipe(changed('build/font/', { extension: '.woff' }))
+			// .pipe(fonter({ formats: ['woff'] }))
+			// .pipe(dest('build/font/'))
+			.pipe(src(ttfTOwoff2))
+			.pipe(changed('build/font/', { extension: '.woff2' }))
+			.pipe(ttf2woff2())
+			.pipe(dest('build/font/'))
+			.pipe(src(copySvgFont))
+			.pipe(changed('build/font/'))
+			.pipe(dest('build/font/'))
+	);
 }
 
 function fontgen() {
@@ -140,7 +142,7 @@ function svg() {
 
 function img() {
 	const srcWebp = 'src/img/**/*.{png,jpg,jpeg}';
-	const srcImg = 'src/img/**/*.{png,jpg,jpeg,gif,svg}';
+	const srcImg = 'src/img/**/*.{gif,svg}'; //png,jpg,jpeg
 	const copyImg = 'src/img/**/*.{ico,webp,webmanifest,json}';
 	return src(srcWebp)
 		.pipe(changed('build/img/', { extension: '.webp' }))
@@ -152,9 +154,9 @@ function img() {
 			imagemin(
 				[
 					imagemin.gifsicle({ interlaced: true }),
-					imagemin.mozjpeg({ quality: 80, progressive: true }),
+					// imagemin.mozjpeg({ quality: 80, progressive: true }),
 					// imagemin.optipng({ optimizationLevel: 5 }),
-					imageminPngquant({ quality: [0.8, 1.0] }),
+					// imageminPngquant({ quality: [0.8, 1.0] }),
 					imagemin.svgo({
 						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
 					}),
@@ -176,32 +178,34 @@ function img() {
 
 function html() {
 	const copyIcoTxt = 'src/*.{ico,txt}';
-	return src('src/*.html')
-		.pipe(plumber())
-		.pipe(fileinclude({ prefix: '@@' }))
-		.pipe(webpHTML())
-		.pipe(
-			typograf({
-				locale: ['ru', 'en-US', 'ua', 'en'],
-				htmlEntity: { type: 'name' },
-			})
-		)
-		.pipe(
-			gulpif(
-				isBuild,
-				vrnmbr({
-					value: '%DT%',
-					append: { key: '_v', cover: 0, to: ['css', 'js'] },
+	return (
+		src('src/*.html')
+			.pipe(plumber())
+			.pipe(fileinclude({ prefix: '@@' }))
+			// .pipe(webpHTML())
+			.pipe(
+				typograf({
+					locale: ['ru', 'en-US', 'ua', 'en'],
+					htmlEntity: { type: 'name' },
 				})
 			)
-		)
-		.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
-		.pipe(dest('build/'))
-		.pipe(browsersync.stream())
-		.pipe(src(copyIcoTxt))
-		.pipe(changed('build/'))
-		.pipe(dest('build/'))
-		.pipe(browsersync.stream());
+			.pipe(
+				gulpif(
+					isBuild,
+					vrnmbr({
+						value: '%DT%',
+						append: { key: '_v', cover: 0, to: ['css', 'js'] },
+					})
+				)
+			)
+			.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
+			.pipe(dest('build/'))
+			.pipe(browsersync.stream())
+			.pipe(src(copyIcoTxt))
+			.pipe(changed('build/'))
+			.pipe(dest('build/'))
+			.pipe(browsersync.stream())
+	);
 }
 
 // CSS
@@ -209,25 +213,27 @@ function html() {
 function css() {
 	const srcCss = 'src/scss/**/*.{scss,sass}';
 	const copyLibsCss = 'src/scss/libs/*.css';
-	return src(srcCss, { sourcemaps: true })
-		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
-		.pipe(sass({ outputStyle: 'expanded' }))
-		.pipe(plumber())
-		.pipe(webpCSS())
-		.pipe(csso())
-		.pipe(shorthand())
-		.pipe(gulpif(isBuild, groupCSSMedia()))
-		.pipe(autoprefixer({ grid: true }))
-		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(rename('style.min.css'))
-		.pipe(dest('build/css/', { sourcemaps: isDev }))
-		.pipe(browsersync.stream())
-		.pipe(src(copyLibsCss))
-		.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(dest('build/css/'))
-		.pipe(browsersync.stream());
+	return (
+		src(srcCss, { sourcemaps: true })
+			.pipe(gulpif(isDev, newer('build/css/style.min.css')))
+			.pipe(sass({ outputStyle: 'expanded' }))
+			.pipe(plumber())
+			// .pipe(webpCSS())
+			.pipe(csso())
+			.pipe(shorthand())
+			.pipe(gulpif(isBuild, groupCSSMedia()))
+			.pipe(autoprefixer({ grid: true }))
+			.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
+			.pipe(gulpif(isBuild, csso()))
+			.pipe(rename('style.min.css'))
+			.pipe(dest('build/css/', { sourcemaps: isDev }))
+			.pipe(browsersync.stream())
+			.pipe(src(copyLibsCss))
+			.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
+			.pipe(gulpif(isBuild, csso()))
+			.pipe(dest('build/css/'))
+			.pipe(browsersync.stream())
+	);
 }
 
 // JavaScript
