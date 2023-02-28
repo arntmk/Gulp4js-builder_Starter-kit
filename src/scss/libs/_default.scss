@@ -65,7 +65,7 @@ details .content {
 
 details[open] > *:not(summary) {
 	overflow: hidden;
-	animation: smooth 1.5s ease-in-out forwards;
+	animation: smooth 1s ease-in-out forwards;
 }
 
 /* ____________________Form________________________ */
