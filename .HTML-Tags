@@ -18,5 +18,12 @@ tfoot;
 fieldset;
 legend;
 
+//---------//
 select;
 datalist;
+
+//---------//
+<details>
+	<summary>Accordion</summary>
+	<p class='content'></p>
+</details>;
