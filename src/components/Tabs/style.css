@@ -1,0 +1,48 @@
+/* https://www.youtube.com/watch?v=Ta3RGu0bIhY */
+/* https://www.youtube.com/watch?v=Ze2muJxPQFg */
+
+body {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+h1 {
+	text-align: center;
+}
+
+/* ____________________Tabs________________________ */
+.tabs-wrapper {
+}
+
+.tabs {
+	display: flex;
+}
+
+.tabs__trigger {
+	border: thin solid gray;
+	text-align: center;
+	padding: 20px;
+	flex-grow: 1;
+}
+
+.tabs__content-wrapper {
+}
+
+.tabs__content {
+	display: none;
+	background-color: #eee;
+	padding: 20px;
+	border: thin solid gray;
+	border-top: thin solid transparent;
+}
+
+.tabs__content--active {
+	display: block;
+}
+
+.tabs__trigger--active {
+	background-color: #eee;
+}
