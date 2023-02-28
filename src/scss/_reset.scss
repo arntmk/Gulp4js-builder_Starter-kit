@@ -13,6 +13,7 @@ pre {
 html {
 	background-repeat: no-repeat;
 	break-inside: avoid-column;
+	text-overflow: ellipsis;
 	box-sizing: border-box;
 	overflow-anchor: none;
 }
@@ -22,6 +23,7 @@ html {
 *::after {
 	background-repeat: inherit;
 	overflow-anchor: inherit;
+	text-overflow: inherit;
 	break-inside: inherit;
 	box-sizing: inherit;
 	margin-top: 0;
