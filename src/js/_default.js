@@ -18,6 +18,7 @@ if (togglePassword && password) {
 		togglePassword.classList.toggle('hidden', !this.value);
 	});
 }
+
 /* ____________________________________________ */
 // ===Toggle search cleaning===
 
@@ -34,6 +35,7 @@ if (searchInput && clearButton) {
 		clearButton.classList.toggle('hidden', !this.value);
 	});
 }
+
 /* ____________________________________________ */
 // ===Validate Numbers===
 
