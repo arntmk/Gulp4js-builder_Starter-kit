@@ -75,20 +75,21 @@ function delfont() {
 // Fonts
 
 function font() {
-	const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
+	// const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
 	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
 	const copySvgFont = 'src/font/**/*.svg';
 	return (
-		src(ttfTOwoff)
+		src(ttfTOwoff2)
+			// src(ttfTOwoff)
 			// .pipe(changed('build/font/', { extension: '.woff' }))
 			// .pipe(fonter({ formats: ['woff'] }))
 			// .pipe(dest('build/font/'))
-			.pipe(src(ttfTOwoff2))
+			// .pipe(src(ttfTOwoff2))
 			.pipe(changed('build/font/', { extension: '.woff2' }))
 			.pipe(ttf2woff2())
 			.pipe(dest('build/font/'))
 			.pipe(src(copySvgFont))
-			.pipe(changed('build/font/'))
+			.pipe(changed('build/font/', { extension: '.svg' }))
 			.pipe(dest('build/font/'))
 	);
 }
@@ -155,7 +156,7 @@ function img() {
 				[
 					imagemin.gifsicle({ interlaced: true }),
 					// imagemin.mozjpeg({ quality: 80, progressive: true }),
-					// imagemin.optipng({ optimizationLevel: 5 }),
+					//*// imagemin.optipng({ optimizationLevel: 5 }),
 					// imageminPngquant({ quality: [0.8, 1.0] }),
 					imagemin.svgo({
 						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
