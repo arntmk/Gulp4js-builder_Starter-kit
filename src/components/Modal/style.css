@@ -47,6 +47,10 @@ form {
 	gap: 1em;
 }
 
+dialog::backdrop {
+	cursor: pointer;
+}
+
 body.lock {
 	overflow: hidden;
 }
