@@ -1,7 +1,13 @@
 /* -------- elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e --------- */
 /* -------- https://www.youtube.com/shorts/2lyDv0wOQuQ --------- */
 
-/* ____________________Typography & Reset________________________ */
+/* ____________________Reset & Typography________________________ */
+
+html {
+	font-family: var(--font-family), system-ui, -apple-system, 'Segoe UI',
+		'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
 
 code,
 kbd,
@@ -12,6 +18,45 @@ pre {
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+/* ____________________________________________ */
+/* ScrollBar for Wibesite*/
+html {
+	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
+}
+
+::-webkit-scrollbar {
+	width: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-color);
+	border-radius: 10px;
+	border: 5px solid transparent;
+	background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--scrollbar-bgcolor);
+}
+
+/* ScrollBar for Select and Textarea */
+select,
+textarea {
+	scrollbar-color: var(--scrollbar-color) transparent;
+	scrollbar-width: thin;
+}
+
+select::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+	width: 17px;
+}
+
+select::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+/* ____________________General________________________ */
 html {
 	background-repeat: no-repeat;
 	break-inside: avoid-column;
@@ -101,6 +146,7 @@ a,
 label,
 button,
 summary,
+dialog,
 [type='button'],
 [type='reset'],
 [type='submit'],
