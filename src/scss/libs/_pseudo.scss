@@ -5,17 +5,19 @@
 @media (any-hover: hover) {
 	a:is(:hover, :focus-visible) {
 		color: darken(#4682b4, 10%);
-		transition: all 0.3s ease-in-out;
+		transform: scale(1.01);
+		transition: all 0.3s ease-in-out 0.05s;
 	}
 
 	:is([type='button']:hover, [type='button']:focus-visible),
 	:is([type='reset']:hover, [type='reset']:focus-visible),
 	:is([type='submit']:hover, [type='submit']:focus-visible) {
 		color: #fff;
+		transform: scale(1.05);
 		background-color: #4682b4;
 		border-color: transparent;
 		box-shadow: 0 0 0.625rem #4f6e86;
-		animation: fade 0.3s ease-in-out;
+		transition: all 0.3s linear 0.05s;
 	}
 
 	summary:is(:hover, :focus-visible),
@@ -34,14 +36,15 @@
 			[type='radio']
 		):is(:hover, :focus-visible) {
 		border-color: transparent;
+		transform: scale(1.01);
 		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
-		transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out 0.05s;
 	}
 }
 
 /* Animation for :Pseudo-classes
 /* ____________________________________________ */
-/* Opacity */
+/* Opacity + Scale */
 @keyframes fade {
 	0% {
 		opacity: 0.3;
