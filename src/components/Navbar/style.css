@@ -63,10 +63,6 @@ body.lock {
 }
 
 /* ____________________________________________ */
-.navbar.active {
-	left: 0;
-}
-
 .nav {
 	display: flex;
 	gap: 30px;
@@ -80,6 +76,11 @@ body.lock {
 .nav__li-link:is(:hover, :focus-visible) {
 	transform: translateX(3%) scale(1.1);
 	transition: 0.3s ease-in-out;
+}
+
+/* ____________________Hamburger-Menu________________________ */
+.navbar.active {
+	left: 0;
 }
 
 @media (max-width: 768px) {
@@ -111,7 +112,7 @@ body.lock {
 	}
 }
 
-/* ____________________________________________ */
+/* ____________________Hamburger-Btn________________________ */
 .menu-button {
 	display: none;
 }
