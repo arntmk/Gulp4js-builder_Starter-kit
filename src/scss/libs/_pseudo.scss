@@ -5,8 +5,8 @@
 @media (any-hover: hover) {
 	a:is(:hover, :focus-visible) {
 		color: darken(#4682b4, 10%);
-		transform: scale(1.01);
-		transition: all 0.3s ease-in-out 0.05s;
+		transform: scale(1.05);
+		transition: all 0.3s ease-in-out 0.02s;
 	}
 
 	:is([type='button']:hover, [type='button']:focus-visible),
@@ -17,18 +17,17 @@
 		background-color: #4682b4;
 		border-color: transparent;
 		box-shadow: 0 0 0.625rem #4f6e86;
-		transition: all 0.3s linear 0.05s;
+		transition: all 0.3s linear 0.02s;
 	}
 
-	summary:is(:hover, :focus-visible),
 	select:is(:hover, :focus),
 	textarea:is(:hover, :focus),
+	summary:is(:hover, :focus-visible),
 	[type='file']::file-selector-button:is(:hover, :focus-visible),
 	input:not(
 			[type='button'],
 			[type='reset'],
 			[type='submit'],
-			#datalist,
 			[type='range'],
 			[type='file'],
 			[type='color'],
@@ -36,9 +35,8 @@
 			[type='radio']
 		):is(:hover, :focus-visible) {
 		border-color: transparent;
-		transform: scale(1.01);
 		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
-		transition: all 0.3s ease-in-out 0.05s;
+		transition: all 0.3s ease-in-out 0.02s, background 0s;
 	}
 }
 
