@@ -88,7 +88,17 @@ html {
 	padding: 0;
 }
 
-:where(button, input, select, textarea) {
+:where(
+		input:not(
+				[type='button'],
+				[type='reset'],
+				[type='submit'],
+				[type='checkbox'],
+				[type='radio']
+			),
+		select,
+		textarea
+	) {
 	outline-color: transparent;
 }
 
