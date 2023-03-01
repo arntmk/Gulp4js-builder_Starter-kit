@@ -186,7 +186,7 @@ function html() {
 			// .pipe(webpHTML())
 			.pipe(
 				typograf({
-					locale: ['ru', 'en-US', 'ua', 'en'],
+					locale: ['ru', 'en-US', 'uk-UA', 'en'],
 					htmlEntity: { type: 'name' },
 				})
 			)

@@ -1,4 +1,6 @@
 /* -------- elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e --------- */
+/* -------- https://www.youtube.com/shorts/2lyDv0wOQuQ --------- */
+
 /* ____________________Typography & Reset________________________ */
 
 code,
@@ -55,7 +57,7 @@ html {
 	object-fit: cover;
 }
 
-:where(iframe, img, svg, input, video, select, textarea) {
+:where(iframe, picture, img, svg, input, video, select, textarea) {
 	max-width: 100%;
 	height: auto;
 }
