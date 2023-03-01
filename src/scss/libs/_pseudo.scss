@@ -5,19 +5,15 @@
 @media (any-hover: hover) {
 	a:is(:hover, :focus-visible) {
 		color: darken(#4682b4, 10%);
-		transform: scale(1.05);
-		transition: all 0.3s ease-in-out 0.02s;
+		transition: 0.3s ease-in-out 0.02s;
 	}
 
 	:is([type='button']:hover, [type='button']:focus-visible),
 	:is([type='reset']:hover, [type='reset']:focus-visible),
 	:is([type='submit']:hover, [type='submit']:focus-visible) {
-		color: #fff;
-		transform: scale(1.05);
 		background-color: #4682b4;
 		border-color: transparent;
-		box-shadow: 0 0 0.625rem #4f6e86;
-		transition: all 0.3s linear 0.02s;
+		animation: BtnEffect 0.3s ease-in-out forwards;
 	}
 
 	select:is(:hover, :focus),
@@ -31,7 +27,6 @@
 			[type='range'],
 			[type='file'],
 			[type='color'],
-			[type='checkbox'],
 			[type='radio']
 		):is(:hover, :focus-visible) {
 		border-color: transparent;
@@ -42,13 +37,19 @@
 
 /* Animation for :Pseudo-classes
 /* ____________________________________________ */
-/* Opacity + Scale */
-@keyframes fade {
+/* Button Effect */
+@keyframes BtnEffect {
 	0% {
 		opacity: 0.3;
+		transform: scale(1);
+		box-shadow: 0 0 0.3125rem #fff;
+		color: inherit;
 	}
 	100% {
 		opacity: 1;
+		transform: scale(1.05);
+		box-shadow: 0 0 0.625rem #4f6e86;
+		color: #fff;
 	}
 }
 
