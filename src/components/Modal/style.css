@@ -53,11 +53,13 @@ body.lock {
 
 /* ____________________Modal________________________ */
 dialog {
+	overflow: auto;
 	border-radius: 15px;
 	position: relative;
 	padding: 0;
 	max-width: 50ch;
 	border: thin solid transparent;
+	background-color: #fff;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
 }
 
@@ -67,6 +69,7 @@ dialog::backdrop {
 }
 
 .modal-wrapper {
+	border-radius: 15px;
 	padding: 25px;
 }
 
