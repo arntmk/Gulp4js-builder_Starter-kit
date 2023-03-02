@@ -3,19 +3,20 @@ const swiper = new Swiper('.swiper', {
 	// direction: 'vertical',
 	loop: true,
 	spaceBetween: 20,
-	slidesPerView: 3,
+	slidesPerView: 2,
 	autoHeight: true,
-
-	// If we need pagination
-	// pagination: {
-	// 	el: '.swiper-pagination',
-	// },
 
 	// Navigation arrows
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
+
+	// If we need pagination
+	// pagination: {
+	// 	el: '.swiper-pagination',
+	// 	clickable: true,
+	// },
 
 	// And if we need scrollbar
 	// scrollbar: {
