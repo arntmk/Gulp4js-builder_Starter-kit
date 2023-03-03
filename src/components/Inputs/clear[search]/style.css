@@ -4,6 +4,8 @@
 /* https://codepen.io/tippingpointdev/pen/WNZbWGe */
 
 /* ____________________________________________ */
+@charset "UTF-8";
+/* ____________________________________________ */
 /* Remove chrome clear button */
 input[type='search']::-webkit-search-decoration,
 input[type='search']::-webkit-search-cancel-button,

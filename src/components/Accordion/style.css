@@ -4,6 +4,8 @@
 /* https://stackoverflow.com/questions/16751345/automatically-close-all-the-other-details-tags-after-opening-a-specific-detai */
 /* https://www.youtube.com/watch?v=gz1v1KenZWk */
 
+/* ____________________________________________ */
+@charset "UTF-8";
 html {
 	box-sizing: border-box;
 	background: #d4d1d1;
