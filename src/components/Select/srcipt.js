@@ -9,8 +9,14 @@ const options = document.querySelectorAll('.option');
 select.addEventListener('click', () => {
 	select.classList.toggle('active');
 	options_list.classList.toggle('active');
-	select.setAttribute('aria-expanded', true);
-	options_list.setAttribute('aria-hidden', false);
+
+	if (select.classList.contains('active')) {
+		select.setAttribute('aria-expanded', true);
+		options_list.setAttribute('aria-hidden', false);
+	} else {
+		select.setAttribute('aria-expanded', false);
+		options_list.setAttribute('aria-hidden', true);
+	}
 });
 
 //select option
@@ -18,6 +24,7 @@ options.forEach((option) => {
 	option.addEventListener('click', () => {
 		options.forEach((option) => {
 			option.classList.remove('selected');
+			select.classList.remove('active');
 			select.setAttribute('aria-expanded', false);
 			options_list.setAttribute('aria-hidden', true);
 		});
