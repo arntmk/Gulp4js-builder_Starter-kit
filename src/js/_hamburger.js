@@ -11,6 +11,7 @@ if (menu && menuBtn) {
 		menu.classList.toggle('active');
 		menuBtn.classList.toggle('active');
 		body.classList.toggle('lock');
+		menuBtn.setAttribute('aria-expanded', true);
 	});
 
 	menu.addEventListener('click', (e) => {
@@ -18,6 +19,7 @@ if (menu && menuBtn) {
 			menu.classList.remove('active');
 			menuBtn.classList.remove('active');
 			body.classList.remove('lock');
+			menuBtn.setAttribute('aria-expanded', false);
 		}
 	});
 
@@ -26,6 +28,7 @@ if (menu && menuBtn) {
 			menu.classList.remove('active');
 			menuBtn.classList.remove('active');
 			body.classList.remove('lock');
+			menuBtn.setAttribute('aria-expanded', false);
 		});
 	});
 }
