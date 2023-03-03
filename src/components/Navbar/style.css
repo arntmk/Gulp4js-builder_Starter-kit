@@ -152,6 +152,7 @@ body.lock {
 	.menu-icon::before,
 	.menu-icon::after {
 		content: '';
+		/* transition: cubic-bezier(0.787, 0.35, 0.15, 0.86) 0.6s linear; */
 	}
 
 	.menu-icon::before {
