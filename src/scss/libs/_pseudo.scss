@@ -25,10 +25,10 @@
 			[type='reset'],
 			[type='submit'],
 			[type='range'],
-			[type='file'],
 			[type='color'],
 			[type='radio'],
-			[type='checkbox']
+			[type='checkbox'],
+			[type='file']
 		):is(:hover, :focus-visible) {
 		border-color: transparent;
 		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
