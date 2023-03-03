@@ -18,7 +18,6 @@ const fonter = require('gulp-fonter'); //Конвертатор шрифтів �
 const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор в woff2.
 const fontfacegen = require('gulp-fontfacegen'); //fontface gen.
 
-// const webpHTML = require('gulp-webp-html-fixed'); //Авто сумісність webp(html).
 const fileinclude = require('gulp-file-include'); //Модульність для html.
 const htmlmin = require('gulp-htmlmin'); //Мінімізація html.
 const typograf = require('gulp-typograf'); //Правопис.
@@ -26,7 +25,6 @@ const vrnmbr = require('gulp-version-number'); //Build version.
 
 const sass = require('gulp-sass')(require('sass')); //Препроцесор для css.
 const autoprefixer = require('gulp-autoprefixer'); //Додавання префіксів для сумісності.
-// const webpCSS = require('gulp-webp-css-fixed'); // Авто сумісність webp(css).
 const groupCSSMedia = require('gulp-group-css-media-queries'); //Групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); //Оптимізація коду.
 const csso = require('gulp-csso'); //Мінімізація css.
@@ -40,6 +38,9 @@ const svgmin = require('gulp-svgmin'); //Мінімізація svg.
 const cheerio = require('gulp-cheerio'); //Видалення непотрібних атрибутів svg (Вбудовані стилі).
 const replace = require('gulp-replace'); //Заміна символів після gulp-cheerio.
 const svgSprite = require('gulp-svg-sprite'); //Об'єднання спрайтів.
+
+// const webpHTML = require('gulp-webp-html-fixed'); //Авто сумісність webp(html).
+// const webpCSS = require('gulp-webp-css-fixed'); // Авто сумісність webp(css).
 
 // Production build
 
