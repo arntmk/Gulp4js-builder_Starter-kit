@@ -8,6 +8,38 @@
 /* ____________________________________________ */
 /* extra styling */
 @charset "UTF-8";
+
+/*
+ * Add the correct styles in Safari.
+ */
+
+:where(dialog) {
+	background-color: white;
+	border: solid;
+	color: black;
+	height: -moz-fit-content;
+	height: fit-content;
+	left: 0;
+	margin: auto;
+	padding: 1em;
+	position: absolute;
+	right: 0;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+:where(dialog:not([open])) {
+	display: none;
+}
+
+/*
+ * Add the correct display in Safari.
+ */
+
+:where(details > summary:first-of-type) {
+	display: list-item;
+}
+
 body {
 	min-height: 100vh;
 	margin: 2rem;
