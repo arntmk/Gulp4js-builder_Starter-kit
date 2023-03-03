@@ -1,28 +1,51 @@
 /* https://swiperjs.com/get-started#download-assets */
+/* https://www.jsdelivr.com/package/npm/swiper */
 /* https://www.youtube.com/watch?v=IVS62g09GxM&t=4419s */
+/* https://www.youtube.com/watch?v=OjVK055CTNI&list=PLCMvV-acWe2ABigEmFMDWCu8gzC0fdgRa&index=4 */
 
+/* ____________________________________________ */
 .section__swiper {
 }
+
 .container {
+	max-width: 1170px;
+	width: 100%;
+	margin-inline: auto;
+	padding-inline: 15px;
 }
+
+/* ____________________________________________ */
 .swiper-title {
 	text-align: center;
 }
+
 .swiper__swiper {
-	overflow-x: hidden;
+}
+
+.swiper {
+	overflow: hidden;
+	max-width: 1170px;
+	width: 100%;
+	margin-inline: auto;
+	padding-inline: auto;
 }
 
 .swiper-wrapper {
 	display: flex;
 }
+
 .swiper-slide {
 	cursor: grab;
+	background-color: #eee;
 }
 
 .swiper-button {
 	cursor: pointer;
 }
+
 .swiper-button-prev {
 }
 .swiper-button-next {
 }
+
+/* ____________________________________________ */
