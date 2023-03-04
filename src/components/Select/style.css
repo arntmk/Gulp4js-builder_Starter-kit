@@ -59,6 +59,7 @@ body {
 }
 
 .options-list {
+	outline: none;
 	border: 0 solid transparent;
 	position: absolute;
 	width: 100%;
@@ -115,6 +116,11 @@ body {
 		no-repeat right center / 1.4em;
 	/* padding-left: 1.6em; */
 	transition: transform 0.6s ease-in-out;
+}
+
+.select-ico,
+.select-wrapper span {
+	pointer-events: none;
 }
 
 .select.active .select-ico {
