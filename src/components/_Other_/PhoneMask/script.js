@@ -6,7 +6,8 @@
 'use strict';
 
 /* ____________________________________________ */
-// Init phonemask
+// ===Init PhoneMask===
+
 const maskElement = document.querySelector('#phone__input');
 const maskOption = {
 	mask: '+{38}(000)000-00-00',

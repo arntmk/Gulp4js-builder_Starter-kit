@@ -2,6 +2,7 @@
 
 /* ____________________________________________ */
 // ===Number counter===
+
 function numCounter(selector, number, time, step) {
 	const counter = document.querySelector(selector);
 

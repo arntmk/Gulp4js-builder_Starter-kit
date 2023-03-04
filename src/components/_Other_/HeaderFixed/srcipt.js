@@ -1,5 +1,7 @@
 'use strict';
+
 /* ____________________________________________ */
+// ===Header Fixed===
 
 const navigationHeight = document.querySelector('.header').offsetHeight;
 
