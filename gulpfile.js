@@ -32,16 +32,17 @@ const csso = require('gulp-csso'); //Мінімізація css.
 const terser = require('gulp-terser'); //Мінімізація JS.
 const babel = require('gulp-babel'); //Підтримка старих браузерів JS.
 const concat = require('gulp-concat'); //Перейменування та об'єднання.
-//const typeSpt = require('gulp-typescript'); //Конвертатор TypeScript.
 
 const svgmin = require('gulp-svgmin'); //Мінімізація svg.
 const cheerio = require('gulp-cheerio'); //Видалення непотрібних атрибутів svg (Вбудовані стилі).
 const replace = require('gulp-replace'); //Заміна символів після gulp-cheerio.
 const svgSprite = require('gulp-svg-sprite'); //Об'єднання спрайтів.
 
-// const webpHTML = require('gulp-webp-html-fixed'); //Авто сумісність webp(html).
-// const webpCSS = require('gulp-webp-css-fixed'); // Авто сумісність webp(css).
+// const typeScrpt = require('gulp-typescript'); //Конвертатор TypeScript.
+// const webpHTML = require('gulp-webp-html-fixed'); //Cумісність webp(html).
+// const webpCSS = require('gulp-webp-css-fixed'); //Cумісність webp(css).
 
+/* ____________________________________________ */
 // Production build
 
 const isBuild = process.argv.includes('--production');
@@ -73,6 +74,7 @@ function delfont() {
 	}).pipe(clean());
 }
 
+/* ____________________________________________ */
 // Fonts
 
 function font() {
@@ -115,6 +117,7 @@ function fontgen() {
 	);
 }
 
+/* ____________________________________________ */
 // Svg Sprite
 
 function svg() {
@@ -140,6 +143,7 @@ function svg() {
 		.pipe(dest('build/img/svg/'));
 }
 
+/* ____________________________________________ */
 // Optimize images
 
 function img() {
@@ -176,6 +180,7 @@ function img() {
 		.pipe(browsersync.stream());
 }
 
+/* ____________________________________________ */
 // Html
 
 function html() {
@@ -210,6 +215,7 @@ function html() {
 	);
 }
 
+/* ____________________________________________ */
 // CSS
 
 function css() {
@@ -238,6 +244,7 @@ function css() {
 	);
 }
 
+/* ____________________________________________ */
 // JavaScript
 
 function js() {
@@ -247,7 +254,7 @@ function js() {
 		src(srcJs, { sourcemaps: true })
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
-			//.pipe(typeSpt({ noImplicitAny: true, outFile: 'script.min.js' }))
+			//.pipe(typeScrpt({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, concat('script.js')))
 			.pipe(gulpif(isBuild, dest('build/js/', { sourcemaps: isBuild })))
@@ -263,6 +270,7 @@ function js() {
 	);
 }
 
+/* ____________________________________________ */
 // Watch files
 
 function watchFiles() {
