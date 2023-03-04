@@ -1,3 +1,6 @@
+'use strict';
+/* ____________________________________________ */
+
 const navigationHeight = document.querySelector('.header').offsetHeight;
 
 document.documentElement.style.setProperty(

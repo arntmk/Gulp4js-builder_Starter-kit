@@ -1,3 +1,5 @@
+'use strict';
+/* ____________________________________________ */
 // Footer getFullYear
 const year = document.getElementById('year');
 const thisYear = new Date().getFullYear();

@@ -3,6 +3,7 @@
 /* https://stackoverflow.com/questions/17164239/add-delete-and-arrow-key-into-regular-expression */
 /* https://www.youtube.com/shorts/nnZS761ngXE */
 
+'use strict';
 /* ____________________________________________ */
 // ===Validate Numbers===
 

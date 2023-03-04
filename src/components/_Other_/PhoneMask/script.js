@@ -3,6 +3,8 @@
 // Подключаем через npm: https://www.npmjs.com/package/imask
 // Подключаем через CDN: <script src="https://unpkg.com/imask"></script>
 
+'use strict';
+
 /* ____________________________________________ */
 // Init phonemask
 const maskElement = document.querySelector('#phone__input');

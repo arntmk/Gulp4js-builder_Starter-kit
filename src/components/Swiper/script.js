@@ -1,3 +1,8 @@
+'use strict';
+
+/* ____________________________________________ */
+// ===Swiper===
+
 const swiper = new Swiper('.swiper', {
 	// Optional parameters
 	direction: 'horizontal', // vertical
