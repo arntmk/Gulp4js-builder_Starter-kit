@@ -19,8 +19,8 @@ if (modal && openModal && closeModal) {
 		modal.close();
 	});
 
-	modal.addEventListener('click', (event) => {
-		if (event.target === modal) {
+	modal.addEventListener('click', (e) => {
+		if (e.target === modal) {
 			body.classList.remove('lock');
 			modal.close();
 		}

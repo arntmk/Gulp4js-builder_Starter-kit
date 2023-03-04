@@ -8,6 +8,7 @@ document.documentElement.style.setProperty(
 	navigationHeight - 1 + 'px'
 );
 
+/* ____________________________________________ */
 const minOffset = 50;
 window.onscroll = function () {
 	let has_class = document.body.classList.contains('is_scrolled');

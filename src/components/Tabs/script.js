@@ -10,15 +10,11 @@ if (tabsNav && tabsContent) {
 			e.preventDefault();
 			const id = e.target.getAttribute('href').replace('#', '');
 
-			tabsNav.forEach((child) =>
-				child.classList.remove('tabs__trigger--active')
-			);
-			tabsContent.forEach((child) =>
-				child.classList.remove('tabs__content--active')
-			);
+			tabsNav.forEach((child) => child.classList.remove('active'));
+			tabsContent.forEach((child) => child.classList.remove('active'));
 
-			item.classList.add('tabs__trigger--active');
-			document.getElementById(id).classList.add('tabs__content--active');
+			item.classList.add('active');
+			document.getElementById(id).classList.add('active');
 		})
 	);
 	document.querySelector('.tabs__trigger').click();
