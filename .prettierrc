@@ -1,4 +1,10 @@
 {
 	"jsxSingleQuote": true,
-	"singleQuote": true
+	"singleQuote": true,
+	"printWidth": 100,
+	"tabWidth": 2,
+	"useTabs": true,
+	"proseWrap": "never",
+	"bracketSpacing": true,
+	"arrowParens": "always"
 }
