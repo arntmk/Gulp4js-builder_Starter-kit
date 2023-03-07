@@ -301,12 +301,14 @@ progress::-webkit-progress-value {
  */
 
 [type='file'] {
+	pointer-events: none;
 	background-color: transparent;
 	border-width: 0;
 	width: 20em;
 }
 
 [type='file']::file-selector-button {
+	pointer-events: all;
 	background-color: #fff;
 	border: thin solid #8f8f9d;
 	padding: 0.09em 1em;
