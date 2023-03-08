@@ -54,9 +54,24 @@ html {
 	background-color: lawngreen;
 }
 
+/* ____________________pagination________________________ */
+.swiper-pagination-bullet {
+	background-color: steelblue;
+	height: 8px;
+	width: 8px;
+	margin: 0 4px;
+	opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: red;
+}
+
 /* ____________________button________________________ */
 .swiper-button {
 	cursor: pointer;
+	display: flex;
+	align-items: center;
 }
 
 .swiper-button-prev,
