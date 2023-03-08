@@ -72,6 +72,7 @@ body {
 	/* overflow-y: hidden; */
 	transition: 0.3s linear 0.2s;
 	height: 0;
+	will-change: max-height;
 }
 
 .option {
