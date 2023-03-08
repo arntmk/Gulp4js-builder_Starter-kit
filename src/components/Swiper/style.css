@@ -42,8 +42,8 @@ body {
 }
 
 .swiper-container {
-	overflow: hidden;
-	width: 100%;
+	/* overflow: hidden;
+	width: 100%; */
 	/* max-width: 1200px;
 	padding: 0 15px;
 	position: relative;
@@ -51,9 +51,9 @@ body {
 }
 
 .swiper-wrapper {
-	display: flex;
+	/* display: flex;
 	width: 100%;
-	height: 100%;
+	height: 100%; */
 }
 
 .swiper-slide {
@@ -61,7 +61,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-shrink: 0;
+	/* flex-shrink: 0; */
 }
 
 .card {
