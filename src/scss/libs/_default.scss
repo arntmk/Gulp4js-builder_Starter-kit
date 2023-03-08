@@ -48,7 +48,6 @@ details .content {
 	padding: 5px;
 	border: thin solid #8f8f9d;
 	background-color: #fff;
-	will-change: max-height;
 }
 
 /* Animation */
@@ -65,6 +64,7 @@ details .content {
 
 details[open] > *:not(summary) {
 	overflow: hidden;
+	will-change: max-height;
 	animation: details 1s ease-in-out forwards;
 }
 
@@ -224,8 +224,7 @@ input[type='range']#webkit-progress {
 
 input[type='range']#webkit-progress,
 input[type='range']#webkit-progress::-webkit-slider-runnable-track {
-	background: linear-gradient(#007cf8, #007cf8) 0 / var(--sx) 100% no-repeat,
-		#efefef;
+	background: linear-gradient(#007cf8, #007cf8) 0 / var(--sx) 100% no-repeat, #efefef;
 }
 
 /* ____________________________________________ */

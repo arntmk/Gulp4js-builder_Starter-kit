@@ -13,6 +13,11 @@ html {
 	box-sizing: inherit;
 }
 
+body {
+	background-color: #333;
+	margin: 0;
+}
+
 :where(button) {
 	background-color: transparent;
 	border-width: 0;
@@ -28,6 +33,7 @@ html {
 	padding-inline: 15px;
 }
 .swiper-title {
+	color: #eee;
 	text-align: center;
 }
 
@@ -36,6 +42,10 @@ html {
 }
 
 .swiper-container {
+	/* max-width: 1200px;
+	padding: 0 15px;
+	position: relative;
+	margin: 0 auto; */
 }
 
 .swiper-wrapper {
@@ -66,6 +76,16 @@ html {
 .swiper-pagination-bullet-active {
 	background-color: red;
 }
+
+/* Numbers */
+/* .swiper-pagination-current {
+	font-size: 20px;
+	margin-right: 20px;
+}
+
+.swiper-pagination-total {
+	margin-left: 20px;
+} */
 
 /* ____________________button________________________ */
 .swiper-button {
@@ -101,4 +121,16 @@ html {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' x='0' y='0' viewBox='0 0 511.995 511.995' xml:space='preserve'%3e%3cpath d='M381.039 248.62L146.373 3.287C142.29-.942 135.54-1.13 131.29 2.954c-4.25 4.073-4.396 10.823-.333 15.083L358.56 255.995 130.956 493.954c-4.063 4.26-3.917 11.01.333 15.083a10.63 10.63 0 007.375 2.958 10.65 10.65 0 007.708-3.292L381.039 263.37c3.938-4.125 3.938-10.625 0-14.75z'/%3e%3c/svg%3e");
 }
 
+/* ____________________________________________ */
+/* Вынесенные кнопки слайдера */
+
+/* .swiper-button-prev,
+.swiper-button-next {
+	position: static;
+	margin-left: 10px;
+}
+
+.swiper-container {
+	padding-bottom: 50px;
+} */
 /* ____________________________________________ */

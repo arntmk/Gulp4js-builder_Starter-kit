@@ -8,7 +8,7 @@ const swiper = new Swiper('.swiper-container', {
 	direction: 'horizontal', // vertical
 	loop: true,
 	spaceBetween: 20,
-	slidesPerView: 3,
+	slidesPerView: 1,
 	slidesPerGroup: 1,
 	//slideToClickedSlide: true,
 	//centeredSlides: true,
@@ -17,15 +17,10 @@ const swiper = new Swiper('.swiper-container', {
 	freeMode: true,
 
 	autoplay: {
-		delay: 5000,
+		delay: 4000,
 	},
 
 	breakpoints: {
-		// when window width is >= 50px
-		50: {
-			slidesPerView: 1,
-			spaceBetween: 0,
-		},
 		// when window width is >= 320px
 		320: {
 			slidesPerView: 1,
@@ -52,7 +47,7 @@ const swiper = new Swiper('.swiper-container', {
 	// If we need pagination
 	pagination: {
 		el: '.swiper-pagination',
-		type: 'bullets',
+		type: 'bullets', // fraction
 		paginationClickable: true,
 		clickable: true,
 	},
