@@ -7,8 +7,7 @@ const password = document.querySelector('input[type="password"]');
 if (togglePassword && password) {
 	togglePassword.addEventListener('click', function () {
 		// toggle the type attribute
-		const type =
-			password.getAttribute('type') === 'password' ? 'text' : 'password';
+		const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
 		password.setAttribute('type', type);
 		// toggle the eye / eye slash icon
 		this.classList.toggle('eye-close');
@@ -61,11 +60,10 @@ if (numericInputs) {
 		});
 	}
 
-	document.querySelector('[inputmode="numeric"]').onkeypress =
-		function Validate(e) {
-			const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
-			return isNumber;
-		};
+	document.querySelector('[inputmode="numeric"]').onkeypress = function Validate(e) {
+		const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
+		return isNumber;
+	};
 }
 
 /* ____________________________________________ */
@@ -104,9 +102,7 @@ if (accordion) {
 /* ____________________________________________ */
 // ===Progress support JS / WebKit===
 
-for (let e of document.querySelectorAll(
-	'input[type="range"]#webkit-progress'
-)) {
+for (let e of document.querySelectorAll('input[type="range"]#range-progress')) {
 	e.style.setProperty('--value', e.value);
 	e.style.setProperty('--min', e.min == '' ? '0' : e.min);
 	e.style.setProperty('--max', e.max == '' ? '100' : e.max);

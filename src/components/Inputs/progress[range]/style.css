@@ -92,14 +92,13 @@ input[type='range']::-webkit-slider-runnable-track {
 }
 
 /* Progress support JS / WebKit */
-input[type='range']#webkit-progress {
+input[type='range']#range-progress {
 	--range: calc(var(--max) - var(--min));
 	--ratio: calc((var(--value) - var(--min)) / var(--range));
 	--sx: calc(0.4 * 2em + var(--ratio) * (100% - 1em));
 }
 
-input[type='range']#webkit-progress,
-input[type='range']#webkit-progress::-webkit-slider-runnable-track {
-	background: linear-gradient(#007cf8, #007cf8) 0 / var(--sx) 100% no-repeat,
-		#efefef;
+input[type='range']#range-progress,
+input[type='range']#range-progress::-webkit-slider-runnable-track {
+	background: linear-gradient(#007cf8, #007cf8) 0 / var(--sx) 100% no-repeat, #efefef;
 }
