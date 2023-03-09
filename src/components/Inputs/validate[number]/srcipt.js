@@ -29,9 +29,8 @@ if (numericInputs) {
 		});
 	}
 
-	document.querySelector('[inputmode="numeric"]').onkeypress =
-		function Validate(e) {
-			const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
-			return isNumber;
-		};
+	document.querySelector('[inputmode="numeric"]').onkeypress = function Validate(e) {
+		const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
+		return isNumber;
+	};
 }
