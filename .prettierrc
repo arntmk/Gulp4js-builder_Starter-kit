@@ -4,6 +4,6 @@
   "semi": true,
   "endOfLine": "lf",
   "printWidth": 100,
-  "useTabs": false,
+  "useTabs": true,
   "tabWidth": 2
 }
