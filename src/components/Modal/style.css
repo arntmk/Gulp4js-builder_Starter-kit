@@ -40,7 +40,9 @@
 	display: list-item;
 }
 
+/* ____________________________________________ */
 body {
+	height: 1500px;
 	min-height: 100vh;
 	margin: 2rem;
 	font-family: system-ui;
@@ -64,12 +66,6 @@ h1 em {
 	padding: 10px 15px;
 }
 
-.close-btn {
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
 .button:hover,
 .button:focus {
 	background: #614949;
@@ -86,6 +82,13 @@ dialog::backdrop {
 
 body.lock {
 	overflow: hidden;
+}
+
+/* ____________________________________________ */
+.close-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 /* ____________________Modal________________________ */
@@ -114,7 +117,7 @@ dialog::backdrop {
 dialog[open] {
 	/* cubic-bezier(.33,1.44,.83,.22) */
 	overflow: hidden;
-	animation: dialog-fadeIn 1s ease-out normal;
+	animation: dialog-fadeIn 1s ease-out forwards;
 }
 
 @keyframes dialog-fadeIn {
