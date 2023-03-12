@@ -19,6 +19,8 @@
 		"diz.ecsstractor-port",
 		"kisstkondoros.vscode-gutter-preview",
 		"box-of-hats.bemhelper",
-		"naumovs.color-highlight"
+		"naumovs.color-highlight",
+		"mrmlnc.vscode-scss",
+		"vunguyentuan.vscode-css-variables"
 	]
 }
