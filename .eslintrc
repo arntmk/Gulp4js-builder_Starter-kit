@@ -10,6 +10,12 @@
 		"quotes": ["error", "single"],
 		"indent": ["error", "tab"],
 		"no-tabs": ["warn", { "allowIndentationTabs": true }],
-		"global-require": 0
+		"global-require": 0,
+		"no-unused-vars": "warn",
+		"no-console": "off",
+		"func-names": "off",
+		"no-process-exit": "off",
+		"object-shorthand": "off",
+		"class-methods-use-this": "off"
 	}
 }
