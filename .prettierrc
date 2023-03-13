@@ -6,6 +6,7 @@
 	"endOfLine": "lf",
 	"printWidth": 100,
 	"bracketSameLine": true,
+	"bracketSpacing": true,
 	"useTabs": true,
 	"tabWidth": 2,
 	"overrides": [
