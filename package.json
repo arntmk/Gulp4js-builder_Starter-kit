@@ -86,5 +86,14 @@
 		"imagemin-pngquant": "^9.0.2",
 		"imagemin-webp": "^6.0.1"
 	},
-	"overrides": {}
+	"overrides": {
+		"chokidar": "3.5.3",
+		"glob-parent": "6.0.2",
+		"nth-check": "2.1.1",
+		"fs-path": "0.0.25",
+		"lodash.template": "4.5.0",
+		"xmldom": "0.6.0",
+		"trim-newlines": "3.0.1",
+		"semver-regex": "3.1.4"
+	}
 }
