@@ -1,3 +1,4 @@
+# Ignore
 build/
 build/css/style.min.css
 src/scss/libs/_normalize.scss

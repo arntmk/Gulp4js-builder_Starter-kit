@@ -1,3 +1,4 @@
+# Ignore
 build/
 build/js/scripts.min.js
 src/js/libs/swiper-bundle.min.js

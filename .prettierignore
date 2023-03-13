@@ -7,7 +7,7 @@ src/scss/libs/_normalize.scss
 #src/js/modules.json
 .HTMLTag
 
-# Ignore CSS/JS Files:
+# Ignore all CSS/JS Files:
 *.css
 *.scss
 *.js
