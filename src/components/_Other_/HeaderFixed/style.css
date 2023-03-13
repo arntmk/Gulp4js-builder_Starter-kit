@@ -3,25 +3,26 @@
 
 /* ____________________________________________ */
 @charset "UTF-8";
+
 /* ____________________________________________ */
 html {
-	scroll-behavior: smooth;
-	scroll-padding-top: var(--scroll-padding, 50px);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-padding, 50px);
 }
 
 .header {
-	position: fixed; /* or sticky */
-	top: 0;
-	width: 100%;
-	background-color: transparent;
-	transition: background-color 0.3s ease-in-out;
-	z-index: 2;
+  position: fixed; /* or sticky */
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .main {
-	margin-top: 5.5rem;
+  margin-top: 5.5rem;
 }
 
 .is_scrolled .header {
-	background-color: rgba(253, 184, 39, 0.9);
+  background-color: rgba(253, 184, 39, 0.9);
 }

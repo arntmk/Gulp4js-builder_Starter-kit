@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb-base",
+  //"parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true
+    // "jquery": true
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "indent": ["error", "tab"],
+    "no-tabs": ["warn", { "allowIndentationTabs": true }],
+    "global-require": 0
+  }
+}

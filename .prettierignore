@@ -6,3 +6,8 @@ build/js/scripts.min.js
 src/scss/libs/_normalize.scss
 #src/js/modules.json
 .HTMLTag
+
+# Ignore all CSS/SCSS/JS files:
+*.scss
+*.css
+*.js

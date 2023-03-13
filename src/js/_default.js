@@ -55,7 +55,7 @@ if (numericInputs) {
 						el.value = beforeValue;
 					}
 				},
-				{ once: true }
+				{ once: true },
 			);
 		});
 	}

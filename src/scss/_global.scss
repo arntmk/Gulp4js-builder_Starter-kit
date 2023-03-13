@@ -1,139 +1,140 @@
 /* ____________________Global________________________ */
-/* General & Typography*/
+/* General & Typography */
 html {
-	font-size: 16px; /* (100% * 1px / 16px = "6.25%" це | 1rem = 1px) */ /* (1000% / 16px = "62.5%" це | 20rem = 200px) */
-	line-height: 1.5; /* 24px / 16px = "1.5" */
+  font-size: 16px; /* (100% * 1px / 16px = "6.25%" це | 1rem = 1px) */ /* (1000% / 16px = "62.5%" це | 20rem = 200px) */
+  line-height: 1.5; /* 24px / 16px = "1.5" */
 }
 
 body {
-	font-size: clamp(0.875rem, 1.5vw, 1rem);
-	font-weight: 400;
-	font-style: normal;
-	color: var(--text-color);
-	background: var(--bg-color);
-	caret-color: #f15412;
-	accent-color: #0060df;
-	min-width: 320px;
+  min-width: 320px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: var(--text-color);
+  caret-color: #f15412;
+  background: var(--bg-color);
+  accent-color: #0060df;
 
-	&.lock {
-		overflow: hidden;
-	}
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 /* ____________________________________________ */
 /* Sticky Footer */
 html,
 body {
-	height: 100%;
+  height: 100%;
 }
 
 div#body-wrappar {
-	display: flex;
-	flex-flow: column nowrap;
-	min-height: 100%;
-	overflow: hidden; /* если используете на сайте position: sticky - уберите эту настройку */
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden; /* если используете на сайте position: sticky - уберите эту настройку */
+  min-height: 100%;
 }
 
 main.main {
-	display: flex;
-	flex-flow: column nowrap;
-	flex: 1 1 auto;
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
 }
 
 /* Container */
 div.container,
-[class*='__container'] {
-	margin-inline: auto;
-	padding-inline: clamp(10px, 1.5vw, var(--container-offset)); /* 10px - 15px */
-	width: min(100%, var(--container-width));
+[class*="__container"] {
+  margin-inline: auto;
+  padding-inline: clamp(10px, 1.5vw, var(--container-offset)); /* 10px - 15px */
+  width: min(100%, var(--container-width));
 
-	@media (max-width: $breakpoint-1450) {
-		max-width: 1320px;
-	}
+  @media (max-width: $breakpoint-1450) {
+    max-width: 1320px;
+  }
 
-	@media (max-width: $breakpoint-1200) {
-		max-width: 1140px;
-	}
+  @media (max-width: $breakpoint-1200) {
+    max-width: 1140px;
+  }
 
-	@media (max-width: $breakpoint-992) {
-		max-width: 960px;
-	}
+  @media (max-width: $breakpoint-992) {
+    max-width: 960px;
+  }
 
-	@media (max-width: $breakpoint-768) {
-		max-width: 720px;
-	}
+  @media (max-width: $breakpoint-768) {
+    max-width: 720px;
+  }
 
-	@media (max-width: $breakpoint-576) {
-		max-width: 540px;
-	}
+  @media (max-width: $breakpoint-576) {
+    max-width: 540px;
+  }
 
-	@media (max-width: $breakpoint-480) {
-		max-width: none;
-	}
+  @media (max-width: $breakpoint-480) {
+    max-width: none;
+  }
 }
 
 /* Utility Classes
 /* ____________________________________________ */
 /* Float clearfix */
 div.clearfix::after {
-	content: '';
-	display: block;
-	clear: both;
-	/* Or  display: flow-root; */
+  content: "";
+  display: block;
+  clear: both;
+
+  /* Or  display: flow-root; */
 }
 
 /* Nowrap */
 .nowrap {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 
 /* Text-Center */
 .centered {
-	text-align: center;
+  text-align: center;
 }
 
 /* Offscreen */
 .offscreen {
-	position: absolute;
-	left: -100%;
+  position: absolute;
+  left: -100%;
 }
 
 /* Visually-Hidden */
 .visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	clip: rect(0 0 0 0);
-	overflow: hidden;
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
 }
 
 .btn-reset {
-	background-color: transparent;
-	border-width: 0;
-	padding: 0;
+  border-width: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 /* ____________________Delete________________________ */
 /* Gradient */
 .main {
-	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
+  background: radial-gradient(#eee, #4682b4) no-repeat fixed;
 }
 
-// .main {
-// 	background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
-// }
+/* .main {
+  background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
+} */
 
 /* Background Image */
-// .css-img {
-// 	background-image: url();
-// 	background-repeat: no-repeat;
-// 	background-attachment: fixed;
-// 	background-position: right center;
-// 	background-size: cover;
-// }
+/* .css-img {
+  background-image: url("");
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} */
 
 /* ____________________________________________ */
 /* ________________Generel_____________________ */
