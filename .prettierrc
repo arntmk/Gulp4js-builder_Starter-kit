@@ -1,20 +1,19 @@
 {
-  "jsxSingleQuote": true,
-  "singleQuote": false,
-  "semi": true,
-  "trailingComma": "all",
-  "endOfLine": "lf",
-  "printWidth": 100,
-  "bracketSameLine": true,
-  "useTabs": false,
-  "tabWidth": 2,
-  "overrides": [
-    {
-      "files": ["**/*.js", "**/*.ts", "**/*.vue", "**/*.tsx", "**/*.html"],
-      "options": {
-        "singleQuote": true,
-        "useTabs": true
-      }
-    }
-  ]
+	"jsxSingleQuote": true,
+	"singleQuote": true,
+	"semi": true,
+	"trailingComma": "all",
+	"endOfLine": "lf",
+	"printWidth": 100,
+	"bracketSameLine": true,
+	"useTabs": true,
+	"tabWidth": 2,
+	"overrides": [
+		{
+			"files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less"],
+			"options": {
+				"singleQuote": false
+			}
+		}
+	]
 }

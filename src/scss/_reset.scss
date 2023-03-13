@@ -5,174 +5,174 @@
 /* ____________________Reset & Typography________________________ */
 
 html {
-  font-family:
-    var(--font-family),
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    "Roboto",
-    "Ubuntu",
-    "Cantarell",
-    "Noto Sans",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+	font-family:
+		var(--font-family),
+		system-ui,
+		-apple-system,
+		"Segoe UI",
+		"Roboto",
+		"Ubuntu",
+		"Cantarell",
+		"Noto Sans",
+		sans-serif,
+		"Apple Color Emoji",
+		"Segoe UI Emoji",
+		"Segoe UI Symbol",
+		"Noto Color Emoji";
 }
 
 code,
 kbd,
 samp,
 pre {
-  font-family:
-    ui-monospace,
-    "Menlo",
-    "Consolas",
-    "Roboto Mono",
-    "Ubuntu Monospace",
-    "Noto Mono",
-    "Oxygen Mono",
-    "Liberation Mono",
-    monospace,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+	font-family:
+		ui-monospace,
+		"Menlo",
+		"Consolas",
+		"Roboto Mono",
+		"Ubuntu Monospace",
+		"Noto Mono",
+		"Oxygen Mono",
+		"Liberation Mono",
+		monospace,
+		"Apple Color Emoji",
+		"Segoe UI Emoji",
+		"Segoe UI Symbol",
+		"Noto Color Emoji";
 }
 
 /* ____________________________________________ */
 /* ScrollBar for Wibesite */
 html {
-  scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
+	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
 }
 
 ::-webkit-scrollbar {
-  width: 18px;
+	width: 18px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 5px solid transparent;
-  border-radius: 10px;
-  background-clip: content-box;
-  background-color: var(--scrollbar-color);
+	border: 5px solid transparent;
+	border-radius: 10px;
+	background-clip: content-box;
+	background-color: var(--scrollbar-color);
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-bgcolor);
+	background-color: var(--scrollbar-bgcolor);
 }
 
 /* ScrollBar for Select and Textarea */
 select,
 textarea {
-  scrollbar-color: var(--scrollbar-color) transparent;
-  scrollbar-width: thin;
+	scrollbar-color: var(--scrollbar-color) transparent;
+	scrollbar-width: thin;
 }
 
 select::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
-  width: 17px;
+	width: 17px;
 }
 
 select::-webkit-scrollbar-track,
 textarea::-webkit-scrollbar-track {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 /* ____________________General________________________ */
 html {
-  break-inside: avoid-column;
-  overflow-anchor: none;
-  box-sizing: border-box;
-  text-overflow: ellipsis;
-  background-repeat: no-repeat;
+	break-inside: avoid-column;
+	overflow-anchor: none;
+	box-sizing: border-box;
+	text-overflow: ellipsis;
+	background-repeat: no-repeat;
 }
 
 *,
 *::before,
 *::after {
-  break-inside: inherit;
-  overflow-anchor: inherit;
-  margin-top: 0;
-  box-sizing: inherit;
-  text-overflow: inherit;
-  background-repeat: inherit;
+	break-inside: inherit;
+	overflow-anchor: inherit;
+	margin-top: 0;
+	box-sizing: inherit;
+	text-overflow: inherit;
+	background-repeat: inherit;
 }
 
 :where(a) {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 :where(button) {
-  border-width: 0;
-  padding: 0;
-  background-color: transparent;
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
 }
 
 :where(
 input:not(
-  [type="button"],
-  [type="reset"],
-  [type="submit"],
-  [type="checkbox"],
-  [type="radio"],
-  [type="range"],
-  [type="color"]),
-  select,
-  textarea) {
-  outline-color: transparent;
+	[type="button"],
+	[type="reset"],
+	[type="submit"],
+	[type="checkbox"],
+	[type="radio"],
+	[type="range"],
+	[type="color"]),
+	select,
+	textarea) {
+	outline-color: transparent;
 }
 
 :where(button, input, select, textarea, optgroup) {
-  font: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  color: inherit;
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
 }
 
 :where(img, svg) {
-  object-fit: cover;
+	object-fit: cover;
 }
 
 :where(iframe, picture, img, svg, input, video, select, textarea, details) {
-  height: auto;
-  max-width: 100%;
+	height: auto;
+	max-width: 100%;
 }
 
 :where(ul, ol, dl) {
-  list-style-type: none;
-  list-style-position: inside;
-  margin: 0;
-  padding: 0;
+	list-style-type: none;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
+	margin: 0;
+	font-weight: inherit;
+	font-size: inherit;
 }
 
 :where(body, p, figure) {
-  margin: 0;
+	margin: 0;
 }
 
 :where(cite, address) {
-  font-style: normal;
+	font-style: normal;
 }
 
 :where(fieldset) {
-  margin: 0;
-  border-width: 0;
-  padding: 0;
+	margin: 0;
+	border-width: 0;
+	padding: 0;
 }
 
 :where(form) {
-  cursor: default;
+	cursor: default;
 }
 
 :where(textarea, [type="checkbox"], [type="radio"]) {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 a,
@@ -191,5 +191,5 @@ dialog::backdrop,
 [type="number"]::-webkit-inner-spin-button,
 [type="search"]::-webkit-search-cancel-button,
 [type="date"]::-webkit-calendar-picker-indicator {
-  cursor: pointer;
+	cursor: pointer;
 }

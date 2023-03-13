@@ -3,7 +3,6 @@
 /* https://stackoverflow.com/questions/17164239/add-delete-and-arrow-key-into-regular-expression */
 /* https://www.youtube.com/shorts/nnZS761ngXE */
 
-'use strict';
 /* ____________________________________________ */
 // ===Validate Numbers===
 
@@ -15,11 +14,11 @@ if (numericInputs) {
 	});
 
 	function validateInput(el) {
-		el.addEventListener('beforeinput', function (e) {
-			let beforeValue = el.value;
+		el.addEventListener('beforeinput', (e) => {
+			const beforeValue = el.value;
 			e.target.addEventListener(
 				'input',
-				function () {
+				() => {
 					if (el.validity.patternMismatch) {
 						el.value = beforeValue;
 					}

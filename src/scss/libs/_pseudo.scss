@@ -3,55 +3,55 @@
 /* ____________________________________________ */
 /* Link, Button, Input, Select, Datalist, Textarea */
 @media (any-hover: hover) {
-  a:is(:hover, :focus-visible) {
-    color: darken(#4682b4, 10%);
-    transition: 0.3s ease-in-out 0.02s;
-  }
+	a:is(:hover, :focus-visible) {
+		color: darken(#4682b4, 10%);
+		transition: 0.3s ease-in-out 0.02s;
+	}
 
-  :is([type="button"]:hover, [type="button"]:focus-visible),
-  :is([type="reset"]:hover, [type="reset"]:focus-visible),
-  :is([type="submit"]:hover, [type="submit"]:focus-visible) {
-    border-color: transparent;
-    background-color: #4682b4;
-    animation: BtnEffect 0.3s ease-in-out forwards;
-  }
+	:is([type="button"]:hover, [type="button"]:focus-visible),
+	:is([type="reset"]:hover, [type="reset"]:focus-visible),
+	:is([type="submit"]:hover, [type="submit"]:focus-visible) {
+		border-color: transparent;
+		background-color: #4682b4;
+		animation: BtnEffect 0.3s ease-in-out forwards;
+	}
 
-  select:is(:hover, :focus),
-  textarea:is(:hover, :focus),
-  summary:is(:hover, :focus-visible),
-  [type="file"]::file-selector-button:is(:hover, :focus-visible),
-  input:not(
-    [type="button"],
-    [type="reset"],
-    [type="submit"],
-    [type="range"],
-    [type="color"],
-    [type="radio"],
-    [type="checkbox"],
-    [type="file"]):is(:hover, :focus-visible) {
-    border-color: transparent;
-    box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
-    transition: all 0.3s ease-in-out 0.02s, background 0s;
-  }
+	select:is(:hover, :focus),
+	textarea:is(:hover, :focus),
+	summary:is(:hover, :focus-visible),
+	[type="file"]::file-selector-button:is(:hover, :focus-visible),
+	input:not(
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		[type="range"],
+		[type="color"],
+		[type="radio"],
+		[type="checkbox"],
+		[type="file"]):is(:hover, :focus-visible) {
+		border-color: transparent;
+		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
+		transition: all 0.3s ease-in-out 0.02s, background 0s;
+	}
 }
 
 /* Animation for :Pseudo-classes
 /* ____________________________________________ */
 /* Button Effect */
 @keyframes BtnEffect {
-  0% {
-    box-shadow: 0 0 0.3125rem #fff;
-    color: inherit;
-    opacity: 0.3;
-    transform: scale(1);
-  }
+	0% {
+		box-shadow: 0 0 0.3125rem #fff;
+		color: inherit;
+		opacity: 0.3;
+		transform: scale(1);
+	}
 
-  100% {
-    box-shadow: 0 0 0.625rem #4f6e86;
-    color: #fff;
-    opacity: 1;
-    transform: scale(1.05);
-  }
+	100% {
+		box-shadow: 0 0 0.625rem #4f6e86;
+		color: #fff;
+		opacity: 1;
+		transform: scale(1.05);
+	}
 }
 
 /* ____________________________________________ */
@@ -59,13 +59,13 @@
 /* ____________________________________________ */
 /* Markers for: ul, ol */
 ::marker {
-  /* content: ''; */
-  color: inherit;
+	/* content: ''; */
+	color: inherit;
 }
 
 /* Selection */
 ::selection {
-  text-shadow: none;
-  color: #fff;
-  background-color: #4682b4;
+	text-shadow: none;
+	color: #fff;
+	background-color: #4682b4;
 }

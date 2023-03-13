@@ -8,127 +8,127 @@
 @charset "UTF-8";
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #c7ecee;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: #c7ecee;
 }
 
 :where(button) {
-  outline-color: transparent;
-  border-width: 0;
-  padding: 0;
-  font: inherit;
-  background-color: transparent;
-  cursor: pointer;
+	outline-color: transparent;
+	border-width: 0;
+	padding: 0;
+	font: inherit;
+	background-color: transparent;
+	cursor: pointer;
 }
 
 :where(ul, ol, dl) {
-  list-style-type: none;
-  list-style-position: inside;
-  margin: 0;
-  padding: 0;
+	list-style-type: none;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
 }
 
 /* ____________________________________________ */
 
 .select-wrapper {
-  position: relative;
-  width: 300px;
-  cursor: pointer;
+	position: relative;
+	width: 300px;
+	cursor: pointer;
 }
 
 .select {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: thin solid #8f8f9d;
-  border-radius: 6px;
-  padding: 20px;
-  width: 100%;
-  font-weight: 500;
-  color: #201e1e;
-  background-color: #f9f9f9;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: thin solid #8f8f9d;
+	border-radius: 6px;
+	padding: 20px;
+	width: 100%;
+	font-weight: 500;
+	color: #201e1e;
+	background-color: #f9f9f9;
 }
 
 .options-list {
-  position: absolute;
-  overflow-y: auto;
-  margin-top: 2px;
-  outline: none;
-  border: 0 solid transparent;
-  border-radius: 6px;
-  padding: 0 20px;
-  width: 100%;
-  height: 0;
-  max-height: 190px;
-  background-color: #f9f9f9;
+	position: absolute;
+	overflow-y: auto;
+	margin-top: 2px;
+	outline: none;
+	border: 0 solid transparent;
+	border-radius: 6px;
+	padding: 0 20px;
+	width: 100%;
+	height: 0;
+	max-height: 190px;
+	background-color: #f9f9f9;
 
-  /* overflow-y: hidden; */
-  transition: 0.3s linear 0.2s;
-  will-change: max-height;
+	/* overflow-y: hidden; */
+	transition: 0.3s linear 0.2s;
+	will-change: max-height;
 }
 
 .option {
-  padding: 8px 0;
-  font-weight: 500;
-  font-size: 14px;
-  transition: 0.03s linear;
+	padding: 8px 0;
+	font-weight: 500;
+	font-size: 14px;
+	transition: 0.03s linear;
 }
 
 .option:hover,
 .option.selected {
-  color: #00a8ff;
+	color: #00a8ff;
 
-  /* background-color: #00a8ff; */
+	/* background-color: #00a8ff; */
 }
 
 .options-list::-webkit-scrollbar {
-  width: 4px;
-  background-color: transparent;
+	width: 4px;
+	background-color: transparent;
 }
 
 .options-list::-webkit-scrollbar-thumb {
-  border-radius: 0.625rem;
-  background-color: #00a8ff;
+	border-radius: 0.625rem;
+	background-color: #00a8ff;
 }
 
 .options-list {
-  scrollbar-color: #00a8ff transparent;
-  scrollbar-width: thin;
+	scrollbar-color: #00a8ff transparent;
+	scrollbar-width: thin;
 }
 
 .options-list.active {
-  border: thin solid #8f8f9d;
-  height: 190px;
+	border: thin solid #8f8f9d;
+	height: 190px;
 }
 
 .select-ico {
-  display: block;
-  width: 20px;
-  height: 20px;
-  background:
-    #f9f9f9
-    url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
-    no-repeat right center / 1.4em;
+	display: block;
+	width: 20px;
+	height: 20px;
+	background:
+		#f9f9f9
+		url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
+		no-repeat right center / 1.4em;
 
-  /* padding-left: 1.6em; */
-  transition: transform 0.6s ease-in-out;
+	/* padding-left: 1.6em; */
+	transition: transform 0.6s ease-in-out;
 }
 
 .select-ico,
 .select-wrapper span {
-  pointer-events: none;
+	pointer-events: none;
 }
 
 .select.active .select-ico {
-  transform: rotate(180deg);
+	transform: rotate(180deg);
 }

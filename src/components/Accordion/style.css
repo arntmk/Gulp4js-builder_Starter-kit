@@ -9,83 +9,83 @@
 @charset "UTF-8";
 
 html {
-  box-sizing: border-box;
-  background: #d4d1d1;
+	box-sizing: border-box;
+	background: #d4d1d1;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 * {
-  margin: 0;
+	margin: 0;
 }
 
 summary {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* ____________________________________________ */
 /* Accordion */
 summary::-webkit-details-marker {
-  display: none;
+	display: none;
 }
 
 summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  border: thin solid #8f8f9d;
-  padding: 5px;
-  background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+	border: thin solid #8f8f9d;
+	padding: 5px;
+	background-color: #fff;
 }
 
 summary::after {
-  content: "";
-  width: 2rem;
-  height: 2rem;
-  background:
-    transparent
-    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
-    no-repeat right center / 1.9em;
-  transition: transform 0.3s ease-in-out;
+	content: "";
+	width: 2rem;
+	height: 2rem;
+	background:
+		transparent
+		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
+		no-repeat right center / 1.9em;
+	transition: transform 0.3s ease-in-out;
 }
 
 details[open] summary::after {
-  transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 
 details {
-  margin-bottom: 0.625rem;
-  width: 25em;
+	margin-bottom: 0.625rem;
+	width: 25em;
 }
 
 details .content {
-  margin-top: 5px;
-  border: thin solid #8f8f9d;
-  padding: 5px;
-  background-color: #fff;
+	margin-top: 5px;
+	border: thin solid #8f8f9d;
+	padding: 5px;
+	background-color: #fff;
 }
 
 /* Animation */
 @keyframes details {
-  0% {
-    max-height: 0;
-    opacity: 0.5;
-  }
+	0% {
+		max-height: 0;
+		opacity: 0.5;
+	}
 
-  100% {
-    max-height: 100vh;
-    opacity: 1;
-  }
+	100% {
+		max-height: 100vh;
+		opacity: 1;
+	}
 }
 
 details[open] > *:not(summary) {
-  overflow: hidden;
-  animation: details 1s ease-in-out forwards;
-  will-change: max-height;
+	overflow: hidden;
+	animation: details 1s ease-in-out forwards;
+	will-change: max-height;
 }

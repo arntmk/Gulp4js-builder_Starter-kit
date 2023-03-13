@@ -1,5 +1,3 @@
-'use strict';
-
 /* ____________________________________________ */
 // ===Number counter===
 
@@ -10,8 +8,8 @@ function numCounter(selector, number, time, step) {
 
 	const allTime = Math.round(time / (number / step));
 
-	let interval = setInterval(() => {
-		res = res + step;
+	const interval = setInterval(() => {
+		res += step;
 
 		if (res === number) {
 			clearInterval(interval);
