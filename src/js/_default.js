@@ -25,7 +25,7 @@ const searchInput = document.querySelector('input[type="search"]');
 const clearButton = document.querySelector('#deltxtinput');
 
 if (searchInput && clearButton) {
-	clearButton.addEventListener('click', function () {
+	clearButton.addEventListener('click', () => {
 		searchInput.value = '';
 		searchInput.dispatchEvent(new Event('input'));
 	});
@@ -46,11 +46,11 @@ if (numericInputs) {
 	});
 
 	function validateInput(el) {
-		el.addEventListener('beforeinput', function (e) {
-			let beforeValue = el.value;
+		el.addEventListener('beforeinput', (e) => {
+			const beforeValue = el.value;
 			e.target.addEventListener(
 				'input',
-				function () {
+				() => {
 					if (el.validity.patternMismatch) {
 						el.value = beforeValue;
 					}
@@ -80,7 +80,7 @@ if (accordion) {
 			self.classList.toggle('open');
 
 			if (self.classList.contains('open')) {
-				content.style.maxHeight = content.scrollHeight + 'px';
+				content.style.maxHeight = `${content.scrollHeight}px`;
 			} else {
 				content.style.maxHeight = null;
 			}
@@ -102,9 +102,9 @@ if (accordion) {
 /* ____________________________________________ */
 // ===Progress support JS / WebKit===
 
-for (let e of document.querySelectorAll('input[type="range"]#range-progress')) {
+for (const e of document.querySelectorAll('input[type="range"]#range-progress')) {
 	e.style.setProperty('--value', e.value);
-	e.style.setProperty('--min', e.min == '' ? '0' : e.min);
-	e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+	e.style.setProperty('--min', e.min === '' ? '0' : e.min);
+	e.style.setProperty('--max', e.max === '' ? '100' : e.max);
 	e.addEventListener('input', () => e.style.setProperty('--value', e.value));
 }

@@ -1,4 +1,3 @@
-'use strict';
 /* ____________________________________________ */
 // ===Toggle search cleaning===
 
@@ -6,7 +5,7 @@ const searchInput = document.querySelector('input[type="search"]');
 const clearButton = document.querySelector('#deltxtinput');
 
 if (searchInput && clearButton) {
-	clearButton.addEventListener('click', function () {
+	clearButton.addEventListener('click', () => {
 		searchInput.value = '';
 		searchInput.dispatchEvent(new Event('input'));
 	});
