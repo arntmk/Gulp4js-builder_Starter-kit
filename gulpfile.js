@@ -240,6 +240,7 @@ function css() {
 
 /* ____________________________________________ */
 // JavaScript
+// "./src/js/*.{js,jsx,ts,tsx,vue}"
 
 function js() {
 	const srcJs = require('./src/js/modules.json'); // eslint-disable-line global-require
