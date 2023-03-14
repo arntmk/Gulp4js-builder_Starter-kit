@@ -11,7 +11,10 @@
 		"svg": "gulp svg",
 		"fontgen": "gulp fontgen",
 		"clr": "gulp clr",
-		"stylelint": "stylelint \"**/*.{css,scss,sass}\" --fix"
+		"stylelint": "stylelint \"**/*.{css,scss,sass}\" --fix",
+		"esllint": "esllint \"**/*.{js,ts,jsx,tsx}\" --fix",
+		"gulp-clean": "rm -rf node_modules",
+		"update": "npm update --save-dev && npm update --save"
 	},
 	"browserslist": [
 		"last 3 version",
