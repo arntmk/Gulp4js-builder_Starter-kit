@@ -3,21 +3,21 @@
 
 document.querySelectorAll('.select-wrapper').forEach((selects) => {
 	const select = selects.querySelector('.select');
-	const optionslist = selects.querySelector('.options-list');
+	const optionsList = selects.querySelector('.options-list');
 	const options = selects.querySelectorAll('.option');
 
-	if (select && optionslist && options) {
+	if (select && optionsList && options) {
 		// show & hide options list
 		select.addEventListener('click', () => {
 			select.classList.toggle('active');
-			optionslist.classList.toggle('active');
+			optionsList.classList.toggle('active');
 
 			if (select.classList.contains('active')) {
 				select.setAttribute('aria-expanded', true);
-				optionslist.setAttribute('aria-hidden', false);
+				optionsList.setAttribute('aria-hidden', false);
 			} else {
 				select.setAttribute('aria-expanded', false);
-				optionslist.setAttribute('aria-hidden', true);
+				optionsList.setAttribute('aria-hidden', true);
 			}
 		});
 
@@ -30,7 +30,7 @@ document.querySelectorAll('.select-wrapper').forEach((selects) => {
 
 				select.querySelector('span').innerHTML = option.innerHTML;
 				option.classList.add('selected');
-				optionslist.classList.toggle('active');
+				optionsList.classList.toggle('active');
 			});
 		});
 
@@ -38,9 +38,9 @@ document.querySelectorAll('.select-wrapper').forEach((selects) => {
 		document.addEventListener('click', (e) => {
 			if (e.target !== select) {
 				select.classList.remove('active');
-				optionslist.classList.remove('active');
+				optionsList.classList.remove('active');
 				select.setAttribute('aria-expanded', false);
-				optionslist.setAttribute('aria-hidden', true);
+				optionsList.setAttribute('aria-hidden', true);
 			}
 		});
 
@@ -48,7 +48,7 @@ document.querySelectorAll('.select-wrapper').forEach((selects) => {
 		document.addEventListener('keydown', (e) => {
 			if (e.key === 'Tab' || e.key === 'Escape') {
 				select.classList.remove('active');
-				optionslist.classList.remove('active');
+				optionsList.classList.remove('active');
 			}
 		});
 	}
