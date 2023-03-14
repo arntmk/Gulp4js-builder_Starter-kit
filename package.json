@@ -14,7 +14,9 @@
 		"stylelint": "stylelint \"**/*.{css,scss,sass}\" --fix",
 		"esllint": "esllint \"**/*.{js,ts,jsx,tsx}\" --fix",
 		"gulp-clean": "rm -rf node_modules",
-		"update": "npm update --save-dev && npm update --save"
+		"update": "npm update --save-dev && npm update --save",
+		"full-update": "npm update",
+		"fix": "npm audit fix"
 	},
 	"browserslist": [
 		"last 3 version",
