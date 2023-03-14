@@ -139,9 +139,19 @@ function svg() {
 /* ____________________________________________ */
 // Optimize images
 
+function imgWebp() {
+	const srcWebp = 'src/img/*.{png,jpg,jpeg,webp}';
+	return src(srcWebp)
+		.pipe(changed('build/img/', { extension: '.webp' }))
+		.pipe(imagemin([imageminWebp({ quality: 100 })]))
+		.pipe(rename({ extname: '.webp' }))
+		.pipe(dest('build/img/'))
+		.pipe(browsersync.stream());
+}
+
 function img() {
 	const srcPng = 'src/img/favicon/*.png';
-	const srcSvg = 'src/img/**/*.{gif,svg]';
+	const srcSvg = 'src/img/**/*.{gif,svg}';
 	const copyImg = 'src/img/**/*.{ico,webmanifest,json}'; // png,jpg,jpeg
 	return src(srcSvg)
 		.pipe(changed('build/img/'))
@@ -168,16 +178,6 @@ function img() {
 		.pipe(changed('build/img/favicon/', { extension: '.png' }))
 		.pipe(imagemin([imageminPngquant({ quality: [0.8, 1.0] })]))
 		.pipe(dest('build/img/favicon/'));
-}
-
-function imgWebp() {
-	const srcWebp = 'src/img/*.{png,jpg,jpeg,webp}';
-	return src(srcWebp)
-		.pipe(changed('build/img/', { extension: '.webp' }))
-		.pipe(imagemin([imageminWebp({ quality: 100 })]))
-		.pipe(rename({ extname: '.webp' }))
-		.pipe(dest('build/img/'))
-		.pipe(browsersync.stream());
 }
 
 /* ____________________________________________ */
@@ -294,7 +294,7 @@ function browserSync() {
 
 exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, font, parallel(html, css, js, img, imgWebp));
-exports.img = series(img, imgWebp);
+exports.img = series(imgWebp, img);
 exports.font = font;
 exports.fontgen = series(delfont, fontgen);
 exports.svg = svg;
