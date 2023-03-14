@@ -91,8 +91,8 @@ function font() {
 			// .pipe(dest('build/font/'))
 			.pipe(src(copySvgFont))
 			.pipe(changed('build/font/', { extension: '.svg' }))
-			.pipe(dest('build/font/'))
-	);
+			.pipe(dest('build/font/')))
+		.pipe(browsersync.stream());
 }
 
 function fontgen() {
@@ -177,7 +177,8 @@ function img() {
 		.pipe(src(srcPng))
 		.pipe(changed('build/img/favicon/', { extension: '.png' }))
 		.pipe(imagemin([imageminPngquant({ quality: [0.8, 1.0] })]))
-		.pipe(dest('build/img/favicon/'));
+		.pipe(dest('build/img/favicon/'))
+		.pipe(browsersync.stream());
 }
 
 /* ____________________________________________ */
