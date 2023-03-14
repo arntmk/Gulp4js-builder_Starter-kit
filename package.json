@@ -15,7 +15,8 @@
 		"esllint": "esllint \"**/*.{js,ts,jsx,tsx}\" --fix",
 		"gulp-clean": "rm -rf node_modules",
 		"update": "npm update --save-dev && npm update --save",
-		"full-update": "npm update",
+		"upd": "npm update",
+		"outd": "npm outdated",
 		"fix": "npm audit fix"
 	},
 	"browserslist": [
