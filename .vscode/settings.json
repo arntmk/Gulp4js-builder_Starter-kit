@@ -11,6 +11,7 @@
 		"style.min.css",
 		"${fileBasenameNoExtension}.css"
 	],
+	"eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
 	"[javascript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
 	"[javascriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
 	"[typescript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
