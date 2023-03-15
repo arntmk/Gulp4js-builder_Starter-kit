@@ -98,12 +98,12 @@ dialog {
 	border-radius: 15px;
 	padding: 0;
 	max-width: 50ch;
-	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 1em rgb(0 0 0 / 80%);
 	background-color: #fff;
 }
 
 dialog::backdrop {
-	background: rgba(40, 69, 93, 0.4);
+	background: rgb(40 69 93 / 40%);
 	backdrop-filter: blur(1.5px);
 }
 
@@ -116,10 +116,10 @@ dialog::backdrop {
 dialog[open] {
 	/* cubic-bezier(.33,1.44,.83,.22) */
 	overflow: hidden;
-	animation: dialog-fadeIn 1s ease-out forwards;
+	animation: dialog-fade 1s ease-out forwards;
 }
 
-@keyframes dialog-fadeIn {
+@keyframes dialog-fade {
 	from {
 		opacity: 0.8;
 		transform: translateY(-200%);

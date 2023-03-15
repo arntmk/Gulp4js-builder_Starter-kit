@@ -13,7 +13,7 @@
 	:is([type="submit"]:hover, [type="submit"]:focus-visible) {
 		border-color: transparent;
 		background-color: #4682b4;
-		animation: BtnEffect 0.3s ease-in-out forwards;
+		animation: btn-effect 0.3s ease-in-out forwards;
 	}
 
 	select:is(:hover, :focus),
@@ -38,7 +38,7 @@
 /* Animation for :Pseudo-classes
 /* ____________________________________________ */
 /* Button Effect */
-@keyframes BtnEffect {
+@keyframes btn-effect {
 	0% {
 		box-shadow: 0 0 0.3125rem #fff;
 		color: inherit;
