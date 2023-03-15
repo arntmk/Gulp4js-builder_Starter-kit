@@ -11,10 +11,10 @@ function adaptiveSizePageScaleInit(definedStartWidth) {
 		const bodyMinWidthNumber = Number(bodyMinWidthStr.replace(/[^0-9]/g, ''));
 		startWidth = bodyMinWidthNumber;
 	}
-	function scalePage(startWidth) {
+	function scalePage(startWidthh) {
 		clientWidth = page.clientWidth;
-		if (startWidth / 1 && clientWidth <= startWidth) {
-			pageComputedWidth = parseInt(getComputedStyle(page).width);
+		if (startWidthh / 1 && clientWidth <= startWidthh) {
+			pageComputedWidth = parseInt(getComputedStyle(page).width, 10);
 			resizeCoef = clientWidth / pageComputedWidth;
 			resizeCoefPercents = 100 * resizeCoef;
 			page.style.transformOrigin = 'top left';
@@ -47,7 +47,7 @@ function startOnSpecificBrowserInit() {
 		browser = 'opera';
 		break;
 	case userAgent.indexOf('chrome') > -1 && !!window.chrome:
-		browser = 'сhrome';
+		browser = 'chrome';
 		break;
 	case userAgent.indexOf('trident') > -1:
 		browser = 'ie';

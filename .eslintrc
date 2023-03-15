@@ -1,5 +1,5 @@
 {
-	"extends": "airbnb-base",
+	"extends": ["eslint:recommended", "airbnb-base"],
 	// "parser": "@typescript-eslint/parser",
 	// "plugins": ["@typescript-eslint"],
 	"root": true,
@@ -13,11 +13,17 @@
 		"indent": ["warn", "tab"],
 		"no-tabs": ["warn", { "allowIndentationTabs": true }],
 		"global-require": 0,
+		"no-trailing-spaces": "warn",
+		"no-mixed-spaces-and-tabs": "warn",
+
 		"no-unused-vars": "warn",
 		"no-console": "off",
 		"func-names": "off",
 		"no-process-exit": "off",
-		"object-shorthand": "off",
-		"class-methods-use-this": "off"
+		"object-shorthand": "warn",
+		"class-methods-use-this": "off",
+
+		"no-restricted-syntax": "warn",
+		"no-undef": "warn"
 	}
 }
