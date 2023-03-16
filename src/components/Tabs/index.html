@@ -5,22 +5,22 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Tabs</title>
-		<link rel="stylesheet" href="style.css" />
-		<script defer src="script.js"></script>
+		<link href="style.css" rel="stylesheet" />
+		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<h1>Tabs</h1>
 		<br />
 		<div class="tabs-wrapper">
 			<div class="tabs">
-				<a href="#tab-1" class="tabs__trigger" aria-label="tabs">Tab One</a>
-				<a href="#tab-2" class="tabs__trigger" aria-label="tabs">Tab Two</a>
-				<a href="#tab-3" class="tabs__trigger" aria-label="tabs">Tab Three</a>
+				<a class="tabs__trigger" href="#tab-1" aria-label="tabs">Tab One</a>
+				<a class="tabs__trigger" href="#tab-2" aria-label="tabs">Tab Two</a>
+				<a class="tabs__trigger" href="#tab-3" aria-label="tabs">Tab Three</a>
 			</div>
 			<div class="tabs__content-wrapper">
-				<div id="tab-1" class="tabs__content">Content One</div>
-				<div id="tab-2" class="tabs__content">Content Two</div>
-				<div id="tab-3" class="tabs__content">Content Three</div>
+				<div class="tabs__content" id="tab-1">Content One</div>
+				<div class="tabs__content" id="tab-2">Content Two</div>
+				<div class="tabs__content" id="tab-3">Content Three</div>
 			</div>
 		</div>
 	</body>
