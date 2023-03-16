@@ -1,11 +1,13 @@
 /* https://habr.com/ru/post/527062/ */
 /* https://css-tricks.com/how-to-animate-the-details-element/ */
 /* https://www.youtube.com/watch?v=k6Dn2jYjH0I */
-/* https://stackoverflow.com/questions/16751345/automatically-close-all-the-other-details-tags-after-opening-a-specific-detai */
+/* https://stackoverflow.com/questions/16751345/automatically-close-all-the-other-details-tags-after-opening-a-specific-detai
+*/
 /* https://www.youtube.com/watch?v=gz1v1KenZWk */
 
 /* ____________________________________________ */
 @charset "UTF-8";
+
 html {
 	box-sizing: border-box;
 	background: #d4d1d1;
@@ -14,8 +16,8 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 }
 
 * {
@@ -37,16 +39,17 @@ summary {
 	align-items: center;
 	justify-content: space-between;
 	list-style: none;
-	padding: 5px;
 	border: thin solid #8f8f9d;
+	padding: 5px;
 	background-color: #fff;
 }
 
 summary::after {
-	content: '';
-	height: 2rem;
+	content: "";
 	width: 2rem;
-	background: transparent
+	height: 2rem;
+	background:
+		transparent
 		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
 		no-repeat right center / 1.9em;
 	transition: transform 0.3s ease-in-out;
@@ -57,31 +60,32 @@ details[open] summary::after {
 }
 
 details {
-	width: 25em;
 	margin-bottom: 0.625rem;
+	width: 25em;
 }
 
 details .content {
 	margin-top: 5px;
-	padding: 5px;
 	border: thin solid #8f8f9d;
+	padding: 5px;
 	background-color: #fff;
 }
 
 /* Animation */
 @keyframes details {
 	0% {
-		opacity: 0.5;
 		max-height: 0;
+		opacity: 0.5;
 	}
+
 	100% {
-		opacity: 1;
 		max-height: 100vh;
+		opacity: 1;
 	}
 }
 
 details[open] > *:not(summary) {
 	overflow: hidden;
-	will-change: max-height;
 	animation: details 1s ease-in-out forwards;
+	will-change: max-height;
 }

@@ -1,15 +1,13 @@
-'use strict';
-
 /* ____________________________________________ */
 // ===Hamburger menu===
 
 const menu = document.querySelector('.navbar');
 const menuBtn = document.querySelector('.menu-button');
 
-const body = document.body;
+const { body } = document;
 
 if (menu && menuBtn) {
-	menuBtn.addEventListener('click', (e) => {
+	menuBtn.addEventListener('click', () => {
 		menu.classList.toggle('active');
 		menuBtn.classList.toggle('active');
 		body.classList.toggle('lock');

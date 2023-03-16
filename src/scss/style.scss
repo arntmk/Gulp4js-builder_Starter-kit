@@ -1,18 +1,21 @@
 @charset "UTF-8";
 
-// Libs
-@import './libs/normalize.scss';
-@import './libs/mixins.scss';
-@import './libs/default.scss';
-@import './libs/pseudo.scss';
-@import './libs/font.scss';
+/* Global CSS Imports */
+/* @import url("./css/swiper-bundle.min.css"); */
 
-// Global SCSS imports
-@import './variables.scss';
-@import './reset.scss';
-@import './global.scss';
+/* Libs */
+@import "./libs/normalize.scss";
+@import "./libs/mixins.scss";
+@import "./libs/default.scss";
+@import "./libs/pseudo.scss";
+@import "./libs/font.scss";
 
-// Sections SCSS files imports
-@import './header.scss';
-@import './main.scss';
-@import './footer.scss';
+/* Global SCSS imports */
+@import "./variables.scss";
+@import "./reset.scss";
+@import "./global.scss";
+
+/* Sections SCSS files imports */
+@import "./header.scss";
+@import "./main.scss";
+@import "./footer.scss";

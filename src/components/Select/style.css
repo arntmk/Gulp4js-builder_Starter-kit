@@ -6,6 +6,7 @@
 /* https://uxdesign.cc/ui-cheat-sheet-dropdown-field-a30025c0f432?gi=e8e04962ed2c */
 /* ____________________________________________ */
 @charset "UTF-8";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -14,64 +15,65 @@
 }
 
 body {
-	background-color: #c7ecee;
-	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 100vh;
+	background-color: #c7ecee;
 }
 
 :where(button) {
-	font: inherit;
 	outline-color: transparent;
-	background-color: transparent;
 	border-width: 0;
 	padding: 0;
+	font: inherit;
+	background-color: transparent;
 	cursor: pointer;
 }
 
 :where(ul, ol, dl) {
-	list-style-position: inside;
 	list-style-type: none;
-	padding: 0;
+	list-style-position: inside;
 	margin: 0;
+	padding: 0;
 }
 
 /* ____________________________________________ */
 
 .select-wrapper {
+	position: relative;
 	width: 300px;
 	cursor: pointer;
-	position: relative;
 }
 
 .select {
-	border: thin solid #8f8f9d;
-	width: 100%;
-	background-color: #f9f9f9;
-	padding: 20px;
-	color: #201e1e;
-	font-weight: 500;
-	border-radius: 6px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	border: thin solid #8f8f9d;
+	border-radius: 6px;
+	padding: 20px;
+	width: 100%;
+	font-weight: 500;
+	color: #201e1e;
+	background-color: #f9f9f9;
 }
 
 .options-list {
+	position: absolute;
+	overflow-y: auto;
+	margin-top: 2px;
 	outline: none;
 	border: 0 solid transparent;
-	position: absolute;
-	width: 100%;
-	background-color: #f9f9f9;
 	border-radius: 6px;
-	margin-top: 2px;
 	padding: 0 20px;
+	width: 100%;
+	height: 0;
 	max-height: 190px;
-	overflow-y: auto;
+	background-color: #f9f9f9;
+
 	/* overflow-y: hidden; */
 	transition: 0.3s linear 0.2s;
-	height: 0;
 	will-change: max-height;
 }
 
@@ -85,6 +87,7 @@ body {
 .option:hover,
 .option.selected {
 	color: #00a8ff;
+
 	/* background-color: #00a8ff; */
 }
 
@@ -94,8 +97,8 @@ body {
 }
 
 .options-list::-webkit-scrollbar-thumb {
-	background-color: #00a8ff;
 	border-radius: 0.625rem;
+	background-color: #00a8ff;
 }
 
 .options-list {
@@ -104,17 +107,19 @@ body {
 }
 
 .options-list.active {
-	height: 190px;
 	border: thin solid #8f8f9d;
+	height: 190px;
 }
 
 .select-ico {
 	display: block;
-	height: 20px;
 	width: 20px;
-	background: #f9f9f9
+	height: 20px;
+	background:
+		#f9f9f9
 		url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
 		no-repeat right center / 1.4em;
+
 	/* padding-left: 1.6em; */
 	transition: transform 0.6s ease-in-out;
 }

@@ -6,39 +6,46 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+@import url("swiper-bundle.min.css");
+
 html {
 	box-sizing: border-box;
 }
+
 * {
 	box-sizing: inherit;
 }
 
 body {
-	background-color: #333;
 	margin: 0;
+	background-color: #333;
 }
 
 :where(button) {
-	background-color: transparent;
 	border-width: 0;
 	padding: 0;
+	background-color: transparent;
 }
 
 .swiper-section {
+	/* _ */
 }
+
 .container {
-	max-width: 1200px;
-	width: 100%;
 	margin-inline: auto;
 	padding-inline: 15px;
+	width: 100%;
+	max-width: 1200px;
 }
+
 .swiper-title {
-	color: #eee;
 	text-align: center;
+	color: #eee;
 }
 
 /* ____________________________________________ */
 .swiper__swiper {
+	/* _ */
 }
 
 .swiper-container {
@@ -57,30 +64,31 @@ body {
 }
 
 .swiper-slide {
-	cursor: grab;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	cursor: grab;
+
 	/* flex-shrink: 0; */
 }
 
 .card {
 	min-height: 200px;
 	color: #c70303;
-	background-color: lawngreen;
+	background-color: #7cfc00;
 }
 
 /* ____________________pagination________________________ */
 .swiper-pagination-bullet {
-	background-color: steelblue;
-	height: 8px;
-	width: 8px;
 	margin: 0 4px;
+	width: 8px;
+	height: 8px;
+	background-color: #4682b4;
 	opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-	background-color: red;
+	background-color: #f00;
 }
 
 /* Numbers */
@@ -95,25 +103,26 @@ body {
 
 /* ____________________button________________________ */
 .swiper-button {
-	cursor: pointer;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-	background-color: #fff;
+	border-radius: 100%;
 	width: 40px;
 	height: 40px;
-	border-radius: 100%;
 	background-position: center;
-	background-repeat: no-repeat;
 	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-color: #fff;
 }
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
 	display: none;
+
 	/* font-size: 24px;
 	color: #000; */
 }

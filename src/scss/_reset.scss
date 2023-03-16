@@ -5,22 +5,44 @@
 /* ____________________Reset & Typography________________________ */
 
 html {
-	font-family: var(--font-family), system-ui, -apple-system, 'Segoe UI',
-		'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	font-family:
+		var(--font-family),
+		system-ui,
+		-apple-system,
+		"Segoe UI",
+		"Roboto",
+		"Ubuntu",
+		"Cantarell",
+		"Noto Sans",
+		sans-serif,
+		"Apple Color Emoji",
+		"Segoe UI Emoji",
+		"Segoe UI Symbol",
+		"Noto Color Emoji";
 }
 
 code,
 kbd,
 samp,
 pre {
-	font-family: ui-monospace, 'Menlo', 'Consolas', 'Roboto Mono',
-		'Ubuntu Monospace', 'Noto Mono', 'Oxygen Mono', 'Liberation Mono', monospace,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	font-family:
+		ui-monospace,
+		"Menlo",
+		"Consolas",
+		"Roboto Mono",
+		"Ubuntu Monospace",
+		"Noto Mono",
+		"Oxygen Mono",
+		"Liberation Mono",
+		monospace,
+		"Apple Color Emoji",
+		"Segoe UI Emoji",
+		"Segoe UI Symbol",
+		"Noto Color Emoji";
 }
 
 /* ____________________________________________ */
-/* ScrollBar for Wibesite*/
+/* ScrollBar for Wibesite */
 html {
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
 }
@@ -30,10 +52,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--scrollbar-color);
-	border-radius: 10px;
 	border: 5px solid transparent;
+	border-radius: 10px;
 	background-clip: content-box;
+	background-color: var(--scrollbar-color);
 }
 
 ::-webkit-scrollbar-track {
@@ -59,56 +81,54 @@ textarea::-webkit-scrollbar-track {
 
 /* ____________________General________________________ */
 html {
-	background-repeat: no-repeat;
 	break-inside: avoid-column;
-	text-overflow: ellipsis;
-	box-sizing: border-box;
 	overflow-anchor: none;
+	box-sizing: border-box;
+	text-overflow: ellipsis;
+	background-repeat: no-repeat;
 }
 
 *,
 *::before,
 *::after {
-	background-repeat: inherit;
-	overflow-anchor: inherit;
-	text-overflow: inherit;
 	break-inside: inherit;
-	box-sizing: inherit;
+	overflow-anchor: inherit;
 	margin-top: 0;
+	box-sizing: inherit;
+	text-overflow: inherit;
+	background-repeat: inherit;
 }
 
 :where(a) {
-	color: inherit;
 	text-decoration: none;
+	color: inherit;
 }
 
 :where(button) {
-	background-color: transparent;
 	border-width: 0;
 	padding: 0;
+	background-color: transparent;
 }
 
 :where(
-		input:not(
-				[type='button'],
-				[type='reset'],
-				[type='submit'],
-				[type='checkbox'],
-				[type='radio'],
-				[type='range'],
-				[type='color']
-			),
-		select,
-		textarea
-	) {
+input:not(
+	[type="button"],
+	[type="reset"],
+	[type="submit"],
+	[type="checkbox"],
+	[type="radio"],
+	[type="range"],
+	[type="color"]),
+	select,
+	textarea) {
 	outline-color: transparent;
 }
 
 :where(button, input, select, textarea, optgroup) {
-	letter-spacing: inherit;
-	line-height: inherit;
-	color: inherit;
 	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
 }
 
 :where(img, svg) {
@@ -116,21 +136,21 @@ html {
 }
 
 :where(iframe, picture, img, svg, input, video, select, textarea, details) {
-	max-width: 100%;
 	height: auto;
+	max-width: 100%;
 }
 
 :where(ul, ol, dl) {
-	list-style-position: inside;
 	list-style-type: none;
-	padding: 0;
+	list-style-position: inside;
 	margin: 0;
+	padding: 0;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
+	margin: 0;
 	font-weight: inherit;
 	font-size: inherit;
-	margin: 0;
 }
 
 :where(body, p, figure) {
@@ -142,16 +162,16 @@ html {
 }
 
 :where(fieldset) {
+	margin: 0;
 	border-width: 0;
 	padding: 0;
-	margin: 0;
 }
 
 :where(form) {
 	cursor: default;
 }
 
-:where(textarea, [type='checkbox'], [type='radio']) {
+:where(textarea, [type="checkbox"], [type="radio"]) {
 	vertical-align: middle;
 }
 
@@ -160,16 +180,16 @@ label,
 button,
 summary,
 dialog::backdrop,
-[type='button'],
-[type='reset'],
-[type='submit'],
-[type='checkbox'],
-[type='radio'],
-[type='range'],
-[type='color'],
-[type='file']::file-selector-button,
-[type='number']::-webkit-inner-spin-button,
-[type='search']::-webkit-search-cancel-button,
-[type='date']::-webkit-calendar-picker-indicator {
+[type="button"],
+[type="reset"],
+[type="submit"],
+[type="checkbox"],
+[type="radio"],
+[type="range"],
+[type="color"],
+[type="file"]::file-selector-button,
+[type="number"]::-webkit-inner-spin-button,
+[type="search"]::-webkit-search-cancel-button,
+[type="date"]::-webkit-calendar-picker-indicator {
 	cursor: pointer;
 }

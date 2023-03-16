@@ -4,9 +4,9 @@
 /* Table */
 :where(th, td) {
 	border: thin solid #8f8f9d;
-	background-color: #fff;
-	text-align: center;
 	padding: 0.5em;
+	text-align: center;
+	background-color: #fff;
 }
 
 /* ____________________Form________________________ */
@@ -16,21 +16,21 @@
  */
 
 :where(button, input, select, textarea) {
-	background-color: #fff; /* 1 */
 	border: thin solid #8f8f9d; /* 1 */
 	padding: 0.25em 0.375em; /* 1 */
-	color: inherit; /* 1 */
 	font: inherit; /* 2 */
-	letter-spacing: inherit; /* 2 */
 	line-height: inherit; /* 2 */
+	letter-spacing: inherit; /* 2 */
+	color: inherit; /* 1 */
+	background-color: #fff; /* 1 */
 }
 
 /**
  * Remove the border and padding in all browsers (opinionated).
  */
 
-[type='color'],
-[type='range'] {
+[type="color"],
+[type="range"] {
 	border-width: 0;
 	padding: 0;
 }
@@ -49,12 +49,13 @@ select[multiple] {
  */
 
 select {
-	-webkit-appearance: none;
-	background: #fff
-		url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
-		no-repeat 98% center / 1.4em;
+	appearance: none;
 	padding-right: 1.6em;
 	width: 12.45em;
+	background:
+		#fff
+		url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
+		no-repeat 98% center / 1.4em;
 }
 
 select option:checked {
@@ -69,18 +70,20 @@ select option:checked {
 
 #datalist::-webkit-calendar-picker-indicator {
 	position: absolute;
-	visibility: hidden;
-	pointer-events: none;
 	color: transparent;
 	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
 }
 
 #datalist {
-	width: 12.45rem;
 	padding-right: 1.6em;
+	width: 12.45rem;
+
 	&:hover,
 	&:focus {
-		background: #fff
+		background:
+			#fff
 			url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
 			no-repeat 102% center / 1.9em;
 	}
@@ -90,70 +93,70 @@ select option:checked {
 /**
  * Styling input range in all browsers (opinionated).
  */
-[type='range'],
-[type='range']::-webkit-slider-runnable-track,
-[type='range']::-webkit-slider-thumb {
-	-webkit-appearance: none;
+[type="range"],
+[type="range"]::-webkit-slider-runnable-track,
+[type="range"]::-webkit-slider-thumb {
+	appearance: none;
 }
 
 /* Range Track */
-[type='range'] {
-	accent-color: #0075ff;
-	height: 0.4375em;
-	width: 9.375em;
-	background-color: rgba(239, 239, 239, 0.8);
+[type="range"] {
 	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
-	transition: border 0.3s ease-in-out;
+	width: 9.375em;
+	height: 0.4375em;
 	box-sizing: content-box;
+	background-color: rgb(239 239 239 / 80%);
+	transition: border 0.3s ease-in-out;
+	accent-color: #0075ff;
 }
 
 /* Range Thumb / mozilla */
-[type='range']::-moz-range-thumb {
+[type="range"]::-moz-range-thumb {
 	appearance: none;
-	height: 0.94rem;
-	width: 0.94rem;
-	background-color: #0075ff;
 	border-width: 0;
+	width: 0.94rem;
+	height: 0.94rem;
+	background-color: #0075ff;
 }
 
 /* hover, focus, active */
-[type='range']:is(:hover, :focus) {
+[type="range"]:is(:hover, :focus) {
 	border: thin solid #9a9a9a;
 }
 
-[type='range']:active {
+[type="range"]:active {
 	border: thin solid #c1c1c1;
 }
 
 /* WebKit */
-input[type='range']::-webkit-slider-thumb {
-	height: 0.94rem;
-	width: 0.94rem;
-	background-color: #0075ff;
+input[type="range"]::-webkit-slider-thumb {
+	margin-top: -4px;
 	border-width: 0;
 	border-radius: 50%;
-	margin-top: -4px;
+	width: 0.94rem;
+	height: 0.94rem;
+	background-color: #0075ff;
 }
 
-input[type='range']::-webkit-slider-runnable-track {
-	height: 0.4375em;
-	width: 9.375em;
-	background-color: rgba(239, 239, 239, 0.8);
+input[type="range"]::-webkit-slider-runnable-track {
 	border: thin solid #b2b2b2;
-	border-radius: 0.3125rem;
 	border-width: 0;
+	border-radius: 0.3125rem;
+	width: 9.375em;
+	height: 0.4375em;
+	background-color: rgb(239 239 239 / 80%);
 }
 
 /* Progress support JS / WebKit & Moz */
-input[type='range']#range-progress {
+input[type="range"]#range-progress {
 	--range: calc(var(--max) - var(--min));
 	--ratio: calc((var(--value) - var(--min)) / var(--range));
 	--sx: calc(0.4 * 2em + var(--ratio) * (100% - 1em));
 }
 
-input[type='range']#range-progress,
-input[type='range']#range-progress::-webkit-slider-runnable-track {
+input[type="range"]#range-progress,
+input[type="range"]#range-progress::-webkit-slider-runnable-track {
 	background: linear-gradient(#007cf8, #007cf8) 0 / var(--sx) 100% no-repeat, #efefef;
 }
 
@@ -163,27 +166,27 @@ input[type='range']#range-progress::-webkit-slider-runnable-track {
  */
 
 progress {
-	-webkit-appearance: none;
-	height: 0.7em;
-	accent-color: #0075ff;
-	background-color: rgba(255, 255, 255, 0.8);
-	border-radius: 0.9375rem;
+	appearance: none;
 	border-width: 0;
+	border-radius: 0.9375rem;
+	height: 0.7em;
+	background-color: rgb(255 255 255 / 80%);
+	accent-color: #0075ff;
 }
 
 progress::-moz-progress-bar {
-	background-color: #0075ff;
 	border-radius: 0.9375rem;
+	background-color: #0075ff;
 }
 
 progress::-webkit-progress-bar {
 	border-radius: 0.9375rem;
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgb(255 255 255 / 80%);
 }
 
 progress::-webkit-progress-value {
-	background-color: #0075ff;
 	border-radius: 0.9375rem;
+	background-color: #0075ff;
 }
 
 /* ____________________________________________ */
@@ -191,11 +194,11 @@ progress::-webkit-progress-value {
  * Styling input checkbox and radio in all browsers (opinionated).
  */
 
-[type='checkbox'],
-[type='radio'] {
-	accent-color: #0060df;
-	height: 1.1em;
+[type="checkbox"],
+[type="radio"] {
 	width: 1.1em;
+	height: 1.1em;
+	accent-color: #0060df;
 }
 
 /* ____________________________________________ */
@@ -203,25 +206,25 @@ progress::-webkit-progress-value {
  * Styling input color in all browsers (opinionated).
  */
 
-[type='color'] {
-	background-color: transparent;
+[type="color"] {
 	width: 6em;
+	background-color: transparent;
 }
 
-[type='color']::-webkit-color-swatch {
+[type="color"]::-webkit-color-swatch {
 	border-style: none;
 	border-radius: 0.9375rem;
 	height: 2em;
 	box-sizing: border-box;
 }
 
-[type='color']::-moz-color-swatch {
-	border-style: none;
-	border-radius: 0.9375rem;
-	height: 2em;
+[type="color"]::-moz-color-swatch {
 	margin-top: 0.1875rem;
-	box-sizing: border-box;
+	border-style: none;
+	border-radius: 0.9375rem;
 	width: 5.75em;
+	height: 2em;
+	box-sizing: border-box;
 }
 
 /* ____________________________________________ */
@@ -229,23 +232,23 @@ progress::-webkit-progress-value {
  * Styling input file in all browsers (opinionated).
  */
 
-[type='file'] {
-	pointer-events: none;
-	background-color: transparent;
+[type="file"] {
 	border-width: 0;
 	width: 20em;
+	background-color: transparent;
+	pointer-events: none;
 }
 
-[type='file']::file-selector-button {
-	pointer-events: all;
-	background-color: #fff;
+[type="file"]::file-selector-button {
 	border: thin solid #8f8f9d;
 	padding: 0.09em 1em;
 	width: 7em;
-	letter-spacing: inherit;
-	line-height: inherit;
-	color: inherit;
 	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+	background-color: #fff;
+	pointer-events: all;
 }
 
 /* ____________________________________________ */
@@ -259,7 +262,8 @@ textarea {
 }
 
 textarea::-webkit-resizer {
-	background: transparent
+	background:
+		transparent
 		url("data:image/svg+xml;utf8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3e%3cpath d='M796.8 990L990 796.8v-82.9L713.9 990h82.9zm-351.9 0L990 444.9V362L361.9 990h83zM10 990h82.9L990 92.9V10L10 990z'/%3e%3c/svg%3e")
 		no-repeat right bottom / 0.5rem;
 }
@@ -269,30 +273,32 @@ textarea::-webkit-resizer {
  * Styling input date in webkit browsers (opinionated).
  */
 
-[type='date'] {
+[type="date"] {
 	width: 10em;
 }
 
-[type='date']::-webkit-calendar-picker-indicator {
-	height: 1.1875em;
+[type="date"]::-webkit-calendar-picker-indicator {
 	width: 1.375em;
+	height: 1.1875em;
 }
 
 /* ____________________________________________ */
 /**
  * Styling input number in all browsers (opinionated).
  */
-input[type='number'] {
-	-webkit-appearance: textfield;
+input[type="number"] {
+	appearance: textfield;
 }
-input[type='number']:hover,
-input[type='number']:focus {
-	-webkit-appearance: auto;
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+	appearance: auto;
 }
-[type='number']::-webkit-inner-spin-button {
-	height: 1.25em;
-	width: 1.5em;
+
+[type="number"]::-webkit-inner-spin-button {
 	margin: auto;
+	width: 1.5em;
+	height: 1.25em;
 }
 
 /* ____________________________________________ */
@@ -303,11 +309,11 @@ input[type='number']:focus {
  */
 
 /* Remove chrome clear button */
-input[type='search']::-webkit-search-decoration,
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-results-button,
-input[type='search']::-webkit-search-results-decoration {
-	-webkit-appearance: none;
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	appearance: none;
 }
 
 /* Remove Microsoft Edge clear button */
@@ -321,18 +327,19 @@ input[type='search']::-webkit-search-results-decoration {
 	align-items: center;
 }
 
-.search-wrap input[type='search'] {
+.search-wrap input[type="search"] {
 	padding-right: 1.5625rem;
 }
 
 /* Basic clear button styling */
 .clear {
-	height: 1rem;
-	width: 1rem;
 	margin-left: -1.5625rem;
-	cursor: pointer;
-	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>")
+	width: 1rem;
+	height: 1rem;
+	background:
+		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>")
 		transparent no-repeat right center / 1em;
+	cursor: pointer;
 }
 
 /* Hidden */
@@ -353,23 +360,25 @@ input[type='search']::-webkit-search-results-decoration {
 	align-items: center;
 }
 
-.password-wrap input:is([type='text'], [type='password']) {
+.password-wrap input:is([type="text"], [type="password"]) {
 	padding-right: 1.8em;
 	width: 12.95em;
 }
 
 .eye-open {
 	display: block;
-	height: 1rem;
-	width: 1rem;
 	margin-left: -1.5625rem;
-	cursor: pointer;
-	background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath d='M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.209 0-4 1.792-4 4 0 2.209 1.791 4 4 4s4-1.791 4-4c0-2.208-1.791-4-4-4z'/%3e%3c/svg%3e")
+	width: 1rem;
+	height: 1rem;
+	background:
+		url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath d='M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.209 0-4 1.792-4 4 0 2.209 1.791 4 4 4s4-1.791 4-4c0-2.208-1.791-4-4-4z'/%3e%3c/svg%3e")
 		transparent no-repeat right center / 1em;
+	cursor: pointer;
 }
 
 .eye-close {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='580' height='400' xmlns='http://www.w3.org/2000/svg'%3e%3c!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ --%3e%3cg%3e%3ctitle%3eLayer 1%3c/title%3e%3cg stroke='null' id='svg_30'%3e%3cpath stroke='null' id='svg_29' d='m290.360478,57.821876c114.170623,0 193.760836,85.648097 228.389307,131.827549c-33.667237,52.23624 -113.25745,152.528682 -228.389307,152.528682c-106.216408,0 -190.564731,-100.548363 -227.764505,-153.751414c35.878076,-46.833471 115.75666,-130.604817 227.764505,-130.604817zm0,-56.871246c-181.88959,0 -288.730801,186.281767 -288.730801,186.281767s116.189215,211.816957 288.730801,211.816957c185.830652,0 288.009875,-211.816957 288.009875,-211.816957s-103.116427,-186.281767 -288.009875,-186.281767zm-0.360463,85.306869c-53.084173,0 -96.123446,50.956637 -96.123446,113.742492c0,62.814291 43.039273,113.742492 96.123446,113.742492s96.123446,-50.928201 96.123446,-113.742492c0,-62.785856 -43.039273,-113.742492 -96.123446,-113.742492z'/%3e%3c/g%3e%3cline stroke-linecap='undefined' stroke-linejoin='undefined' id='svg_32' y2='406' x2='-8' y1='-11' x1='590' fill-opacity='0' stroke-opacity='null' stroke-width='50' stroke='%23ffffff' fill='none'/%3e%3c/g%3e%3c/svg%3e")
+	background-image:
+		url("data:image/svg+xml;charset=UTF-8,%3csvg width='580' height='400' xmlns='http://www.w3.org/2000/svg'%3e%3c!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ --%3e%3cg%3e%3ctitle%3eLayer 1%3c/title%3e%3cg stroke='null' id='svg_30'%3e%3cpath stroke='null' id='svg_29' d='m290.360478,57.821876c114.170623,0 193.760836,85.648097 228.389307,131.827549c-33.667237,52.23624 -113.25745,152.528682 -228.389307,152.528682c-106.216408,0 -190.564731,-100.548363 -227.764505,-153.751414c35.878076,-46.833471 115.75666,-130.604817 227.764505,-130.604817zm0,-56.871246c-181.88959,0 -288.730801,186.281767 -288.730801,186.281767s116.189215,211.816957 288.730801,211.816957c185.830652,0 288.009875,-211.816957 288.009875,-211.816957s-103.116427,-186.281767 -288.009875,-186.281767zm-0.360463,85.306869c-53.084173,0 -96.123446,50.956637 -96.123446,113.742492c0,62.814291 43.039273,113.742492 96.123446,113.742492s96.123446,-50.928201 96.123446,-113.742492c0,-62.785856 -43.039273,-113.742492 -96.123446,-113.742492z'/%3e%3c/g%3e%3cline stroke-linecap='undefined' stroke-linejoin='undefined' id='svg_32' y2='406' x2='-8' y1='-11' x1='590' fill-opacity='0' stroke-opacity='null' stroke-width='50' stroke='%23ffffff' fill='none'/%3e%3c/g%3e%3c/svg%3e")
 		transparent no-repeat right center / 1em;
 }
 
@@ -389,16 +398,17 @@ summary {
 	align-items: center;
 	justify-content: space-between;
 	list-style: none;
-	padding: 5px;
 	border: thin solid #8f8f9d;
+	padding: 5px;
 	background-color: #fff;
 }
 
 summary::after {
-	content: '';
-	height: 2rem;
+	content: "";
 	width: 2rem;
-	background: transparent
+	height: 2rem;
+	background:
+		transparent
 		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
 		no-repeat right center / 1.9em;
 	transition: transform 0.3s ease-in-out;
@@ -409,31 +419,32 @@ details[open] summary::after {
 }
 
 details {
-	width: 25em;
 	margin-bottom: 0.625rem;
+	width: 25em;
 }
 
 details .content {
 	margin-top: 5px;
-	padding: 5px;
 	border: thin solid #8f8f9d;
+	padding: 5px;
 	background-color: #fff;
 }
 
 /* Animation */
 @keyframes details {
 	0% {
-		opacity: 0.5;
 		max-height: 0;
+		opacity: 0.5;
 	}
+
 	100% {
-		opacity: 1;
 		max-height: 100vh;
+		opacity: 1;
 	}
 }
 
 details[open] > *:not(summary) {
 	overflow: hidden;
-	will-change: max-height;
 	animation: details 1s ease-in-out forwards;
+	will-change: max-height;
 }

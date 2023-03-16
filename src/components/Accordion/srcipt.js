@@ -1,5 +1,3 @@
-'use strict';
-
 /* ____________________________________________ */
 // ==Accordion==
 
@@ -14,7 +12,7 @@ if (accordion) {
 			self.classList.toggle('open');
 
 			if (self.classList.contains('open')) {
-				content.style.maxHeight = content.scrollHeight + 'px';
+				content.style.maxHeight = `${content.scrollHeight}px`;
 			} else {
 				content.style.maxHeight = null;
 			}

@@ -1,46 +1,45 @@
-const { src, dest, parallel, series, watch } = require('gulp');
+const {
+	src, dest, parallel, series, watch,
+} = require('gulp');
 
 // Load plugins
 
-const browsersync = require('browser-sync').create(); //Сервер.
-const newer = require('gulp-newer'); //Перевірка файлів.
-const changed = require('gulp-changed'); //Перевірка файлів.
-const clean = require('gulp-clean'); //Видалення Build.
-const gulpif = require('gulp-if'); //Режим dev or production.
-const plumber = require('gulp-plumber'); //Пошук помилок.
-const rename = require('gulp-rename'); //Rename.
+const browsersync = require('browser-sync').create(); // Сервер.
+const newer = require('gulp-newer'); // Перевірка файлів.
+const changed = require('gulp-changed'); // Перевірка файлів.
+const clean = require('gulp-clean'); // Видалення Build.
+const gulpif = require('gulp-if'); // Режим dev or production.
+const plumber = require('gulp-plumber'); // Пошук помилок.
+const rename = require('gulp-rename'); // Rename.
 
-const imagemin = require('gulp-imagemin'); //Оптимізація зображення.
-// const imageminPngquant = require('imagemin-pngquant'); //Оптимізація png only.
-const webp = require('gulp-webp'); //Конвертатор webp.
+const imagemin = require('gulp-imagemin'); // Оптимізація зображення.
+const imageminPngquant = require('imagemin-pngquant'); // Оптимізація png only.
+const imageminWebp = require('imagemin-webp'); // Конвертатор webp.
 
-const fonter = require('gulp-fonter'); //Конвертатор шрифтів в woff.
-const ttf2woff2 = require('gulp-ttf2woff2'); //Конвертатор в woff2.
-const fontfacegen = require('gulp-fontfacegen'); //fontface gen.
+const fonter = require('gulp-fonter'); // Конвертатор шрифтів в woff.
+const ttf2woff2 = require('gulp-ttf2woff2'); // Конвертатор в woff2.
+const fontfacegen = require('gulp-fontfacegen'); // fontface gen.
 
-const fileinclude = require('gulp-file-include'); //Модульність для html.
-const htmlmin = require('gulp-htmlmin'); //Мінімізація html.
-const typograf = require('gulp-typograf'); //Правопис.
-const vrnmbr = require('gulp-version-number'); //Build version.
+const fileinclude = require('gulp-file-include'); // Модульність для html.
+const htmlmin = require('gulp-htmlmin'); // Мінімізація html.
+const typograf = require('gulp-typograf'); // Правопис.
+const vrnmbr = require('gulp-version-number'); // Build version.
 
-const sass = require('gulp-sass')(require('sass')); //Препроцесор для css.
-const autoprefixer = require('gulp-autoprefixer'); //Додавання префіксів для сумісності.
-const groupCSSMedia = require('gulp-group-css-media-queries'); //Групування медіа-запитів.
-const shorthand = require('gulp-shorthand'); //Оптимізація коду.
-const csso = require('gulp-csso'); //Мінімізація css.
+const sass = require('gulp-sass')(require('sass')); // Препроцесор для css.
+const autoprefixer = require('gulp-autoprefixer'); // Додавання префіксів для сумісності.
+const groupCSSMedia = require('gulp-group-css-media-queries'); // Групування медіа-запитів.
+const shorthand = require('gulp-shorthand'); // Оптимізація коду.
+const csso = require('gulp-csso'); // Мінімізація css.
 
-const terser = require('gulp-terser'); //Мінімізація JS.
-const babel = require('gulp-babel'); //Підтримка старих браузерів JS.
-const concat = require('gulp-concat'); //Перейменування та об'єднання.
-
-const svgmin = require('gulp-svgmin'); //Мінімізація svg.
-const cheerio = require('gulp-cheerio'); //Видалення непотрібних атрибутів svg (Вбудовані стилі).
-const replace = require('gulp-replace'); //Заміна символів після gulp-cheerio.
-const svgSprite = require('gulp-svg-sprite'); //Об'єднання спрайтів.
-
+const terser = require('gulp-terser'); // Мінімізація JS.
+const babel = require('gulp-babel'); // Підтримка старих браузерів JS.
+const concat = require('gulp-concat'); // Перейменування та об'єднання.
 // const typeScrpt = require('gulp-typescript'); //Конвертатор TypeScript.
-// const webpHTML = require('gulp-webp-html-fixed'); //Cумісність webp(html).
-// const webpCSS = require('gulp-webp-css-fixed'); //Cумісність webp(css).
+
+const svgmin = require('gulp-svgmin'); // Мінімізація svg.
+const cheerio = require('gulp-cheerio'); // Видалення непотрібних атрибутів svg (Вбудовані стилі).
+const replace = require('gulp-replace'); // Заміна символів після gulp-cheerio.
+const svgSprite = require('gulp-svg-sprite'); // Об'єднання спрайтів.
 
 /* ____________________________________________ */
 // Production build
@@ -63,7 +62,7 @@ function clr() {
 			'build/font/**/*.{otf,ttf}',
 			'build/img/**/*.{webmanifest,json}',
 		],
-		{ read: false }
+		{ read: false },
 	).pipe(gulpif(isDev, clean()));
 }
 
@@ -78,67 +77,62 @@ function delfont() {
 // Fonts
 
 function font() {
-	// const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
 	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
+	// const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
 	const copySvgFont = 'src/font/**/*.svg';
 	return (
 		src(ttfTOwoff2)
-			// src(ttfTOwoff)
-			// .pipe(changed('build/font/', { extension: '.woff' }))
-			// .pipe(fonter({ formats: ['woff'] }))
-			// .pipe(dest('build/font/'))
-			// .pipe(src(ttfTOwoff2))
 			.pipe(changed('build/font/', { extension: '.woff2' }))
 			.pipe(ttf2woff2())
 			.pipe(dest('build/font/'))
+			// .pipe(src(ttfTOwoff))
+			// .pipe(changed('build/font/', { extension: '.woff' }))
+			// .pipe(fonter({ formats: ['woff'] }))
+			// .pipe(dest('build/font/'))
 			.pipe(src(copySvgFont))
 			.pipe(changed('build/font/', { extension: '.svg' }))
-			.pipe(dest('build/font/'))
-	);
+			.pipe(dest('build/font/')))
+		.pipe(browsersync.stream());
 }
 
 function fontgen() {
 	// const tffTOtff = 'src/font/**/*.ttf'; //Extra optimization /needs test/
-	const otfTOtff = 'src/font/**/*.{otf,ttf}'; //eot,otf,ttf,otc,ttc
+	const otfTOtff = 'src/font/**/*.{otf,ttf}'; // eot,otf,ttf,otc,ttc
 	const fontCss = 'src/font/*.*';
-	return (
-		src(otfTOtff)
-			// .pipe(changed('src/font/', { extension: '.ttf' }))
-			.pipe(fonter({ formats: ['ttf'] }))
-			.pipe(dest('src/font/'))
-			.pipe(src(fontCss))
-			// .pipe(newer('src/font/'))
-			.pipe(
-				fontfacegen({
-					filepath: 'src/scss/libs',
-					filename: '_font.scss',
-				})
-			)
-	);
+	return src(otfTOtff)
+		.pipe(fonter({ formats: ['ttf'] }))
+		.pipe(dest('src/font/'))
+		.pipe(src(fontCss))
+		.pipe(
+			fontfacegen({
+				filepath: 'src/scss/libs',
+				filename: '_font.scss',
+			}),
+		)
+		.pipe(browsersync.stream());
 }
 
 /* ____________________________________________ */
 // Svg Sprite
 
 function svg() {
-	const srcSvg = 'src/img/svg/*.svg';
-	return src(srcSvg)
+	return src('src/img/svg/*.svg')
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
 			cheerio({
-				run: function ($) {
+				run($) {
 					$('file').removeAttr('file');
 					$('stroke').removeAttr('stroke');
 					$('style').removeAttr('style');
 				},
 				parserOptions: { xmlMode: true },
-			})
+			}),
 		)
 		.pipe(replace('&gt;', '>'))
 		.pipe(
 			svgSprite({
 				mode: { symbol: { sprite: 'sprite.svg', example: true } },
-			})
+			}),
 		)
 		.pipe(dest('build/img/svg/'));
 }
@@ -146,37 +140,46 @@ function svg() {
 /* ____________________________________________ */
 // Optimize images
 
-function img() {
-	const srcWebp = 'src/img/**/*.{png,jpg,jpeg}';
-	const srcImg = 'src/img/**/*.{gif,svg}'; //png,jpg,jpeg
-	const copyImg = 'src/img/**/*.{ico,webp,webmanifest,json}';
+function imgWebp() {
+	const srcWebp = 'src/img/*.{png,jpg,jpeg,webp}';
 	return src(srcWebp)
 		.pipe(changed('build/img/', { extension: '.webp' }))
-		.pipe(webp({ quality: 100 }))
+		.pipe(imagemin([imageminWebp({ quality: 100 })]))
+		.pipe(rename({ extname: '.webp' }))
 		.pipe(dest('build/img/'))
-		.pipe(src(srcImg))
+		.pipe(browsersync.stream());
+}
+
+function img() {
+	const srcPng = 'src/img/favicon/*.png';
+	const srcSvg = 'src/img/**/*.{gif,svg}';
+	const copyImg = 'src/img/**/*.{ico,webmanifest,json}'; // png,jpg,jpeg
+	return src(srcSvg)
 		.pipe(changed('build/img/'))
 		.pipe(
 			imagemin(
 				[
 					imagemin.gifsicle({ interlaced: true }),
 					// imagemin.mozjpeg({ quality: 80, progressive: true }),
-					//*// imagemin.optipng({ optimizationLevel: 5 }),
-					// imageminPngquant({ quality: [0.8, 1.0] }),
+					// imagemin.optipng({ optimizationLevel: 5 }),
 					imagemin.svgo({
 						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
 					}),
 				],
 				{
 					verbose: true,
-				}
-			)
+				},
+			),
 		)
 		.pipe(dest('build/img/'))
 		.pipe(browsersync.stream())
 		.pipe(src(copyImg))
 		.pipe(changed('build/img/'))
 		.pipe(dest('build/img/'))
+		.pipe(src(srcPng))
+		.pipe(changed('build/img/favicon/', { extension: '.png' }))
+		.pipe(imagemin([imageminPngquant({ quality: [0.8, 1.0] })]))
+		.pipe(dest('build/img/favicon/'))
 		.pipe(browsersync.stream());
 }
 
@@ -185,34 +188,31 @@ function img() {
 
 function html() {
 	const copyIcoTxt = 'src/*.{ico,txt}';
-	return (
-		src('src/*.html')
-			.pipe(plumber())
-			.pipe(fileinclude({ prefix: '@@' }))
-			// .pipe(webpHTML())
-			.pipe(
-				typograf({
-					locale: ['ru', 'en-US', 'uk-UA', 'en'],
-					htmlEntity: { type: 'name' },
-				})
-			)
-			.pipe(
-				gulpif(
-					isBuild,
-					vrnmbr({
-						value: '%DT%',
-						append: { key: '_v', cover: 0, to: ['css', 'js'] },
-					})
-				)
-			)
-			.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
-			.pipe(dest('build/'))
-			.pipe(browsersync.stream())
-			.pipe(src(copyIcoTxt))
-			.pipe(changed('build/'))
-			.pipe(dest('build/'))
-			.pipe(browsersync.stream())
-	);
+	return src('src/*.html')
+		.pipe(plumber())
+		.pipe(fileinclude({ prefix: '@@' }))
+		.pipe(
+			typograf({
+				locale: ['ru', 'en-US', 'uk-UA', 'en'],
+				htmlEntity: { type: 'name' },
+			}),
+		)
+		.pipe(
+			gulpif(
+				isBuild,
+				vrnmbr({
+					value: '%DT%',
+					append: { key: '_v', cover: 0, to: ['css', 'js'] },
+				}),
+			),
+		)
+		.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
+		.pipe(dest('build/'))
+		.pipe(browsersync.stream())
+		.pipe(src(copyIcoTxt))
+		.pipe(changed('build/'))
+		.pipe(dest('build/'))
+		.pipe(browsersync.stream());
 }
 
 /* ____________________________________________ */
@@ -221,45 +221,43 @@ function html() {
 function css() {
 	const srcCss = 'src/scss/**/*.{scss,sass}';
 	const copyLibsCss = 'src/scss/libs/*.css';
-	return (
-		src(srcCss, { sourcemaps: true })
-			.pipe(gulpif(isDev, newer('build/css/style.min.css')))
-			.pipe(sass({ outputStyle: 'expanded' }))
-			.pipe(plumber())
-			// .pipe(webpCSS())
-			.pipe(csso())
-			.pipe(shorthand())
-			.pipe(gulpif(isBuild, groupCSSMedia()))
-			.pipe(autoprefixer({ grid: true }))
-			.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
-			.pipe(gulpif(isBuild, csso()))
-			.pipe(rename('style.min.css'))
-			.pipe(dest('build/css/', { sourcemaps: isDev }))
-			.pipe(browsersync.stream())
-			.pipe(src(copyLibsCss))
-			.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
-			.pipe(gulpif(isBuild, csso()))
-			.pipe(dest('build/css/'))
-			.pipe(browsersync.stream())
-	);
+	return src(srcCss, { sourcemaps: true })
+		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
+		.pipe(sass({ outputStyle: 'expanded' }))
+		.pipe(plumber())
+		.pipe(csso())
+		.pipe(shorthand())
+		.pipe(gulpif(isBuild, groupCSSMedia()))
+		.pipe(autoprefixer({ grid: true }))
+		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
+		.pipe(gulpif(isBuild, csso()))
+		.pipe(rename('style.min.css'))
+		.pipe(dest('build/css/', { sourcemaps: isDev }))
+		.pipe(browsersync.stream())
+		.pipe(src(copyLibsCss))
+		.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
+		.pipe(gulpif(isBuild, csso()))
+		.pipe(dest('build/css/'))
+		.pipe(browsersync.stream());
 }
 
 /* ____________________________________________ */
 // JavaScript
+// "./src/js/*.{js,jsx,ts,tsx,vue}"
 
 function js() {
-	const srcJs = require('./src/js/modules.json');
+	const srcJs = require('./src/js/modules.json'); // eslint-disable-line global-require
 	const copyLibsJs = 'src/js/libs/*.js';
 	return (
 		src(srcJs, { sourcemaps: true })
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
-			//.pipe(typeScrpt({ noImplicitAny: true, outFile: 'script.min.js' }))
+			// .pipe(typeScrpt({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(babel({ presets: ['@babel/preset-env'] }))
 			.pipe(gulpif(isBuild, concat('script.js')))
 			.pipe(gulpif(isBuild, dest('build/js/', { sourcemaps: isBuild })))
-			.pipe(gulpif(isBuild, terser()))
 			.pipe(concat('script.min.js'))
+			.pipe(gulpif(isBuild, terser()))
 			.pipe(dest('build/js/', { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
 			.pipe(src(copyLibsJs))
@@ -277,7 +275,8 @@ function watchFiles() {
 	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/**/*.html', html);
 	watch('src/js/**/*.{js,jsx,ts,tsx,vue}', js);
-	watch('src/img/**/*.{png,jpg,jpeg,ico,gif,svg,webp,webmanifest,json}', img);
+	watch('src/img/**/*.{png,ico,gif,svg,webmanifest,json}', img);
+	watch('src/img/**/*.{png,jpg,jpeg,webp}', imgWebp);
 	watch('src/font/**/*.{otf,ttf,woff,woff2,svg}', font);
 }
 
@@ -292,13 +291,13 @@ function browserSync() {
 		ui: false,
 		logFileChanges: false,
 		logConnections: false,
-		browser: ['chrome'], //, 'firefox'
+		browser: ['chrome'], // , 'firefox'
 	});
 }
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, font, parallel(html, css, js, img));
-exports.img = img;
+exports.default = series(clear, font, parallel(html, css, js, img, imgWebp));
+exports.img = series(imgWebp, img);
 exports.font = font;
 exports.fontgen = series(delfont, fontgen);
 exports.svg = svg;

@@ -1,19 +1,19 @@
 /* ____________________Global________________________ */
-/* General & Typography*/
+/* General & Typography */
 html {
 	font-size: 16px; /* (100% * 1px / 16px = "6.25%" це | 1rem = 1px) */ /* (1000% / 16px = "62.5%" це | 20rem = 200px) */
 	line-height: 1.5; /* 24px / 16px = "1.5" */
 }
 
 body {
-	font-size: clamp(0.875rem, 1.5vw, 1rem);
+	min-width: 320px;
 	font-weight: 400;
 	font-style: normal;
+	font-size: clamp(0.875rem, 1.5vw, 1rem);
 	color: var(--text-color);
-	background: var(--bg-color);
 	caret-color: #f15412;
+	background: var(--bg-color);
 	accent-color: #0060df;
-	min-width: 320px;
 
 	&.lock {
 		overflow: hidden;
@@ -30,19 +30,19 @@ body {
 div#body-wrappar {
 	display: flex;
 	flex-flow: column nowrap;
-	min-height: 100%;
 	overflow: hidden; /* если используете на сайте position: sticky - уберите эту настройку */
+	min-height: 100%;
 }
 
 main.main {
 	display: flex;
-	flex-flow: column nowrap;
 	flex: 1 1 auto;
+	flex-flow: column nowrap;
 }
 
 /* Container */
 div.container,
-[class*='__container'] {
+[class*="__container"] {
 	margin-inline: auto;
 	padding-inline: clamp(10px, 1.5vw, var(--container-offset)); /* 10px - 15px */
 	width: min(100%, var(--container-width));
@@ -76,9 +76,10 @@ div.container,
 /* ____________________________________________ */
 /* Float clearfix */
 div.clearfix::after {
-	content: '';
+	content: "";
 	display: block;
 	clear: both;
+
 	/* Or  display: flow-root; */
 }
 
@@ -101,19 +102,19 @@ div.clearfix::after {
 /* Visually-Hidden */
 .visually-hidden {
 	position: absolute;
-	width: 1px;
-	height: 1px;
+	overflow: hidden;
 	margin: -1px;
 	border: 0;
 	padding: 0;
+	width: 1px;
+	height: 1px;
 	clip: rect(0 0 0 0);
-	overflow: hidden;
 }
 
 .btn-reset {
-	background-color: transparent;
 	border-width: 0;
 	padding: 0;
+	background-color: transparent;
 }
 
 /* ____________________Delete________________________ */
@@ -122,18 +123,18 @@ div.clearfix::after {
 	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
 }
 
-// .main {
-// 	background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
-// }
+/* .main {
+  background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
+} */
 
 /* Background Image */
-// .css-img {
-// 	background-image: url();
-// 	background-repeat: no-repeat;
-// 	background-attachment: fixed;
-// 	background-position: right center;
-// 	background-size: cover;
-// }
+/* .css-img {
+  background-image: url("");
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} */
 
 /* ____________________________________________ */
 /* ________________Generel_____________________ */

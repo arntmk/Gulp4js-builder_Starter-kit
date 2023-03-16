@@ -1,5 +1,20 @@
+# Gitignore
+
+__MACOSX
+_arc
+.publish
+.DS_Store
+.Saved
+.idea
+ex_files
+Thumbs.db
+*.zip
+*.rar
+*.log
+*.sublime-*
+#package-lock.json
+/components
 /node_modules
 /build
 /src/font
-#package-lock.json
-.HTML-Tags
+.Html-Tags

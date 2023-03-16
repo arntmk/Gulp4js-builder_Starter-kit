@@ -10,7 +10,14 @@
 		"build": "gulp --production",
 		"svg": "gulp svg",
 		"fontgen": "gulp fontgen",
-		"clr": "gulp clr"
+		"clr": "gulp clr",
+		"stylelint": "stylelint \"**/*.{css,scss,sass}\" --fix",
+		"esllint": "esllint \"**/*.{js,ts,jsx,tsx}\" --fix",
+		"gulp-clean": "rm -rf node_modules",
+		"update": "npm update --save-dev && npm update --save",
+		"upd": "npm update",
+		"outd": "npm outdated",
+		"fix": "npm audit fix"
 	},
 	"browserslist": [
 		"last 3 version",
@@ -26,19 +33,24 @@
 	},
 	"keywords": [
 		"gulp",
+		"linters",
 		"html",
 		"scss",
-		"sass",
 		"js",
 		"ts",
-		"img",
+		"jsx",
+		"tsx",
 		"font",
+		"img",
 		"svg"
 	],
 	"author": "OLEH SEMCHUK",
 	"license": "WTFPL",
 	"devDependencies": {
-		"browser-sync": "^2.27.11",
+		"browser-sync": "^2.28.3",
+		"eslint": "^8.36.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.27.5",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^8.0.0",
 		"gulp-changed": "^4.0.3",
@@ -53,14 +65,20 @@
 		"gulp-rename": "^2.0.0",
 		"gulp-replace": "^1.1.4",
 		"gulp-sass": "^5.1.0",
-		"gulp-svg-sprite": "^2.0.1",
+		"gulp-svg-sprite": "^2.0.2",
 		"gulp-svgmin": "^4.1.0",
 		"gulp-typescript": "^6.0.0-alpha.1",
-		"sass": "^1.57.1",
-		"typescript": "^4.9.4"
+		"sass": "^1.59.2",
+		"stylelint": "^15.2.0",
+		"stylelint-config-standard": "^30.0.1",
+		"stylelint-config-standard-scss": "^7.0.1",
+		"stylelint-declaration-block-no-ignored-properties": "^2.7.0",
+		"stylelint-order": "^6.0.3",
+		"stylelint-scss": "^4.4.0",
+		"typescript": "^4.9.5"
 	},
 	"dependencies": {
-		"@babel/core": "^7.20.12",
+		"@babel/core": "^7.21.0",
 		"@babel/preset-env": "^7.20.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-csso": "^4.0.1",
@@ -73,10 +91,8 @@
 		"gulp-ttf2woff2": "^4.0.1",
 		"gulp-typograf": "^4.0.3",
 		"gulp-version-number": "^0.2.4",
-		"gulp-webp": "^4.0.1",
-		"gulp-webp-css-fixed": "^1.1.0",
-		"gulp-webp-html-fixed": "^1.0.0",
-		"imagemin-pngquant": "^9.0.2"
+		"imagemin-pngquant": "^9.0.2",
+		"imagemin-webp": "^6.0.1"
 	},
 	"overrides": {
 		"chokidar": "3.5.3",
@@ -84,9 +100,8 @@
 		"nth-check": "2.1.1",
 		"fs-path": "0.0.25",
 		"lodash.template": "4.5.0",
-		"trim-newlines": "4.0.1",
-		"semver-regex": "4.0.3",
-		"got": "12.1.0",
-		"xmldom": "0.6.0"
+		"xmldom": "0.6.0",
+		"trim-newlines": "3.0.1",
+		"semver-regex": "3.1.4"
 	}
 }

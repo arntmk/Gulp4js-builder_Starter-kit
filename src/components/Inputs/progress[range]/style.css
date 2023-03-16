@@ -2,6 +2,7 @@
 
 /* ____________________________________________ */
 @charset "UTF-8";
+
 /* ____________________________________________ */
 html {
 	box-sizing: border-box;
@@ -10,85 +11,85 @@ html {
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
 	margin-top: 0;
+	box-sizing: inherit;
 }
 
 :where(button, input, select, textarea, optgroup) {
-	letter-spacing: inherit;
-	line-height: inherit;
-	color: inherit;
 	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
 }
 
 /* ____________________________________________ */
 /**
  * Styling input range in all browsers (opinionated).
  */
-[type='range'],
-[type='range']::-webkit-slider-runnable-track,
-[type='range']::-webkit-slider-thumb {
-	-webkit-appearance: none;
+[type="range"],
+[type="range"]::-webkit-slider-runnable-track,
+[type="range"]::-webkit-slider-thumb {
+	appearance: none;
 }
 
 /* Range Track */
-[type='range'] {
-	accent-color: #0075ff;
-	height: 0.4375em;
-	width: 9.375em;
-	background-color: rgba(239, 239, 239, 0.8);
+[type="range"] {
 	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
-	transition: border 0.3s ease-in-out;
+	width: 9.375em;
+	height: 0.4375em;
 	box-sizing: content-box;
+	background-color: rgb(239 239 239 / 80%);
+	transition: border 0.3s ease-in-out;
+	accent-color: #0075ff;
 }
 
 /* Range Thumb / mozilla */
-[type='range']::-moz-range-thumb {
+[type="range"]::-moz-range-thumb {
 	appearance: none;
-	height: 0.94rem;
-	width: 0.94rem;
-	background-color: #0075ff;
 	border-width: 0;
+	width: 0.94rem;
+	height: 0.94rem;
+	background-color: #0075ff;
 }
 
 /* hover, focus, active */
-[type='range']:is(:hover, :focus) {
+[type="range"]:is(:hover, :focus) {
 	border: thin solid #9a9a9a;
 }
 
-[type='range']:active {
+[type="range"]:active {
 	border: thin solid #c1c1c1;
 }
 
 /* Range Thumb / WebKit */
-input[type='range']::-webkit-slider-thumb {
-	height: 0.94rem;
-	width: 0.94rem;
-	background-color: #0075ff;
+input[type="range"]::-webkit-slider-thumb {
+	margin-top: -4px;
 	border-width: 0;
 	border-radius: 50%;
-	margin-top: -4px;
+	width: 0.94rem;
+	height: 0.94rem;
+	background-color: #0075ff;
 }
 
-input[type='range']::-webkit-slider-runnable-track {
-	height: 0.4375em;
-	width: 9.375em;
-	background-color: rgba(239, 239, 239, 0.8);
+input[type="range"]::-webkit-slider-runnable-track {
 	border: thin solid #b2b2b2;
-	border-radius: 0.3125rem;
 	border-width: 0;
+	border-radius: 0.3125rem;
+	width: 9.375em;
+	height: 0.4375em;
+	background-color: rgb(239 239 239 / 80%);
 }
 
 /* Progress support JS / WebKit & Moz */
-input[type='range']#range-progress {
+input[type="range"]#range-progress {
 	--range: calc(var(--max) - var(--min));
 	--ratio: calc((var(--value) - var(--min)) / var(--range));
 	--sx: calc(0.4 * 2em + var(--ratio) * (100% - 1em));
 }
 
-input[type='range']#range-progress,
-input[type='range']#range-progress::-webkit-slider-runnable-track {
+input[type="range"]#range-progress,
+input[type="range"]#range-progress::-webkit-slider-runnable-track {
 	background: linear-gradient(#007cf8, #007cf8) 0 / var(--sx) 100% no-repeat, #efefef;
 }
 

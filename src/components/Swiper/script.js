@@ -1,24 +1,22 @@
-'use strict';
-
 /* ____________________________________________ */
 // ===Swiper===
 
 const sliders = document.querySelectorAll('.swiper-container');
 
 sliders.forEach((el) => {
-	let swiper = new Swiper(el, {
+	const swiper = new Swiper(el, {
 		// Optional parameters
 		direction: 'horizontal', // vertical
 		loop: true,
 		spaceBetween: 20,
 		slidesPerView: 1,
 		slidesPerGroup: 1,
-		//slideToClickedSlide: true,
-		//centeredSlides: true,
+		// slideToClickedSlide: true,
+		// centeredSlides: true,
 		autoHeight: true,
 		speed: 300,
 		freeMode: true,
-		//effect: fade,
+		// effect: fade,
 
 		autoplay: {
 			delay: 4000,

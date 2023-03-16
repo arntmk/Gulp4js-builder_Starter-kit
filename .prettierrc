@@ -6,6 +6,15 @@
 	"endOfLine": "lf",
 	"printWidth": 100,
 	"bracketSameLine": true,
+	"bracketSpacing": true,
 	"useTabs": true,
-	"tabWidth": 2
+	"tabWidth": 2,
+	"overrides": [
+		{
+			"files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.html"],
+			"options": {
+				"singleQuote": false
+			}
+		}
+	]
 }

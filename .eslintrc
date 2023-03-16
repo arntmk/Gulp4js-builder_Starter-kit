@@ -1,0 +1,32 @@
+{
+	"extends": ["eslint:recommended", "airbnb-base"],
+	// "parser": "@typescript-eslint/parser",
+	// "plugins": ["@typescript-eslint"],
+	"root": true,
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es6": true,
+		"node": true
+		// "jquery": true
+	},
+	"rules": {
+		"semi": ["error", "always"],
+		"quotes": ["error", "single"],
+		"indent": ["warn", "tab"],
+		"no-tabs": ["warn", { "allowIndentationTabs": true }],
+		"global-require": 0,
+		"no-trailing-spaces": "warn",
+		"no-mixed-spaces-and-tabs": "warn",
+
+		"no-unused-vars": "warn",
+		"no-console": "off",
+		"func-names": "off",
+		"no-process-exit": "off",
+		"object-shorthand": "warn",
+		"class-methods-use-this": "warn",
+
+		"no-restricted-syntax": "warn",
+		"no-undef": "warn"
+	}
+}

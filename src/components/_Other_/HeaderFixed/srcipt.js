@@ -1,22 +1,20 @@
-'use strict';
-
 /* ____________________________________________ */
 // ===Header Fixed===
 
 const navigationHeight = document.querySelector('.header').offsetHeight;
 
-document.documentElement.style.setProperty('--scroll-padding', navigationHeight - 1 + 'px');
+document.documentElement.style.setProperty('--scroll-padding', `${navigationHeight - 1}px`);
 
 /* ____________________________________________ */
 const minOffset = 50;
 window.onscroll = function () {
-	let has_class = document.body.classList.contains('is_scrolled');
+	const hasClass = document.body.classList.contains('is_scrolled');
 
 	if (minOffset < document.documentElement.scrollTop) {
-		if (!has_class) {
+		if (!hasClass) {
 			document.body.classList.add('is_scrolled');
 		}
-	} else if (has_class) {
+	} else if (hasClass) {
 		document.body.classList.remove('is_scrolled');
 	}
 };

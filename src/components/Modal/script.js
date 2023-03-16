@@ -1,5 +1,3 @@
-'use strict';
-
 /* ____________________________________________ */
 // ===Modal===
 
@@ -7,7 +5,7 @@ const modal = document.querySelector('dialog');
 const openModal = document.querySelector('.open-btn');
 const closeModal = document.querySelector('.close-btn');
 
-const body = document.body;
+const { body } = document;
 
 if (modal && openModal && closeModal) {
 	openModal.addEventListener('click', () => {

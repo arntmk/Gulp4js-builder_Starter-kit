@@ -1,6 +1,7 @@
 /* https://www.youtube.com/watch?v=TAB_v6yBXIE&list=PLig1Jrpe_hzoJqsT81rjMw3qRV1AKGOsf&index=58 */
 /* https://whistlr.info/2021/in-defence-of-dialog/ */
-/* https://stackoverflow.com/questions/50037663/how-to-close-a-native-html-dialog-when-clicking-outside-with-javascript */
+/* https://stackoverflow.com/questions/50037663/how-to-close-a-native-html-dialog-when-clicking-outside-with-javascript
+*/
 /* https://codepen.io/dvdvdmt/pen/BaavWbp */
 /* https://www.google.com/search?q=html++tag+dialog+close+on+click+outside */
 /* https://stackoverflow.com/questions/24991072/how-to-fade-in-a-html5-dialog */
@@ -14,18 +15,16 @@
  */
 
 :where(dialog) {
-	background-color: white;
-	border: solid;
-	color: black;
-	height: -moz-fit-content;
-	height: fit-content;
-	left: 0;
-	margin: auto;
-	padding: 1em;
 	position: absolute;
+	left: 0;
 	right: 0;
-	width: -moz-fit-content;
+	margin: auto;
+	border: solid;
+	padding: 1em;
 	width: fit-content;
+	height: fit-content;
+	color: #000;
+	background-color: #fff;
 }
 
 :where(dialog:not([open])) {
@@ -42,9 +41,9 @@
 
 /* ____________________________________________ */
 body {
+	margin: 2rem;
 	height: 1500px;
 	min-height: 100vh;
-	margin: 2rem;
 	font-family: system-ui;
 	font-size: 1.25rem;
 	line-height: 1.5;
@@ -52,18 +51,18 @@ body {
 }
 
 h1 em {
-	color: #27962d;
 	text-decoration: underline;
+	color: #27962d;
 	text-underline-offset: 0.25em;
 }
 
 .button {
 	border: 0;
-	cursor: pointer;
-	background: #b63d3d;
-	color: #fff;
-	font-weight: 700;
 	padding: 10px 15px;
+	font-weight: 700;
+	color: #fff;
+	background: #b63d3d;
+	cursor: pointer;
 }
 
 .button:hover,
@@ -87,24 +86,24 @@ body.lock {
 /* ____________________________________________ */
 .close-btn {
 	position: absolute;
-	top: 0;
 	right: 0;
+	top: 0;
 }
 
 /* ____________________Modal________________________ */
 dialog {
-	overflow: auto;
-	border-radius: 15px;
 	position: relative;
+	overflow: auto;
+	border: thin solid transparent;
+	border-radius: 15px;
 	padding: 0;
 	max-width: 50ch;
-	border: thin solid transparent;
+	box-shadow: 0 0 1em rgb(0 0 0 / 80%);
 	background-color: #fff;
-	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
 }
 
 dialog::backdrop {
-	background: rgba(40, 69, 93, 0.4);
+	background: rgb(40 69 93 / 40%);
 	backdrop-filter: blur(1.5px);
 }
 
@@ -117,14 +116,15 @@ dialog::backdrop {
 dialog[open] {
 	/* cubic-bezier(.33,1.44,.83,.22) */
 	overflow: hidden;
-	animation: dialog-fadeIn 1s ease-out forwards;
+	animation: dialog-fade 1s ease-out forwards;
 }
 
-@keyframes dialog-fadeIn {
+@keyframes dialog-fade {
 	from {
 		opacity: 0.8;
 		transform: translateY(-200%);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateY(0%);
