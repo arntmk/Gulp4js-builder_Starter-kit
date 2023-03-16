@@ -42,9 +42,9 @@
 		<br />
 		<form action="">
 			<input
-				id="username"
-				name="username"
 				type="text"
+				name="username"
+				id="username"
 				required
 				autocomplete="username"
 				pattern=".{4,20}"
@@ -53,29 +53,29 @@
 			<input type="submit" value="Submit" />
 			<input type="button" value="Button" />
 			<button>Button</button>
-			<input id="number" name="number" type="number" inputmode="numeric" pattern="[0-9.-]+" />
+			<input type="number" name="number" id="number" inputmode="numeric" pattern="[0-9.-]+" />
 			<br />
 			<!-- <input type="week" name="" id="" /> -->
-			<input id="file" name type="file" accept="image/png, image/jpeg" />
+			<input type="file" name="" id="" accept="image/png, image/jpeg" />
 			<br />
-			<input id="range-progress" name="range" type="range" value="50" min="0" max="100" />
+			<input type="range" name="range" id="range-progress" value="50" min="0" max="100" />
 			<br />
 			<textarea id="textarea" name cols="30" rows="10"></textarea>
 			<br />
-			<input id="checkbox" name="checkbox" type="checkbox" />
-			<input id="checkbox" name="checkbox" type="checkbox" />
-			<input id="checkbox" name="checkbox" type="checkbox" />
-			<input id="checkbox" name="checkbox" type="checkbox" />
-			<input id="checkbox" name="checkbox" type="checkbox" />
-			<input id="checkbox" name="checkbox" type="checkbox" disabled />
+			<input type="checkbox" name="checkbox" id="checkbox" />
+			<input type="checkbox" name="checkbox" id="checkbox" />
+			<input type="checkbox" name="checkbox" id="checkbox" />
+			<input type="checkbox" name="checkbox" id="checkbox" />
+			<input type="checkbox" name="checkbox" id="checkbox" />
+			<input type="checkbox" name="checkbox" id="checkbox" disabled />
 			<br />
-			<input id="radio" name="radio" type="radio" />
-			<input id="radio" name="radio" type="radio" />
-			<input id="radio" name="radio" type="radio" />
-			<input id="radio" name="radio" type="radio" />
-			<input id="radio" name="radio" type="radio" disabled />
+			<input type="radio" name="radio" id="radio" />
+			<input type="radio" name="radio" id="radio" />
+			<input type="radio" name="radio" id="radio" />
+			<input type="radio" name="radio" id="radio" />
+			<input type="radio" name="radio" id="radio" disabled />
 			<br />
-			<input id="date" name type="date" />
+			<input type="date" name="" id="date" />
 			<br />
 			<br />
 			<div class="search-wrap">
@@ -90,9 +90,9 @@
 			<br />
 			<div class="password-wrap">
 				<input
-					id="password"
-					name="password"
 					type="password"
+					name="password"
+					id="password"
 					required
 					pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[!@#$%^&*_=+-]).{8,30}"
 					placeholder="Password" />
@@ -100,9 +100,9 @@
 			</div>
 			<br />
 			<input
-				id="email"
-				name="email"
 				type="email"
+				name="email"
+				id="email"
 				required="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 				placeholder="Email" />
 			<br />
@@ -172,7 +172,7 @@
 			<label for="file">Downloading progress:</label>
 			<progress id="file" value="32" max="100"></progress>
 			<br />
-			<input id="color" name="color" type="color" value="#f15412" />
+			<input type="color" name="color" id="color" value="#f15412" />
 		</form>
 		<br />
 		<details>
