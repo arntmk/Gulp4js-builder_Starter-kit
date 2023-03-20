@@ -1,5 +1,6 @@
 {
 	"recommendations": [
+		"tabnine.tabnine-vscode",
 		"esbenp.prettier-vscode",
 		"dbaeumer.vscode-eslint",
 		"stylelint.vscode-stylelint",
@@ -22,7 +23,6 @@
 		"mrmlnc.vscode-scss",
 		"vunguyentuan.vscode-css-variables",
 		"htmlhint.vscode-htmlhint",
-		"rbalet.vscode-sorting-attrs",
-		"tabnine.tabnine-vscode"
+		"rbalet.vscode-sorting-attrs"
 	]
 }
