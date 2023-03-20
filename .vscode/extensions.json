@@ -22,6 +22,7 @@
 		"mrmlnc.vscode-scss",
 		"vunguyentuan.vscode-css-variables",
 		"htmlhint.vscode-htmlhint",
-		"rbalet.vscode-sorting-attrs"
+		"rbalet.vscode-sorting-attrs",
+		"tabnine.tabnine-vscode"
 	]
 }
