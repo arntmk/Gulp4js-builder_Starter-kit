@@ -104,7 +104,8 @@ dialog {
 
 dialog::backdrop {
 	background: rgb(40 69 93 / 40%);
-	backdrop-filter: blur(1.5px);
+
+	/* backdrop-filter: blur(1.5px); */
 }
 
 .modal-wrapper {
