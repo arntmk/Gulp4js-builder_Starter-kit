@@ -19,6 +19,7 @@
 	"stylelint.validate": ["css", "scss", "less"],
 	"[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+	"[less]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"attrsSorter.order": [
 		"class",
 		"id",
