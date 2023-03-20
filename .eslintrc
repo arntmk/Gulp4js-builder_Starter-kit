@@ -27,6 +27,7 @@
 		"class-methods-use-this": "warn",
 
 		"no-restricted-syntax": "warn",
-		"no-undef": "warn"
+		"no-undef": "warn",
+		"no-mixed-operators": "warn"
 	}
 }
