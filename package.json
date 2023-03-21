@@ -5,7 +5,7 @@
 	"main": "gulpfile.js",
 	"type": "commonjs",
 	"scripts": {
-		"start": "gulp watch",
+		"watch": "gulp watch",
 		"dev": "gulp",
 		"build": "gulp --production",
 		"svg": "gulp svg",
