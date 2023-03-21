@@ -9,6 +9,7 @@
 	"spec-char-escape": false,
 	"space-tab-mixed-disabled": true,
 	"id-unique": true,
+	"id-class-ad-disabled": true,
 	"src-not-empty": true,
 	"title-require": true,
 	"alt-require": true
