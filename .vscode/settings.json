@@ -36,5 +36,8 @@
 		"role",
 		"aria-.+",
 		"$unknown$"
-	]
+	],
+	"files.exclude": {
+		"node_modules": true
+	}
 }
