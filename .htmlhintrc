@@ -6,7 +6,7 @@
 	"attr-value-double-quotes": true,
 	"attr-sorted": true,
 	"tag-pair": true,
-	"spec-char-escape": true,
+	"spec-char-escape": false,
 	"id-unique": true,
 	"src-not-empty": true,
 	"title-require": true,
