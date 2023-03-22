@@ -17,7 +17,8 @@
 		"npm update": "npm update --save-dev && npm update --save",
 		"npm update all": "npm update",
 		"npm outdate": "npm outdated",
-		"npm audit fix": "npm audit fix"
+		"npm audit fix": "npm audit fix",
+		"git commite": "git add . && git commit -m commite"
 	},
 	"browserslist": [
 		"last 3 version",
