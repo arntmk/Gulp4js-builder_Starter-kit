@@ -6,7 +6,7 @@
 /* ____________________________________________ */
 // ===Validate Numbers===
 
-const numericInputs = document.querySelectorAll('[inputmode="numeric"]');
+/* const numericInputs = document.querySelectorAll('[inputmode="numeric"]');
 
 function validateInput(el) {
 	el.addEventListener('beforeinput', (e) => {
@@ -25,7 +25,7 @@ function validateInput(el) {
 
 numericInputs.forEach((input) => {
 	validateInput(input);
-});
+}); */
 
 /* ____________________________________________ */
 
