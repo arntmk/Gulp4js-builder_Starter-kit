@@ -6,8 +6,9 @@
 	"type": "commonjs",
 	"scripts": {
 		"gulp watch": "gulp watch",
-		"gulp dev": "gulp",
-		"gulp build": "gulp --production",
+		"gulp dev-build": "gulp default",
+		"gulp prod-build": "gulp --production",
+		"gulp img": "gulp img",
 		"gulp svg": "gulp svg",
 		"gulp fontgen": "gulp fontgen",
 		"gulp clean": "gulp clr",
