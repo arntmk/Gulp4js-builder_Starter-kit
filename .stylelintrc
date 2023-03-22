@@ -740,6 +740,7 @@
 			}
 		],
 		"scss/at-import-partial-extension": null,
-		"scss/no-global-function-names": null
+		"scss/no-global-function-names": null,
+		"import-notation": null
 	}
 }
