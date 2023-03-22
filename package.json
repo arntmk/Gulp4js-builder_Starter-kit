@@ -14,11 +14,12 @@
 		"stylelint": "stylelint \"**/*.{css,scss,sass}\" --fix",
 		"esllint": "esllint \"**/*.{js,ts,jsx,tsx}\" --fix",
 		"delete gulp ": "rm -rf node_modules",
-		"npm update": "npm update --save-dev && npm update --save",
-		"npm update all": "npm update",
-		"npm outdate": "npm outdated",
-		"npm audit fix": "npm audit fix",
-		".git commite": "git add . && git commit -m 'commite'"
+		"update": "npm update --save-dev && npm update --save",
+		"update all": "npm update",
+		"check outdated": "npm outdated",
+		"audit fix": "npm audit fix",
+		"install": "npm install",
+		".git commite": "git add . && git commit -m 'commite' && git push -u origin main"
 	},
 	"browserslist": [
 		"last 3 version",
