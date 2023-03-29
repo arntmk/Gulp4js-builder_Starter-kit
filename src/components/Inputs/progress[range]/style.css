@@ -48,8 +48,8 @@ html {
 [type="range"]::-moz-range-thumb {
 	appearance: none;
 	border-width: 0;
-	width: 0.94rem;
-	height: 0.94rem;
+	width: 0.94em;
+	height: 0.94em;
 	background-color: #0075ff;
 }
 
@@ -67,8 +67,8 @@ input[type="range"]::-webkit-slider-thumb {
 	margin-top: -4px;
 	border-width: 0;
 	border-radius: 50%;
-	width: 0.94rem;
-	height: 0.94rem;
+	width: 0.94em;
+	height: 0.94em;
 	background-color: #0075ff;
 }
 
