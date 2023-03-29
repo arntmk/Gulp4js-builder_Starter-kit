@@ -1,0 +1,118 @@
+/* ____________________Default________________________ */
+/* :Pseudo-classes
+/* ____________________________________________ */
+/* Link, Button, Input, Select, Datalist, Textarea */
+
+/* ____________________________________________ */
+/* link Hover */
+a {
+	transition: color 0.3s ease-in-out 0.01s;
+
+	@media (any-hover: hover) {
+		&:is(:hover, :focus-visible) {
+			color: #4682b4;
+		}
+	}
+}
+
+/* ____________________________________________ */
+/* Button Hover */
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	transform: scale(1);
+	transition: box-shadow 0.3s ease-in-out 0.02s, transform 0.3s ease-in-out 0.02s, background-color 0.4s linear 0.01s, color 0.4s linear 0.01s;
+
+	@media (any-hover: hover) {
+		&:is(:hover, :focus-visible) {
+			border-color: transparent;
+			box-shadow: 0 0 0.625rem #4f6e86;
+			color: #fff;
+			background-color: #4682b4;
+			transform: scale(1.05);
+		}
+	}
+}
+
+/* ____________________________________________ */
+/* Button Form */
+select,
+textarea,
+summary,
+[type="file"]::file-selector-button,
+input:not(
+	[type="button"],
+	[type="reset"],
+	[type="submit"],
+	[type="range"],
+	[type="color"],
+	[type="radio"],
+	[type="checkbox"],
+	[type="file"]) {
+	transition: 0.3s ease-in-out 0.02s, background 0s;
+
+	@media (any-hover: hover) {
+		&:is(:hover, :focus-visible) {
+			border-color: transparent;
+			box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4f6e86;
+		}
+	}
+}
+
+/* Animation
+/* ____________________________________________ */
+/* Button Effect */
+@keyframes btn-effect {
+	0% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* ____________________________________________ */
+/* ::Pseudo-elements
+/* ____________________________________________ */
+/* Markers for: ul, ol */
+::marker {
+	/* content: ''; */
+	color: inherit;
+}
+
+/* Selection */
+::selection {
+	text-shadow: none;
+	color: #fff;
+	background-color: #4682b4;
+}
+
+/* ____________________________________________ */
+/* Draw Underline Link Hover Effect for Meny */
+.nav__li-link {
+	position: relative;
+	transition: transform 0.45s ease-in-out 0.01s;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -3px;
+		width: 100%;
+		height: 0.0625rem;
+		background-color: #4682b4;
+		transform: scale(0);
+		transition: transform 0.45s ease-in-out 0.005s;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: darken(#4682b4, 10%);
+
+			&::after {
+				transform: scale(1);
+			}
+		}
+	}
+}
