@@ -26,7 +26,7 @@ if (menu && menuBtn) {
 	menu.querySelectorAll('.nav__li-link').forEach((link) => {
 		link.addEventListener('click', () => {
 			menu.classList.remove('active');
-			menuBtn.classList.remove('activee');
+			menuBtn.classList.remove('active');
 			body.classList.remove('lock');
 			menuBtn.setAttribute('aria-expanded', false);
 		});
