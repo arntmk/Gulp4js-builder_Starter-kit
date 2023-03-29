@@ -6,6 +6,11 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+/* Hidden */
+.hidden {
+	display: none;
+}
+
 /* ____________________________________________ */
 /* Remove chrome clear button */
 input[type="search"]::-webkit-search-decoration,
@@ -46,11 +51,6 @@ input[type="search"]::-webkit-search-results-decoration {
 	/* position: absolute;
   right: 7px;
   top: 5px; */
-}
-
-/* Hidden */
-.hidden {
-	display: none;
 }
 
 /* ____________________________________________ */

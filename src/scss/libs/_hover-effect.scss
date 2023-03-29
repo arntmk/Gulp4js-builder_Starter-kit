@@ -21,7 +21,7 @@ a {
 [type="reset"],
 [type="submit"] {
 	transform: scale(1);
-	transition: box-shadow 0.3s ease-in-out 0.02s, transform 0.3s ease-in-out 0.02s, background-color 0.4s linear 0.01s, color 0.4s linear 0.01s;
+	transition: box-shadow 0.5s ease-in-out 0.02s, transform 0.4s ease-in-out 0.02s, background-color 0.5s linear 0.01s, color 0.5s linear 0.01s;
 
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
@@ -30,6 +30,7 @@ a {
 			color: #fff;
 			background-color: #4682b4;
 			transform: scale(1.05);
+			animation: btn-effect 0.3s ease-in-out 0.01s;
 		}
 	}
 }
