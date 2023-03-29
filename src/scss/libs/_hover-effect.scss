@@ -16,6 +16,35 @@ a {
 }
 
 /* ____________________________________________ */
+/* Draw Underline Link Hover Effect for Menu */
+.nav__li-link {
+	position: relative;
+	transition: transform 0.45s ease-in-out 0.01s;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -3px;
+		width: 100%;
+		height: 0.0625rem;
+		background-color: #4682b4;
+		transform: scale(0);
+		transition: transform 0.45s ease-in-out 0.005s;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: darken(#4682b4, 10%);
+
+			&::after {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+/* ____________________________________________ */
 /* Button Hover */
 [type="button"],
 [type="reset"],
@@ -87,33 +116,4 @@ input:not(
 	text-shadow: none;
 	color: #fff;
 	background-color: #4682b4;
-}
-
-/* ____________________________________________ */
-/* Draw Underline Link Hover Effect for Menu */
-.nav__li-link {
-	position: relative;
-	transition: transform 0.45s ease-in-out 0.01s;
-
-	&::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: -3px;
-		width: 100%;
-		height: 0.0625rem;
-		background-color: #4682b4;
-		transform: scale(0);
-		transition: transform 0.45s ease-in-out 0.005s;
-	}
-
-	@media (any-hover: hover) {
-		&:hover {
-			color: darken(#4682b4, 10%);
-
-			&::after {
-				transform: scale(1);
-			}
-		}
-	}
 }
