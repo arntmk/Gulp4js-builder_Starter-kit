@@ -1,5 +1,5 @@
 {
-	"livePreview.defaultPreviewPath": "c:\\Users\\OLEG\\Desktop\\Gulp4js-Pack Clean\\build\\index.html---",
+	"livePreview.defaultPreviewPath": "./build/index.html-",
 	"css.validate": false,
 	"less.validate": false,
 	"scss.validate": false,
