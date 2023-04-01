@@ -137,6 +137,7 @@ input:not(
 }
 
 :where(img, svg) {
+	align-self: center;
 	object-fit: cover;
 }
 
