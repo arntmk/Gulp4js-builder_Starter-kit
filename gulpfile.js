@@ -77,9 +77,9 @@ function delfont() {
 // Fonts
 
 function font() {
-	const ttfTOwoff2 = 'src/font/**/*.{ttf,woff2}';
-	// const ttfTOwoff = 'src/font/**/*.{ttf,woff}';
-	const copySvgFont = 'src/font/**/*.svg';
+	const ttfTOwoff2 = 'src/assets/font/**/*.{ttf,woff2}';
+	// const ttfTOwoff = 'src/assets/font/**/*.{ttf,woff}';
+	const copySvgFont = 'src/assets/font/**/*.svg';
 	return (
 		src(ttfTOwoff2)
 			.pipe(changed('build/font/', { extension: '.woff2' }))
@@ -96,12 +96,12 @@ function font() {
 }
 
 function fontgen() {
-	// const tffTOtff = 'src/font/**/*.ttf'; //Extra optimization /needs test/
-	const otfTOtff = 'src/font/**/*.{otf,ttf}'; // eot,otf,ttf,otc,ttc
-	const fontCss = 'src/font/*.*';
+	// const tffTOtff = 'src/assets/font/**/*.ttf'; //Extra optimization /needs test/
+	const otfTOtff = 'src/assets/font/**/*.{otf,ttf}'; // eot,otf,ttf,otc,ttc
+	const fontCss = 'src/assets/font/*.*';
 	return src(otfTOtff)
 		.pipe(fonter({ formats: ['ttf'] }))
-		.pipe(dest('src/font/'))
+		.pipe(dest('src/assets/font/'))
 		.pipe(src(fontCss))
 		.pipe(
 			fontfacegen({
@@ -116,7 +116,7 @@ function fontgen() {
 // Svg Sprite
 
 function svg() {
-	return src('src/img/svg/*.svg')
+	return src('src/assets/img/svg/*.svg')
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
 			cheerio({
@@ -141,7 +141,7 @@ function svg() {
 // Optimize images
 
 function imgWebp() {
-	const srcWebp = 'src/img/*.{png,jpg,jpeg,webp}';
+	const srcWebp = 'src/assets/img/*.{png,jpg,jpeg,webp}';
 	return src(srcWebp)
 		.pipe(changed('build/img/', { extension: '.webp' }))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
@@ -151,9 +151,9 @@ function imgWebp() {
 }
 
 function img() {
-	const srcPng = 'src/img/favicon/*.png';
-	const srcSvg = 'src/img/**/*.{gif,svg}';
-	const copyImg = 'src/img/**/*.{ico,webmanifest,json}'; // png,jpg,jpeg
+	const srcPng = 'src/assets/img/favicon/*.png';
+	const srcSvg = 'src/assets/img/**/*.{gif,svg}';
+	const copyImg = 'src/assets/img/**/*.{ico,webmanifest,json}'; // png,jpg,jpeg
 	return src(srcSvg)
 		.pipe(changed('build/img/'))
 		.pipe(
@@ -275,9 +275,9 @@ function watchFiles() {
 	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/**/*.html', html);
 	watch('src/js/**/*.{js,jsx,ts,tsx,vue}', js);
-	watch('src/img/**/*.{png,ico,gif,svg,webmanifest,json}', img);
-	watch('src/img/**/*.{png,jpg,jpeg,webp}', imgWebp);
-	watch('src/font/**/*.{otf,ttf,woff,woff2,svg}', font);
+	watch('src/assets/img/**/*.{png,ico,gif,svg,webmanifest,json}', img);
+	watch('src/assets/img/**/*.{png,jpg,jpeg,webp}', imgWebp);
+	watch('src/assets/font/**/*.{otf,ttf,woff,woff2,svg}', font);
 }
 
 // BrowserSync
