@@ -190,7 +190,7 @@ function html() {
 	const copyIcoTxt = 'src/*.{ico,txt}';
 	return src('src/*.html')
 		.pipe(plumber())
-		.pipe(fileinclude({ prefix: '@@' }))
+		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(
 			typograf({
 				locale: ['ru', 'en-US', 'uk-UA'],
