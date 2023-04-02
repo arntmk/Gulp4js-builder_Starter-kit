@@ -50,13 +50,13 @@
 	*,
 	::before,
 	::after {
-		background-attachment: initial !important;	/* stylelint-disable-line */
-		transition-duration: 0s !important;					/* stylelint-disable-line */
-		transition-delay: 0s !important;						/* stylelint-disable-line */
-		animation-duration: 1ms !important;					/* stylelint-disable-line */
-		animation-delay: -1ms !important;						/* stylelint-disable-line */
-		animation-iteration-count: 1 !important;		/* stylelint-disable-line */
-		scroll-behavior: auto !important;						/* stylelint-disable-line */
+		background-attachment: initial !important;/* stylelint-disable-line declaration-no-important */
+		transition-duration: 0s !important;				/* stylelint-disable-line declaration-no-important */
+		transition-delay: 0s !important;					/* stylelint-disable-line declaration-no-important */
+		animation-duration: 1ms !important;				/* stylelint-disable-line declaration-no-important */
+		animation-delay: -1ms !important;					/* stylelint-disable-line declaration-no-important */
+		animation-iteration-count: 1 !important;	/* stylelint-disable-line declaration-no-important */
+		scroll-behavior: auto !important;					/* stylelint-disable-line declaration-no-important */
 	}
 }
 

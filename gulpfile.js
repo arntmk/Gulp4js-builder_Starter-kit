@@ -246,7 +246,7 @@ function css() {
 // "./src/js/*.{js,jsx,ts,tsx,vue}"
 
 function js() {
-	const srcJs = require('./src/js/modules.json'); // eslint-disable-line
+	const srcJs = require('./src/js/modules.json'); // eslint-disable-line global-require
 	const copyLibsJs = 'src/js/libs/*.js';
 	return (
 		src(srcJs, { sourcemaps: true })
