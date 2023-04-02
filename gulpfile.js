@@ -187,7 +187,7 @@ function img() {
 // Html
 
 function html() {
-	const copyIcoTxt = 'src/*.{ico,txt}';
+	const copyIcoTxt = 'src/assets/*.{ico,txt}';
 	return src('src/*.html')
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
