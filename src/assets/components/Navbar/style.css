@@ -13,6 +13,13 @@ body {
 	font-family: "Hibana", sans-serif;
 }
 
+div#body-wrappar {
+	display: flex;
+	flex-flow: column nowrap;
+	overflow: clip; /* если используете на сайте position: sticky - используйте clip; вместо hidden */
+	min-height: 100%;
+}
+
 .container {
 	margin-inline: auto;
 	padding-inline: 15px;
@@ -53,6 +60,7 @@ body.lock {
 	position: sticky;
 	top: 0;
 	z-index: 2;
+	display: flex;
 	width: 100%;
 }
 
