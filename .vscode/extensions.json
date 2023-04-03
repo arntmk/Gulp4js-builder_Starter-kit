@@ -4,7 +4,6 @@
 		"esbenp.prettier-vscode",
 		"dbaeumer.vscode-eslint",
 		"stylelint.vscode-stylelint",
-		"formulahendry.auto-close-tag",
 		"formulahendry.auto-rename-tag",
 		"vscode-icons-team.vscode-icons",
 		"editorconfig.editorconfig",
