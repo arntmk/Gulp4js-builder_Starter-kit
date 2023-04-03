@@ -51,7 +51,8 @@ summary {
 }
 
 [type="checkbox"],
-[type="radio"] {
+[type="radio"],
+[type="color"] {
 	outline-offset: 0.0625rem;
 }
 
@@ -131,12 +132,6 @@ input:not(
 /* ____________________________________________ */
 /* ::Pseudo-elements
 /* ____________________________________________ */
-/* Markers for: ul, ol */
-::marker {
-	/* content: ''; */
-	color: inherit;
-}
-
 /* Selection */
 ::selection {
 	text-shadow: none;
