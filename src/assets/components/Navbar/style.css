@@ -122,7 +122,7 @@ body.lock {
 		display: inline-block;
 		font-size: clamp(1.563rem, 1.339rem + 1.12vw, 1.875rem); /* 30px */
 		line-height: 2.33; /* 70px */
-		transition: transform 0.3s ease-in-out 0.1s;
+		transition: transform 0.3s ease-in-out 0.1s, color 0.3s ease-in-out 0.1s;
 	}
 
 	/* Hover & focus-visible */

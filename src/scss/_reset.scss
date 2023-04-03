@@ -87,6 +87,7 @@ body::-webkit-scrollbar-track {
 html {
 	break-inside: avoid-column;
 	overflow-anchor: none;
+	outline-offset: 0.1875rem;
 	box-sizing: border-box;
 	text-overflow: ellipsis;
 	background-repeat: no-repeat;
@@ -98,6 +99,7 @@ html {
 	break-inside: inherit;
 	overflow-anchor: inherit;
 	margin-top: 0;
+	outline-offset: inherit;
 	min-width: 0;
 	box-sizing: inherit;
 	text-overflow: inherit;
@@ -129,6 +131,10 @@ input:not(
 	outline-color: transparent;
 }
 
+:where([type="file"]) {
+	outline-color: none;
+}
+
 :where(button, input, select, textarea, optgroup) {
 	font: inherit;
 	line-height: inherit;
@@ -141,7 +147,7 @@ input:not(
 	object-fit: cover;
 }
 
-:where(iframe, picture, img, svg, input, video, select, textarea, details) {
+:where(iframe, picture, img, svg, input, video, select, textarea, summary) {
 	height: auto;
 	max-width: 100%;
 }
