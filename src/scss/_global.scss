@@ -83,9 +83,15 @@ div.clearfix::after {
 	/* Or  display: flow-root; */
 }
 
-/* Nowrap */
+/* Text-NoWrap */
 .nowrap {
 	white-space: nowrap;
+}
+
+/* Text-Overflow */
+.text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /* Text-Center */
@@ -97,6 +103,11 @@ div.clearfix::after {
 .offscreen {
 	position: absolute;
 	left: -100%;
+}
+
+/* Visibility-Hidden */
+.visibility-hidden {
+	visibility: hidden;
 }
 
 /* Visually-Hidden */
@@ -111,14 +122,21 @@ div.clearfix::after {
 	clip: rect(0 0 0 0);
 }
 
+/* Completely-Hidden */
+.hidden {
+	display: none !important; 	/* stylelint-disable-line declaration-no-important */
+}
+
+/* Reset-Button */
 .btn-reset {
 	border-width: 0;
 	padding: 0;
 	background-color: transparent;
 }
 
-.hidden {
-	display: none !important; 	/* stylelint-disable-line declaration-no-important */
+/* Flex */
+.flex {
+	display: flex;
 }
 
 /* ____________________Delete________________________ */
