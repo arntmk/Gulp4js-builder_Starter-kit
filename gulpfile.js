@@ -23,18 +23,19 @@ const fontfacegen = require('gulp-fontfacegen'); // fontface gen.
 const fileinclude = require('gulp-file-include'); // Модульність для html.
 const htmlmin = require('gulp-htmlmin'); // Мінімізація html.
 const typograf = require('gulp-typograf'); // Правопис.
-const vrnmbr = require('gulp-version-number'); // Build version.
+const version = require('gulp-version-number'); // Build version.
 
 const sass = require('gulp-sass')(require('sass')); // Препроцесор для css.
 const autoprefixer = require('gulp-autoprefixer'); // Додавання префіксів для сумісності.
 const groupCSSMedia = require('gulp-group-css-media-queries'); // Групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); // Оптимізація коду.
 const csso = require('gulp-csso'); // Мінімізація css.
+// const cleanCSS = require('gulp-csso'); // level: 2, minimize-css, group-media, shorthand.
 
 const terser = require('gulp-terser'); // Мінімізація JS.
 const babel = require('gulp-babel'); // Підтримка старих браузерів JS.
 const concat = require('gulp-concat'); // Перейменування та об'єднання.
-// const typeScrpt = require('gulp-typescript'); //Конвертатор TypeScript.
+// const typeScrpt = require('gulp-typescript'); //Конвертатор TypeScript в JS.
 
 const svgmin = require('gulp-svgmin'); // Мінімізація svg.
 const cheerio = require('gulp-cheerio'); // Видалення непотрібних атрибутів svg (Вбудовані стилі).
@@ -199,7 +200,7 @@ function html() {
 		.pipe(
 			gulpif(
 				isBuild,
-				vrnmbr({
+				version({
 					value: '%DT%',
 					append: { key: '_v', cover: 0, to: ['css', 'js'] },
 				}),
@@ -225,6 +226,7 @@ function css() {
 		.pipe(plumber())
 		.pipe(csso())
 		.pipe(shorthand())
+		// .pipe(cleanCSS({ level: 2 }))
 		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))

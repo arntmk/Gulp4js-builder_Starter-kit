@@ -8,7 +8,7 @@ src/scss/libs/_normalize.scss
 #src/js/modules.json
 
 # Ignore all CSS/JS Files:
-*.css
+# *.css
 *.scss
 *.js
 *.jsx
