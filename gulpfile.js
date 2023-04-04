@@ -225,6 +225,7 @@ function css() {
 		.pipe(plumber())
 		.pipe(csso())
 		.pipe(shorthand())
+		// .pipe(cleanCSS({ level: 2 }))
 		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
