@@ -30,11 +30,12 @@ const autoprefixer = require('gulp-autoprefixer'); // Додавання пре�
 const groupCSSMedia = require('gulp-group-css-media-queries'); // Групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); // Оптимізація коду.
 const csso = require('gulp-csso'); // Мінімізація css.
+// const cleanCSS = require('gulp-csso'); // level: 2, minimize-css, group-media, shorthand.
 
 const terser = require('gulp-terser'); // Мінімізація JS.
 const babel = require('gulp-babel'); // Підтримка старих браузерів JS.
 const concat = require('gulp-concat'); // Перейменування та об'єднання.
-// const typeScrpt = require('gulp-typescript'); //Конвертатор TypeScript.
+// const typeScrpt = require('gulp-typescript'); //Конвертатор TypeScript в JS.
 
 const svgmin = require('gulp-svgmin'); // Мінімізація svg.
 const cheerio = require('gulp-cheerio'); // Видалення непотрібних атрибутів svg (Вбудовані стилі).
