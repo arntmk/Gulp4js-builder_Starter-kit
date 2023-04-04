@@ -226,7 +226,7 @@ function css() {
 		.pipe(csso())
 		.pipe(shorthand())
 		.pipe(gulpif(isBuild, groupCSSMedia()))
-		.pipe(autoprefixer({ grid: true }))
+		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
 		.pipe(gulpif(isBuild, csso()))
 		.pipe(rename('style.min.css'))
