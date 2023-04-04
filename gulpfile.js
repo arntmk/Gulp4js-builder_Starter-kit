@@ -141,8 +141,7 @@ function svg() {
 // Optimize images
 
 function imgWebp() {
-	const srcWebp = 'src/assets/img/*.{png,jpg,jpeg,webp}';
-	return src(srcWebp)
+	return src('src/assets/img/*.{png,jpg,jpeg,webp}')
 		.pipe(changed('build/img/', { extension: '.webp' }))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
@@ -219,9 +218,8 @@ function html() {
 // CSS
 
 function css() {
-	const srcCss = 'src/scss/**/*.{scss,sass}';
 	const copyLibsCss = 'src/scss/libs/*.css';
-	return src(srcCss, { sourcemaps: true })
+	return src('src/scss/**/*.{scss,sass}', { sourcemaps: true })
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(sass({ outputStyle: 'expanded' }))
 		.pipe(plumber())
