@@ -587,7 +587,7 @@
 		"length-zero-no-unit": true,
 		"max-empty-lines": 1,
 		"max-line-length": [
-			155,
+			140,
 			{
 				"severity": "warning"
 			}
