@@ -1,5 +1,14 @@
 # Ignore
+.vscode/
+.idea/
 build/
+dist/
+node_modules/
+tests/
+vendor/
+#assets/
+
+# Ignore
 build/css/style.min.css
 src/scss/libs/_normalize.scss
 src/scss/libs/swiper-bundle.min.css

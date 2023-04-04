@@ -5,6 +5,7 @@
 		"stylelint-order",
 		"stylelint-declaration-block-no-ignored-properties"
 	],
+	"ignoreFiles": ["./build/**/*.css", "./node_modules/**/*.css"],
 	"rules": {
 		"order/order": [
 			"custom-properties",

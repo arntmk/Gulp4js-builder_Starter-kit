@@ -1,5 +1,14 @@
 # Ignore
+.vscode/
+.idea/
 build/
+dist/
+node_modules/
+tests/
+vendor/
+#assets/
+
+# Ignore
 build/js/scripts.min.js
 src/assets/components/Swiper/swiper-bundle.min.js
 src/js/libs/
