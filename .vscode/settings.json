@@ -18,7 +18,7 @@
 	"[javascriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
 	"[typescriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
 	"stylelint.validate": ["css", "scss", "less"],
-	"[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+	// "[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[less]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"attrsSorter.order": [
