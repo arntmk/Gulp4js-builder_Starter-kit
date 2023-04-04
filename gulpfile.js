@@ -30,7 +30,7 @@ const autoprefixer = require('gulp-autoprefixer'); // Додавання пре�
 const groupCSSMedia = require('gulp-group-css-media-queries'); // Групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); // Оптимізація коду.
 const csso = require('gulp-csso'); // Мінімізація css.
-// const cleanCSS = require('gulp-csso'); // level: 2, minimize-css, group-media, shorthand.
+// const cleanCSS = require('gulp-clean-css'); // level: 2, minimize-css, group-media, shorthand.
 
 const terser = require('gulp-terser'); // Мінімізація JS.
 const babel = require('gulp-babel'); // Підтримка старих браузерів JS.
@@ -92,8 +92,9 @@ function font() {
 			// .pipe(dest('build/font/'))
 			.pipe(src(copySvgFont))
 			.pipe(changed('build/font/', { extension: '.svg' }))
-			.pipe(dest('build/font/')))
-		.pipe(browsersync.stream());
+			.pipe(dest('build/font/'))
+			.pipe(browsersync.stream())
+	);
 }
 
 function fontgen() {
@@ -220,25 +221,27 @@ function html() {
 
 function css() {
 	const copyLibsCss = 'src/scss/libs/*.css';
-	return src('src/scss/**/*.{scss,sass}', { sourcemaps: true })
-		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
-		.pipe(sass({ outputStyle: 'expanded' }))
-		.pipe(plumber())
-		.pipe(csso())
-		.pipe(shorthand())
-		// .pipe(cleanCSS({ level: 2 }))
-		.pipe(gulpif(isBuild, groupCSSMedia()))
-		.pipe(autoprefixer({ cascade: false, grid: true }))
-		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(rename('style.min.css'))
-		.pipe(dest('build/css/', { sourcemaps: isDev }))
-		.pipe(browsersync.stream())
-		.pipe(src(copyLibsCss))
-		.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
-		.pipe(gulpif(isBuild, csso()))
-		.pipe(dest('build/css/'))
-		.pipe(browsersync.stream());
+	return (
+		src('src/scss/**/*.{scss,sass}', { sourcemaps: true })
+			.pipe(gulpif(isDev, newer('build/css/style.min.css')))
+			.pipe(sass({ outputStyle: 'expanded' }))
+			.pipe(plumber())
+			.pipe(csso())
+			.pipe(shorthand())
+			// .pipe(cleanCSS({ level: 2 }))
+			.pipe(gulpif(isBuild, groupCSSMedia()))
+			.pipe(autoprefixer({ cascade: false, grid: true }))
+			.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
+			.pipe(gulpif(isBuild, csso()))
+			.pipe(rename('style.min.css'))
+			.pipe(dest('build/css/', { sourcemaps: isDev }))
+			.pipe(browsersync.stream())
+			.pipe(src(copyLibsCss))
+			.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
+			.pipe(gulpif(isBuild, csso()))
+			.pipe(dest('build/css/'))
+			.pipe(browsersync.stream())
+	);
 }
 
 /* ____________________________________________ */
