@@ -23,7 +23,7 @@ const fontfacegen = require('gulp-fontfacegen'); // fontface gen.
 const fileinclude = require('gulp-file-include'); // Модульність для html.
 const htmlmin = require('gulp-htmlmin'); // Мінімізація html.
 const typograf = require('gulp-typograf'); // Правопис.
-const vrnmbr = require('gulp-version-number'); // Build version.
+const version = require('gulp-version-number'); // Build version.
 
 const sass = require('gulp-sass')(require('sass')); // Препроцесор для css.
 const autoprefixer = require('gulp-autoprefixer'); // Додавання префіксів для сумісності.
@@ -200,7 +200,7 @@ function html() {
 		.pipe(
 			gulpif(
 				isBuild,
-				vrnmbr({
+				version({
 					value: '%DT%',
 					append: { key: '_v', cover: 0, to: ['css', 'js'] },
 				}),
