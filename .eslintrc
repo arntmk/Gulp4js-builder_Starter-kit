@@ -17,7 +17,7 @@
 		"quotes": ["error", "single"],
 		"indent": ["warn", "tab"],
 		"no-tabs": ["warn", { "allowIndentationTabs": true }],
-		"global-require": 0,
+		"global-require": "warn",
 		"no-trailing-spaces": "warn",
 		"no-mixed-spaces-and-tabs": "warn",
 
