@@ -224,7 +224,7 @@ function css() {
 	return (
 		src('src/scss/**/*.{scss,sass}', { sourcemaps: true })
 			.pipe(gulpif(isDev, newer('build/css/style.min.css')))
-			.pipe(sass({ outputStyle: 'expanded' }))
+			.pipe(sass.sync({ outputStyle: 'expanded' }))
 			.pipe(plumber())
 			.pipe(csso())
 			.pipe(shorthand())
