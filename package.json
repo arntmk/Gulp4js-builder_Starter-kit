@@ -11,6 +11,7 @@
 		"gulp img": "gulp img",
 		"gulp svg": "gulp svg",
 		"gulp fontgen": "gulp fontgen",
+		"gulp font": "gulp font",
 		"gulp clean": "gulp clr",
 		"stylelint": "stylelint \"src/**/*.{css,scss,sass}\" --fix",
 		"eslint": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --fix",
