@@ -298,6 +298,7 @@ function browserSync() {
 	});
 }
 
+/* ____________________________________________ */
 exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clear, font, parallel(html, css, js, img, imgWebp));
 exports.img = series(imgWebp, img);
