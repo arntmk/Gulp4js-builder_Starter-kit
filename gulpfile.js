@@ -194,7 +194,7 @@ function html() {
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(
 			typograf({
-				locale: ['ru', 'en-US', 'uk-UA'],
+				locale: ['ru', 'en-US'],
 				htmlEntity: { type: 'name' },
 			}),
 		)
