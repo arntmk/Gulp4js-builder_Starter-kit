@@ -21,7 +21,7 @@
 		"update all": "npm update",
 		"check outdated": "npm outdated",
 		"audit fix": "npm audit fix",
-		".git commite": "git add . && git commit -m 'commite.' && git push -u origin main"
+		".git commite": "git config --global core.autocrlf true && git add . && git commit -m 'commite.' && git push -u origin main"
 	},
 	"browserslist": [
 		"last 3 version",
