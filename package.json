@@ -21,7 +21,7 @@
 		"update all": "npm update",
 		"check outdated": "npm outdated",
 		"audit fix": "npm audit fix",
-		".git commite": "git add . && git commit -m 'commite.' && git push -u origin main"
+		".git commite": "git config --global core.autocrlf true && git add . && git commit -m 'commite.' && git push -u origin main"
 	},
 	"browserslist": [
 		"last 3 version",
@@ -51,8 +51,8 @@
 	"author": "OLEH SEMCHUK",
 	"license": "WTFPL",
 	"devDependencies": {
-		"browser-sync": "^2.28.3",
-		"eslint": "^8.36.0",
+		"browser-sync": "^2.29.1",
+		"eslint": "^8.37.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-plugin-import": "^2.27.5",
 		"gulp": "^4.0.2",
@@ -69,21 +69,21 @@
 		"gulp-rename": "^2.0.0",
 		"gulp-replace": "^1.1.4",
 		"gulp-sass": "^5.1.0",
-		"gulp-svg-sprite": "^2.0.2",
+		"gulp-svg-sprite": "^2.0.3",
 		"gulp-svgmin": "^4.1.0",
 		"gulp-typescript": "^6.0.0-alpha.1",
-		"sass": "^1.59.2",
-		"stylelint": "^15.2.0",
+		"sass": "^1.60.0",
+		"stylelint": "^15.4.0",
 		"stylelint-config-standard": "^30.0.1",
 		"stylelint-config-standard-scss": "^7.0.1",
 		"stylelint-declaration-block-no-ignored-properties": "^2.7.0",
 		"stylelint-order": "^6.0.3",
-		"stylelint-scss": "^4.4.0",
+		"stylelint-scss": "^4.6.0",
 		"typescript": "^4.9.5"
 	},
 	"dependencies": {
-		"@babel/core": "^7.21.0",
-		"@babel/preset-env": "^7.20.2",
+		"@babel/core": "^7.21.4",
+		"@babel/preset-env": "^7.21.4",
 		"gulp-babel": "^8.0.0",
 		"gulp-csso": "^4.0.1",
 		"gulp-fonter": "^0.3.0",
@@ -93,10 +93,10 @@
 		"gulp-shorthand": "^1.1.0",
 		"gulp-terser": "^2.1.0",
 		"gulp-ttf2woff2": "^4.0.1",
-		"gulp-typograf": "^4.0.3",
+		"gulp-typograf": "^4.1.0",
 		"gulp-version-number": "^0.2.4",
 		"imagemin-pngquant": "^9.0.2",
-		"imagemin-webp": "^6.0.1"
+		"imagemin-webp": "^6.1.0"
 	},
 	"overrides": {
 		"chokidar": "3.5.3",
