@@ -9,6 +9,9 @@ vendor/
 #assets/
 
 # Ignore
+*.css
+*.scss
 build/js/scripts.min.js
 src/assets/components/Swiper/swiper-bundle.min.js
 src/js/libs/
+

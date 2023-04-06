@@ -297,8 +297,8 @@ function browserSync() {
 /* ____________________________________________ */
 exports.watch = parallel(watchFiles, browserSync);
 exports.default = series(clr, clear, font, parallel(html, css, js, img, webp));
-exports.img = series(webp, img);
-exports.font = font;
-exports.fontgen = series(delfont, fontgen);
-exports.svg = svg;
-exports.clr = clr;
+exports.imgTsk = series(webp, img);
+exports.fontTsk = font;
+exports.fontgenTsk = series(delfont, fontgen);
+exports.svgTsk = svg;
+exports.clrTsk = clr;
