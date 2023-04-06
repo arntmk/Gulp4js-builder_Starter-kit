@@ -1,16 +1,19 @@
 @font-face {
-	font-family: 'Nunito';
-	font-style: normal;
+	src:
+		local(""),
+		url("../font/Nunito-Bold.woff2") format("woff2");
+	font-family: "Nunito";
 	font-weight: 700;
-	font-display: swap;
-	src: local(''),
-	url("../font/Nunito-Bold.woff2") format("woff2");
-}
-@font-face {
-	font-family: 'Nunito';
 	font-style: normal;
-	font-weight: 400;
 	font-display: swap;
-	src: local(''),
-	url("../font/Nunito-Regular.woff2") format("woff2");
+}
+
+@font-face {
+	src:
+		local(""),
+		url("../font/Nunito-Regular.woff2") format("woff2");
+	font-family: "Nunito";
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }

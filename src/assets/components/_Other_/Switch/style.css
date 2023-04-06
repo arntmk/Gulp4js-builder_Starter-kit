@@ -25,13 +25,10 @@ body {
 /* The slider */
 .slider {
 	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
 	background-color: #ccc;
 	transition: 0.4s;
 	cursor: pointer;
+	inset: 0;
 }
 
 .slider::before {
