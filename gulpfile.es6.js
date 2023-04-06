@@ -125,18 +125,21 @@ function fontgen() {
 
 function svg() {
 	return gulp.src('src/assets/img/svg/*.svg')
+		.pipe(plumber())
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(cheerio({
 			run($) {
-				$('file').removeAttr('file');
-				$('stroke').removeAttr('stroke');
-				$('style').removeAttr('style');
+				// $('[fill]').removeAttr('fill');
+				// $('[stroke]').removeAttr('stroke');
+				$('[style]').removeAttr('style');
+				$('[class]').removeAttr('class');
+				$('[data-name]').removeAttr('data-name');
 			},
 			parserOptions: { xmlMode: true },
 		}))
 		.pipe(replace('&gt;', '>'))
 		.pipe(svgSprite({
-			mode: { symbol: { sprite: 'sprite.svg', example: true } },
+			mode: { symbol: { sprite: './grouped-sprites.svg', example: true } },
 		}))
 		.pipe(gulp.dest('build/img/svg/'));
 }
