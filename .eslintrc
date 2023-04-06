@@ -20,6 +20,7 @@
 		"global-require": "warn",
 		"no-trailing-spaces": "warn",
 		"no-mixed-spaces-and-tabs": "warn",
+		"object-curly-newline": "warn",
 
 		"no-unused-vars": "warn",
 		"no-console": "off",

@@ -1,6 +1,5 @@
-const {
-	src, dest, parallel, series, watch,
-} = require('gulp');
+// Load Gulp
+const { src, dest, parallel, series, watch } = require('gulp'); // eslint-disable-line object-curly-newline
 
 // Load plugins
 
@@ -280,6 +279,7 @@ function watchFiles() {
 }
 
 // BrowserSync
+// browsersync.create().init({
 
 function browserSync() {
 	browsersync.init({
