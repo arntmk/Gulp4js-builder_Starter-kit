@@ -42,6 +42,10 @@
 				"selector": "&:hover"
 			},
 			{
+				"type": "at-rule",
+				"selector": "any-hover:"
+			},
+			{
 				"type": "rule",
 				"selector": "&:active"
 			},
@@ -501,7 +505,12 @@
 				"severity": "warning"
 			}
 		],
-		"block-opening-brace-newline-after": "always-multi-line",
+		"block-opening-brace-newline-after": [
+			"always-multi-line",
+			{
+				"severity": "warning"
+			}
+		],
 		"block-opening-brace-newline-before": "never-single-line",
 		"block-opening-brace-space-after": "always-single-line",
 		"block-opening-brace-space-before": "always",

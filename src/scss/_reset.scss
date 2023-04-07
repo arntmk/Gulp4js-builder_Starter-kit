@@ -140,12 +140,12 @@ input:not(
 	color: inherit;
 }
 
-:where(img, svg) {
+:where(img, svg, picture) {
 	align-self: center;
 	object-fit: cover;
 }
 
-:where(iframe, picture, img, svg, input, video, select, textarea, summary) {
+:where(iframe, picture, img, svg, input, video, select, textarea, summary, dialog) {
 	height: auto;
 	max-width: 100%;
 }

@@ -13,6 +13,10 @@ a {
 			color: darken(#4682b4, 10%);
 		}
 	}
+
+	&:active {
+		color: var(--active-color);
+	}
 }
 
 /* ____________________________________________ */
@@ -30,7 +34,7 @@ a {
 		height: 0.0625rem;
 		background-color: var(--accent-color);
 		transform: scale(0);
-		transition: transform 0.45s ease-in-out 0.005s;
+		transition: transform 0.45s ease-in-out 0.005s, color 0.3s ease-in-out 0.01s;
 	}
 
 	@media (any-hover: hover) {
@@ -40,6 +44,16 @@ a {
 			&::after {
 				transform: scale(1);
 			}
+		}
+	}
+
+	&:active {
+		z-index: 2;
+		color: var(--active-color);
+
+		&::after {
+			z-index: 1;
+			background-color: var(--active-color);
 		}
 	}
 }
@@ -92,6 +106,11 @@ summary,
 			transform: scale(1.05);
 			animation: btn-effect 1.5s ease-in-out 0.01s;
 		}
+	}
+
+	&:active {
+		box-shadow: 0 0 0.625rem var(--active-color);
+		background-color: var(--active-color);
 	}
 }
 
