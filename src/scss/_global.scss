@@ -134,6 +134,14 @@ div.clearfix::after {
 	background-color: transparent;
 }
 
+/* Reset-List */
+.list-reset {
+	list-style-type: none;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}
+
 /* Flex */
 .flex {
 	display: flex;
