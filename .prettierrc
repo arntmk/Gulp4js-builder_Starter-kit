@@ -3,7 +3,7 @@
 	"singleQuote": true,
 	"semi": true,
 	"trailingComma": "all",
-	"endOfLine": "crlf",
+	"endOfLine": "lf",
 	"printWidth": 100,
 	"bracketSameLine": true,
 	"bracketSpacing": true,
@@ -13,7 +13,8 @@
 		{
 			"files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.html"],
 			"options": {
-				"singleQuote": false
+				"singleQuote": false,
+				"endOfLine": "crlf"
 			}
 		}
 	]
