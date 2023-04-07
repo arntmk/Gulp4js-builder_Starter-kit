@@ -5,7 +5,8 @@
 	"main": "gulpfile.js",
 	"type": "commonjs",
 	"scripts": {
-		"gulp watch": "gulp watch",
+		"gulp watch cjs": "gulp watch",
+		"gulp watch esm": "gulp watch --gulpfile  \"~/../gulpfile.esm.js\"",
 		"gulp dev-build": "gulp default",
 		"gulp prod-build": "gulp --production",
 		"gulp img": "gulp imgTsk",
