@@ -13,8 +13,7 @@
 		{
 			"files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.html"],
 			"options": {
-				"singleQuote": false,
-				"endOfLine": "crlf"
+				"singleQuote": false
 			}
 		}
 	]
