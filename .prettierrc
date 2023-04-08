@@ -9,6 +9,7 @@
 	"bracketSpacing": true,
 	"useTabs": true,
 	"tabWidth": 2,
+	"arrowParens": "always",
 	"overrides": [
 		{
 			"files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.html"],
