@@ -23,6 +23,8 @@
 		"vunguyentuan.vscode-css-variables",
 		"htmlhint.vscode-htmlhint",
 		"rbalet.vscode-sorting-attrs",
-		"forbeslindesay.forbeslindesay-taskrunner"
+		"forbeslindesay.forbeslindesay-taskrunner",
+		"jock.svg",
+		"streetsidesoftware.code-spell-checker"
 	]
 }
