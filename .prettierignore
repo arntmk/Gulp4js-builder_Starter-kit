@@ -11,6 +11,6 @@ src/scss/libs/_normalize.scss
 # *.css
 *.scss
 *.js
-*.jsx
 *.ts
+*.jsx
 *.tsx

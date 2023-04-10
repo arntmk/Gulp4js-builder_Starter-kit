@@ -10,8 +10,8 @@ vendor/
 
 # Ignore
 *.js
-*.jsx
 *.ts
+*.jsx
 *.tsx
 build/css/style.min.css
 src/scss/libs/_normalize.scss
