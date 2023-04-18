@@ -2,11 +2,13 @@
 /* 100-thin, 200-extralight, 300-light, 400-normal, 500-medium,  600-sembold, 700-bold, 800-extrabold, 900-black */
 
 :root {
+	/* ____________________________________________ */
 	/* CONTAINER */
 	--content-width: 1170px; /* 1770+15+15=1800 */
 	--container-offset: 15px; /* 15*2 Left-Right = 30 */
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
+	/* ____________________________________________ */
 	/* CSS BREAKPOINT  */
 	--breakpoint-1450: 1449.98 + px; /* Desktop XL */
 	--breakpoint-1200: 1199.98 + px; /* Desktop */
@@ -16,13 +18,15 @@
 	--breakpoint-480: 479.98 + px; /* Small-Mobile */
 	--breakpoint-320: 319.98 + px; /* Old-Mobile */
 
+	/* ____________________________________________ */
 	/* FONT */
 	--font-family: "Nunito";
 
-	// --second-ffamily: "Nunito, sans-serif";
-	// --third-ffamily: "Nunito, sans-serif";
-	// --fourth-ffamily: "Nunito, sans-serif";
+	// --second-ffamily: "Poppins", sans-serif;
+	// --third-ffamily: "Poppins", sans-serif;
+	// --fourth-ffamily: "Poppins", sans-serif;
 
+	/* ____________________________________________ */
 	/* COLOR */
 	--scrollbar-color: #777;
 	--scrollbar-bgcolor: #1c1c1c;
@@ -38,6 +42,7 @@
 	--header-bgcolor: #1e1e1e;
 }
 
+/* ____________________________________________ */
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
 	:root {

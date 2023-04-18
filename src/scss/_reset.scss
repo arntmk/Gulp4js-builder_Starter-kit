@@ -19,6 +19,8 @@ html {
 		"Segoe UI Emoji",
 		"Segoe UI Symbol",
 		"Noto Color Emoji";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code,
@@ -49,9 +51,8 @@ html {
 }
 
 body::-webkit-scrollbar {
-	width: 10px;
-
 	/* width: 18px; */
+	width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {

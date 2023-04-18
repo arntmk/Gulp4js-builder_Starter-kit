@@ -1,8 +1,12 @@
 /* ____________________Global________________________ */
 /* General & Typography */
+
+/* fs: (100% * 1px / 16px = "6.25%" це | 1rem = 1px) */
+/* fs: (1000% * 1px / 16px = "62.5%" це | 20rem = 200px) */
+/* lh: 24px / 16px = "1.5" */
 html {
-	font-size: 16px; /* (100% * 1px / 16px = "6.25%" це | 1rem = 1px) */ /* (1000% / 16px = "62.5%" це | 20rem = 200px) */
-	line-height: 1.5; /* 24px / 16px = "1.5" */
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 body {
