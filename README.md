@@ -2,7 +2,7 @@
 
 # Commends: npm run "..."
 
-    	"start": "gulp watch"
+    	"watch": "gulp watch"
     	"dev": "gulp"
     	"build": "gulp --production"
     	"svg": "gulp svg"
