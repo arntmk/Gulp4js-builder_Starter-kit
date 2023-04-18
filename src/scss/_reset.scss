@@ -47,12 +47,12 @@ pre {
 /* ScrollBar for Wibesite */
 html {
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
-	scrollbar-width: thin;
+	scrollbar-width: auto;
 }
 
 body::-webkit-scrollbar {
 	/* width: 18px; */
-	width: 10px;
+	width: 11px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -64,6 +64,10 @@ body::-webkit-scrollbar {
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: darken(#777, 10%);
+}
+
+::-webkit-scrollbar-thumb:active {
+	background-color: darken(#777, 25%);
 }
 
 body::-webkit-scrollbar-track {
