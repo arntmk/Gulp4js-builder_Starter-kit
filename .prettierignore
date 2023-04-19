@@ -10,6 +10,7 @@ src/scss/libs/_normalize.scss
 # Ignore all CSS/JS Files:
 # *.css
 *.scss
+*.sass
 *.js
 *.ts
 *.jsx
