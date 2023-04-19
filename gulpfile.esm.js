@@ -95,15 +95,18 @@ function font() {
 		.pipe(changed('build/font/', { extension: '.woff2' }))
 		.pipe(ttf2woff2())
 		.pipe(gulp.dest('build/font/'))
+		.pipe(browsersync.stream())
 
 	// .pipe(src(ttfTOwoff))
 	// .pipe(changed('build/font/', { extension: '.woff' }))
 	// .pipe(fonter({ formats: ['woff'] }))
 	// .pipe(dest('build/font/'))
+	// .pipe(browsersync.stream())
 
 		.pipe(gulp.src(copySvgFont))
 		.pipe(changed('build/font/', { extension: '.svg' }))
 		.pipe(gulp.dest('build/font/'))
+		.pipe(browsersync.stream())
 	);
 }
 
@@ -114,6 +117,7 @@ function fontgen() {
 	return gulp.src(otfTOtff)
 		.pipe(fonter({ formats: ['ttf'] }))
 		.pipe(gulp.dest('src/assets/font/'))
+
 		.pipe(gulp.src(fontCss))
 		.pipe(fontfacegen({
 			filepath: 'src/scss/libs',

@@ -91,15 +91,18 @@ function font() {
 		.pipe(changed('build/font/', { extension: '.woff2' }))
 		.pipe(ttf2woff2())
 		.pipe(dest('build/font/'))
+		.pipe(browsersync.stream())
 
 	// .pipe(src(ttfTOwoff))
 	// .pipe(changed('build/font/', { extension: '.woff' }))
 	// .pipe(fonter({ formats: ['woff'] }))
 	// .pipe(dest('build/font/'))
+	// .pipe(browsersync.stream())
 
 		.pipe(src(copySvgFont))
 		.pipe(changed('build/font/', { extension: '.svg' }))
 		.pipe(dest('build/font/'))
+		.pipe(browsersync.stream())
 	);
 }
 
@@ -110,6 +113,7 @@ function fontgen() {
 	return src(otfTOtff)
 		.pipe(fonter({ formats: ['ttf'] }))
 		.pipe(dest('src/assets/font/'))
+
 		.pipe(src(fontCss))
 		.pipe(fontfacegen({
 			filepath: 'src/scss/libs',
