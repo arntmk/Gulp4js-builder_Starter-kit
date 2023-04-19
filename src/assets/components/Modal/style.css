@@ -84,6 +84,8 @@ body.lock {
 }
 
 /* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
 .close-btn {
 	position: absolute;
 	right: 0;
@@ -111,6 +113,7 @@ dialog::backdrop {
 .modal-wrapper {
 	border-radius: 15px;
 	padding: 25px;
+	max-width: 50ch;
 }
 
 /* animation */
