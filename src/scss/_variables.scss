@@ -4,7 +4,7 @@
 :root {
 	/* ____________________________________________ */
 	/* CONTAINER */
-	--content-width: 1170px; /* 1770+15+15=1800 */
+	--content-width: 1170px; /* 1200+30=1230 */
 	--container-offset: 15px; /* 15*2 Left-Right = 30 */
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
