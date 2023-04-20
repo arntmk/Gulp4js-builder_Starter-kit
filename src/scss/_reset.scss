@@ -69,8 +69,8 @@ body::-webkit-scrollbar {
 	background-color: darken(#777, 10%);
 }
 
-::-webkit-scrollbar-thumb:active {
-	background-color: darken(#777, 25%);
+body::-webkit-scrollbar-thumb:active {
+	background-color: darken(#777, 20%);
 }
 
 body::-webkit-scrollbar-track {
