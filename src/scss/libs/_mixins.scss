@@ -1,6 +1,14 @@
 /* stylelint-disable */
 /* 100-thin, 200-extralight, 300-light, 400-normal, 500-medium,  600-sembold, 700-bold, 800-extrabold, 900-black */
 
+/* @font-face {
+	font-family: "Name";
+	font-weight: 400;
+	font-style: normal;
+	src: local(""), url("../font/*.woff2") format("woff2");
+	font-display: swap;
+} */
+
 /* Disable mobile hover  */
 @mixin hover {
 	@media (any-hover: hover) {

@@ -7,15 +7,15 @@
 @import "./libs/normalize.scss";
 @import "./libs/mixins.scss";
 @import "./libs/default.scss";
-@import "./libs/hover-effect.scss";
-@import "./libs/font.scss";
+@import "./libs/effect.scss";
 
 /* Global SCSS imports */
 @import "./variables.scss";
 @import "./reset.scss";
+@import "./font.scss";
 @import "./global.scss";
 
 /* Sections SCSS files imports */
-@import "./header.scss";
-@import "./main.scss";
-@import "./footer.scss";
+@import "./index/header.scss";
+@import "./index/main.scss";
+@import "./index/footer.scss";
