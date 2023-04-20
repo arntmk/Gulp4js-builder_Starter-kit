@@ -9,7 +9,9 @@
 	background-color: #fff;
 }
 
-/* ____________________Form________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* Forms */
 /**
  * 1. Change the inconsistent appearance in all browsers (opinionated).
  * 2. Add typography inheritance in all browsers (opinionated).
@@ -36,16 +38,17 @@
 }
 
 /* ____________________________________________ */
+/* ____________________________________________ */
 /**
  * Don't show the arrow for multiple choice selects
  */
-
+/* ____________________________________________ */
 select[multiple] {
 	background-image: none;
 }
 
 /**
- * Change the inconsistent appearance in all browsers (opinionated).
+ * Styling [select] in all browsers (opinionated).
  */
 
 select {
@@ -65,9 +68,9 @@ select option:checked {
 
 /* ____________________________________________ */
 /**
- * Change the inconsistent appearance in all browsers (opinionated).
+ *  Styling input [datalist] in all browsers (opinionated).
  */
-
+/* ____________________________________________ */
 #datalist::-webkit-calendar-picker-indicator {
 	position: absolute;
 	color: transparent;
@@ -91,8 +94,9 @@ select option:checked {
 
 /* ____________________________________________ */
 /**
- * Styling input range in all browsers (opinionated).
+ * Styling input [range] in all browsers (opinionated).
  */
+/* ____________________________________________ */
 [type="range"],
 [type="range"]::-webkit-slider-runnable-track,
 [type="range"]::-webkit-slider-thumb {
@@ -162,9 +166,9 @@ input[type="range"]#range-progress::-webkit-slider-runnable-track {
 
 /* ____________________________________________ */
 /**
- * Styling progress-bar in all browsers (opinionated).
+ * Styling [progress] in all browsers (opinionated).
  */
-
+/* ____________________________________________ */
 progress {
 	appearance: none;
 	border-width: 0;
@@ -191,9 +195,9 @@ progress::-webkit-progress-value {
 
 /* ____________________________________________ */
 /**
- * Styling input checkbox and radio in all browsers (opinionated).
+ * Styling input [checkbox] and [radio] in all browsers (opinionated).
  */
-
+/* ____________________________________________ */
 [type="checkbox"],
 [type="radio"] {
 	width: 1.1em;
@@ -203,9 +207,9 @@ progress::-webkit-progress-value {
 
 /* ____________________________________________ */
 /**
- * Styling input color in all browsers (opinionated).
+ * Styling input [color] in all browsers (opinionated).
  */
-
+/* ____________________________________________ */
 [type="color"] {
 	width: 6em;
 	background-color: transparent;
@@ -229,9 +233,9 @@ progress::-webkit-progress-value {
 
 /* ____________________________________________ */
 /**
- * Styling input file in all browsers (opinionated).
+ * Styling input [file] in all browsers (opinionated).
  */
-
+/* ____________________________________________ */
 [type="file"] {
 	border-width: 0;
 	width: 20em;
@@ -253,9 +257,9 @@ progress::-webkit-progress-value {
 
 /* ____________________________________________ */
 /**
- * Styling textarea in webkit browsers (opinionated).
+ * Styling [textarea] in webkit browsers (opinionated).
  */
-
+/* ____________________________________________ */
 textarea {
 	width: 18em;
 	height: 18em;
@@ -270,9 +274,9 @@ textarea::-webkit-resizer {
 
 /* ____________________________________________ */
 /**
- * Styling input date in webkit browsers (opinionated).
+ * Styling input [date] in webkit browsers (opinionated).
  */
-
+/* ____________________________________________ */
 [type="date"] {
 	width: 10em;
 }
@@ -284,8 +288,9 @@ textarea::-webkit-resizer {
 
 /* ____________________________________________ */
 /**
- * Styling input number in all browsers (opinionated).
+ * Styling input [number] in all browsers (opinionated).
  */
+/* ____________________________________________ */
 input[type="number"] {
 	appearance: textfield;
 }
@@ -305,9 +310,9 @@ input[type="number"]:focus {
 /* ___________JavaScript Default_______________ */
 /* ____________________________________________ */
 /**
- * Styling input search in all browsers (opinionated).
+ * Styling input [search] in all browsers (opinionated).
  */
-
+/* ____________________________________________ */
 /* Remove chrome clear button */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -344,8 +349,9 @@ input[type="search"]::-webkit-search-results-decoration {
 
 /* ____________________________________________ */
 /**
- * Styling input password in all browsers (opinionated).
+ * Styling input [password] in all browsers (opinionated).
  */
+/* ____________________________________________ */
 ::-ms-reveal {
 	display: none;
 }
@@ -379,6 +385,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 /* ____________________________________________ */
 /* Accordion */
+/* ____________________________________________ */
 summary::-webkit-details-marker {
 	display: none;
 }
