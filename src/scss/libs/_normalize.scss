@@ -7,14 +7,14 @@
  * 2. Backgrounds do not repeat by default (opinionated).
  */
 
- html {
-	box-sizing: border-box;	/* 1 */
-	background-repeat: no-repeat;	/* 2 */
+html {
+  box-sizing: border-box;	/* 1 */
+  background-repeat: no-repeat;	/* 2 */
 }
 
 *,
-::before,
-::after {
+*::before,
+*::after {
   box-sizing: inherit; /* 1 */
   background-repeat: inherit; /* 2 */
 }
@@ -24,8 +24,8 @@
  * 2. Add vertical alignment inheritance in all browsers (opinionated).
  */
 
-::before,
-::after {
+*::before,
+*::after {
   text-decoration: inherit; /* 1 */
   vertical-align: inherit; /* 2 */
 }
@@ -65,7 +65,7 @@
 
 :where(h1) {
   font-size: 2em;
-	margin-block: 0.67em;
+  margin-block: 0.67em;
 }
 
 /* Grouping content
@@ -84,7 +84,7 @@
  */
 
  :where(dl, ol, ul) {
-	list-style-position: inside;
+  list-style-position: inside;
 }
 
 /**
@@ -93,9 +93,9 @@
  */
 
 :where(hr) {
-	border: thin solid;  /* 1 */
-	border-color: #555 #808080 #808080 #555;  /* 1 */
-	box-sizing: content-box; /* 2 */
+  border: thin solid;  /* 1 */
+  border-color: #555 #808080 #808080 #555;  /* 1 */
+  box-sizing: content-box; /* 2 */
   height: 0; /* 2 */
 }
 
@@ -106,7 +106,7 @@
 :where(nav) :where(ol, ul) {
   list-style-type: none;
   padding: 0;
-	margin: 0;
+  margin: 0;
 }
 
 /**
@@ -315,7 +315,7 @@
 
 :where(button, input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i]))::-moz-focus-inner {
   border-style: none;
-	padding: 0;
+  padding: 0;
 }
 
 /**
