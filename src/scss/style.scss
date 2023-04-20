@@ -6,14 +6,16 @@
 /* Libs */
 @import "./libs/normalize.scss";
 @import "./libs/mixins.scss";
-@import "./libs/default.scss";
-@import "./libs/effect.scss";
 @import "./libs/font.scss";
 
 /* Global SCSS imports */
 @import "./variables.scss";
 @import "./reset.scss";
 @import "./global.scss";
+
+/* Default */
+@import "./default/default.scss";
+@import "./default/effect.scss";
 
 /* Sections SCSS files imports */
 @import "./index/header.scss";
