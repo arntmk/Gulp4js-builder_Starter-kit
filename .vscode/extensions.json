@@ -25,6 +25,7 @@
 		"htmlhint.vscode-htmlhint",
 		"rbalet.vscode-sorting-attrs",
 		"jock.svg",
-		"streetsidesoftware.code-spell-checker"
+		"streetsidesoftware.code-spell-checker",
+		"christian-kohler.path-intellisense"
 	]
 }
