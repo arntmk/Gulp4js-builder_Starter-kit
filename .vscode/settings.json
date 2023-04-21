@@ -43,6 +43,7 @@
 	// Htmlhint "shift+alt+s"
 	"htmlhint.documentSelector": ["html", "htm"],
 	"htmlhint.options": {
+		"doctype-first": false,
 		"src-not-empty": true,
 		"attr-sorted": true
 	},
