@@ -40,7 +40,13 @@
 	"[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[less]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 
-	// Htmlhint
+	// Htmlhint "shift+alt+s"
+	"htmlhint.documentSelector": ["html", "htm"],
+	"htmlhint.options": {
+		"src-not-empty": true,
+		"attr-sorted": true
+	},
+
 	"attrsSorter.order": [
 		"class",
 		"id",
