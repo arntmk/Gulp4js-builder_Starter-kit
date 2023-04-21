@@ -26,6 +26,7 @@
 		"rbalet.vscode-sorting-attrs",
 		"jock.svg",
 		"streetsidesoftware.code-spell-checker",
-		"ionutvmi.path-autocomplete"
+		"ionutvmi.path-autocomplete",
+		"vincaslt.highlight-matching-tag"
 	]
 }
