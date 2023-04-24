@@ -13,9 +13,7 @@
 	"overrides": [
 		{
 			"files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.html"],
-			"options": {
-				"singleQuote": false
-			}
+			"options": { "singleQuote": false }
 		}
 	]
 }
