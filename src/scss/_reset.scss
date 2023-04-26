@@ -209,18 +209,19 @@ summary) {
 	vertical-align: middle;
 }
 
+:where(
 a,
 label,
 button,
 summary,
-dialog::backdrop,
 [type="button"],
 [type="reset"],
 [type="submit"],
 [type="checkbox"],
 [type="radio"],
 [type="range"],
-[type="color"],
+[type="color"]),
+dialog::backdrop,
 [type="file"]::file-selector-button,
 [type="number"]::-webkit-inner-spin-button,
 [type="search"]::-webkit-search-cancel-button,
