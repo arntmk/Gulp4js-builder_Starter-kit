@@ -83,7 +83,7 @@ html {
  * Prevent the list style to broke in Chrome, Edge, and Safari.
  */
 
- :where(dl, ol, ul) {
+:where(dl, ol, ul) {
   list-style-position: inside;
 }
 
