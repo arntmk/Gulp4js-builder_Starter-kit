@@ -123,13 +123,14 @@ html {
 
 :where(
 input:not(
+	[type="file"],
 	[type="button"],
 	[type="reset"],
 	[type="submit"],
-	[type="checkbox"],
-	[type="radio"],
 	[type="range"],
-	[type="color"]),
+	[type="color"],
+	[type="checkbox"],
+	[type="radio"]),
 	select,
 	textarea) {
 	outline-color: transparent;
