@@ -231,7 +231,6 @@ function css() {
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(plumber())
 		.pipe(shorthand())
-		// .pipe(csso())
 		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, gulp.dest('build/css/', { sourcemaps: isBuild })))

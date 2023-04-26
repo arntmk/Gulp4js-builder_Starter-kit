@@ -227,7 +227,6 @@ function css() {
 		.pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
 		.pipe(plumber())
 		.pipe(shorthand())
-		// .pipe(csso())
 		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
