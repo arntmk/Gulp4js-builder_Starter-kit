@@ -204,7 +204,7 @@ function html() {
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(typograf({
-			locale: ['ru', 'en-US', 'uk'], // 'ukr, uk-UA'
+			locale: ['ru', 'en-US', 'uk'], // 'ukr', 'uk-UA'
 			htmlEntity: { type: 'name' },
 		}))
 		.pipe(gulpif(isBuild, version({
