@@ -21,11 +21,6 @@ html {
 		"Noto Color Emoji";
 }
 
-body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 code,
 kbd,
 samp,
@@ -44,6 +39,11 @@ pre {
 		"Segoe UI Emoji",
 		"Segoe UI Symbol",
 		"Noto Color Emoji";
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* ____________________________________________ */
@@ -95,7 +95,6 @@ body::-webkit-scrollbar-track {
 html {
 	break-inside: avoid-column;
 	overflow-anchor: none;
-	outline-offset: 0.1875rem;
 	box-sizing: border-box;
 	background-repeat: no-repeat;
 }
@@ -106,7 +105,6 @@ html {
 	break-inside: inherit;
 	overflow-anchor: inherit;
 	margin-top: 0;
-	outline-offset: inherit;
 	min-width: 0;
 	box-sizing: inherit;
 	background-repeat: inherit;
@@ -139,6 +137,19 @@ input:not(
 
 :where([type="file"]) {
 	outline-color: none;
+}
+
+:where(
+button,
+input:not([type="checkbox"],[type="radio"],[type="color"]),
+select,
+textarea,
+summary) {
+	outline-offset: 0.1875rem;
+}
+
+:where([type="checkbox"],[type="radio"],[type="color"]) {
+	outline-offset: 0.0625rem;
 }
 
 :where(button, input, select, textarea, optgroup, option) {
