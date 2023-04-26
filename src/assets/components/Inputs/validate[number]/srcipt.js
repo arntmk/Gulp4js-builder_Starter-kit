@@ -6,29 +6,6 @@
 /* ____________________________________________ */
 // ===Validate Numbers===
 
-/* const numericInputs = document.querySelectorAll('[inputmode="numeric"]');
-
-function validateInput(el) {
-	el.addEventListener('beforeinput', (e) => {
-		const beforeValue = el.value;
-		e.target.addEventListener(
-			'input',
-			() => {
-				if (el.validity.patternMismatch) {
-					el.value = beforeValue;
-				}
-			},
-			{ once: true },
-		);
-	});
-}
-
-numericInputs.forEach((input) => {
-	validateInput(input);
-}); */
-
-/* ____________________________________________ */
-
 document.querySelector('[inputmode="numeric"]').onkeypress = function Validate(e) {
 	const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
 	return isNumber;
