@@ -1,6 +1,6 @@
 [
 	"./src/js/_adaptive-body-min-width.js",
-	"./src/js/_default.js",
+	"./src/js/default/_default.js",
 	"./src/js/_hamburger.js",
 	"./src/js/script.js",
 	"./src/js/*.{js,jsx,ts,tsx,vue}"
