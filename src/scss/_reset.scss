@@ -77,7 +77,7 @@ body::-webkit-scrollbar-track {
 	background-color: var(--scrollbar-bgcolor);
 }
 
-/* ScrollBar for Select and Textarea and etc. */
+/* ScrollBar for Select, Textarea and etc. */
 * {
 	scrollbar-color: var(--scrollbar-color) transparent;
 	scrollbar-width: thin;
@@ -153,7 +153,9 @@ summary) {
 	outline-offset: 0.0625rem;
 }
 
-:where(button, input, select, textarea, optgroup, option) {
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button {
 	font: inherit;
 	line-height: inherit;
 	letter-spacing: inherit;

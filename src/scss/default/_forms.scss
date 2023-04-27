@@ -40,17 +40,9 @@
 /* ____________________________________________ */
 /* ____________________________________________ */
 /**
- * Don't show the arrow for multiple choice selects
- */
-/* ____________________________________________ */
-select[multiple] {
-	background-image: none;
-}
-
-/**
  * Styling [select] in all browsers (opinionated).
  */
-
+/* ____________________________________________ */
 select {
 	appearance: none;
 	padding-right: 1.6em;
@@ -59,6 +51,11 @@ select {
 		#fff
 		url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
 		no-repeat 98% center / 1.4em;
+}
+
+/*  Don't show the arrow for multiple choice selects  */
+select[multiple] {
+	background-image: none;
 }
 
 select option:checked {
@@ -94,7 +91,7 @@ select option:checked {
 
 /* ____________________________________________ */
 /**
- * Styling input [range] in all browsers (opinionated).
+ * Styling input [range+JS] in all browsers (opinionated).
  */
 /* ____________________________________________ */
 [type="range"],
