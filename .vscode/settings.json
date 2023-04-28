@@ -6,10 +6,8 @@
 	"css.validate": false,
 	"less.validate": false,
 	"scss.validate": false,
-	"javascript.validate.enable": true,
-	"typescript.validate.enable": true,
-	"typescript.suggest.paths": false,
-	"javascript.suggest.paths": false,
+	// "javascript.validate.enable": false,
+	// "typescript.validate.enable": false,
 
 	/* ____________________Extensions________________________ */
 
