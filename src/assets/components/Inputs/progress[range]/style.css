@@ -21,17 +21,22 @@ html {
 	color: inherit;
 }
 
+[type="range"] {
+	cursor: pointer;
+}
+
 /* ____________________________________________ */
 /**
- * Styling input range in all browsers (opinionated).
+ * Styling input [Range+JS] in all browsers (opinionated).
  */
+/* ____________________________________________ */
 [type="range"],
 [type="range"]::-webkit-slider-runnable-track,
 [type="range"]::-webkit-slider-thumb {
 	appearance: none;
 }
 
-/* Range Track */
+/* Range Track / All */
 [type="range"] {
 	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
@@ -43,7 +48,7 @@ html {
 	accent-color: #0075ff;
 }
 
-/* Range Thumb / mozilla */
+/* Range Thumb / Mozilla */
 [type="range"]::-moz-range-thumb {
 	appearance: none;
 	border-width: 0;
@@ -52,7 +57,7 @@ html {
 	background-color: #0075ff;
 }
 
-/* hover, focus, active */
+/* Hover, Focus, Active */
 [type="range"]:is(:hover, :focus) {
 	border: thin solid #9a9a9a;
 }
@@ -93,7 +98,7 @@ input[type="range"]#range-progress::-webkit-slider-runnable-track {
 }
 
 /* ____________________Moz________________________ */
-/* Progress-bar / mozilla */
+/* Progress-bar / Mozilla */
 /* [type='range']::-moz-range-progress {
 	height: 0.4375em;
 	background-color: #0075ff;

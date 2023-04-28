@@ -1,7 +1,7 @@
 /* ____________________________________________ */
 /* _________________Default____________________ */
 /* ____________________________________________ */
-/* Table */
+/* Table. */
 :where(th, td) {
 	border: thin solid #8f8f9d;
 	padding: 0.5em;
@@ -13,28 +13,13 @@
 /* ____________________________________________ */
 /* Forms */
 /**
- * 1. Change the inconsistent appearance in all browsers (opinionated).
- * 2. Add typography inheritance in all browsers (opinionated).
+ * Change the inconsistent appearance in all browsers (opinionated).
  */
 
-:where(button, input, select, textarea) {
-	border: thin solid #8f8f9d; /* 1 */
-	padding: 0.25em 0.375em; /* 1 */
-	font: inherit; /* 2 */
-	line-height: inherit; /* 2 */
-	letter-spacing: inherit; /* 2 */
-	color: inherit; /* 1 */
-	background-color: #fff; /* 1 */
-}
-
-/**
- * Remove the border and padding in all browsers (opinionated).
- */
-
-[type="color"],
-[type="range"] {
-	border-width: 0;
-	padding: 0;
+:where(button, input:not([type="range"], [type="file"]), select, textarea) {
+	border: thin solid #8f8f9d;
+	padding: 0.25em 0.375em;
+	background-color: #fff;
 }
 
 /* ____________________________________________ */
@@ -53,19 +38,18 @@ select {
 		no-repeat 98% center / 1.4em;
 }
 
-/*  Don't show the arrow for multiple choice selects  */
+/* Don't show the arrow for multiple choice selects */
 select[multiple] {
 	background-image: none;
 }
 
 select option:checked {
-	color: inherit;
 	background-color: #e0e0e6;
 }
 
 /* ____________________________________________ */
 /**
- *  Styling input [datalist] in all browsers (opinionated).
+ * Styling input [datalist] in all browsers (opinionated).
  */
 /* ____________________________________________ */
 #datalist::-webkit-calendar-picker-indicator {
@@ -91,7 +75,7 @@ select option:checked {
 
 /* ____________________________________________ */
 /**
- * Styling input [range+JS] in all browsers (opinionated).
+ * Styling input [Range+JS] in all browsers (opinionated).
  */
 /* ____________________________________________ */
 [type="range"],
@@ -100,7 +84,7 @@ select option:checked {
 	appearance: none;
 }
 
-/* Range Track */
+/* Range Track / All */
 [type="range"] {
 	border: thin solid #b2b2b2;
 	border-radius: 0.3125rem;
@@ -112,7 +96,7 @@ select option:checked {
 	accent-color: #0075ff;
 }
 
-/* Range Thumb / mozilla */
+/* Range Thumb / Mozilla */
 [type="range"]::-moz-range-thumb {
 	appearance: none;
 	border-width: 0;
@@ -121,7 +105,7 @@ select option:checked {
 	background-color: #0075ff;
 }
 
-/* hover, focus, active */
+/* Hover, Focus, Active */
 [type="range"]:is(:hover, :focus) {
 	border: thin solid #9a9a9a;
 }
@@ -192,7 +176,7 @@ progress::-webkit-progress-value {
 
 /* ____________________________________________ */
 /**
- * Styling input [checkbox] and [radio] in all browsers (opinionated).
+ * Styling input [checkbox][radio] in all browsers (opinionated).
  */
 /* ____________________________________________ */
 [type="checkbox"],
@@ -208,6 +192,8 @@ progress::-webkit-progress-value {
  */
 /* ____________________________________________ */
 [type="color"] {
+	border-width: 0;
+	padding: 0;
 	width: 6em;
 	background-color: transparent;
 }
@@ -234,9 +220,7 @@ progress::-webkit-progress-value {
  */
 /* ____________________________________________ */
 [type="file"] {
-	border-width: 0;
 	width: 20em;
-	background-color: transparent;
 	pointer-events: none;
 }
 
@@ -244,10 +228,6 @@ progress::-webkit-progress-value {
 	border: thin solid #8f8f9d;
 	padding: 0.09em 1em;
 	width: 7em;
-	font: inherit;
-	line-height: inherit;
-	letter-spacing: inherit;
-	color: inherit;
 	background-color: #fff;
 	pointer-events: all;
 }

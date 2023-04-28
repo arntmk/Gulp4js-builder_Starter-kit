@@ -47,7 +47,21 @@ body {
 }
 
 /* ____________________________________________ */
-/* ScrollBar for Wibesite */
+/* ScrollBar for Select, Textarea and etc. */
+* {
+	scrollbar-color: var(--scrollbar-color) transparent;
+	scrollbar-width: thin;
+
+	::-webkit-scrollbar {
+		width: 0.5em;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+}
+
+/* ScrollBar for WebPage */
 html {
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
 	scrollbar-width: auto;
@@ -65,30 +79,17 @@ body::-webkit-scrollbar {
 	background-color: var(--scrollbar-color);
 }
 
+body::-webkit-scrollbar-track {
+	background-color: var(--scrollbar-bgcolor);
+}
+
+/* Hover & Active */
 ::-webkit-scrollbar-thumb:hover {
 	background-color: darken(#777, 10%);
 }
 
 body::-webkit-scrollbar-thumb:active {
 	background-color: darken(#777, 20%);
-}
-
-body::-webkit-scrollbar-track {
-	background-color: var(--scrollbar-bgcolor);
-}
-
-/* ScrollBar for Select, Textarea and etc. */
-* {
-	scrollbar-color: var(--scrollbar-color) transparent;
-	scrollbar-width: thin;
-
-	::-webkit-scrollbar {
-		width: 0.5em;
-	}
-
-	::-webkit-scrollbar-track {
-		background-color: transparent;
-	}
 }
 
 /* ____________________General________________________ */
@@ -110,15 +111,25 @@ html {
 	background-repeat: inherit;
 }
 
-:where(a) {
-	text-decoration: none;
-	color: inherit;
+/* ____________________________________________ */
+:where(form) {
+	cursor: default;
 }
 
 :where(button) {
 	border-width: 0;
 	padding: 0;
 	background-color: transparent;
+}
+
+/* Add typography inheritance in all browsers. */
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button {
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
 }
 
 :where(
@@ -153,15 +164,11 @@ summary) {
 	outline-offset: 0.0625rem;
 }
 
-:where(button, input, select, textarea, optgroup, option),
-::placeholder,
-::file-selector-button {
-	font: inherit;
-	line-height: inherit;
-	letter-spacing: inherit;
-	color: inherit;
+:where(textarea, [type="checkbox"], [type="radio"]) {
+	vertical-align: middle;
 }
 
+/* ____________________________________________ */
 :where(img, svg, picture) {
 	align-self: center;
 	object-fit: cover;
@@ -170,6 +177,12 @@ summary) {
 :where(iframe, picture, img, svg, input, video, select, textarea, summary, dialog) {
 	height: auto;
 	max-width: 100%;
+}
+
+/* ____________________________________________ */
+:where(a) {
+	text-decoration: none;
+	color: inherit;
 }
 
 :where(ul, ol, dl) {
@@ -204,14 +217,6 @@ summary) {
 	padding: 0;
 }
 
-:where(form) {
-	cursor: default;
-}
-
-:where(textarea, [type="checkbox"], [type="radio"]) {
-	vertical-align: middle;
-}
-
 :where(
 a,
 label,
@@ -220,10 +225,10 @@ summary,
 [type="button"],
 [type="reset"],
 [type="submit"],
-[type="checkbox"],
-[type="radio"],
 [type="range"],
-[type="color"]),
+[type="color"],
+[type="checkbox"],
+[type="radio"]),
 dialog::backdrop,
 [type="file"]::file-selector-button,
 [type="number"]::-webkit-inner-spin-button,
