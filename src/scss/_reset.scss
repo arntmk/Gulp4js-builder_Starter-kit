@@ -164,10 +164,6 @@ summary) {
 	outline-offset: 0.0625rem;
 }
 
-:where(textarea, [type="checkbox"], [type="radio"]) {
-	vertical-align: middle;
-}
-
 /* ____________________________________________ */
 :where(img, svg, picture) {
 	align-self: center;

@@ -2,7 +2,8 @@
 /* _________________Default____________________ */
 /* ____________________________________________ */
 /* Table. */
-:where(th, td) {
+th,
+td {
 	border: thin solid #8f8f9d;
 	padding: 0.5em;
 	text-align: center;
@@ -16,7 +17,10 @@
  * Change the inconsistent appearance in all browsers (opinionated).
  */
 
-:where(button, input:not([type="range"], [type="file"]), select, textarea) {
+button,
+input:not([type="range"], [type="file"]),
+select,
+textarea {
 	border: thin solid #8f8f9d;
 	padding: 0.25em 0.375em;
 	background-color: #fff;
@@ -181,6 +185,7 @@ progress::-webkit-progress-value {
 /* ____________________________________________ */
 [type="checkbox"],
 [type="radio"] {
+	vertical-align: middle;
 	width: 1.1em;
 	height: 1.1em;
 	accent-color: #0060df;
@@ -238,6 +243,7 @@ progress::-webkit-progress-value {
  */
 /* ____________________________________________ */
 textarea {
+	vertical-align: middle;
 	width: 18em;
 	height: 18em;
 }
