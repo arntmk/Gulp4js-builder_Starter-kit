@@ -1,4 +1,4 @@
-# Gitignore
+# Ignore
 __MACOSX
 _arc
 .publish
@@ -14,5 +14,8 @@ Thumbs.db
 #package-lock.json
 /components
 /node_modules
+/dist
+/dest
+/app
 /build
 Tags-Info.txt
