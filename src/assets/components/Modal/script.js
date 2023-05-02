@@ -2,8 +2,8 @@
 // ===Modal===
 
 const modal = document.querySelector('dialog');
-const openModal = document.querySelector('[data-modal="openModal"]');
-const closeModal = document.querySelectorAll('[data-modal="closeModal"]');
+const openModal = document.querySelector('[data-open-modal]');
+const closeModal = document.querySelectorAll('[data-close-modal]');
 
 const { body } = document;
 
