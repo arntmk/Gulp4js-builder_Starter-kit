@@ -2,8 +2,8 @@
 // ===Modal===
 
 const modal = document.querySelector('dialog');
-const openModal = document.querySelector('.open-btn');
-const closeModal = document.querySelector('.close-btn');
+const openModal = document.querySelector('[data-modal="openModal"]');
+const closeModal = document.querySelectorAll('[data-modal="closeModal"]');
 
 const { body } = document;
 
@@ -13,10 +13,10 @@ if (modal && openModal && closeModal) {
 		modal.showModal();
 	});
 
-	closeModal.addEventListener('click', () => {
+	closeModal.forEach((item) => item.addEventListener('click', () => {
 		body.classList.remove('lock');
 		modal.close();
-	});
+	}));
 
 	modal.addEventListener('click', (e) => {
 		if (e.target === modal) {

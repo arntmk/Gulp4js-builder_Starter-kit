@@ -16,11 +16,11 @@
 		</p>
 		<br />
 		<!-- ____________________________________________ -->
-		<button class="button open-btn">open modal</button>
+		<button class="button open-btn" data-modal="openModal">open modal</button>
 		<!-- ____________________________________________ -->
 		<dialog class="modal" id="modal">
 			<div class="modal-wrapper">
-				<button class="button close-btn">close</button>
+				<button class="button close-btn" data-modal="closeModal">close</button>
 				<h2>Modal</h2>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse nisi, laboriosam illum
@@ -30,7 +30,7 @@
 				<form class="form" method="dialog">
 					<label>Your name <input type="text" /></label>
 					<label>Your email <input type="email" /></label>
-					<button class="button" type="submit">submit form</button>
+					<button class="button" type="submit" data-modal="closeModal">submit form</button>
 				</form>
 			</div>
 		</dialog>
