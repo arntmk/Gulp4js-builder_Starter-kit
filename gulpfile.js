@@ -28,7 +28,7 @@ const sass = require('gulp-sass')(require('sass')); // Препроцесор д
 const autoprefixer = require('gulp-autoprefixer'); // Додавання префіксів для сумісності.
 const groupCSSMedia = require('gulp-group-css-media-queries'); // Групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); // Shorthand css properties.
-const csso = require('gulp-csso'); // Minimize-css, group-media, optimize.
+const cleanCSS = require('gulp-clean-css'); // Minimize-css, group-media, optimize.
 
 const terser = require('gulp-terser'); // Мінімізація JS.
 const babel = require('gulp-babel'); // Підтримка старих браузерів JS.
@@ -230,14 +230,14 @@ function css() {
 		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
-		.pipe(gulpif(isBuild, csso()))
+		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(dest('build/css/', { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
 		.pipe(src(copyLibsCss))
 		.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
-		.pipe(gulpif(isBuild, csso()))
+		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(dest('build/css/'))
 		.pipe(browsersync.stream())
 	);

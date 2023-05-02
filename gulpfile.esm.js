@@ -25,7 +25,7 @@ import typograf from 'gulp-typograf'; // Правопис.
 import version from 'gulp-version-number'; // Build version.
 
 import autoprefixer from 'gulp-autoprefixer'; // Додавання префіксів для сумісності.
-import csso from 'gulp-csso'; // Minimize-css, group-media, optimize.
+import cleanCSS from 'gulp-clean-css'; // Minimize-css, group-media, optimize.
 import groupCSSMedia from 'gulp-group-css-media-queries'; // Групування медіа-запитів.
 import gulpSass from 'gulp-sass'; // Препроцесор для css.
 import shorthand from 'gulp-shorthand'; // Shorthand css properties.
@@ -234,14 +234,14 @@ function css() {
 		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, gulp.dest('build/css/', { sourcemaps: isBuild })))
-		.pipe(gulpif(isBuild, csso()))
+		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(gulp.dest('build/css/', { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(copyLibsCss))
 		.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
-		.pipe(gulpif(isBuild, csso()))
+		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(gulp.dest('build/css/'))
 		.pipe(browsersync.stream())
 	);
