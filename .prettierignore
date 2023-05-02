@@ -5,7 +5,7 @@ build/index.html
 build/css/style.min.css
 build/js/scripts.min.js
 src/scss/libs/_normalize.scss
-src/assets/components/
+src/assets/components/**/*.css
 #src/js/modules.json
 
 # Ignore all CSS/JS Files:

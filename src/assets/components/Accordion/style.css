@@ -52,11 +52,12 @@ summary::after {
 		transparent
 		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
 		no-repeat right center / 1.9em;
-	transition: transform 0.3s ease-in-out;
+	transition: transform 0.2s ease-in-out;
 }
 
 details[open] summary::after {
 	transform: rotate(90deg);
+	transition: transform 0.4s ease-in-out;
 }
 
 details {
