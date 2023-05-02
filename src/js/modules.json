@@ -1,6 +1,7 @@
 [
 	"./src/js/_body-min-width.js",
 	"./src/js/default/_default.js",
+	"./src/js/_accordion.js",
 	"./src/js/_hamburger.js",
 	"./src/js/script.js",
 	"./src/js/*.{js,jsx,ts,tsx,vue}"

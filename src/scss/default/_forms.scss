@@ -18,7 +18,7 @@ td {
  */
 
 button,
-input:not([type="range"], [type="file"]),
+input:not([type="range"],[type="color"], [type="file"]),
 select,
 textarea {
 	border: thin solid #8f8f9d;
@@ -415,7 +415,7 @@ details .content {
 @keyframes details {
 	0% {
 		max-height: 0;
-		opacity: 0.5;
+		opacity: 0.7;
 	}
 
 	100% {

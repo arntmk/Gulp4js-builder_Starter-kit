@@ -8,9 +8,12 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+* {
+	margin: 0;
+}
+
 html {
 	box-sizing: border-box;
-	background: #d4d1d1;
 }
 
 body {
@@ -18,10 +21,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-}
-
-* {
-	margin: 0;
+	background: #d4d1d1;
 }
 
 summary {
@@ -76,7 +76,7 @@ details .content {
 @keyframes details {
 	0% {
 		max-height: 0;
-		opacity: 0.5;
+		opacity: 0.7;
 	}
 
 	100% {
