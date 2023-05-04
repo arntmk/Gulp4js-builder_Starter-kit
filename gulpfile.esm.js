@@ -111,9 +111,9 @@ function font() {
 }
 
 function fontgen() {
-	// const tffTOtff = 'src/assets/font/**/*.ttf'; //Extra optimization /needs test/
+	// const tffTOtff = 'src/assets/font/**/*.ttf'; //Extra optimization /Test/
 	const otfTOtff = 'src/assets/font/**/*.{otf,ttf}'; // eot,otf,ttf,otc,ttc
-	const fontCss = 'src/assets/font/*.*';
+	const fontCss = 'src/assets/font/*.{otf,ttf,woff,woff2}';
 	return gulp.src(otfTOtff)
 		.pipe(fonter({ formats: ['ttf'] }))
 		.pipe(gulp.dest('src/assets/font/'))
