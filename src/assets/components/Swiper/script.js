@@ -11,29 +11,31 @@ sliders.forEach((el) => {
 		spaceBetween: 20,
 		slidesPerView: 1,
 		slidesPerGroup: 1,
-		// slideToClickedSlide: true,
-		// centeredSlides: true,
 		autoHeight: true,
 		speed: 300,
 		freeMode: true,
-		// effect: fade,
+		grabCursor: true,
+		slideToClickedSlide: true,
+
+		// centeredSlides: true,
+		// effect: 'fade',
 
 		autoplay: {
 			delay: 4000,
 		},
 
+		// when window width is >= 320px
+		// when window width is >= 480px
+		// when window width is >= 640px
 		breakpoints: {
-			// when window width is >= 320px
 			320: {
 				slidesPerView: 1,
 				spaceBetween: 0,
 			},
-			// when window width is >= 480px
 			480: {
 				slidesPerView: 2,
 				spaceBetween: 10,
 			},
-			// when window width is >= 640px
 			640: {
 				slidesPerView: 3,
 				spaceBetween: 20,
@@ -55,8 +57,8 @@ sliders.forEach((el) => {
 		},
 
 		// And if we need scrollbar
-		// scrollbar: {
-		// 	el: el.querySelector('.swiper-scrollbar'),
-		// },
+		/* scrollbar: {
+			el: el.querySelector('.swiper-scrollbar'),
+		}, */
 	});
 });
