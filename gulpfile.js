@@ -142,7 +142,7 @@ function svg() {
 		.pipe(svgSprite({
 			mode: { stack: { sprite: '../grouped-sprites.svg', example: true } },
 		}))
-		.pipe(dest('build/img/svg/'));
+		.pipe(dest('src/assets/img/svg/'));
 }
 
 /* ____________________________________________ */

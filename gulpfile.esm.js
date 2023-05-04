@@ -146,7 +146,7 @@ function svg() {
 		.pipe(svgSprite({
 			mode: { stack: { sprite: '../grouped-sprites.svg', example: true } },
 		}))
-		.pipe(gulp.dest('build/img/svg/'));
+		.pipe(gulp.dest('src/assets/img/svg/'));
 }
 
 /* ____________________________________________ */
