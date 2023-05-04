@@ -144,7 +144,7 @@ function svg() {
 		}))
 		.pipe(replace('&gt;', '>'))
 		.pipe(svgSprite({
-			mode: { stack: { sprite: '../grouped-sprites.svg', example: true } },
+			mode: { stack: { sprite: '../svg-group.svg', example: true } },
 		}))
 		.pipe(gulp.dest('src/assets/img/svg/'));
 }
