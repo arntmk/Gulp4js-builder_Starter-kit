@@ -16,7 +16,10 @@
  * Change the inconsistent appearance in all browsers (opinionated).
  */
 
-:where(button,
+:where(
+[type="button"],
+[type="reset"],
+[type="submit"],
 input:not([type="range"],[type="color"], [type="file"]),
 select,
 textarea) {
