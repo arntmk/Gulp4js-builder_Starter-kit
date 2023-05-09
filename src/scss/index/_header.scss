@@ -75,14 +75,6 @@
 		line-height: 2.33; /* 70px */
 		transition: transform 0.3s ease-in-out 0.1s, color 0.3s ease-in-out 0.1s;
 	}
-
-	/* Hover & focus-visible */
-	@media (any-hover: hover) {
-		.nav__li-link:is(:hover, :focus-visible) {
-			color: var(--link-color);
-			transform: translateX(3%) scale(1.05);
-		}
-	}
 }
 
 /* ____________________Hamburger-Btn________________________ */

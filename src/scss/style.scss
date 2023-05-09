@@ -9,14 +9,14 @@
 @import "./libs/mixins.scss";
 @import "./libs/font.scss";
 
-/* Default */
-@import "./default/forms.scss";
-@import "./default/effects.scss";
-
 /* Global SCSS imports */
 @import "./variables.scss";
 @import "./reset.scss";
 @import "./global.scss";
+
+/* Default */
+@import "./default/forms.scss";
+@import "./default/effects.scss";
 
 /* Sections SCSS files imports */
 @import "./index/header.scss";

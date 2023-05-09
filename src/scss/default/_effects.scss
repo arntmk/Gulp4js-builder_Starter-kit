@@ -60,6 +60,16 @@ a {
 	}
 }
 
+/* Humburger menu */
+@media (max-width: $breakpoint-768) {
+	@media (any-hover: hover) {
+		.nav__li-link:is(:hover, :focus-visible) {
+			color: var(--link-color);
+			transform: translateX(3%) scale(1.05);
+		}
+	}
+}
+
 /* ____________________________________________ */
 /* Outline-Focus Tabs */
 a,
@@ -147,7 +157,7 @@ input:not(
 /* ____________________________________________ */
 /* Selection */
 ::selection {
-	text-shadow: none;
+	text-shadow: 0 0 0.625rem #ebe4e4;
 	color: #fff;
 	background-color: #4682b4;
 }
