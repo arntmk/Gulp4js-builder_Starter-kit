@@ -15,7 +15,7 @@
  */
 
 :where(dialog) {
-	position: absolute;
+	position: fixed;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -31,18 +31,9 @@
 	display: none;
 }
 
-/*
- * Add the correct display in Safari.
- */
-
-:where(details > summary:first-of-type) {
-	display: list-item;
-}
-
 /* ____________________________________________ */
 body {
 	margin: 2rem;
-	height: 2000px;
 	min-height: 100vh;
 	font-family: system-ui;
 	font-size: 1.25rem;
@@ -94,7 +85,7 @@ body.lock {
 
 /* ____________________Modal________________________ */
 dialog {
-	position: relative;
+	position: fixed;
 	overflow: auto;
 	border: thin solid transparent;
 	border-radius: 15px;
@@ -116,21 +107,18 @@ dialog::backdrop {
 	max-width: 50ch;
 }
 
-/* animation */
+/* Animation */
 dialog[open] {
-	/* cubic-bezier(.33,1.44,.83,.22) */
 	overflow: hidden;
-	animation: dialog-fade 1s ease-out forwards;
+	animation: dialog-fade 0.8s ease-out forwards;
 }
 
 @keyframes dialog-fade {
 	from {
-		opacity: 0.8;
-		transform: translateX(-200%);
+		transform: translateY(-200%) scale(0);
 	}
 
 	to {
-		opacity: 1;
-		transform: translateX(0%);
+		transform: translateY(0%) scale(1);
 	}
 }
