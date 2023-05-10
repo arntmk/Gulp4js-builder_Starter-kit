@@ -13,8 +13,7 @@ vendor/
 *.scss
 *.sass
 *.less
-build/js/scripts.min.js
-src/assets/components/Swiper/swiper-bundle.min.js
+*.min.js
 src/js/libs/
 src/assets/libs/
 
