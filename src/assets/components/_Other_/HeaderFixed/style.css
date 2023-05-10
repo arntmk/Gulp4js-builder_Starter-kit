@@ -4,12 +4,85 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 2000px;
+	font-family: "Hibana", sans-serif;
+}
+
+div#body-wrappar {
+	display: flex;
+	flex-flow: column nowrap;
+	overflow: clip; /* если используете на сайте position: sticky - используйте clip; вместо hidden */
+	min-height: 100%;
+}
+
+.container {
+	margin-inline: auto;
+	padding-inline: 15px;
+	width: 100%;
+	max-width: 1200px;
+}
+
+button {
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/* ____________________________________________ */
+.header {
+	background-color: #333;
+}
+
+.header__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-block: 30px;
+}
+
+.header__logo {
+	border-radius: 30%;
+	padding: 5px;
+	max-width: 200px;
+	background-color: #34b3f1;
+}
+
+/* ____________________________________________ */
+.nav {
+	display: flex;
+	gap: 30px;
+}
+
+.nav__li-link {
+	display: inline-block;
+	color: inherit;
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
 /* ____________________________________________ */
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: var(--scroll-padding, 50px);
 }
 
+/* ____________________________________________ */
 .header {
 	position: fixed; /* or sticky */
 	top: 0;
@@ -23,6 +96,7 @@ html {
 	margin-top: 5.5rem;
 }
 
+/* ____________________________________________ */
 .is_scrolled .header {
 	background-color: rgb(253 184 39 / 90%);
 }
