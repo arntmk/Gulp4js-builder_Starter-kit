@@ -38,6 +38,14 @@
 	"[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[less]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 
+	// Path Autocomplete Excluded
+	"path-autocomplete.excludedItems": {
+		"**": {
+			"when": "**/*.html",
+			"context": "(src|href)=.*"
+		}
+	},
+
 	// Htmlhint "shift+alt+s"
 	"htmlhint.documentSelector": ["html", "htm"],
 	"htmlhint.options": {
@@ -62,13 +70,5 @@
 		"role",
 		"aria-.+",
 		"$unknown$"
-	],
-
-	// Path Autocomplete Excluded
-	"path-autocomplete.excludedItems": {
-		"**": {
-			"when": "**/*.html",
-			"context": "(src|href)=.*"
-		}
-	}
+	]
 }
