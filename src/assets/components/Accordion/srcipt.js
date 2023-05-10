@@ -17,10 +17,19 @@ if (accordion) {
 		});
 	});
 
-	accordion.forEach((targetDetail) => {
-		targetDetail.addEventListener('click', () => {
+	// Клик снаружи аркадиона. Закрыть аркадион.
+	accordion.forEach((closeDetails) => {
+		document.addEventListener('click', (e) => {
+			if (!closeDetails.contains(e.target)) {
+				closeDetails.removeAttribute('open');
+			}
+		});
+	});
+
+	accordion.forEach((targetDetails) => {
+		targetDetails.addEventListener('click', () => {
 			accordion.forEach((detail) => {
-				if (detail !== targetDetail) {
+				if (detail !== targetDetails) {
 					detail.removeAttribute('open');
 				}
 			});
