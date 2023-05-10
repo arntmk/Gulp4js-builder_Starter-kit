@@ -1,37 +1,7 @@
-/* https://habr.com/ru/post/527062/ */
-/* https://css-tricks.com/how-to-animate-the-details-element/ */
-/* https://www.youtube.com/watch?v=k6Dn2jYjH0I */
-/* https://stackoverflow.com/questions/16751345/automatically-close-all-the-other-details-tags-after-opening-a-specific-detai
-*/
-/* https://www.youtube.com/watch?v=gz1v1KenZWk */
-
 /* ____________________________________________ */
-@charset "UTF-8";
-
-* {
-	margin: 0;
-}
-
-html {
-	box-sizing: border-box;
-}
-
-body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background: #d4d1d1;
-}
-
-summary {
-	cursor: pointer;
-}
-
+/**
+ * Accordion */
 /* ____________________________________________ */
-/* ____________________________________________ */
-/* ____________________________________________ */
-/* Accordion */
 summary::-webkit-details-marker {
 	display: none;
 }
