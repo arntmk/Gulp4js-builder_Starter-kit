@@ -9,12 +9,10 @@ if (accordion) {
 			const self = e.currentTarget;
 			const content = self.querySelector('.content');
 
-			self.classList.toggle('open');
-
-			if (self.classList.contains('open')) {
+			if (self.hasAttribute('open')) {
 				content.style.maxHeight = `${content.scrollHeight}px`;
 			} else {
-				content.style.maxHeight = null;
+				content.style.maxHeight = `${content.scrollHeight}px`;
 			}
 		});
 	});
@@ -24,7 +22,6 @@ if (accordion) {
 			accordion.forEach((detail) => {
 				if (detail !== targetDetail) {
 					detail.removeAttribute('open');
-					detail.classList.remove('open');
 				}
 			});
 		});
