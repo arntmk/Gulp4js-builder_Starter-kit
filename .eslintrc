@@ -31,6 +31,6 @@
 
 		"no-restricted-syntax": "warn",
 		"no-undef": "off",
-		"no-mixed-operators": "warn"
+		"no-mixed-operators": "off"
 	}
 }
