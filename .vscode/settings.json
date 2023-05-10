@@ -12,7 +12,7 @@
 	/* ____________________Extensions________________________ */
 
 	// Live Preview
-	"livePreview.defaultPreviewPath": "./build/index.html-",
+	"livePreview.defaultPreviewPath": "./build/index.html",
 
 	// HTML CSS Support
 	"css.styleSheets": [
