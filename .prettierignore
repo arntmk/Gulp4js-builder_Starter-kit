@@ -1,19 +1,20 @@
 # Ignore
 node_modules/
 build/
-build/index.html
-build/css/style.min.css
-build/js/scripts.min.js
+dist/
+dest/
+app/
 src/scss/libs/_normalize.scss
 src/assets/components/**/*.css
 #src/js/modules.json
 
 # Ignore all CSS/JS Files:
-# *.css
+*.min.css
 *.scss
 *.sass
 *.less
 *.js
+*.min.js
 *.ts
-*.jsx
-*.tsx
+#*.jsx
+#*.tsx

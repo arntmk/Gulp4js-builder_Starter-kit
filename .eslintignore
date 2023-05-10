@@ -3,6 +3,8 @@
 .idea/
 build/
 dist/
+dest/
+app/
 node_modules/
 tests/
 vendor/
