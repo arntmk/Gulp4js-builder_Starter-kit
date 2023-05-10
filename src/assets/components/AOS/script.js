@@ -1,3 +1,5 @@
+// https://github.com/michalsnik/aos
+/* ____________________________________________ */
 // AOS - Animate On Scroll
 
 AOS.init({
