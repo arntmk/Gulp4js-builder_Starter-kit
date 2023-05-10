@@ -9,12 +9,12 @@ src/assets/components/**/*.css
 #src/js/modules.json
 
 # Ignore all CSS/JS Files:
+*.min.js
 *.min.css
 *.scss
 *.sass
 *.less
 *.js
-*.min.js
 *.ts
 #*.jsx
 #*.tsx
