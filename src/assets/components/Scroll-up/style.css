@@ -13,6 +13,10 @@ body {
 	height: 4000px;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 /* ____________________________________________ */
 .scroll-up {
 	position: fixed;

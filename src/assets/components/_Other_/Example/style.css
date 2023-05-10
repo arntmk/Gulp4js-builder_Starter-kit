@@ -1,1 +1,12 @@
 @charset "UTF-8";
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	margin-top: 0;
+	box-sizing: inherit;
+}
