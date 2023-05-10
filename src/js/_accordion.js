@@ -10,9 +10,9 @@ if (accordion) {
 			const content = self.querySelector('.content');
 
 			if (self.hasAttribute('open')) {
-				content.style.maxHeight = `${content.scrollHeight}px`;
+				content.style.maxHeight = null;
 			} else {
-				content.style.maxHeight = `${content.scrollHeight}px`;
+				content.style.maxHeight = `${content.scrollHeight}`;
 			}
 		});
 	});
