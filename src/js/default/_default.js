@@ -43,7 +43,6 @@ document.querySelector('[inputmode="numeric"]').onkeypress = function Validate(e
 	return isNumber;
 };
 
-
 /* ____________________________________________ */
 // ===Progress support JS / WebKit===
 
