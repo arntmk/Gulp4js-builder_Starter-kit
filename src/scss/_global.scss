@@ -132,19 +132,36 @@ div.clearfix::after {
 	display: none !important; 	/* stylelint-disable-line declaration-no-important */
 }
 
-/* Reset-Button */
+/* Button-Reset */
 .btn-reset {
 	border-width: 0;
 	padding: 0;
 	background-color: transparent;
 }
 
-/* Reset-List */
+/* List-Reset */
 .list-reset {
 	list-style-type: none;
 	list-style-position: inside;
 	margin: 0;
 	padding: 0;
+}
+
+/* Input-Reset */
+.input-reset {
+	appearance: none;
+	border: none;
+	border-radius: 0;
+	background-color: #fff;
+
+	&::-ms-clear,
+	&::-ms-reveal,
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		display: none;
+	}
 }
 
 /* Flex */

@@ -306,7 +306,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	appearance: none;
 }
 
-/* Remove Microsoft Edge clear button */
+/* Remove Microsoft Edge(old) clear button */
 ::-ms-clear {
 	display: none;
 }

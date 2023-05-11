@@ -20,7 +20,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	appearance: none;
 }
 
-/* Remove Microsoft Edge clear button */
+/* Remove Microsoft Edge(old) clear button */
 ::-ms-clear {
 	display: none;
 }
@@ -54,7 +54,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 /* ____________________________________________ */
-/* Basic clear button styling only for chrome and edge */
+/* Basic clear button styling only for Chrome, Edge and Safari */
 /* input[type='search']::-webkit-search-cancel-button {
 	height: 1em;
 	width: 1em;
