@@ -63,6 +63,7 @@ body {
 
 /* ScrollBar for WebPage */
 html {
+	scroll-behavior: smooth;
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
 	scrollbar-width: auto;
 }
@@ -98,7 +99,6 @@ html {
 	overflow-anchor: none;
 	box-sizing: border-box;
 	background-repeat: no-repeat;
-	scroll-behavior: smooth;
 }
 
 *,
