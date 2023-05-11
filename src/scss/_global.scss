@@ -100,7 +100,7 @@ div.clearfix::after {
 }
 
 /* Text-Center */
-.centered {
+.text-center {
 	text-align: center;
 }
 
@@ -165,11 +165,13 @@ div.clearfix::after {
 /* Gradient */
 .main {
 	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
+
+	// background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
 }
 
-/* .main {
-  background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
-} */
+.footer {
+	margin-bottom: 500px; // editor.scrollBeyondLastLine
+}
 
 /* Background Image */
 /* .css-img {
@@ -179,3 +181,5 @@ div.clearfix::after {
   background-repeat: no-repeat;
   background-attachment: fixed;
 } */
+
+/* ____________________________________________ */

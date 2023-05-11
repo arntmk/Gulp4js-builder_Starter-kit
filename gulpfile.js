@@ -74,7 +74,7 @@ function clr() {
 }
 
 function delfont() {
-	return src('src/scss/libs/_font.{scss,sass}', {
+	return src('src/scss/_font.{scss,sass}', {
 		allowEmpty: true,
 		read: false,
 	}).pipe(clean());
@@ -116,7 +116,7 @@ function fontgen() {
 
 		.pipe(src(fontCss))
 		.pipe(fontfacegen({
-			filepath: 'src/scss/libs',
+			filepath: 'src/scss',
 			filename: '_font.scss',
 		}));
 }

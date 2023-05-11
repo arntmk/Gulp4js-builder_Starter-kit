@@ -5,20 +5,21 @@
 /* @import url("./css/swiper-bundle.min.css"); */
 
 /* Libs */
-@import "./libs/normalize.scss";
-@import "./libs/mixins.scss";
-@import "./libs/font.scss";
+@import "./libs/normalize";
 
 /* Global SCSS imports */
-@import "./variables.scss";
-@import "./reset.scss";
-@import "./global.scss";
+@import "./variables";
+@import "./reset";
+@import "./mixins";
+@import "./font";
+@import "./global";
 
 /* Default */
-@import "./default/forms.scss";
-@import "./default/effects.scss";
+@import "./default/forms";
+@import "./default/effects";
+@import "./default/accordion";
 
-/* Sections SCSS files imports */
-@import "./index/header.scss";
-@import "./index/main.scss";
-@import "./index/footer.scss";
+/* Index SCSS files imports */
+@import "./index/header";
+@import "./index/main";
+@import "./index/footer";
