@@ -17,5 +17,5 @@ vendor/
 *.tsx
 *.min.css
 src/scss/libs/_normalize.scss
-src/scss/libs/_font.scss
+src/scss/_font.scss
 src/assets/libs/
