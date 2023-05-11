@@ -6,7 +6,9 @@ const navigationHeight = document.querySelector('.header').offsetHeight;
 document.documentElement.style.setProperty('--scroll-padding', `${navigationHeight - 1}px`);
 
 /* ____________________________________________ */
-// ===Header change color===
+/* ____________________________________________ */
+/* ____________________________________________ */
+// ===Header Change Color===
 const minOffset = 50;
 window.onscroll = function () {
 	const hasClass = document.body.classList.contains('is_scrolled');
