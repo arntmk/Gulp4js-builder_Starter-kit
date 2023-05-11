@@ -7,15 +7,15 @@
 		<h5>Заголовок 5</h5>
 		<h6>Заголовок 6</h6>
 		<br />
+		<ul>
+			<li>Список</li>
+			<li>Список</li>
+			<li>Список</li>
+			<li>Список</li>
+			<li>Список</li>
+			<li>Список</li>
+		</ul>
 		<table>
-			<ul>
-				<li>Список</li>
-				<li>Список</li>
-				<li>Список</li>
-				<li>Список</li>
-				<li>Список</li>
-				<li>Список</li>
-			</ul>
 			<tr>
 				<th>swgsdgsdgs</th>
 				<th>sdgsg</th>
@@ -55,8 +55,8 @@
 			<button>Button</button>
 			<input id="number" name="number" type="number" inputmode="numeric" pattern="[0-9.-]+" />
 			<br />
-			<!-- <input type="week" name="" id="" /> -->
-			<input id name type="file" accept="image/png, image/jpeg" />
+			<!-- <input type="week" name="week" id="week" /> -->
+			<input id="file" name="file" type="file" accept="image/png, image/jpeg" />
 			<br />
 			<input id="range-progress" name="range" type="range" value="50" min="0" max="100" />
 			<br />
@@ -75,7 +75,7 @@
 			<input id="radio10" name="radio" type="radio" />
 			<input id="radio11" name="radio" type="radio" disabled />
 			<br />
-			<input id="date" name type="date" />
+			<input id="date" name="date" type="date" />
 			<br />
 			<br />
 			<div class="search-wrap">
@@ -103,8 +103,9 @@
 				id="email"
 				name="email"
 				type="email"
-				required="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+				pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 				placeholder="Email" />
+			required
 			<br />
 			<br />
 			<select class="select" id="select" name="select">
@@ -169,8 +170,8 @@
 			</datalist>
 			<br />
 			<br />
-			<label for="file">Downloading progress:</label>
-			<progress id="file" value="32" max="100"></progress>
+			<label for="progress">Downloading progress:</label>
+			<progress id="progress" value="32" max="100"></progress>
 			<br />
 			<input id="color" name="color" type="color" value="#f15412" />
 		</form>

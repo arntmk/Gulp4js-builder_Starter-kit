@@ -207,7 +207,7 @@ function html() {
 			value: '%DT%',
 			append: { key: '_v', cover: 0, to: ['css', 'js'] },
 		})))
-		.pipe(htmlmin({ removeComments: isBuild, collapseWhitespace: isBuild }))
+		.pipe(htmlmin({ removeComments: true, collapseWhitespace: isBuild }))
 		.pipe(dest('build/'))
 		.pipe(browsersync.stream())
 
