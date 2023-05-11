@@ -28,7 +28,7 @@
 }
 
 /* ____________________________________________ */
-.navbar {
+.nav {
 	display: flex;
 	gap: 30px;
 }
@@ -39,12 +39,12 @@
 }
 
 /* ____________________Hamburger-Menu________________________ */
-.header__navbar.active {
+.header__nav.active {
 	left: 0;
 }
 
 @media (max-width: $breakpoint-768) {
-	.header__navbar {
+	.header__nav {
 		position: absolute;
 		left: -100%;
 		top: 0;
@@ -55,7 +55,7 @@
 		transition: left 0.3s;
 	}
 
-	.navbar {
+	.nav {
 		flex-direction: column;
 		gap: 0;
 		overflow-y: auto;
