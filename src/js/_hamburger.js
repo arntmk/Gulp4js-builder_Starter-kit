@@ -1,7 +1,7 @@
 /* ____________________________________________ */
 // ===Hamburger menu===
 
-const menu = document.querySelector('.navbar');
+const menu = document.querySelector('.header__navbar');
 const menuBtn = document.querySelector('.menu-button');
 
 const { body } = document;
@@ -15,7 +15,7 @@ if (menu && menuBtn) {
 	});
 
 	menu.addEventListener('click', (e) => {
-		if (e.target.classList.contains('navbar')) {
+		if (e.target.classList.contains('header__navbar')) {
 			menu.classList.remove('active');
 			menuBtn.classList.remove('active');
 			body.classList.remove('lock');
