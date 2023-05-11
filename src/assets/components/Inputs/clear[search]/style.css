@@ -8,7 +8,7 @@
 
 /* Hidden */
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 /* ____________________________________________ */
