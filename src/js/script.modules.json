@@ -3,6 +3,6 @@
 	"./src/js/default/_body-min-width.js",
 	"./src/js/default/_default.js",
 	"./src/js/default/_accordion.js",
-	"./src/js/_hamburger.js",
-	"./src/js/*.{js,ts}"
+	"./src/js/modules/_hamburger.js",
+	"./src/js/modules/*.{js,ts}"
 ]
