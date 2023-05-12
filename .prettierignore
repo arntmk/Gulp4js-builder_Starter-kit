@@ -6,7 +6,7 @@ dest/
 app/
 src/scss/libs/_normalize.scss
 src/assets/components/**/*.css
-#src/js/modules.json
+#src/js/script.modules.json
 *.min.js
 *.min.css
 

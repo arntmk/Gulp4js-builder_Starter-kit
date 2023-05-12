@@ -4,5 +4,5 @@
 	"./src/js/default/_default.js",
 	"./src/js/default/_accordion.js",
 	"./src/js/_hamburger.js",
-	"./src/js/*.{js,jsx,ts,tsx,vue}"
+	"./src/js/*.{js,ts}"
 ]

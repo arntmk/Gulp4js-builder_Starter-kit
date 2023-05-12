@@ -44,8 +44,8 @@ const svgSprite = require('gulp-svg-sprite'); // Об'єднання спрай�
 // Редагування файлів без перезагрузки сервера
 const { readFileSync } = require('fs');
 
-const srcJs = JSON.parse(readFileSync('./src/js/modules.json'));
-// const srcJs = require('./src/js/modules.json'); // eslint-disable-line global-require
+const srcJs = JSON.parse(readFileSync('./src/js/script.modules.json'));
+// const srcJs = require('./src/js/script.modules.json'); // eslint-disable-line global-require
 
 /* ____________________________________________ */
 // Production build
