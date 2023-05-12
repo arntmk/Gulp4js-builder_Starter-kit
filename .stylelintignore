@@ -9,13 +9,13 @@ node_modules/
 tests/
 vendor/
 #assets/
+*.min.css
 
 # Ignore
 *.js
 *.ts
 *.jsx
 *.tsx
-*.min.css
 src/scss/libs/_normalize.scss
 src/scss/_font.scss
 src/assets/libs/

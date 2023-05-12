@@ -7,10 +7,10 @@ app/
 src/scss/libs/_normalize.scss
 src/assets/components/**/*.css
 #src/js/modules.json
-
-# Ignore all CSS/JS Files:
 *.min.js
 *.min.css
+
+# Ignore all CSS/JS Files:
 *.scss
 *.sass
 *.less
