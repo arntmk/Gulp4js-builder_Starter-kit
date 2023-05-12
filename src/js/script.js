@@ -1,1 +1,1 @@
-// Global Script imports ( ./js/modules.json )
+// Global Script imports ( ./js/script.modules.json )
