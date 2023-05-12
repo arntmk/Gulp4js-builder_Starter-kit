@@ -176,9 +176,7 @@ function img() {
 					plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
 				}),
 			],
-			{
-				verbose: true,
-			},
+			{ verbose: true },
 		))
 		.pipe(gulp.dest('build/img/'))
 		.pipe(browsersync.stream())

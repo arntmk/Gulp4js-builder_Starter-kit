@@ -172,9 +172,7 @@ function img() {
 					plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
 				}),
 			],
-			{
-				verbose: true,
-			},
+			{ verbose: true },
 		))
 		.pipe(dest('build/img/'))
 		.pipe(browsersync.stream())
