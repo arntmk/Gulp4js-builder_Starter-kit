@@ -1,3 +1,6 @@
+/* https://yoksel.github.io/unicode-table/ */
+/* ____________________________________________ */
+
 @charset "UTF-8";
 
 * {
@@ -36,7 +39,7 @@ html {
 }
 
 .scroll-up::before {
-	content: "\21f5"; /* ↑ */
+	content: "\21bb"; /* ↑ */
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -45,7 +48,7 @@ html {
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	font-size: 24px;
+	font-size: 30px;
 }
 
 .scroll-up:hover {
