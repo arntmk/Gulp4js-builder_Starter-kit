@@ -8,6 +8,8 @@
 html {
 	font-size: 16px;
 	line-height: 1.5;
+	scroll-behavior: smooth;
+	color-scheme: light dark;
 }
 
 body {
@@ -85,7 +87,7 @@ div.clearfix::after {
 	display: block;
 	clear: both;
 
-	/* Or  display: flow-root; */
+	/* Or display: flow-root; */
 }
 
 /* Text-NoWrap */

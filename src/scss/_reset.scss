@@ -63,7 +63,6 @@ body {
 
 /* ScrollBar for WebPage */
 html {
-	scroll-behavior: smooth;
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
 	scrollbar-width: auto;
 }
@@ -173,7 +172,7 @@ summary) {
 	object-fit: cover;
 }
 
-:where(iframe, picture, img, svg, input, video, select, textarea, summary, dialog) {
+:where(iframe, img, svg, picture, input, video, select, textarea, summary, dialog) {
 	height: auto;
 	max-width: 100%;
 }
