@@ -184,29 +184,11 @@ div.clearfix::after {
 /* ____________________________________________ */
 /* ________________Generel_____________________ */
 /* ____________________________________________ */
-.footer {
-	margin-bottom: 500px; // editor.scrollBeyondLastLine
-}
 
-/* ____________________________________________ */
-/* ____________________________________________ */
-/* ____________________________________________ */
-
-/* ___________Test-Style(Delete)_______________ */
+/* ___________Test-Styles(Delete)_______________ */
 /* Gradient */
 .main {
-	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
+	// background: radial-gradient(#eee, #4682b4) no-repeat fixed;
 
-	// background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
+	background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
 }
-
-/* Background Image */
-/* .css-img {
-  background-image: url("");
-  background-position: right center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-} */
-
-/* ____________________________________________ */
