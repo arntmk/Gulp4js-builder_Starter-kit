@@ -6,6 +6,12 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+html {
+	font-family: system-ui, "Hibana", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
 /* Hidden */
 .hidden {
 	display: none !important;

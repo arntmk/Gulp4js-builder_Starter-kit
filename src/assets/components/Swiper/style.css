@@ -16,6 +16,12 @@ html {
 	box-sizing: inherit;
 }
 
+html {
+	font-family: system-ui, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
 body {
 	margin: 0;
 	background-color: #333;

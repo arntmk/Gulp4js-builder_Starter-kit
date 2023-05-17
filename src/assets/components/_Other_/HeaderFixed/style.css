@@ -10,9 +10,14 @@
 	box-sizing: border-box;
 }
 
+html {
+	font-family: system-ui, "Hibana", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
 body {
 	height: 2000px;
-	font-family: "Hibana", sans-serif;
 }
 
 div#body-wrappar {
