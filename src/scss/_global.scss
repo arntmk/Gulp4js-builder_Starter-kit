@@ -180,6 +180,13 @@ div.clearfix::after {
 /* ____________________________________________ */
 /* ________________Generel_____________________ */
 /* ____________________________________________ */
+.footer {
+	margin-bottom: 500px; // editor.scrollBeyondLastLine
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
 
 /* ___________Test-Style(Delete)_______________ */
 /* Gradient */
@@ -187,10 +194,6 @@ div.clearfix::after {
 	background: radial-gradient(#eee, #4682b4) no-repeat fixed;
 
 	// background: linear-gradient(to top, #eee, #4682b4) no-repeat fixed;
-}
-
-.footer {
-	margin-bottom: 500px; // editor.scrollBeyondLastLine
 }
 
 /* Background Image */
