@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-no-important */
 /* ____________________Global________________________ */
 /* General & Typography */
 
@@ -6,6 +7,7 @@
 /* lh: 24px / 16px = "1.5" */
 /* ____________________________________________ */
 html {
+	font-family: var(--first-ffamily);
 	font-size: 16px;
 	line-height: 1.5;
 	scroll-behavior: smooth;
@@ -131,7 +133,7 @@ div.clearfix::after {
 
 /* Completely-Hidden */
 .hidden {
-	display: none !important; 	/* stylelint-disable-line declaration-no-important */
+	display: none !important;
 }
 
 /* Button-Reset */

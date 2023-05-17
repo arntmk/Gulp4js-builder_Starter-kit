@@ -1,6 +1,6 @@
+/* stylelint-disable declaration-no-important */
 /* ____________________Variables________________________ */
 /* 100-thin, 200-extralight, 300-light, 400-normal, 500-medium,  600-sembold, 700-bold, 800-extrabold, 900-black */
-/* stylelint-disable declaration-no-important */
 
 :root {
 	/* ____________________________________________ */
@@ -20,12 +20,27 @@
 	--breakpoint-320: 319.98 + px; /* Old-Mobile */
 
 	/* ____________________________________________ */
-	/* FONT */
-	--first-ffamily: "Nunito";
+	/* Global FONT */
+	--font-fimaly:
+		system-ui,
+		-apple-system,
+		"Segoe UI",
+		"Roboto",
+		"Ubuntu",
+		"Cantarell",
+		"Noto Sans",
+		sans-serif,
+		"Apple Color Emoji",
+		"Segoe UI Emoji",
+		"Segoe UI Symbol",
+		"Noto Color Emoji";
 
-	// --second-ffamily: "Poppins", sans-serif;
-	// --third-ffamily: "Poppins", sans-serif;
-	// --fourth-ffamily: "Poppins", sans-serif;
+	/* FONT */
+	--first-ffamily: "Nunito", var(--font-fimaly);
+
+	// --second-ffamily: "name(2)", var(--font-fimaly);
+	// --third-ffamily: "name(3)", var(--font-fimaly);
+	// --fourth-ffamily: "name(4)", var(--font-fimaly);
 
 	/* ____________________________________________ */
 	/* COLOR */
