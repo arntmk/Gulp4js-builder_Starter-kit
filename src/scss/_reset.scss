@@ -154,7 +154,7 @@ summary) {
 	object-fit: cover;
 }
 
-:where(iframe, img, svg, picture, input, video, select, textarea, summary, dialog) {
+:where(iframe, img, svg, picture, input, video, select, textarea, details, dialog) {
 	height: auto;
 	max-width: 100%;
 }
