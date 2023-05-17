@@ -1,5 +1,6 @@
 /* ____________________Variables________________________ */
 /* 100-thin, 200-extralight, 300-light, 400-normal, 500-medium,  600-sembold, 700-bold, 800-extrabold, 900-black */
+/* stylelint-disable declaration-no-important */
 
 :root {
 	/* ____________________________________________ */
@@ -20,7 +21,7 @@
 
 	/* ____________________________________________ */
 	/* FONT */
-	--font-family: "Nunito";
+	--first-ffamily: "Nunito";
 
 	// --second-ffamily: "Poppins", sans-serif;
 	// --third-ffamily: "Poppins", sans-serif;
@@ -61,13 +62,13 @@
 	*,
 	::before,
 	::after {
-		background-attachment: initial !important;/* stylelint-disable-line declaration-no-important */
-		transition-duration: 0s !important;				/* stylelint-disable-line declaration-no-important */
-		transition-delay: 0s !important;					/* stylelint-disable-line declaration-no-important */
-		animation-duration: 1ms !important;				/* stylelint-disable-line declaration-no-important */
-		animation-delay: -1ms !important;					/* stylelint-disable-line declaration-no-important */
-		animation-iteration-count: 1 !important;	/* stylelint-disable-line declaration-no-important */
-		scroll-behavior: auto !important;					/* stylelint-disable-line declaration-no-important */
+		background-attachment: initial !important;
+		transition-duration: 0s !important;
+		transition-delay: 0s !important;
+		animation-duration: 1ms !important;
+		animation-delay: -1ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
 	}
 }
 
