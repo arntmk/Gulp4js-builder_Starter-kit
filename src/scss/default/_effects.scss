@@ -8,6 +8,7 @@
 /* ____________________________________________ */
 /* Image Hover */
 img,
+svg,
 picture {
 	overflow: hidden;
 }
@@ -17,8 +18,10 @@ svg,
 picture {
 	transition: transform 0.3s ease-in-out 0.01s;
 
-	:hover {
-		transform: scale(1.05);
+	@media (any-hover: hover) {
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 }
 

@@ -19,6 +19,7 @@ body {
 	font-weight: 400;
 	font-style: normal;
 	font-size: clamp(0.875rem, 1.5vw, 1rem);
+	text-rendering: optimizespeed;
 	color: var(--text-color);
 	caret-color: #f15412;
 	background: var(--bg-color);
