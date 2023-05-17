@@ -170,6 +170,7 @@ summary) {
 :where(a) {
 	text-decoration: none;
 	color: inherit;
+	text-decoration-skip-ink: none;
 }
 
 :where(ul, ol, dl) {
