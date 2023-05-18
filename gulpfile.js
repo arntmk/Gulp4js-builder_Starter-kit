@@ -44,8 +44,8 @@ const svgSprite = require('gulp-svg-sprite'); // Об'єднання спрай�
 // JS Concat Order
 const { readFileSync } = require('fs');
 
-const srcJs = JSON.parse(readFileSync('./src/**/script.json'));
-// const srcJs = require('./src/**/script.json'); // eslint-disable-line global-require
+const srcJs = JSON.parse(readFileSync('./src/script.json'));
+// const srcJs = require('./src/script.json'); // eslint-disable-line global-require
 
 /* ____________________________________________ */
 // Production build
