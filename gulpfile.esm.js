@@ -197,7 +197,7 @@ function img() {
 // Html
 
 function html() {
-	const copyIcoTxt = 'src/assets/*.{ico,txt}';
+	const copyFaviconTxt = 'src/assets/*.{png,ico,txt}';
 	return gulp.src('src/*.html')
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
@@ -213,7 +213,7 @@ function html() {
 		.pipe(gulp.dest('build/'))
 		.pipe(browsersync.stream())
 
-		.pipe(gulp.src(copyIcoTxt))
+		.pipe(gulp.src(copyFaviconTxt))
 		.pipe(changed('build/'))
 		.pipe(gulp.dest('build/'))
 		.pipe(browsersync.stream());

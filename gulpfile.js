@@ -193,7 +193,7 @@ function img() {
 // Html
 
 function html() {
-	const copyIcoTxt = 'src/assets/*.{ico,txt}';
+	const copyFaviconTxt = 'src/assets/*.{png,ico,txt}';
 	return src('src/*.html')
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
@@ -209,7 +209,7 @@ function html() {
 		.pipe(dest('build/'))
 		.pipe(browsersync.stream())
 
-		.pipe(src(copyIcoTxt))
+		.pipe(src(copyFaviconTxt))
 		.pipe(changed('build/'))
 		.pipe(dest('build/'))
 		.pipe(browsersync.stream());
