@@ -247,7 +247,6 @@ function css() {
 
 /* ____________________________________________ */
 // JavaScript
-// "./src/js/*.{js,jsx,ts,tsx,vue}"
 
 function js() {
 	const copyLibsJs = 'src/js/libs/*.js';

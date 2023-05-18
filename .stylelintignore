@@ -20,3 +20,5 @@ src/scss/_font.scss
 *.ts
 *.jsx
 *.tsx
+*.vue
+

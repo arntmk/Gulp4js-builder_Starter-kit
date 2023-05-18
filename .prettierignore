@@ -20,3 +20,4 @@ src/assets/libs/
 *.ts
 #*.jsx
 #*.tsx
+#*.vue
