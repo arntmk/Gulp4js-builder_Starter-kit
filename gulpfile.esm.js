@@ -224,7 +224,7 @@ function html() {
 
 function css() {
 	const copyLibsCss = 'src/scss/libs/*.css';
-	return (gulp.src('src/scss/**/*.{scss,sass}', { sourcemaps: true })
+	return (gulp.src('src/**/*.{scss,sass}', { sourcemaps: true })
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(plumber())

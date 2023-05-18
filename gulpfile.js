@@ -220,7 +220,7 @@ function html() {
 
 function css() {
 	const copyLibsCss = 'src/scss/libs/*.css';
-	return (src('src/scss/**/*.{scss,sass}', { sourcemaps: true })
+	return (src('src/**/*.{scss,sass}', { sourcemaps: true })
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
 		.pipe(plumber())
