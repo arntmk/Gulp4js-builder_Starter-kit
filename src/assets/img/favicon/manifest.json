@@ -5,12 +5,12 @@
 	"theme_color": "#4682b4",
 	"icons": [
 		{
-			"src": "/img/favicon/android-logo192.png",
+			"src": "/img/favicon/android-icon192.png",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "/img/favicon/android-logo512.png",
+			"src": "/img/favicon/android-icon512.png",
 			"type": "image/png",
 			"sizes": "512x512"
 		}
