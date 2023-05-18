@@ -149,7 +149,7 @@ function svg() {
 // Optimize images
 
 function webp() {
-	return src('src/assets/img/*.{png,jpg,jpeg,webp}')
+	return src(['src/assets/img/**/*.{png,jpg,jpeg,webp}', '!src/assets/img/favicon/**/*.*'])
 		.pipe(changed('build/img/', { extension: '.webp' }))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
