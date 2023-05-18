@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* Global CSS Imports */
+/* @import url("./css/normalize.css"); */
+/* @import url("./css/swiper-bundle.min.css"); */
+
+/* Libs */
+@import "./scss/libs/normalize";
+
+/* Base SCSS imports */
+@import "./scss/variables";
+@import "./scss/reset";
+@import "./scss/mixins";
+@import "./scss/font";
+@import "./scss/global";
+
+/* Default */
+@import "./scss/default/forms";
+@import "./scss/default/effects";
+@import "./scss/default/accordion";
+
+/* Index SCSS files imports */
+@import "./scss/index/header";
+@import "./scss/index/main";
+@import "./scss/index/footer";
