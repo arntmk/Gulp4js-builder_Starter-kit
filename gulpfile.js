@@ -41,7 +41,7 @@ const replace = require('gulp-replace'); // Заміна символів піс
 const svgSprite = require('gulp-svg-sprite'); // Об'єднання спрайтів.
 
 /* ____________________________________________ */
-// Редагування файлів без перезагрузки сервера
+// JS Concat Order
 const { readFileSync } = require('fs');
 
 const srcJs = JSON.parse(readFileSync('./src/js/script.modules.json'));
@@ -273,7 +273,7 @@ function js() {
 function watchFiles() {
 	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/**/*.html', html);
-	watch('src/js/**/*.{js,jsx,ts,tsx,vue}', js);
+	watch('src/js/**/*.{js,ts}', js);
 	watch('src/assets/img/**/*.{png,ico,gif,svg,webmanifest,json}', img);
 	watch('src/assets/img/**/*.{png,jpg,jpeg,webp}', webp);
 	watch('src/assets/font/**/*.{otf,ttf,woff,woff2,svg}', font);
