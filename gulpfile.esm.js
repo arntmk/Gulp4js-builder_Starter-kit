@@ -275,8 +275,8 @@ function js() {
 // Watch files
 
 function watchFiles() {
-	gulp.watch('src/scss/**/*.{scss,sass}', css);
 	gulp.watch('src/**/*.html', html);
+	gulp.watch('src/scss/**/*.{scss,sass}', css);
 	gulp.watch('src/js/**/*.{js,ts}', js);
 	gulp.watch('src/assets/img/**/*.{png,ico,gif,svg,webmanifest,json}', img);
 	gulp.watch('src/assets/img/**/*.{png,jpg,jpeg,webp}', webp);

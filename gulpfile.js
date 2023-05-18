@@ -271,8 +271,8 @@ function js() {
 // Watch files
 
 function watchFiles() {
-	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/**/*.html', html);
+	watch('src/scss/**/*.{scss,sass}', css);
 	watch('src/js/**/*.{js,ts}', js);
 	watch('src/assets/img/**/*.{png,ico,gif,svg,webmanifest,json}', img);
 	watch('src/assets/img/**/*.{png,jpg,jpeg,webp}', webp);
