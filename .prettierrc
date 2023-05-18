@@ -12,7 +12,7 @@
 	"arrowParens": "always",
 	"overrides": [
 		{
-			"files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.html"],
+			"files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.postcss", "**/*.html"],
 			"options": { "singleQuote": false }
 		}
 	]
