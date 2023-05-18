@@ -67,11 +67,11 @@ function clear() {
 function clr() {
 	return gulp.src(
 		[
+			'build/*.*',
 			'build/css/*',
 			'build/js/*',
-			'build/*.*',
-			'build/font/**/*.{otf,ttf}',
 			'build/img/**/*.{webmanifest,json}',
+			'build/font/**/*.{otf,ttf}',
 		],
 		{ read: false },
 	).pipe(gulpif(isDev, clean()));
@@ -162,7 +162,7 @@ function webp() {
 }
 
 function img() {
-	const srcPng = 'src/assets/img/favicon/*.png';
+	const srcPng = ['src/assets/img/favicon/*.png', 'src/assets/*.png'];
 	const srcSvg = 'src/assets/img/**/*.{gif,svg}'; // png,jpg,jpeg
 	const copyImg = 'src/assets/img/favicon/*.{ico,webmanifest,json}';
 	return gulp.src(srcSvg)
