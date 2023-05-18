@@ -1,3 +1,3 @@
 /* ____________________________________________ */
-// Global Script imports ( ./js/script.modules.json )
+// Global Script imports ( ./src/script.modules.json )
 /* ____________________________________________ */

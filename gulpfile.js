@@ -44,8 +44,8 @@ const svgSprite = require('gulp-svg-sprite'); // Об'єднання спрай�
 // JS Concat Order
 const { readFileSync } = require('fs');
 
-const srcJs = JSON.parse(readFileSync('./src/js/script.modules.json'));
-// const srcJs = require('./src/js/script.modules.json'); // eslint-disable-line global-require
+const srcJs = JSON.parse(readFileSync('./src/script.json'));
+// const srcJs = require('./src/script.json'); // eslint-disable-line global-require
 
 /* ____________________________________________ */
 // Production build
@@ -272,8 +272,8 @@ function js() {
 
 function watchFiles() {
 	watch('src/**/*.html', html);
-	watch('src/scss/**/*.{scss,sass}', css);
-	watch('src/js/**/*.{js,ts}', js);
+	watch('src/**/*.{scss,sass}', css);
+	watch('src/**/*.{js,ts}', js);
 	watch('src/assets/img/**/*.{png,ico,gif,svg,webmanifest,json}', img);
 	watch('src/assets/img/**/*.{png,jpg,jpeg,webp}', webp);
 	watch('src/assets/font/**/*.{otf,ttf,woff,woff2,svg}', font);

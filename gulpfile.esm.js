@@ -45,8 +45,8 @@ import svgmin from 'gulp-svgmin'; // Мінімізація svg.
 // JS Concat Order
 import { readFileSync } from 'fs';
 
-const srcJs = JSON.parse(readFileSync('./src/js/script.modules.json'));
-// import srcJs from './src/js/script.modules.json' assert { type: "json" }; // ES6 Warning "assert"
+const srcJs = JSON.parse(readFileSync('./src/script.json'));
+// import srcJs from './src/script.json' assert { type: "json" }; // ES6 Warning "assert"
 
 const browsersync = sync.create();
 const scss = gulpSass(sass);
@@ -276,8 +276,8 @@ function js() {
 
 function watchFiles() {
 	gulp.watch('src/**/*.html', html);
-	gulp.watch('src/scss/**/*.{scss,sass}', css);
-	gulp.watch('src/js/**/*.{js,ts}', js);
+	gulp.watch('src/**/*.{scss,sass}', css);
+	gulp.watch('src/**/*.{js,ts}', js);
 	gulp.watch('src/assets/img/**/*.{png,ico,gif,svg,webmanifest,json}', img);
 	gulp.watch('src/assets/img/**/*.{png,jpg,jpeg,webp}', webp);
 	gulp.watch('src/assets/font/**/*.{otf,ttf,woff,woff2,svg}', font);
