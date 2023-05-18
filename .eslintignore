@@ -8,14 +8,15 @@ app/
 node_modules/
 tests/
 vendor/
-#assets/
+assets/
 *.min.js
+src/js/libs/
+src/assets/libs/
 
 # Ignore
 *.css
 *.scss
 *.sass
 *.less
-src/js/libs/
-src/assets/libs/
+*.postcss
 

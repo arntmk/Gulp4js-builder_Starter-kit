@@ -8,14 +8,15 @@ app/
 node_modules/
 tests/
 vendor/
-#assets/
+assets/
 *.min.css
+src/scss/libs/
+src/assets/libs/
+src/scss/libs/_normalize.scss
+src/scss/_font.scss
 
 # Ignore
 *.js
 *.ts
 *.jsx
 *.tsx
-src/scss/libs/_normalize.scss
-src/scss/_font.scss
-src/assets/libs/

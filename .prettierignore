@@ -4,16 +4,18 @@ build/
 dist/
 dest/
 app/
-src/scss/libs/_normalize.scss
-src/assets/components/**/*.css
-#src/js/script.modules.json
+#src/script.json
+src/scss/libs/
+src/assets/libs/
 *.min.js
 *.min.css
 
 # Ignore all CSS/JS Files:
+*.css
 *.scss
 *.sass
 *.less
+*.postcss
 *.js
 *.ts
 #*.jsx

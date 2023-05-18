@@ -31,7 +31,7 @@
 
 	// Stylelint
 	"stylelint.validate": ["css", "scss", "less", "postcss"],
-	"[postcss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+	"[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[less]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 
