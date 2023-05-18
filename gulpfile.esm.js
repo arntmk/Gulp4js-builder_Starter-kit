@@ -45,8 +45,8 @@ import svgmin from 'gulp-svgmin'; // Мінімізація svg.
 // JS Concat Order
 import { readFileSync } from 'fs';
 
-const srcJs = JSON.parse(readFileSync('./src/script.json'));
-// import srcJs from './src/script.json' assert { type: "json" }; // ES6 Warning "assert"
+const srcJs = JSON.parse(readFileSync('./src/**/script.json'));
+// import srcJs from './src/**/script.json' assert { type: "json" }; // ES6 Warning "assert"
 
 const browsersync = sync.create();
 const scss = gulpSass(sass);
