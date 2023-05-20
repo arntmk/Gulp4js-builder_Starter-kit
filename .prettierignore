@@ -10,14 +10,3 @@ src/assets/libs/
 *.min.js
 *.min.css
 
-# Ignore all CSS/JS Files:
-*.css
-*.scss
-*.sass
-*.less
-*.postcss
-*.js
-*.ts
-#*.jsx
-#*.tsx
-#*.vue
