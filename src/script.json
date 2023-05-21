@@ -4,6 +4,6 @@
 	"./src/js/default/_accordion.js",
 	"./src/js/modules/_body-min-width.js",
 	"./src/js/modules/_hamburger.js",
-	"./src/js/modules/**/*.{js,ts}",
-	"./src/components/**/*.{js,ts}"
+	"./src/js/modules/**/_*.{js,ts}",
+	"./src/components/**/_*.{js,ts}"
 ]
