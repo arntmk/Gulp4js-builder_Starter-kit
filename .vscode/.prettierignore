@@ -6,6 +6,7 @@ dest/
 app/
 #src/script.json
 src/scss/libs/
+src/js/libs/
 src/assets/libs/
 *.min.js
 *.min.css
