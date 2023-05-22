@@ -1,8 +1,9 @@
 {
 	"extends": ["eslint:recommended", "airbnb-base"],
 	// "parser": "@typescript-eslint/parser",
+	// "parserOptions": { "project": ["./tsconfig.json"] },
 	// "plugins": ["@typescript-eslint"],
-	"root": true,
+	// "root": true,
 	"env": {
 		"browser": true,
 		"commonjs": true
@@ -10,7 +11,7 @@
 		// "node": true
 		// "jquery": true
 	},
-	"ignorePatterns": ["**/build/**/*.js", "**/node_modules/**/*.js"],
+	"ignorePatterns": ["**/build/**/*.js", "**/node_modules/**/*.js", "**/src/**/*.min.js"],
 	"rules": {
 		"max-len": ["off", { "code": 120, "comments": 120 }],
 		"semi": ["error", "always"],

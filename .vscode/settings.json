@@ -29,7 +29,11 @@
 	"[javascriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
 	"[typescriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
 
+	// Prettier
+	"prettier.configPath": "./.linter/.prettierrc",
+
 	// Stylelint
+	"stylelint.configFile": "./.linter/.stylelintrc",
 	"stylelint.validate": ["css", "scss", "less", "postcss"],
 	"[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
