@@ -1,0 +1,12 @@
+# Ignore
+node_modules/
+build/
+dist/
+dest/
+app/
+#src/script.json
+src/scss/libs/
+src/assets/libs/
+*.min.js
+*.min.css
+

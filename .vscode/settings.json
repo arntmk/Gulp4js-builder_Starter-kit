@@ -53,5 +53,8 @@
 		"role",
 		"aria-.+",
 		"$unknown$"
-	]
+	],
+	//"stylelint.configFile": "./.vscode/.stylelintrc",
+	"prettier.configPath": "./.vscode/.prettierrc",
+	"prettier.ignorePath": "./.vscode/.prettierignore"
 }
