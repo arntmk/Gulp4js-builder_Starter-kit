@@ -9,8 +9,7 @@
 		"stylelint-order",
 		"stylelint-declaration-block-no-ignored-properties"
 	],
-	"ignoreFiles": ["./build/**/*.css", "./node_modules/**/*.css", "./src/**/*.min.css"],
-	"ignorePath": ["/linter/.stylelintignore"],
+	"ignoreFiles": ["./build/**/*.css", "./node_modules/**/*.css"],
 	"rules": {
 		"order/order": [
 			"custom-properties",

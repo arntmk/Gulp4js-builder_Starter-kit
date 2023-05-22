@@ -11,7 +11,7 @@
 		// "node": true
 		// "jquery": true
 	},
-	"ignorePatterns": ["**/build/**/*.js", "**/node_modules/**/*.js", "**/src/**/*.min.js"],
+	"ignorePatterns": ["**/build/**/*.js", "**/node_modules/**/*.js"],
 	"rules": {
 		"max-len": ["off", { "code": 120, "comments": 120 }],
 		"semi": ["error", "always"],
