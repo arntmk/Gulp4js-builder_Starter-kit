@@ -9,7 +9,28 @@
 		"stylelint-order",
 		"stylelint-declaration-block-no-ignored-properties"
 	],
-	"ignoreFiles": ["./build/**/*.css", "./node_modules/**/*.css", "**/*min.css"],
+	"ignoreFiles": [
+		"**/.vscode/**",
+		"**/.idea/**",
+		"**/dist/**",
+		"**/dest/**",
+		"**/app/**",
+		"**/node_modules/**",
+		"**/tests/**",
+		"**/vendor/**",
+		"**/assets/**",
+		"**/build/**",
+		"src/scss/libs/**",
+		"src/assets/libs/**",
+		"src/scss/libs/_normalize.scss",
+		"src/scss/_font.scss",
+		"**/*.js",
+		"**/*.ts",
+		"**/*.jsx",
+		"**/*.tsx",
+		"**/*.vue",
+		"**/*min.css"
+	],
 	"rules": {
 		"order/order": [
 			"custom-properties",

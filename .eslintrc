@@ -11,7 +11,26 @@
 		// "node": true
 		// "jquery": true
 	},
-	"ignorePatterns": ["**/build/**/*.js", "**/node_modules/**/*.js", "**/*min.js"],
+	"ignorePatterns": [
+		"**/.vscode/**",
+		"**/.idea/**",
+		"**/dist/**",
+		"**/dest/**",
+		"**/app/**",
+		"**/node_modules/**",
+		"**/tests/**",
+		"**/vendor/**",
+		"**/assets/**",
+		"**/build/**",
+		"src/js/libs/**",
+		"src/assets/libs/**",
+		"**/*.css",
+		"**/*.scss",
+		"**/*.sass",
+		"**/*.less",
+		"**/*.postcss",
+		"**/*min.js"
+	],
 	"rules": {
 		"max-len": ["off", { "code": 120, "comments": 120 }],
 		"semi": ["error", "always"],
