@@ -155,7 +155,7 @@ input:not(
 
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
-			border-color: transparent;
+			border-color: #4682b4;
 			box-shadow: 0 0 0 0.0625rem var(--accent-color), 0 0 0.625rem #4f6e86;
 		}
 	}
