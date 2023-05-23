@@ -1,7 +1,7 @@
 [
 	"./src/js/script.js",
-	"./src/js/default/_default.js",
-	"./src/js/default/_accordion.js",
+	"./src/assets/default/_default.js",
+	"./src/assets/default/_accordion.js",
 	"./src/js/modules/_body-min-width.js",
 	"./src/js/modules/_hamburger.js",
 	"./src/js/modules/**/_*.{js,ts}",
