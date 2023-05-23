@@ -176,7 +176,7 @@ input[type="text"]:invalid,
 input[type="password"]:invalid,
 input[type="email"]:invalid,
 input[type="tel"]:invalid {
-	border: 2px solid #ffa500;
+	border-color: #ffa500;
 }
 
 input[type="text"]:not(:focus):invalid,
