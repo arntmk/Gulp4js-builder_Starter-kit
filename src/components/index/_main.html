@@ -41,19 +41,10 @@
 		<br />
 		<br />
 		<form action="#!">
-			<input
-				id="username"
-				name="username"
-				type="text"
-				required
-				autocomplete="username"
-				pattern="[a-zA-Z]].{4,20}"
-				placeholder="Text" />
 			<input type="reset" value="Reset" />
 			<input type="submit" value="Submit" />
 			<input type="button" value="Button" />
 			<button>Button</button>
-			<input id="number" name="number" type="number" inputmode="numeric" pattern="[0-9]+" />
 			<br />
 			<!-- <input type="week" name="week" id="week" /> -->
 			<input id="file" name="file" type="file" accept="image/png, image/jpeg" />
@@ -76,6 +67,19 @@
 			<input id="radio11" name="radio" type="radio" disabled />
 			<br />
 			<input id="date" name="date" type="date" />
+			<br />
+			<br />
+			<input
+				id="username"
+				name="username"
+				type="text"
+				required
+				autocomplete="username"
+				pattern="[a-zA-Zа-я-А-Я].{3,20}"
+				placeholder="Text" />
+			<br />
+			<br />
+			<input id="number" name="number" type="number" inputmode="numeric" pattern="[0-9]+" />
 			<br />
 			<br />
 			<div class="search-wrap">
