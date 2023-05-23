@@ -38,12 +38,13 @@ if (searchInput && clearButton) {
 /* ____________________________________________ */
 // ===Validate Numbers===
 
-const ValidateNumbers = document.querySelector('[inputmode="numeric"]');
-
-ValidateNumbers.onkeypress = function Validate(e) {
-	const isNumber = /[0-9]/.test(String.fromCharCode(e.keyCode || e.which));
-	return isNumber;
-};
+document.querySelectorAll('.input-number').forEach((numbers) => {
+	const ValidateNumbers = numbers.querySelector('[type="number"]');
+	ValidateNumbers.onkeypress = function Validate(e) {
+		const isNumber = /[0-9.-]/.test(String.fromCharCode(e.keyCode || e.which));
+		return isNumber;
+	};
+});
 
 /* ____________________________________________ */
 // ===Progress support JS / WebKit===
