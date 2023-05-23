@@ -40,20 +40,20 @@
 		<a href="https://www.google.com/" target="_blank">Google</a>
 		<br />
 		<br />
-		<form action="">
+		<form action="#!">
 			<input
 				id="username"
 				name="username"
 				type="text"
 				required
 				autocomplete="username"
-				pattern=".{4,20}"
+				pattern="[a-zA-Z]].{4,20}"
 				placeholder="Text" />
 			<input type="reset" value="Reset" />
 			<input type="submit" value="Submit" />
 			<input type="button" value="Button" />
 			<button>Button</button>
-			<input id="number" name="number" type="number" inputmode="numeric" pattern="[0-9.-]+" />
+			<input id="number" name="number" type="number" inputmode="numeric" pattern="[0-9]+" />
 			<br />
 			<!-- <input type="week" name="week" id="week" /> -->
 			<input id="file" name="file" type="file" accept="image/png, image/jpeg" />

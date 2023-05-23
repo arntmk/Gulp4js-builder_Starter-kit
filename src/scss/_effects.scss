@@ -161,6 +161,16 @@ input:not(
 	}
 }
 
+/* ____________________________________________ */
+/* Input Validation */
+input[type="text"]:valid,
+input[type="password"]:valid,
+input[type="email"]:valid,
+input[type="tel"]:valid {
+	border-color: #adff2f;
+	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f;
+}
+
 /* Animation
 /* ____________________________________________ */
 /* Button Effect */
