@@ -8,6 +8,6 @@
 
 const maskElement = document.querySelector('#phone__input');
 const maskOption = {
-	mask: '+{38}(000)000-00-00',
+	mask: '+{38}(000)000-00-00', // '+{7}(000)000-00-00'
 };
 const mask = IMask(maskElement, maskOption);
