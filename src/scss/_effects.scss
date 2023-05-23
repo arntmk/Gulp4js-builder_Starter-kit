@@ -176,14 +176,18 @@ input[type="text"]:invalid,
 input[type="password"]:invalid,
 input[type="email"]:invalid,
 input[type="tel"]:invalid {
-	border-color: #ffa500;
+	&:focus {
+		border-color: #ffa500;
+	}
 }
 
 input[type="text"]:not(:focus):invalid,
 input[type="password"]:not(:focus):invalid,
 input[type="email"]:not(:focus):invalid,
 input[type="tel"]:not(:focus):invalid {
-	border-color: transparent;
+	&:focus {
+		border-color: transparent;
+	}
 }
 
 /* Animation
