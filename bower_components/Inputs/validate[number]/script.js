@@ -6,7 +6,9 @@
 /* ____________________________________________ */
 // ===Validate Numbers===
 
-document.querySelector('[inputmode="numeric"]').onkeypress = function Validate(e) {
+const ValidateNumbers = document.querySelector('[inputmode="numeric"]');
+
+ValidateNumbers.onkeypress = function Validate(e) {
 	const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
 	return isNumber;
 };
