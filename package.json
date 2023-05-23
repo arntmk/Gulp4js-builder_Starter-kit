@@ -6,7 +6,7 @@
 	"type": "commonjs",
 	"scripts": {
 		"g-watch": "gulp watch",
-		"g-watch:esm": "gulp watch --gulpfile  \"~/../gulpfile.esm.js\"",
+		"g-watch:esm": "gulp watch --gulpfile \"~/../gulpfile.esm.js\"",
 		"g-dev:build": "gulp default",
 		"g-prod:build": "gulp --production",
 		"g-img": "gulp imgTsk",
