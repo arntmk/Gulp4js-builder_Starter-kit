@@ -176,6 +176,8 @@ input[type="text"]:invalid,
 input[type="password"]:invalid,
 input[type="email"]:invalid,
 input[type="tel"]:invalid {
+	transition: 0.3s ease-in-out;
+
 	&:focus {
 		border-color: #ffa500;
 		box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500;
@@ -186,6 +188,8 @@ input[type="text"]:not(:focus):invalid,
 input[type="password"]:not(:focus):invalid,
 input[type="email"]:not(:focus):invalid,
 input[type="tel"]:not(:focus):invalid {
+	transition: 0.3s ease-in-out;
+
 	&:focus {
 		border-color: transparent;
 	}
