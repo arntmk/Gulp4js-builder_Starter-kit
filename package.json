@@ -14,7 +14,7 @@
 		"g-fontgen": "gulp fontgenTsk",
 		"g-font": "gulp fonTskt",
 		"g-clean": "gulp clrTsk",
-		"stylelint": "stylelint \"src/**/*.{css,scss}\" --ignore-path .stylelintignore --ignore-pattern \"src/scss/libs/*.css\" --fix",
+		"stylelint": "stylelint \"src/**/*.{css,scss}\" --ignore-path .stylelintignore --ignore-pattern \"src/scss/libs/*\" --fix",
 		"eslint": "eslint \"src/**/*.{js,ts}\" --ignore-path .eslintignore --ignore-pattern \"src/js/libs/*\" --fix",
 		"install gulp": "npm install",
 		"delete gulp": "rm -rf node_modules",
