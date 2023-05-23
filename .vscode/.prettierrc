@@ -26,8 +26,7 @@
 		"**/dest/**",
 		"**/app/**",
 		"**/build/**",
-		"src/scss/libs/**",
-		"src/assets/libs/**",
+		"**/libs/**",
 		"**/*.min.js",
 		"**/*.min.css"
 	]
