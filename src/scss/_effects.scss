@@ -111,7 +111,8 @@ summary,
 /* Button Hover */
 [type="button"],
 [type="reset"],
-[type="submit"] {
+[type="submit"],
+[type="file"]::file-selector-button {
 	transform: scale(1);
 	transition:
 		box-shadow 0.5s ease-in-out 0.02s,
@@ -141,7 +142,6 @@ summary,
 select,
 textarea,
 summary,
-[type="file"]::file-selector-button,
 input:not(
 	[type="button"],
 	[type="reset"],
@@ -168,7 +168,7 @@ input[type="text"]:valid,
 input[type="password"]:valid,
 input[type="email"]:valid,
 input[type="tel"]:valid {
-	border-color: #adff2f;
+	border-color: transparent;
 	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f;
 }
 
@@ -179,7 +179,7 @@ input[type="tel"]:invalid {
 	transition: 0.3s ease-in-out;
 
 	&:focus {
-		border-color: #ffa500;
+		border-color: transparent;
 		box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500;
 	}
 }
