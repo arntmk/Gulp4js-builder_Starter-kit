@@ -77,7 +77,7 @@
 				title="Must contain at least letters, and at least 3 or more characters."
 				required
 				autocomplete="username"
-				pattern="[a-zA-Zа-я-А-Я].{3,20}"
+				pattern="[a-zA-Zа-яА-Я\-].{3,20}"
 				placeholder="Text" />
 			<br />
 			<br />
@@ -98,7 +98,7 @@
 					type="password"
 					title="Must contain at least one number and letter, and at least 7 or more characters."
 					required
-					pattern="(?=.*[0-9!@#$%^&*_=+-])(?=.*[a-z]).{7,30}"
+					pattern="(?=.*[0-9!@#$%^&*_=+\-])(?=.*[a-z]).{7,30}"
 					placeholder="Password" />
 				<span class="eye-open eye-close hidden" id="togglePassword"></span>
 			</div>
@@ -107,7 +107,7 @@
 				id="email"
 				name="email"
 				type="email"
-				pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+				pattern="^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z].{1,2}$"
 				placeholder="Email"
 				required />
 			<br />
