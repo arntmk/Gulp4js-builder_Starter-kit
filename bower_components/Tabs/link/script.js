@@ -1,7 +1,7 @@
 /* ____________________________________________ */
 // ===Tabs===
 
-const tabsNav = document.querySelectorAll('.tabs__trigger');
+const tabsNav = document.querySelectorAll('.tabs__nav-btn');
 const tabsContent = document.querySelectorAll('.tabs__content');
 
 if (tabsNav && tabsContent) {
@@ -15,5 +15,5 @@ if (tabsNav && tabsContent) {
 		item.classList.add('active');
 		document.getElementById(id).classList.add('active');
 	}));
-	document.querySelector('.tabs__trigger').click();
+	document.querySelector('.tabs__nav-btn').click();
 }

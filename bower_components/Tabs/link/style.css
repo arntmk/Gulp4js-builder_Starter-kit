@@ -13,6 +13,7 @@ html {
 body {
 	margin: 0 auto;
 	max-width: 1000px;
+	background-color: #a79898;
 }
 
 a {
@@ -35,11 +36,12 @@ h1 {
 	display: flex;
 }
 
-.tabs__trigger {
+.tabs__nav-btn {
 	flex-grow: 1;
 	border: thin solid #8f8f9d;
 	padding: 20px;
 	text-align: center;
+	background-color: #eee;
 }
 
 .tabs__content-wrapper {
@@ -59,6 +61,6 @@ h1 {
 	display: block;
 }
 
-.tabs__trigger.active {
-	background-color: #eee;
+.tabs__nav-btn.active {
+	background-color: #8f8f9d;
 }

@@ -1,0 +1,79 @@
+/* https://www.youtube.com/watch?v=Ta3RGu0bIhY */
+/* https://www.youtube.com/watch?v=Ze2muJxPQFg */
+
+/* ____________________________________________ */
+@charset "UTF-8";
+
+html {
+	font-family: system-ui, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+body {
+	margin: 0 auto;
+	max-width: 1000px;
+	background-color: #a79898;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	text-align: center;
+}
+
+button {
+	cursor: pointer;
+}
+
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button {
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+/* ____________________________________________ */
+/* __________________Tabs______________________ */
+/* ____________________________________________ */
+.tabs-wrapper {
+	/* _ */
+}
+
+.tabs {
+	display: flex;
+}
+
+.tabs__nav-btn {
+	flex-grow: 1;
+	border: thin solid #8f8f9d;
+	padding: 20px;
+	text-align: center;
+}
+
+.tabs__content-wrapper {
+	/* _ */
+}
+
+.tabs__content {
+	display: none;
+	border: thin solid #8f8f9d;
+	border-top: thin solid transparent;
+	padding: 20px;
+	text-align: center;
+	background-color: #eee;
+}
+
+.tabs__content.active {
+	display: block;
+}
+
+.tabs__nav-btn.active {
+	color: #fff;
+	background-color: #8f8f9d;
+}
