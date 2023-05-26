@@ -1,0 +1,56 @@
+/* Parent element can be any width and height */
+.youtubelightbox{
+    z-index: 999;
+	position: fixed;
+	width: 100%; /* can be any width */
+	height: 100%;
+	left: 0;
+	top: 0;
+	display: none;
+	text-align: center;
+}
+
+.youtubelightbox:before{ /* pseudo element to force vertical centering of child element */
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.youtubelightbox:after{ /* pseudo element to create overlay */
+	background: black;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0.8;
+	z-index: 10;
+}
+
+/* Centered child element can be any width and height */
+.youtubelightbox__centeredchild{
+	position: relative; /* position element to participate in z-indexing */
+	z-index: 20; /* higher z-index than overlay */
+	display: inline-block;
+	vertical-align: middle;
+	width: 80%; /* can be any width */
+}
+
+/* Video container to maintain Youtube 16:9 aspect ratio */
+.youtubelightbox__videowrapper{
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: 56.25%; /* 16:9 aspect ratio */
+	height: 0;
+}
+
+/* Make Youtube IFRAME responsive */
+.youtubelightbox__videowrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
