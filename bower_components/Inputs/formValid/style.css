@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	margin-top: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-family: system-ui, "Hibana", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button {
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+/* Outline */
+:where(
+input:not(
+	[type="file"],
+	[type="button"],
+	[type="reset"],
+	[type="submit"],
+	[type="range"],
+	[type="color"],
+	[type="checkbox"],
+	[type="radio"]),
+	select,
+	textarea) {
+	outline-color: transparent;
+}
+
+:where([type="file"]) {
+	outline-color: none;
+}
+
+:where(
+button,
+input:not([type="checkbox"],[type="radio"],[type="color"]),
+select,
+textarea,
+summary) {
+	outline-offset: 0.1875rem;
+}
+
+:where([type="checkbox"],[type="radio"],[type="color"]) {
+	outline-offset: 0.0625rem;
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* Input Validation */
+
+input[type="text"]:valid,
+input[type="password"]:valid,
+input[type="email"]:valid,
+input[type="tel"]:valid {
+	border-color: transparent;
+	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f;
+}
+
+input[type="text"]:invalid,
+input[type="password"]:invalid,
+input[type="email"]:invalid,
+input[type="tel"]:invalid {
+	transition: 0.3s ease-in-out;
+}
+
+input[type="text"]:invalid:focus,
+input[type="password"]:invalid:focus,
+input[type="email"]:invalid:focus,
+input[type="tel"]:invalid:focus {
+	border-color: transparent;
+	box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500;
+}
+
+input[type="text"]:not(:focus):invalid,
+input[type="password"]:not(:focus):invalid,
+input[type="email"]:not(:focus):invalid,
+input[type="tel"]:not(:focus):invalid {
+	transition: 0.3s ease-in-out;
+}
+
+input[type="text"]:invalid:focus,
+input[type="password"]:invalid:focus,
+input[type="email"]:invalid:focus,
+input[type="tel"]:invalid:focus {
+	border-color: transparent;
+}
