@@ -40,7 +40,7 @@
 		"no-mixed-spaces-and-tabs": "warn",
 		"object-curly-newline": "warn",
 
-		"no-unused-vars": "warn",
+		"no-unused-vars": "off",
 		"no-console": "off",
 		"func-names": "off",
 		"no-process-exit": "off",
