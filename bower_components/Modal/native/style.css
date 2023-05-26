@@ -1,0 +1,132 @@
+/* https://www.youtube.com/watch?v=TAB_v6yBXIE&list=PLig1Jrpe_hzoJqsT81rjMw3qRV1AKGOsf&index=58 */
+/* https://whistlr.info/2021/in-defence-of-dialog/ */
+/* https://stackoverflow.com/questions/50037663/how-to-close-a-native-html-dialog-when-clicking-outside-with-javascript
+*/
+/* https://codepen.io/dvdvdmt/pen/BaavWbp */
+/* https://www.google.com/search?q=html++tag+dialog+close+on+click+outside */
+/* https://stackoverflow.com/questions/24991072/how-to-fade-in-a-html5-dialog */
+
+/* ____________________________________________ */
+/* extra styling */
+@charset "UTF-8";
+
+/*
+ * Add the correct styles in Safari.
+ */
+
+:where(dialog) {
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border: solid;
+	padding: 1em;
+	width: fit-content;
+	height: fit-content;
+	color: #000;
+	background-color: #fff;
+}
+
+:where(dialog:not([open])) {
+	display: none;
+}
+
+/* ____________________________________________ */
+html {
+	font-family: system-ui, "Hibana", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+body {
+	margin: 2rem;
+	min-height: 100vh;
+	font-family: system-ui;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	color: inherit;
+}
+
+h1 em {
+	text-decoration: underline;
+	color: #27962d;
+	text-underline-offset: 0.25em;
+}
+
+.button {
+	border: 0;
+	padding: 10px 15px;
+	font-weight: 700;
+	color: #fff;
+	background: #b63d3d;
+	cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+	background: #614949;
+}
+
+form {
+	display: grid;
+	gap: 1em;
+}
+
+dialog::backdrop {
+	cursor: pointer;
+}
+
+body.lock {
+	overflow: hidden;
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+
+/* ____________________Modal________________________ */
+dialog {
+	position: fixed;
+	overflow: auto;
+	border: thin solid transparent;
+	border-radius: 15px;
+	padding: 0;
+	max-width: 50ch;
+	box-shadow: 0 0 1em rgb(0 0 0 / 80%);
+	background-color: #fff;
+}
+
+dialog::backdrop {
+	background: rgb(40 69 93 / 40%);
+
+	/* backdrop-filter: blur(1.5px); */
+}
+
+.modal-wrapper {
+	border-radius: 15px;
+	padding: 25px;
+	max-width: 500px;
+}
+
+.close-btn {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+/* ____________________________________________ */
+/* Animation */
+dialog[open] {
+	overflow: hidden;
+	animation: dialog-fade 0.8s ease-out forwards;
+}
+
+@keyframes dialog-fade {
+	from {
+		transform: translateY(-200%) scale(0);
+	}
+
+	to {
+		transform: translateY(0%) scale(1);
+	}
+}
