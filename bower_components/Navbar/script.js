@@ -34,6 +34,8 @@ if (menu && menuBtn) {
 }
 
 /* =========================================== */
+// '[data-scroll-anchors]'
+// 'a[href*="#"]'
 
 // const anchors = document.querySelectorAll('a[href*="#"]');
 
