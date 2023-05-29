@@ -88,23 +88,6 @@ a {
 }
 
 /* ____________________________________________ */
-/* Outline-Focus Tabs */
-a,
-button,
-summary,
-[type="button"],
-[type="reset"],
-[type="submit"],
-[type="range"],
-[type="color"],
-[type="checkbox"],
-[type="radio"] {
-	&:focus-visible {
-		outline: 0.0938rem solid var(--accent-color);
-	}
-}
-
-/* ____________________________________________ */
 /* Button Hover */
 [data-button-hover],
 [type="button"],
@@ -156,6 +139,23 @@ input:not(
 			border-color: transparent;
 			box-shadow: 0 0 0 0.0625rem var(--accent-color), 0 0 0.625rem #4f6e86;
 		}
+	}
+}
+
+/* ____________________________________________ */
+/* Outline-Focus Tabs */
+a,
+button,
+summary,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[type="range"],
+[type="color"],
+[type="checkbox"],
+[type="radio"] {
+	&:focus-visible {
+		outline: 0.0938rem solid var(--accent-color);
 	}
 }
 
