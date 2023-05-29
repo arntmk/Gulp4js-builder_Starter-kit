@@ -40,7 +40,7 @@ a {
 
 /* ____________________________________________ */
 /* ____________________________________________ */
-/* Draw Underline Link Hover Effect for Menu */
+/* Draw Underline Link Hover Effect */
 .nav__li-link,
 [data-header-link],
 [data-footer-link] {
@@ -135,10 +135,10 @@ a {
 [type="file"]::file-selector-button {
 	transform: scale(1);
 	transition:
-		box-shadow 0.5s ease-in-out 0.02s,
-		transform 0.4s ease-in-out 0.02s,
-		background-color 0.5s linear 0.01s,
-		color 0.5s linear 0.01s;
+		box-shadow 0.4s linear 0.01s,
+		transform 0.4s linear 0.01s,
+		background-color 0.4s linear 0.01s,
+		color 0.4s linear 0.01s;
 
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
