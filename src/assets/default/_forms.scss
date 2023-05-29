@@ -160,6 +160,7 @@ progress::-webkit-progress-value {
 }
 
 [type="file"]::file-selector-button {
+	margin: 15px;
 	border: thin solid #8f8f9d;
 	padding: 0.09em 1em;
 	width: 7em;
