@@ -142,10 +142,6 @@ input:not(
 			border-color: transparent;
 			box-shadow: 0 0 0 0.0625rem var(--accent-color), 0 0 0.625rem #4f6e86;
 		}
-
-		&:not(summary):focus {
-			outline: 0.125rem solid transparent;
-		}
 	}
 }
 
