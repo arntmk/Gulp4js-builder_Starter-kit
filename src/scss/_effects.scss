@@ -153,7 +153,7 @@ input[type="password"]:valid,
 input[type="email"]:valid,
 input[type="tel"]:valid {
 	border-color: transparent;
-	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f;
+	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f !important;
 }
 
 input[type="text"]:invalid,
