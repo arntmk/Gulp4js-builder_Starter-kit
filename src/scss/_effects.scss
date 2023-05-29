@@ -132,12 +132,19 @@ input:not(
 	[type="radio"],
 	[type="checkbox"],
 	[type="file"]) {
-	transition: 0.3s ease-in-out 0.02s, background 0s;
+	transition:
+		border-color 0.3s ease-in-out 0.02s,
+		box-shadow 0.3s ease-in-out 0.02s,
+		background 0s;
 
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
 			border-color: transparent;
 			box-shadow: 0 0 0 0.0625rem var(--accent-color), 0 0 0.625rem #4f6e86;
+		}
+
+		&:not(summary):focus {
+			outline: 0.125rem solid transparent;
 		}
 	}
 }
@@ -152,10 +159,10 @@ summary,
 [type="submit"],
 [type="range"],
 [type="color"],
-[type="checkbox"],
-[type="radio"] {
+[type="radio"],
+[type="checkbox"] {
 	&:focus-visible {
-		outline: 0.0938rem solid var(--accent-color);
+		outline: 0.125rem solid var(--accent-color);
 	}
 }
 

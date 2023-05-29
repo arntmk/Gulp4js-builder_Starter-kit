@@ -124,22 +124,21 @@ body {
 /* Outline */
 :where(
 summary,
+select,
+textarea,
 input:not(
-	[type="file"],
 	[type="button"],
 	[type="reset"],
 	[type="submit"],
 	[type="range"],
 	[type="color"],
-	[type="checkbox"],
-	[type="radio"]),
-	select,
-	textarea) {
+	[type="radio"],
+	[type="checkbox"])) {
 	outline-color: transparent;
 }
 
 :where([type="file"]) {
-	outline-color: none;
+	outline: none;
 }
 
 :where(
@@ -151,7 +150,7 @@ summary) {
 	outline-offset: 0.1875rem;
 }
 
-:where([type="checkbox"],[type="radio"],[type="color"]) {
+:where([type="checkbox"],[type="radio"]) {
 	outline-offset: 0.0625rem;
 }
 
