@@ -121,7 +121,23 @@ body {
 	color: inherit;
 }
 
-/* Outline */
+/* Outline-Focus Tabs */
+:where(
+a,
+button,
+summary,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[type="range"],
+[type="color"],
+[type="radio"],
+[type="checkbox"]) {
+	&:focus-visible {
+		outline: 0.125rem solid var(--accent-color);
+	}
+}
+
 :where(
 select,
 textarea,
@@ -132,12 +148,21 @@ input:not(
 	[type="range"],
 	[type="color"],
 	[type="radio"],
-	[type="checkbox"])) {
-	outline: 0.125rem solid transparent;
+	[type="checkbox"])),
+[type="file"]::file-selector-button {
+	outline-color: transparent;
+
+	&:focus {
+		outline: 0.125rem solid transparent;
+	}
 }
 
 :where([type="file"]) {
 	outline: none;
+}
+
+:where(summary) {
+	outline-offset: 0.25rem;
 }
 
 :where(
@@ -146,10 +171,6 @@ input:not([type="checkbox"],[type="radio"],[type="color"]),
 select,
 textarea) {
 	outline-offset: 0.1875rem;
-}
-
-:where(summary) {
-	outline-offset: 0.25rem;
 }
 
 :where([type="checkbox"],[type="radio"]) {
