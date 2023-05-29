@@ -7,7 +7,7 @@
 
 /* ____________________________________________ */
 /* Image Hover */
-[data-img-scale],
+[data-img-hover],
 img,
 svg,
 picture {
@@ -23,7 +23,7 @@ picture {
 
 /* ____________________________________________ */
 /* link Hover */
-[data-link],
+[data-link-hover],
 a {
 	transition: color 0.3s ease-in-out 0.01s;
 
