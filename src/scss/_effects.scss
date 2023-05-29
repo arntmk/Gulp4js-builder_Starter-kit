@@ -139,7 +139,7 @@ a,
 	transition:
 		box-shadow 0.2s linear 0.01s,
 		transform 0.15s linear 0s,
-		background-color 0.25s linear 0.03s,
+		background-color 0.45s linear 0.03s,
 		color 0.3s linear 0.03s;
 
 	@media (any-hover: hover) {
@@ -237,7 +237,7 @@ input[type="tel"]:not(:focus):invalid {
 /* ____________________________________________ */
 /* Selection */
 ::selection {
-	text-shadow: 0 0 0.625rem #ebe4e4;
+	text-shadow: 0 0 0.625rem #000;
 	color: #fff;
 	background-color: #4682b4;
 }
