@@ -4,11 +4,13 @@
 
 :root {
 	/* ____________________________________________ */
+	/* ____________________________________________ */
 	/* CONTAINER */
 	--content-width: 1200px; /* 1200+30=1230 */
 	--container-offset: 15px; /* 15*2 Left-Right = 30 */
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
+	/* ____________________________________________ */
 	/* ____________________________________________ */
 	/* CSS BREAKPOINT  */
 	--breakpoint-1450: 1449.98 + px; /* Desktop XL */
@@ -19,6 +21,7 @@
 	--breakpoint-480: 479.98 + px; /* Small-Mobile */
 	--breakpoint-320: 319.98 + px; /* Old-Mobile */
 
+	/* ____________________________________________ */
 	/* ____________________________________________ */
 	/* Global FONT */
 	--font-fimaly:
@@ -43,21 +46,31 @@
 	// --fourth-ffamily: "name(4)", var(--font-fimaly);
 
 	/* ____________________________________________ */
+	/* ____________________________________________ */
 	/* COLOR */
 	--scrollbar-color: #777;
 	--scrollbar-bgcolor: #1c1c1c;
-	--burger-btn: #f5f5f5;
-	--burger-bgcolor: #4682b4;
+
+	/* ____________________________________________ */
 	--accent-color: #4682b4;
 	--active-color: #700c0c;
 	--link-color: #f15412;
 	--text-color: #1e1e1e;
 	--bg-color: #4682b4;
+
+	/* ____________________________________________ */
 	--header-color: #fff;
 	--header-bgcolor: #1e1e1e;
+	--burger-btn: #f5f5f5;
+	--burger-menu-bgcolor: #4682b4;
+	--footer-color: #fff;
+	--footer-bgcolor: #1e1e1e;
+
+	/* ____________________________________________ */
 	--form-bgcolor: #fff;
 }
 
+/* ____________________________________________ */
 /* ____________________________________________ */
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
@@ -78,6 +91,7 @@
 }
 
 /* ____________________________________________ */
+/* ____________________________________________ */
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
 	*,
@@ -93,6 +107,7 @@
 	}
 }
 
+/* ____________________________________________ */
 /* ____________________________________________ */
 /* SCSS BREAKPOINT */
 $breakpoint-1450: 1449.98 + px;
