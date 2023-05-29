@@ -7,19 +7,15 @@
 
 /* ____________________________________________ */
 /* Image Hover */
+[data-img-scale],
 img,
 svg,
 picture {
 	overflow: hidden;
-}
-
-img,
-svg,
-picture {
 	transition: transform 0.3s ease-in-out 0.01s;
 
 	@media (any-hover: hover) {
-		&:hover {
+		&:is(:hover, :focus-visible) {
 			transform: scale(1.05);
 		}
 	}
@@ -27,6 +23,7 @@ picture {
 
 /* ____________________________________________ */
 /* link Hover */
+[data-link],
 a {
 	transition: color 0.3s ease-in-out 0.01s;
 
@@ -109,6 +106,7 @@ summary,
 
 /* ____________________________________________ */
 /* Button Hover */
+[data-button-hover],
 [type="button"],
 [type="reset"],
 [type="submit"],

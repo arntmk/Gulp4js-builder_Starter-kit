@@ -123,6 +123,7 @@ body {
 
 /* Outline */
 :where(
+summary,
 input:not(
 	[type="file"],
 	[type="button"],
