@@ -7,10 +7,10 @@
 
 /* ____________________________________________ */
 /* Image Hover */
-[data-img-hover],
 img,
 svg,
-picture {
+picture,
+[data-img-hover] {
 	overflow: hidden;
 	transition: transform 0.3s ease-in-out 0.01s;
 
@@ -23,8 +23,8 @@ picture {
 
 /* ____________________________________________ */
 /* link Hover */
-[data-link-hover],
-a {
+a,
+[data-link-hover] {
 	transition: color 0.3s ease-in-out 0.01s;
 
 	@media (any-hover: hover) {
@@ -130,16 +130,16 @@ a {
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* Button Hover */
-[data-button-hover],
 [type="button"],
 [type="reset"],
 [type="submit"],
-[type="file"]::file-selector-button {
+[type="file"]::file-selector-button,
+[data-button-hover] {
 	transform: scale(1);
 	transition:
-		box-shadow 0.3s linear 0.01s,
-		transform 0.1s linear 0s,
-		background-color 0.3s linear 0.03s,
+		box-shadow 0.2s linear 0.01s,
+		transform 0.15s linear 0s,
+		background-color 0.25s linear 0.03s,
 		color 0.3s linear 0.03s;
 
 	@media (any-hover: hover) {
@@ -148,8 +148,8 @@ a {
 			box-shadow: 0 0 0.625rem #4f6e86;
 			color: #fff;
 			background-color: var(--accent-color);
-			transform: scale(1.05);
-			animation: btn-effect 0.6s ease-in-out 0.01s;
+			transform: scale(1.03);
+			animation: btn-effect 0.3s ease-in-out 0.01s;
 		}
 	}
 
@@ -172,7 +172,8 @@ input:not(
 	[type="color"],
 	[type="radio"],
 	[type="checkbox"],
-	[type="file"]) {
+	[type="file"]),
+[data-input-hover] {
 	transition:
 		border-color 0.3s ease-in-out 0.02s,
 		box-shadow 0.3s ease-in-out 0.02s,
@@ -225,7 +226,7 @@ input[type="tel"]:not(:focus):invalid {
 /* Button Effect */
 @keyframes btn-effect {
 	0% {
-		opacity: 0.7;
+		opacity: 0.5;
 	}
 
 	100% {
