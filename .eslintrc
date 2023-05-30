@@ -31,11 +31,10 @@
 	],
 	"rules": {
 		"max-len": ["off", { "code": 120, "comments": 120 }],
-		"semi": ["error", "always"],
-		"quotes": ["error", "single"],
+		"semi": ["warn", "always"],
+		"quotes": ["warn", "single"],
 		"indent": ["warn", "tab"],
 		"no-tabs": ["warn", { "allowIndentationTabs": true }],
-		"global-require": "warn",
 		"no-trailing-spaces": "warn",
 		"no-mixed-spaces-and-tabs": "warn",
 		"object-curly-newline": "warn",
@@ -44,10 +43,11 @@
 		"no-console": "warn",
 		"func-names": "off",
 		"no-process-exit": "off",
-		"object-shorthand": "warn",
-		"class-methods-use-this": "warn",
+		"object-shorthand": "warn", // "autofix"
+		"class-methods-use-this": "warn", // "no-autofix"
 
 		"no-restricted-syntax": "warn",
+		"global-require": "warn",
 		"no-undef": "off",
 		"no-mixed-operators": "off"
 	}
