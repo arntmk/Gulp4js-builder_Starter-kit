@@ -41,7 +41,7 @@
 		"object-curly-newline": "warn",
 
 		"no-unused-vars": "off",
-		"no-console": "off",
+		"no-console": "warn",
 		"func-names": "off",
 		"no-process-exit": "off",
 		"object-shorthand": "warn",
