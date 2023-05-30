@@ -4,10 +4,10 @@
 const accordion = document.querySelectorAll('details');
 
 if (accordion) {
-	accordion.forEach((el) => {
-		el.addEventListener('click', (e) => {
+	accordion.forEach((summary) => {
+		summary.addEventListener('click', (e) => {
 			const self = e.currentTarget;
-			const content = self.querySelector('.content');
+			const content = self.querySelector('.accordion-content');
 
 			if (self.hasAttribute('open')) {
 				content.style.maxHeight = null;

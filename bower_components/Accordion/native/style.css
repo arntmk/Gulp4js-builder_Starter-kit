@@ -57,7 +57,7 @@ details {
 	width: 25em;
 }
 
-details .content {
+details .accordion-content {
 	margin-top: 0.3125em;
 	border: thin solid #8f8f9d;
 	padding: 0.3125em;
@@ -79,7 +79,7 @@ details .content {
 
 details[open] > *:not(summary) {
 	overflow: hidden;
-	animation: details 0.8s ease-in-out forwards;
+	animation: details 1s ease-in-out forwards;
 	will-change: max-height;
 }
 
