@@ -51,14 +51,13 @@ html {
 }
 
 body::-webkit-scrollbar {
-	/* width: 18px; */
-	width: 11px;
+	width: 18px;
 }
 
 body::-webkit-scrollbar-thumb {
-	/* 	border: 5px solid transparent;
+	border: 5px solid transparent;
 	border-radius: 10px;
-	background-clip: content-box; */
+	background-clip: content-box;
 	background-color: var(--scrollbar-color);
 }
 
