@@ -49,6 +49,8 @@ document.querySelectorAll('.select-wrapper').forEach((selects) => {
 			if (e.key === 'Tab' || e.key === 'Escape') {
 				select.classList.remove('active');
 				optionsList.classList.remove('active');
+				select.setAttribute('aria-expanded', false);
+				optionsList.setAttribute('aria-hidden', true);
 			}
 		});
 	}
