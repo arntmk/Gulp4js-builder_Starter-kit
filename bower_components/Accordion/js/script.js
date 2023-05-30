@@ -1,27 +1,37 @@
 /* ____________________________________________ */
 // ==Accordion==
 
-document.addEventListener('DOMContentLoaded', () => {
-	const accordions = document.querySelectorAll('.accordion');
+const accordions = document.querySelectorAll('.accordion');
 
-	accordions.forEach((el) => {
-		el.addEventListener('click', (e) => {
-			const self = e.currentTarget;
-			const control = self.querySelector('.accordion__control');
-			const content = self.querySelector('.accordion__content');
+function removeOpen(index1) {
+	accordions.forEach((item2, index2) => {
+		if (index1 !== index2) {
+			item2.classList.remove('active');
 
-			self.classList.toggle('open');
+			const accordionBtn2 = item2.querySelector('.accordion-button');
+			const content2 = item2.querySelector('.accordion-content');
+			content2.style.maxHeight = '0px';
+			accordionBtn2.setAttribute('aria-expanded', false);
+			content2.setAttribute('aria-hidden', true);
+		}
+	});
+}
 
-			// если открыт аккордеон
-			if (self.classList.contains('open')) {
-				control.setAttribute('aria-expanded', true);
-				content.setAttribute('aria-hidden', false);
-				content.style.maxHeight = `${content.scrollHeight}px`;
-			} else {
-				control.setAttribute('aria-expanded', false);
-				content.setAttribute('aria-hidden', true);
-				content.style.maxHeight = null;
-			}
-		});
+accordions.forEach((item, index) => {
+	const accordionBtn = item.querySelector('.accordion-button');
+	accordionBtn.addEventListener('click', () => {
+		item.classList.toggle('active');
+
+		const content = item.querySelector('.accordion-content');
+		if (item.classList.contains('active')) {
+			content.style.maxHeight = `${content.scrollHeight}px`;
+			accordionBtn.setAttribute('aria-expanded', true);
+			content.setAttribute('aria-hidden', false);
+		} else {
+			content.style.maxHeight = '0px';
+			accordionBtn.setAttribute('aria-expanded', false);
+			content.setAttribute('aria-hidden', true);
+		}
+		removeOpen(index);
 	});
 });

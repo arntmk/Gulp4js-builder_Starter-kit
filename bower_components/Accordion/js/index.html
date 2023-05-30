@@ -1,35 +1,91 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Accordion examples</title>
+		<title>New Project</title>
 		<link href="style.css" rel="stylesheet" />
 		<script src="script.js" defer></script>
 	</head>
-	<body>
-		<!-- ____________________________________________ -->
-		<div class="accordion">
-			<button class="accordion__control" aria-expanded="false" aria-label="accordion">
-				<span class="accordion__title">Accordion 1</span>
-				<span class="accordion__icon"></span>
-			</button>
-			<div class="accordion__content" aria-hidden="true">
-				<h3>Lorem ipsum dolor sit amet.</h3>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, harum!</p>
+	<body class="body">
+		<div class="container">
+			<!-- ____________________________________________ -->
+			<div class="accordion">
+				<button class="accordion-button" aria-expanded="false" aria-label="accordion">
+					aria-label="accordion" What is Web Development?
+				</button>
+				<div class="accordion-content" aria-hidden="true">
+					<div class="accordion-border-top">
+						Web Development broadly refers to the tasks associated with developing functional
+						websites and applications for the Internet. The web development process includes web
+						design, web content development, client-side/server-side scripting and network security
+						configuration, among other tasks.
+					</div>
+				</div>
 			</div>
-		</div>
-		<!-- ____________________________________________ -->
-		<div class="accordion">
-			<button class="accordion__control" aria-expanded="false" aria-label="accordion">
-				<span class="accordion__title">Accordion 2</span>
-				<span class="accordion__icon"></span>
-			</button>
-			<div class="accordion__content" aria-hidden="true">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, beatae! Labore,
-				tenetur. Id culpa quas, eos magnam quos laboriosam quasi.
+			<!-- ____________________________________________ -->
+			<div class="accordion">
+				<button class="accordion-button" aria-expanded="false" aria-label="accordion">
+					What is HTML?
+				</button>
+				<div class="accordion-content" aria-hidden="true">
+					<div class="accordion-border-top">
+						HTML, aka HyperText Markup Language, is the dominant markup language for creating
+						websites and anything that can be viewed in a web browser.
+					</div>
+				</div>
 			</div>
+			<!-- ____________________________________________ -->
+			<div class="accordion">
+				<button class="accordion-button" aria-expanded="false" aria-label="accordion">
+					What are some basic technical skills of a Front-End developer?
+				</button>
+				<div class="accordion-content" aria-hidden="true">
+					<div class="accordion-border-top">
+						<ul style="padding-left: 1rem">
+							<li>HTML, CSS, JavaScript</li>
+							<li>Frameworks (CSS and JavaScript frameworks)</li>
+							<li>Responsive Design</li>
+							<li>Version Control/Git</li>
+							<li>Testing/Debugging</li>
+							<li>Browser Developer Tools</li>
+							<li>Web Performance</li>
+							<li>SEO (Search Engine Optimization)</li>
+							<!-- <li>CSS Preprocessing</li> -->
+							<li>Command Line</li>
+							<li>CMS (Content Management System)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- ____________________________________________ -->
+			<div class="accordion">
+				<button class="accordion-button" aria-expanded="false" aria-label="accordion">
+					What is HTTP?
+				</button>
+				<div class="accordion-content" aria-hidden="true">
+					<div class="accordion-border-top">
+						HTTP, aka HyperText Transfer Protocol, is the underlying protocol used by the World Wide
+						Web and this protocol defines how messages are formatted and transmitted, and what
+						actions Web servers and browsers should take in response to various commands.
+					</div>
+				</div>
+			</div>
+			<!-- ____________________________________________ -->
+			<div class="accordion">
+				<button class="accordion-button" aria-expanded="false" aria-label="accordion">
+					What is CORS?
+				</button>
+				<div class="accordion-content" aria-hidden="true">
+					<div class="accordion-border-top">
+						CORS, aka Cross-Origin Resource Sharing, is a mechanism that enables many resources
+						(e.g. images, stylesheets, scripts, fonts) on a web page to be requested from another
+						domain outside the domain from which the resource originated.
+					</div>
+				</div>
+			</div>
+			<!-- ____________________________________________ -->
 		</div>
-		<!-- ____________________________________________ -->
 	</body>
 </html>

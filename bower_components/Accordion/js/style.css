@@ -1,107 +1,114 @@
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button {
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+:where(button) {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+/* ____________________________________________ */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
+	height: 2000px;
 	font-family: "Roboto", sans-serif;
-	background-color: #fafafa;
+	color: #fff;
+	background-color: #34495e;
+}
+
+h1 {
+	margin: 2rem 0;
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+@media (width <= 767px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+.container {
+	margin: 5rem auto;
+	width: 90%;
+	max-width: 1000px;
 }
 
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
 .accordion {
-	margin-bottom: 10px;
-	width: 500px;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
+	color: #111;
+	background-color: #fff;
 }
 
-.accordion__title {
-	margin: 0;
-	font-weight: 700;
-	font-size: 1.17em;
-}
-
-/* ____________________________________________ */
-.accordion__control {
+.accordion-button {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	list-style: none;
-	border: 1px solid #888;
-	padding: 20px;
-}
-
-.accordion__control {
+	padding: 0.5rem 1rem;
 	width: 100%;
-	background-color: transparent;
+	min-height: 3.5rem;
+	font-weight: 700;
+	line-height: 1.25;
 	cursor: pointer;
 }
 
-.accordion__control::-webkit-details-marker {
-	display: none;
-}
-
-/* ____________________________________________ */
-.accordion__icon {
-	position: relative;
-	display: inline-block;
-	border-radius: 100%;
-	width: 30px;
-	height: 30px;
-	background-color: #bfbfbf;
-}
-
-.accordion__icon::before {
-	content: "";
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 50%;
-	height: 1px;
-	background-color: #000;
-	transform: translate(-50%, -50%);
-}
-
-.accordion__icon::after {
-	content: "";
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 1px;
-	height: 50%;
-	background-color: #000;
-	transform: translate(-50%, -50%);
-}
-
-.accordion__icon {
-	transition: transform 0.3s ease-in-out;
-}
-
-/* ____________________________________________ */
-
-.accordion__content {
-	border: 1px solid #888;
-	border-top: 1px solid transparent;
-	padding: 20px;
-}
-
-.accordion__content {
+.accordion-content {
 	overflow: hidden;
-	padding: 0 20px;
 	max-height: 0;
-	box-sizing: content-box;
-	opacity: 0;
-	transition: all 0.3s ease-in-out;
-	will-change: max-height;
+	transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-border-top {
+	border-top: 1px solid;
+	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+	padding: 1rem;
+	line-height: 1.5rem;
 }
 
 /* ____________________________________________ */
-.open .accordion__icon {
-	transform: rotate(45deg);
+/* ___________________Icon_____________________ */
+/* ____________________________________________ */
+/* .accordion-button::after {
+	content: "\002B";
+	font-size: 2rem;
+	position: absolute;
+	right: 1rem;
+}
+.accordion-button.active::after {
+	content: "\2212";
+} */
+
+.accordion-button::after {
+	content: "";
+	width: 2em;
+	height: 2em;
+	background:
+		transparent
+		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
+		no-repeat right center / 2.5em;
+	transition: transform 0.2s ease-in-out;
 }
 
-.open .accordion__content {
-	padding: 20px;
-	opacity: 1;
+.accordion.active .accordion-button::after {
+	transform: rotate(90deg);
 }
+
+/* ____________________________________________ */
