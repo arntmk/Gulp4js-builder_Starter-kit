@@ -41,9 +41,9 @@
 	/* FONT */
 	--first-ffamily: "Nunito", var(--font-fimaly);
 
-	// --second-ffamily: "name(2)", var(--font-fimaly);
-	// --third-ffamily: "name(3)", var(--font-fimaly);
-	// --fourth-ffamily: "name(4)", var(--font-fimaly);
+	// --second-ffamily: "Font(2)", var(--font-fimaly);
+	// --third-ffamily: "Font(3)", var(--font-fimaly);
+	// --fourth-ffamily: "Font(4)", var(--font-fimaly);
 
 	/* ____________________________________________ */
 	/* ____________________________________________ */
@@ -51,18 +51,18 @@
 	--scrollbar-color: #777;
 	--scrollbar-bgcolor: #1c1c1c;
 
-	/* ____________________________________________ */
+	/* ---------------------------------- */
 	--accent-color: #4682b4;
 	--active-color: #700c0c;
 	--link-color: #3794ff;
 	--text-color: #1e1e1e;
 	--bg-color: #34495e;
 
-	/* ____________________________________________ */
-	--header-color: #fff;
-	--header-bgcolor: #1e1e1e;
+	/* ---------------------------------- */
 	--burger-btn: #f5f5f5;
 	--burger-menu-bgcolor: #005eff;
+	--header-color: #fff;
+	--header-bgcolor: #1e1e1e;
 	--footer-color: #fff;
 	--footer-bgcolor: #1e1e1e;
 }
@@ -79,10 +79,10 @@
 		--link-color: #3794ff;
 		--text-color: #1e1e1e;
 		--bg-color: #34495e;
-		--header-color: #fff;
-		--header-bgcolor: #1e1e1e;
 		--burger-btn: #f5f5f5;
 		--burger-menu-bgcolor: #005eff;
+		--header-color: #fff;
+		--header-bgcolor: #1e1e1e;
 		--footer-color: #fff;
 		--footer-bgcolor: #1e1e1e;
 	}
