@@ -59,6 +59,10 @@ a,
 		height: 0.0625rem;
 		background-color: var(--accent-color);
 		transition: transform 0.4s ease-in-out 0.005s, color 0.3s ease-in-out 0.01s;
+
+		@media (max-width: $breakpoint-768) {
+			display: none;
+		}
 	}
 
 	@media (any-hover: hover) {
@@ -119,11 +123,9 @@ a,
 /* ____________________________________________ */
 /* Humburger menu */
 @media (max-width: $breakpoint-768) {
-	@media (any-hover: hover) {
-		.nav__li-link:is(:hover, :focus-visible) {
-			color: var(--link-color);
-			transform: translateX(3%) scale(1.05);
-		}
+	.nav__li-link:active {
+		color: var(--active-color);
+		transform: scale(1.05);
 	}
 }
 
@@ -137,10 +139,11 @@ a,
 [data-button-hover] {
 	transform: scale(1);
 	transition:
-		box-shadow 0.2s linear 0.01s,
-		transform 0.15s linear 0s,
-		background-color 0.45s linear 0.03s,
-		color 0.3s linear 0.03s;
+		box-shadow 0.5s,
+		border-color 0.5s,
+		transform 0.5s,
+		background-color 0.1s linear,
+		color 0.2s linear;
 
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
@@ -149,13 +152,14 @@ a,
 			color: #fff;
 			background-color: var(--accent-color);
 			transform: scale(1.03);
-			animation: btn-effect 0.3s ease-in-out 0.01s;
+			animation: btn-effect 0.2s ease-in-out 0.01s;
 		}
 	}
 
 	&:active {
 		box-shadow: 0 0 0.625rem var(--active-color);
 		background-color: var(--active-color);
+		transform: scale(0.97);
 	}
 }
 

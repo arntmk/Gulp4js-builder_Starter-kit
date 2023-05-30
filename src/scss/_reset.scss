@@ -161,16 +161,13 @@ input:not(
 	outline: none;
 }
 
-:where(summary) {
-	outline-offset: 0.25rem;
-}
-
 :where(
+summary,
 button,
 input:not([type="checkbox"],[type="radio"],[type="color"]),
 select,
 textarea) {
-	outline-offset: 0.1875rem;
+	outline-offset: 0.25rem;
 }
 
 :where([type="checkbox"],[type="radio"]) {
