@@ -43,7 +43,7 @@ details .content {
 
 details[open] > *:not(summary) {
 	overflow: hidden;
-	animation: details 0.8s ease-in-out forwards;
+	animation: details 1s ease-in-out forwards;
 	will-change: max-height;
 }
 
