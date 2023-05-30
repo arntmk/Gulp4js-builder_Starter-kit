@@ -14,14 +14,20 @@
 		<!-- ____________________________________________ -->
 		<div class="tabs-wrapper">
 			<div class="tabs">
-				<button class="tabs__nav-btn" data-tab="#tab-1" aria-label="tabs">Tab One</button>
-				<button class="tabs__nav-btn" data-tab="#tab-2" aria-label="tabs">Tab Two</button>
-				<button class="tabs__nav-btn" data-tab="#tab-3" aria-label="tabs">Tab Three</button>
+				<button class="tabs__nav-btn" data-tab="#tab-1" aria-label="tabs" aria-expanded="true">
+					Tab One
+				</button>
+				<button class="tabs__nav-btn" data-tab="#tab-2" aria-label="tabs" aria-expanded="false">
+					Tab Two
+				</button>
+				<button class="tabs__nav-btn" data-tab="#tab-3" aria-label="tabs" aria-expanded="false">
+					Tab Three
+				</button>
 			</div>
 			<div class="tabs__content-wrapper">
-				<div class="tabs__content" id="tab-1">Content One</div>
-				<div class="tabs__content" id="tab-2">Content Two</div>
-				<div class="tabs__content" id="tab-3">Content Three</div>
+				<div class="tabs__content" id="tab-1" aria-hidden="false">Content One</div>
+				<div class="tabs__content" id="tab-2" aria-hidden="true">Content Two</div>
+				<div class="tabs__content" id="tab-3" aria-hidden="true">Content Three</div>
 			</div>
 		</div>
 		<!-- ____________________________________________ -->
