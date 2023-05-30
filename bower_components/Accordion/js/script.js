@@ -17,21 +17,41 @@ function removeOpen(index1) {
 	});
 }
 
-accordions.forEach((item, index) => {
-	const accordionBtn = item.querySelector('.accordion-button');
-	accordionBtn.addEventListener('click', () => {
-		item.classList.toggle('active');
-
+if (accordions) {
+	accordions.forEach((item, index) => {
+		const accordionBtn = item.querySelector('.accordion-button');
 		const content = item.querySelector('.accordion-content');
-		if (item.classList.contains('active')) {
-			content.style.maxHeight = `${content.scrollHeight}px`;
-			accordionBtn.setAttribute('aria-expanded', true);
-			content.setAttribute('aria-hidden', false);
-		} else {
-			content.style.maxHeight = '0px';
-			accordionBtn.setAttribute('aria-expanded', false);
-			content.setAttribute('aria-hidden', true);
-		}
-		removeOpen(index);
+		accordionBtn.addEventListener('click', () => {
+			item.classList.toggle('active');
+
+			if (item.classList.contains('active')) {
+				content.style.maxHeight = `${content.scrollHeight}px`;
+				accordionBtn.setAttribute('aria-expanded', true);
+				content.setAttribute('aria-hidden', false);
+			} else {
+				content.style.maxHeight = '0px';
+				accordionBtn.setAttribute('aria-expanded', false);
+				content.setAttribute('aria-hidden', true);
+			}
+			removeOpen(index);
+		});
+		// Клик снаружи дропдауна. Закрыть дропдаун
+		document.addEventListener('click', (e) => {
+			if (e.target !== accordionBtn) {
+				content.style.maxHeight = '0px';
+				item.classList.remove('active');
+				accordionBtn.setAttribute('aria-expanded', false);
+				content.setAttribute('aria-hidden', true);
+			}
+		});
+		// Нажатие на Tab или Escape. Закрыть дропдаун
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Tab' || e.key === 'Escape') {
+				content.style.maxHeight = '0px';
+				item.classList.remove('active');
+				accordionBtn.setAttribute('aria-expanded', false);
+				content.setAttribute('aria-hidden', true);
+			}
+		});
 	});
-});
+}
