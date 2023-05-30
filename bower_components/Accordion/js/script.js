@@ -1,3 +1,5 @@
+/* https://codepen.io/a7rarpress/pen/bGmrdma */
+
 /* ____________________________________________ */
 // ==Accordion==
 
@@ -37,7 +39,7 @@ if (accordions) {
 		});
 		// Клик снаружи дропдауна. Закрыть дропдаун
 		document.addEventListener('click', (e) => {
-			if (e.target !== accordionBtn) {
+			if (!item.contains(e.target)) {
 				content.style.maxHeight = '0px';
 				item.classList.remove('active');
 				accordionBtn.setAttribute('aria-expanded', false);
