@@ -76,7 +76,9 @@ label:is(:hover, :focus-visible) .custom-radio {
 	transition: 0.3s ease-in-out;
 }
 
-/* ____________________Checkbox________________________ */
+/* ____________________________________________ */
+/* _________________Checkbox___________________ */
+/* ____________________________________________ */
 .checkbox-wrapper {
 	margin-bottom: 12px;
 	padding-left: 35px;
@@ -129,7 +131,8 @@ label:is(:hover, :focus-visible) .custom-checkbox {
 	transition: 0.3s ease-in-out;
 }
 
-/* Disabled */
+/* ____________________________________________ */
+/* Checkbox Disabled */
 
 .real-checkbox:disabled + .custom-checkbox {
 	border-color: #8f8f9d;
