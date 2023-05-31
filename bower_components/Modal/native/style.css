@@ -78,6 +78,7 @@ dialog::backdrop {
 
 body.lock {
 	overflow: hidden;
+	padding-right: 17px;
 }
 
 /* ____________________________________________ */
