@@ -34,7 +34,7 @@ h1 {
 	text-align: center;
 }
 
-@media (width <= 767px) {
+@media (max-width: 767px) {
 	html {
 		font-size: 14px;
 	}

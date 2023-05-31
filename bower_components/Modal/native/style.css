@@ -93,12 +93,12 @@ dialog {
 	border-radius: 15px;
 	padding: 0;
 	max-width: 50ch;
-	box-shadow: 0 0 1em rgb(0 0 0 / 80%);
+	box-shadow: 0 0 1em rgb(0 0 0 / 40%);
 	background-color: #fff;
 }
 
 dialog::backdrop {
-	background: rgb(40 69 93 / 40%);
+	background: rgb(00 0 0 / 30%);
 
 	/* backdrop-filter: blur(1.5px); */
 }
@@ -119,12 +119,12 @@ dialog::backdrop {
 /* Animation */
 dialog[open] {
 	overflow: hidden;
-	animation: dialog-fade 0.8s ease-out forwards;
+	animation: dialog-fade 0.5s ease-out forwards;
 }
 
 @keyframes dialog-fade {
 	from {
-		transform: translateY(-200%) scale(0);
+		transform: translateY(-70%) scale(0.7);
 	}
 
 	to {
