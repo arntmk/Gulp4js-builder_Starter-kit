@@ -2,6 +2,7 @@
 const modalBtn = document.querySelectorAll('.modal-btn');
 const modalOverlay = document.querySelector('.modal-overlay');
 const modals = document.querySelectorAll('.modal');
+const modalBtnClose = document.querySelectorAll('.modal-close-btn');
 
 const { body } = document;
 
@@ -24,6 +25,14 @@ modalBtn.forEach((modalBtns) => {
 					modalBtns.setAttribute('aria-expanded', false);
 					modalContent.setAttribute('aria-hidden', true);
 				}
+			});
+			// Закрыть модальное окно крестикам
+			modalBtnClose.forEach((modalBtnsClose) => {
+				modalBtnsClose.addEventListener('click', () => {
+					modalContent.classList.remove('active');
+					modalOverlay.classList.remove('overlay-active');
+					body.classList.remove('lock');
+				});
 			});
 		});
 

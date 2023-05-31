@@ -43,6 +43,7 @@
 		"id",
 		"name",
 		"type",
+		"role",
 		"data-.+",
 		"ng-.+",
 		"src",
@@ -52,7 +53,6 @@
 		"value",
 		"title",
 		"alt",
-		"role",
 		"aria-.+",
 		"$unknown$"
 	],
