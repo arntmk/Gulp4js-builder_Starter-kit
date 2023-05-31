@@ -9,18 +9,18 @@ const { body } = document;
 
 if (modal && openModal && closeModal) {
 	openModal.addEventListener('click', () => {
-		body.classList.toggle('modal-open');
+		body.classList.toggle('lock');
 		modal.showModal();
 	});
 
 	closeModal.forEach((item) => item.addEventListener('click', () => {
-		body.classList.remove('modal-open');
+		body.classList.remove('lock');
 		modal.close();
 	}));
 
 	modal.addEventListener('click', (e) => {
 		if (e.target === modal) {
-			body.classList.remove('modal-open');
+			body.classList.remove('lock');
 			modal.close();
 		}
 	});
