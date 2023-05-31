@@ -1,5 +1,5 @@
 /* eslint-disable no-shadow */
-const modalBtn = document.querySelectorAll('.modal-btn');
+const modalBtn = document.querySelectorAll('.modal-open-btn');
 const modalOverlay = document.querySelector('.modal-overlay');
 const modals = document.querySelectorAll('.modal');
 const modalBtnClose = document.querySelectorAll('.modal-close-btn');

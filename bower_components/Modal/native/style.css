@@ -87,7 +87,8 @@ body.lock {
 /* ____________________Modal________________________ */
 dialog {
 	position: fixed;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
 	border: thin solid transparent;
 	border-radius: 15px;
 	padding: 0;
