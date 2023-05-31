@@ -10,13 +10,13 @@
 	</head>
 	<body class="body">
 		<!-- ____________________________________________ -->
-		<button class="modal-btn" data-path="modal--1">Окно 1</button>
-		<button class="modal-btn" data-path="modal--2">Окно 2</button>
+		<button class="modal-btn" data-path="modal--1" aria-expanded="false">Окно 1</button>
+		<button class="modal-btn" data-path="modal--2" aria-expanded="false">Окно 2</button>
 
 		<div class="modals">
 			<div class="modal-overlay">
-				<div class="modal" data-target="modal--1">Окно 1</div>
-				<div class="modal" data-target="modal--2">Окно 2</div>
+				<div class="modal modal--1" data-target="modal--1" aria-hidden="true">Окно 1</div>
+				<div class="modal modal--2" data-target="modal--2" aria-hidden="true">Окно 2</div>
 			</div>
 		</div>
 		<!-- ____________________________________________ -->

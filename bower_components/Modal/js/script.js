@@ -3,18 +3,26 @@ const modalBtn = document.querySelectorAll('.modal-btn');
 const modalOverlay = document.querySelector('.modal-overlay');
 const modals = document.querySelectorAll('.modal');
 
-modalBtn.forEach((modalbtns) => {
-	modalbtns.addEventListener('click', (e) => {
-		const path = e.currentTarget.getAttribute('data-path');
+const { body } = document;
 
-		modals.forEach((el) => {
-			el.classList.remove('active');
+modalBtn.forEach((modalBtns) => {
+	modalBtns.addEventListener('click', (e) => {
+		const path = e.currentTarget.getAttribute('data-path');
+		body.classList.add('lock');
+		modalBtns.setAttribute('aria-expanded', true);
+
+		modals.forEach((modalContent) => {
+			modalContent.classList.remove('active');
+			modalContent.setAttribute('aria-hidden', false);
 
 			// Закрыть модальное окно при нажатии на Tab or Esc
 			document.addEventListener('keydown', (e) => {
 				if (e.key === 'Tab' || e.key === 'Escape') {
-					el.classList.remove('active');
+					modalContent.classList.remove('active');
 					modalOverlay.classList.remove('overlay-active');
+					body.classList.remove('lock');
+					modalBtns.setAttribute('aria-expanded', false);
+					modalContent.setAttribute('aria-hidden', true);
 				}
 			});
 		});
@@ -27,8 +35,14 @@ modalBtn.forEach((modalbtns) => {
 modalOverlay.addEventListener('click', (e) => {
 	if (e.target === modalOverlay) {
 		modalOverlay.classList.remove('overlay-active');
-		modals.forEach((el) => {
-			el.classList.remove('active');
+		body.classList.remove('lock');
+		modals.forEach((modalContent) => {
+			modalContent.classList.remove('active');
+			body.classList.remove('lock');
+			modalContent.setAttribute('aria-hidden', true);
+		});
+		modalBtn.forEach((modalBtns) => {
+			modalBtns.setAttribute('aria-expanded', false);
 		});
 	}
 });
