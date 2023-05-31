@@ -9,15 +9,30 @@ document.documentElement.style.setProperty('--scroll-padding', `${navigationHeig
 /* ____________________________________________ */
 /* ____________________________________________ */
 // ===Header Change Color===
-const minOffset = 50;
-window.onscroll = function () {
-	const hasClass = document.body.classList.contains('is_scrolled');
 
-	if (minOffset < document.documentElement.scrollTop) {
-		if (!hasClass) {
-			document.body.classList.add('is_scrolled');
-		}
-	} else if (hasClass) {
-		document.body.classList.remove('is_scrolled');
-	}
+/* const header = document.querySelector('.header');
+const minOffset = 50;
+window.onscroll = () => {
+	header.classList.toggle('nav-scrolled', minOffset < document.documentElement.scrollTop);
+}; */
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+// ===Header Change Color===
+const header = document.querySelector('.header');
+const navTopSection = document.querySelector('.nav-observer');
+
+const navOptions = {
+	rootMargin: '-200px 0px 0px 0px',
 };
+
+const onScroll = (entries, observer) => {
+	entries.forEach((entry) => {
+		header.classList.toggle('nav-scrolled', !entry.isIntersecting);
+	});
+};
+
+const navObserver = new IntersectionObserver(onScroll, navOptions);
+
+navObserver.observe(navTopSection);

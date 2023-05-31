@@ -1,6 +1,8 @@
 /* https://www.youtube.com/watch?v=iGUSTyG-CYw&list=PLig1Jrpe_hzoJqsT81rjMw3qRV1AKGOsf&index=58 */
 /* https://www.cyberforum.ru/javascript-beginners/thread2798921.html */
-
+/* https://github.com/kevin-powell/navbar-change-on-scroll/tree/master/nav-change-finished */
+/* https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling */
+/* https://www.youtube.com/watch?v=jTaKjLE7Cvo */
 /* ____________________________________________ */
 @charset "UTF-8";
 
@@ -16,9 +18,9 @@ html {
 	line-height: 1.5;
 }
 
-body {
+/* body {
 	height: 2000px;
-}
+} */
 
 div#body-wrappar {
 	display: flex;
@@ -50,9 +52,9 @@ ul {
 }
 
 /* ____________________________________________ */
-.header {
+/* .header {
 	background-color: #333;
-}
+} */
 
 .header__container {
 	display: flex;
@@ -93,17 +95,21 @@ html {
 	top: 0;
 	z-index: 2;
 	width: 100%;
-	background-color: transparent;
-	transition: background-color 0.3s ease-in-out;
+	background-color: #f00;
+	transition: all 0.3s ease-in-out;
 }
 
 .main {
 	margin-top: 5.5rem;
+	background-color: #eee;
 }
 
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
-.is_scrolled .header {
+/* .nav-scrolled .header */
+.nav-scrolled {
+	box-shadow: 0 3px 20px rgb(0 0 0 / 25%);
+	color: #fff;
 	background-color: rgb(253 184 39 / 90%);
 }
