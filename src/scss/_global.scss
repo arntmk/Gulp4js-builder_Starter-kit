@@ -26,14 +26,14 @@ body {
 
 	&.lock {
 		overflow: hidden;
-		padding-right: 17px;
+		padding-right: 17px; /* scrollbar-width for body */
 	}
 }
 
 /* ____________________________________________ */
-/* Fixed Header overflow movement fix */
+/* Fixed Header bodyLock fix */
 header {
-	padding-right: 17px;
+	padding-right: 17px; /* scrollbar-width for header */
 }
 
 /* Sticky Footer */
