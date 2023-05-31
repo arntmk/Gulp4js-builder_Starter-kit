@@ -6,52 +6,54 @@ const modalBtnClose = document.querySelectorAll('.modal-close-btn');
 
 const { body } = document;
 
-modalBtn.forEach((modalBtns) => {
-	modalBtns.addEventListener('click', (e) => {
-		const path = e.currentTarget.getAttribute('data-path');
-		body.classList.add('lock');
-		modalBtns.setAttribute('aria-expanded', true);
+if (modalBtn && modalOverlay && modals && modalBtnClose) {
+	modalBtn.forEach((modalBtns) => {
+		modalBtns.addEventListener('click', (e) => {
+			const path = e.currentTarget.getAttribute('data-path');
+			body.classList.add('lock');
+			modalBtns.setAttribute('aria-expanded', true);
 
-		modals.forEach((modalContent) => {
-			modalContent.classList.remove('active');
-			modalContent.setAttribute('aria-hidden', false);
+			modals.forEach((modalContent) => {
+				modalContent.classList.remove('active');
+				modalContent.setAttribute('aria-hidden', false);
 
-			// Закрыть модальное окно при нажатии на Tab or Esc
-			document.addEventListener('keydown', (e) => {
-				if (e.key === 'Tab' || e.key === 'Escape') {
-					modalContent.classList.remove('active');
-					modalOverlay.classList.remove('overlay-active');
-					body.classList.remove('lock');
-					modalBtns.setAttribute('aria-expanded', false);
-					modalContent.setAttribute('aria-hidden', true);
-				}
-			});
-			// Закрыть модальное окно крестикам
-			modalBtnClose.forEach((modalBtnsClose) => {
-				modalBtnsClose.addEventListener('click', () => {
-					modalContent.classList.remove('active');
-					modalOverlay.classList.remove('overlay-active');
-					body.classList.remove('lock');
+				// Закрыть модальное окно при нажатии на Tab or Esc
+				document.addEventListener('keydown', (e) => {
+					if (e.key === 'Tab' || e.key === 'Escape') {
+						modalContent.classList.remove('active');
+						modalOverlay.classList.remove('overlay-active');
+						body.classList.remove('lock');
+						modalBtns.setAttribute('aria-expanded', false);
+						modalContent.setAttribute('aria-hidden', true);
+					}
+				});
+				// Закрыть модальное окно крестикам
+				modalBtnClose.forEach((modalBtnsClose) => {
+					modalBtnsClose.addEventListener('click', () => {
+						modalContent.classList.remove('active');
+						modalOverlay.classList.remove('overlay-active');
+						body.classList.remove('lock');
+					});
 				});
 			});
-		});
 
-		document.querySelector(`[data-target="${path}"]`).classList.add('active');
-		modalOverlay.classList.add('overlay-active');
+			document.querySelector(`[data-target="${path}"]`).classList.add('active');
+			modalOverlay.classList.add('overlay-active');
+		});
 	});
-});
 
-modalOverlay.addEventListener('click', (e) => {
-	if (e.target === modalOverlay) {
-		modalOverlay.classList.remove('overlay-active');
-		body.classList.remove('lock');
-		modals.forEach((modalContent) => {
-			modalContent.classList.remove('active');
+	modalOverlay.addEventListener('click', (e) => {
+		if (e.target === modalOverlay) {
+			modalOverlay.classList.remove('overlay-active');
 			body.classList.remove('lock');
-			modalContent.setAttribute('aria-hidden', true);
-		});
-		modalBtn.forEach((modalBtns) => {
-			modalBtns.setAttribute('aria-expanded', false);
-		});
-	}
-});
+			modals.forEach((modalContent) => {
+				modalContent.classList.remove('active');
+				body.classList.remove('lock');
+				modalContent.setAttribute('aria-hidden', true);
+			});
+			modalBtn.forEach((modalBtns) => {
+				modalBtns.setAttribute('aria-expanded', false);
+			});
+		}
+	});
+}
