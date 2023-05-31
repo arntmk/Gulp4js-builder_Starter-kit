@@ -9,93 +9,16 @@
 		<script src="script.js" defer></script>
 	</head>
 	<body class="body">
-		<h1>Modals the <em>easy</em> way</h1>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse nisi, laboriosam illum
-			temporibus ipsam?
-		</p>
-		<br />
-		<!-- ____________________________________________ -->
-		<button class="button open-btn" data-open-modal>open modal</button>
-		<!-- ____________________________________________ -->
-		<dialog class="modal">
-			<div class="modal-wrapper">
-				<button class="button close-btn" data-close-modal>close</button>
-				<h2>Modal</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse nisi, laboriosam illum
-					temporibus ipsam?
-				</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quo.</p>
-				<form class="form" method="dialog">
-					<label>Your name <input type="text" /></label>
-					<label>Your email <input type="email" /></label>
-					<button class="button" type="submit" data-close-modal>submit form</button>
-				</form>
+		<button class="modal-btn" data-path="form-popup">Окно 1</button>
+		<button class="modal-btn" data-path="me-popup">Окно 2</button>
+
+		<div class="modals">
+			<div class="modal-overlay">
+				<div class="modal modal--1" data-target="form-popup">Окно 1</div>
+				<div class="modal modal--2" data-target="me-popup">Окно 2</div>
 			</div>
-		</dialog>
-		<!-- ____________________________________________ -->
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
+		</div>
 
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam exercitationem sequi,
-			in fuga sint dolore laudantium culpa iure consequatur laborum a numquam omnis autem amet neque
-			ipsa, ratione atque!
-		</p>
+		<script src="script.js"></script>
 	</body>
 </html>
