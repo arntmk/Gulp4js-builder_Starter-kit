@@ -1,6 +1,7 @@
 /* ____________________________________________ */
 // ===Hamburger menu===
 
+const headerfixed = document.querySelector('.header');
 const menu = document.querySelector('.header__nav');
 const menuBtn = document.querySelector('.menu-button');
 
@@ -11,6 +12,7 @@ if (menu && menuBtn) {
 		menu.classList.toggle('active');
 		menuBtn.classList.toggle('active');
 		body.classList.toggle('lock');
+		headerfixed.classList.toggle('header-fixed');
 		menuBtn.setAttribute('aria-expanded', true);
 	});
 
@@ -19,6 +21,7 @@ if (menu && menuBtn) {
 			menu.classList.remove('active');
 			menuBtn.classList.remove('active');
 			body.classList.remove('lock');
+			headerfixed.classList.remove('header-fixed');
 			menuBtn.setAttribute('aria-expanded', false);
 		}
 	});
@@ -28,6 +31,7 @@ if (menu && menuBtn) {
 			menu.classList.remove('active');
 			menuBtn.classList.remove('active');
 			body.classList.remove('lock');
+			headerfixed.classList.remove('header-fixed');
 			menuBtn.setAttribute('aria-expanded', false);
 		});
 	});

@@ -1,6 +1,7 @@
 /* ____________________________________________ */
 // ===Hamburger menu===
 
+const headerfixed = document.querySelector('.header');
 const menu = document.querySelector('.header__nav');
 const menuBtn = document.querySelector('.menu-button');
 
@@ -11,6 +12,7 @@ if (menu && menuBtn) {
 		menu.classList.toggle('active');
 		menuBtn.classList.toggle('active');
 		body.classList.toggle('lock');
+		headerfixed.classList.toggle('header-fixed');
 		menuBtn.setAttribute('aria-expanded', true);
 	});
 
@@ -19,6 +21,7 @@ if (menu && menuBtn) {
 			menu.classList.remove('active');
 			menuBtn.classList.remove('active');
 			body.classList.remove('lock');
+			headerfixed.classList.remove('header-fixed');
 			menuBtn.setAttribute('aria-expanded', false);
 		}
 	});
@@ -28,26 +31,26 @@ if (menu && menuBtn) {
 			menu.classList.remove('active');
 			menuBtn.classList.remove('active');
 			body.classList.remove('lock');
+			headerfixed.classList.remove('header-fixed');
 			menuBtn.setAttribute('aria-expanded', false);
 		});
 	});
 }
 
 /* =========================================== */
-// '[data-scroll-anchors]'
-// 'a[href*="#"]'
 
-// const anchors = document.querySelectorAll('a[href*="#"]');
+/* const anchors = document.querySelectorAll('a[href*="#"]');
 
-// anchors.forEach((anchor) => {
-//   anchor.addEventListener('click', (event) => {
-//     event.preventDefault();
+anchors.forEach((anchor) => {
+	anchor.addEventListener('click', (event) => {
+		event.preventDefault();
 
-//     const blockID = anchor.getAttribute('href').substring(1);
+		const blockID = anchor.getAttribute('href').substring(1);
 
-//     document.getElementById(blockID).scrollIntoView({
-//       behavior: 'smooth',
-//       block: 'start',
-//     });
-//   });
-// });
+		document.getElementById(blockID).scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+		});
+	});
+});
+ */
