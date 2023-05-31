@@ -7,8 +7,10 @@
 	width: 100%;
 }
 
+/* Fixed Header bodyLock fix */
 .header-fixed {
 	position: fixed;
+	padding-right: 17px; /* scrollbar-width for header */
 }
 
 .main-fixed {
