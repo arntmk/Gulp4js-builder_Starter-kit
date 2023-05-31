@@ -10,7 +10,7 @@ if (modalBtn && modalOverlay && modals && modalBtnClose) {
 	modalBtn.forEach((modalBtns) => {
 		modalBtns.addEventListener('click', (e) => {
 			const path = e.currentTarget.getAttribute('data-path');
-			body.classList.add('lock');
+			body.classList.add('modal-open');
 			modalBtns.setAttribute('aria-expanded', true);
 
 			modals.forEach((modalContent) => {
@@ -22,7 +22,7 @@ if (modalBtn && modalOverlay && modals && modalBtnClose) {
 					if (e.key === 'Tab' || e.key === 'Escape') {
 						modalContent.classList.remove('active');
 						modalOverlay.classList.remove('overlay-active');
-						body.classList.remove('lock');
+						body.classList.remove('modal-open');
 						modalBtns.setAttribute('aria-expanded', false);
 						modalContent.setAttribute('aria-hidden', true);
 					}
@@ -32,7 +32,7 @@ if (modalBtn && modalOverlay && modals && modalBtnClose) {
 					modalBtnsClose.addEventListener('click', () => {
 						modalContent.classList.remove('active');
 						modalOverlay.classList.remove('overlay-active');
-						body.classList.remove('lock');
+						body.classList.remove('modal-open');
 					});
 				});
 			});
@@ -45,10 +45,10 @@ if (modalBtn && modalOverlay && modals && modalBtnClose) {
 	modalOverlay.addEventListener('click', (e) => {
 		if (e.target === modalOverlay) {
 			modalOverlay.classList.remove('overlay-active');
-			body.classList.remove('lock');
+			body.classList.remove('modal-open');
 			modals.forEach((modalContent) => {
 				modalContent.classList.remove('active');
-				body.classList.remove('lock');
+				body.classList.remove('modal-open');
 				modalContent.setAttribute('aria-hidden', true);
 			});
 			modalBtn.forEach((modalBtns) => {

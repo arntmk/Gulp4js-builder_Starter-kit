@@ -51,7 +51,6 @@ body {
 
 body.lock {
 	overflow: hidden;
-	padding-right: 17px;
 }
 
 a {
@@ -105,6 +104,11 @@ img {
 }
 
 /* ____________________________________________ */
+body.modal-open {
+	overflow: hidden;
+	padding-right: 17px;
+}
+
 .modal-overlay {
 	position: fixed;
 	z-index: 99998;

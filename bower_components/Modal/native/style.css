@@ -116,6 +116,11 @@ dialog::backdrop {
 	top: 0;
 }
 
+body.modal-open {
+	overflow: hidden;
+	padding-right: 17px;
+}
+
 /* ____________________________________________ */
 /* Animation */
 dialog[open] {
