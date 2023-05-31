@@ -26,10 +26,16 @@ body {
 
 	&.lock {
 		overflow: hidden;
+		padding-right: 17px;
 	}
 }
 
 /* ____________________________________________ */
+/* Fixed Header overflow movement fix */
+header {
+	padding-right: 17px;
+}
+
 /* Sticky Footer */
 html.html,
 body.body {

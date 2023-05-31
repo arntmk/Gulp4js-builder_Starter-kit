@@ -49,6 +49,11 @@ ul {
 
 body.lock {
 	overflow: hidden;
+	padding-right: 17px;
+}
+
+header {
+	padding-right: 17px;
 }
 
 :root {
