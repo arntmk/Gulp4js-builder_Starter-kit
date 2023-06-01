@@ -11,18 +11,20 @@
 		<script src="script.js" defer></script>
 	</head>
 	<body>
-		<h1>Password</h1>
+		<div class="container">
+			<h1>Password</h1>
 
-		<div class="password-wrap">
-			<label for="password">Password:</label>
-			<input
-				id="password"
-				name="password"
-				type="password"
-				required
-				pattern="(?=.*[0-9!@#$%^&*_=+-])(?=.*[a-z]).{7,30}"
-				placeholder="Password" />
-			<span class="eye-open eye-close hidden" id="togglePassword"></span>
+			<div class="password-wrap">
+				<label for="password">Password:</label>
+				<input
+					id="password"
+					name="password"
+					type="password"
+					required
+					pattern="(?=.*[0-9!@#$%^&*_=+-])(?=.*[a-z]).{7,30}"
+					placeholder="Password" />
+				<span class="eye-open eye-close hidden" id="togglePassword"></span>
+			</div>
 		</div>
 	</body>
 </html>

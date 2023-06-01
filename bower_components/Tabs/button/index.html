@@ -9,27 +9,29 @@
 		<script src="script.js" defer></script>
 	</head>
 	<body>
-		<h1>Tabs</h1>
-		<br />
-		<!-- ____________________________________________ -->
-		<div class="tabs-wrapper">
-			<div class="tabs">
-				<button class="tabs__nav-btn" data-tab="#tab-1" aria-expanded="true" aria-label="tabs">
-					Tab One
-				</button>
-				<button class="tabs__nav-btn" data-tab="#tab-2" aria-expanded="false" aria-label="tabs">
-					Tab Two
-				</button>
-				<button class="tabs__nav-btn" data-tab="#tab-3" aria-expanded="false" aria-label="tabs">
-					Tab Three
-				</button>
+		<div class="container">
+			<h1>Tabs</h1>
+			<br />
+			<!-- ____________________________________________ -->
+			<div class="tabs-wrapper">
+				<div class="tabs">
+					<button class="tabs__nav-btn" data-tab="#tab-1" aria-expanded="true" aria-label="tabs">
+						Tab One
+					</button>
+					<button class="tabs__nav-btn" data-tab="#tab-2" aria-expanded="false" aria-label="tabs">
+						Tab Two
+					</button>
+					<button class="tabs__nav-btn" data-tab="#tab-3" aria-expanded="false" aria-label="tabs">
+						Tab Three
+					</button>
+				</div>
+				<div class="tabs__content-wrapper">
+					<div class="tabs__content" id="tab-1" aria-hidden="false">Content One</div>
+					<div class="tabs__content" id="tab-2" aria-hidden="true">Content Two</div>
+					<div class="tabs__content" id="tab-3" aria-hidden="true">Content Three</div>
+				</div>
 			</div>
-			<div class="tabs__content-wrapper">
-				<div class="tabs__content" id="tab-1" aria-hidden="false">Content One</div>
-				<div class="tabs__content" id="tab-2" aria-hidden="true">Content Two</div>
-				<div class="tabs__content" id="tab-3" aria-hidden="true">Content Three</div>
-			</div>
+			<!-- ____________________________________________ -->
 		</div>
-		<!-- ____________________________________________ -->
 	</body>
 </html>

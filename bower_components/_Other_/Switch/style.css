@@ -13,6 +13,13 @@ body {
 	justify-content: center;
 }
 
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	width: 100%;
+	max-width: 1200px;
+}
+
 /* ____________________________________________ */
 /* The switch - the box around the slider */
 .switch {

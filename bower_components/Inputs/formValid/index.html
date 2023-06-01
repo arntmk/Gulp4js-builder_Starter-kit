@@ -7,49 +7,51 @@
 		<link href="style.css" rel="stylesheet" />
 	</head>
 	<body>
-		<h1>form validation</h1>
-		<br />
-		<!-- ____________________________________________ -->
-		<form action="#!" method="post">
-			<!-- ___________________text_________________________ -->
-			<input
-				id="username"
-				name="username"
-				type="text"
-				title="Must contain at least letters, and at least 3 or more characters."
-				pattern="[a-zA-Z\u0410-\u044F`].{3,20}"
-				placeholder="Your Name"
-				autocomplete="username"
-				required />
-			<!-- _____________________password_______________________ -->
-			<input
-				id="password"
-				name="password"
-				type="password"
-				title="Must contain at least one number and letter, and at least 7 or more characters."
-				pattern="(?=.*[0-9!@#$%^&*_=+\-])(?=.*[a-z]).{7,30}"
-				placeholder="Your Password"
-				required />
-			<!-- ____________________Password________________________ -->
-			<input
-				id="email"
-				name="email"
-				type="email"
-				inputmode="email"
-				pattern="^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z].{1,2}$"
-				placeholder="Your Email"
-				required />
-			<!-- _____________________tel_______________________ -->
-			<input
-				id="tel"
-				name="tel"
-				type="tel"
-				inputmode="tel"
-				pattern="[0-9].{9,13}"
-				placeholder="+38(000)000-00-00"
-				required />
+		<div class="container">
+			<h1>form validation</h1>
+			<br />
 			<!-- ____________________________________________ -->
-		</form>
-		<!-- ____________________________________________ -->
+			<form action="#!" method="post">
+				<!-- ___________________text_________________________ -->
+				<input
+					id="username"
+					name="username"
+					type="text"
+					title="Must contain at least letters, and at least 3 or more characters."
+					pattern="[a-zA-Z\u0410-\u044F`].{3,20}"
+					placeholder="Your Name"
+					autocomplete="username"
+					required />
+				<!-- _____________________password_______________________ -->
+				<input
+					id="password"
+					name="password"
+					type="password"
+					title="Must contain at least one number and letter, and at least 7 or more characters."
+					pattern="(?=.*[0-9!@#$%^&*_=+\-])(?=.*[a-z]).{7,30}"
+					placeholder="Your Password"
+					required />
+				<!-- ____________________Password________________________ -->
+				<input
+					id="email"
+					name="email"
+					type="email"
+					inputmode="email"
+					pattern="^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z].{1,2}$"
+					placeholder="Your Email"
+					required />
+				<!-- _____________________tel_______________________ -->
+				<input
+					id="tel"
+					name="tel"
+					type="tel"
+					inputmode="tel"
+					pattern="[0-9].{9,13}"
+					placeholder="+38(000)000-00-00"
+					required />
+				<!-- ____________________________________________ -->
+			</form>
+			<!-- ____________________________________________ -->
+		</div>
 	</body>
 </html>

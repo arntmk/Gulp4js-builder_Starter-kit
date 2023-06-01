@@ -42,8 +42,9 @@ h1 {
 
 .container {
 	margin: 5rem auto;
+	padding: 0 15px;
 	width: 90%;
-	max-width: 1000px;
+	max-width: 1200px;
 }
 
 /* ____________________________________________ */
