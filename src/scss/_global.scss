@@ -38,16 +38,14 @@ body {
 
 /* ____________________________________________ */
 /* Sticky Footer */
-html.html,
-body.body {
-	height: 100%;
-}
-
+/* stylelint-disable declaration-block-no-duplicate-properties */
 div#body-wrappar {
 	display: flex;
 	flex-flow: column nowrap;
 	overflow: clip; /* если используете на сайте position: sticky - используйте clip; вместо hidden */
-	min-height: 100%;
+	min-height: 100vh;
+	min-height: 100dvh;
+	min-height: 100svh;
 }
 
 main.main {
@@ -192,9 +190,9 @@ div.clearfix::after {
 /* ________________Generel_____________________ */
 /* ____________________________________________ */
 /* editor.scrollBeyondLastLine */
-footer {
+/* footer {
 	margin-bottom: 500px;
-}
+} */
 
 /* ___________Test-Styles(Delete)_______________ */
 /* Gradient */
