@@ -39,11 +39,7 @@ html {
 
 body {
 	margin: 2rem;
-	min-height: 100vh;
-	font-family: system-ui;
-	font-size: 1.25rem;
-	line-height: 1.5;
-	color: inherit;
+	min-height: 100dvh;
 }
 
 h1 em {
@@ -61,14 +57,16 @@ h1 em {
 	cursor: pointer;
 }
 
-.button:hover,
-.button:focus {
-	background: #614949;
-}
-
 form {
 	display: grid;
 	gap: 1em;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	width: 100%;
+	max-width: 1200px;
 }
 
 dialog::backdrop {
@@ -95,28 +93,28 @@ html {
 /* ____________________________________________ */
 /* ____________________________________________ */
 
-dialog {
-	position: fixed;
-	overflow-x: hidden;
-	overflow-y: auto;
-	border: thin solid transparent;
-	border-radius: 15px;
-	padding: 0;
-	max-width: 50ch;
-	box-shadow: 0 0 1em rgb(0 0 0 / 40%);
-	background-color: #fff;
-}
-
 dialog::backdrop {
 	background-color: rgb(255 255 255 / 30%);
 
 	/* backdrop-filter: blur(1.5px); */
 }
 
+dialog {
+	position: fixed;
+	overflow: auto;
+	overflow-x: hidden;
+	border: thin solid transparent;
+	border-radius: 16px;
+	padding: 0;
+	box-shadow: 0 0 1em rgb(0 0 0 / 40%);
+	background-color: #fff;
+}
+
 .modal-wrapper {
-	border-radius: 15px;
+	border-radius: 16px;
 	padding: 25px;
-	max-width: 500px;
+	height: auto;
+	max-width: 400px;
 }
 
 .close-btn {
