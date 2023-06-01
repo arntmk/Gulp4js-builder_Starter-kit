@@ -1,17 +1,11 @@
 /* ____________________Header________________________ */
 /* Header Fixed or Sticky */
 .header {
-	position: fixed; // fixed
+	position: sticky; // fixed
 	top: 0;
 	z-index: 2;
 	width: 100%;
 }
-
-/* Fixed Header bodyLock fix */
-/* .header-fixed {
-	position: fixed;
-	padding-right: 17px;
-} */
 
 /* .main-fixed {
 	margin-top: 5.65rem;

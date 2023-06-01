@@ -77,21 +77,9 @@ body.lock {
 	width: 100%;
 }
 
-/* Fixed Header bodyLock fix */
-.header-fixed {
-	position: fixed;
-	padding-right: 17px;
-}
-
-@media (max-width: 992px) {
-	.header-fixed {
-		padding-right: 0;
-	}
-}
-
-.main-fixed {
+/* .main-fixed {
 	margin-top: 5.65rem;
-}
+} */
 
 /* ____________________________________________ */
 /* ____________________________________________ */
