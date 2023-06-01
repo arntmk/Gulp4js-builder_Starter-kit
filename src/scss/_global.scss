@@ -21,12 +21,18 @@ body {
 	font-size: clamp(0.938rem, 0.852rem + 1.5vw, 1rem);
 	color: var(--text-color);
 	caret-color: #f15412;
-	background: var(--bg-color);
+	background-color: var(--bg-color);
 	accent-color: #0060df;
 
 	&.lock {
 		overflow: hidden;
-		padding-right: 17px; /* scrollbar-width for body */
+		padding-right: 17px; /* scrollbar-width */
+	}
+}
+
+@media (max-width: $breakpoint-992) {
+	body.lock {
+		padding-right: 0;
 	}
 }
 

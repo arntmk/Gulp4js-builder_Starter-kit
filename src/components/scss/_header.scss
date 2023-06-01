@@ -10,7 +10,13 @@
 /* Fixed Header bodyLock fix */
 .header-fixed {
 	position: fixed;
-	padding-right: 17px; /* scrollbar-width for header */
+	padding-right: 17px;
+}
+
+@media (max-width: $breakpoint-992) {
+	.header-fixed {
+		padding-right: 0;
+	}
 }
 
 .main-fixed {
