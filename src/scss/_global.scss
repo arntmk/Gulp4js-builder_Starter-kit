@@ -18,7 +18,7 @@ body {
 	min-width: 320px;
 	font-weight: 400;
 	font-style: normal;
-	font-size: clamp(0.938rem, 0.852rem + 1.5vw, 1rem);
+	font-size: clamp(0.938rem, 0.908rem + 0.15vw, 1rem);
 	color: var(--text-color);
 	caret-color: #f15412;
 	background-color: var(--scrollbar-bgcolor);
