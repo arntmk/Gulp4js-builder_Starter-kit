@@ -23,10 +23,6 @@ html {
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	background: #d4d1d1;
 }
 
@@ -35,6 +31,10 @@ summary {
 }
 
 .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	margin: 0 auto;
 	padding: 0 15px;
 	width: 100%;
