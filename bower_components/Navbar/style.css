@@ -49,13 +49,18 @@ ul {
 
 body.lock {
 	overflow: hidden;
-	padding-right: 17px;
+
+	/* padding-right: 17px; */
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
 	body.lock {
 		padding-right: 0;
 	}
+} */
+
+html {
+	scrollbar-gutter: stable both-edges;
 }
 
 :root {

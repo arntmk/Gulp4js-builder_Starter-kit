@@ -26,13 +26,6 @@ body {
 
 	&.lock {
 		overflow: hidden;
-		padding-right: 17px; /* scrollbar-width */
-	}
-}
-
-@media (max-width: $breakpoint-992) {
-	body.lock {
-		padding-right: 0;
 	}
 }
 
