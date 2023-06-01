@@ -32,11 +32,12 @@ body {
 
 @media (max-width: $breakpoint-992) {
 	body.lock {
-		padding-right: 0;
+		padding-right: 0; /* scrollbar-width */
 	}
 }
 
 /* ____________________________________________ */
+
 /* Sticky Footer */
 /* stylelint-disable declaration-block-no-duplicate-properties */
 div#body-wrappar {
