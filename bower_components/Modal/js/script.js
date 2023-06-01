@@ -1,8 +1,8 @@
 /* eslint-disable no-shadow */
 const modalBtn = document.querySelectorAll('.modal-open-btn');
+const modalBtnClose = document.querySelectorAll('.modal-close-btn');
 const modalOverlay = document.querySelector('.modal-overlay');
 const modals = document.querySelectorAll('.modal');
-const modalBtnClose = document.querySelectorAll('.modal-close-btn');
 
 const { body } = document;
 
@@ -27,7 +27,7 @@ if (modalBtn && modalOverlay && modals && modalBtnClose) {
 						modalContent.setAttribute('aria-hidden', true);
 					}
 				});
-				// Закрыть модальное окно крестикам
+				// Закрыть модальное окно Крестикам
 				modalBtnClose.forEach((modalBtnsClose) => {
 					modalBtnsClose.addEventListener('click', () => {
 						modalContent.classList.remove('active');
