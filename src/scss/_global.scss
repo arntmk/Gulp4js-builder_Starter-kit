@@ -21,7 +21,7 @@ body {
 	font-size: clamp(0.938rem, 0.852rem + 1.5vw, 1rem);
 	color: var(--text-color);
 	caret-color: #f15412;
-	background-color: var(--bg-color);
+	background-color: var(--scrollbar-bgcolor);
 	accent-color: #0060df;
 
 	&.lock {
@@ -32,7 +32,7 @@ body {
 
 @media (max-width: $breakpoint-992) {
 	body.lock {
-		padding-right: 0; /* scrollbar-width */
+		padding-right: 0;
 	}
 }
 
