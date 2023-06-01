@@ -7,7 +7,9 @@ html {
 *,
 *::before,
 *::after {
-	margin-top: 0;
+	margin: 0;
+	border: 0;
+	padding: 0;
 	box-sizing: inherit;
 }
 
@@ -15,6 +17,54 @@ html {
 	font-family: system-ui, "Hibana", sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
+}
+
+:where(button,input,select,textarea,optgroup,option),
+::placeholder,
+::file-selector-button {
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+:where(button) {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+:where(a) {
+	text-decoration: none;
+	color: inherit;
+	text-decoration-skip-ink: none;
+}
+
+:where(ul, ol, dl) {
+	list-style-type: none;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+	margin: 0;
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+:where(body, p, figure) {
+	margin: 0;
+}
+
+:where(cite, address) {
+	font-style: normal;
+}
+
+:where(fieldset) {
+	margin: 0;
+	border-width: 0;
+	padding: 0;
 }
 
 /* ____________________________________________ */
