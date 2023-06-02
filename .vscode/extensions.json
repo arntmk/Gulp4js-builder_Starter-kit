@@ -26,6 +26,9 @@
 		"jock.svg",
 		"streetsidesoftware.code-spell-checker",
 		"ionutvmi.path-autocomplete",
-		"vincaslt.highlight-matching-tag"
+		"vincaslt.highlight-matching-tag",
+		"cardinal90.multi-cursor-case-preserve",
+		"edgardmessias.clipboard-manager",
+		"github.github-vscode-theme"
 	]
 }
