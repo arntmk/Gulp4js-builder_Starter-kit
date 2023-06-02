@@ -4,6 +4,31 @@
 /* -------- https://www.youtube.com/shorts/2lyDv0wOQuQ --------- */
 /*  About container -> https://habr.com/ru/post/463923/ */
 
+/* ____________________General________________________ */
+html {
+	break-inside: avoid-column;
+	overflow-anchor: none;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+}
+
+*,
+*::before,
+*::after {
+	break-inside: inherit;
+	overflow-anchor: inherit;
+	margin-top: 0;
+	min-width: 0;
+	box-sizing: inherit;
+	background-repeat: inherit;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizespeed;
+}
+
 /* ____________________Reset & Typography________________________ */
 code,
 kbd,
@@ -62,31 +87,6 @@ body::-webkit-scrollbar-thumb:hover {
 
 body::-webkit-scrollbar-thumb:active {
 	background-color: darken(#777, 20%);
-}
-
-/* ____________________General________________________ */
-html {
-	break-inside: avoid-column;
-	overflow-anchor: none;
-	box-sizing: border-box;
-	background-repeat: no-repeat;
-}
-
-*,
-*::before,
-*::after {
-	break-inside: inherit;
-	overflow-anchor: inherit;
-	margin-top: 0;
-	min-width: 0;
-	box-sizing: inherit;
-	background-repeat: inherit;
-}
-
-body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizespeed;
 }
 
 /* ____________________________________________ */
