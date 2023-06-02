@@ -30,6 +30,8 @@
 		"cardinal90.multi-cursor-case-preserve",
 		"edgardmessias.clipboard-manager",
 		"github.github-vscode-theme",
-		"zardoy.fix-all-json"
+		"zardoy.fix-all-json",
+		"herrmannplatz.npm-dependency-links",
+		"pflannery.vscode-versionlens"
 	]
 }
