@@ -138,11 +138,7 @@ a,
 [type="file"]::file-selector-button,
 [data-button-hover] {
 	transform: scale(1);
-	transition:
-		box-shadow 0.5s,
-		border-color 0.5s,
-		transform 0.5s,
-		background-color 0.1s linear,
+	transition: box-shadow 0.5s, border-color 0.5s, transform 0.5s, background-color 0.1s linear,
 		color 0.2s linear;
 
 	@media (any-hover: hover) {
@@ -169,19 +165,17 @@ select,
 textarea,
 summary,
 input:not(
-	[type="button"],
-	[type="reset"],
-	[type="submit"],
-	[type="range"],
-	[type="color"],
-	[type="radio"],
-	[type="checkbox"],
-	[type="file"]),
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		[type="range"],
+		[type="color"],
+		[type="radio"],
+		[type="checkbox"],
+		[type="file"]
+	),
 [data-input-hover] {
-	transition:
-		border-color 0.3s ease-in-out 0.02s,
-		box-shadow 0.3s ease-in-out 0.02s,
-		background 0s;
+	transition: border-color 0.3s ease-in-out 0.02s, box-shadow 0.3s ease-in-out 0.02s, background 0s;
 
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {

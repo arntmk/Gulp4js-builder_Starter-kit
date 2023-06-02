@@ -9,20 +9,9 @@ code,
 kbd,
 samp,
 pre {
-	font-family:
-		ui-monospace,
-		"Menlo",
-		"Consolas",
-		"Roboto Mono",
-		"Ubuntu Monospace",
-		"Noto Mono",
-		"Oxygen Mono",
-		"Liberation Mono",
-		monospace,
-		"Apple Color Emoji",
-		"Segoe UI Emoji",
-		"Segoe UI Symbol",
-		"Noto Color Emoji";
+	font-family: ui-monospace, "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
+		"Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* ____________________________________________ */
@@ -123,32 +112,35 @@ body {
 
 /* Outline-Focus Tabs */
 :where(
-a,
-button,
-summary,
-[type="button"],
-[type="reset"],
-[type="submit"],
-[type="range"],
-[type="color"],
-[type="radio"],
-[type="checkbox"]) {
+		a,
+		button,
+		summary,
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		[type="range"],
+		[type="color"],
+		[type="radio"],
+		[type="checkbox"]
+	) {
 	&:focus-visible {
 		outline: 0.125rem solid var(--accent-color);
 	}
 }
 
 :where(
-select,
-textarea,
-input:not(
-	[type="button"],
-	[type="reset"],
-	[type="submit"],
-	[type="range"],
-	[type="color"],
-	[type="radio"],
-	[type="checkbox"])),
+		select,
+		textarea,
+		input:not(
+				[type="button"],
+				[type="reset"],
+				[type="submit"],
+				[type="range"],
+				[type="color"],
+				[type="radio"],
+				[type="checkbox"]
+			)
+	),
 [type="file"]::file-selector-button {
 	outline-color: transparent;
 
@@ -162,15 +154,16 @@ input:not(
 }
 
 :where(
-summary,
-button,
-input:not([type="checkbox"],[type="radio"],[type="color"]),
-select,
-textarea) {
+		summary,
+		button,
+		input:not([type="checkbox"], [type="radio"], [type="color"]),
+		select,
+		textarea
+	) {
 	outline-offset: 0.25rem;
 }
 
-:where([type="checkbox"],[type="radio"]) {
+:where([type="checkbox"], [type="radio"]) {
 	outline-offset: 0.0625rem;
 }
 
@@ -226,17 +219,18 @@ textarea) {
 }
 
 :where(
-a,
-label,
-button,
-summary,
-[type="button"],
-[type="reset"],
-[type="submit"],
-[type="range"],
-[type="color"],
-[type="checkbox"],
-[type="radio"]),
+		a,
+		label,
+		button,
+		summary,
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		[type="range"],
+		[type="color"],
+		[type="checkbox"],
+		[type="radio"]
+	),
 dialog::backdrop,
 [type="file"]::file-selector-button,
 [type="number"]::-webkit-inner-spin-button,

@@ -1,6 +1,5 @@
 {
 	"jsxSingleQuote": true,
-	"singleQuote": true,
 	"semi": true,
 	"trailingComma": "all",
 	"endOfLine": "lf",
@@ -10,13 +9,14 @@
 	"useTabs": true,
 	"tabWidth": 2,
 	"arrowParens": "always",
+	"singleQuote": true,
 	"overrides": [
 		{
-			"files": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.postcss"],
+			"files": ["*.scss", "*.sass", "*.less", "*.postcss"],
 			"options": { "singleQuote": false }
 		},
 		{
-			"files": ["**/*.html"],
+			"files": ["*.html"],
 			"options": { "singleQuote": false }
 		}
 	],

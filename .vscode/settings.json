@@ -31,10 +31,10 @@
 
 	// Stylelint
 	"stylelint.validate": ["css", "scss", "less", "postcss"],
-	"[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+	/* 	"[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[scss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
 	"[less]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
-	"[postcss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" },
+	"[postcss]": { "editor.defaultFormatter": "stylelint.vscode-stylelint" }, */
 
 	// Htmlhint "shift+alt+s"
 	"attrsSorter.order": [
