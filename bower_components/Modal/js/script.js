@@ -20,7 +20,7 @@ const modalController = function () {
 
 					// Закрыть модальное окно при нажатии на Tab or Esc
 					document.addEventListener('keydown', (e) => {
-						if (e.key === 'Tab' || e.key === 'Escape') {
+						if (e.key === 'Escape') {
 							modalContent.classList.remove('active');
 							modalOverlay.classList.remove('overlay-active');
 							body.classList.remove('lock');
