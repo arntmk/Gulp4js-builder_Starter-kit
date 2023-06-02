@@ -32,6 +32,7 @@
 		"github.github-vscode-theme",
 		"zardoy.fix-all-json",
 		"herrmannplatz.npm-dependency-links",
-		"pflannery.vscode-versionlens"
+		"pflannery.vscode-versionlens",
+		"chakrounanas.turbo-console-log"
 	]
 }
