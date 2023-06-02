@@ -29,6 +29,7 @@
 		"vincaslt.highlight-matching-tag",
 		"cardinal90.multi-cursor-case-preserve",
 		"edgardmessias.clipboard-manager",
-		"github.github-vscode-theme"
+		"github.github-vscode-theme",
+		"zardoy.fix-all-json"
 	]
 }
