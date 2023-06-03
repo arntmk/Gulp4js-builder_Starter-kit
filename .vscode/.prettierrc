@@ -12,7 +12,7 @@
 	"singleQuote": true,
 	"overrides": [
 		{
-			"files": ["*.scss", "*.sass", "*.less", "*.postcss"],
+			"files": ["*.css", "*.scss", "*.sass", "*.less", "*.postcss"],
 			"options": { "singleQuote": false }
 		},
 		{

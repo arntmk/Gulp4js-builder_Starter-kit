@@ -22,7 +22,7 @@
 		"**/build/**",
 		"src/scss/_font.scss",
 		"*.js",
-		"*.ts", 
+		"*.ts",
 		"*.jsx",
 		"*.tsx",
 		"*.vue",
