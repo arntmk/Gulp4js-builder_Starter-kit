@@ -22,12 +22,12 @@
 		"**/vendor/**",
 		"**/libs/**",
 		"**/build/**",
-		"**/*.css",
-		"**/*.scss",
-		"**/*.sass",
-		"**/*.less",
-		"**/*.postcss",
-		"**/*min.js"
+		"*.css",
+		"*.scss",
+		"*.sass",
+		"*.less",
+		"*.postcss",
+		"*.min.js"
 	],
 	"rules": {
 		"max-len": ["off", { "code": 120, "comments": 120 }],

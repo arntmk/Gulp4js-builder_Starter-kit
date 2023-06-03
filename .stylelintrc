@@ -21,12 +21,12 @@
 		"**/libs/**",
 		"**/build/**",
 		"src/scss/_font.scss",
-		"**/*.js",
-		"**/*.ts",
-		"**/*.jsx",
-		"**/*.tsx",
-		"**/*.vue",
-		"**/*min.css"
+		"*.js",
+		"*.ts", 
+		"*.jsx",
+		"*.tsx",
+		"*.vue",
+		"*.min.css"
 	],
 	"rules": {
 		"order/order": [
