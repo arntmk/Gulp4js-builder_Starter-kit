@@ -1,9 +1,9 @@
 # Ignore
 node_modules/
-build/ !*.html !*.css
-dist/ !*.html !*.css
-dest/ !*.html !*.css
-app/ !*.html !*.css
+build/ !*.html
+dist/ !*.html
+dest/ !*.html
+app/ !*.html
 #src/script.json
 src/scss/libs/
 src/js/libs/
