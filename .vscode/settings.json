@@ -33,7 +33,6 @@
 	"stylelint.validate": ["css", "scss", "less", "postcss"],
 
 	// Htmlhint "shift+alt+s"
-	"bemHelper.responsiveLinting": true,
 	"attrsSorter.order": [
 		"class",
 		"className",
