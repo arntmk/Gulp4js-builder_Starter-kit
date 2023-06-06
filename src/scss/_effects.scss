@@ -43,9 +43,9 @@ a,
 /* Draw Underline Link Hover Effect */
 .nav__li-link,
 [data-link-center],
-[data-link-bottom],
+[data-link-left],
 [data-link-right],
-[data-link-left] {
+[data-link-bottom] {
 	position: relative;
 	padding: 0 5px;
 	transition: transform 0.4s ease-in-out 0.01s;
@@ -95,7 +95,6 @@ a,
 }
 
 // Left line
-
 [data-link-left] {
 	&::after {
 		transform: scale(0, 1);
@@ -104,7 +103,6 @@ a,
 }
 
 // Right line
-
 [data-link-right] {
 	&::after {
 		transform: scale(0, 1);
@@ -113,7 +111,6 @@ a,
 }
 
 // Bottom line
-
 [data-link-bottom] {
 	&::after {
 		transform: translateY(3px); // change
