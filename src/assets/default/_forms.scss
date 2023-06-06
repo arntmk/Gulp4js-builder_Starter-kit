@@ -3,7 +3,7 @@
 /* ____________________________________________ */
 /* Table. */
 :where(th, td) {
-	border: thin solid #8f8f9d;
+	border: thin solid #a0a0a0;
 	padding: 0.5em;
 	text-align: center;
 	background-color: #fff;
@@ -17,13 +17,14 @@
  */
 
 :where(
-[type="button"],
-[type="reset"],
-[type="submit"],
-input:not([type="range"],[type="color"], [type="file"]),
-select,
-textarea) {
-	border: thin solid #8f8f9d;
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		input:not([type="range"], [type="color"], [type="file"]),
+		select,
+		textarea
+	) {
+	border: thin solid #a0a0a0;
 	padding: 0.25em 0.375em;
 	background-color: #fff;
 }
@@ -38,8 +39,7 @@ select {
 	appearance: none;
 	padding-right: 1.6em;
 	width: 12.45em;
-	background:
-		#fff
+	background: #fff
 		url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
 		no-repeat 98% center / 1.4em;
 }
@@ -72,8 +72,7 @@ select option:checked {
 
 	&:hover,
 	&:focus {
-		background:
-			#fff
+		background: #fff
 			url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
 			no-repeat 102% center / 1.9em;
 	}
@@ -180,8 +179,7 @@ textarea {
 }
 
 textarea::-webkit-resizer {
-	background:
-		transparent
+	background: transparent
 		url("data:image/svg+xml;utf8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3e%3cpath d='M796.8 990L990 796.8v-82.9L713.9 990h82.9zm-351.9 0L990 444.9V362L361.9 990h83zM10 990h82.9L990 92.9V10L10 990z'/%3e%3c/svg%3e")
 		no-repeat right bottom / 0.5rem;
 }
@@ -328,8 +326,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	margin-left: -1.5625rem;
 	width: 1em;
 	height: 1em;
-	background:
-		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>")
+	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>")
 		transparent no-repeat right center / 1em;
 	cursor: pointer;
 }
@@ -358,14 +355,12 @@ input[type="search"]::-webkit-search-results-decoration {
 	margin-left: -1.5625rem;
 	width: 1em;
 	height: 1em;
-	background:
-		url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath d='M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.209 0-4 1.792-4 4 0 2.209 1.791 4 4 4s4-1.791 4-4c0-2.208-1.791-4-4-4z'/%3e%3c/svg%3e")
+	background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cpath d='M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.209 0-4 1.792-4 4 0 2.209 1.791 4 4 4s4-1.791 4-4c0-2.208-1.791-4-4-4z'/%3e%3c/svg%3e")
 		transparent no-repeat right center / 1em;
 	cursor: pointer;
 }
 
 .eye-close {
-	background-image:
-		url("data:image/svg+xml;charset=UTF-8,%3csvg width='580' height='400' xmlns='http://www.w3.org/2000/svg'%3e%3c!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ --%3e%3cg%3e%3ctitle%3eLayer 1%3c/title%3e%3cg stroke='null' id='svg_30'%3e%3cpath stroke='null' id='svg_29' d='m290.360478,57.821876c114.170623,0 193.760836,85.648097 228.389307,131.827549c-33.667237,52.23624 -113.25745,152.528682 -228.389307,152.528682c-106.216408,0 -190.564731,-100.548363 -227.764505,-153.751414c35.878076,-46.833471 115.75666,-130.604817 227.764505,-130.604817zm0,-56.871246c-181.88959,0 -288.730801,186.281767 -288.730801,186.281767s116.189215,211.816957 288.730801,211.816957c185.830652,0 288.009875,-211.816957 288.009875,-211.816957s-103.116427,-186.281767 -288.009875,-186.281767zm-0.360463,85.306869c-53.084173,0 -96.123446,50.956637 -96.123446,113.742492c0,62.814291 43.039273,113.742492 96.123446,113.742492s96.123446,-50.928201 96.123446,-113.742492c0,-62.785856 -43.039273,-113.742492 -96.123446,-113.742492z'/%3e%3c/g%3e%3cline stroke-linecap='undefined' stroke-linejoin='undefined' id='svg_32' y2='406' x2='-8' y1='-11' x1='590' fill-opacity='0' stroke-opacity='null' stroke-width='50' stroke='%23ffffff' fill='none'/%3e%3c/g%3e%3c/svg%3e")
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='580' height='400' xmlns='http://www.w3.org/2000/svg'%3e%3c!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ --%3e%3cg%3e%3ctitle%3eLayer 1%3c/title%3e%3cg stroke='null' id='svg_30'%3e%3cpath stroke='null' id='svg_29' d='m290.360478,57.821876c114.170623,0 193.760836,85.648097 228.389307,131.827549c-33.667237,52.23624 -113.25745,152.528682 -228.389307,152.528682c-106.216408,0 -190.564731,-100.548363 -227.764505,-153.751414c35.878076,-46.833471 115.75666,-130.604817 227.764505,-130.604817zm0,-56.871246c-181.88959,0 -288.730801,186.281767 -288.730801,186.281767s116.189215,211.816957 288.730801,211.816957c185.830652,0 288.009875,-211.816957 288.009875,-211.816957s-103.116427,-186.281767 -288.009875,-186.281767zm-0.360463,85.306869c-53.084173,0 -96.123446,50.956637 -96.123446,113.742492c0,62.814291 43.039273,113.742492 96.123446,113.742492s96.123446,-50.928201 96.123446,-113.742492c0,-62.785856 -43.039273,-113.742492 -96.123446,-113.742492z'/%3e%3c/g%3e%3cline stroke-linecap='undefined' stroke-linejoin='undefined' id='svg_32' y2='406' x2='-8' y1='-11' x1='590' fill-opacity='0' stroke-opacity='null' stroke-width='50' stroke='%23ffffff' fill='none'/%3e%3c/g%3e%3c/svg%3e")
 		transparent no-repeat right center / 1em;
 }

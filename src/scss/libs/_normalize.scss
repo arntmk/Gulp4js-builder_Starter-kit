@@ -79,7 +79,7 @@ html {
 }
 
 /**
- * Prevent the list style to broke in Chrome, Edge, and Safari.
+ * Prevent the list style to break in Webkit browsers.
  */
 
 :where(dl, ol, ul) {
@@ -341,9 +341,9 @@ html {
  */
 
 :where(dialog) {
-  background-color: white;
+  background-color: #fff;
   border: solid;
-  color: black;
+  color: #000;
   height: fit-content;
   left: 0;
   margin: auto;
