@@ -1,10 +1,8 @@
-/* ____________________Default________________________ */
+/* ________________Default______________________ */
 /* :Pseudo-classes
-/* ____________________________________________ */
 /* ::Pseudo-elements
 /* ____________________________________________ */
-/* Link, Button, Input, Select, Datalist, Textarea, Summary */
-
+/* stylelint-disable  declaration-no-important */
 /* ____________________________________________ */
 /* Image Hover */
 img,
@@ -98,7 +96,7 @@ a,
 [data-link-left] {
 	&::after {
 		transform: scale(0, 1);
-		transform-origin: 0% 100%;
+		transform-origin: 0% 100%; // change
 	}
 }
 
@@ -114,15 +112,6 @@ a,
 [data-link-bottom] {
 	&::after {
 		transform: translateY(3px); // change
-	}
-}
-
-/* ____________________________________________ */
-/* Humburger menu */
-@media (max-width: $breakpoint-768) {
-	.nav__li-link:active {
-		color: var(--active-color);
-		transform: scale(1.05);
 	}
 }
 
@@ -157,7 +146,7 @@ a,
 }
 
 /* ____________________________________________ */
-/* Form */
+/* Form-Input Hover */
 select,
 textarea,
 summary,
@@ -184,7 +173,6 @@ input:not(
 
 /* ____________________________________________ */
 /* Input Validation */
-
 input[type="text"]:valid,
 input[type="password"]:valid,
 input[type="email"]:valid,
@@ -216,9 +204,17 @@ input[type="tel"]:not(:focus):invalid {
 	}
 }
 
+/* ____________________________________________ */
+// Selection
+::selection {
+	text-shadow: 0 0 0.625rem #000;
+	color: #fff;
+	background-color: #4682b4;
+}
+
 /* Animation
 /* ____________________________________________ */
-/* Button Effect */
+// Button Effect
 @keyframes btn-effect {
 	0% {
 		opacity: 0.5;
@@ -227,12 +223,4 @@ input[type="tel"]:not(:focus):invalid {
 	100% {
 		opacity: 1;
 	}
-}
-
-/* ____________________________________________ */
-/* Selection */
-::selection {
-	text-shadow: 0 0 0.625rem #000;
-	color: #fff;
-	background-color: #4682b4;
 }
