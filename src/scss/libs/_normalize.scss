@@ -92,8 +92,8 @@ html {
  */
 
 :where(hr) {
-  border: thin solid;  /* 1 */
-  border-color: #555 #808080 #808080 #555;  /* 1 */
+  border: thin solid; /* 1 */
+  border-color: #555 #808080 #808080 #555; /* 1 */
   box-sizing: content-box; /* 2 */
   height: 0; /* 2 */
 }
