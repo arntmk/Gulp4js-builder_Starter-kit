@@ -91,6 +91,7 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 /* ____________________________________________ */
+// Input
 :where(form) {
 	cursor: default;
 }
@@ -101,7 +102,7 @@ body::-webkit-scrollbar-thumb:active {
 	background-color: transparent;
 }
 
-/* Add typography inheritance in all browsers. */
+// Add typography inheritance in all browsers.
 :where(button, input, select, textarea, optgroup, option),
 ::placeholder,
 ::file-selector-button {
@@ -111,7 +112,7 @@ body::-webkit-scrollbar-thumb:active {
 	color: inherit;
 }
 
-/* Outline-Focus Tabs */
+// Outline-Focus Tabs
 :where(
 		a,
 		button,
@@ -174,7 +175,7 @@ body::-webkit-scrollbar-thumb:active {
 	object-fit: cover;
 }
 
-:where(iframe, img, svg, picture, input, video, select, textarea, details, dialog) {
+:where(img, svg, picture, iframe, input, video, select, textarea, details, dialog) {
 	height: auto;
 	max-width: 100%;
 }
