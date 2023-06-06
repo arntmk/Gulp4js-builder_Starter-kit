@@ -170,6 +170,7 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 /* ____________________________________________ */
+// Other
 :where(img, svg, picture) {
 	vertical-align: middle;
 	object-fit: cover;
@@ -180,7 +181,6 @@ body::-webkit-scrollbar-thumb:active {
 	max-width: 100%;
 }
 
-/* ____________________________________________ */
 :where(a) {
 	text-decoration: none;
 	color: inherit;
