@@ -25,11 +25,11 @@ body {
 	accent-color: #0060df;
 
 	&.lock {
-		position: absolute;
+		position: fixed;
+		inset: 0;
 		overflow: hidden;
 		width: 100%;
 		height: 100vh;
-		inset: 0;
 	}
 }
 
