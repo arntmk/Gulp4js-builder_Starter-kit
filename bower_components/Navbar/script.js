@@ -1,5 +1,5 @@
 /* ____________________________________________ */
-// ===Hamburger menu===
+// ===Disable Scroll===
 const { body } = document;
 
 const scrollController = {
@@ -21,6 +21,8 @@ const scrollController = {
 	},
 };
 
+/* ____________________________________________ */
+// ===Hamburger menu===
 const hamburgerController = function () {
 	const menu = document.querySelector('.header__nav');
 	const menuBtn = document.querySelector('.menu-button');

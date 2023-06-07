@@ -1,5 +1,7 @@
 /* eslint-disable no-shadow */
 
+/* ____________________________________________ */
+// ===Disable Scroll===
 const { body } = document;
 
 const scrollController = {
@@ -21,6 +23,8 @@ const scrollController = {
 	},
 };
 
+/* ____________________________________________ */
+// ===Modal Window===
 const modalController = function () {
 	const modalBtn = document.querySelectorAll('.modal-open-btn');
 	const modalBtnClose = document.querySelectorAll('.modal-close-btn');
@@ -79,5 +83,4 @@ const modalController = function () {
 		});
 	}
 };
-
 modalController();
