@@ -6,15 +6,15 @@ const scrollController = {
 	scrollPosition: 0,
 	disableScroll() {
 		scrollController.scrollPosition = window.scrollY;
-		document.body.classList.toggle('lock');
 		document.body.style.cssText = `
 		top: -${scrollController.scrollPosition}px;
 		padding-right: ${window.innerWidth - document.body.offsetWidth}px
 		`;
 		document.documentElement.style.scrollBehavior = 'unset';
+		body.classList.toggle('lock');
 	},
 	enableScroll() {
-		document.body.classList.remove('lock');
+		body.classList.remove('lock');
 		document.body.style.cssText = '';
 		window.scroll({ top: scrollController.scrollPosition });
 		document.documentElement.style.scrollBehavior = '';
