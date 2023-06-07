@@ -113,6 +113,7 @@ html {
 /* ____________________Hamburger-Menu________________________ */
 .header__nav.active {
 	left: 0;
+	cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -136,6 +137,7 @@ html {
 		height: 100%;
 		text-align: center;
 		background-color: var(--burger-menu-bgcolor);
+		cursor: auto;
 	}
 
 	.nav__li-link {
@@ -187,6 +189,11 @@ html {
 
 	.menu-icon::after {
 		transform: translate(-15px, -10px);
+	}
+
+	/* ____________________________________________ */
+	.menu-button.active {
+		pointer-events: none;
 	}
 
 	.menu-button.active .menu-icon {
