@@ -1,17 +1,37 @@
 /* eslint-disable no-shadow */
+
+const { body } = document;
+
+const scrollController = {
+	scrollPosition: 0,
+	disableScroll() {
+		scrollController.scrollPosition = window.scrollY;
+		document.body.style.cssText = `
+		top: -${scrollController.scrollPosition}px;
+		padding-right: ${window.innerWidth - document.body.offsetWidth}px
+		`;
+		document.documentElement.style.scrollBehavior = 'unset';
+		body.classList.toggle('lock');
+	},
+	enableScroll() {
+		body.classList.remove('lock');
+		document.body.style.cssText = '';
+		window.scroll({ top: scrollController.scrollPosition });
+		document.documentElement.style.scrollBehavior = '';
+	},
+};
+
 const modalController = function () {
 	const modalBtn = document.querySelectorAll('.modal-open-btn');
 	const modalBtnClose = document.querySelectorAll('.modal-close-btn');
 	const modalOverlay = document.querySelector('.modal-overlay');
 	const modals = document.querySelectorAll('.modal');
 
-	const { body } = document;
-
 	if (modalBtn && modalOverlay && modals && modalBtnClose) {
 		modalBtn.forEach((modalBtns) => {
 			modalBtns.addEventListener('click', (e) => {
 				const path = e.currentTarget.getAttribute('data-path');
-				body.classList.add('lock');
+				scrollController.disableScroll();
 				modalBtns.setAttribute('aria-expanded', true);
 
 				modals.forEach((modalContent) => {
@@ -23,7 +43,7 @@ const modalController = function () {
 						if (e.key === 'Escape') {
 							modalContent.classList.remove('active');
 							modalOverlay.classList.remove('overlay-active');
-							body.classList.remove('lock');
+							scrollController.enableScroll();
 							modalBtns.setAttribute('aria-expanded', false);
 							modalContent.setAttribute('aria-hidden', true);
 						}
@@ -33,7 +53,7 @@ const modalController = function () {
 						modalBtnsClose.addEventListener('click', () => {
 							modalContent.classList.remove('active');
 							modalOverlay.classList.remove('overlay-active');
-							body.classList.remove('lock');
+							scrollController.enableScroll();
 						});
 					});
 				});
@@ -46,10 +66,10 @@ const modalController = function () {
 		modalOverlay.addEventListener('click', (e) => {
 			if (e.target === modalOverlay) {
 				modalOverlay.classList.remove('overlay-active');
-				body.classList.remove('lock');
+				scrollController.enableScroll();
 				modals.forEach((modalContent) => {
 					modalContent.classList.remove('active');
-					body.classList.remove('lock');
+					scrollController.enableScroll();
 					modalContent.setAttribute('aria-hidden', true);
 				});
 				modalBtn.forEach((modalBtns) => {
