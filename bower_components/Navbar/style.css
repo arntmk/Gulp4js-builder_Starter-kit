@@ -8,7 +8,7 @@
 	box-sizing: border-box;
 }
 
-body {
+main {
 	height: 2000px;
 }
 
@@ -48,16 +48,12 @@ ul {
 }
 
 body.lock {
+	position: fixed;
+	inset: 0;
 	overflow: hidden;
-
-	/* padding-right: 17px; */
+	width: 100%; /* 97.7% - 17px */
+	height: 100vh;
 }
-
-/* @media (max-width: 992px) {
-	body.lock {
-		padding-right: 0;
-	}
-} */
 
 html {
 	scrollbar-gutter: stable;

@@ -1,26 +1,44 @@
 /* ____________________________________________ */
 // ===Hamburger menu===
+const { body } = document;
+
+const scrollController = {
+	scrollPosition: 0,
+	disableScroll() {
+		scrollController.scrollPosition = window.scrollY;
+		document.body.style.cssText = `
+		top: -${scrollController.scrollPosition}px;
+		padding-right: ${window.innerWidth - document.body.offsetWidth}px
+		`;
+		document.documentElement.style.scrollBehavior = 'unset';
+		body.classList.toggle('lock');
+	},
+	enableScroll() {
+		body.classList.remove('lock');
+		document.body.style.cssText = '';
+		window.scroll({ top: scrollController.scrollPosition });
+		document.documentElement.style.scrollBehavior = '';
+	},
+};
 
 const hamburgerController = function () {
 	const menu = document.querySelector('.header__nav');
 	const menuBtn = document.querySelector('.menu-button');
 
-	const { body } = document;
-
 	if (menu && menuBtn) {
 		menuBtn.addEventListener('click', () => {
 			menu.classList.toggle('active');
 			menuBtn.classList.toggle('active');
-			body.classList.toggle('lock');
 			menuBtn.setAttribute('aria-expanded', true);
+			scrollController.disableScroll();
 		});
 
 		menu.addEventListener('click', (e) => {
 			if (e.target.classList.contains('header__nav')) {
 				menu.classList.remove('active');
 				menuBtn.classList.remove('active');
-				body.classList.remove('lock');
 				menuBtn.setAttribute('aria-expanded', false);
+				scrollController.enableScroll();
 			}
 		});
 
@@ -28,8 +46,8 @@ const hamburgerController = function () {
 			link.addEventListener('click', () => {
 				menu.classList.remove('active');
 				menuBtn.classList.remove('active');
-				body.classList.remove('lock');
 				menuBtn.setAttribute('aria-expanded', false);
+				scrollController.enableScroll();
 			});
 		});
 	}
