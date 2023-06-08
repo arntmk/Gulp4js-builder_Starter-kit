@@ -227,7 +227,9 @@ function css() {
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
+		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
+
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(dest('build/css/', { sourcemaps: isDev }))
@@ -252,7 +254,9 @@ function js() {
 	// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
 		.pipe(babel({ presets: ['@babel/preset-env'] }))
 		.pipe(gulpif(isBuild, concat('script.js')))
+		.pipe(gulpif(isBuild, terser()))
 		.pipe(gulpif(isBuild, dest('build/js/', { sourcemaps: isBuild })))
+
 		.pipe(concat('script.min.js'))
 		.pipe(gulpif(isBuild, terser()))
 		.pipe(dest('build/js/', { sourcemaps: isDev }))
