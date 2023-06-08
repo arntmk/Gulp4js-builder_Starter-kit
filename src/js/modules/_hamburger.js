@@ -34,7 +34,7 @@ const hamburgerController = function () {
 
 	/* =========================================== */
 
-/* const anchors = document.querySelectorAll('a[href*="#"]');
+	/* const anchors = document.querySelectorAll('a[href*="#"]');
 
 anchors.forEach((anchor) => {
 	anchor.addEventListener('click', (event) => {
