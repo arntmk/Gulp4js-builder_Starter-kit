@@ -31,7 +31,7 @@
 
 	// Stylelint
 	"stylelint.validate": ["css", "scss", "less", "postcss"],
-	"stylelint.snippet": ["css", "less", "postcss", "scss"],
+	"stylelint.snippet": ["css", "scss", "less", "postcss"],
 
 	// Htmlhint "shift+alt+s"
 	"attrsSorter.order": [
