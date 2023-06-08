@@ -4,10 +4,8 @@ build/ !*.html !*.css !*.js
 dist/ !*.html !*.css !*.js
 dest/ !*.html !*.css !*.js
 app/ !*.html !*.css !*.js
+libs/
 #src/script.json
-src/scss/libs/
-src/js/libs/
-src/assets/libs/
 *.min.js
 *.min.css
 gulpfile.js
