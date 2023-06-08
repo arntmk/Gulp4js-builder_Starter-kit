@@ -1,25 +1,5 @@
 /* ____________________________________________ */
 // ===Hamburger menu===
-const { body } = document;
-
-const scrollController = {
-	scrollPosition: 0,
-	disableScroll() {
-		scrollController.scrollPosition = window.scrollY;
-		document.body.style.cssText = `
-		top: -${scrollController.scrollPosition}px;
-		padding-right: ${window.innerWidth - document.body.offsetWidth}px
-		`;
-		document.documentElement.style.scrollBehavior = 'unset';
-		body.classList.toggle('lock');
-	},
-	enableScroll() {
-		body.classList.remove('lock');
-		document.body.style.cssText = '';
-		window.scroll({ top: scrollController.scrollPosition });
-		document.documentElement.style.scrollBehavior = '';
-	},
-};
 
 const hamburgerController = function () {
 	const menu = document.querySelector('.header__nav');
