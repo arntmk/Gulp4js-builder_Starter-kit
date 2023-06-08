@@ -1,19 +1,54 @@
 /* stylelint-disable */
-/* 100-thin, 200-extralight, 300-light, 400-normal, 500-medium,  600-sembold, 700-bold, 800-extrabold, 900-black */
+/* 100-thin, 200-extralight, 300-light, 400-normal, 500-medium, 600-sembold, 700-bold, 800-extrabold, 900-black */
 
-/* @font-face {
-	font-family: "Name";
-	font-weight: 400;
-	font-style: normal;
-	src: local(""), url("../font/*.woff2") format("woff2");
-	font-display: swap;
-} */
+/* ____________________________________________ */
+/* ____________________________________________ */
+// @font-face {
+// 	font-family: "fontName";
+// 	font-weight: 400;
+// 	font-style: normal;
+// 	src: local(""), url("../font/*.woff2") format("woff2");
+// 	font-display: swap;
+// }
 
-/* Disable mobile hover  */
-@mixin hover {
+/* ____________________________________________ */
+/* Disable mobile hover */
+@mixin disable-hover {
 	@media (any-hover: hover) {
 		&:hover {
 			@content;
 		}
 	}
 }
+
+// @include disable-hover {
+// 	background-color: var(--accent-color);
+// }
+
+/* ____________________________________________ */
+/* BREAKPOINT */
+@mixin DesktopXL {
+	@media (max-width: $breakpoint-1450) {
+		@content;
+	}
+}
+
+// @include DesktopXL {
+// 	font-size: 22px;
+// }
+
+/* ____________________________________________ */
+/* Absolute-overlay */
+@mixin absolute-overlay {
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: before;
+	}
+}
+
+// @include absolute-overlay;
