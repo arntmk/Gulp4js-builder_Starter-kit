@@ -116,20 +116,17 @@ div.clearfix::after {
 	left: -100%;
 }
 
-/* Visibility-Hidden */
-.visibility-hidden {
-	visibility: hidden;
-}
-
-/* Visually-Hidden */
+/* Visually semantically: Visually-Hidden */
 .visually-hidden {
 	position: absolute;
+	clip-path: inset(100%);
 	overflow: hidden;
 	margin: -1px;
 	border: 0;
 	padding: 0;
 	width: 1px;
 	height: 1px;
+	white-space: nowrap;
 	clip: rect(0 0 0 0);
 }
 
@@ -176,11 +173,13 @@ div.clearfix::after {
 /* Flex */
 .flex {
 	display: flex;
+	gap: 1px;
 }
 
 /* Grid */
 .grid {
 	display: grid;
+	gap: 1px;
 }
 
 /* ____________________________________________ */
