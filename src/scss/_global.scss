@@ -127,6 +127,7 @@ div.clearfix::after {
 	width: 1px;
 	height: 1px;
 	white-space: nowrap;
+	pointer-events: none;
 	clip: rect(0 0 0 0);
 }
 
