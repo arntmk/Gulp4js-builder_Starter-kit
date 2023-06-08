@@ -242,6 +242,10 @@ div.clearfix::after {
 /* ____________________________________________ */
 /* ______________Global-Styles__________________ */
 /* ____________________________________________ */
+/* :not(img, svg, picture, iframe, input, video, select, textarea, details, dialog, hr, br):empty {
+	display: none;
+} */
+
 /* editor.scrollBeyondLastLine */
 footer {
 	margin-bottom: 500px;
