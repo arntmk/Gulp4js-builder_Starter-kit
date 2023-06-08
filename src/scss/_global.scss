@@ -1,10 +1,12 @@
 /* stylelint-disable declaration-no-important */
-/* ____________________Global________________________ */
-/* General & Typography */
+/* ____________________________________________ */
+/* _________________Global_____________________ */
 
 /* fs: (100% * 1px / 16px = "6.25%" це | 1rem = 1px) */
 /* fs: (1000% * 1px / 16px = "62.5%" це | 20rem = 200px) */
 /* lh: 24px / 16px = "1.5" */
+
+/* ____________________________________________ */
 /* ____________________________________________ */
 html {
 	font-family: var(--first-ffamily);
@@ -34,15 +36,15 @@ body {
 }
 
 /* ____________________________________________ */
+/* ____________________________________________ */
 /* Sticky Footer */
-/* stylelint-disable declaration-block-no-duplicate-properties */
 div#body-wrappar {
 	display: flex;
 	flex-flow: column nowrap;
 	overflow: clip; /* если используете на сайте position: sticky - используйте clip; вместо hidden */
-	min-height: 100vh;
-	min-height: 100dvh;
-	min-height: 100svh;
+	min-height: 100vh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
+	min-height: 100dvh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
+	min-height: 100svh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 }
 
 main.main {
@@ -51,6 +53,7 @@ main.main {
 	flex-flow: column nowrap;
 }
 
+/* ____________________________________________ */
 /* Container */
 div.container,
 [class*="__container"] {
@@ -84,6 +87,7 @@ div.container,
 }
 
 /* ____________________________________________ */
+/* ____________________________________________ */
 /* ScrollBar for Select, Textarea and etc. */
 * {
 	scrollbar-color: var(--scrollbar-color) transparent;
@@ -102,6 +106,7 @@ div.container,
 	}
 }
 
+/* ____________________________________________ */
 /* ScrollBar for WebPage */
 html {
 	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
@@ -118,25 +123,23 @@ body::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	background-clip: content-box;
 	background-color: var(--scrollbar-color);
+
+	&:hover {
+		background-color: darken(#777, 10%);
+	}
+
+	&:active {
+		background-color: darken(#777, 20%);
+	}
 }
 
 body::-webkit-scrollbar-track {
 	background-color: var(--scrollbar-bgcolor);
 }
 
-/* Hover & Active */
-body::-webkit-scrollbar-thumb:hover {
-	background-color: darken(#777, 10%);
-}
-
-body::-webkit-scrollbar-thumb:active {
-	background-color: darken(#777, 20%);
-}
-
 /* ____________________________________________ */
 /* ____________________________________________ */
-/* Utility Classes
-/* ____________________________________________ */
+/* Utility Classes */
 /* ____________________________________________ */
 /* Float clearfix */
 div.clearfix::after {
