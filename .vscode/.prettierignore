@@ -1,5 +1,6 @@
 # Ignore
 node_modules/
+src/ !*.html !*.css
 build/ !*.html !*.css !*.js
 dist/ !*.html !*.css !*.js
 dest/ !*.html !*.css !*.js
@@ -10,4 +11,5 @@ src/js/libs/
 src/assets/libs/
 *.min.js
 *.min.css
-
+gulpfile.js
+gulpfile.esm.js

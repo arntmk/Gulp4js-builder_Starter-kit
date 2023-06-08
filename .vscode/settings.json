@@ -24,10 +24,6 @@
 
 	// Eslint
 	"eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
-	"[javascript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
-	"[typescript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
-	"[javascriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
-	"[typescriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
 
 	// Stylelint
 	"stylelint.validate": ["css", "scss", "less", "postcss"],
