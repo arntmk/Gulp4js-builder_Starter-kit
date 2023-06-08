@@ -182,6 +182,10 @@ body::-webkit-scrollbar-thumb:active {
 	max-width: 100%;
 }
 
+:not(img, svg, picture, iframe, input, video, select, textarea, details, dialog, hr, br):empty {
+	display: none;
+}
+
 :where(a) {
 	text-decoration: none;
 	color: inherit;
