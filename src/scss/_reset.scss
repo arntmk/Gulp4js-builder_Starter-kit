@@ -170,7 +170,6 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 /* ____________________________________________ */
-// Other
 :where(img, svg, picture) {
 	vertical-align: middle;
 	object-fit: cover;
@@ -200,7 +199,6 @@ body::-webkit-scrollbar-thumb:active {
 }
 
 ::marker {
-	// content: '';
 	color: inherit;
 }
 
@@ -224,6 +222,7 @@ body::-webkit-scrollbar-thumb:active {
 	padding: 0;
 }
 
+// Add cursor pointer
 :where(
 		a,
 		label,
