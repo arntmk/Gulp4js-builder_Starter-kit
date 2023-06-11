@@ -44,7 +44,7 @@
 	cursor: pointer;
 }
 
-@media (max-width: $breakpoint-768) {
+@media (max-width: $burger-breakpoint) {
 	.header__nav {
 		position: absolute;
 		left: -100%;
@@ -81,7 +81,7 @@
 	display: none;
 }
 
-@media (max-width: $breakpoint-768) {
+@media (max-width: $burger-breakpoint) {
 	.menu-button {
 		position: relative;
 		z-index: 1;

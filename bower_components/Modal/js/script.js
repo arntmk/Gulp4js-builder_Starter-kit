@@ -2,6 +2,7 @@
 
 /* ____________________________________________ */
 // ===Disable Scroll===
+const headerFixed = document.querySelector('.header');
 const { body } = document;
 
 const scrollController = {
@@ -12,14 +13,17 @@ const scrollController = {
 		top: -${scrollController.scrollPosition}px;
 		padding-right: ${window.innerWidth - document.body.offsetWidth}px
 		`;
-		document.documentElement.style.scrollBehavior = 'unset';
+		headerFixed.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px
+		`;
+		document.documentElement.style.cssText = 'scroll-behavior: unset; scrollbar-gutter: stable;';
 		body.classList.toggle('lock');
 	},
 	enableScroll() {
 		body.classList.remove('lock');
 		document.body.style.cssText = '';
+		headerFixed.style.paddingRight = '';
 		window.scroll({ top: scrollController.scrollPosition });
-		document.documentElement.style.scrollBehavior = '';
+		document.documentElement.style.cssText = '';
 	},
 };
 
