@@ -21,11 +21,11 @@ const scrollController = {
 		body.classList.toggle('lock');
 	},
 	enableScroll() {
-		body.classList.remove('lock');
-		body.style.cssText = '';
-		headerFixed.style.paddingRight = '';
-		window.scroll({ top: scrollController.scrollPosition });
 		setTimeout(() => {
+			body.classList.remove('lock');
+			body.style.cssText = '';
+			headerFixed.style.paddingRight = '';
+			window.scroll({ top: scrollController.scrollPosition });
 			documentElement.style.cssText = '';
 		}, 400);
 	},
