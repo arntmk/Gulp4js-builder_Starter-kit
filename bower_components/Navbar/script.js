@@ -11,8 +11,10 @@ const scrollController = {
 		top: -${scrollController.scrollPosition}px;
 		padding-right: ${window.innerWidth - document.body.offsetWidth}px
 		`;
-		headerFixed.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px
+		if (window.getComputedStyle(headerFixed).getPropertyValue('position') === 'fixed') {
+			headerFixed.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px
 		`;
+		}
 		document.documentElement.style.cssText = 'scroll-behavior: unset; scrollbar-gutter: stable;';
 		body.classList.toggle('lock');
 	},
