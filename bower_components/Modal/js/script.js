@@ -21,7 +21,9 @@ const scrollController = {
 		body.classList.remove('lock');
 		body.style.cssText = '';
 		window.scroll({ top: scrollController.scrollPosition });
-		documentElement.style.cssText = '';
+		setTimeout(() => {
+			documentElement.style.cssText = '';
+		}, 400);
 	},
 };
 

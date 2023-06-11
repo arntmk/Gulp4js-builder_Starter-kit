@@ -135,7 +135,7 @@ body.lock {
 	box-shadow: 0 0 1em rgb(0 0 0 / 40%);
 	background-color: #fff;
 	transform: translateY(-50%) scale(0.8);
-	transition: transform 0.5s ease-in-out;
+	transition: transform 0.4s ease-in-out;
 	cursor: auto;
 }
 

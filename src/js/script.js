@@ -33,6 +33,8 @@ const scrollController = {
 		body.style.cssText = '';
 		headerFixed.style.paddingRight = '';
 		window.scroll({ top: scrollController.scrollPosition });
-		documentElement.style.cssText = '';
+		setTimeout(() => {
+			documentElement.style.cssText = '';
+		}, 400);
 	},
 };
