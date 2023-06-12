@@ -45,7 +45,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0 auto;
+	margin: 220px auto;
 	padding: 0 15px;
 	width: 100%;
 	max-width: 1200px;
@@ -130,8 +130,7 @@ body {
 	display: block;
 	width: 20px;
 	height: 20px;
-	background:
-		#f9f9f9
+	background: #f9f9f9
 		url("data:image/svg+xml,\00003csvg focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e\00003cpath fill='black' d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'%3e\00003c/path%3e\00003c/svg%3e")
 		no-repeat right center / 1.4em;
 
