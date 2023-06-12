@@ -30,17 +30,19 @@ const scrollController = {
 
 const modalController = function () {
 	const modal = document.querySelector('dialog');
-	const openModal = document.querySelector('[data-open-modal]');
-	const closeModal = document.querySelectorAll('[data-close-modal]');
+	const openModals = document.querySelectorAll('[data-open-modal]');
+	const closeModals = document.querySelectorAll('[data-close-modal]');
 
-	if (modal && openModal && closeModal) {
-		openModal.addEventListener('click', () => {
-			scrollController.disableScroll();
-			modal.showModal();
-		});
+	if (modal && openModals && closeModals) {
+		openModals.forEach((openModal) =>
+			openModal.addEventListener('click', () => {
+				scrollController.disableScroll();
+				modal.showModal();
+			}),
+		);
 
-		closeModal.forEach((item) =>
-			item.addEventListener('click', () => {
+		closeModals.forEach((closeModal) =>
+			closeModal.addEventListener('click', () => {
 				scrollController.enableScroll();
 				modal.close();
 			}),

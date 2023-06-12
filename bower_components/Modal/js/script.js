@@ -30,13 +30,13 @@ const scrollController = {
 /* ____________________________________________ */
 // ===Modal Window===
 const modalController = function () {
-	const modalBtn = document.querySelectorAll('.modal-open-btn');
+	const modalBtnOpen = document.querySelectorAll('.modal-open-btn');
 	const modalBtnClose = document.querySelectorAll('.modal-close-btn');
 	const modalOverlay = document.querySelector('.modal-overlay');
 	const modals = document.querySelectorAll('.modal');
 
-	if (modalBtn && modalOverlay && modals && modalBtnClose) {
-		modalBtn.forEach((modalBtns) => {
+	if (modalBtnOpen && modalOverlay && modals && modalBtnClose) {
+		modalBtnOpen.forEach((modalBtns) => {
 			modalBtns.addEventListener('click', (e) => {
 				const path = e.currentTarget.getAttribute('data-path');
 				scrollController.disableScroll();
@@ -80,7 +80,7 @@ const modalController = function () {
 					scrollController.enableScroll();
 					modalContent.setAttribute('aria-hidden', true);
 				});
-				modalBtn.forEach((modalBtns) => {
+				modalBtnOpen.forEach((modalBtns) => {
 					modalBtns.setAttribute('aria-expanded', false);
 				});
 			}

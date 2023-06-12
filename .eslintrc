@@ -51,8 +51,8 @@
 		"no-undef": "off",
 		"no-mixed-operators": "off",
 
-		// Formatter
-		"implicit-arrow-linebreak": ["warn", "beside"],
-		"function-paren-newline": ["warn", "never"]
+		// Formatter | Prettier
+		"implicit-arrow-linebreak": ["off", "beside"],
+		"function-paren-newline": ["off", "never"]
 	}
 }
