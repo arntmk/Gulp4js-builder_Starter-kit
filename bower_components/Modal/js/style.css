@@ -142,9 +142,9 @@ body.lock {
 /* .modal--1,
 .modal--2 {
 	position: absolute;
+	inset: 0;
 	margin: auto;
 	max-height: 500px;
-	inset: 0;
 } */
 
 /* ____________________________________________ */
