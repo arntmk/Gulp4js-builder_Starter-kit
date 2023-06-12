@@ -197,13 +197,3 @@ dialog::backdrop,
 [type="date"]::-webkit-calendar-picker-indicator {
 	cursor: pointer;
 }
-
-/* ____________________________________________ */
-/* Bg-color Auto fill */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-	-webkit-text-fill-color: #fff !important;
-	transition: background-color 5000s ease-in-out 0s;
-}
