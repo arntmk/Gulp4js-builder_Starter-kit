@@ -1,11 +1,12 @@
 /* stylelint-disable declaration-no-important */
-/* ____________________________________________ */
-/* -------- elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e --------- */
-/* -------- https://www.youtube.com/shorts/2lyDv0wOQuQ --------- */
-/*  About container -> https://habr.com/ru/post/463923/ */
 
 /* ____________________________________________ */
-/* _______________all: unset;__________________ */
+/* elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e */
+/* https://www.youtube.com/shorts/2lyDv0wOQuQ --------- */
+/* About container -> https://habr.com/ru/post/463923/ */
+
+/* ____________________________________________ */
+/* ______________|all: unset;|_________________ */
 /* ____________________________________________ */
 html {
 	break-inside: avoid-column;
@@ -41,17 +42,6 @@ pre {
 		"Segoe UI Symbol", "Noto Color Emoji";
 }
 
-/* ____________________________________________ */
-:where(form) {
-	cursor: default;
-}
-
-:where(button) {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
-}
-
 /* Add typography inheritance in all browsers. */
 :where(button, input, select, textarea, optgroup, option),
 ::placeholder,
@@ -62,7 +52,20 @@ pre {
 	color: inherit;
 }
 
-/* Outline Tabs */
+/* ____________________________________________ */
+/* Form */
+:where(form) {
+	cursor: default;
+}
+
+:where(button) {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+/* ____________________________________________ */
+/* Outline | Tabs */
 :where(
 		a,
 		button,
@@ -120,6 +123,7 @@ pre {
 }
 
 /* ____________________________________________ */
+/* Image */
 :where(img, svg, picture) {
 	vertical-align: middle;
 	object-fit: cover;
@@ -130,13 +134,8 @@ pre {
 	max-width: 100%;
 }
 
-:where(a) {
-	text-decoration: none;
-	color: inherit;
-	text-decoration-skip-ink: none;
-	text-underline-offset: 0.25em;
-}
-
+/* ____________________________________________ */
+/* List */
 :where(ul, ol, dl) {
 	list-style-type: none;
 	list-style-position: inside;
@@ -146,6 +145,14 @@ pre {
 
 ::marker {
 	color: inherit;
+}
+
+/* ____________________________________________ */
+:where(a) {
+	text-decoration: none;
+	color: inherit;
+	text-decoration-skip-ink: none;
+	text-underline-offset: 0.25em;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -168,7 +175,8 @@ pre {
 	padding: 0;
 }
 
-// Add cursor pointer
+/* ____________________________________________ */
+/* Add cursor pointer */
 :where(
 		a,
 		label,
@@ -190,7 +198,8 @@ dialog::backdrop,
 	cursor: pointer;
 }
 
-// Auto fill input bg-color
+/* ____________________________________________ */
+/* Bg-color Auto fill */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
