@@ -88,6 +88,18 @@ a,
 }
 
 /* ____________________________________________ */
+// Animation Button Effect
+@keyframes btn-effect {
+	0% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* ____________________________________________ */
 /* Input|Select|Textarea|Summary| Hover */
 select,
 textarea,
@@ -147,34 +159,21 @@ input[type="tel"]:not(:focus):invalid {
 }
 
 /* ____________________________________________ */
-// Selection
-::selection {
-	text-shadow: 0 0 0.625rem #000;
-	color: #fff;
-	background-color: #4682b4;
-}
-
-/* Animation
-/* ____________________________________________ */
-// Button Effect
-@keyframes btn-effect {
-	0% {
-		opacity: 0.5;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-/* ____________________________________________ */
-/* Bg-color Auto fill */
+/* Bg-color AutoFill */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
 	-webkit-text-fill-color: #fff !important;
 	transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ____________________________________________ */
+// Selection
+::selection {
+	text-shadow: 0 0 0.625rem #000;
+	color: #fff;
+	background-color: #4682b4;
 }
 
 /* ____________________________________________ */
