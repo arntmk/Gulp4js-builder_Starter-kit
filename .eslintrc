@@ -49,6 +49,10 @@
 		"no-restricted-syntax": "warn",
 		"global-require": "warn",
 		"no-undef": "off",
-		"no-mixed-operators": "off"
+		"no-mixed-operators": "off",
+
+		// Formatter
+		"implicit-arrow-linebreak": ["warn", "beside"],
+		"function-paren-newline": ["warn", "never"]
 	}
 }
