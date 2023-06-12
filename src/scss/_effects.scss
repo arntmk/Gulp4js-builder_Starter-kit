@@ -67,7 +67,7 @@ a,
 [data-link-bottom] {
 	position: relative;
 	padding: 0 5px;
-	transition: transform 0.4s ease-in-out 0.01s, color 0.4s ease-in-out 0.01s;
+	transition: transform 0.4s ease-in-out 0.01s, color 0.2s ease-in-out 0.01s;
 
 	&::after {
 		content: "";
@@ -79,7 +79,7 @@ a,
 		background-color: var(--accent-color);
 		transition: transform 0.4s ease-in-out 0.005s, color 0.3s ease-in-out 0.01s;
 
-		@media (max-width: $breakpoint-768) {
+		@media (max-width: $burger-breakpoint) {
 			display: none;
 		}
 	}
