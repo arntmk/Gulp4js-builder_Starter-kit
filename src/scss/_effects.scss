@@ -4,8 +4,8 @@
 /* :Pseudo-classes & ::Pseudo-elements
 
 /* ____________________________________________ */
-/* Image Hover */
-img,
+/* Image scale Hover */
+:where(img, svg, picture),
 [data-img-hover] {
 	overflow: hidden;
 	transition: all 0.4s ease-in-out 0.01s;
@@ -42,7 +42,7 @@ a:not([class*="__logo"]) img,
 }
 
 /* ____________________________________________ */
-/* link Hover */
+/* Simple link Hover */
 a,
 [data-link-hover] {
 	transition: color 0.3s ease-in-out 0.01s;
@@ -59,87 +59,7 @@ a,
 }
 
 /* ____________________________________________ */
-/* ____________________________________________ */
-/* Draw Underline Link Hover Effect */
-.nav__li-link,
-[data-link-center],
-[data-link-left],
-[data-link-right],
-[data-link-bottom] {
-	position: relative;
-	padding: 0 5px;
-	transition: transform 0.4s ease-in-out 0.01s, color 0.2s ease-in-out 0.01s;
-
-	&::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: -3px;
-		width: 100%;
-		height: 0.0625rem;
-		background-color: var(--accent-color);
-		transition: transform 0.4s ease-in-out 0.005s, color 0.3s ease-in-out 0.01s;
-
-		@media (max-width: $burger-breakpoint) {
-			display: none;
-		}
-	}
-
-	@media (any-hover: hover) {
-		&:hover {
-			color: var(--accent-color);
-
-			&::after {
-				transform: scale(1, 1) translateY(0); // change
-			}
-		}
-	}
-
-	&:active {
-		z-index: 2;
-		color: var(--active-color);
-
-		&::after {
-			z-index: 1;
-			background-color: var(--active-color);
-		}
-	}
-}
-
-// Center line
-.nav__li-link,
-[data-link-center] {
-	&::after {
-		transform: scale(0, 1) translateY(0.5px); // change
-	}
-}
-
-// Left line
-[data-link-left] {
-	&::after {
-		transform: scale(0, 1);
-		transform-origin: 0% 100%; // change
-	}
-}
-
-// Right line
-[data-link-right] {
-	&::after {
-		transform: scale(0, 1);
-		transform-origin: 100% 0%; // change
-	}
-}
-
-// Bottom line
-[data-link-bottom] {
-	&::after {
-		transform: translateY(3px); // change
-	}
-}
-
-/* ____________________________________________ */
-/* ____________________________________________ */
-/* Button Hover */
+/* Simple Button Hover */
 [type="button"],
 [type="reset"],
 [type="submit"],
@@ -168,7 +88,7 @@ a,
 }
 
 /* ____________________________________________ */
-/* Form-Input Hover */
+/* Input|Select|Textarea|Summary| Hover */
 select,
 textarea,
 summary,
@@ -256,3 +176,86 @@ input:-webkit-autofill:active {
 	-webkit-text-fill-color: #fff !important;
 	transition: background-color 5000s ease-in-out 0s;
 }
+
+/* ____________________________________________ */
+/* _________Draw Underline Link Hover__________ */
+/* ____________________________________________ */
+.nav__li-link,
+[data-link-center],
+[data-link-left],
+[data-link-right],
+[data-link-bottom] {
+	position: relative;
+	padding: 0 5px;
+	transition: transform 0.4s ease-in-out 0.01s, color 0.2s ease-in-out 0.01s;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -3px;
+		width: 100%;
+		height: 0.0625rem;
+		background-color: var(--accent-color);
+		transition: transform 0.4s ease-in-out 0.005s, color 0.3s ease-in-out 0.01s;
+
+		@media (max-width: $burger-breakpoint) {
+			display: none;
+		}
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--accent-color);
+
+			&::after {
+				transform: scale(1, 1) translateY(0); // change
+			}
+		}
+	}
+
+	&:active {
+		z-index: 2;
+		color: var(--active-color);
+
+		&::after {
+			z-index: 1;
+			background-color: var(--active-color);
+		}
+	}
+}
+
+// Center line
+.nav__li-link,
+[data-link-center] {
+	&::after {
+		transform: scale(0, 1) translateY(0.5px); // change
+	}
+}
+
+// Left line
+[data-link-left] {
+	&::after {
+		transform: scale(0, 1);
+		transform-origin: 0% 100%; // change
+	}
+}
+
+// Right line
+[data-link-right] {
+	&::after {
+		transform: scale(0, 1);
+		transform-origin: 100% 0%; // change
+	}
+}
+
+// Bottom line
+[data-link-bottom] {
+	&::after {
+		transform: translateY(3px); // change
+	}
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
