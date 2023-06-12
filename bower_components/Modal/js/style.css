@@ -134,6 +134,8 @@ body.lock {
 	max-width: 500px;
 	box-shadow: 0 0 1em rgb(0 0 0 / 40%);
 	background-color: #fff;
+
+	/* visibility: hidden; */
 	transform: translateY(-50%) scale(0.8);
 	transition: transform 0.4s ease-in-out;
 	cursor: auto;
@@ -154,5 +156,6 @@ body.lock {
 }
 
 .active {
+	/* visibility: visible; */
 	transform: translateY(0) scale(1);
 }
