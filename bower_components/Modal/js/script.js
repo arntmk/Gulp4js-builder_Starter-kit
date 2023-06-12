@@ -2,7 +2,7 @@
 
 /* ____________________________________________ */
 // ===Disable Scroll===
-const headerFixed = document.querySelector('.header');
+
 const { body } = document;
 const { documentElement } = document;
 

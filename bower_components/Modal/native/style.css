@@ -9,6 +9,23 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+html {
+	break-inside: avoid-column;
+	overflow-anchor: none;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+}
+
+*,
+*::before,
+*::after {
+	break-inside: inherit;
+	overflow-anchor: inherit;
+	min-width: 0;
+	box-sizing: inherit;
+	background-repeat: inherit;
+}
+
 /*
  * Add the correct styles in Safari.
  */
@@ -38,7 +55,7 @@ html {
 }
 
 body {
-	margin: 2rem;
+	margin: 0;
 	min-height: 100dvh;
 }
 
@@ -81,24 +98,20 @@ body.lock {
 	height: 100vh;
 }
 
-html {
-	scrollbar-gutter: stable;
-}
-
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
 
 dialog::backdrop {
-	background-color: rgb(255 255 255 / 30%);
+	background-color: rgb(155 155 155 / 30%);
 
 	/* backdrop-filter: blur(1.5px); */
 }
 
 dialog {
 	position: fixed;
-	overflow: auto;
 	overflow-x: hidden;
+	overflow-y: auto;
 	border: thin solid transparent;
 	border-radius: 16px;
 	padding: 0;
@@ -108,21 +121,23 @@ dialog {
 
 .modal-wrapper {
 	border-radius: 16px;
-	padding: 25px;
+	padding: 20px;
 	height: auto;
-	max-width: 400px;
+	max-width: 450px;
 }
 
 .close-btn {
 	position: absolute;
 	right: 0;
 	top: 0;
+	font-size: 24px;
+	color: #000;
+	background-color: transparent;
 }
 
 /* ____________________________________________ */
 /* Animation */
 dialog[open] {
-	overflow: hidden;
 	animation: dialog-fade 0.5s ease-out forwards;
 }
 
