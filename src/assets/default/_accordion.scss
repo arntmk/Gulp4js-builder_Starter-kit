@@ -22,7 +22,7 @@ details {
 }
 
 details .content {
-	margin-top: 0.3125em;
+	margin-top: 0.1875em;
 	border: thin solid #8f8f9d;
 	padding: 0.3125em;
 	background-color: #fff;
@@ -33,7 +33,6 @@ details .content {
 @keyframes details {
 	0% {
 		max-height: 0;
-		will-change: max-height;
 	}
 
 	100% {
