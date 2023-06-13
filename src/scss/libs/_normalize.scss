@@ -341,16 +341,15 @@ html {
  */
 
 :where(dialog) {
-  background-color: #fff;
-  border: solid;
-  color: #000;
-  height: fit-content;
-  left: 0;
-  margin: auto;
-  padding: 1em;
-  position: fixed;
-  right: 0;
-  width: fit-content;
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	border: solid;
+	padding: 1em;
+	width: fit-content;
+	height: fit-content;
+	color: #000;
+	background-color: #fff;
 }
 
 :where(dialog:not([open])) {
