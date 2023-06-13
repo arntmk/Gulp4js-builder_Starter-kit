@@ -157,8 +157,9 @@ dialog {
 	display: block;
 	overflow: hidden;
 	opacity: 0;
+	visibility: hidden;
 	transform: translateY(-60%) scale(0.7);
-	transition: transform 0.5s ease-in-out, opacity 0.3s ease-out;
+	transition: transform 0.5s ease-in-out, visibility 0.4s linear, opacity 0.2s linear;
 	pointer-events: none;
 }
 
@@ -169,6 +170,7 @@ dialog[open] {
 	border: thin solid transparent;
 	max-width: 450px;
 	opacity: 1;
+	visibility: visible;
 	transform: translateY(0) scale(1);
 	pointer-events: all;
 }
