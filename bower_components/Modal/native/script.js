@@ -21,7 +21,7 @@ const scrollController = {
 			body.style.cssText = '';
 			window.scroll({ top: scrollController.scrollPosition });
 			documentElement.style.cssText = '';
-		}, 400);
+		}, 300);
 	},
 };
 
