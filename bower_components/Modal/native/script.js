@@ -49,7 +49,13 @@ const modalController = function () {
 		);
 
 		modal.addEventListener('click', (e) => {
-			if (e.target === modal) {
+			const dialogDimensions = modal.getBoundingClientRect();
+			if (
+				e.clientX < dialogDimensions.left ||
+				e.clientX > dialogDimensions.right ||
+				e.clientY < dialogDimensions.top ||
+				e.clientY > dialogDimensions.bottom
+			) {
 				scrollController.enableScroll();
 				modal.close();
 			}
@@ -57,3 +63,13 @@ const modalController = function () {
 	}
 };
 modalController();
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* modal.addEventListener('click', (e) => {
+			if (e.target === modal) {
+				scrollController.enableScroll();
+				modal.close();
+			}
+		}); */
