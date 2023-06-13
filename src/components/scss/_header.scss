@@ -13,7 +13,7 @@
 
 /* ____________________________________________ */
 .header {
-	background-color: var(--header-bgcolor);
+	background-color: var(--clr-header-bg);
 }
 
 .header__container {
@@ -35,7 +35,7 @@
 
 .nav__li-link {
 	display: inline-block;
-	color: var(--header-color);
+	color: var(--clr-header);
 }
 
 /* ____________________Hamburger-Menu________________________ */
@@ -64,7 +64,7 @@
 		width: 65%;
 		height: 100%;
 		text-align: center;
-		background-color: var(--burger-menu-bgcolor);
+		background-color: var(--clr-burger-menu-bg);
 		cursor: auto;
 	}
 
@@ -100,7 +100,7 @@
 		border-radius: 5px;
 		width: 100%;
 		height: 3px;
-		background-color: var(--burger-btn);
+		background-color: var(--clr-burger-btn);
 		transition: all 0.3s ease-in-out;
 	}
 

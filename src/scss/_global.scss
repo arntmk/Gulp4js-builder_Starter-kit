@@ -9,7 +9,7 @@
 /* _________________General____________________ */
 /* ____________________________________________ */
 html {
-	font-family: var(--primary-ffamily);
+	font-family: var(--ff-primary);
 	font-size: 16px;
 	line-height: 1.5;
 	scroll-behavior: smooth;
@@ -21,9 +21,9 @@ body {
 	font-weight: 400;
 	font-style: normal;
 	font-size: clamp(0.938rem, 0.908rem + 0.15vw, 1rem);
-	color: var(--body-txt-color);
+	color: var(--clr-body-txt);
 	caret-color: #f15412;
-	background-color: var(--scrollbar-bgcolor);
+	background-color: var(--clr-scrollbar-bg);
 	accent-color: #0060df;
 
 	&.lock {
@@ -91,7 +91,7 @@ div.container,
 /* ________ScrollBar(Select,Textarea)__________ */
 /* ____________________________________________ */
 * {
-	scrollbar-color: var(--scrollbar-color) transparent;
+	scrollbar-color: var(--clr-scrollbar) transparent;
 	scrollbar-width: thin;
 
 	::-webkit-scrollbar {
@@ -99,7 +99,7 @@ div.container,
 	}
 
 	::-webkit-scrollbar-thumb {
-		background-color: var(--scrollbar-color);
+		background-color: var(--clr-scrollbar);
 	}
 
 	::-webkit-scrollbar-track {
@@ -111,7 +111,7 @@ div.container,
 /* ____________ScrollBar(Page)_________________ */
 /* ____________________________________________ */
 html {
-	scrollbar-color: var(--scrollbar-color) var(--scrollbar-bgcolor);
+	scrollbar-color: var(--clr-scrollbar) var(--clr-scrollbar-bg);
 	scrollbar-width: auto;
 }
 
@@ -123,7 +123,7 @@ body::-webkit-scrollbar-thumb {
 	border: 5px solid transparent;
 	border-radius: 10px;
 	background-clip: content-box;
-	background-color: var(--scrollbar-color);
+	background-color: var(--clr-scrollbar);
 
 	&:hover {
 		background-color: darken(#777, 10%);
@@ -135,7 +135,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-track {
-	background-color: var(--scrollbar-bgcolor);
+	background-color: var(--clr-scrollbar-bg);
 }
 
 /* ____________________________________________ */

@@ -22,43 +22,43 @@
 	/* __________________FONT______________________ */
 	/* ____________________________________________ */
 	/* Global font */
-	--font-fimaly: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
+	--ff-base: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 	/* Primary font */
-	--primary-ffamily: "Nunito", var(--font-fimaly);
+	--ff-primary: "Nunito", var(--ff-base);
 
-	// --secondary-ffamily: "fontName(2)", var(--font-fimaly);
-	// --third-ffamily: "fontName(3)", var(--font-fimaly);
-	// --fourth-ffamily: "fontName(4)", var(--font-fimaly);
+	// --ff-secondary: "fontName(2)", var(--ff-base);
+	// --ff-third: "fontName(3)", var(--ff-base);
+	// --ff-fourth: "fontName(4)", var(--ff-base);
 
 	/* ____________________________________________ */
 	/* __________________COLOR_____________________ */
 	/* ____________________________________________ */
 	/* ScrollBar */
-	--scrollbar-color: #777;
-	--scrollbar-bgcolor: #1c1c1c;
+	--clr-scrollbar: #777;
+	--clr-scrollbar-bg: #1c1c1c;
 
 	/* Burger menu */
-	--burger-btn: #f5f5f5;
-	--burger-menu-bgcolor: #014482;
+	--clr-burger-btn: #f5f5f5;
+	--clr-burger-menu-bg: #014482;
 
 	/* Body */
-	--primary-color: #fff;
-	--secondary-color: #fff;
-	--accent-color: #4682b4;
-	--active-color: #700c0c;
-	--link-color: #3794ff;
-	--body-txt-color: #1e1e1e;
-	--body-bg-color: #1c1c1c;
+	--clr-primary: #fff;
+	--clr-secondary: #fff;
+	--clr-accent: #4682b4;
+	--clr-active: #700c0c;
+	--clr-link: #3794ff;
+	--clr-body-txt: #1e1e1e;
+	--clr-body-bg: #eee;
 
 	/* Header */
-	--header-color: #fff;
-	--header-bgcolor: #1e1e1e;
+	--clr-header: #fff;
+	--clr-header-bg: #1e1e1e;
 
 	/* Footer */
-	--footer-color: #fff;
-	--footer-bgcolor: #1e1e1e;
+	--clr-footer: #fff;
+	--clr-footer-bg: #1e1e1e;
 }
 
 /* ____________________________________________ */
