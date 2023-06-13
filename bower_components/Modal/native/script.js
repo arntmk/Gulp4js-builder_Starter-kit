@@ -30,8 +30,8 @@ const scrollController = {
 
 const modalController = function () {
 	const modal = document.querySelector('dialog');
-	const openModals = document.querySelectorAll('button[data-open-modal]');
-	const closeModals = document.querySelectorAll('button[data-close-modal]');
+	const openModals = document.querySelectorAll('[data-open-modal]');
+	const closeModals = document.querySelectorAll('[data-close-modal]');
 
 	if (modal && openModals && closeModals) {
 		openModals.forEach((openModal) =>
