@@ -19,18 +19,24 @@
 	--breakpoint-320: 319.98 + px; /* Old-Mobile */
 
 	/* ____________________________________________ */
-	/* __________________FONT______________________ */
+	/* _______________FONT-FAMILY__________________ */
 	/* ____________________________________________ */
-	/* Global font */
+	/* Base font */
 	--ff-base: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-	/* Primary font */
+	/* Main font */
 	--ff-primary: "Nunito", var(--ff-base);
 
 	// --ff-secondary: "fontName(2)", var(--ff-base);
 	// --ff-third: "fontName(3)", var(--ff-base);
 	// --ff-fourth: "fontName(4)", var(--ff-base);
+
+	/* ____________________________________________ */
+	/* ________________FONT-SIZE___________________ */
+	/* ____________________________________________ */
+	--fs-body: clamp(0.938rem, 0.908rem + 0.15vw, 1rem);
+	--fs-24px: clamp();
 
 	/* ____________________________________________ */
 	/* __________________COLOR_____________________ */
