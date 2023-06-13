@@ -22,7 +22,7 @@
 			<!-- ____________________________________________ -->
 
 			<dialog class="modal">
-				<button class="button close-btn" data-close-modal>&#10006;</button>
+				<button class="button close-btn" formmethod="dialog" data-close-modal>&#10006;</button>
 				<h2>Modal</h2>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse nisi, laboriosam illum
@@ -30,10 +30,12 @@
 					nisi, laboriosam illum temporibus ipsam?
 				</p>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quo.</p>
-				<form class="form" method="dialog">
+				<!-- method="dialog" -->
+				<form class="form">
 					<label>Your name <input type="text" /></label>
 					<label>Your email <input type="email" /></label>
 					<button class="button" type="submit" data-close-modal>submit form</button>
+					<button class="button" type="submit" formmethod="dialog" data-close-modal>Close</button>
 				</form>
 			</dialog>
 
