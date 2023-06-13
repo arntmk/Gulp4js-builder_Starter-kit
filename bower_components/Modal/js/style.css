@@ -145,6 +145,7 @@ body.lock {
 	inset: 0;
 	overflow-x: hidden;
 	overflow-y: auto;
+	margin: auto;
 	width: fit-content;
 	height: fit-content;
 }
