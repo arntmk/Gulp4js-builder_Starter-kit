@@ -133,7 +133,7 @@ dialog {
 	border: thin solid transparent;
 	border-radius: 16px;
 	padding: 20px;
-	max-width: 450px;
+	max-width: 475px;
 	box-shadow: 0 0 1em rgb(0 0 0 / 30%);
 	background-color: #fff;
 }
@@ -168,14 +168,13 @@ dialog[open] {
 	overflow-x: hidden;
 	overflow-y: auto;
 	border: thin solid transparent;
-	max-width: 450px;
+	max-width: 475px;
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0) scale(1);
 	pointer-events: all;
 }
 
-/* ____________________________________________ */
 /* ____________________________________________ */
 @keyframes fade-in {
 	from {
