@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-family: system-ui, "Hibana", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button {
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+img {
+	vertical-align: middle;
+	height: auto;
+	max-width: 100%;
+}
+
+:where(button) {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+:where(a) {
+	text-decoration: none;
+	color: inherit;
+	text-decoration-skip-ink: none;
+	text-underline-offset: 0.25em;
+}
+
+:where(ul, ol, dl) {
+	list-style-type: none;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+	margin: 0;
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+:where(body, p, figure) {
+	margin: 0;
+}
+
+:where(cite, address) {
+	font-style: normal;
+}
+
+:where(fieldset) {
+	margin: 0;
+	border-width: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 150px auto;
+	padding: 0 15px;
+	width: 100%;
+	max-width: 1200px;
+}
+
+label {
+	cursor: pointer;
+}
+
+body {
+	height: 1000px;
+	background: #d4d1d1;
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* Accordion */
+
+/* This hides the summary's ::marker pseudo-element */
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary {
+	display: block;
+	list-style: none;
+}
+
+/* Hide the checkbox element */
+input {
+	display: none;
+}
+
+/* <label> element to check the checkbox */
+label {
+	display: flex;
+	align-items: center;
+	border: thin solid #8f8f9d;
+	padding-left: 0.3125em;
+	height: 4rem; /* This height value must be equal to max-height value of <details> element */
+	background-color: #fff;
+}
+
+/* ____________________________________________ */
+/*
+	The key is to start <details> element in the "open" state...
+	 ...and animate its max-height value by toggling a checkbox.
+*/
+/* ____________________________________________ */
+details {
+	overflow: hidden; /* Hide the rest of the content */
+	margin-top: 15px;
+	width: 25em;
+	max-height: 4.13rem; /* Set a max-height value just enough to show the summary content */
+	background-color: #fff;
+	transition: max-height 0.5s ease-in-out;
+}
+
+details .accordion-content {
+	margin-top: 0;
+	border: thin solid #8f8f9d;
+	padding: 0.3125em;
+	text-align: center;
+	background-color: #fff;
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* Animation */
+/*
+	Here you can choose two approaches to animate <details> element:
+   1) Use adjacent sibling combinator (+)
+   2) Use :has() pseudo-class, but this might not work in Firefox.
+*/
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* Animation Content */
+details:has(input:checked) {
+	max-height: 800px; /* Set a max-height value enough to show all the content */
+}
+
+/* ____________________________________________ */
+/* Animation Icon */
+label::before {
+	content: "";
+	width: 2em;
+	height: 2em;
+	background: transparent
+		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
+		no-repeat right center / 1.9em;
+	transform: rotate(-90deg);
+	transition: transform 0.4s ease-in-out;
+}
+
+details:has(input:checked) label::before {
+	transform: rotate(0deg);
+	transition: transform 0.4s ease-in-out;
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* input:checked + details, */
+/* input:checked + details label::before, */
