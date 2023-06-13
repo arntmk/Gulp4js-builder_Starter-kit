@@ -119,7 +119,7 @@ label {
 	display: flex;
 	align-items: center;
 	border: thin solid #8f8f9d;
-	padding-left: 0.3125em;
+	padding-left: 0.3125rem;
 	height: 4rem; /* This height value must be equal to max-height value of <details> element */
 	background-color: #fff;
 }
@@ -142,7 +142,7 @@ details {
 details .accordion-content {
 	margin-top: 0;
 	border: thin solid #8f8f9d;
-	padding: 0.3125em;
+	padding: 0.3125rem;
 	text-align: center;
 	background-color: #fff;
 }
@@ -166,8 +166,8 @@ details:has(input:checked) {
 /* Animation Icon */
 label::before {
 	content: "";
-	width: 2em;
-	height: 2em;
+	width: 1.9em;
+	height: 1.9em;
 	background: transparent
 		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
 		no-repeat right center / 1.9em;
