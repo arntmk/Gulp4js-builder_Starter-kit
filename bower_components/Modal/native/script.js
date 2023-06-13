@@ -12,7 +12,7 @@ const scrollController = {
 		top: -${scrollController.scrollPosition}px;
 		padding-right: ${window.innerWidth - document.body.offsetWidth}px
 		`;
-		documentElement.style.cssText = 'scroll-behavior: unset; scrollbar-gutter: stable;';
+		documentElement.style.cssText = 'scroll-behavior: unset; scrollbar-gutter: unset;';
 		body.classList.toggle('lock');
 	},
 	enableScroll() {
