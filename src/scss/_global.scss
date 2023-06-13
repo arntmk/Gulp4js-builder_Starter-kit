@@ -155,24 +155,26 @@ div.clearfix::after {
 	white-space: nowrap;
 }
 
-/* Text-Overflow */
-.text-overflow {
+/* Text-Ellipsis */
+.text-ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
-/* Text-Center */
-.text-center {
+/* Align-Center */
+.align-center {
+	display: inline-block;
+	vertical-align: middle;
 	text-align: center;
 }
 
-/* Off-screen */
+/* Off-Screen */
 .offscreen {
 	position: absolute;
-	left: -100%;
+	left: -200%;
 }
 
-/* Visually semantically: Visually-Hidden */
+/* Semantically: Visible */
 .visually-hidden {
 	position: absolute;
 	clip-path: inset(100%);
@@ -248,18 +250,19 @@ footer {
 }
 
 /* ___________Test-Styles(Delete)_______________ */
+
 /* :not(img, svg, picture, iframe, input, video, select, textarea, details, dialog, hr, br):empty {
 	display: none;
 } */
 
 /* Gradient */
 .main {
-	// background: radial-gradient(#eee, #014482) no-repeat fixed;
-
 	background: linear-gradient(to right, #eee, #014482) no-repeat;
+
+	// background: radial-gradient(#eee, #014482) no-repeat fixed;
 }
 
 /* Add basic space everywhere */
-.flow > * + * {
+.space > * + * {
 	margin-top: 1em;
 }
