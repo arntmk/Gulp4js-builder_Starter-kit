@@ -2,7 +2,7 @@
 
 // ===Adaptive-body-min-width===
 const screenViewport = function () {
-	(function () {
+	(() => {
 		const { width } = window.screen;
 		const oldViewport = document.querySelector('meta[name="viewport"]');
 		const viewport = document.createElement('meta');

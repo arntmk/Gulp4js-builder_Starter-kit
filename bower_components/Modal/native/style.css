@@ -119,6 +119,10 @@ dialog {
 	background-color: #fff;
 }
 
+/* dialog:modal {
+	background-color: #fff;
+} */
+
 .modal-wrapper {
 	border-radius: 16px;
 	padding: 20px;
