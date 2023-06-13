@@ -159,9 +159,15 @@ pre {
 	margin: 0;
 	font-weight: inherit;
 	font-size: inherit;
+	text-wrap: balance;
 }
 
-:where(body, p, figure) {
+:where(p) {
+	margin: 0;
+	text-wrap: balance;
+}
+
+:where(body, figure) {
 	margin: 0;
 }
 

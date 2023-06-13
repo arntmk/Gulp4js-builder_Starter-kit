@@ -20,11 +20,11 @@ body {
 	min-width: 320px;
 	font-weight: 400;
 	font-style: normal;
-	font-size: var(--fs-body);
+	font-size: var(--fs-body, 16px);
 	color: var(--clr-body-txt);
 	caret-color: #f15412;
 	background-color: var(--clr-scrollbar-bg);
-	accent-color: #0060df;
+	accent-color: var(--clr-accent);
 
 	&.lock {
 		position: fixed;
@@ -257,4 +257,9 @@ footer {
 	// background: radial-gradient(#eee, #014482) no-repeat fixed;
 
 	background: linear-gradient(to right, #eee, #014482) no-repeat;
+}
+
+/* Add basic space everywhere */
+.flow > * + * {
+	margin-top: 1em;
 }
