@@ -11,8 +11,8 @@ const hamburgerController = function () {
 				menu.classList.toggle('active');
 				menuBtn.classList.toggle('active');
 				menuBtn.setAttribute('aria-expanded', true);
-				scrollController.disableScroll();
-			}, 100);
+			}, 200);
+			scrollController.disableScroll();
 		});
 
 		menu.addEventListener('click', (e) => {
@@ -21,8 +21,8 @@ const hamburgerController = function () {
 					menu.classList.remove('active');
 					menuBtn.classList.remove('active');
 					menuBtn.setAttribute('aria-expanded', false);
-					scrollController.enableScroll();
 				}, 100);
+				scrollController.enableScroll();
 			}
 		});
 
