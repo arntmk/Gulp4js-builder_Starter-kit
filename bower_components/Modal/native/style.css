@@ -119,6 +119,27 @@ body.lock {
 } */
 
 /* ____________________________________________ */
+@keyframes fade-in {
+	from {
+		opacity: 0.5;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+/* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
 
@@ -135,12 +156,11 @@ dialog {
 	padding: 20px;
 	max-width: 475px;
 	box-shadow: 0 0 1em rgb(0 0 0 / 30%);
-	background-color: #fff;
 }
 
-/* dialog:modal {
-	background-color: #aa9a9a;
-} */
+dialog:modal {
+	background-color: #fff;
+}
 
 .close-btn {
 	position: absolute;
@@ -173,25 +193,4 @@ dialog[open] {
 	visibility: visible;
 	transform: translateY(0) scale(1);
 	pointer-events: all;
-}
-
-/* ____________________________________________ */
-@keyframes fade-in {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes fade-out {
-	0% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-	}
 }
