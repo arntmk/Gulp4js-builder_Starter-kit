@@ -33,24 +33,29 @@ const scrollController = {
 
 /* ____________________________________________ */
 // ===Hamburger menu===
+
 const hamburgerController = function () {
 	const menu = document.querySelector('.header__nav');
 	const menuBtn = document.querySelector('.menu-button');
 
 	if (menu && menuBtn) {
 		menuBtn.addEventListener('click', () => {
-			menu.classList.toggle('active');
-			menuBtn.classList.toggle('active');
-			menuBtn.setAttribute('aria-expanded', true);
-			scrollController.disableScroll();
+			setTimeout(() => {
+				menu.classList.toggle('active');
+				menuBtn.classList.toggle('active');
+				menuBtn.setAttribute('aria-expanded', true);
+				scrollController.disableScroll();
+			}, 100);
 		});
 
 		menu.addEventListener('click', (e) => {
 			if (e.target.classList.contains('header__nav')) {
-				menu.classList.remove('active');
-				menuBtn.classList.remove('active');
-				menuBtn.setAttribute('aria-expanded', false);
-				scrollController.enableScroll();
+				setTimeout(() => {
+					menu.classList.remove('active');
+					menuBtn.classList.remove('active');
+					menuBtn.setAttribute('aria-expanded', false);
+					scrollController.enableScroll();
+				}, 100);
 			}
 		});
 
