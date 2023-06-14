@@ -28,6 +28,8 @@ body {
 	accent-color: var(--clr-accent);
 
 	&.lock {
+		position: fixed;
+		inset: 0;
 		overflow: hidden;
 		width: 100%;
 		height: 100vh;
