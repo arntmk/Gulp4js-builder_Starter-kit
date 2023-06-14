@@ -9,20 +9,23 @@
 /* _________________General____________________ */
 /* ____________________________________________ */
 html {
-	font-family: var(--ff-primary);
+	font-family: var(--ff-base);
+	font-weight: 400;
+	font-style: normal;
 	font-size: 16px;
 	line-height: 1.5;
-	scroll-behavior: smooth;
-	color-scheme: light dark;
+
+	&.lock {
+		scroll-behavior: auto;
+		scrollbar-gutter: stable;
+	}
 }
 
 body {
-	min-width: 320px;
-	font-weight: 400;
-	font-style: normal;
+	font-family: var(--ff-primary);
 	font-size: var(--fs-body, 16px);
 	color: var(--clr-body-txt);
-	caret-color: #f15412;
+	caret-color: var(--clr-caret);
 	background-color: var(--clr-scrollbar-bg);
 	accent-color: var(--clr-accent);
 
@@ -163,7 +166,6 @@ div.clearfix::after {
 
 /* Align-Center */
 .align-center {
-	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
 }
@@ -241,23 +243,25 @@ div.clearfix::after {
 	gap: 1rem;
 }
 
+/* Add basic space everywhere (container) */
+div.flow-space > * + * {
+	margin-top: var(--flow-space, 1em);
+}
+
+/* ____________________________________________ */
+/* _______________Console.Log__________________ */
+/* ____________________________________________ */
+// * {
+// 	outline: 1px solid #32cd32 !important;
+// 	background: rgb(0 100 0 / 10%);
+// }
+
 /* ____________________________________________ */
 /* ______________Global Styles_________________ */
 /* ____________________________________________ */
-/* console.log */
-/* * {
-	outline: 1px solid #32cd32 !important;
-	background: rgb(0 100 0 / 10%);
-} */
-
 /* editor.scrollBeyondLastLine */
 footer {
-	margin-bottom: 500px;
-}
-
-/* Add basic space everywhere (container) */
-div.space > * + * {
-	margin-top: 1em;
+	margin-bottom: 50ch;
 }
 
 /* ______________Test(Delete)__________________ */
