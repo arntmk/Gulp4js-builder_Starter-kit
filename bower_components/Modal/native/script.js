@@ -36,15 +36,19 @@ const modalController = function () {
 	if (modal && openModals && closeModals) {
 		openModals.forEach((openModal) =>
 			openModal.addEventListener('click', () => {
-				scrollController.disableScroll();
-				modal.showModal();
+				setTimeout(() => {
+					scrollController.disableScroll();
+					modal.showModal();
+				}, 100);
 			}),
 		);
 
 		closeModals.forEach((closeModal) =>
 			closeModal.addEventListener('click', () => {
-				scrollController.enableScroll();
-				modal.close();
+				setTimeout(() => {
+					scrollController.enableScroll();
+					modal.close();
+				}, 100);
 			}),
 		);
 
@@ -56,8 +60,10 @@ const modalController = function () {
 				e.clientY < dialogDimensions.top ||
 				e.clientY > dialogDimensions.bottom
 			) {
-				scrollController.enableScroll();
-				modal.close();
+				setTimeout(() => {
+					scrollController.enableScroll();
+					modal.close();
+				}, 400);
 			}
 		});
 	}
