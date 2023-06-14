@@ -120,7 +120,7 @@ input:not(
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
 			border-color: transparent;
-			box-shadow: 0 0 0 0.0625rem var(--clr-accent), 0 0 0.625rem #4f6e86;
+			box-shadow: 0 0 0 0.0625rem var(--clr-accent), 0 0 0.625rem var(--clr-accent);
 		}
 	}
 }
