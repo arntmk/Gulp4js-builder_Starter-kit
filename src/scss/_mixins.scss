@@ -1,4 +1,5 @@
 /* stylelint-disable */
+/* ____________________________________________ */
 /* 100-thin, 200-extralight, 300-light, 400-normal, 500-medium, 600-sembold, 700-bold, 800-extrabold, 900-black */
 
 /* ____________________________________________ */
@@ -13,15 +14,16 @@
 
 /* ____________________________________________ */
 /* Disable mobile hover */
-@mixin disable-hover {
+@mixin disable-mobile-hover {
 	@media (any-hover: hover) {
-		&:hover {
+		&:hover,
+		&:focus-visible {
 			@content;
 		}
 	}
 }
 
-// @include disable-hover {
+// @include disable-mobile-hover {
 // 	background-color: var(--accent-color);
 // }
 
@@ -52,3 +54,5 @@
 }
 
 // @include absolute-overlay;
+
+/* ____________________________________________ */
