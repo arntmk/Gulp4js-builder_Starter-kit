@@ -241,17 +241,23 @@ div.clearfix::after {
 	gap: 1rem;
 }
 
-/* Add basic space everywhere (container) */
-.space > * + * {
-	margin-top: 1em;
-}
-
 /* ____________________________________________ */
 /* ______________Global Styles_________________ */
 /* ____________________________________________ */
+/* console.log */
+/* * {
+	outline: 1px solid #32cd32 !important;
+	background: rgb(0 100 0 / 10%);
+} */
+
 /* editor.scrollBeyondLastLine */
 footer {
 	margin-bottom: 500px;
+}
+
+/* Add basic space everywhere (container) */
+div.space > * + * {
+	margin-top: 1em;
 }
 
 /* ______________Test(Delete)__________________ */

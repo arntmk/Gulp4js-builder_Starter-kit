@@ -42,7 +42,7 @@ pre {
 		"Segoe UI Symbol", "Noto Color Emoji";
 }
 
-/* Add typography inheritance in all browsers. */
+/* Add typography inheritance */
 :where(button, input, select, textarea, optgroup, option),
 ::placeholder,
 ::file-selector-button {
@@ -53,7 +53,6 @@ pre {
 }
 
 /* ____________________________________________ */
-/* Form */
 :where(form) {
 	cursor: default;
 }
