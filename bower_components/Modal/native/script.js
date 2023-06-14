@@ -36,10 +36,10 @@ const modalController = function () {
 	if (modal && openModals && closeModals) {
 		openModals.forEach((openModal) =>
 			openModal.addEventListener('click', () => {
+				scrollController.disableScroll();
 				setTimeout(() => {
-					scrollController.disableScroll();
 					modal.showModal();
-				}, 100);
+				}, 200);
 			}),
 		);
 
@@ -63,7 +63,7 @@ const modalController = function () {
 				setTimeout(() => {
 					scrollController.enableScroll();
 					modal.close();
-				}, 400);
+				}, 300);
 			}
 		});
 	}
