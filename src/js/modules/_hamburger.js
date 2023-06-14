@@ -28,9 +28,11 @@ const hamburgerController = function () {
 
 		menu.querySelectorAll('.nav__li-link').forEach((link) => {
 			link.addEventListener('click', () => {
-				menu.classList.remove('active');
-				menuBtn.classList.remove('active');
-				menuBtn.setAttribute('aria-expanded', false);
+				setTimeout(() => {
+					menu.classList.remove('active');
+					menuBtn.classList.remove('active');
+					menuBtn.setAttribute('aria-expanded', false);
+				}, 100);
 				scrollController.enableScroll();
 			});
 		});
