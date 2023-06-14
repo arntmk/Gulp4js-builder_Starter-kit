@@ -150,7 +150,7 @@ div.clearfix::after {
 	display: block;
 	clear: both;
 
-	/* Or display: flow-root; */
+	// Or display: flow-root;
 }
 
 /* Text-NoWrap */
@@ -256,6 +256,10 @@ div.flow-space > * + * {
 // 	background: rgb(0 100 0 / 10%);
 // }
 
+// :not(img, svg, picture, iframe, input, video, select, textarea, details, dialog, hr, br):empty {
+// 	display: none;
+// }
+
 /* ____________________________________________ */
 /* ______________Global Styles_________________ */
 /* ____________________________________________ */
@@ -265,11 +269,6 @@ footer {
 }
 
 /* ______________Test(Delete)__________________ */
-
-/* :not(img, svg, picture, iframe, input, video, select, textarea, details, dialog, hr, br):empty {
-	display: none;
-} */
-
 /* Gradient */
 .main {
 	background: linear-gradient(to right, #eee, #014482) no-repeat;
