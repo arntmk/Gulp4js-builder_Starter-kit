@@ -72,11 +72,11 @@ a,
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
 			border-color: transparent;
-			box-shadow: 0 0 0.625rem #4f6e86;
+			box-shadow: 0 0 0.625rem var(--clr-accent);
 			color: #fff;
 			background-color: var(--clr-accent);
 			transform: scale(1.03);
-			animation: btn-effect 0.2s ease-in-out 0.01s;
+			animation: fade-in 0.1s ease-in-out 0.01s;
 		}
 	}
 
@@ -84,18 +84,6 @@ a,
 		box-shadow: 0 0 0.625rem var(--clr-active);
 		background-color: var(--clr-active);
 		transform: scale(0.97);
-	}
-}
-
-/* ____________________________________________ */
-// Animation Button Effect
-@keyframes btn-effect {
-	0% {
-		opacity: 0.5;
-	}
-
-	100% {
-		opacity: 1;
 	}
 }
 
@@ -169,7 +157,7 @@ input:-webkit-autofill:active {
 }
 
 /* ____________________________________________ */
-// Selection
+// Text Selection
 ::selection {
 	text-shadow: 0 0 0.625rem #000;
 	color: #fff;
@@ -177,7 +165,29 @@ input:-webkit-autofill:active {
 }
 
 /* ____________________________________________ */
-/* _________Draw Underline Link Hover__________ */
+// Animation
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+/* ____________________________________________ */
+/* _________Draw Underline Link :Hover__________ */
 /* ____________________________________________ */
 .nav__li-link,
 [data-link-center],
