@@ -241,6 +241,11 @@ div.clearfix::after {
 	gap: 1rem;
 }
 
+/* Add basic space everywhere (container) */
+.space > * + * {
+	margin-top: 1em;
+}
+
 /* ____________________________________________ */
 /* ______________Global Styles_________________ */
 /* ____________________________________________ */
@@ -249,7 +254,7 @@ footer {
 	margin-bottom: 500px;
 }
 
-/* ___________Test-Styles(Delete)_______________ */
+/* ______________Test(Delete)__________________ */
 
 /* :not(img, svg, picture, iframe, input, video, select, textarea, details, dialog, hr, br):empty {
 	display: none;
@@ -258,11 +263,4 @@ footer {
 /* Gradient */
 .main {
 	background: linear-gradient(to right, #eee, #014482) no-repeat;
-
-	// background: radial-gradient(#eee, #014482) no-repeat fixed;
-}
-
-/* Add basic space everywhere */
-.space > * + * {
-	margin-top: 1em;
 }
