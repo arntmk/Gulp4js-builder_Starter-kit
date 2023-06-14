@@ -49,19 +49,23 @@ const modalController = function () {
 					// Закрыть модальное окно при нажатии на Tab or Esc
 					document.addEventListener('keydown', (e) => {
 						if (e.key === 'Escape') {
-							modalContent.classList.remove('active');
-							modalOverlay.classList.remove('overlay-active');
-							scrollController.enableScroll();
-							modalBtns.setAttribute('aria-expanded', false);
-							modalContent.setAttribute('aria-hidden', true);
+							setTimeout(() => {
+								modalContent.classList.remove('active');
+								modalOverlay.classList.remove('overlay-active');
+								scrollController.enableScroll();
+								modalBtns.setAttribute('aria-expanded', false);
+								modalContent.setAttribute('aria-hidden', true);
+							}, 200);
 						}
 					});
 					// Закрыть модальное окно Крестикам
 					modalBtnClose.forEach((modalBtnsClose) => {
 						modalBtnsClose.addEventListener('click', () => {
-							modalContent.classList.remove('active');
-							modalOverlay.classList.remove('overlay-active');
-							scrollController.enableScroll();
+							setTimeout(() => {
+								modalContent.classList.remove('active');
+								modalOverlay.classList.remove('overlay-active');
+								scrollController.enableScroll();
+							}, 200);
 						});
 					});
 				});
@@ -73,12 +77,16 @@ const modalController = function () {
 
 		modalOverlay.addEventListener('click', (e) => {
 			if (e.target === modalOverlay) {
-				modalOverlay.classList.remove('overlay-active');
-				scrollController.enableScroll();
-				modals.forEach((modalContent) => {
-					modalContent.classList.remove('active');
+				setTimeout(() => {
+					modalOverlay.classList.remove('overlay-active');
 					scrollController.enableScroll();
-					modalContent.setAttribute('aria-hidden', true);
+				}, 200);
+				modals.forEach((modalContent) => {
+					setTimeout(() => {
+						modalContent.classList.remove('active');
+						scrollController.enableScroll();
+						modalContent.setAttribute('aria-hidden', true);
+					}, 200);
 				});
 				modalBtnOpen.forEach((modalBtns) => {
 					modalBtns.setAttribute('aria-expanded', false);
