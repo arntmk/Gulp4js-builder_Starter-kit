@@ -58,31 +58,37 @@ body {
 	min-height: 100dvh;
 }
 
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.visually-hidden {
+	position: absolute;
+	clip-path: inset(100%);
+	overflow: hidden;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	white-space: nowrap;
+	pointer-events: none;
+	clip: rect(0 0 0 0);
+}
+
+/* ____________________________________________ */
 h1 em {
 	text-decoration: underline;
 	color: #27962d;
 	text-underline-offset: 0.25em;
 }
 
-.button {
-	border: 0;
-	padding: 10px 15px;
-	font-weight: 700;
-	color: #fff;
-	background: #b63d3d;
-	cursor: pointer;
-}
-
 form {
 	display: grid;
 	gap: 1em;
-}
-
-.container {
-	margin: 0 auto;
-	padding: 0 15px;
-	width: 100%;
-	max-width: 1200px;
 }
 
 dialog::backdrop {
@@ -101,20 +107,6 @@ body.lock-fixed {
 	height: 100vh;
 }
 
-.visually-hidden {
-	position: absolute;
-	clip-path: inset(100%);
-	overflow: hidden;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	width: 1px;
-	height: 1px;
-	white-space: nowrap;
-	pointer-events: none;
-	clip: rect(0 0 0 0);
-}
-
 /* .modal-wrapper {
 	border-radius: 16px;
 	padding: 20px;
@@ -123,29 +115,25 @@ body.lock-fixed {
 } */
 
 /* ____________________________________________ */
-@keyframes fade-in {
-	from {
-		opacity: 0.5;
-	}
-
-	to {
-		opacity: 1;
-	}
+/* ____________________________________________ */
+/* ____________________________________________ */
+.modal-button {
+	border: 0;
+	padding: 10px 15px;
+	font-weight: 700;
+	color: #fff;
+	background: #b63d3d;
+	cursor: pointer;
 }
 
-@keyframes fade-out {
-	0% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-	}
+.close-btn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 24px;
+	color: #000;
+	background-color: transparent;
 }
-
-/* ____________________________________________ */
-/* ____________________________________________ */
-/* ____________________________________________ */
 
 dialog::backdrop {
 	background-color: rgb(0 0 0 / 30%);
@@ -166,15 +154,6 @@ dialog:modal {
 	background-color: #fff;
 }
 
-.close-btn {
-	position: absolute;
-	right: 0;
-	top: 0;
-	font-size: 24px;
-	color: #000;
-	background-color: transparent;
-}
-
 /* ____________________________________________ */
 /* Animation */
 dialog {
@@ -182,8 +161,8 @@ dialog {
 	overflow: hidden;
 	opacity: 0;
 	visibility: hidden;
-	transform: translateY(-60%) scale(0.7);
-	transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out, opacity 0.25s linear;
+	transition: visibility 0.3s ease-in-out, opacity 0.3s linear;
+	animation: slide-out 0.4s cubic-bezier(0, 0, 0.2, 1);
 	pointer-events: none;
 }
 
@@ -195,6 +174,46 @@ dialog[open] {
 	max-width: 475px;
 	opacity: 1;
 	visibility: visible;
-	transform: translateY(0) scale(1);
+	animation: slide-in 0.4s cubic-bezier(0, 0, 0.2, 1);
 	pointer-events: all;
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateY(25%);
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes slide-out {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(-20%);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0.5;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }

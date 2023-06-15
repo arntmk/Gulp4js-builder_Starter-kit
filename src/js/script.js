@@ -46,6 +46,6 @@ const scrollController = {
 			headerFixed.style.paddingRight = '';
 			window.scroll({ top: scrollController.scrollPosition });
 			documentElement.style.cssText = '';
-		}, 300);
+		}, 400);
 	},
 };
