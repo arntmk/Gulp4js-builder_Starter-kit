@@ -11,7 +11,7 @@ const accordionsController = function () {
 				const content = self.querySelector('.accordion-content');
 
 				if (self.hasAttribute('open')) {
-					content.style.maxHeight = null;
+					content.style.maxHeight = '';
 				} else {
 					content.style.maxHeight = `${content.scrollHeight}`;
 				}
