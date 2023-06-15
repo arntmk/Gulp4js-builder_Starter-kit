@@ -4,6 +4,7 @@
 
 /* ____________________________________________ */
 /* ____________________________________________ */
+/* ____________________________________________ */
 // @font-face {
 // 	font-family: "fontName";
 // 	font-weight: 400;
@@ -12,6 +13,8 @@
 // 	font-display: swap;
 // }
 
+/* ____________________________________________ */
+/* ____________________________________________ */
 /* ____________________________________________ */
 /* Disable mobile hover */
 @mixin disable-mobile-hover {
@@ -40,19 +43,91 @@
 // }
 
 /* ____________________________________________ */
-/* Absolute-overlay */
-@mixin absolute-overlay {
-	&::before {
-		content: "";
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #700c0c33;
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* Text-Ellipsis */
+@mixin text-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// @include text-ellipsis;
+
+/* ____________________________________________ */
+/* Align-Center */
+@mixin align-center {
+	vertical-align: middle;
+	text-align: center;
+}
+
+// @include align-center;
+
+/* ____________________________________________ */
+/* Off-Screen */
+@mixin offscreen {
+	position: absolute;
+	left: -200%;
+}
+
+// @include offscreen;
+
+/* ____________________________________________ */
+/* List-Reset */
+@mixin list-reset {
+	list-style: none inside;
+	margin: 0;
+	padding: 0;
+}
+
+// @include list-reset;
+
+/* ____________________________________________ */
+/* List-Reset */
+@mixin btn-reset {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+// @include btn-reset;
+
+/* ____________________________________________ */
+/* Input-Reset */
+@mixin input-reset {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+
+	&::-ms-clear,
+	&::-ms-reveal {
+		display: none;
+	}
+
+	&::-webkit-inner-spin-button,
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		appearance: none;
 	}
 }
 
-// @include absolute-overlay;
+// @include input-reset;
 
 /* ____________________________________________ */
+/* Semantically: Visible */
+@mixin visually-hidden {
+	position: absolute;
+	clip-path: inset(100%);
+	overflow: hidden;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	white-space: nowrap;
+	pointer-events: none;
+	clip: rect(0 0 0 0);
+}
+
+// @include visually-hidden;
