@@ -7,9 +7,16 @@
 @charset "UTF-8";
 
 html {
+	box-sizing: border-box;
 	font-family: system-ui, "Hibana", sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 /* Hidden */
@@ -58,8 +65,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	margin-left: -25px;
 	width: 1em;
 	height: 1em;
-	background:
-		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>")
+	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>")
 		transparent no-repeat right center / 1em;
 	cursor: pointer;
 

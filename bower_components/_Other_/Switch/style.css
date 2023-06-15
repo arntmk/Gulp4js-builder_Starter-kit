@@ -1,9 +1,16 @@
 @charset "UTF-8";
 
 html {
+	box-sizing: border-box;
 	font-family: system-ui, "Hibana", sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 body {
@@ -39,10 +46,10 @@ body {
 /* The slider */
 .slider {
 	position: absolute;
+	inset: 0;
 	background-color: #ccc;
 	transition: 0.4s;
 	cursor: pointer;
-	inset: 0;
 }
 
 .slider::before {

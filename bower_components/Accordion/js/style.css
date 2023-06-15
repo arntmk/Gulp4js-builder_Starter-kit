@@ -1,29 +1,19 @@
-:where(button, input, select, textarea, optgroup, option),
-::placeholder,
-::file-selector-button {
-	font: inherit;
-	line-height: inherit;
-	letter-spacing: inherit;
-	color: inherit;
-}
-
-:where(button) {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
-}
-
-/* ____________________________________________ */
-
-* {
-	margin: 0;
-	padding: 0;
+html {
 	box-sizing: border-box;
+	font-family: system-ui, "Hibana", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	box-sizing: inherit;
 }
 
 body {
 	height: 2000px;
-	font-family: "Roboto", sans-serif;
 	color: #fff;
 	background-color: #34495e;
 }
@@ -38,6 +28,21 @@ h1 {
 	html {
 		font-size: 14px;
 	}
+}
+
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button {
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+:where(button) {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
 }
 
 .container {
@@ -101,8 +106,7 @@ h1 {
 	content: "";
 	width: 2em;
 	height: 2em;
-	background:
-		transparent
+	background: transparent
 		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
 		no-repeat right center / 2.5em;
 	transition: transform 0.2s ease-in-out;

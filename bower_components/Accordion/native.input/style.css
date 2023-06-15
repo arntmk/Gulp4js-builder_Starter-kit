@@ -2,21 +2,16 @@
 
 html {
 	box-sizing: border-box;
+	font-family: system-ui, "Hibana", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 *,
 *::before,
 *::after {
 	margin: 0;
-	border: 0;
-	padding: 0;
 	box-sizing: inherit;
-}
-
-html {
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
 }
 
 :where(button, input, select, textarea, optgroup, option),
