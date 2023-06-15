@@ -138,7 +138,7 @@ body.lock-fixed {
 	box-shadow: 0 0 1em rgb(55 55 55 / 40%);
 	background-color: #fff;
 	visibility: hidden;
-	transform: translateY(-60%) scale(0.7);
+	transform: translateY(-25%) scale(0.7);
 	transition: transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
 	cursor: auto;
 }
