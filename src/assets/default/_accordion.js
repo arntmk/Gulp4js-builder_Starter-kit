@@ -13,7 +13,7 @@ const accordionsController = function () {
 				if (self.hasAttribute('open')) {
 					content.style.maxHeight = '';
 				} else {
-					content.style.maxHeight = `${content.scrollHeight}px`;
+					content.style.maxHeight = `${content.scrollHeight}`;
 				}
 			});
 		});
@@ -27,6 +27,7 @@ const accordionsController = function () {
 			});
 		});
 
+		// Клик на другой аркадион. Закрыть аркадион.
 		accordion.forEach((targetDetails) => {
 			targetDetails.addEventListener('click', () => {
 				accordion.forEach((detail) => {
