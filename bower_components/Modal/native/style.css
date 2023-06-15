@@ -198,3 +198,10 @@ dialog[open] {
 	transform: translateY(0) scale(1);
 	pointer-events: all;
 }
+
+/* Trap Focus Inside */
+dialog[open]:not(:focus-within) {
+	background-color: #fff;
+	transition: background-color 0.01s, transform 0.5s ease-in-out, visibility 0.5s ease-in-out,
+		opacity 0.25s linear;
+}

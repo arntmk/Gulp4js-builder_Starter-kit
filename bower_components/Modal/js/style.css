@@ -143,6 +143,12 @@ body.lock-fixed {
 	cursor: auto;
 }
 
+/* Trap Focus Inside */
+.modal:not(:focus-within) {
+	background-color: #fff;
+	transition: background-color 0.01s, transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
 .modal--1,
 .modal--2 {
 	position: absolute;
