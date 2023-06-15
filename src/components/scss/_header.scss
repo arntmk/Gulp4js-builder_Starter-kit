@@ -3,15 +3,15 @@
 /* ____________________________________________ */
 /* Header Fixed or Sticky */
 .header {
-	position: fixed; // fixed
+	position: sticky; // fixed
 	top: 0;
 	z-index: 2;
 	width: 100%;
 }
 
-.main {
+/* .main {
 	margin-top: 5.65rem;
-}
+} */
 
 /* ____________________________________________ */
 .header {
