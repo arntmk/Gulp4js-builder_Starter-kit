@@ -25,9 +25,11 @@
 		".git commite": "git config --global core.autocrlf true && git add . && git commit -m 'commite.' && git push -u origin main"
 	},
 	"browserslist": [
-		"last 3 version",
 		"> 1%",
-		"defaults and supports es6-module",
+		"last 3 version",
+		"last 2 Firefox versions",
+		"defaults",
+		"supports es6-module",
 		"maintained node versions",
 		"not dead"
 	],
