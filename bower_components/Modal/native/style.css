@@ -135,19 +135,28 @@ body.lock-fixed {
 	background-color: transparent;
 }
 
+/* ____________________________________________ */
+/* dialog */
 dialog::backdrop {
-	background-color: rgb(0 0 0 / 30%);
+	background-color: rgb(30 30 30 / 50%);
 	animation: fade-in 0.5s ease-in-out forwards;
 	backdrop-filter: blur(0.5px);
 }
 
 dialog {
 	position: fixed;
+	display: block;
+	overflow: hidden;
 	border: thin solid transparent;
 	border-radius: 16px;
 	padding: 20px;
 	max-width: 475px;
 	box-shadow: 0 0 1em rgb(0 0 0 / 30%);
+	opacity: 0;
+	visibility: hidden;
+	transition: visibility 0.3s ease-in-out, opacity 0.3s linear;
+	animation: slide-out 0.4s cubic-bezier(0, 0, 0.2, 1);
+	pointer-events: none;
 }
 
 dialog:modal {
@@ -156,16 +165,6 @@ dialog:modal {
 
 /* ____________________________________________ */
 /* Animation */
-dialog {
-	display: block;
-	overflow: hidden;
-	opacity: 0;
-	visibility: hidden;
-	transition: visibility 0.3s ease-in-out, opacity 0.3s linear;
-	animation: slide-out 0.4s cubic-bezier(0, 0, 0.2, 1);
-	pointer-events: none;
-}
-
 dialog[open] {
 	display: block;
 	overflow-x: hidden;
@@ -178,7 +177,6 @@ dialog[open] {
 	pointer-events: all;
 }
 
-/* ____________________________________________ */
 @keyframes slide-in {
 	from {
 		transform: translateY(25%);
@@ -199,7 +197,6 @@ dialog[open] {
 	}
 }
 
-/* ____________________________________________ */
 @keyframes fade-in {
 	from {
 		opacity: 0.5;
@@ -207,15 +204,5 @@ dialog[open] {
 
 	to {
 		opacity: 1;
-	}
-}
-
-@keyframes fade-out {
-	0% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
 	}
 }
