@@ -1,6 +1,8 @@
-/* stylelint-disable  declaration-no-important */
+/* stylelint-disable declaration-no-important */
 
-/* ________________Default_____________________ */
+/* ____________________________________________ */
+/* ________________Effects_____________________ */
+/* ____________________________________________ */
 /* :Pseudo-classes & ::Pseudo-elements
 
 /* ____________________________________________ */
@@ -146,7 +148,6 @@ input[type="tel"]:not(:focus):invalid {
 	}
 }
 
-/* ____________________________________________ */
 /* Bg-color AutoFill */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -157,7 +158,7 @@ input:-webkit-autofill:active {
 }
 
 /* ____________________________________________ */
-// Text Selection
+/* Text Selection */
 ::selection {
 	text-shadow: 0 0 0.625rem #000;
 	color: #fff;
@@ -165,7 +166,7 @@ input:-webkit-autofill:active {
 }
 
 /* ____________________________________________ */
-// Animation
+/* Animation */
 @keyframes fade-in {
 	0% {
 		opacity: 0.5;
@@ -187,7 +188,7 @@ input:-webkit-autofill:active {
 }
 
 /* ____________________________________________ */
-/* _________Draw Underline Link :Hover__________ */
+/* _________Draw Underline Link :Hover_________ */
 /* ____________________________________________ */
 .nav__li-link,
 [data-link-center],
