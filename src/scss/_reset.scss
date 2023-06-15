@@ -193,6 +193,10 @@ dialog::backdrop,
 	}
 }
 
+:where([type="file"]) {
+	outline: none;
+}
+
 :where(
 		select,
 		textarea,
@@ -214,10 +218,7 @@ dialog::backdrop,
 	}
 }
 
-:where([type="file"]) {
-	outline: none;
-}
-
+/* outline-offset */
 :where(
 		summary,
 		button,
