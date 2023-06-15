@@ -75,8 +75,9 @@
 				name="username"
 				type="text"
 				title="Must contain at least letters, and at least 3 or more characters."
+				autofocus
 				required
-				autocomplete="username"
+				autocomplete="on"
 				pattern="[a-zA-Zа-яА-Я\-].{3,20}"
 				placeholder="Text" />
 			<br />
@@ -87,13 +88,7 @@
 			<br />
 			<br />
 			<div class="search-wrap">
-				<input
-					id="txtsearchinput"
-					name="s"
-					type="search"
-					placeholder="Search"
-					results="10"
-					autosave="unique" />
+				<input id="txtsearchinput" name="s" type="search" placeholder="Search" results="10" />
 				<span class="hidden clear" id="deltxtinput"></span>
 			</div>
 			<br />
@@ -115,7 +110,8 @@
 				type="email"
 				pattern="^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z].{1,2}$"
 				placeholder="Email"
-				required />
+				required
+				autocomplete="on" />
 			<br />
 			<br />
 			<select class="select" id="select" name="select">
