@@ -13,7 +13,7 @@ const accordionsController = function () {
 				if (self.hasAttribute('open')) {
 					content.style.maxHeight = '';
 				} else {
-					content.style.maxHeight = `${content.scrollHeight}`;
+					content.style.maxHeight = `${content.scrollHeight}px`;
 				}
 			});
 		});
