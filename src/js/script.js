@@ -11,6 +11,7 @@
 // ===Disable Scroll===
 const headerFixed = document.querySelector('.header');
 const style = window.getComputedStyle(headerFixed);
+const isFirefoxBrowser = navigator.userAgent.indexOf('Firefox');
 const { body } = document;
 const { documentElement } = document;
 
@@ -18,23 +19,21 @@ const scrollController = {
 	scrollPosition: 0,
 	disableScroll() {
 		scrollController.scrollPosition = window.scrollY;
-		if (navigator.userAgent.indexOf('Firefox') === -1) {
-			body.style.cssText = `
-		top: -${scrollController.scrollPosition}px;
-		padding-right: ${window.innerWidth - document.body.offsetWidth}px
-		`;
-		}
+		documentElement.style.cssText = 'scroll-behavior: unset;';
 		body.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px
 		`;
 		if (style.position === 'fixed' || style.getPropertyValue('position') === 'absolute') {
 			headerFixed.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px
 		`;
 		}
-		documentElement.style.cssText = 'scroll-behavior: unset;';
-		if (navigator.userAgent.indexOf('Firefox') === -1) {
+		if (isFirefoxBrowser === -1) {
+			body.style.cssText = `
+		top: -${scrollController.scrollPosition}px;
+		padding-right: ${window.innerWidth - document.body.offsetWidth}px
+		`;
 			body.classList.toggle('lock-fixed');
 		}
-		if (navigator.userAgent.indexOf('Firefox') !== -1) {
+		if (isFirefoxBrowser !== -1) {
 			body.classList.toggle('lock');
 		}
 	},

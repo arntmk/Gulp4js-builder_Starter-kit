@@ -61,10 +61,14 @@ img {
 }
 
 body.lock {
+	overflow: hidden;
+}
+
+body.lock-fixed {
 	position: fixed;
 	inset: 0;
 	overflow: hidden;
-	width: 100%;
+	width: 100%; /* 97.7% - 17px */
 	height: 100vh;
 }
 

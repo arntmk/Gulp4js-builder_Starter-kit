@@ -48,6 +48,10 @@ ul {
 }
 
 body.lock {
+	overflow: hidden;
+}
+
+body.lock-fixed {
 	position: fixed;
 	inset: 0;
 	overflow: hidden;
@@ -55,10 +59,10 @@ body.lock {
 	height: 100vh;
 }
 
-html {
+/* html {
 	scrollbar-gutter: stable;
 }
-
+ */
 :root {
 	--clr-burger-btn: #f5f5f5;
 	--clr-burger-menu-bg: #014482;
