@@ -178,6 +178,7 @@ dialog[open] {
 	pointer-events: all;
 }
 
+/* ____________________________________________ */
 @keyframes slide-in {
 	from {
 		transform: translateY(25%);
@@ -198,6 +199,7 @@ dialog[open] {
 	}
 }
 
+/* ____________________________________________ */
 @keyframes fade-in {
 	from {
 		opacity: 0.5;
