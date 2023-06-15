@@ -35,7 +35,7 @@ body {
 /* ____________________________________________ */
 /* _______________Typography___________________ */
 /* ____________________________________________ */
-/* Text */
+/* text */
 html {
 	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -56,7 +56,7 @@ html {
 }
 
 /* ____________________________________________ */
-/* Links */
+/* links */
 :where(a) {
 	text-decoration: none;
 	color: inherit;
@@ -65,13 +65,13 @@ html {
 }
 
 /* ____________________________________________ */
-/* Paragraph */
+/* paragraph */
 :where(p) {
 	text-wrap: balance;
 }
 
 /* ____________________________________________ */
-/* Headers */
+/* headers */
 :where(h1, h2, h3, h4, h5, h6) {
 	margin: 0;
 	font-weight: var(--fw-h, 700);
@@ -92,7 +92,7 @@ html {
 }
 
 /* ____________________________________________ */
-/* Add input typography inheritance */
+/* add typography inheritance | input */
 :where(button, input, select, textarea, optgroup, option),
 ::placeholder,
 ::file-selector-button {
@@ -103,7 +103,7 @@ html {
 }
 
 /* ____________________________________________ */
-/* Images */
+/* images */
 :where(img, svg, picture) {
 	vertical-align: middle;
 	object-fit: cover;
@@ -115,7 +115,7 @@ html {
 }
 
 /* ____________________________________________ */
-/* Lists */
+/* lists */
 :where(ul, ol, dl) {
 	list-style-type: none;
 	list-style-position: inside;
@@ -132,12 +132,6 @@ html {
 	cursor: default;
 }
 
-:where(button) {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
-}
-
 :where(fieldset) {
 	margin: 0;
 	border-width: 0;
@@ -148,8 +142,36 @@ html {
 	margin: 0;
 }
 
+:where(button) {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+/* input reset */
+input[type="search"] {
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-decoration,
+	&::-webkit-search-results-decoration {
+		appearance: none;
+	}
+}
+
+input[type="password"]::-ms-reveal {
+	display: none;
+}
+
+input[type="number"] {
+	appearance: textfield;
+
+	&::-webkit-inner-spin-button {
+		appearance: auto; // none
+	}
+}
+
 /* ____________________________________________ */
-/* Add cursor pointer */
+/* add cursor pointer */
 :where(
 		a,
 		label,
@@ -175,7 +197,7 @@ dialog::backdrop,
 /* ____________________________________________ */
 /* _________________Outline____________________ */
 /* ____________________________________________ */
-/* Keyboard Tabs */
+/* keyboard Tabs */
 :where(
 		a,
 		button,

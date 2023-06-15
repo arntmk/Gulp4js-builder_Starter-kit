@@ -94,11 +94,11 @@
 /* ____________________________________________ */
 /* Input-Reset */
 @mixin input-reset {
+	appearance: textfield;
 	border-width: 0;
 	padding: 0;
 	background-color: transparent;
 
-	&::-ms-clear,
 	&::-ms-reveal {
 		display: none;
 	}
