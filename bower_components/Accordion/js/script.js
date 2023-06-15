@@ -1,7 +1,5 @@
-/* https://codepen.io/a7rarpress/pen/bGmrdma */
-
 /* ____________________________________________ */
-// ==Accordion==
+// ==AccordionJS==
 
 const accordionsController = function () {
 	const accordions = document.querySelectorAll('.accordion');

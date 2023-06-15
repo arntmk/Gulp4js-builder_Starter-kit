@@ -1,5 +1,5 @@
 /* ____________________________________________ */
-// ==Accordion==
+// ==AccordionNative==
 
 const accordionsController = function () {
 	const accordion = document.querySelectorAll('details');
