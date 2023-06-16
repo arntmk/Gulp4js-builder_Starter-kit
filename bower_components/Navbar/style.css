@@ -18,6 +18,58 @@ html {
 	line-height: 1.5;
 }
 
+/* ____________________________________________ */
+/* add typography inheritance | input */
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button {
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+:where(button) {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+:where(
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		input:not([type="range"], [type="color"], [type="file"]),
+		select,
+		textarea
+	) {
+	border: thin solid #a0a0a0;
+	padding: 0.25em 0.375em;
+	background-color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/* ____________________________________________ */
+/* images */
+:where(img, svg, picture) {
+	vertical-align: middle;
+	object-fit: cover;
+}
+
+:where(img, svg, picture, iframe, input, video, select, textarea, details, dialog) {
+	height: auto;
+	max-width: 100%;
+}
+
+/* ____________________________________________ */
 div#body-wrappar {
 	display: flex;
 	flex-flow: column nowrap;
@@ -30,21 +82,6 @@ div#body-wrappar {
 	padding-inline: 15px;
 	width: 100%;
 	max-width: 1200px;
-}
-
-button {
-	border: none;
-	padding: 0;
-	background-color: transparent;
-	cursor: pointer;
-}
-
-a {
-	text-decoration: none;
-}
-
-ul {
-	list-style-type: none;
 }
 
 body.lock {
@@ -64,30 +101,32 @@ body.lock-fixed {
 }
  */
 :root {
+	--burger-menu: clamp(1.563rem, calc(1.339rem + 1.12vw), 1.875rem); /* 30px */
 	--clr-burger-btn: #f5f5f5;
 	--clr-burger-menu-bg: #014482;
 	--clr-header: #fff;
 	--clr-header-bg: #1e1e1e;
+	--burger-breakpoint: var(768px);
 }
 
-/* $burger-breakpoint: $breakpoint-768; */
-
 /* ____________________________________________ */
+/* _________________Header_____________________ */
 /* ____________________________________________ */
-/* ____________________________________________ */
+/* header fixed or sticky */
 .header {
 	position: sticky; /* fixed */
 	top: 0;
 	z-index: 99998;
-	display: flex;
 	width: 100%;
 }
 
-/* .main {
+/* header fixed */
+/*
+.main {
 	margin-top: 5.65rem;
-} */
+}
+*/
 
-/* ____________________________________________ */
 /* ____________________________________________ */
 .header {
 	background-color: var(--clr-header-bg);
@@ -97,17 +136,42 @@ body.lock-fixed {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-block: 30px;
+	gap: 20px;
+	padding-block: 30px;
 }
 
 .header__logo {
-	width: 30px;
+	flex-shrink: 0;
+	width: 35px;
+}
+
+.header__nav-wrapper {
+	display: flex;
+	flex-basis: 680px; /* adjust */
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	white-space: nowrap;
+}
+
+.header__buttons {
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 /* ____________________________________________ */
+.header__nav {
+	display: flex;
+	flex-basis: 550px; /* adjust */
+	justify-content: space-between;
+}
+
 .nav {
 	display: flex;
-	gap: 30px;
+	justify-content: space-between;
+	gap: 10px;
+	width: 100%;
 }
 
 .nav__li-link {
@@ -115,18 +179,24 @@ body.lock-fixed {
 	color: var(--clr-header);
 }
 
-/* ____________________Hamburger-Menu________________________ */
+/* _____________Hamburger-Menu_________________ */
 .header__nav.active {
 	left: 0;
 	cursor: pointer;
 }
 
 @media (max-width: 768px) {
+	.header__nav-wrapper {
+		flex-basis: auto;
+		margin-left: auto;
+	}
+
 	.header__nav {
 		position: absolute;
 		left: -100%;
 		top: 0;
 		z-index: 99998;
+		justify-content: initial; /* flex-basis */
 		width: 100%;
 		height: calc(100vh + 2px);
 		background-color: rgb(0 0 0 / 80%);
@@ -135,6 +205,7 @@ body.lock-fixed {
 
 	.nav {
 		flex-direction: column;
+		justify-content: initial; /* flex-basis */
 		gap: 0;
 		overflow-y: auto;
 		padding: 30px;
@@ -147,15 +218,16 @@ body.lock-fixed {
 
 	.nav__li-link {
 		display: inline-block;
-		font-size: clamp(1.563rem, 1.339rem + 1.12vw, 1.875rem); /* 30px */
+		font-size: var(--burger-menu);
 		line-height: 2.33; /* 70px */
 		transition: transform 0.3s ease-in-out 0.1s, color 0.3s ease-in-out 0.1s;
 	}
 }
 
-/* ____________________Hamburger-Btn________________________ */
+/* ______________Hamburger-Btn_________________ */
 .menu-button {
 	display: none;
+	flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
