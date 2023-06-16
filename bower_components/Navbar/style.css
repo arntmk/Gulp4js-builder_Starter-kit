@@ -145,6 +145,7 @@ body.lock-fixed {
 	width: 35px;
 }
 
+/* ____________________________________________ */
 .header__nav-wrapper {
 	display: flex;
 	flex-basis: 680px; /* adjust */
@@ -160,13 +161,13 @@ body.lock-fixed {
 	gap: 10px;
 }
 
-/* ____________________________________________ */
 .header__nav {
 	display: flex;
 	flex-basis: 550px; /* adjust */
 	justify-content: space-between;
 }
 
+/* ____________________________________________ */
 .nav {
 	display: flex;
 	justify-content: space-between;
