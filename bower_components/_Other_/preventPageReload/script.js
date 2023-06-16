@@ -5,16 +5,20 @@
 /* ____________________________________________ */
 // ===prevent page reload on submit in Form===
 const form = document.querySelectorAll('form');
-form.forEach((forms) => {
-	forms.addEventListener('submit', (e) => {
-		e.preventDefault();
+if (form) {
+	form.forEach((forms) => {
+		forms.addEventListener('submit', (e) => {
+			e.preventDefault();
+		});
 	});
-});
+}
 
 // ===prevent page reload on submit===
 const submit = document.querySelectorAll('input[type="submit"]');
-submit.forEach((submits) => {
-	submits.addEventListener('click', (e) => {
-		e.preventDefault();
+if (submit) {
+	submit.forEach((submits) => {
+		submits.addEventListener('click', (e) => {
+			e.preventDefault();
+		});
 	});
-});
+}
