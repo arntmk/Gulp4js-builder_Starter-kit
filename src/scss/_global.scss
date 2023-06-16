@@ -45,6 +45,7 @@ body {
 /* _____________Sticky Footer__________________ */
 /* ____________________________________________ */
 div#body-wrappar {
+	position: relative;
 	display: flex;
 	flex-flow: column nowrap;
 	overflow: clip; /* если используете на сайте position: sticky - используйте clip; вместо hidden */
