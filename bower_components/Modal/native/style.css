@@ -30,6 +30,11 @@
 }
 
 /* ____________________________________________ */
+/* Add basic space everywhere (to container) */
+div.flow-space > * + * {
+	margin-top: var(--flow-space, 1em);
+}
+
 body {
 	min-height: 100dvh;
 	background-color: #34495e;

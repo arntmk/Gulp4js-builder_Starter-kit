@@ -5,6 +5,11 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+/* Add basic space everywhere (to container) */
+div.flow-space > * + * {
+	margin-top: var(--flow-space, 1em);
+}
+
 body {
 	height: 2000px;
 	min-height: 100vh;

@@ -6,11 +6,13 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-div#body-wrappar {
-	display: flex;
-	flex-flow: column nowrap;
-	overflow: clip; /* если используете на сайте position: sticky - используйте clip; вместо hidden */
-	min-height: 100vh;
+/* Add basic space everywhere (to container) */
+div.flow-space > * + * {
+	margin-top: var(--flow-space, 1em);
+}
+
+body {
+	background-color: #eee;
 }
 
 .container {
@@ -69,7 +71,7 @@ html {
 }
 
 .main {
-	margin-top: 5.5rem;
+	margin-top: 6.5rem;
 	background-color: #eee;
 }
 

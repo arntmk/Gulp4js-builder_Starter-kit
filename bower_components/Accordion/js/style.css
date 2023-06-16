@@ -2,7 +2,7 @@
 /* ____________________________________________ */
 
 /* Add basic space everywhere (to container) */
-* {
+div.flow-space > * + * {
 	margin-top: var(--flow-space, 1em);
 }
 
