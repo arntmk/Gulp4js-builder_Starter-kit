@@ -6,17 +6,9 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-html {
-	box-sizing: border-box;
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
+/* Add basic space everywhere (to container) */
+* {
+	margin-top: var(--flow-space, 1em);
 }
 
 /* Hidden */

@@ -4,43 +4,12 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-html {
-	box-sizing: border-box;
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-}
-
 body {
 	background-color: #a79898;
 }
 
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
 h1 {
 	text-align: center;
-}
-
-button {
-	cursor: pointer;
-}
-
-:where(button, input, select, textarea, optgroup, option),
-::placeholder,
-::file-selector-button {
-	font: inherit;
-	line-height: inherit;
-	letter-spacing: inherit;
-	color: inherit;
 }
 
 .container {
@@ -66,6 +35,7 @@ button {
 	border: thin solid #8f8f9d;
 	padding: 20px;
 	text-align: center;
+	background-color: #eee;
 }
 
 .tabs__content-wrapper {

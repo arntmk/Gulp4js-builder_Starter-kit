@@ -3,32 +3,9 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-html {
-	box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-	margin-top: 0;
-	box-sizing: inherit;
-}
-
-html {
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
-:where(button, input, select, textarea, optgroup) {
-	font: inherit;
-	line-height: inherit;
-	letter-spacing: inherit;
-	color: inherit;
-}
-
-[type="range"] {
-	cursor: pointer;
+/* Add basic space everywhere (to container) */
+* {
+	margin-top: var(--flow-space, 1em);
 }
 
 .container {

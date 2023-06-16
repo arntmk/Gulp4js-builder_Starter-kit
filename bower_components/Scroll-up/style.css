@@ -3,13 +3,9 @@
 
 @charset "UTF-8";
 
-* {
-	box-sizing: border-box;
-}
-
 body {
-	margin: 0;
-	background: #ccc;
+	height: 100vh;
+	background-color: #eee;
 }
 
 .section {
@@ -18,12 +14,6 @@ body {
 
 html {
 	scroll-behavior: smooth;
-}
-
-html {
-	font-family: system-ui, sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
 }
 
 .container {

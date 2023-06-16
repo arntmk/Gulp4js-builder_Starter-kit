@@ -5,52 +5,9 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-/* ____________________________________________ */
-html {
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
-html {
-	break-inside: avoid-column;
-	overflow-anchor: none;
-	box-sizing: border-box;
-	background-repeat: no-repeat;
-}
-
-*,
-*::before,
-*::after {
-	break-inside: inherit;
-	overflow-anchor: inherit;
-	margin-top: 0;
-	min-width: 0;
-	box-sizing: inherit;
-	background-repeat: inherit;
-}
-
 body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizespeed;
-}
-
-body {
-	margin: 0;
 	height: 2000px;
 	min-height: 100vh;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
-img {
-	max-width: 100%;
 }
 
 .container {

@@ -9,23 +9,6 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-html {
-	break-inside: avoid-column;
-	overflow-anchor: none;
-	box-sizing: border-box;
-	background-repeat: no-repeat;
-}
-
-*,
-*::before,
-*::after {
-	break-inside: inherit;
-	overflow-anchor: inherit;
-	min-width: 0;
-	box-sizing: inherit;
-	background-repeat: inherit;
-}
-
 /*
  * Add the correct styles in Safari.
  */
@@ -47,15 +30,10 @@ html {
 }
 
 /* ____________________________________________ */
-html {
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
 body {
 	margin: 0;
 	min-height: 100dvh;
+	background-color: #eee;
 }
 
 .container {
@@ -63,20 +41,6 @@ body {
 	padding: 0 15px;
 	width: 100%;
 	max-width: 1200px;
-}
-
-.visually-hidden {
-	position: absolute;
-	clip-path: inset(100%);
-	overflow: hidden;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	width: 1px;
-	height: 1px;
-	white-space: nowrap;
-	pointer-events: none;
-	clip: rect(0 0 0 0);
 }
 
 /* ____________________________________________ */
@@ -130,6 +94,7 @@ body.lock-fixed {
 	position: absolute;
 	right: 0;
 	top: 0;
+	font-family: "Hibana", sans-serif;
 	font-size: 24px;
 	color: #000;
 	background-color: transparent;

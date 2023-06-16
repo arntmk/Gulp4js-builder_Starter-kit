@@ -7,19 +7,6 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: sans-serif;
-}
-
-html {
-	font-family: system-ui, sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
 body {
 	height: 100vh;
 	background-color: #c7ecee;
@@ -27,18 +14,6 @@ body {
 
 :where(button) {
 	outline-color: transparent;
-	border-width: 0;
-	padding: 0;
-	font: inherit;
-	background-color: transparent;
-	cursor: pointer;
-}
-
-:where(ul, ol, dl) {
-	list-style-type: none;
-	list-style-position: inside;
-	margin: 0;
-	padding: 0;
 }
 
 .container {

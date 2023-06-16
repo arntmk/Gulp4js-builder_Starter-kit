@@ -4,31 +4,6 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-html {
-	box-sizing: border-box;
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-}
-
-body {
-	font-size: 1rem;
-}
-
-input {
-	font: inherit;
-}
-
-label {
-	cursor: pointer;
-}
-
 .container {
 	margin: 0 auto;
 	padding: 0 15px;

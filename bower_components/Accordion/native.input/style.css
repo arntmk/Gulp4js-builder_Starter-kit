@@ -2,73 +2,24 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-html {
-	box-sizing: border-box;
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
+/* Add basic space everywhere (to container) */
+* {
+	margin-top: var(--flow-space, 1em);
 }
 
 *,
 *::before,
 *::after {
 	margin: 0;
-	box-sizing: inherit;
-}
-
-:where(button, input, select, textarea, optgroup, option),
-::placeholder,
-::file-selector-button {
-	font: inherit;
-	line-height: inherit;
-	letter-spacing: inherit;
-	color: inherit;
 }
 
 img {
 	vertical-align: middle;
-	height: auto;
-	max-width: 100%;
 }
 
-:where(button) {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
-}
-
-:where(a) {
-	text-decoration: none;
-	color: inherit;
-	text-decoration-skip-ink: none;
-	text-underline-offset: 0.25em;
-}
-
-:where(ul, ol, dl) {
-	list-style-type: none;
-	list-style-position: inside;
-	margin: 0;
-	padding: 0;
-}
-
-:where(h1, h2, h3, h4, h5, h6) {
-	margin: 0;
-	font-weight: inherit;
-	font-size: inherit;
-}
-
-:where(body, p, figure) {
-	margin: 0;
-}
-
-:where(cite, address) {
-	font-style: normal;
-}
-
-:where(fieldset) {
-	margin: 0;
-	border-width: 0;
-	padding: 0;
+body {
+	height: 1000px;
+	background-color: #34495e;
 }
 
 .container {
@@ -80,15 +31,6 @@ img {
 	padding: 0 15px;
 	width: 100%;
 	max-width: 1200px;
-}
-
-label {
-	cursor: pointer;
-}
-
-body {
-	height: 1000px;
-	background: #d4d1d1;
 }
 
 /* ____________________________________________ */

@@ -21,7 +21,7 @@
 		[type="button"],
 		[type="reset"],
 		[type="submit"],
-		input:not([type="range"], [type="color"], [type="file"]),
+		input:not([type="range"], [type="color"], [type="file"], [type="radio"], [type="checkbox"]),
 		select,
 		textarea
 	) {

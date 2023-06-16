@@ -8,33 +8,8 @@
 
 @import url("swiper-bundle.min.css");
 
-html {
-	box-sizing: border-box;
-}
-
-* {
-	box-sizing: inherit;
-}
-
-html {
-	font-family: system-ui, sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
 body {
-	margin: 0;
 	background-color: #333;
-}
-
-:where(button) {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
-}
-
-.swiper-section {
-	/* _ */
 }
 
 .container {
@@ -42,6 +17,10 @@ body {
 	padding-inline: 15px;
 	width: 100%;
 	max-width: 1200px;
+}
+
+.swiper-section {
+	/* _ */
 }
 
 .swiper-title {

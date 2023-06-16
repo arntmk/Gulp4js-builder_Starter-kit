@@ -2,71 +2,8 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 main {
 	height: 2000px;
-}
-
-html {
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
-
-/* ____________________________________________ */
-/* add typography inheritance | input */
-:where(button, input, select, textarea, optgroup, option),
-::placeholder,
-::file-selector-button {
-	font: inherit;
-	line-height: inherit;
-	letter-spacing: inherit;
-	color: inherit;
-}
-
-:where(button) {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
-	cursor: pointer;
-}
-
-:where(
-		[type="button"],
-		[type="reset"],
-		[type="submit"],
-		input:not([type="range"], [type="color"], [type="file"]),
-		select,
-		textarea
-	) {
-	border: thin solid #a0a0a0;
-	padding: 0.25em 0.375em;
-	background-color: #fff;
-}
-
-a {
-	text-decoration: none;
-}
-
-ul {
-	list-style-type: none;
-}
-
-/* ____________________________________________ */
-/* images */
-:where(img, svg, picture) {
-	vertical-align: middle;
-	object-fit: cover;
-}
-
-:where(img, svg, picture, iframe, input, video, select, textarea, details, dialog) {
-	height: auto;
-	max-width: 100%;
 }
 
 /* ____________________________________________ */

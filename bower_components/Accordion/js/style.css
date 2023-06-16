@@ -1,17 +1,15 @@
 /* https://codepen.io/a7rarpress/pen/bGmrdma */
 /* ____________________________________________ */
-html {
-	box-sizing: border-box;
-	font-family: system-ui, "Hibana", sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
+
+/* Add basic space everywhere (to container) */
+* {
+	margin-top: var(--flow-space, 1em);
 }
 
 *,
 *::before,
 *::after {
 	margin: 0;
-	box-sizing: inherit;
 }
 
 body {
@@ -30,21 +28,6 @@ h1 {
 	html {
 		font-size: 14px;
 	}
-}
-
-:where(button, input, select, textarea, optgroup, option),
-::placeholder,
-::file-selector-button {
-	font: inherit;
-	line-height: inherit;
-	letter-spacing: inherit;
-	color: inherit;
-}
-
-:where(button) {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
 }
 
 .container {
