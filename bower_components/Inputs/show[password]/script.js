@@ -18,9 +18,9 @@ if (togglePassword && password) {
 	});
 }
 
-// ===============================================
-// prevent form submit
-// const form = document.querySelector('form');
-// form.addEventListener('submit', function (e) {
-//   e.preventDefault();
-// });
+/* ____________________________________________ */
+// ===prevent page reload on submit===
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+});

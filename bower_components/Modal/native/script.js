@@ -36,6 +36,13 @@ const scrollController = {
 };
 
 /* ____________________________________________ */
+// ===prevent page reload on submit===
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+});
+
+/* ____________________________________________ */
 // ===Modal===
 
 const modalController = function () {
