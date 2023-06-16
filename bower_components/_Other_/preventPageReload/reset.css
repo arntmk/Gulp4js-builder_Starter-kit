@@ -1,0 +1,206 @@
+/* stylelint-disable declaration-no-important */
+/* __________________Reset_____________________ */
+/* elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e */
+/* https://www.youtube.com/shorts/2lyDv0wOQuQ */
+/* About container -> https://habr.com/ru/post/463923/ */
+
+/* ____________________________________________ */
+/* _________________General____________________ */
+/* ____________________________________________ */
+/* all: unset; */
+html {
+	break-inside: avoid-column;
+	overflow-anchor: none;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+}
+
+*,
+*::before,
+*::after {
+	break-inside: inherit;
+	overflow-anchor: inherit;
+	min-width: 0;
+	box-sizing: inherit;
+	background-repeat: inherit;
+}
+
+body {
+	min-width: 320px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizespeed;
+}
+
+/* ____________________________________________ */
+/* _______________Typography___________________ */
+/* ____________________________________________ */
+/* text */
+html {
+	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
+		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+:where(code, kbd, samp, pre) {
+	font-family: ui-monospace, "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
+		"Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:where(cite, address) {
+	font-style: normal;
+}
+
+/* ____________________________________________ */
+/* links */
+:where(a) {
+	text-decoration: none;
+	color: inherit;
+	text-decoration-skip-ink: none;
+	text-underline-offset: 0.25em;
+}
+
+/* ____________________________________________ */
+/* paragraph */
+:where(p) {
+	text-wrap: balance;
+}
+
+/* ____________________________________________ */
+/* headers */
+:where(h1, h2, h3, h4, h5, h6) {
+	margin: 0;
+	font-weight: var(--fw-h, 700);
+	line-height: 1.3;
+	text-wrap: balance;
+}
+
+:where(h1) {
+	font-size: var(--fs-h1, 32px);
+}
+
+:where(h2) {
+	font-size: var(--fs-h2, 24px);
+}
+
+:where(h3, h4, h5, h6) {
+	font-size: var(--fs-h3-6, 18.72px);
+}
+
+/* ____________________________________________ */
+/* add typography inheritance | input */
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button {
+	font: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+}
+
+/* ____________________________________________ */
+/* images */
+:where(img, svg, picture) {
+	vertical-align: middle;
+	object-fit: cover;
+}
+
+:where(img, svg, picture, iframe, input, video, select, textarea, details, dialog) {
+	height: auto;
+	max-width: 100%;
+}
+
+/* ____________________________________________ */
+/* lists */
+:where(ul, ol, dl) {
+	list-style-type: none;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}
+
+::marker {
+	color: inherit;
+}
+
+/* ____________________________________________ */
+:where(form) {
+	cursor: default;
+}
+
+:where(fieldset) {
+	margin: 0;
+	border-width: 0;
+	padding: 0;
+}
+
+:where(body, p, figure) {
+	margin: 0;
+}
+
+/* btn reset */
+:where(button) {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+/* ____________________________________________ */
+/* add cursor pointer */
+:where(
+		a,
+		label,
+		button,
+		summary,
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		[type="range"],
+		[type="color"],
+		[type="checkbox"],
+		[type="radio"]
+	),
+dialog::backdrop,
+[popover]::backdrop,
+[type="file"]::file-selector-button,
+[type="number"]::-webkit-inner-spin-button,
+[type="search"]::-webkit-search-cancel-button,
+[type="date"]::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+}
+
+/* ____________________________________________ */
+/* _________________Default____________________ */
+/* ____________________________________________ */
+/* Table */
+:where(th, td) {
+	border: thin solid #a0a0a0;
+	padding: 0.5em;
+	text-align: center;
+	background-color: #fff;
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* Forms */
+/**
+ * Change the inconsistent appearance in all browsers (opinionated).
+ */
+
+:where(
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		input:not([type="range"], [type="color"], [type="file"]),
+		select,
+		textarea
+	) {
+	border: thin solid #a0a0a0;
+	padding: 0.25em 0.375em;
+	background-color: #fff;
+}
