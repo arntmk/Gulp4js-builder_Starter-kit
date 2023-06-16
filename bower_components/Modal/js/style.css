@@ -8,6 +8,7 @@
 body {
 	height: 2000px;
 	min-height: 100vh;
+	background-color: #34495e;
 }
 
 .container {

@@ -4,8 +4,13 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+* {
+	margin-top: var(--flow-space, 1em);
+}
+
 body {
-	background-color: #a79898;
+	height: 1000px;
+	background-color: #34495e;
 }
 
 h1 {

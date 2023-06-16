@@ -5,6 +5,11 @@
 	margin-top: var(--flow-space, 1em);
 }
 
+body {
+	height: 1000px;
+	background-color: #eee;
+}
+
 /* Outline */
 :where(
 		input:not(

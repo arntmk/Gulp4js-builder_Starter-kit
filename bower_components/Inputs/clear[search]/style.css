@@ -6,6 +6,15 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+* {
+	margin-top: var(--flow-space, 1em);
+}
+
+body {
+	height: 1000px;
+	background-color: #eee;
+}
+
 /* Hidden */
 .hidden {
 	display: none !important;

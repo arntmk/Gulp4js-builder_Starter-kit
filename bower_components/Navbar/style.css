@@ -2,6 +2,10 @@
 /* ____________________________________________ */
 @charset "UTF-8";
 
+body {
+	background-color: #34495e;
+}
+
 main {
 	height: 2000px;
 }

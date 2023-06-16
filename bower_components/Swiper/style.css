@@ -8,8 +8,13 @@
 
 @import url("swiper-bundle.min.css");
 
+* {
+	margin-top: var(--flow-space, 1em);
+}
+
 body {
-	background-color: #333;
+	height: 1000px;
+	background-color: #34495e;
 }
 
 .container {
