@@ -203,6 +203,10 @@ dialog::backdrop,
 	outline-color: transparent;
 }
 
+:where([type="file"]):focus {
+	outline-width: 0;
+}
+
 :where(
 		a,
 		button,
