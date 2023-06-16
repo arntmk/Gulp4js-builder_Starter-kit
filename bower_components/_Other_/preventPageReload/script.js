@@ -14,7 +14,7 @@ if (form) {
 }
 
 // ===prevent page reload on submit===
-const submit = document.querySelectorAll('input[type="submit"]');
+const submit = document.querySelectorAll('[type="submit"]');
 if (submit) {
 	submit.forEach((submits) => {
 		submits.addEventListener('click', (e) => {

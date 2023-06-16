@@ -60,13 +60,3 @@ if (form) {
 		});
 	});
 }
-
-// ===prevent page reload on submit===
-const submit = document.querySelectorAll('input[type="submit"]');
-if (submit) {
-	submit.forEach((submits) => {
-		submits.addEventListener('click', (e) => {
-			e.preventDefault();
-		});
-	});
-}
