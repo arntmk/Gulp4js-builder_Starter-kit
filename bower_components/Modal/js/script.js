@@ -38,10 +38,20 @@ const scrollController = {
 };
 
 /* ____________________________________________ */
+// ===prevent page reload on submit in Form===
+const form = document.querySelectorAll('form');
+form.forEach((forms) => {
+	forms.addEventListener('submit', (e) => {
+		e.preventDefault();
+	});
+});
+
 // ===prevent page reload on submit===
-const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
+const submit = document.querySelectorAll('input[type="submit"]');
+submit.forEach((submits) => {
+	submits.addEventListener('click', (e) => {
+		e.preventDefault();
+	});
 });
 
 /* ____________________________________________ */

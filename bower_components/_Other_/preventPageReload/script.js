@@ -1,19 +1,19 @@
 /* https://www.tutorialspoint.com/how-to-stop-refreshing-the-page-on-submit-in-javascript */
+/* https://timetoprogram.com/prevent-page-reload-form-submit-react-js/ */
 
 /* ____________________________________________ */
-// ===prevent page reload on submit===
-const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
+// ===prevent page reload on submit in Form===
+const form = document.querySelectorAll('form');
+form.forEach((forms) => {
+	forms.addEventListener('submit', (e) => {
+		e.preventDefault();
+	});
 });
 
-/* ____________________________________________ */
 // ===prevent page reload on submit===
-/* const form = document.querySelector('form');
-const submit = document.querySelector('.submit');
-function submitForm(e) {
-	e.preventDefault();
-	form.style.display = 'none';
-	submit.innerHTML = '<b>Form submit successful</b>';
-}
-form.addEventListener('submit', submitForm); */
+const submit = document.querySelectorAll('input[type="submit"]');
+submit.forEach((submits) => {
+	submits.addEventListener('click', (e) => {
+		e.preventDefault();
+	});
+});

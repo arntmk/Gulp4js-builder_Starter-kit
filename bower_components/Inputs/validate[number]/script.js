@@ -6,15 +6,17 @@
 /* ____________________________________________ */
 // ===Validate Numbers===
 
-/* const ValidateNumbers = document.querySelector('[inputmode="numeric"]');
+/* const ValidateNumbers = document.querySelector('input[type="number"]');
 
 ValidateNumbers.onkeypress = function Validate(e) {
 	const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
 	return isNumber;
 }; */
 
+/* ____________________________________________ */
+// ===Validate Numbers===
 document.querySelectorAll('.input-number').forEach((numbers) => {
-	const ValidateNumbers = numbers.querySelector('[type="number"]');
+	const ValidateNumbers = numbers.querySelector('input[type="number"]');
 	const Numbers = /[0-9.-]/;
 	ValidateNumbers.onkeypress = function Validate(e) {
 		const isNumber = Numbers.test(String.fromCharCode(e.keyCode || e.which));
