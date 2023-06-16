@@ -150,25 +150,24 @@ html {
 }
 
 /* input reset */
-input[type="search"] {
-	&::-webkit-search-cancel-button,
-	&::-webkit-search-results-button,
-	&::-webkit-search-decoration,
-	&::-webkit-search-results-decoration {
-		appearance: none;
-	}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-results-button,
+[type="search"]::-webkit-search-decoration,
+[type="search"]::-webkit-search-results-decoration {
+	appearance: none;
 }
 
-input[type="password"]::-ms-reveal {
+[type="password"]::-ms-reveal {
 	display: none;
 }
 
-input[type="number"] {
+[type="number"] {
 	appearance: textfield;
+}
 
-	&::-webkit-inner-spin-button {
-		appearance: auto; // none
-	}
+[type="number"]::-webkit-inner-spin-button {
+	appearance: auto; // none
 }
 
 /* ____________________________________________ */
@@ -199,6 +198,11 @@ dialog::backdrop,
 /* _________________Outline____________________ */
 /* ____________________________________________ */
 /* keyboard Tabs */
+:where(a, button, summary, select, textarea, input) {
+	outline-width: 0;
+	outline-color: transparent;
+}
+
 :where(
 		a,
 		button,
@@ -210,14 +214,8 @@ dialog::backdrop,
 		[type="color"],
 		[type="radio"],
 		[type="checkbox"]
-	) {
-	&:focus-visible {
-		outline: 0.125rem solid var(--clr-accent);
-	}
-}
-
-:where([type="file"]) {
-	outline: none;
+	):focus-visible {
+	outline: 0.125rem solid var(--clr-accent);
 }
 
 :where(
@@ -230,15 +228,12 @@ dialog::backdrop,
 				[type="range"],
 				[type="color"],
 				[type="radio"],
-				[type="checkbox"]
+				[type="checkbox"],
+				[type="file"]
 			)
-	),
-[type="file"]::file-selector-button {
-	outline-color: transparent;
-
-	&:focus {
-		outline: 0.125rem solid transparent;
-	}
+	):focus,
+[type="file"]::file-selector-button:focus {
+	outline: 0.125rem solid transparent;
 }
 
 /* outline-offset */
@@ -248,7 +243,8 @@ dialog::backdrop,
 		input:not([type="checkbox"], [type="radio"], [type="color"]),
 		select,
 		textarea
-	) {
+	),
+[type="file"]::file-selector-button {
 	outline-offset: 0.25rem;
 }
 
