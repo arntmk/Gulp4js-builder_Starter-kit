@@ -1,6 +1,6 @@
 /* stylelint-disable declaration-no-important */
 /* ____________________________________________ */
-/* ______________SCSS Variables________________ */
+/* ____________SCSS & CSS Variables____________ */
 /* ____________________________________________ */
 /* SCSS COLOR */
 $clr-scrollbar: #777;
@@ -17,14 +17,11 @@ $burger-breakpoint: $breakpoint-768;
 
 :root {
 	/* ____________________________________________ */
-	/* _______________CSS Variables________________ */
+	/* ________CONTAINER & CSS/BREAKPOINT__________ */
 	/* ____________________________________________ */
-	/* CONTAINER */
 	--content-width: 1200px; /* 1200+30=1230 */
 	--container-padding: 15px; /* 15*2 Left-Right = 30 */
 	--container-width: calc(var(--content-width) + (var(--container-padding) * 2));
-
-	/* CSS BREAKPOINT */
 	--breakpoint-1450: 1449.98 + px; /* Desktop-XL */
 	--breakpoint-1200: 1199.98 + px; /* Desktop */
 	--breakpoint-992: 991.98 + px; /* Laptop */
