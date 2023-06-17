@@ -1,10 +1,25 @@
 /* stylelint-disable declaration-no-important */
-/* ________________Variables_____________________ */
+/* ____________________________________________ */
+/* ______________SCSS Variables________________ */
+/* ____________________________________________ */
+/* SCSS COLOR */
+$clr-scrollbar: #777;
+
+/* SCSS BREAKPOINT */
+$breakpoint-1450: 1449.98 + px;
+$breakpoint-1200: 1199.98 + px;
+$breakpoint-992: 991.98 + px;
+$breakpoint-768: 767.98 + px;
+$breakpoint-576: 575.98 + px;
+$breakpoint-480: 479.98 + px;
+$breakpoint-320: 319.98 + px;
+$burger-breakpoint: $breakpoint-768;
 
 :root {
 	/* ____________________________________________ */
-	/* ________________CONTAINER___________________ */
+	/* _______________CSS Variables________________ */
 	/* ____________________________________________ */
+	/* CONTAINER */
 	--content-width: 1200px; /* 1200+30=1230 */
 	--container-padding: 15px; /* 15*2 Left-Right = 30 */
 	--container-width: calc(var(--content-width) + (var(--container-padding) * 2));
@@ -20,9 +35,9 @@
 	--burger-breakpoint: var(--breakpoint-768);
 
 	/* ____________________________________________ */
-	/* _______________FONT-FAMILY__________________ */
+	/* __________________SIZE______________________ */
 	/* ____________________________________________ */
-	/* base font */
+	/* font-family */
 	--ff-base: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
@@ -34,8 +49,6 @@
 	// --ff-fourth: "fontName(4)", var(--ff-base);
 
 	/* ____________________________________________ */
-	/* ___________________FONT_____________________ */
-	/* ____________________________________________ */
 	/* font-size */
 	--fs-burger-menu: clamp(1.563rem, calc(1.339rem + 1.12vw), 1.875rem); /* 30px */
 	--fs-h1: clamp(1.5rem, calc(1.262rem + 1.19vw), 2rem);
@@ -44,6 +57,7 @@
 	--fs-body: clamp(0.938rem, calc(0.908rem + 0.15vw), 1rem);
 	--fs-18px: clamp();
 
+	/* ____________________________________________ */
 	/* font-weight */
 	--fw-body: 400;
 	--fw-h: 700;
@@ -53,16 +67,14 @@
 	--lh-h: 1.3;
 
 	/* ____________________________________________ */
-	/* __________________OTHER_____________________ */
-	/* ____________________________________________ */
-	/* rounding */
+	/* rounding (border) */
 	--round-sm: 5px;
 	--round-md: 20px;
 
 	/* shadows */
 	--shadow: 0 0 0 0.0625rem var(--clr-accent);
 
-	/* spacing */
+	/* spacing (margin, padding, gap) */
 	--space-sm: 10px;
 	--space-md: 20px;
 	--space-lg: 30px;
@@ -99,22 +111,6 @@
 	/* footer */
 	--clr-footer: #fff;
 	--clr-footer-bg: #1e1e1e;
-
-	/* ____________________________________________ */
-	/* ______________SCSS Variables________________ */
-	/* ____________________________________________ */
-	$clr-scrollbar: #777;
-	$breakpoint-1450: 1449.98 + px;
-	$breakpoint-1200: 1199.98 + px;
-	$breakpoint-992: 991.98 + px;
-	$breakpoint-768: 767.98 + px;
-	$breakpoint-576: 575.98 + px;
-	$breakpoint-480: 479.98 + px;
-	$breakpoint-320: 319.98 + px;
-	$burger-breakpoint: $breakpoint-768;
-
-	/* other */
-	color-scheme: light dark;
 }
 
 /* ____________________________________________ */
@@ -125,22 +121,5 @@
 		/* scrollBar */
 		--clr-scrollbar: #777;
 		--clr-scrollbar-bg: #1c1c1c;
-	}
-}
-
-/* ____________________________________________ */
-/* _____________Reduced Motion_________________ */
-/* ____________________________________________ */
-@media (prefers-reduced-motion: reduce) {
-	*,
-	::before,
-	::after {
-		background-attachment: initial !important;
-		transition-duration: 0s !important;
-		transition-delay: 0s !important;
-		animation-duration: 1ms !important;
-		animation-delay: -1ms !important;
-		animation-iteration-count: 1 !important;
-		scroll-behavior: auto !important;
 	}
 }
