@@ -33,27 +33,10 @@ body {
 }
 
 /* ____________________________________________ */
-/* _____________Reduced Motion_________________ */
-/* ____________________________________________ */
-@media (prefers-reduced-motion: reduce) {
-	*,
-	::before,
-	::after {
-		background-attachment: initial !important;
-		transition-duration: 0s !important;
-		transition-delay: 0s !important;
-		animation-duration: 1ms !important;
-		animation-delay: -1ms !important;
-		animation-iteration-count: 1 !important;
-		scroll-behavior: auto !important;
-	}
-}
-
-/* ____________________________________________ */
 /* _______________Typography___________________ */
 /* ____________________________________________ */
 /* text */
-html {
+:where(html) {
 	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	font-weight: 400;
@@ -167,7 +150,6 @@ html {
 }
 
 /* input reset */
-
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-results-button,
 [type="search"]::-webkit-search-decoration,
