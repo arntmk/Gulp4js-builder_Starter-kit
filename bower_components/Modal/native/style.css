@@ -38,7 +38,7 @@ div.flow-space > * + * {
 
 body {
 	min-height: 100dvh;
-	background-color: #34495e;
+	background-color: #eee;
 }
 
 .container {
