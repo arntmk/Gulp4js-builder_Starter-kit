@@ -99,6 +99,7 @@ body.lock-fixed {
 	position: absolute;
 	right: 0;
 	top: 0;
+	font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 	font-size: 24px;
 	color: #000;
 	background-color: transparent;
