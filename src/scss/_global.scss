@@ -20,6 +20,7 @@ html {
 }
 
 body {
+	min-width: 320px;
 	font-family: var(--ff-primary);
 	font-weight: var(--fw-body);
 	font-size: var(--fs-body);
