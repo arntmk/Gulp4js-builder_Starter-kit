@@ -5,6 +5,7 @@
 /* https://codepen.io/dvdvdmt/pen/BaavWbp */
 /* https://www.google.com/search?q=html++tag+dialog+close+on+click+outside */
 /* https://stackoverflow.com/questions/24991072/how-to-fade-in-a-html5-dialog */
+/* https://www.youtube.com/watch?v=4prVdA7_6u0 */
 
 /* ____________________________________________ */
 @charset "UTF-8";
@@ -98,7 +99,6 @@ body.lock-fixed {
 	position: absolute;
 	right: 0;
 	top: 0;
-	font-family: "Hibana", sans-serif;
 	font-size: 24px;
 	color: #000;
 	background-color: transparent;
