@@ -72,7 +72,9 @@
 	/* __________________COLOR_____________________ */
 	/* ____________________________________________ */
 	/* scrollBar */
-	--clr-scrollbar: #777;
+	--clr-scrollbar: #{$clr-scrollbar};
+	--clr-scrollbar-hover: #{darken($clr-scrollbar, 10%)};
+	--clr-scrollbar-active: #{darken($clr-scrollbar, 20%)};
 	--clr-scrollbar-bg: #1c1c1c;
 
 	/* burger menu */
@@ -98,6 +100,20 @@
 	--clr-footer: #fff;
 	--clr-footer-bg: #1e1e1e;
 
+	/* ____________________________________________ */
+	/* ______________SCSS Variables________________ */
+	/* ____________________________________________ */
+	$clr-scrollbar: #777;
+	$breakpoint-1450: 1449.98 + px;
+	$breakpoint-1200: 1199.98 + px;
+	$breakpoint-992: 991.98 + px;
+	$breakpoint-768: 767.98 + px;
+	$breakpoint-576: 575.98 + px;
+	$breakpoint-480: 479.98 + px;
+	$breakpoint-320: 319.98 + px;
+	$burger-breakpoint: $breakpoint-768;
+
+	/* other */
 	color-scheme: light dark;
 }
 
@@ -128,15 +144,3 @@
 		scroll-behavior: auto !important;
 	}
 }
-
-/* ____________________________________________ */
-/* _____________SCSS BREAKPOINT________________ */
-/* ____________________________________________ */
-$breakpoint-1450: 1449.98 + px;
-$breakpoint-1200: 1199.98 + px;
-$breakpoint-992: 991.98 + px;
-$breakpoint-768: 767.98 + px;
-$breakpoint-576: 575.98 + px;
-$breakpoint-480: 479.98 + px;
-$breakpoint-320: 319.98 + px;
-$burger-breakpoint: $breakpoint-768;
