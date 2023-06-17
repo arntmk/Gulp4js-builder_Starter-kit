@@ -6,7 +6,7 @@
 /* :Pseudo-classes & ::Pseudo-elements
 
 /* ____________________________________________ */
-/* Image scale Hover */
+/* Image scale :Hover */
 :where(img, svg, picture),
 [data-img-hover] {
 	overflow: hidden;
@@ -24,7 +24,7 @@
 }
 
 /* ____________________________________________ */
-/* Small SVG Hover */
+/* Small SVG :Hover */
 
 a:not([class*="__logo"]) img,
 [data-svg-hover] {
@@ -44,14 +44,14 @@ a:not([class*="__logo"]) img,
 }
 
 /* ____________________________________________ */
-/* Simple link Hover */
+/* Simple link :Hover */
 a,
 [data-link-hover] {
 	transition: color 0.3s ease-in-out 0.01s;
 
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
-			color: var(--clr-accent);
+			color: var(--clr-hover);
 		}
 	}
 
@@ -61,7 +61,7 @@ a,
 }
 
 /* ____________________________________________ */
-/* Simple Button Hover */
+/* Simple Button :Hover */
 [type="button"],
 [type="reset"],
 [type="submit"],
@@ -74,9 +74,9 @@ a,
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
 			border-color: transparent;
-			box-shadow: 0 0 0.625rem var(--clr-accent);
+			box-shadow: 0 0 0.625rem var(--clr-hover);
 			color: #fff;
-			background-color: var(--clr-accent);
+			background-color: var(--clr-hover);
 			transform: scale(1.03);
 			animation: fade-in 0.2s ease-in-out 0.01s;
 		}
@@ -90,7 +90,7 @@ a,
 }
 
 /* ____________________________________________ */
-/* Input|Select|Textarea|Summary| Hover */
+/* Input|Select|Textarea|Summary| :Hover */
 select,
 textarea,
 summary,
@@ -110,7 +110,7 @@ input:not(
 	@media (any-hover: hover) {
 		&:is(:hover, :focus-visible) {
 			border-color: transparent;
-			box-shadow: 0 0 0 0.0625rem var(--clr-accent), 0 0 0.625rem var(--clr-accent);
+			box-shadow: 0 0 0 0.0625rem var(--clr-hover), 0 0 0.625rem var(--clr-hover);
 		}
 	}
 }
@@ -148,7 +148,7 @@ input[type="tel"]:not(:focus):invalid {
 	}
 }
 
-/* Bg-color AutoFill */
+/* Input Bg-color AutoFill */
 input {
 	&:-webkit-autofill,
 	&:-webkit-autofill:hover,
@@ -168,7 +168,8 @@ input {
 }
 
 /* ____________________________________________ */
-/* Animation */
+/* _______________Animation____________________ */
+/* ____________________________________________ */
 @keyframes fade-in {
 	0% {
 		opacity: 0.5;
@@ -208,7 +209,7 @@ input {
 		bottom: -3px;
 		width: 100%;
 		height: 0.0625rem;
-		background-color: var(--clr-accent);
+		background-color: var(--clr-hover);
 		transition: transform 0.4s ease-in-out 0.005s, color 0.3s ease-in-out 0.01s;
 
 		@media (max-width: $burger-breakpoint) {
@@ -218,7 +219,7 @@ input {
 
 	@media (any-hover: hover) {
 		&:hover {
-			color: var(--clr-accent);
+			color: var(--clr-hover);
 
 			&::after {
 				transform: scale(1, 1) translateY(0); // change
