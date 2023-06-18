@@ -57,6 +57,7 @@ body {
 /* ____________________________________________ */
 /* links */
 :where(a) {
+	display: inline-block;
 	text-decoration: none;
 	color: inherit;
 	text-decoration-skip-ink: none;
