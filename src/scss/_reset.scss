@@ -70,6 +70,10 @@ body {
 	text-wrap: balance;
 }
 
+:where(body, p, figure) {
+	margin: 0;
+}
+
 /* ____________________________________________ */
 /* headers */
 :where(h1, h2, h3, h4, h5, h6) {
@@ -128,18 +132,16 @@ body {
 }
 
 /* ____________________________________________ */
+/* form */
 :where(form) {
 	cursor: default;
 }
 
+/* border */
 :where(fieldset) {
 	margin: 0;
 	border-width: 0;
 	padding: 0;
-}
-
-:where(body, p, figure) {
-	margin: 0;
 }
 
 /* btn reset */
