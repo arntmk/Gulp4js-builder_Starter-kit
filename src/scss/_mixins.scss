@@ -19,8 +19,8 @@
 /* Disable mobile hover */
 @mixin disable-mobile-hover {
 	@media (any-hover: hover) {
-		&:hover,
-		&:focus-visible {
+		&:focus-visible,
+		&:hover {
 			@content;
 		}
 	}
