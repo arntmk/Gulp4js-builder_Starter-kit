@@ -66,6 +66,8 @@ dialog::backdrop {
 
 body.lock {
 	overflow: hidden;
+	width: 100%;
+	height: 100vh;
 }
 
 body.lock-fixed {
