@@ -60,3 +60,10 @@ if (form) {
 		});
 	});
 }
+
+/* ____________________________________________ */
+// ===prevent page to scroll up===
+const link = document.querySelectorAll('a[href="#!"]');
+link.forEach((links) => {
+	links.addEventListener('click', () => false);
+});
