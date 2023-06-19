@@ -6,7 +6,7 @@
 /* ____________________________________________ */
 // ===Validate Numbers===
 
-/* const ValidateNumbers = document.querySelector('input[type="number"]');
+/* const ValidateNumbers = document.querySelector('[type="number"]');
 
 ValidateNumbers.onkeypress = function Validate(e) {
 	const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
@@ -16,7 +16,7 @@ ValidateNumbers.onkeypress = function Validate(e) {
 /* ____________________________________________ */
 // ===Validate Numbers===
 document.querySelectorAll('.input-number').forEach((numbers) => {
-	const ValidateNumbers = numbers.querySelector('input[type="number"]');
+	const ValidateNumbers = numbers.querySelector('[type="number"]');
 	const Numbers = /[0-9.-]/;
 	ValidateNumbers.onkeypress = function Validate(e) {
 		const isNumber = Numbers.test(String.fromCharCode(e.keyCode || e.which));

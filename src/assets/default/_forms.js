@@ -2,7 +2,7 @@
 // ===Toggle Password Visibility===
 
 const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector('input[type="password"]');
+const password = document.querySelector('[type="password"]');
 
 if (togglePassword && password) {
 	togglePassword.addEventListener('click', function () {
@@ -21,7 +21,7 @@ if (togglePassword && password) {
 /* ____________________________________________ */
 // ===Toggle search cleaning===
 
-const searchInput = document.querySelector('input[type="search"]');
+const searchInput = document.querySelector('[type="search"]');
 const clearButton = document.querySelector('#deltxtinput');
 
 if (searchInput && clearButton) {
@@ -49,7 +49,7 @@ document.querySelectorAll('.input-number').forEach((numbers) => {
 /* ____________________________________________ */
 // ===Progress support JS / WebKit===
 
-for (const e of document.querySelectorAll('input[type="range"]#range-progress')) {
+for (const e of document.querySelectorAll('[type="range"]#range-progress')) {
 	e.style.setProperty('--value', e.value);
 	e.style.setProperty('--min', e.min === '' ? '0' : e.min);
 	e.style.setProperty('--max', e.max === '' ? '100' : e.max);

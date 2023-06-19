@@ -13,12 +13,11 @@ if (form) {
 	});
 }
 
-// ===prevent page reload on submit===
-/* const submit = document.querySelectorAll('[type="submit"]');
-if (submit) {
-	submit.forEach((submits) => {
-		submits.addEventListener('click', (e) => {
-			e.preventDefault();
-		});
+/* ____________________________________________ */
+// ===prevent page to scroll up===
+const link = document.querySelectorAll('a[href="#"]');
+link.forEach((links) => {
+	links.addEventListener('click', (e) => {
+		e.preventDefault();
 	});
-} */
+});
