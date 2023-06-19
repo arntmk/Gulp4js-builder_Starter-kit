@@ -26,6 +26,7 @@ html {
 }
 
 body {
+	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizespeed;
@@ -67,11 +68,8 @@ body {
 /* ____________________________________________ */
 /* paragraph */
 :where(p) {
-	text-wrap: balance;
-}
-
-:where(body, p, figure) {
 	margin: 0;
+	text-wrap: balance;
 }
 
 /* ____________________________________________ */
@@ -116,6 +114,10 @@ body {
 :where(img, svg, picture, iframe, input, video, select, textarea, details, dialog) {
 	height: auto;
 	max-width: 100%;
+}
+
+:where(figure) {
+	margin: 0;
 }
 
 /* ____________________________________________ */
