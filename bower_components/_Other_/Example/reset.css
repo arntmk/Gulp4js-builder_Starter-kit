@@ -285,7 +285,8 @@ dialog::backdrop,
 		input:not([type="range"], [type="color"], [type="file"], [type="radio"], [type="checkbox"]),
 		select,
 		textarea
-	) {
+	),
+[type="file"]::file-selector-button {
 	border: thin solid #a0a0a0;
 	padding: 0.25em 0.375em;
 	background-color: #fff;

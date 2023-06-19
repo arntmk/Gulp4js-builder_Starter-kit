@@ -24,7 +24,8 @@
 		input:not([type="range"], [type="color"], [type="file"], [type="radio"], [type="checkbox"]),
 		select,
 		textarea
-	) {
+	),
+[type="file"]::file-selector-button {
 	border: thin solid #a0a0a0;
 	padding: 0.25em 0.375em;
 	background-color: #fff;
@@ -161,10 +162,7 @@ progress::-webkit-progress-value {
 
 [type="file"]::file-selector-button {
 	margin: 15px;
-	border: thin solid #8f8f9d;
-	padding: 0.09em 1em;
 	width: 8em;
-	background-color: #fff;
 	pointer-events: all;
 }
 

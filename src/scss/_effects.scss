@@ -69,7 +69,7 @@ a,
 [data-button-hover] {
 	transform: scale(1);
 	transition: box-shadow 0.5s linear, border-color 0.5s linear, transform 0.1s ease-in-out,
-		background-color 0.1s linear, color 0.2s linear;
+		background-color 0.2s linear, color 0.2s linear;
 
 	@media (any-hover: hover) {
 		&:is(:focus-visible, :hover) {
