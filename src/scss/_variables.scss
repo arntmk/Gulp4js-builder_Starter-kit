@@ -84,7 +84,8 @@ $burger-breakpoint: $breakpoint-768;
 	--fs-h2: clamp(1.125rem, calc(0.946rem + 0.89vw), 1.5rem);
 	--fs-h3-6: clamp(1rem, calc(0.919rem + 0.4vw), 1.17rem);
 	--fs-body: clamp(0.938rem, calc(0.908rem + 0.15vw), 1rem);
-	--fs-18px: clamp();
+
+	// --fs-18px: clamp();
 
 	/* ____________________________________________ */
 	/* font-weight */
