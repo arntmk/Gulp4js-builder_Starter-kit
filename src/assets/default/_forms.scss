@@ -175,6 +175,7 @@ progress::-webkit-progress-value {
 /* ____________________________________________ */
 textarea {
 	vertical-align: middle;
+	overflow-x: hidden;
 	width: 18em;
 	height: 18em;
 }
