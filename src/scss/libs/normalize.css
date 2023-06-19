@@ -1,4 +1,3 @@
-/* stylelint-disable */
 /* Document
  * ========================================================================== */
 
@@ -8,15 +7,15 @@
  */
 
 html {
-  box-sizing: border-box;	/* 1 */
-  background-repeat: no-repeat;	/* 2 */
+	box-sizing: border-box; /* 1 */
+	background-repeat: no-repeat; /* 2 */
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit; /* 1 */
-  background-repeat: inherit; /* 2 */
+	box-sizing: inherit; /* 1 */
+	background-repeat: inherit; /* 2 */
 }
 
 /**
@@ -26,8 +25,8 @@ html {
 
 *::before,
 *::after {
-  text-decoration: inherit; /* 1 */
-  vertical-align: inherit; /* 2 */
+	vertical-align: inherit; /* 2 */
+	text-decoration: inherit; /* 1 */
 }
 
 /**
@@ -39,11 +38,11 @@ html {
  */
 
 :where(:root) {
-  line-height: 1.5; /* 1 */
-  overflow-wrap: break-word; /* 2 */
-  tab-size: 4; /* 3 */
-  -webkit-tap-highlight-color: transparent; /* 4 */
-  -webkit-text-size-adjust: 100%; /* 5 */
+	overflow-wrap: break-word; /* 2 */
+	line-height: 1.5; /* 1 */
+	tab-size: 4; /* 3 */
+	text-size-adjust: 100%; /* 5 */
+	-webkit-tap-highlight-color: transparent; /* 4 */
 }
 
 /* Sections
@@ -54,7 +53,7 @@ html {
  */
 
 :where(body) {
-  margin: 0;
+	margin: 0;
 }
 
 /**
@@ -63,8 +62,8 @@ html {
  */
 
 :where(h1) {
-  font-size: 2em;
-  margin-block: 0.67em;
+	font-size: 2em;
+	margin-block: 0.67em;
 }
 
 /* Grouping content
@@ -75,15 +74,33 @@ html {
  */
 
 :where(dl, ol, ul) :where(dl, ol, ul) {
-  margin: 0;
+	margin: 0;
 }
 
 /**
- * Prevent the list style to break in Webkit browsers.
+ * Prevent the list style to break in Chrome.
  */
 
-:where(dl, ol, ul) {
-  list-style-position: inside;
+:where(ol, ul) {
+	list-style-position: inside;
+}
+
+/**
+ * Remove the list style on navigation lists in all browsers (opinionated).
+ */
+
+:where(nav) :where(ol, ul) {
+	list-style-type: none;
+	padding: 0;
+}
+
+/**
+ * Prevent VoiceOver from ignoring list semantics in Safari (opinionated).
+ */
+
+:where(nav li)::before {
+	content: "\200B";
+	float: left;
 }
 
 /**
@@ -92,29 +109,10 @@ html {
  */
 
 :where(hr) {
-  border: thin solid; /* 1 */
-  border-color: #555 #808080 #808080 #555; /* 1 */
-  box-sizing: content-box; /* 2 */
-  height: 0; /* 2 */
-}
-
-/**
- * Remove the list style on navigation lists in all browsers (opinionated).
- */
-
-:where(nav) :where(ol, ul) {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-/**
- * Prevent VoiceOver from ignoring list semantics in Safari (opinionated).
- */
-
-:where(nav li)::before {
-  content: "\200B";
-  float: left;
+	border: thin solid; /* 1 */
+	border-color: #555 #808080 #808080 #555; /* 1 */
+	height: 0; /* 2 */
+	box-sizing: content-box; /* 2 */
 }
 
 /**
@@ -124,9 +122,9 @@ html {
  */
 
 :where(pre) {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-  overflow: auto; /* 3 */
+	overflow: auto; /* 3 */
+	font-family: monospace; /* 1 */
+	font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -137,8 +135,7 @@ html {
  */
 
 :where(abbr[title]) {
-  text-decoration: underline;
-  text-decoration: underline dotted;
+	text-decoration: underline dotted;
 }
 
 /**
@@ -146,7 +143,7 @@ html {
  */
 
 :where(b, strong) {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 /**
@@ -155,8 +152,8 @@ html {
  */
 
 :where(code, kbd, samp) {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+	font-family: monospace; /* 1 */
+	font-size: 1em; /* 2 */
 }
 
 /**
@@ -164,7 +161,7 @@ html {
  */
 
 :where(small) {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 /* Embedded content
@@ -175,7 +172,7 @@ html {
  */
 
 :where(audio, canvas, iframe, img, svg, video) {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 /**
@@ -183,7 +180,7 @@ html {
  */
 
 :where(iframe) {
-  border-style: none;
+	border-style: none;
 }
 
 /**
@@ -191,7 +188,7 @@ html {
  */
 
 :where(svg:not([fill])) {
-  fill: currentColor;
+	fill: currentcolor;
 }
 
 /* Tabular data
@@ -204,9 +201,9 @@ html {
  */
 
 :where(table) {
-  border-collapse: collapse; /* 1 */
-  border-color: inherit; /* 2 */
-  text-indent: 0; /* 3 */
+	border-color: #a0a0a0; /* 2 */
+	border-collapse: collapse; /* 1 */
+	text-indent: 0; /* 3 */
 }
 
 /* Forms
@@ -217,7 +214,7 @@ html {
  */
 
 :where(button, input, select) {
-  margin: 0;
+	margin: 0;
 }
 
 /**
@@ -225,7 +222,7 @@ html {
  */
 
 :where(button, select) {
-  text-transform: none;
+	text-transform: none;
 }
 
 /**
@@ -233,7 +230,7 @@ html {
  */
 
 :where(button, [type="button" i], [type="reset" i], [type="submit" i]) {
-  -webkit-appearance: button;
+	appearance: button;
 }
 
 /**
@@ -241,7 +238,7 @@ html {
  */
 
 :where(fieldset) {
-  border: 0.0625rem solid #a0a0a0;
+	border: 0.0625rem solid #a0a0a0;
 }
 
 /**
@@ -249,17 +246,17 @@ html {
  */
 
 :where(progress) {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 /**
  * 1. Remove the margin in Firefox and Safari.
- * 3. Change the resize direction in all browsers (opinionated).
+ * 2. Change the resize direction in all browsers (opinionated).
  */
 
 :where(textarea) {
-  margin: 0; /* 1 */
-  resize: vertical; /* 3 */
+	margin: 0; /* 1 */
+	resize: vertical; /* 2 */
 }
 
 /**
@@ -268,8 +265,8 @@ html {
  */
 
 :where([type="search" i]) {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+	appearance: textfield; /* 1 */
+	outline-offset: -0.125rem; /* 2 */
 }
 
 /**
@@ -278,16 +275,17 @@ html {
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
-  height: auto;
+	height: auto;
 }
 
 /**
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
-
+/* stylelint-disable-next-line selector-no-vendor-prefix */
+::placeholder,
 ::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
+	color: inherit;
+	opacity: 0.54;
 }
 
 /**
@@ -295,7 +293,7 @@ html {
  */
 
 ::-webkit-search-decoration {
-  -webkit-appearance: none;
+	appearance: none;
 }
 
 /**
@@ -304,25 +302,31 @@ html {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+	appearance: button; /* 1 */
+	font: inherit; /* 2 */
 }
 
 /**
  * Remove the inner border and padding of focus outlines in Firefox.
  */
 
-:where(button, input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i]))::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+:where(
+		button,
+		input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i])
+	)::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
 }
 
 /**
  * Restore the focus outline styles unset by the previous rule in Firefox.
  */
 
-:where(button, input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i]))::-moz-focusring {
-  outline: 0.0625rem dotted ButtonText;
+:where(
+		button,
+		input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i])
+	)::-moz-focusring {
+	outline: 0.0625rem dotted ButtonText;
 }
 
 /**
@@ -330,7 +334,7 @@ html {
  */
 
 :where(:-moz-ui-invalid) {
-  box-shadow: none;
+	box-shadow: none;
 }
 
 /* Interactive
@@ -353,7 +357,7 @@ html {
 }
 
 :where(dialog:not([open])) {
-  display: none;
+	display: none;
 }
 
 /*
@@ -361,7 +365,7 @@ html {
  */
 
 :where(details > summary:first-of-type) {
-  display: list-item;
+	display: list-item;
 }
 
 /* Accessibility
@@ -372,7 +376,7 @@ html {
  */
 
 :where([aria-busy="true" i]) {
-  cursor: progress;
+	cursor: progress;
 }
 
 /*
@@ -380,7 +384,7 @@ html {
  */
 
 :where([aria-controls]) {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /*
@@ -389,7 +393,7 @@ html {
  */
 
 :where([aria-disabled="true" i], [disabled]) {
-  cursor: not-allowed;
+	cursor: not-allowed;
 }
 
 /*
@@ -398,10 +402,10 @@ html {
  */
 
 :where([aria-hidden="false" i][hidden]) {
-  display: initial;
+	display: initial;
 }
 
 :where([aria-hidden="false" i][hidden]:not(:focus)) {
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
 }
