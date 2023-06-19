@@ -146,7 +146,7 @@ body {
 }
 
 /* btn reset */
-:where(button) {
+:where(button, [type="buttton"]) {
 	overflow-anchor: none;
 	border-width: 0;
 	padding: 0;
