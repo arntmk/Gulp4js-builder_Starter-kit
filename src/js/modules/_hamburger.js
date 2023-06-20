@@ -13,6 +13,7 @@ const hamburgerController = function () {
 				menuBtn.setAttribute('aria-expanded', true);
 			}, 200);
 			scrollController.disableScroll();
+			trapFocus(menu);
 		});
 
 		menu.addEventListener('click', (e) => {
