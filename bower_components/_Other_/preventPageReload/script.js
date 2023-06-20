@@ -3,7 +3,7 @@
 /* https://stackoverflow.com/questions/14589193/clearing-my-form-inputs-after-submission */
 
 /* ____________________________________________ */
-// ===prevent page reload on submit in Form===
+// ===prevent page reload on submit===
 const form = document.querySelectorAll('form');
 if (form) {
 	form.forEach((forms) => {

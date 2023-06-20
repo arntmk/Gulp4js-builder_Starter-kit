@@ -51,7 +51,7 @@ const scrollController = {
 };
 
 /* ____________________________________________ */
-// ===prevent page reload on submit in Form===
+// ===prevent page reload on submit===
 const form = document.querySelectorAll('form');
 if (form) {
 	form.forEach((forms) => {
@@ -63,7 +63,7 @@ if (form) {
 
 /* ____________________________________________ */
 // ===prevent page to scroll up===
-const link = document.querySelectorAll('a[href="#!"]');
+const link = document.querySelectorAll('a[href="#"]');
 link.forEach((links) => {
 	links.addEventListener('click', (e) => {
 		e.preventDefault();
