@@ -10,8 +10,9 @@
 /* ____________________________________________ */
 // ===Disable Scroll===
 const headerFixed = document.querySelector('.header');
-const style = window.getComputedStyle(headerFixed);
+const headerStyle = window.getComputedStyle(headerFixed);
 const isFirefoxBrowser = navigator.userAgent.indexOf('Firefox');
+const paddingOffset = `${window.innerWidth - document.body.offsetWidth}px`;
 const { body } = document;
 const { documentElement } = document;
 
@@ -20,16 +21,17 @@ const scrollController = {
 	disableScroll() {
 		scrollController.scrollPosition = window.scrollY;
 		documentElement.style.cssText = 'scroll-behavior: unset;';
-		body.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px
-		`;
-		if (style.position === 'fixed' || style.getPropertyValue('position') === 'absolute') {
-			headerFixed.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px
-		`;
+		body.style.paddingRight = paddingOffset;
+		if (
+			headerStyle.position === 'fixed' ||
+			headerStyle.getPropertyValue('position') === 'absolute'
+		) {
+			headerFixed.style.paddingRight = paddingOffset;
 		}
 		if (isFirefoxBrowser === -1) {
 			body.style.cssText = `
 		top: -${scrollController.scrollPosition}px;
-		padding-right: ${window.innerWidth - document.body.offsetWidth}px
+		padding-right: ${window.innerWidth - document.body.offsetWidth}px;
 		`;
 			body.classList.toggle('lock-fixed');
 		}
