@@ -80,7 +80,7 @@ link.forEach((links) => {
 const trapFocus = (element) => {
 	const focusableEls = Array.from(
 		element.querySelectorAll(
-			'a[href]:not([disabled]), button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), details:not([disabled]), [tabindex]:not([tabindex="-1"])',
+			'a[href]:not([disabled]), button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), details:not([disabled]), [tabindex]:not([tabindex="-1"]), audio[controls], video[controls], [contenteditable]:not([contenteditable="false"])',
 		),
 	);
 	const firstFocusableEl = focusableEls[0];
