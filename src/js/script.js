@@ -76,7 +76,7 @@ link.forEach((links) => {
 // https://codepen.io/vaskort/pen/LYpwjoj
 // https://hidde.blog/using-javascript-to-trap-focus-in-an-element/
 /* ____________________________________________ */
-// trapFocus
+// ===trapFocus===
 const trapFocus = (element) => {
 	const focusableEls = Array.from(
 		element.querySelectorAll(
