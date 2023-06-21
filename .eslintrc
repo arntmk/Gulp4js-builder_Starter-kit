@@ -54,6 +54,7 @@
 		// Formatter | Prettier
 		"implicit-arrow-linebreak": ["off", "beside"],
 		"function-paren-newline": ["off", "never"],
-		"operator-linebreak": ["warn", "after"]
+		"operator-linebreak": ["warn", "after"],
+		"wrap-iife": ["error", "any"]
 	}
 }

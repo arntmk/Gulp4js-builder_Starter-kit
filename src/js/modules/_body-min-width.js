@@ -1,5 +1,3 @@
-/* eslint wrap-iife: ["error", "any"] */
-
 // ===Adaptive-body-min-width===
 const screenViewport = function () {
 	(() => {
