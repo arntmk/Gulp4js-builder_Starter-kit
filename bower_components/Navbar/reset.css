@@ -220,9 +220,10 @@ dialog::backdrop,
 		[type="range"],
 		[type="color"],
 		[type="radio"],
-		[type="checkbox"]
+		[type="checkbox"],
+		[tabindex="0"]
 	):focus-visible {
-	outline: 0.125rem solid var(--clr-hover);
+	outline: 0.125rem solid var(--clr-hover, #f00);
 }
 
 :where(
@@ -249,7 +250,8 @@ dialog::backdrop,
 		button,
 		input:not([type="checkbox"], [type="radio"], [type="color"]),
 		select,
-		textarea
+		textarea,
+		[tabindex="0"]
 	),
 [type="file"]::file-selector-button {
 	outline-offset: 0.25rem;
