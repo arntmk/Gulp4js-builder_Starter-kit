@@ -1,7 +1,3 @@
-/* ____________________________________________ */
-// Global Script imports ( ./src/script.modules.json )
-/* ____________________________________________ */
-
 /* function isMobile() {
 	return navigator.maxTouchPoints > 0 && /Android|IPhone/i.test(navigator.userAgent);
 	if (navigator.userAgent.indexOf('Firefox') === -1) {}
@@ -52,6 +48,10 @@ const scrollController = {
 	},
 };
 
+/* ____________________________________________ */
+/* https://www.tutorialspoint.com/how-to-stop-refreshing-the-page-on-submit-in-javascript */
+/* https://timetoprogram.com/prevent-page-reload-form-submit-react-js/ */
+/* https://stackoverflow.com/questions/14589193/clearing-my-form-inputs-after-submission */
 /* ____________________________________________ */
 // ===prevent page reload on submit===
 const form = document.querySelectorAll('form');
