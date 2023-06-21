@@ -251,13 +251,13 @@ dialog::backdrop,
 		input:not([type="checkbox"], [type="radio"], [type="color"]),
 		select,
 		textarea,
-		[tabindex="0"]
+
 	),
 [type="file"]::file-selector-button {
-	outline-offset: 0.25rem;
+	outline-offset: 0.1875rem;
 }
 
-:where([type="checkbox"], [type="radio"]) {
+:where([type="checkbox"], [type="radio"], [tabindex="0"]) {
 	outline-offset: 0.0625rem;
 }
 
