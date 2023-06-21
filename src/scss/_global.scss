@@ -179,42 +179,27 @@ div.clearfix::after {
 
 /* Text-Ellipsis */
 .text-ellipsis {
-	overflow: hidden;
-	text-overflow: ellipsis;
+	@include text-ellipsis;
 }
 
 /* Align-Center */
 .align-center {
-	vertical-align: middle;
-	text-align: center;
+	@include align-center;
 }
 
 /* Off-Screen */
 .offscreen {
-	position: absolute;
-	left: -200%;
+	@include offscreen;
 }
 
 /* Button-Reset */
 .btn-reset {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
+	@include btn-reset;
 }
 
 /* Semantically: Visible */
 .visually-hidden {
-	position: absolute;
-	clip-path: inset(100%);
-	overflow: hidden;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	width: 1px;
-	height: 1px;
-	white-space: nowrap;
-	pointer-events: none;
-	clip: rect(0 0 0 0);
+	@include visually-hidden;
 }
 
 /* Completely-Hidden */

@@ -82,7 +82,7 @@
 // @include list-reset;
 
 /* ____________________________________________ */
-/* List-Reset */
+/* Btn-Reset */
 @mixin btn-reset {
 	border-width: 0;
 	padding: 0;
@@ -94,19 +94,25 @@
 /* ____________________________________________ */
 /* Input-Reset */
 @mixin input-reset {
-	appearance: textfield;
 	border-width: 0;
 	padding: 0;
 	background-color: transparent;
 
+	// password
 	&::-ms-reveal {
 		display: none;
 	}
 
-	&::-webkit-inner-spin-button,
-	&::-webkit-search-decoration,
+	// number
+	appearance: textfield;
+	&::-webkit-inner-spin-button {
+		appearance: none;
+	}
+
+	// search
 	&::-webkit-search-cancel-button,
 	&::-webkit-search-results-button,
+	&::-webkit-search-decoration,
 	&::-webkit-search-results-decoration {
 		appearance: none;
 	}
