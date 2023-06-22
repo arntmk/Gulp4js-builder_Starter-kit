@@ -48,7 +48,7 @@ const srcJs = JSON.parse(readFileSync('./src/script.json'));
 // const srcJs = require('./src/script.json'); // eslint-disable-line global-require
 
 /* ____________________________________________ */
-// Production build
+// Production mode | Build
 
 const isBuild = process.argv.includes('--production');
 const isDev = !isBuild;
@@ -56,8 +56,8 @@ const isDev = !isBuild;
 /* ____________________________________________ */
 // Paths
 
-const srcFolder = './src';
 const buildFolder = './build';
+const srcFolder = './src';
 
 /* ____________________________________________ */
 // Cleaner
