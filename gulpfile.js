@@ -54,28 +54,34 @@ const isBuild = process.argv.includes('--production');
 const isDev = !isBuild;
 
 /* ____________________________________________ */
+// Paths
+
+const srcFolder = './src';
+const buildFolder = './build';
+
+/* ____________________________________________ */
 // Cleaner
 
 function clear() {
-	return src('build/*', { read: false })
+	return src(`${buildFolder}/*`, { read: false })
 		.pipe(gulpif(isBuild, clean()));
 }
 
 function clr() {
 	return src(
 		[
-			'build/*.*',
-			'build/css/*',
-			'build/js/*',
-			'build/img/**/*.{webmanifest,json}',
-			'build/font/**/*.{otf,ttf}',
+			`${buildFolder}/*.*`,
+			`${buildFolder}/css/*`,
+			`${buildFolder}/js/*`,
+			`${buildFolder}/img/**/*.{webmanifest,json}`,
+			`${buildFolder}/font/**/*.{otf,ttf}`,
 		],
 		{ read: false },
 	).pipe(gulpif(isDev, clean()));
 }
 
 function delfont() {
-	return src('src/scss/_font.{scss,sass}', {
+	return src(`${srcFolder}/scss/_font.{scss,sass}`, {
 		allowEmpty: true,
 		read: false,
 	}).pipe(clean());
@@ -194,8 +200,8 @@ function img() {
 // Html
 
 function html() {
-	const copyFaviconTxt = 'src/assets/*.{png,ico,txt}';
-	return src('src/*.html')
+	const copyFaviconTxt = `${srcFolder}/assets/*.{png,ico,txt}`;
+	return src(`${srcFolder}/*.html`)
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(typograf({
@@ -207,12 +213,12 @@ function html() {
 			append: { key: '_v', cover: 0, to: ['css', 'js'] },
 		})))
 		.pipe(htmlmin({ removeComments: true, collapseWhitespace: isBuild }))
-		.pipe(dest('build/'))
+		.pipe(dest(`${buildFolder}`))
 		.pipe(browsersync.stream())
 
 		.pipe(src(copyFaviconTxt))
-		.pipe(changed('build/'))
-		.pipe(dest('build/'))
+		.pipe(changed(`${buildFolder}`))
+		.pipe(dest(`${buildFolder}`))
 		.pipe(browsersync.stream());
 }
 
@@ -220,26 +226,26 @@ function html() {
 // CSS
 
 function css() {
-	const copyLibsCss = 'src/scss/libs/*.css';
-	return (src('src/**/*.{scss,sass}', { sourcemaps: true })
-		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
+	const copyLibsCss = `${srcFolder}/scss/libs/*.css`;
+	return (src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
+		.pipe(gulpif(isDev, newer(`${buildFolder}/css/style.min.css`)))
 		.pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
 		.pipe(plumber())
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
-		.pipe(gulpif(isBuild, dest('build/css/', { sourcemaps: isBuild })))
+		.pipe(gulpif(isBuild, dest(`${buildFolder}/css/`, { sourcemaps: isBuild })))
 
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
-		.pipe(dest('build/css/', { sourcemaps: isDev }))
+		.pipe(dest(`${buildFolder}/css/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
 		.pipe(src(copyLibsCss))
-		.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/css/`, { extension: '.css' })))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
-		.pipe(dest('build/css/'))
+		.pipe(dest(`${buildFolder}/css/`))
 		.pipe(browsersync.stream())
 	);
 }
@@ -248,25 +254,25 @@ function css() {
 // JavaScript
 
 function js() {
-	const copyLibsJs = 'src/js/libs/*.js';
+	const copyLibsJs = `${srcFolder}/js/libs/*.js`;
 	return (src(srcJs, { sourcemaps: true })
 		.pipe(plumber())
-		.pipe(gulpif(isDev, newer('build/js/script.min.js')))
+		.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
 	// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
 		.pipe(babel({ presets: ['@babel/preset-env'] }))
 		.pipe(gulpif(isBuild, concat('script.js')))
 		.pipe(gulpif(isBuild, terser()))
-		.pipe(gulpif(isBuild, dest('build/js/', { sourcemaps: isBuild })))
+		.pipe(gulpif(isBuild, dest(`${buildFolder}/js/`, { sourcemaps: isBuild })))
 
 		.pipe(concat('script.min.js'))
 		.pipe(gulpif(isBuild, terser()))
-		.pipe(dest('build/js/', { sourcemaps: isDev }))
+		.pipe(dest(`${buildFolder}/js/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
 		.pipe(src(copyLibsJs))
-		.pipe(gulpif(isDev, changed('build/js/', { extension: '.js' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { extension: '.js' })))
 		.pipe(gulpif(isBuild, terser()))
-		.pipe(dest('build/js/'))
+		.pipe(dest(`${buildFolder}/js/`))
 		.pipe(browsersync.stream())
 	);
 }
@@ -275,12 +281,12 @@ function js() {
 // Watch files
 
 function watchFiles() {
-	watch('src/**/*.html', html);
-	watch('src/**/*.{scss,sass}', css);
-	watch('src/**/*.{js,ts}', js);
-	watch('src/assets/img/**/*.{png,ico,gif,svg,webmanifest,json}', img);
-	watch('src/assets/img/**/*.{png,jpg,jpeg,webp}', webp);
-	watch('src/assets/font/**/*.{otf,ttf,woff,woff2,svg}', font);
+	watch(`${srcFolder}/**/*.html`, html);
+	watch(`${srcFolder}/**/*.{scss,sass}`, css);
+	watch(`${srcFolder}/**/*.{js,ts}`, js);
+	watch(`${srcFolder}/assets/img/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
+	watch(`${srcFolder}/assets/img/**/*.{png,jpg,jpeg,webp}`, webp);
+	watch(`${srcFolder}/assets/font/**/*.{otf,ttf,woff,woff2,svg}`, font);
 }
 
 // BrowserSync
@@ -288,7 +294,7 @@ function watchFiles() {
 
 function browserSync() {
 	browsersync.init({
-		server: { baseDir: 'build/' },
+		server: { baseDir: `${buildFolder}` },
 		notify: false,
 		online: false,
 		port: 3015,
