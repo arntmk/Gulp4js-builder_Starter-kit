@@ -277,7 +277,7 @@ function js() {
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
 			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
-			.pipe(babel({ presets: ['@babel/preset-env'], targets: 'defaults' }))
+			.pipe(gulpif(isBuild, babel({ presets: ['@babel/preset-env'], targets: 'defaults' })))
 			.pipe(gulpif(isBuild, concat('script.js')))
 			.pipe(gulpif(isBuild, terser()))
 			.pipe(gulpif(isBuild, dest(`${buildFolder}/js/`, { sourcemaps: isBuild })))
