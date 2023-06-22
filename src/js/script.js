@@ -1,5 +1,5 @@
 /* ____________________________________________ */
-// Global Script imports ( ./src/script-modules.js )
+// Global Script imports from ("./src/script.js")
 /* ____________________________________________ */
 
 /* function isMobile() {
