@@ -80,10 +80,10 @@ $burger-breakpoint: $breakpoint-768;
 	/* ____________________________________________ */
 	/* font-size */
 	--fs-burger-menu: clamp(1.563rem, calc(1.339rem + 1.12vw), 1.875rem); /* 30px */
-	--fs-h1: clamp(1.5rem, calc(1.262rem + 1.19vw), 2rem);
-	--fs-h2: clamp(1.125rem, calc(0.946rem + 0.89vw), 1.5rem);
-	--fs-h3-6: clamp(1rem, calc(0.919rem + 0.4vw), 1.17rem);
-	--fs-body: clamp(0.938rem, calc(0.908rem + 0.15vw), 1rem);
+	--fs-h1: clamp(1.5rem, 1.262rem + 1.19vw, 2rem);
+	--fs-h2: clamp(1.125rem, 0.946rem + 0.89vw, 1.5rem);
+	--fs-h3-6: clamp(1rem, 0.919rem + 0.4vw, 1.17rem);
+	--fs-body: clamp(0.938rem, 0.908rem + 0.15vw, 1rem);
 
 	// --fs-18px: clamp();
 
