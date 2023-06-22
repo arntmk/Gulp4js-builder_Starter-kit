@@ -48,6 +48,8 @@ import { readFileSync } from 'fs';
 const srcJs = JSON.parse(readFileSync('./src/script.json'));
 // import srcJs from './src/script.json' assert { type: "json" }; // ES6 Warning "assert"
 
+/* ____________________________________________ */
+// BrowserSync || SCSS
 const browsersync = sync.create();
 const scss = gulpSass(sass);
 
@@ -57,31 +59,35 @@ const scss = gulpSass(sass);
 const isBuild = process.argv.includes('--production');
 const isDev = !isBuild;
 
+/* ____________________________________________ */
 // Cleaner
 
 function clear() {
-	return gulp.src('build/*', { read: false })
-		.pipe(gulpif(isBuild, clean()));
+	return gulp.src('build/*', { read: false }).pipe(gulpif(isBuild, clean()));
 }
 
 function clr() {
-	return gulp.src(
-		[
-			'build/*.*',
-			'build/css/*',
-			'build/js/*',
-			'build/img/**/*.{webmanifest,json}',
-			'build/font/**/*.{otf,ttf}',
-		],
-		{ read: false },
-	).pipe(gulpif(isDev, clean()));
+	return gulp
+		.src(
+			[
+				'build/*.*',
+				'build/css/*',
+				'build/js/*',
+				'build/img/**/*.{webmanifest,json}',
+				'build/font/**/*.{otf,ttf}',
+			],
+			{ read: false },
+		)
+		.pipe(gulpif(isDev, clean()));
 }
 
 function delfont() {
-	return gulp.src('src/scss/_font.{scss,sass}', {
-		allowEmpty: true,
-		read: false,
-	}).pipe(clean());
+	return gulp
+		.src('src/scss/_font.{scss,sass}', {
+			allowEmpty: true,
+			read: false,
+		})
+		.pipe(clean());
 }
 
 /* ____________________________________________ */
@@ -91,22 +97,24 @@ function font() {
 	const ttfTOwoff2 = 'src/assets/font/**/*.{ttf,woff2}';
 	// const ttfTOwoff = 'src/assets/font/**/*.{ttf,woff}';
 	const copySvgFont = 'src/assets/font/**/*.svg';
-	return (gulp.src(ttfTOwoff2)
-		.pipe(changed('build/font/', { extension: '.woff2' }))
-		.pipe(ttf2woff2())
-		.pipe(gulp.dest('build/font/'))
-		.pipe(browsersync.stream())
+	return (
+		gulp
+			.src(ttfTOwoff2)
+			.pipe(changed('build/font/', { extension: '.woff2' }))
+			.pipe(ttf2woff2())
+			.pipe(gulp.dest('build/font/'))
+			.pipe(browsersync.stream())
 
-	// .pipe(src(ttfTOwoff))
-	// .pipe(changed('build/font/', { extension: '.woff' }))
-	// .pipe(fonter({ formats: ['woff'] }))
-	// .pipe(dest('build/font/'))
-	// .pipe(browsersync.stream())
+			// .pipe(src(ttfTOwoff))
+			// .pipe(changed('build/font/', { extension: '.woff' }))
+			// .pipe(fonter({ formats: ['woff'] }))
+			// .pipe(dest('build/font/'))
+			// .pipe(browsersync.stream())
 
-		.pipe(gulp.src(copySvgFont))
-		.pipe(changed('build/font/', { extension: '.svg' }))
-		.pipe(gulp.dest('build/font/'))
-		.pipe(browsersync.stream())
+			.pipe(gulp.src(copySvgFont))
+			.pipe(changed('build/font/', { extension: '.svg' }))
+			.pipe(gulp.dest('build/font/'))
+			.pipe(browsersync.stream())
 	);
 }
 
@@ -114,38 +122,46 @@ function fontgen() {
 	// const tffTOtff = 'src/assets/font/**/*.ttf'; //Extra optimization /Test/
 	const otfTOtff = 'src/assets/font/**/*.{otf,ttf}'; // eot,otf,ttf,otc,ttc
 	const fontCss = 'src/assets/font/*.{otf,ttf,woff,woff2}';
-	return gulp.src(otfTOtff)
+	return gulp
+		.src(otfTOtff)
 		.pipe(fonter({ formats: ['ttf'] }))
 		.pipe(gulp.dest('src/assets/font/'))
 
 		.pipe(gulp.src(fontCss))
-		.pipe(fontfacegen({
-			filepath: 'src/scss',
-			filename: '_font.scss',
-		}));
+		.pipe(
+			fontfacegen({
+				filepath: 'src/scss',
+				filename: '_font.scss',
+			}),
+		);
 }
 
 /* ____________________________________________ */
 // Svg Sprite
 
 function svg() {
-	return gulp.src('src/assets/img/svg/*.svg')
+	return gulp
+		.src('src/assets/img/svg/*.svg')
 		.pipe(plumber())
 		.pipe(svgmin({ js2svg: { pretty: true } }))
-		.pipe(cheerio({
-			run($) {
-				// $('[fill]').removeAttr('fill');
-				// $('[stroke]').removeAttr('stroke');
-				$('[style]').removeAttr('style');
-				$('[class]').removeAttr('class');
-				$('[data-name]').removeAttr('data-name');
-			},
-			parserOptions: { xmlMode: true },
-		}))
+		.pipe(
+			cheerio({
+				run($) {
+					// $('[fill]').removeAttr('fill');
+					// $('[stroke]').removeAttr('stroke');
+					$('[style]').removeAttr('style');
+					$('[class]').removeAttr('class');
+					$('[data-name]').removeAttr('data-name');
+				},
+				parserOptions: { xmlMode: true },
+			}),
+		)
 		.pipe(replace('&gt;', '>'))
-		.pipe(svgSprite({
-			mode: { stack: { sprite: '../svg-group.svg', example: true } },
-		}))
+		.pipe(
+			svgSprite({
+				mode: { stack: { sprite: '../svg-group.svg', example: true } },
+			}),
+		)
 		.pipe(gulp.dest('src/assets/img/svg/'));
 }
 
@@ -153,7 +169,8 @@ function svg() {
 // Optimize images
 
 function webp() {
-	return gulp.src(['src/assets/img/**/*.{png,jpg,jpeg,webp}', '!src/assets/img/favicon/**/*.*'])
+	return gulp
+		.src(['src/assets/img/**/*.{png,jpg,jpeg,webp}', '!src/assets/img/favicon/**/*.*'])
 		.pipe(changed('build/img/', { extension: '.webp' }))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
@@ -165,19 +182,22 @@ function img() {
 	const srcPng = ['src/assets/img/favicon/*.png', 'src/assets/*.png'];
 	const srcSvg = 'src/assets/img/**/*.{gif,svg}'; // png,jpg,jpeg
 	const copyImg = 'src/assets/img/favicon/*.{ico,webmanifest,json}';
-	return gulp.src(srcSvg)
+	return gulp
+		.src(srcSvg)
 		.pipe(changed('build/img/'))
-		.pipe(imagemin(
-			[
-				imagemin.gifsicle({ interlaced: true }),
-				// imagemin.mozjpeg({ quality: 80, progressive: true }),
-				// imagemin.optipng({ optimizationLevel: 5 }),
-				imagemin.svgo({
-					plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-				}),
-			],
-			{ verbose: true },
-		))
+		.pipe(
+			imagemin(
+				[
+					imagemin.gifsicle({ interlaced: true }),
+					// imagemin.mozjpeg({ quality: 80, progressive: true }),
+					// imagemin.optipng({ optimizationLevel: 5 }),
+					imagemin.svgo({
+						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+					}),
+				],
+				{ verbose: true },
+			),
+		)
 		.pipe(gulp.dest('build/img/'))
 		.pipe(browsersync.stream())
 
@@ -198,17 +218,25 @@ function img() {
 
 function html() {
 	const copyFaviconTxt = 'src/assets/*.{png,ico,txt}';
-	return gulp.src('src/*.html')
+	return gulp
+		.src('src/*.html')
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
-		.pipe(typograf({
-			locale: ['ru', 'en-US', 'uk'], // 'ukr', 'uk-UA'
-			htmlEntity: { type: 'name' },
-		}))
-		.pipe(gulpif(isBuild, version({
-			value: '%DT%',
-			append: { key: '_v', cover: 0, to: ['css', 'js'] },
-		})))
+		.pipe(
+			typograf({
+				locale: ['ru', 'en-US', 'uk'], // 'ukr', 'uk-UA'
+				htmlEntity: { type: 'name' },
+			}),
+		)
+		.pipe(
+			gulpif(
+				isBuild,
+				version({
+					value: '%DT%',
+					append: { key: '_v', cover: 0, to: ['css', 'js'] },
+				}),
+			),
+		)
 		.pipe(htmlmin({ removeComments: true, collapseWhitespace: isBuild }))
 		.pipe(gulp.dest('build/'))
 		.pipe(browsersync.stream())
@@ -224,7 +252,8 @@ function html() {
 
 function css() {
 	const copyLibsCss = 'src/scss/libs/*.css';
-	return (gulp.src('src/**/*.{scss,sass}', { sourcemaps: true })
+	return gulp
+		.src('src/**/*.{scss,sass}', { sourcemaps: true })
 		.pipe(gulpif(isDev, newer('build/css/style.min.css')))
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(plumber())
@@ -241,8 +270,7 @@ function css() {
 		.pipe(gulpif(isDev, changed('build/css/', { extension: '.css' })))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(gulp.dest('build/css/'))
-		.pipe(browsersync.stream())
-	);
+		.pipe(browsersync.stream());
 }
 
 /* ____________________________________________ */
@@ -250,23 +278,25 @@ function css() {
 
 function js() {
 	const copyLibsJs = 'src/js/libs/*.js';
-	return (gulp.src(srcJs, { sourcemaps: true })
-		.pipe(plumber())
-		.pipe(gulpif(isDev, newer('build/js/script.min.js')))
-	// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
-		.pipe(babel({ presets: ['@babel/preset-env'] }))
-		.pipe(gulpif(isBuild, concat('script.js')))
-		.pipe(gulpif(isBuild, gulp.dest('build/js/', { sourcemaps: isBuild })))
-		.pipe(concat('script.min.js'))
-		.pipe(gulpif(isBuild, terser()))
-		.pipe(gulp.dest('build/js/', { sourcemaps: isDev }))
-		.pipe(browsersync.stream())
+	return (
+		gulp
+			.src(srcJs, { sourcemaps: true })
+			.pipe(plumber())
+			.pipe(gulpif(isDev, newer('build/js/script.min.js')))
+			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
+			.pipe(babel({ presets: ['@babel/preset-env'] }))
+			.pipe(gulpif(isBuild, concat('script.js')))
+			.pipe(gulpif(isBuild, gulp.dest('build/js/', { sourcemaps: isBuild })))
+			.pipe(concat('script.min.js'))
+			.pipe(gulpif(isBuild, terser()))
+			.pipe(gulp.dest('build/js/', { sourcemaps: isDev }))
+			.pipe(browsersync.stream())
 
-		.pipe(gulp.src(copyLibsJs))
-		.pipe(gulpif(isDev, changed('build/js/', { extension: '.js' })))
-		.pipe(gulpif(isBuild, terser()))
-		.pipe(gulp.dest('build/js/'))
-		.pipe(browsersync.stream())
+			.pipe(gulp.src(copyLibsJs))
+			.pipe(gulpif(isDev, changed('build/js/', { extension: '.js' })))
+			.pipe(gulpif(isBuild, terser()))
+			.pipe(gulp.dest('build/js/'))
+			.pipe(browsersync.stream())
 	);
 }
 
