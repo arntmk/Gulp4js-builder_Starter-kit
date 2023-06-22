@@ -42,10 +42,10 @@ const svgSprite = require('gulp-svg-sprite'); // Об'єднання спрай�
 
 /* ____________________________________________ */
 // JS Concat Order
-const { readFileSync } = require('fs');
+// const { readFileSync } = require('fs');
+// const JsFiles = JSON.parse(readFileSync('./src/script.json'));
 
-const JsFiles = JSON.parse(readFileSync('./src/script.json'));
-// const JsFiles = require('./src/script.json'); // eslint-disable-line global-require
+const { JsFiles } = require('./src/script'); // eslint-disable-line global-require
 
 /* ____________________________________________ */
 // Production mode | Build
@@ -211,7 +211,7 @@ function img() {
 // Html
 
 function html() {
-	const copyFaviconTxt = `${srcFolder}/assets/*.{png,ico,txt}`;
+	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
 	return src(`${srcFolder}/*.html`)
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
@@ -234,7 +234,7 @@ function html() {
 		.pipe(dest(`${buildFolder}`))
 		.pipe(browsersync.stream())
 
-		.pipe(src(copyFaviconTxt))
+		.pipe(src(copyFavicon))
 		.pipe(changed(`${buildFolder}`))
 		.pipe(dest(`${buildFolder}`))
 		.pipe(browsersync.stream());
