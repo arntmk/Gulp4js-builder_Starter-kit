@@ -91,9 +91,9 @@ function delfont() {
 // Fonts
 
 function font() {
-	const ttfTOwoff2 = 'src/assets/font/**/*.{ttf,woff2}';
-	// const ttfTOwoff = 'src/assets/font/**/*.{ttf,woff}';
-	const copySvgFont = 'src/assets/font/**/*.svg';
+	const ttfTOwoff2 = `${srcFolder}/assets/font/**/*.{ttf,woff2}`;
+	// const ttfTOwoff = `${srcFolder}/assets/font/**/*.{ttf,woff}`;
+	const copySvgFont = `${srcFolder}/assets/font/**/*.svg`;
 	return (src(ttfTOwoff2)
 		.pipe(changed('build/font/', { extension: '.woff2' }))
 		.pipe(ttf2woff2())
@@ -114,16 +114,16 @@ function font() {
 }
 
 function fontgen() {
-	// const tffTOtff = 'src/assets/font/**/*.ttf'; //Extra optimization /Test/
-	const otfTOtff = 'src/assets/font/**/*.{otf,ttf}'; // eot,otf,ttf,otc,ttc
-	const fontCss = 'src/assets/font/*.{otf,ttf,woff,woff2}';
+	// const tffTOtff = `${srcFolder}/assets/font/**/*.ttf`; //Extra optimization /Test/
+	const otfTOtff = `${srcFolder}/assets/font/**/*.{otf,ttf}`; // eot,otf,ttf,otc,ttc
+	const fontCss = `${srcFolder}/assets/font/*.{otf,ttf,woff,woff2}`;
 	return src(otfTOtff)
 		.pipe(fonter({ formats: ['ttf'] }))
-		.pipe(dest('src/assets/font/'))
+		.pipe(dest(`${srcFolder}/assets/font/`))
 
 		.pipe(src(fontCss))
 		.pipe(fontfacegen({
-			filepath: 'src/scss',
+			filepath: `${srcFolder}/scss`,
 			filename: '_font.scss',
 		}));
 }
@@ -132,7 +132,7 @@ function fontgen() {
 // Svg Sprite
 
 function svg() {
-	return src('src/assets/img/svg/*.svg')
+	return src(`${srcFolder}/assets/img/svg/*.svg`)
 		.pipe(plumber())
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(cheerio({
@@ -149,14 +149,14 @@ function svg() {
 		.pipe(svgSprite({
 			mode: { stack: { sprite: '../svg-group.svg', example: true } },
 		}))
-		.pipe(dest('src/assets/img/svg/'));
+		.pipe(dest(`${srcFolder}/assets/img/svg/`));
 }
 
 /* ____________________________________________ */
 // Optimize images
 
 function webp() {
-	return src(['src/assets/img/**/*.{png,jpg,jpeg,webp}', '!src/assets/img/favicon/**/*.*'])
+	return src([`${srcFolder}/assets/img/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/assets/img/favicon/**/*.*`])
 		.pipe(changed('build/img/', { extension: '.webp' }))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
@@ -165,9 +165,9 @@ function webp() {
 }
 
 function img() {
-	const srcPng = ['src/assets/img/favicon/*.png', 'src/assets/*.png'];
-	const srcSvg = 'src/assets/img/**/*.{gif,svg}'; // png,jpg,jpeg
-	const copyImg = 'src/assets/img/favicon/*.{ico,webmanifest,json}';
+	const srcPng = [`${srcFolder}/assets/img/favicon/*.png`, `${srcFolder}/assets/*.png`];
+	const srcSvg = `${srcFolder}/assets/img/**/*.{gif,svg}`; // png,jpg,jpeg
+	const copyImg = `${srcFolder}/assets/img/favicon/*.{ico,webmanifest,json}`;
 	return src(srcSvg)
 		.pipe(changed('build/img/'))
 		.pipe(imagemin(
