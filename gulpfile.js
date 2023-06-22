@@ -273,7 +273,7 @@ function css() {
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return (
-		src(JsFiles, { sourcemaps: true })
+		src(JsFiles, { sourcemaps: true }) // modules
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
 			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
