@@ -53,6 +53,7 @@ const srcJs = JSON.parse(readFileSync('./src/script.json'));
 const isBuild = process.argv.includes('--production');
 const isDev = !isBuild;
 
+/* ____________________________________________ */
 // Cleaner
 
 function clear() {
