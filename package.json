@@ -35,7 +35,8 @@
 	"babel": {
 		"presets": [
 			"@babel/preset-env"
-		]
+		],
+		"targets": "defaults"
 	},
 	"keywords": [
 		"gulp",
