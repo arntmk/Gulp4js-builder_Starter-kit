@@ -95,20 +95,20 @@ function font() {
 	// const ttfTOwoff = `${srcFolder}/assets/font/**/*.{ttf,woff}`;
 	const copySvgFont = `${srcFolder}/assets/font/**/*.svg`;
 	return (src(ttfTOwoff2)
-		.pipe(changed('build/font/', { extension: '.woff2' }))
+		.pipe(changed(`${buildFolder}/font/`, { extension: '.woff2' }))
 		.pipe(ttf2woff2())
-		.pipe(dest('build/font/'))
+		.pipe(dest(`${buildFolder}/font/`))
 		.pipe(browsersync.stream())
 
 	// .pipe(src(ttfTOwoff))
-	// .pipe(changed('build/font/', { extension: '.woff' }))
+	// .pipe(changed(`${buildFolder}/font/`, { extension: '.woff' }))
 	// .pipe(fonter({ formats: ['woff'] }))
-	// .pipe(dest('build/font/'))
+	// .pipe(dest(`${buildFolder}/font/`))
 	// .pipe(browsersync.stream())
 
 		.pipe(src(copySvgFont))
-		.pipe(changed('build/font/', { extension: '.svg' }))
-		.pipe(dest('build/font/'))
+		.pipe(changed(`${buildFolder}/font/`, { extension: '.svg' }))
+		.pipe(dest(`${buildFolder}/font/`))
 		.pipe(browsersync.stream())
 	);
 }
@@ -157,10 +157,10 @@ function svg() {
 
 function webp() {
 	return src([`${srcFolder}/assets/img/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/assets/img/favicon/**/*.*`])
-		.pipe(changed('build/img/', { extension: '.webp' }))
+		.pipe(changed(`${buildFolder}/img/`, { extension: '.webp' }))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
-		.pipe(dest('build/img/'))
+		.pipe(dest(`${buildFolder}/img/`))
 		.pipe(browsersync.stream());
 }
 
@@ -169,7 +169,7 @@ function img() {
 	const srcSvg = `${srcFolder}/assets/img/**/*.{gif,svg}`; // png,jpg,jpeg
 	const copyImg = `${srcFolder}/assets/img/favicon/*.{ico,webmanifest,json}`;
 	return src(srcSvg)
-		.pipe(changed('build/img/'))
+		.pipe(changed(`${buildFolder}/img/`))
 		.pipe(imagemin(
 			[
 				imagemin.gifsicle({ interlaced: true }),
@@ -181,18 +181,18 @@ function img() {
 			],
 			{ verbose: true },
 		))
-		.pipe(dest('build/img/'))
+		.pipe(dest(`${buildFolder}/img/`))
 		.pipe(browsersync.stream())
 
 		.pipe(src(copyImg))
-		.pipe(changed('build/img/'))
-		.pipe(dest('build/img/favicon/'))
+		.pipe(changed(`${buildFolder}/img/`))
+		.pipe(dest(`${buildFolder}/img/favicon/`))
 		.pipe(browsersync.stream())
 
 		.pipe(src(srcPng))
-		.pipe(changed('build/img/favicon/', { extension: '.png' }))
+		.pipe(changed(`${buildFolder}/img/favicon/`, { extension: '.png' }))
 		.pipe(imagemin([imageminPngquant({ quality: [0.8, 1.0] })]))
-		.pipe(dest('build/img/favicon/'))
+		.pipe(dest(`${buildFolder}/img/favicon/`))
 		.pipe(browsersync.stream());
 }
 
