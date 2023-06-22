@@ -1,3 +1,4 @@
+// https://stackoverflow.com/questions/67584122/how-to-import-constants-from-another-file-in-node-js
 const JsFiles = [
 	'./src/js/script.js',
 
