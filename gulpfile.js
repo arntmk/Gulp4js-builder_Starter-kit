@@ -44,8 +44,8 @@ const svgSprite = require('gulp-svg-sprite'); // Об'єднання спрай�
 // JS Concat Order
 const { readFileSync } = require('fs');
 
-const srcJs = JSON.parse(readFileSync('./src/script.json'));
-// const srcJs = require('./src/script.json'); // eslint-disable-line global-require
+const JsFiles = JSON.parse(readFileSync('./src/script.json'));
+// const JsFiles = require('./src/script.json'); // eslint-disable-line global-require
 
 /* ____________________________________________ */
 // Production mode | Build
@@ -244,7 +244,7 @@ function html() {
 // CSS
 
 function css() {
-	const copyLibsCss = `${srcFolder}/scss/libs/*.css`;
+	const LibsCssFiles = `${srcFolder}/scss/libs/*.css`;
 	return src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
 		.pipe(gulpif(isDev, newer(`${buildFolder}/css/style.min.css`)))
 		.pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
@@ -260,7 +260,7 @@ function css() {
 		.pipe(dest(`${buildFolder}/css/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
-		.pipe(src(copyLibsCss))
+		.pipe(src(LibsCssFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/css/`, { extension: '.css' })))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(dest(`${buildFolder}/css/`))
@@ -271,9 +271,9 @@ function css() {
 // JavaScript
 
 function js() {
-	const copyLibsJs = `${srcFolder}/js/libs/*.js`;
+	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return (
-		src(srcJs, { sourcemaps: true })
+		src(JsFiles, { sourcemaps: true })
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
 			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
@@ -287,7 +287,7 @@ function js() {
 			.pipe(dest(`${buildFolder}/js/`, { sourcemaps: isDev }))
 			.pipe(browsersync.stream())
 
-			.pipe(src(copyLibsJs))
+			.pipe(src(LibsJsFiles))
 			.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { extension: '.js' })))
 			.pipe(gulpif(isBuild, terser()))
 			.pipe(dest(`${buildFolder}/js/`))
