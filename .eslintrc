@@ -52,8 +52,8 @@
 		"no-mixed-spaces-and-tabs": "off",
 		"object-curly-newline": "off",
 
-		"implicit-arrow-linebreak": ["off", "beside"],
-		"function-paren-newline": ["off", "never"],
+		"implicit-arrow-linebreak": ["warn", "below"],
+		"function-paren-newline": ["off", "multiline-arguments"],
 		"operator-linebreak": ["warn", "after"],
 		"wrap-iife": ["error", "any"]
 	}
