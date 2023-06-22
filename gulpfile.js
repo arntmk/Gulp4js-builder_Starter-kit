@@ -63,8 +63,7 @@ const buildFolder = './build';
 // Cleaner
 
 function clear() {
-	return src(`${buildFolder}/*`, { read: false })
-		.pipe(gulpif(isBuild, clean()));
+	return src(`${buildFolder}/*`, { read: false }).pipe(gulpif(isBuild, clean()));
 }
 
 function clr() {
@@ -94,22 +93,23 @@ function font() {
 	const ttfTOwoff2 = `${srcFolder}/assets/font/**/*.{ttf,woff2}`;
 	// const ttfTOwoff = `${srcFolder}/assets/font/**/*.{ttf,woff}`;
 	const copySvgFont = `${srcFolder}/assets/font/**/*.svg`;
-	return (src(ttfTOwoff2)
-		.pipe(changed(`${buildFolder}/font/`, { extension: '.woff2' }))
-		.pipe(ttf2woff2())
-		.pipe(dest(`${buildFolder}/font/`))
-		.pipe(browsersync.stream())
+	return (
+		src(ttfTOwoff2)
+			.pipe(changed(`${buildFolder}/font/`, { extension: '.woff2' }))
+			.pipe(ttf2woff2())
+			.pipe(dest(`${buildFolder}/font/`))
+			.pipe(browsersync.stream())
 
-	// .pipe(src(ttfTOwoff))
-	// .pipe(changed(`${buildFolder}/font/`, { extension: '.woff' }))
-	// .pipe(fonter({ formats: ['woff'] }))
-	// .pipe(dest(`${buildFolder}/font/`))
-	// .pipe(browsersync.stream())
+			// .pipe(src(ttfTOwoff))
+			// .pipe(changed(`${buildFolder}/font/`, { extension: '.woff' }))
+			// .pipe(fonter({ formats: ['woff'] }))
+			// .pipe(dest(`${buildFolder}/font/`))
+			// .pipe(browsersync.stream())
 
-		.pipe(src(copySvgFont))
-		.pipe(changed(`${buildFolder}/font/`, { extension: '.svg' }))
-		.pipe(dest(`${buildFolder}/font/`))
-		.pipe(browsersync.stream())
+			.pipe(src(copySvgFont))
+			.pipe(changed(`${buildFolder}/font/`, { extension: '.svg' }))
+			.pipe(dest(`${buildFolder}/font/`))
+			.pipe(browsersync.stream())
 	);
 }
 
@@ -122,10 +122,12 @@ function fontgen() {
 		.pipe(dest(`${srcFolder}/assets/font/`))
 
 		.pipe(src(fontCss))
-		.pipe(fontfacegen({
-			filepath: `${srcFolder}/scss`,
-			filename: '_font.scss',
-		}));
+		.pipe(
+			fontfacegen({
+				filepath: `${srcFolder}/scss`,
+				filename: '_font.scss',
+			}),
+		);
 }
 
 /* ____________________________________________ */
@@ -135,20 +137,24 @@ function svg() {
 	return src(`${srcFolder}/assets/img/svg/*.svg`)
 		.pipe(plumber())
 		.pipe(svgmin({ js2svg: { pretty: true } }))
-		.pipe(cheerio({
-			run($) {
-				// $('[fill]').removeAttr('fill');
-				// $('[stroke]').removeAttr('stroke');
-				$('[style]').removeAttr('style');
-				$('[class]').removeAttr('class');
-				$('[data-name]').removeAttr('data-name');
-			},
-			parserOptions: { xmlMode: true },
-		}))
+		.pipe(
+			cheerio({
+				run($) {
+					// $('[fill]').removeAttr('fill');
+					// $('[stroke]').removeAttr('stroke');
+					$('[style]').removeAttr('style');
+					$('[class]').removeAttr('class');
+					$('[data-name]').removeAttr('data-name');
+				},
+				parserOptions: { xmlMode: true },
+			}),
+		)
 		.pipe(replace('&gt;', '>'))
-		.pipe(svgSprite({
-			mode: { stack: { sprite: '../svg-group.svg', example: true } },
-		}))
+		.pipe(
+			svgSprite({
+				mode: { stack: { sprite: '../svg-group.svg', example: true } },
+			}),
+		)
 		.pipe(dest(`${srcFolder}/assets/img/svg/`));
 }
 
@@ -156,7 +162,10 @@ function svg() {
 // Optimize images
 
 function webp() {
-	return src([`${srcFolder}/assets/img/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/assets/img/favicon/**/*.*`])
+	return src([
+		`${srcFolder}/assets/img/**/*.{png,jpg,jpeg,webp}`,
+		`!${srcFolder}/assets/img/favicon/**/*.*`,
+	])
 		.pipe(changed(`${buildFolder}/img/`, { extension: '.webp' }))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
@@ -170,17 +179,19 @@ function img() {
 	const copyImg = `${srcFolder}/assets/img/favicon/*.{ico,webmanifest,json}`;
 	return src(srcSvg)
 		.pipe(changed(`${buildFolder}/img/`))
-		.pipe(imagemin(
-			[
-				imagemin.gifsicle({ interlaced: true }),
-				// imagemin.mozjpeg({ quality: 80, progressive: true }),
-				// imagemin.optipng({ optimizationLevel: 5 }),
-				imagemin.svgo({
-					plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-				}),
-			],
-			{ verbose: true },
-		))
+		.pipe(
+			imagemin(
+				[
+					imagemin.gifsicle({ interlaced: true }),
+					// imagemin.mozjpeg({ quality: 80, progressive: true }),
+					// imagemin.optipng({ optimizationLevel: 5 }),
+					imagemin.svgo({
+						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+					}),
+				],
+				{ verbose: true },
+			),
+		)
 		.pipe(dest(`${buildFolder}/img/`))
 		.pipe(browsersync.stream())
 
@@ -204,14 +215,21 @@ function html() {
 	return src(`${srcFolder}/*.html`)
 		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
-		.pipe(typograf({
-			locale: ['ru', 'en-US', 'uk'], // 'ukr', 'uk-UA'
-			htmlEntity: { type: 'name' },
-		}))
-		.pipe(gulpif(isBuild, version({
-			value: '%DT%',
-			append: { key: '_v', cover: 0, to: ['css', 'js'] },
-		})))
+		.pipe(
+			typograf({
+				locale: ['ru', 'en-US', 'uk'], // 'ukr', 'uk-UA'
+				htmlEntity: { type: 'name' },
+			}),
+		)
+		.pipe(
+			gulpif(
+				isBuild,
+				version({
+					value: '%DT%',
+					append: { key: '_v', cover: 0, to: ['css', 'js'] },
+				}),
+			),
+		)
 		.pipe(htmlmin({ removeComments: true, collapseWhitespace: isBuild }))
 		.pipe(dest(`${buildFolder}`))
 		.pipe(browsersync.stream())
@@ -227,7 +245,7 @@ function html() {
 
 function css() {
 	const copyLibsCss = `${srcFolder}/scss/libs/*.css`;
-	return (src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
+	return src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
 		.pipe(gulpif(isDev, newer(`${buildFolder}/css/style.min.css`)))
 		.pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
 		.pipe(plumber())
@@ -246,8 +264,7 @@ function css() {
 		.pipe(gulpif(isDev, changed(`${buildFolder}/css/`, { extension: '.css' })))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
 		.pipe(dest(`${buildFolder}/css/`))
-		.pipe(browsersync.stream())
-	);
+		.pipe(browsersync.stream());
 }
 
 /* ____________________________________________ */
@@ -255,25 +272,26 @@ function css() {
 
 function js() {
 	const copyLibsJs = `${srcFolder}/js/libs/*.js`;
-	return (src(srcJs, { sourcemaps: true })
-		.pipe(plumber())
-		.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
-	// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
-		.pipe(babel({ presets: ['@babel/preset-env'] }))
-		.pipe(gulpif(isBuild, concat('script.js')))
-		.pipe(gulpif(isBuild, terser()))
-		.pipe(gulpif(isBuild, dest(`${buildFolder}/js/`, { sourcemaps: isBuild })))
+	return (
+		src(srcJs, { sourcemaps: true })
+			.pipe(plumber())
+			.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
+			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
+			.pipe(babel({ presets: ['@babel/preset-env'] }))
+			.pipe(gulpif(isBuild, concat('script.js')))
+			.pipe(gulpif(isBuild, terser()))
+			.pipe(gulpif(isBuild, dest(`${buildFolder}/js/`, { sourcemaps: isBuild })))
 
-		.pipe(concat('script.min.js'))
-		.pipe(gulpif(isBuild, terser()))
-		.pipe(dest(`${buildFolder}/js/`, { sourcemaps: isDev }))
-		.pipe(browsersync.stream())
+			.pipe(concat('script.min.js'))
+			.pipe(gulpif(isBuild, terser()))
+			.pipe(dest(`${buildFolder}/js/`, { sourcemaps: isDev }))
+			.pipe(browsersync.stream())
 
-		.pipe(src(copyLibsJs))
-		.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { extension: '.js' })))
-		.pipe(gulpif(isBuild, terser()))
-		.pipe(dest(`${buildFolder}/js/`))
-		.pipe(browsersync.stream())
+			.pipe(src(copyLibsJs))
+			.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { extension: '.js' })))
+			.pipe(gulpif(isBuild, terser()))
+			.pipe(dest(`${buildFolder}/js/`))
+			.pipe(browsersync.stream())
 	);
 }
 

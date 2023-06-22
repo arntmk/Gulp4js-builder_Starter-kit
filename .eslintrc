@@ -30,15 +30,6 @@
 		"*.min.js"
 	],
 	"rules": {
-		"max-len": ["off", { "code": 120, "comments": 120 }],
-		"semi": ["warn", "always"],
-		"quotes": ["warn", "single"],
-		"indent": ["warn", "tab"],
-		"no-tabs": ["warn", { "allowIndentationTabs": true }],
-		"no-trailing-spaces": "warn",
-		"no-mixed-spaces-and-tabs": "warn",
-		"object-curly-newline": "warn",
-
 		"no-unused-vars": "off",
 		"no-console": "warn",
 		"func-names": "off",
@@ -52,6 +43,15 @@
 		"no-mixed-operators": "off",
 
 		// Formatter | Prettier
+		"max-len": ["off", { "code": 120, "comments": 120 }],
+		"semi": ["warn", "always"],
+		"quotes": ["warn", "single"],
+		"indent": ["off", "tab"],
+		"no-tabs": ["off", { "allowIndentationTabs": true }],
+		"no-trailing-spaces": "off",
+		"no-mixed-spaces-and-tabs": "off",
+		"object-curly-newline": "off",
+
 		"implicit-arrow-linebreak": ["off", "beside"],
 		"function-paren-newline": ["off", "never"],
 		"operator-linebreak": ["warn", "after"],

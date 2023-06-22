@@ -8,5 +8,3 @@ libs/
 #src/script.json
 *.min.js
 *.min.css
-gulpfile.js
-gulpfile.esm.js
