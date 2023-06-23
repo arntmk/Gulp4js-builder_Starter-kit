@@ -1,7 +1,7 @@
 {
-	"name": "gulp4js-pack",
+	"name": "gulp4js-builder",
 	"version": "1.1.5",
-	"description": "gulp4js-pack for weblayout",
+	"description": "gulp4js-builder for weblayout",
 	"main": "gulpfile.js",
 	"type": "commonjs",
 	"scripts": {

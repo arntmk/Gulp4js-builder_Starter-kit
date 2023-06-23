@@ -1,6 +1,6 @@
 {
 	"name": "New Project",
-	"description": "gulp4js-pack for weblayout",
+	"description": "gulp4js-builder for weblayout",
 	"background_color": "#eee",
 	"theme_color": "#4682b4",
 	"icons": [
