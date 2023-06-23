@@ -40,6 +40,7 @@
 	},
 	"keywords": [
 		"gulp",
+		"webpack",
 		"linters",
 		"html",
 		"scss",
