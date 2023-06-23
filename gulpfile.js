@@ -159,18 +159,6 @@ function svg() {
 /* ____________________________________________ */
 // Optimize images
 
-function webp() {
-	return src([
-		`${srcFolder}/assets/img/**/*.{png,jpg,jpeg,webp}`,
-		`!${srcFolder}/assets/img/favicon/**/*.*`,
-	])
-		.pipe(changed(`${buildFolder}/img/`, { extension: '.webp' }))
-		.pipe(imagemin([imageminWebp({ quality: 100 })]))
-		.pipe(rename({ extname: '.webp' }))
-		.pipe(dest(`${buildFolder}/img/`))
-		.pipe(browsersync.stream());
-}
-
 function img() {
 	const srcPng = [`${srcFolder}/assets/img/favicon/*.png`, `${srcFolder}/assets/*.png`];
 	const srcSvg = `${srcFolder}/assets/img/**/*.{gif,svg}`; // png,jpg,jpeg
@@ -202,6 +190,18 @@ function img() {
 		.pipe(changed(`${buildFolder}/img/favicon/`, { extension: '.png' }))
 		.pipe(imagemin([imageminPngquant({ quality: [0.8, 1.0] })]))
 		.pipe(dest(`${buildFolder}/img/favicon/`))
+		.pipe(browsersync.stream());
+}
+
+function webp() {
+	return src([
+		`${srcFolder}/assets/img/**/*.{png,jpg,jpeg,webp}`,
+		`!${srcFolder}/assets/img/favicon/**/*.*`,
+	])
+		.pipe(changed(`${buildFolder}/img/`, { extension: '.webp' }))
+		.pipe(imagemin([imageminWebp({ quality: 100 })]))
+		.pipe(rename({ extname: '.webp' }))
+		.pipe(dest(`${buildFolder}/img/`))
 		.pipe(browsersync.stream());
 }
 
