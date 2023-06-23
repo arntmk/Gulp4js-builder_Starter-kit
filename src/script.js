@@ -1,5 +1,5 @@
 const JsFiles = [
-	'./src/js/script.js',
+	'./src/js/main.js',
 
 	'./src/js/modules/_body-min-width.js',
 	'./src/js/modules/_hamburger.js',
