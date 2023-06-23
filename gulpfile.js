@@ -1,5 +1,5 @@
 // Load Gulp
-const { src, dest, parallel, series, watch } = require('gulp'); // eslint-disable-line object-curly-newline
+const { src, dest, parallel, series, watch } = require('gulp');
 
 // Load plugins
 
@@ -41,17 +41,19 @@ const replace = require('gulp-replace'); // Заміна символів піс
 const svgSprite = require('gulp-svg-sprite'); // Об'єднання спрайтів.
 
 /* ____________________________________________ */
-// JS Concat Order
-// const { readFileSync, writeFileSync, appendFileSync, unlinkSync } = require('fs');
-// const JsFiles = JSON.parse(readFileSync('./src/script.json'));
-
-const { JsFiles } = require('./src/script'); // eslint-disable-line global-require
-
-/* ____________________________________________ */
 // Production mode | Build
 
 const isBuild = process.argv.includes('--production');
 const isDev = !isBuild;
+
+/* ____________________________________________ */
+// JS Concat Order
+// { readFileSync, writeFileSync, appendFileSync, unlinkSync }
+
+// const { readFileSync } = require('fs');
+// const JsFiles = JSON.parse(readFileSync('./src/script.json'));
+
+const { JsFiles } = require('./src/script');
 
 /* ____________________________________________ */
 // Paths

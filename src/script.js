@@ -1,8 +1,3 @@
-// https://stackoverflow.com/questions/67584122/how-to-import-constants-from-another-file-in-node-js
-// https://formidable.com/blog/2021/node-esm-and-exports/
-// https://metanit.com/web/nodejs/2.8.php
-/* ____________________________________________ */
-
 const JsFiles = [
 	'./src/js/script.js',
 
