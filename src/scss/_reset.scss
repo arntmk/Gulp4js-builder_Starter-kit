@@ -133,12 +133,12 @@ body {
 }
 
 /* ____________________________________________ */
-/* form */
+/* form cursor */
 :where(form) {
 	cursor: default;
 }
 
-/* border */
+/* form border */
 :where(fieldset) {
 	margin: 0;
 	border-width: 0;
