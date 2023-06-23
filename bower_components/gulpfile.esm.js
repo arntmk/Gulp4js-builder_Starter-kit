@@ -3,50 +3,49 @@ import gulp from 'gulp';
 
 // Load plugins
 
-import sync from 'browser-sync'; // Сервер.
-import changed from 'gulp-changed'; // Перевірка файлів.
-import clean from 'gulp-clean'; // Видалення Build.
-import gulpif from 'gulp-if'; // Режим dev or production.
-import newer from 'gulp-newer'; // Перевірка файлів.
-import plumber from 'gulp-plumber'; // Пошук помилок.
+import sync from 'browser-sync'; // сервер.
+import changed from 'gulp-changed'; // перевірка файлів.
+import clean from 'gulp-clean'; // видалення Build.
+import gulpif from 'gulp-if'; // режим dev or production.
+import newer from 'gulp-newer'; // перевірка файлів.
+import plumber from 'gulp-plumber'; // пошук помилок.
 import rename from 'gulp-rename'; // Rename.
 
-import imagemin from 'gulp-imagemin'; // Оптимізація зображення.
-import imageminPngquant from 'imagemin-pngquant'; // Оптимізація png only.
-import imageminWebp from 'imagemin-webp'; // Конвертатор webp.
+import imagemin from 'gulp-imagemin'; // оптимізація зображення.
+import imageminPngquant from 'imagemin-pngquant'; // оптимізація png only.
+import imageminWebp from 'imagemin-webp'; // конвертатор webp.
 
-import fonter from 'gulp-fonter'; // Конвертатор шрифтів в woff.
+import fonter from 'gulp-fonter'; // конвертатор шрифтів в woff.
 import fontfacegen from 'gulp-fontfacegen'; // fontface gen.
-import ttf2woff2 from 'gulp-ttf2woff2'; // Конвертатор в woff2.
+import ttf2woff2 from 'gulp-ttf2woff2'; // конвертатор в woff2.
 
-import fileinclude from 'gulp-file-include'; // Модульність для html.
-import htmlmin from 'gulp-htmlmin'; // Мінімізація html.
-import typograf from 'gulp-typograf'; // Правопис.
+import fileinclude from 'gulp-file-include'; // модульність для html.
+import htmlmin from 'gulp-htmlmin'; // мінімізація html.
+import typograf from 'gulp-typograf'; // правопис.
 import version from 'gulp-version-number'; // Build version.
 
-import autoprefixer from 'gulp-autoprefixer'; // Додавання префіксів для сумісності.
+import autoprefixer from 'gulp-autoprefixer'; // додавання префіксів для сумісності.
 import cleanCSS from 'gulp-clean-css'; // Minimize-css, group-media, optimize.
-import groupCSSMedia from 'gulp-group-css-media-queries'; // Групування медіа-запитів.
-import gulpSass from 'gulp-sass'; // Препроцесор для css.
+import groupCSSMedia from 'gulp-group-css-media-queries'; // групування медіа-запитів.
+import gulpSass from 'gulp-sass'; // препроцесор для css.
 import shorthand from 'gulp-shorthand'; // Shorthand css properties.
-import sass from 'sass'; // Препроцесор для css.
+import sass from 'sass'; // препроцесор для css.
 
-import babel from 'gulp-babel'; // Підтримка старих браузерів JS.
-import concat from 'gulp-concat'; // Перейменування та об'єднання.
-import terser from 'gulp-terser'; // Мінімізація JS.
-// const typescript = require('gulp-typescript'); //Конвертатор TypeScript в JS.
+import babel from 'gulp-babel'; // підтримка старих браузерів JS.
+import concat from 'gulp-concat'; // перейменування та об'єднання.
+import terser from 'gulp-terser'; // мінімізація JS.
+// const typescript = require('gulp-typescript'); // конвертатор TypeScript в JS.
 
-import cheerio from 'gulp-cheerio'; // Видалення непотрібних атрибутів svg (Вбудовані стилі).
-import replace from 'gulp-replace'; // Заміна символів після gulp-cheerio.
-import svgSprite from 'gulp-svg-sprite'; // Об'єднання спрайтів.
-import svgmin from 'gulp-svgmin'; // Мінімізація svg.
+import cheerio from 'gulp-cheerio'; // видалення непотрібних атрибутів svg (Вбудовані стилі).
+import replace from 'gulp-replace'; // заміна символів після gulp-cheerio.
+import svgSprite from 'gulp-svg-sprite'; // об'єднання спрайтів.
+import svgmin from 'gulp-svgmin'; // мінімізація svg.
 
 /* ____________________________________________ */
 // JS Concat Order
 import { readFileSync } from 'fs';
 
 const srcJs = JSON.parse(readFileSync('./src/script.json'));
-// import srcJs from './src/script.json' assert { type: "json" }; // ES6 Warning "assert"
 
 /* ____________________________________________ */
 // BrowserSync || SCSS
@@ -119,7 +118,7 @@ function font() {
 }
 
 function fontgen() {
-	// const tffTOtff = 'src/assets/font/**/*.ttf'; //Extra optimization /Test/
+	// const tffTOtff = 'src/assets/font/**/*.ttf'; // extra optimization /Test/
 	const otfTOtff = 'src/assets/font/**/*.{otf,ttf}'; // eot,otf,ttf,otc,ttc
 	const fontCss = 'src/assets/font/*.{otf,ttf,woff,woff2}';
 	return gulp
@@ -313,7 +312,6 @@ function watchFiles() {
 }
 
 // BrowserSync
-// browsersync.create().init({
 
 function browserSync() {
 	browsersync.init({
