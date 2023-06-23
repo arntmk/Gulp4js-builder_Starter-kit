@@ -160,10 +160,10 @@ function svg() {
 // Optimize images
 
 function img() {
-	const srcPng = [`${srcFolder}/assets/img/favicon/*.png`, `${srcFolder}/assets/*.png`];
-	const srcSvg = `${srcFolder}/assets/img/**/*.{gif,svg}`; // png,jpg,jpeg
-	const copyImg = `${srcFolder}/assets/img/favicon/*.{ico,webmanifest,json}`;
-	return src(srcSvg)
+	const srcPngFiles = [`${srcFolder}/assets/img/favicon/*.png`, `${srcFolder}/assets/*.png`];
+	const srcSvgFiles = `${srcFolder}/assets/img/**/*.{gif,svg}`; // png,jpg,jpeg
+	const copyManifest = `${srcFolder}/assets/img/favicon/*.{ico,webmanifest,json}`;
+	return src(srcSvgFiles)
 		.pipe(changed(`${buildFolder}/img/`))
 		.pipe(
 			imagemin(
@@ -181,12 +181,12 @@ function img() {
 		.pipe(dest(`${buildFolder}/img/`))
 		.pipe(browsersync.stream())
 
-		.pipe(src(copyImg))
+		.pipe(src(copyManifest))
 		.pipe(changed(`${buildFolder}/img/`))
 		.pipe(dest(`${buildFolder}/img/favicon/`))
 		.pipe(browsersync.stream())
 
-		.pipe(src(srcPng))
+		.pipe(src(srcPngFiles))
 		.pipe(changed(`${buildFolder}/img/favicon/`, { extension: '.png' }))
 		.pipe(imagemin([imageminPngquant({ quality: [0.8, 1.0] })]))
 		.pipe(dest(`${buildFolder}/img/favicon/`))
