@@ -2,6 +2,13 @@
 // https://formidable.com/blog/2021/node-esm-and-exports/
 // https://metanit.com/web/nodejs/2.8.php
 /* ____________________________________________ */
+// export - ECMAScript Modules ("ESM")
+// export default - ECMAScript Modules ("ESM")
+/* ____________________________________________ */
+// exports - CommonJS
+// exports.default - CommonJS
+// module.exports - CommonJS
+/* ____________________________________________ */
 
 const JsFiles = [
 	'./src/js/script.js',
@@ -17,12 +24,3 @@ const JsFiles = [
 ];
 
 exports.JsFiles = JsFiles;
-
-/* ____________________________________________ */
-// export - ECMAScript Modules ("ESM")
-// export default - ECMAScript Modules ("ESM")
-
-/* ____________________________________________ */
-// exports - CommonJS
-// exports.default - CommonJS
-// module.exports - CommonJS
