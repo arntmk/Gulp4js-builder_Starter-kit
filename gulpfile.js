@@ -33,7 +33,7 @@ const cleanCSS = require('gulp-clean-css'); // мinimize-css, group-media, optim
 const terser = require('gulp-terser'); // мінімізація JS.
 const babel = require('gulp-babel'); // підтримка старих браузерів JS.
 const concat = require('gulp-concat'); // перейменування та об'єднання.
-// const typescript = require('gulp-typescript'); //конвертатор TypeScript в JS.
+// const typescript = require('gulp-typescript'); // конвертатор TypeScript в JS.
 
 const svgmin = require('gulp-svgmin'); // мінімізація svg.
 const cheerio = require('gulp-cheerio'); // видалення непотрібних атрибутів svg (Вбудовані стилі).
