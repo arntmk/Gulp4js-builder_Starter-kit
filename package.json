@@ -46,8 +46,8 @@
 		"js",
 		"ts",
 		"font",
-		"img",
-		"svg"
+		"img/svg",
+		"svg-sprite"
 	],
 	"author": "OLEH SEMCHUK",
 	"license": "WTFPL",
