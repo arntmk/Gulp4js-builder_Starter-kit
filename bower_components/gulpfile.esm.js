@@ -5,7 +5,7 @@ import gulp from 'gulp';
 
 import sync from 'browser-sync'; // сервер.
 import changed from 'gulp-changed'; // перевірка файлів.
-import clean from 'gulp-clean'; // видалення Build.
+import clean from 'gulp-clean'; // видалення build.
 import gulpif from 'gulp-if'; // режим dev or production.
 import newer from 'gulp-newer'; // перевірка файлів.
 import plumber from 'gulp-plumber'; // пошук помилок.
