@@ -108,7 +108,7 @@ input:not(
 	transition: border-color 0.3s ease-in-out 0.02s, box-shadow 0.3s ease-in-out 0.02s, background 0s;
 
 	@media (any-hover: hover) {
-		&:is(:focus-visible, :hover) {
+		&:is(:focus, :hover) {
 			border-color: transparent;
 			box-shadow: 0 0 0 0.0625rem var(--clr-hover), 0 0 0.625rem var(--clr-hover);
 		}
