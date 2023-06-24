@@ -132,7 +132,7 @@ function fontgen() {
 // Svg Sprite
 
 function svg() {
-	return src(`${srcFolder}/assets/img/svg/*.svg`)
+	return src(`${srcFolder}/img/svg/*.svg`)
 		.pipe(plumber())
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
@@ -153,16 +153,16 @@ function svg() {
 				mode: { stack: { sprite: '../svg-group.svg', example: true } },
 			}),
 		)
-		.pipe(dest(`${srcFolder}/assets/img/svg/`));
+		.pipe(dest(`${srcFolder}/img/svg/`));
 }
 
 /* ____________________________________________ */
 // Optimize images
 
 function img() {
-	const srcPngFiles = [`${srcFolder}/assets/img/favicon/*.png`, `${srcFolder}/assets/*.png`];
-	const srcSvgFiles = `${srcFolder}/assets/img/**/*.{gif,svg}`; // png,jpg,jpeg
-	const copyManifest = `${srcFolder}/assets/img/favicon/*.{ico,webmanifest,json}`;
+	const srcPngFiles = [`${srcFolder}/img/favicon/*.png`, `${srcFolder}/*.png`];
+	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`; // png,jpg,jpeg
+	const copyManifest = `${srcFolder}/img/favicon/*.{ico,webmanifest,json}`;
 	return src(srcSvgFiles)
 		.pipe(changed(`${buildFolder}/img/`))
 		.pipe(
@@ -194,10 +194,7 @@ function img() {
 }
 
 function webp() {
-	return src([
-		`${srcFolder}/assets/img/**/*.{png,jpg,jpeg,webp}`,
-		`!${srcFolder}/assets/img/favicon/**/*.*`,
-	])
+	return src([`${srcFolder}/img/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/img/favicon/**/*.*`])
 		.pipe(changed(`${buildFolder}/img/`, { extension: '.webp' }))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
@@ -300,8 +297,8 @@ function watchFiles() {
 	watch(`${srcFolder}/**/*.html`, html);
 	watch(`${srcFolder}/**/*.{scss,sass}`, css);
 	watch(`${srcFolder}/**/*.{js,ts}`, js);
-	watch(`${srcFolder}/assets/img/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
-	watch(`${srcFolder}/assets/img/**/*.{png,jpg,jpeg,webp}`, webp);
+	watch(`${srcFolder}/img/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
+	watch(`${srcFolder}/img/**/*.{png,jpg,jpeg,webp}`, webp);
 	watch(`${srcFolder}/assets/font/**/*.{otf,ttf,woff,woff2,svg}`, font);
 }
 
