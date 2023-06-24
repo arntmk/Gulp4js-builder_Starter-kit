@@ -7,12 +7,13 @@
 @import "./scss/variables";
 @import "./scss/reset";
 @import "./scss/mixins";
-@import "./scss/font"; /* local font */
+@import "./scss/font";
 @import "./scss/global";
 @import "./scss/effects";
 
 /* Default */
-@import "./assets/default/font-face";
+// @import "./assets/default/console-log"; /* css console.log */
+@import "./assets/default/font-face"; /* local font */
 @import "./assets/default/forms";
 @import "./assets/default/accordion";
 

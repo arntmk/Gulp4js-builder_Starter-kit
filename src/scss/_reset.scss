@@ -110,7 +110,21 @@ body {
 	object-fit: cover;
 }
 
-:where(img, svg, picture, iframe, input, video, select, textarea, details, dialog) {
+:where(
+		img,
+		svg,
+		picture,
+		iframe,
+		input,
+		video,
+		audio,
+		select,
+		textarea,
+		details,
+		dialog,
+		progress,
+		canvas
+	) {
 	height: auto;
 	max-width: 100%;
 }

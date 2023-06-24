@@ -1,0 +1,33 @@
+/* stylelint-disable declaration-no-important */
+/* ____________________________________________ */
+/* _______________Console.Log__________________ */
+/* ____________________________________________ */
+
+* {
+	outline: 0.0625rem solid #32cd32 !important;
+	background: rgb(0 100 0 / 10%);
+}
+
+:not(
+		img,
+		svg,
+		picture,
+		iframe,
+		input,
+		video,
+		audio,
+		select,
+		textarea,
+		details,
+		dialog,
+		progress,
+		canvas,
+		hr,
+		br
+	):empty {
+	display: none !important;
+}
+
+a[href="#"] {
+	color: #700c0c !important;
+}
