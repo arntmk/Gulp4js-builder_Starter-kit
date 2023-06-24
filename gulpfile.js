@@ -160,9 +160,11 @@ function svg() {
 // Optimize images
 
 function img() {
+	// favicon
 	const srcPngFiles = [`${srcFolder}/img/favicon/*.png`, `${srcFolder}/*.png`];
-	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`; // png,jpg,jpeg
 	const copyManifest = `${srcFolder}/img/favicon/*.{ico,webmanifest,json}`;
+	// content
+	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`; // png,jpg,jpeg
 	return src(srcSvgFiles)
 		.pipe(changed(`${buildFolder}/img/`))
 		.pipe(
@@ -193,6 +195,7 @@ function img() {
 		.pipe(browsersync.stream());
 }
 
+// content
 function webp() {
 	return src([`${srcFolder}/img/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/img/favicon/**/*.*`])
 		.pipe(changed(`${buildFolder}/img/`, { extension: '.webp' }))
