@@ -11,7 +11,7 @@ const accordionsController = function () {
 
 				const accordionBtn2 = item2.querySelector('.accordion-button');
 				const content2 = item2.querySelector('.accordion-content');
-				content2.style.maxHeight = '0px';
+				content2.style.maxHeight = '';
 				accordionBtn2.setAttribute('aria-expanded', false);
 				content2.setAttribute('aria-hidden', true);
 			}
@@ -30,7 +30,7 @@ const accordionsController = function () {
 					accordionBtn.setAttribute('aria-expanded', true);
 					content.setAttribute('aria-hidden', false);
 				} else {
-					content.style.maxHeight = '0px';
+					content.style.maxHeight = '';
 					accordionBtn.setAttribute('aria-expanded', false);
 					content.setAttribute('aria-hidden', true);
 				}
@@ -39,7 +39,7 @@ const accordionsController = function () {
 			// Клик снаружи дропдауна. Закрыть дропдаун
 			document.addEventListener('click', (e) => {
 				if (!item.contains(e.target)) {
-					content.style.maxHeight = '0px';
+					content.style.maxHeight = '';
 					item.classList.remove('active');
 					accordionBtn.setAttribute('aria-expanded', false);
 					content.setAttribute('aria-hidden', true);
@@ -48,7 +48,7 @@ const accordionsController = function () {
 			// Нажатие на Tab или Escape. Закрыть дропдаун
 			document.addEventListener('keydown', (e) => {
 				if (e.key === 'Tab' || e.key === 'Escape') {
-					content.style.maxHeight = '0px';
+					content.style.maxHeight = '';
 					item.classList.remove('active');
 					accordionBtn.setAttribute('aria-expanded', false);
 					content.setAttribute('aria-hidden', true);
