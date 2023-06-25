@@ -112,9 +112,8 @@ function font() {
 }
 
 function fontgen() {
-	// const tffTOtff = `${srcFolder}/assets/font/**/*.ttf`; // extra optimization /Test/
-	const otfTOtff = `${srcFolder}/assets/font/**/*.{otf,ttf}`; // eot,otf,ttf,otc,ttc
-	const fontCss = `${srcFolder}/assets/font/*.{otf,ttf,woff,woff2}`;
+	const otfTOtff = `${srcFolder}/assets/font/**/*.{otf,ttf}`; // tff to tff - extra optimization
+	const fontCss = `${srcFolder}/assets/font/*.{otf,ttf,woff,woff2}`; // eot,otf,ttf,otc,ttc
 	return src(otfTOtff)
 		.pipe(fonter({ formats: ['ttf'] }))
 		.pipe(dest(`${srcFolder}/assets/font/`))
