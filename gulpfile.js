@@ -31,9 +31,10 @@ const shorthand = require('gulp-shorthand'); // shorthand css properties.
 const cleanCSS = require('gulp-clean-css'); // мinimize-css, group-media, optimize.
 
 const terser = require('gulp-terser'); // мінімізація JS.
-const babel = require('gulp-babel'); // підтримка старих браузерів JS.
-const concat = require('gulp-concat'); // перейменування та об'єднання.
+// const babel = require('gulp-babel'); // підтримка старих браузерів JS.
+// const concat = require('gulp-concat'); // перейменування та об'єднання.
 // const typescript = require('gulp-typescript'); // конвертатор TypeScript в JS.
+const webpack = require('webpack-stream');
 
 const svgmin = require('gulp-svgmin'); // мінімізація svg.
 const cheerio = require('gulp-cheerio'); // видалення непотрібних атрибутів svg (Вбудовані стилі).
@@ -47,9 +48,36 @@ const isBuild = process.argv.includes('--production');
 const isDev = !isBuild;
 
 /* ____________________________________________ */
-// JS Concat Order
+// Webpack Config
 
-const { JsFiles } = require('./src/script');
+const webpackConfig = {
+	mode: isBuild ? 'production' : 'development',
+	output: {
+		filename: 'script.min.js',
+	},
+	module: {
+		rules: [
+			{
+				test: /\.m?(js|ts)$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: [
+							[
+								'@babel/preset-env',
+								{
+									targets: 'defaults',
+								},
+							],
+						],
+					},
+				},
+			},
+		],
+	},
+	devtool: isDev ? 'inline-source-map' : false,
+};
 
 /* ____________________________________________ */
 // Paths
@@ -270,18 +298,16 @@ function css() {
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return (
-		src(JsFiles, { sourcemaps: true }) // gulp concat modules
+		src(`${srcFolder}/script.js`) // WebPack Import
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
 			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
-			.pipe(gulpif(isBuild, babel({ presets: ['@babel/preset-env'], targets: 'defaults' })))
-			.pipe(gulpif(isBuild, concat('script.js')))
-			.pipe(gulpif(isBuild, terser()))
-			.pipe(gulpif(isBuild, dest(`${buildFolder}/js/`, { sourcemaps: isBuild })))
+			.pipe(gulpif(isBuild, webpack(webpackConfig)))
+			.pipe(gulpif(isBuild, rename('script.js')))
+			.pipe(gulpif(isBuild, dest(`${buildFolder}/js/`)))
 
-			.pipe(concat('script.min.js'))
-			.pipe(gulpif(isBuild, terser()))
-			.pipe(dest(`${buildFolder}/js/`, { sourcemaps: isDev }))
+			.pipe(webpack(webpackConfig))
+			.pipe(dest(`${buildFolder}/js/`))
 			.pipe(browsersync.stream())
 
 			.pipe(src(LibsJsFiles))

@@ -1,14 +1,14 @@
-const JsFiles = [
-	'./src/js/main.js',
+// 'use strict';
 
-	'./src/js/modules/_body-min-width.js',
-	'./src/js/modules/_hamburger.js',
+/* Base JS imports */
+import './js/main';
+import './js/modules/_body-min-width';
 
-	'./src/assets/default/_forms.js',
-	'./src/assets/default/_accordion.js',
+/* Default */
+import './assets/default/_forms';
+import './assets/default/_accordion';
 
-	'./src/js/modules/**/_*.{js,ts}',
-	'./src/components/**/_*.{js,ts}',
-];
+/* Components JS files imports */
+import './js/modules/_hamburger';
 
-exports.JsFiles = JsFiles;
+/* Libs */
