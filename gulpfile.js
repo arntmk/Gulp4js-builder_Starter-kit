@@ -58,7 +58,7 @@ const buildFolder = './build';
 const srcFolder = './src';
 
 /* ____________________________________________ */
-// Cleaner/Delete
+// Cleaner
 
 function clear() {
 	return src(`${buildFolder}/*`, { read: false }).pipe(gulpif(isBuild, clean()));
@@ -85,7 +85,7 @@ function delfont() {
 }
 
 /* ____________________________________________ */
-// Fonts/Woff2
+// Fonts
 
 function font() {
 	const ttfTOwoff2 = `${srcFolder}/assets/font/**/*.{ttf,woff2}`;
