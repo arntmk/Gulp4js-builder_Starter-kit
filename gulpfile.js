@@ -156,7 +156,7 @@ function svg() {
 }
 
 /* ____________________________________________ */
-// Optimize images | webp/svg
+// Optimize images | webp/svg/favicon
 
 function img() {
 	// favicon
