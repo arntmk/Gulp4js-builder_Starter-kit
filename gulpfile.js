@@ -177,7 +177,7 @@ function svg() {
 		.pipe(replace('&gt;', '>'))
 		.pipe(
 			svgSprite({
-				mode: { stack: { sprite: '../svg-group.svg', example: true } },
+				mode: { stack: { sprite: '../svg-sprite.svg', example: true } },
 			}),
 		)
 		.pipe(dest(`${srcFolder}/img/svg/`));
