@@ -178,6 +178,21 @@ body::-webkit-scrollbar-track {
 /* ____________________________________________ */
 /* _____________Utility Classes________________ */
 /* ____________________________________________ */
+/* Text-NoWrap */
+.nowrap {
+	white-space: nowrap;
+}
+
+/* Completely-Hidden */
+.hidden {
+	display: none !important;
+}
+
+/* Semantically: Visible */
+.visually-hidden {
+	@include visually-hidden;
+}
+
 /* Text-Ellipsis */
 .text-ellipsis {
 	@include text-ellipsis;
@@ -198,16 +213,6 @@ body::-webkit-scrollbar-track {
 	@include btn-reset;
 }
 
-/* Semantically: Visible */
-.visually-hidden {
-	@include visually-hidden;
-}
-
-/* Completely-Hidden */
-.hidden {
-	display: none !important;
-}
-
 /* Float clearfix */
 .floatfix {
 	display: flow-root;
@@ -223,11 +228,6 @@ body::-webkit-scrollbar-track {
 .grid {
 	display: grid;
 	gap: 1rem;
-}
-
-/* Text-NoWrap */
-.nowrap {
-	white-space: nowrap;
 }
 
 /* Add basic space (to container) */
