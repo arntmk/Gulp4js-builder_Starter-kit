@@ -58,7 +58,7 @@ const buildFolder = './build';
 const srcFolder = './src';
 
 /* ____________________________________________ */
-// Cleaner
+// Cleaner/Delete
 
 function clear() {
 	return src(`${buildFolder}/*`, { read: false }).pipe(gulpif(isBuild, clean()));
@@ -85,7 +85,7 @@ function delfont() {
 }
 
 /* ____________________________________________ */
-// Fonts
+// Fonts/Woff2
 
 function font() {
 	const ttfTOwoff2 = `${srcFolder}/assets/font/**/*.{ttf,woff2}`;
@@ -156,7 +156,7 @@ function svg() {
 }
 
 /* ____________________________________________ */
-// Optimize images
+// Optimize images | webp/svg
 
 function img() {
 	// favicon
@@ -205,7 +205,7 @@ function webp() {
 }
 
 /* ____________________________________________ */
-// Html
+// Html/Pug
 
 function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
@@ -238,7 +238,7 @@ function html() {
 }
 
 /* ____________________________________________ */
-// CSS
+// CSS/SCSS
 
 function css() {
 	const LibsCssFiles = `${srcFolder}/scss/libs/*.css`;
@@ -265,7 +265,7 @@ function css() {
 }
 
 /* ____________________________________________ */
-// JavaScript
+// JavaScript/TypeScript
 
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
