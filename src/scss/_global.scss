@@ -8,7 +8,7 @@
 /* ____________________________________________ */
 /* _________________General____________________ */
 /* ____________________________________________ */
-html {
+.html {
 	scroll-behavior: smooth;
 	scroll-padding-top: var(--scroll-padding, 50px);
 
@@ -18,7 +18,7 @@ html {
 	}
 }
 
-body {
+.body {
 	min-width: 320px;
 	font-family: var(--ff-primary);
 	font-weight: var(--fw-body);
@@ -56,7 +56,7 @@ body {
 	min-height: 100svh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 }
 
-main {
+.main {
 	display: flex;
 	flex: 1 1 auto;
 	flex-flow: column nowrap;
@@ -231,7 +231,7 @@ body::-webkit-scrollbar-track {
 }
 
 /* Add basic space (to container) */
-div.flow-space > * + * {
+.flow-space > * + * {
 	margin-top: var(--flow-space, 1em);
 }
 
