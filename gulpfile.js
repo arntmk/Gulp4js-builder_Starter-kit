@@ -163,7 +163,7 @@ function img() {
 	const srcPngFiles = [`${srcFolder}/img/favicon/*.png`, `${srcFolder}/*.png`];
 	const copyManifest = `${srcFolder}/img/favicon/*.{ico,webmanifest,json}`;
 	// content
-	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`; // png,jpg,jpeg
+	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`;
 	return src(srcSvgFiles)
 		.pipe(changed(`${buildFolder}/img/`))
 		.pipe(
@@ -214,7 +214,7 @@ function html() {
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(
 			typograf({
-				locale: ['ru', 'en-US', 'uk'], // 'ukr', 'uk-UA'
+				locale: ['ru', 'en-US', 'uk'], // 'uk-UA'
 				htmlEntity: { type: 'name' },
 			}),
 		)
