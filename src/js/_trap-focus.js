@@ -13,3 +13,5 @@ const trapFocus = (element) => {
 
 	firstFocusableEl.focus();
 };
+
+export default trapFocus;

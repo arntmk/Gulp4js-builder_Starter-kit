@@ -1,6 +1,7 @@
 /* ____________________________________________ */
 // ===Hamburger menu===
-// import scrollController from '../../js/_disable-scroll';
+import scrollController from '../../js/_disable-scroll';
+import trapFocus from '../../js/_trap-focus';
 
 const hamburgerController = function () {
 	const menu = document.querySelector('.header__nav');
@@ -24,7 +25,7 @@ const hamburgerController = function () {
 					menuBtn.classList.remove('active');
 					menuBtn.setAttribute('aria-expanded', false);
 				}, 100);
-				scrollController.enableScroll();
+				// scrollController.enableScroll();
 			}
 		});
 
@@ -35,7 +36,7 @@ const hamburgerController = function () {
 					menuBtn.classList.remove('active');
 					menuBtn.setAttribute('aria-expanded', false);
 				}, 100);
-				scrollController.enableScroll();
+				// scrollController.enableScroll();
 			});
 		});
 	}

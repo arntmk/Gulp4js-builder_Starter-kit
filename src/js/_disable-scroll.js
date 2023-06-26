@@ -42,3 +42,5 @@ const scrollController = {
 		}, 400);
 	},
 };
+
+export default scrollController;
