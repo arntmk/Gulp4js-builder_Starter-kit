@@ -1,7 +1,7 @@
 // 'use strict';
 
 /* Base JS imports */
-import './js/main';
+import './js/_main';
 import './js/_adap-body';
 
 /* Default */
