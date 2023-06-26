@@ -257,7 +257,7 @@ function html() {
 		)
 		.pipe(
 			htmlmin({
-				removeComments: isBuild,
+				removeComments: true,
 				collapseWhitespace: isBuild,
 				removeScriptTypeAttributes: isBuild,
 				removeStyleLinkTypeAttributes: isBuild,
