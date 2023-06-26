@@ -19,7 +19,7 @@ if (form) {
 }
 
 /* ____________________________________________ */
-// ===prevent page to scroll up===
+// ===prevent page to scroll up on link===
 const link = document.querySelectorAll('a[href="#"]');
 link.forEach((links) => {
 	links.addEventListener('click', (e) => {
