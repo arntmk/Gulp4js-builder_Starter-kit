@@ -1,28 +1,3 @@
-/* function isMobile() {
-	return navigator.maxTouchPoints > 0 && /Android|IPhone/i.test(navigator.userAgent);
-	if (navigator.userAgent.indexOf('Firefox') === -1) {}
-} */
-
-/* ____________________________________________ */
-// ===prevent page reload on submit===
-const form = document.querySelectorAll('form');
-if (form) {
-	form.forEach((forms) => {
-		forms.addEventListener('submit', (e) => {
-			e.preventDefault();
-		});
-	});
-}
-
-/* ____________________________________________ */
-// ===prevent page to scroll up on link===
-const link = document.querySelectorAll('a[href="#"]');
-link.forEach((links) => {
-	links.addEventListener('click', (e) => {
-		e.preventDefault();
-	});
-});
-
 /* ____________________________________________ */
 // ===disable scroll===
 const headerFixed = document.querySelector('.header');
@@ -66,20 +41,4 @@ const scrollController = {
 			documentElement.style.cssText = '';
 		}, 400);
 	},
-};
-
-/* ____________________________________________ */
-// https://codepen.io/vaskort/pen/LYpwjoj
-// https://hidde.blog/using-javascript-to-trap-focus-in-an-element/
-/* ____________________________________________ */
-// ===trapFocus===
-const trapFocus = (element) => {
-	const focusableEls = Array.from(
-		element.querySelectorAll(
-			'a[href]:not([disabled]), button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), details:not([disabled]), [tabindex]:not([tabindex="-1"]), audio[controls], video[controls], [contenteditable]:not([contenteditable="false"])',
-		),
-	);
-	const firstFocusableEl = focusableEls[0];
-
-	firstFocusableEl.focus();
 };
