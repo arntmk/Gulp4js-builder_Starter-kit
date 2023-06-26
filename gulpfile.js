@@ -257,10 +257,10 @@ function html() {
 		)
 		.pipe(
 			htmlmin({
-				removeComments: true,
+				removeComments: isBuild,
 				collapseWhitespace: isBuild,
-				removeScriptTypeAttributes: true,
-				removeStyleLinkTypeAttributes: true,
+				removeScriptTypeAttributes: isBuild,
+				removeStyleLinkTypeAttributes: isBuild,
 			}),
 		)
 		.pipe(dest(`${buildFolder}`))
