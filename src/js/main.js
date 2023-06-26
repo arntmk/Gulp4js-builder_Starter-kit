@@ -1,7 +1,3 @@
-/* ____________________________________________ */
-// Global Script imports from ("./src/script.js")
-/* ____________________________________________ */
-
 /* function isMobile() {
 	return navigator.maxTouchPoints > 0 && /Android|IPhone/i.test(navigator.userAgent);
 	if (navigator.userAgent.indexOf('Firefox') === -1) {}
