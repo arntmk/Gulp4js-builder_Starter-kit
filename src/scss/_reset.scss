@@ -23,13 +23,6 @@ html {
 	background-repeat: inherit;
 }
 
-body {
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizespeed;
-}
-
 /* ____________________________________________ */
 /* _______________Typography___________________ */
 /* ____________________________________________ */
@@ -47,6 +40,13 @@ body {
 	font-family: ui-monospace, "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
 		"Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
 		"Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:where(body) {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizespeed;
 }
 
 :where(cite, address) {
