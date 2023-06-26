@@ -1,10 +1,10 @@
 // 'use strict';
 
 /* Base JS imports */
-import './js/main';
 import './js/_adap-body';
 import './js/_disable-scroll';
 import './js/_trap-focus';
+import './js/main';
 
 /* Default */
 import './assets/default/_forms';
