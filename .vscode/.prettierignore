@@ -5,6 +5,6 @@ dist/ !*.html !*.css !*.js
 dest/ !*.html !*.css !*.js
 app/ !*.html !*.css !*.js
 libs/
-#src/script.json
+vendor/
 *.min.js
 *.min.css
