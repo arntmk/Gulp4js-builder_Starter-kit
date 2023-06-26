@@ -305,7 +305,7 @@ function css() {
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return (
-		src(`${srcFolder}/script.js`) // WebPack Import
+		src([`${srcFolder}/script.js`, `${srcFolder}/**/*.js`]) // WebPack Import
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
 			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
