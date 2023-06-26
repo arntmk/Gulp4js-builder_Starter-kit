@@ -9,6 +9,6 @@ import './assets/default/_forms';
 import './assets/default/_accordion';
 
 /* Components JS files imports */
-import './js/components/_hamburger';
+import './components/block-js/_hamburger';
 
 /* Libs */
