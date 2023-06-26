@@ -1,5 +1,6 @@
 /* ____________________________________________ */
 // ===Hamburger menu===
+// import scrollController from '../../js/_disable-scroll';
 
 const hamburgerController = function () {
 	const menu = document.querySelector('.header__nav');
