@@ -36,6 +36,10 @@
 		],
 		"targets": "defaults"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/arntmk/Gulp4js-builder_Starter.git"
+	},
 	"keywords": [
 		"gulp",
 		"webpack",
