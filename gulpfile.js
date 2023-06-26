@@ -255,7 +255,14 @@ function html() {
 				}),
 			),
 		)
-		.pipe(htmlmin({ removeComments: true, collapseWhitespace: isBuild }))
+		.pipe(
+			htmlmin({
+				removeComments: true,
+				collapseWhitespace: isBuild,
+				removeScriptTypeAttributes: true,
+				removeStyleLinkTypeAttributes: true,
+			}),
+		)
 		.pipe(dest(`${buildFolder}`))
 		.pipe(browsersync.stream())
 
