@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
+/* const { src, dest, parallel, series, watch } = require('gulp'); */
 /* ____________________________________________ */
 // Load Gulp
 import gulp from 'gulp';
-/* const { src, dest, parallel, series, watch } = require('gulp'); */
 
 // Load plugins
 
