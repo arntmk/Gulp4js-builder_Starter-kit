@@ -345,11 +345,11 @@ function js() {
 			.pipe(plumber())
 			.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
 			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
-			.pipe(gulpif(isBuild, webpack(webpackConfig)))
+			.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
 			.pipe(gulpif(isBuild, rename('script.js')))
 			.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
 
-			.pipe(webpack(webpackConfig))
+			.pipe(webpack(webpackConfig)) // WebPack Config (73)
 			.on('error', function (err) {
 				console.error('WEBPACK ERROR', err);
 				this.emit('end');
