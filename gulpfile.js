@@ -15,7 +15,7 @@ import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
 import rename from 'gulp-rename'; // rename.
 
-// Image
+// Optimize images
 import imagemin from 'gulp-imagemin'; // оптимізація зображення.
 import imageminPngquant from 'imagemin-pngquant'; // оптимізація png only.
 import imageminWebp from 'imagemin-webp'; // конвертатор webp.
