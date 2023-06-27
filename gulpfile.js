@@ -146,7 +146,7 @@ function delfont() {
 function font() {
 	const ttfTOwoff2 = `${srcFolder}/assets/font/**/*.{ttf,woff2}`;
 	// const ttfTOwoff = `${srcFolder}/assets/font/**/*.{ttf,woff}`;
-	const copySvgFont = `${srcFolder}/assets/font/**/*.svg`; // eot,otf,ttf,otc,ttc
+	const copySvgFont = `${srcFolder}/assets/font/**/*.svg`; // {eot,otf,ttf,otc,ttc}
 	return (
 		gulp
 			.src(ttfTOwoff2)
