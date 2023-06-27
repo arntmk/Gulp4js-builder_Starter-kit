@@ -101,7 +101,6 @@ function clr() {
 	return src(
 		[
 			`${buildFolder}/*.*`,
-			`${buildFolder}/css/*`,
 			`${buildFolder}/js/*`,
 			`${buildFolder}/img/**/*.{webmanifest,json}`,
 			`${buildFolder}/font/**/*.{otf,ttf}`,
