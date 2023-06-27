@@ -73,9 +73,6 @@ const srcFolder = './src';
 
 const webpackConfig = {
 	mode: isBuild ? 'production' : 'development',
-	entry: {
-		app: './src/script.js',
-	},
 	output: {
 		filename: 'script.min.js',
 	},
@@ -120,7 +117,6 @@ function clr() {
 		.src(
 			[
 				`${buildFolder}/*.*`,
-				`${buildFolder}/js/*`,
 				`${buildFolder}/img/**/*.{webmanifest,json}`,
 				`${buildFolder}/font/**/*.{otf,ttf}`,
 			],
@@ -339,9 +335,9 @@ function css() {
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return gulp
-		.src(`${srcFolder}/**/*.js`) // WebPack imports
+		.src(`${srcFolder}/script.js`) // WebPack entry
 		.pipe(plumber())
-		.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
+		.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.js`)))
 		.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
 		.pipe(gulpif(isBuild, rename('script.js')))
 		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
