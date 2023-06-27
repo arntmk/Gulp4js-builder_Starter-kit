@@ -239,8 +239,9 @@ function webp() {
 
 function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
-	return src(`${srcFolder}/*.html`)
+	return src([`${srcFolder}/*.html`, `${srcFolder}/**/_*.html`])
 		.pipe(plumber())
+		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { extension: '.html' })))
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(
 			typograf({
