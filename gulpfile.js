@@ -70,7 +70,7 @@ const buildFolder = './build';
 const srcFolder = './src';
 
 /* ____________________________________________ */
-// Webpack Config
+// WebPack Config
 
 const webpackConfig = {
 	mode: isBuild ? 'production' : 'development',
