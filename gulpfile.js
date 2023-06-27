@@ -316,6 +316,10 @@ function js() {
 			.pipe(gulpif(isBuild, dest(`${buildFolder}/js/`)))
 
 			.pipe(webpack(webpackConfig))
+			.on('error', function (err) {
+				console.error('WEBPACK ERROR', err);
+				this.emit('end');
+			})
 			.pipe(dest(`${buildFolder}/js/`))
 			.pipe(browsersync.stream())
 
