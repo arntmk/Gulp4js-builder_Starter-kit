@@ -270,14 +270,7 @@ function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
 	return gulp
 		.src(`${srcFolder}/*.html`)
-		.pipe(
-			plumber(
-				notify.onError({
-					title: 'HTML',
-					message: 'Error: <%= error.message %>',
-				}),
-			),
-		)
+		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(
 			typograf({
@@ -363,8 +356,6 @@ function js() {
 				}),
 			),
 		)
-		.pipe(gulpif(isDev, cached('webpack')))
-		.pipe(gulpif(isDev, dependents()))
 		.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
 		.pipe(gulpif(isBuild, rename('script.js')))
 		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
