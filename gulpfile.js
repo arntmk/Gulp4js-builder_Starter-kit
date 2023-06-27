@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* ____________________________________________ */
 // Load Gulp
 const { src, dest, parallel, series, watch } = require('gulp');
 
@@ -95,9 +97,9 @@ function clear() {
 function clr() {
 	return src(
 		[
-			`${buildFolder}/*.*`,
+			/* 			`${buildFolder}/*.*`,
 			`${buildFolder}/css/*`,
-			`${buildFolder}/js/*`,
+			`${buildFolder}/js/*`, */
 			`${buildFolder}/img/**/*.{webmanifest,json}`,
 			`${buildFolder}/font/**/*.{otf,ttf}`,
 		],
