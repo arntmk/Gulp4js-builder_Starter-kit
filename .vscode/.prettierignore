@@ -1,6 +1,7 @@
 # Ignore
 node_modules/
 build/ !*.html !*.css !*.js
+public / !*.html !*.css !*.js
 dist/ !*.html !*.css !*.js
 dest/ !*.html !*.css !*.js
 app/ !*.html !*.css !*.js
