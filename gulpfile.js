@@ -15,6 +15,8 @@ import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
 import notify from 'gulp-notify'; // сповіщення про помилки
 import rename from 'gulp-rename'; // rename.
+import cached from 'gulp-cached';
+import dependents from 'gulp-dependents';
 
 // Optimize images
 import imagemin from 'gulp-imagemin'; // оптимізація зображення.
@@ -317,6 +319,8 @@ function css() {
 	return gulp
 		.src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
 		.pipe(gulpif(isDev, newer(`${buildFolder}/css/style.min.css`)))
+		.pipe(gulpif(isDev, cached('scss')))
+		.pipe(gulpif(isDev, dependents()))
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(
 			plumber(
@@ -359,7 +363,8 @@ function js() {
 				}),
 			),
 		)
-		.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.js`)))
+		.pipe(gulpif(isDev, cached('webpack')))
+		.pipe(gulpif(isDev, dependents()))
 		.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
 		.pipe(gulpif(isBuild, rename('script.js')))
 		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
