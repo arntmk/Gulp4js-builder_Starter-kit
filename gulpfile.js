@@ -13,7 +13,7 @@ import changed from 'gulp-changed'; // перевірка файлів.
 import clean from 'gulp-clean'; // видалення build.
 import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
-import notify from 'gulp-notify';
+import notify from 'gulp-notify'; // сповіщення про помилки
 import rename from 'gulp-rename'; // rename.
 
 // Optimize images
