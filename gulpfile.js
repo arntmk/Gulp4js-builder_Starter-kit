@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
 /* const { src, dest, parallel, series, watch } = require('gulp'); */
 /* ____________________________________________ */
-// Load Gulp
+// Load Gulp & WebPack
 import gulp from 'gulp';
+import webpack from 'webpack-stream';
 
 // Load plugins
 
@@ -14,36 +15,43 @@ import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
 import rename from 'gulp-rename'; // rename.
 
+// Image
 import imagemin from 'gulp-imagemin'; // оптимізація зображення.
 import imageminPngquant from 'imagemin-pngquant'; // оптимізація png only.
 import imageminWebp from 'imagemin-webp'; // конвертатор webp.
 
+// Font
 import fonter from 'gulp-fonter'; // конвертатор шрифтів в woff.
 import ttf2woff2 from 'gulp-ttf2woff2'; // конвертатор в woff2.
 import fontfacegen from 'gulp-fontfacegen'; // fontface gen.
 
+// Html/Pug
 import fileinclude from 'gulp-file-include'; // модульність для html.
 import htmlmin from 'gulp-htmlmin'; // мінімізація html.
 import typograf from 'gulp-typograf'; // правопис.
 import version from 'gulp-version-number'; // build version.
 
+// CSS/SCSS
 import gulpSass from 'gulp-sass'; // препроцесор для css.
 import * as sass from 'sass'; // препроцесор для css.
 import autoprefixer from 'gulp-autoprefixer'; // додавання префіксів для сумісності.
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 
+// JavaScript/TypeScript
 import terser from 'gulp-terser'; // мінімізація JS.
 // import babel from 'gulp-babel'; // підтримка старих браузерів JS.
 // import concat from 'gulp-concat'; // перейменування та об'єднання.
 // import typescript from 'gulp-typescript'; // конвертатор TypeScript в JS.
-import webpack from 'webpack-stream';
 
+// Svg Sprite
 import svgmin from 'gulp-svgmin'; // мінімізація svg.
 import cheerio from 'gulp-cheerio'; // видалення непотрібних атрибутів svg (Вбудовані стилі).
 import replace from 'gulp-replace'; // заміна символів після gulp-cheerio.
 import svgSprite from 'gulp-svg-sprite'; // об'єднання спрайтів.
 
+/* ____________________________________________ */
+/* ____________________________________________ */
 /* ____________________________________________ */
 // BrowserSync || SCSS
 const browsersync = sync.create();
@@ -99,6 +107,8 @@ const webpackConfig = {
 const buildFolder = './build';
 const srcFolder = './src';
 
+/* ____________________________________________ */
+/* ____________________________________________ */
 /* ____________________________________________ */
 // Cleaner
 
