@@ -54,6 +54,9 @@ const isDev = !isBuild;
 
 const webpackConfig = {
 	mode: isBuild ? 'production' : 'development',
+	entry: {
+		app: './src/script.js',
+	},
 	output: {
 		filename: 'script.min.js',
 	},
@@ -307,9 +310,9 @@ function css() {
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return (
-		src(`${srcFolder}/script.js`) // WebPack entry
+		src(`${srcFolder}/**/*.js`) // WebPack imports
 			.pipe(plumber())
-			// .pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
+			.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
 			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
 			.pipe(gulpif(isBuild, webpack(webpackConfig)))
 			.pipe(gulpif(isBuild, rename('script.js')))

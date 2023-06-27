@@ -36,7 +36,7 @@ const hamburgerController = function () {
 					menuBtn.classList.remove('active');
 					menuBtn.setAttribute('aria-expanded', false);
 				}, 100);
-				crollController.enableScroll();
+				scrollController.enableScroll();
 			});
 		});
 	}
