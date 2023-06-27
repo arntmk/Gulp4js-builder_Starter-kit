@@ -42,7 +42,6 @@ import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 import terser from 'gulp-terser'; // мінімізація JS.
 // import babel from 'gulp-babel'; // підтримка старих браузерів JS.
 // import concat from 'gulp-concat'; // перейменування та об'єднання.
-// import typescript from 'gulp-typescript'; // конвертатор TypeScript в JS.
 
 // Svg Sprite
 import svgmin from 'gulp-svgmin'; // мінімізація svg.
@@ -339,30 +338,27 @@ function css() {
 
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
-	return (
-		gulp
-			.src(`${srcFolder}/**/*.js`) // WebPack imports
-			.pipe(plumber())
-			.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
-			// .pipe(typescript({ noImplicitAny: true, outFile: 'script.min.js' }))
-			.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
-			.pipe(gulpif(isBuild, rename('script.js')))
-			.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
+	return gulp
+		.src(`${srcFolder}/**/*.js`) // WebPack imports
+		.pipe(plumber())
+		.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.min.js`)))
+		.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
+		.pipe(gulpif(isBuild, rename('script.js')))
+		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
 
-			.pipe(webpack(webpackConfig)) // WebPack Config (73)
-			.on('error', function (err) {
-				console.error('WEBPACK ERROR', err);
-				this.emit('end');
-			})
-			.pipe(gulp.dest(`${buildFolder}/js/`))
-			.pipe(browsersync.stream())
+		.pipe(webpack(webpackConfig)) // WebPack Config (73)
+		.on('error', function (err) {
+			console.error('WEBPACK ERROR', err);
+			this.emit('end');
+		})
+		.pipe(gulp.dest(`${buildFolder}/js/`))
+		.pipe(browsersync.stream())
 
-			.pipe(gulp.src(LibsJsFiles))
-			.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { extension: '.js' })))
-			.pipe(gulpif(isBuild, terser()))
-			.pipe(gulp.dest(`${buildFolder}/js/`))
-			.pipe(browsersync.stream())
-	);
+		.pipe(gulp.src(LibsJsFiles))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { extension: '.js' })))
+		.pipe(gulpif(isBuild, terser()))
+		.pipe(gulp.dest(`${buildFolder}/js/`))
+		.pipe(browsersync.stream());
 }
 
 /* ____________________________________________ */
