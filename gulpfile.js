@@ -14,8 +14,8 @@ import clean from 'gulp-clean'; // видалення build.
 import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
 import rename from 'gulp-rename'; // rename.
-import cached from 'gulp-cached';
-import dependents from 'gulp-dependents';
+import cached from 'gulp-cached'; // optimize css rebuild.
+import dependents from 'gulp-dependents'; // optimize css rebuild.
 
 // Optimize images
 import imagemin from 'gulp-imagemin'; // оптимізація зображення.
