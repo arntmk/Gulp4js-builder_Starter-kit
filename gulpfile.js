@@ -13,7 +13,6 @@ import changed from 'gulp-changed'; // перевірка файлів.
 import clean from 'gulp-clean'; // видалення build.
 import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
-import notify from 'gulp-notify'; // сповіщення про помилки
 import rename from 'gulp-rename'; // rename.
 import cached from 'gulp-cached';
 import dependents from 'gulp-dependents';
@@ -315,14 +314,7 @@ function css() {
 		.pipe(gulpif(isDev, cached('scss')))
 		.pipe(gulpif(isDev, dependents()))
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
-		.pipe(
-			plumber(
-				notify.onError({
-					title: 'SCSS',
-					message: 'Error: <%= error.message %>',
-				}),
-			),
-		)
+		.pipe(plumber())
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
@@ -348,14 +340,7 @@ function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return gulp
 		.src(`${srcFolder}/script.js`) // WebPack entry
-		.pipe(
-			plumber(
-				notify.onError({
-					title: 'JS',
-					message: 'Error: <%= error.message %>',
-				}),
-			),
-		)
+		.pipe(plumber())
 		.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
 		.pipe(gulpif(isBuild, rename('script.js')))
 		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
