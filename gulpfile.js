@@ -28,7 +28,6 @@ const version = require('gulp-version-number'); // build version.
 
 const sass = require('gulp-sass')(require('sass')); // препроцесор для css.
 const autoprefixer = require('gulp-autoprefixer'); // додавання префіксів для сумісності.
-const groupCSSMedia = require('gulp-group-css-media-queries'); // групування медіа-запитів.
 const shorthand = require('gulp-shorthand'); // shorthand css properties.
 const cleanCSS = require('gulp-clean-css'); // мinimize-css, group-media, optimize.
 
@@ -286,9 +285,9 @@ function css() {
 		.pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
 		.pipe(plumber())
 		.pipe(gulpif(isBuild, shorthand()))
-		.pipe(gulpif(isBuild, groupCSSMedia()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
+		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(gulpif(isBuild, dest(`${buildFolder}/css/`, { sourcemaps: isBuild })))
 
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
