@@ -97,9 +97,9 @@ function clear() {
 function clr() {
 	return src(
 		[
-			/* 			`${buildFolder}/*.*`,
+			`${buildFolder}/*.*`,
 			`${buildFolder}/css/*`,
-			`${buildFolder}/js/*`, */
+			`${buildFolder}/js/*`,
 			`${buildFolder}/img/**/*.{webmanifest,json}`,
 			`${buildFolder}/font/**/*.{otf,ttf}`,
 		],
@@ -120,7 +120,7 @@ function delfont() {
 function font() {
 	const ttfTOwoff2 = `${srcFolder}/assets/font/**/*.{ttf,woff2}`;
 	// const ttfTOwoff = `${srcFolder}/assets/font/**/*.{ttf,woff}`;
-	const copySvgFont = `${srcFolder}/assets/font/**/*.svg`;
+	const copySvgFont = `${srcFolder}/assets/font/**/*.svg`; // eot,otf,ttf,otc,ttc
 	return (
 		src(ttfTOwoff2)
 			.pipe(changed(`${buildFolder}/font/`, { extension: '.woff2' }))
@@ -143,7 +143,7 @@ function font() {
 
 function fontgen() {
 	const otfTOtff = `${srcFolder}/assets/font/**/*.{otf,ttf}`; // tff to tff - extra optimization
-	const fontCss = `${srcFolder}/assets/font/*.{otf,ttf,woff,woff2}`; // eot,otf,ttf,otc,ttc
+	const fontCss = `${srcFolder}/assets/font/*.{otf,ttf,woff,woff2}`;
 	return src(otfTOtff)
 		.pipe(fonter({ formats: ['ttf'] }))
 		.pipe(dest(`${srcFolder}/assets/font/`))
