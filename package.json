@@ -6,6 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"[ .git commite ]": "git config --global core.autocrlf true && git add . && git commit -m 'commite.' && git push -u origin main",
+		"|0.-------------------|": "",
 		"g-watch": "gulp watch",
 		"[ g-development ]": "gulp default",
 		"[ g-production ]": "gulp --production",
