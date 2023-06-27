@@ -53,7 +53,7 @@ import svgSprite from 'gulp-svg-sprite'; // об'єднання спрайтів
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
-// BrowserSync || SCSS
+// Import BrowserSync || Import SCSS
 const browsersync = sync.create();
 const scss = gulpSass(sass);
 
@@ -62,6 +62,12 @@ const scss = gulpSass(sass);
 
 const isBuild = process.argv.includes('--production');
 const isDev = !isBuild;
+
+/* ____________________________________________ */
+// Paths
+
+const buildFolder = './build';
+const srcFolder = './src';
 
 /* ____________________________________________ */
 // Webpack Config
@@ -102,12 +108,6 @@ const webpackConfig = {
 };
 
 /* ____________________________________________ */
-// Paths
-
-const buildFolder = './build';
-const srcFolder = './src';
-
-/* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
 // Cleaner
@@ -130,6 +130,7 @@ function clr() {
 		.pipe(gulpif(isDev, clean()));
 }
 
+// clear css/font-face
 function delfont() {
 	return gulp
 		.src(`${srcFolder}/scss/_font.{scss,sass}`, {
