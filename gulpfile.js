@@ -13,6 +13,7 @@ import changed from 'gulp-changed'; // перевірка файлів.
 import clean from 'gulp-clean'; // видалення build.
 import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
+import notify from 'gulp-notify';
 import rename from 'gulp-rename'; // rename.
 
 // Optimize images
@@ -267,7 +268,14 @@ function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
 	return gulp
 		.src(`${srcFolder}/*.html`)
-		.pipe(plumber())
+		.pipe(
+			plumber(
+				notify.onError({
+					title: 'HTML',
+					message: 'Error: <%= error.message %>',
+				}),
+			),
+		)
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(
 			typograf({
@@ -310,7 +318,14 @@ function css() {
 		.src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
 		.pipe(gulpif(isDev, newer(`${buildFolder}/css/style.min.css`)))
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
-		.pipe(plumber())
+		.pipe(
+			plumber(
+				notify.onError({
+					title: 'SCSS',
+					message: 'Error: <%= error.message %>',
+				}),
+			),
+		)
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
@@ -336,7 +351,14 @@ function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return gulp
 		.src(`${srcFolder}/script.js`) // WebPack entry
-		.pipe(plumber())
+		.pipe(
+			plumber(
+				notify.onError({
+					title: 'JS',
+					message: 'Error: <%= error.message %>',
+				}),
+			),
+		)
 		.pipe(gulpif(isDev, newer(`${buildFolder}/js/script.js`)))
 		.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
 		.pipe(gulpif(isBuild, rename('script.js')))
