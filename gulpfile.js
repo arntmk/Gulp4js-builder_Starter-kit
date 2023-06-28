@@ -77,8 +77,12 @@ const webpackConfig = {
 	cache: {
 		type: 'filesystem',
 	},
+	entry: {
+		script: './src/script.js',
+		// vendor: './src/vendor.js',
+	},
 	output: {
-		filename: 'script.min.js',
+		filename: '[name].min.js',
 	},
 	module: {
 		rules: [
@@ -194,7 +198,7 @@ function fontgen() {
 function svg() {
 	return gulp
 		.src(`${srcFolder}/img/svg/*.svg`)
-		.pipe(plumber(plumberNotify('SVG')))
+		.pipe(plumber())
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
 			cheerio({
@@ -275,7 +279,7 @@ function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
 	return gulp
 		.src(`${srcFolder}/*.html`)
-		.pipe(plumber(plumberNotify('Html')))
+		.pipe(plumber())
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(
 			typograf({
@@ -320,7 +324,7 @@ function css() {
 		.pipe(gulpif(isDev, cached('scss')))
 		.pipe(gulpif(isDev, dependents()))
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
-		.pipe(plumber(plumberNotify('SCSS')))
+		.pipe(plumber())
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 1 })))
@@ -345,8 +349,8 @@ function css() {
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return gulp
-		.src(`${srcFolder}/script.js`) // WebPack entry
-		.pipe(plumber(plumberNotify('JS')))
+		.src(`${srcFolder}/**/*.{js,ts}`) // WebPack entry
+		.pipe(plumber())
 		.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
 		.pipe(gulpif(isBuild, rename('script.js')))
 		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
