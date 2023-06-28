@@ -74,7 +74,7 @@ const srcFolder = './src';
 // WebPack Config
 
 const webpackConfig = {
-	mode: isBuild ? 'production' : 'development',
+	mode: isDev ? 'development' : 'production',
 	output: {
 		filename: 'script.min.js',
 	},
@@ -103,7 +103,7 @@ const webpackConfig = {
 			},
 		],
 	},
-	devtool: isDev ? 'inline-source-map' : false,
+	devtool: isBuild ? 'inline-source-map' : false,
 };
 
 /* ____________________________________________ */
