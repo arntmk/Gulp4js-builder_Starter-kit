@@ -74,7 +74,7 @@ const srcFolder = './src';
 // WebPack Config
 
 const webpackConfig = {
-	mode: isDev ? 'development' : 'production',
+	mode: isBuild ? 'production' : 'development',
 	cache: {
 		type: 'filesystem',
 	},
@@ -107,7 +107,7 @@ const webpackConfig = {
 			},
 		],
 	},
-	devtool: isBuild ? 'inline-source-map' : false,
+	devtool: isDev ? 'inline-source-map' : false,
 };
 
 /* ____________________________________________ */
