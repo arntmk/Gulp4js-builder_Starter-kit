@@ -12,6 +12,5 @@
 	"id-class-ad-disabled": true,
 	"src-not-empty": true,
 	"title-require": true,
-	"alt-require": true,
-	"indent-width": 2
+	"alt-require": true
 }
