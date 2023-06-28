@@ -75,6 +75,9 @@ const srcFolder = './src';
 
 const webpackConfig = {
 	mode: isDev ? 'development' : 'production',
+	cache: {
+		type: 'filesystem',
+	},
 	output: {
 		filename: 'script.min.js',
 	},
@@ -90,6 +93,7 @@ const webpackConfig = {
 				use: {
 					loader: 'babel-loader',
 					options: {
+						cacheDirectory: true,
 						presets: [
 							[
 								'@babel/preset-env',
