@@ -49,10 +49,9 @@
 		"gulp",
 		"webpack",
 		"linters",
-		"html",
-		"scss",
-		"js",
-		"ts",
+		"html/pug",
+		"css/scss",
+		"js/ts",
 		"font",
 		"img/svg",
 		"svg-sprite"
