@@ -54,7 +54,7 @@
 
 		"implicit-arrow-linebreak": ["warn", "below"],
 		"function-paren-newline": ["off", "multiline-arguments"],
-		"operator-linebreak": ["warn", "after"],
+		"operator-linebreak": ["warn", "before"],
 		"wrap-iife": ["error", "any"]
 	}
 }

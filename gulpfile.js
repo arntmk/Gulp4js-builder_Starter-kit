@@ -11,7 +11,6 @@ import sync from 'browser-sync'; // сервер.
 import newer from 'gulp-newer'; // перевірка файлів.
 import changed from 'gulp-changed'; // перевірка файлів.
 import del from 'del'; // видалення build.
-import clean from 'gulp-clean'; // видалення build.
 import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
 import rename from 'gulp-rename'; // rename.
@@ -117,30 +116,24 @@ const webpackConfig = {
 // Cleaner
 
 function clear() {
-	return del([`${buildFolder}/**`]);
+	return del(isBuild ? `${buildFolder}/**` : 'development');
 }
 
 function clr() {
-	return gulp
-		.src(
-			[
-				`${buildFolder}/*.*`,
-				`${buildFolder}/img/**/*.{webmanifest,json}`,
-				`${buildFolder}/font/**/*.{otf,ttf}`,
-			],
-			{ read: false },
-		)
-		.pipe(gulpif(isDev, clean()));
+	return del(
+		isDev
+			? [
+					`${buildFolder}/*.*`,
+					`${buildFolder}/img/**/*.{webmanifest,json}`,
+					`${buildFolder}/font/**/*.{otf,ttf}`,
+			  ]
+			: 'production',
+	);
 }
 
 // clear css/font-face
 function delfont() {
-	return gulp
-		.src(`${srcFolder}/scss/_font.{scss,sass}`, {
-			allowEmpty: true,
-			read: false,
-		})
-		.pipe(clean());
+	return del([`${srcFolder}/scss/_font.{scss,sass}`]);
 }
 
 /* ____________________________________________ */
