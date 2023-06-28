@@ -75,9 +75,6 @@ const srcFolder = './src';
 
 const webpackConfig = {
 	mode: isBuild ? 'production' : 'development',
-	cache: {
-		type: 'filesystem',
-	},
 	entry: {
 		script: './src/script.js',
 		// vendor: './src/vendor.js',
