@@ -93,6 +93,7 @@ const webpackConfig = {
 				use: {
 					loader: 'babel-loader',
 					options: {
+						cacheCompression: false,
 						cacheDirectory: true,
 						presets: [
 							[
