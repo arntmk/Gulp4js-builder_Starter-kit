@@ -10,6 +10,7 @@ import webpack from 'webpack-stream';
 import sync from 'browser-sync'; // сервер.
 import newer from 'gulp-newer'; // перевірка файлів.
 import changed from 'gulp-changed'; // перевірка файлів.
+import del from 'del'; // видалення build.
 import clean from 'gulp-clean'; // видалення build.
 import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
@@ -116,7 +117,7 @@ const webpackConfig = {
 // Cleaner
 
 function clear() {
-	return gulp.src(`${buildFolder}/*`, { read: false }).pipe(gulpif(isBuild, clean()));
+	return del([`${buildFolder}/**`]);
 }
 
 function clr() {
