@@ -123,9 +123,19 @@ function clr() {
 	return del(
 		isDev
 			? [
-					`${buildFolder}/*.*`,
-					`${buildFolder}/img/**/*.{webmanifest,json}`,
-					`${buildFolder}/font/**/*.{otf,ttf}`,
+					`${buildFolder}/**`,
+					`!${buildFolder}/css/`,
+					`!${buildFolder}/css/*.{css}`,
+					`!${buildFolder}/js/`,
+					`!${buildFolder}/js/*.{js}`,
+					`!${buildFolder}/img/`,
+					`!${buildFolder}/img/*.{webp}`,
+					`!${buildFolder}/img/favicon/`,
+					`!${buildFolder}/img/favicon/*.{png,ico,svg}`,
+					`!${buildFolder}/img/svg/`,
+					`!${buildFolder}/img/svg/*.{gif,svg}`,
+					`!${buildFolder}/font/`,
+					`!${buildFolder}/font/*.{woff,woff2}`,
 			  ]
 			: 'production',
 	);
