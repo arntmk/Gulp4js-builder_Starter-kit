@@ -84,6 +84,7 @@ const webpackConfig = {
 				test: /\.m?(js|ts)$/,
 				resolve: {
 					fullySpecified: false,
+					extensions: ['.js', '.ts'],
 				},
 				exclude: /node_modules/,
 				use: {

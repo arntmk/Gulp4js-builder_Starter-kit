@@ -2,8 +2,8 @@
 
 /* Base JS imports */
 import './js/_adap-body';
-import './js/_disable-scroll';
-import './js/_trap-focus';
+// import './js/export/_disable-scroll';
+// import './js/export/_trap-focus';
 import './js/main';
 
 /* Default */
