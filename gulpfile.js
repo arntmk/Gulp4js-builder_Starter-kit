@@ -323,7 +323,7 @@ function css() {
 		.pipe(plumber())
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
-		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
+		.pipe(gulpif(isBuild, cleanCSS({ level: 1 })))
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/css/`, { sourcemaps: isBuild })))
 
