@@ -36,6 +36,7 @@ import version from 'gulp-version-number'; // build version.
 // CSS/SCSS
 import gulpSass from 'gulp-sass'; // препроцесор для css.
 import * as sass from 'sass'; // препроцесор для css.
+import scssGlob from 'gulp-sass-glob'; // препроцесор для css.
 import autoprefixer from 'gulp-autoprefixer'; // додавання префіксів для сумісності.
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
@@ -323,6 +324,7 @@ function css() {
 		.pipe(gulpif(isDev, newer(`${buildFolder}/css/style.min.css`)))
 		.pipe(gulpif(isDev, cached('scss')))
 		.pipe(gulpif(isDev, dependents()))
+		.pipe(scssGlob())
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(plumber())
 		.pipe(gulpif(isBuild, shorthand()))
