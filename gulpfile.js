@@ -42,7 +42,6 @@ import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 
 // JavaScript/TypeScript
 import terser from 'gulp-terser'; // мінімізація JS.
-// import babel from 'gulp-babel'; // підтримка старих браузерів JS.
 // import concat from 'gulp-concat'; // перейменування та об'єднання.
 
 // Svg Sprite
@@ -89,20 +88,17 @@ const webpackConfig = {
 					fullySpecified: false,
 					extensions: ['.js', '.ts'],
 				},
-				exclude: /node_modules/,
+				exclude: /(node_modules|bower_components)/,
 				use: {
-					loader: 'babel-loader',
+					loader: 'swc-loader',
 					options: {
-						cacheCompression: false,
-						cacheDirectory: true,
-						presets: [
-							[
-								'@babel/preset-env',
-								{
-									targets: 'defaults',
-								},
-							],
-						],
+						jsc: {
+							parser: {
+								syntax: 'ecmascript',
+							},
+							target: 'es5',
+						},
+						minify: false,
 					},
 				},
 			},
