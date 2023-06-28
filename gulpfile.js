@@ -126,6 +126,7 @@ function clr() {
 		isDev
 			? [
 					`${buildFolder}/**`,
+					`${buildFolder}/*.html`,
 					`!${buildFolder}/css/`,
 					`!${buildFolder}/js/`,
 					`!${buildFolder}/img/`,
@@ -279,8 +280,9 @@ function webp() {
 function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
 	return gulp
-		.src(`${srcFolder}/*.html`)
+		.src([`${srcFolder}/**/*.html`, `!${srcFolder}/components/**/*.html`])
 		.pipe(plumber())
+		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(
 			typograf({
