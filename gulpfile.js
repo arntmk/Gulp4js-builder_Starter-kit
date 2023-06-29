@@ -355,9 +355,9 @@ function css() {
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return gulp
-		.src(`${srcFolder}/**/*.{js,ts}`) // WebPack entry
+		.src(`${srcFolder}/*.{js,ts}`) // WebPack entry
 		.pipe(plumber(plumberNotify('JS')))
-		.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
+		.pipe(gulpif(isBuild, webpack(webpackConfig)))
 		.pipe(gulpif(isBuild, rename('script.js')))
 		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
 
