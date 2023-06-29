@@ -1,3 +1,5 @@
+import { EsbuildPlugin } from 'esbuild-loader';
+
 /* ____________________________________________ */
 // Production mode | Build
 
@@ -9,12 +11,21 @@ const isDev = !isProd;
 
 const webpackConfig = {
 	mode: isProd ? 'production' : 'development',
+	devtool: isDev ? 'inline-source-map' : false,
 	entry: {
 		script: './src/script.js',
 		// vendor: './src/vendor.js',
 	},
 	output: {
 		filename: '[name]-bundle.min.js',
+	},
+	optimization: {
+		minimizer: [
+			new EsbuildPlugin({
+				target: 'es2016',
+				css: true, // Apply minification to CSS assets
+			}),
+		],
 	},
 	module: {
 		rules: [
@@ -43,7 +54,6 @@ const webpackConfig = {
 			},
 		],
 	},
-	devtool: isDev ? 'inline-source-map' : false,
 };
 
 export default webpackConfig;
