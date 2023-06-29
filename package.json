@@ -70,7 +70,6 @@
 		"gulp-cached": "^1.1.1",
 		"gulp-changed": "^4.0.3",
 		"gulp-cheerio": "^1.0.0",
-		"gulp-concat": "^2.6.1",
 		"gulp-dependents": "^1.2.5",
 		"gulp-file-include": "^2.3.0",
 		"gulp-fontfacegen": "^1.0.7",
