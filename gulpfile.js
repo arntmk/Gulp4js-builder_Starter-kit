@@ -42,9 +42,8 @@ import autoprefixer from 'gulp-autoprefixer'; // додавання префік
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 
-// JavaScript/TypeScript
+// JS/TS
 import terser from 'gulp-terser'; // мінімізація JS.
-// import concat from 'gulp-concat'; // перейменування та об'єднання.
 
 // Svg Sprite
 import svgmin from 'gulp-svgmin'; // мінімізація svg.
@@ -285,7 +284,7 @@ function html() {
 	return gulp
 		.src([`${srcFolder}/**/*.html`, `!${srcFolder}/components/**/*.html`])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
-		.pipe(plumber(plumberNotify('HTML')))
+		.pipe(plumber(plumberNotify('Html/Pug')))
 		.pipe(fileinclude({ prefix: '@', basepath: '@file' }))
 		.pipe(
 			typograf({
@@ -331,7 +330,7 @@ function css() {
 		.pipe(gulpif(isDev, dependents()))
 		.pipe(scssGlob())
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
-		.pipe(plumber(plumberNotify('CSS')))
+		.pipe(plumber(plumberNotify('CSS/SCSS')))
 		.pipe(gulpif(isProd, shorthand()))
 		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
 		.pipe(gulpif(isProd, cleanCSS({ level: 1 })))
@@ -351,14 +350,14 @@ function css() {
 }
 
 /* ____________________________________________ */
-// JavaScript/TypeScript
+// JS/TS
 
 function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return gulp
 		.src(`${srcFolder}/*.{js,ts}`) // WebPack entry
 		.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { hasChanged: changed.compareContents })))
-		.pipe(plumber(plumberNotify('JS')))
+		.pipe(plumber(plumberNotify('JS/TS')))
 		.pipe(gulpif(isProd, webpack(webpackConfig)))
 		.pipe(gulpif(isProd, rename('script.js')))
 		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/js/`)))
