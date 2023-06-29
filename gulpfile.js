@@ -357,6 +357,7 @@ function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return gulp
 		.src(`${srcFolder}/*.{js,ts}`) // WebPack entry
+		.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('JS')))
 		.pipe(gulpif(isBuild, webpack(webpackConfig)))
 		.pipe(gulpif(isBuild, rename('script.js')))
