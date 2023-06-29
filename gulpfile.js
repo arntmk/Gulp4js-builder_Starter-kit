@@ -62,8 +62,8 @@ const scss = gulpSass(sass);
 /* ____________________________________________ */
 // Production mode | Build
 
-const isBuild = process.argv.includes('--production');
-const isDev = !isBuild;
+const isProd = process.argv.includes('--production');
+const isDev = !isProd;
 
 /* ____________________________________________ */
 // Paths
@@ -85,7 +85,7 @@ const plumberNotify = (title) => ({
 // WebPack Config
 
 const webpackConfig = {
-	mode: isBuild ? 'production' : 'development',
+	mode: isProd ? 'production' : 'development',
 	entry: {
 		script: './src/script.js',
 		// vendor: './src/vendor.js',
@@ -106,7 +106,7 @@ const webpackConfig = {
 					loader: 'esbuild-loader',
 					options: {
 						target: 'es2015',
-						minify: isBuild,
+						minify: isProd,
 					},
 				},
 			},
@@ -121,7 +121,7 @@ const webpackConfig = {
 // Cleaner
 
 function clear() {
-	return del(isBuild ? `${buildFolder}/**` : 'development');
+	return del(isProd ? `${buildFolder}/**` : 'development');
 }
 
 function clr() {
@@ -295,7 +295,7 @@ function html() {
 		)
 		.pipe(
 			gulpif(
-				isBuild,
+				isProd,
 				version({
 					value: '%DT%',
 					append: { key: '_v', cover: 0, to: ['css', 'js'] },
@@ -305,9 +305,9 @@ function html() {
 		.pipe(
 			htmlmin({
 				removeComments: true,
-				collapseWhitespace: isBuild,
-				removeScriptTypeAttributes: isBuild,
-				removeStyleLinkTypeAttributes: isBuild,
+				collapseWhitespace: isProd,
+				removeScriptTypeAttributes: isProd,
+				removeStyleLinkTypeAttributes: isProd,
 			}),
 		)
 		.pipe(gulp.dest(`${buildFolder}`))
@@ -332,20 +332,20 @@ function css() {
 		.pipe(scssGlob())
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(plumber(plumberNotify('CSS')))
-		.pipe(gulpif(isBuild, shorthand()))
-		.pipe(gulpif(isBuild, autoprefixer({ cascade: false, grid: true })))
-		.pipe(gulpif(isBuild, cleanCSS({ level: 1 })))
-		.pipe(gulpif(isBuild, shorthand()))
-		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/css/`, { sourcemaps: isBuild })))
+		.pipe(gulpif(isProd, shorthand()))
+		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
+		.pipe(gulpif(isProd, cleanCSS({ level: 1 })))
+		.pipe(gulpif(isProd, shorthand()))
+		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/css/`, { sourcemaps: isProd })))
 
-		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
+		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(gulp.dest(`${buildFolder}/css/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(LibsCssFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/css/`, { extension: '.css' })))
-		.pipe(gulpif(isBuild, cleanCSS({ level: 2 })))
+		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(gulp.dest(`${buildFolder}/css/`))
 		.pipe(browsersync.stream());
 }
@@ -359,9 +359,9 @@ function js() {
 		.src(`${srcFolder}/*.{js,ts}`) // WebPack entry
 		.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('JS')))
-		.pipe(gulpif(isBuild, webpack(webpackConfig)))
-		.pipe(gulpif(isBuild, rename('script.js')))
-		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))
+		.pipe(gulpif(isProd, webpack(webpackConfig)))
+		.pipe(gulpif(isProd, rename('script.js')))
+		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/js/`)))
 
 		.pipe(webpack(webpackConfig)) // WebPack Config (73)
 		.on('error', function (err) {
@@ -373,7 +373,7 @@ function js() {
 
 		.pipe(gulp.src(LibsJsFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { extension: '.js' })))
-		.pipe(gulpif(isBuild, terser()))
+		.pipe(gulpif(isProd, terser()))
 		.pipe(gulp.dest(`${buildFolder}/js/`))
 		.pipe(browsersync.stream());
 }
