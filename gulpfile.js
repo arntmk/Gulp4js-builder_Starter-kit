@@ -129,19 +129,19 @@ function clr() {
 		isDev
 			? [
 					`${buildFolder}/**`,
-					`!${buildFolder}/*.html`,
 					`!${buildFolder}/css/`,
 					`!${buildFolder}/js/`,
+					`!${buildFolder}/font/`,
 					`!${buildFolder}/img/`,
 					`!${buildFolder}/img/favicon/`,
 					`!${buildFolder}/img/svg/`,
-					`!${buildFolder}/font/`,
+					`!${buildFolder}/*.html`,
 					`!${buildFolder}/css/*.css`,
 					`!${buildFolder}/js/*.js`,
+					`!${buildFolder}/font/*.{woff,woff2}`,
 					`!${buildFolder}/img/*.webp`,
 					`!${buildFolder}/img/favicon/*.{png,svg}`,
 					`!${buildFolder}/img/svg/*.{gif,svg}`,
-					`!${buildFolder}/font/*.{woff,woff2}`,
 			  ]
 			: 'production',
 	);
