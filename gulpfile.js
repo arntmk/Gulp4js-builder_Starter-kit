@@ -92,15 +92,9 @@ const webpackConfig = {
 				},
 				exclude: /(node_modules|bower_components)/,
 				use: {
-					loader: 'swc-loader',
+					loader: 'esbuild-loader',
 					options: {
-						jsc: {
-							parser: {
-								syntax: 'ecmascript',
-							},
-							target: 'es5',
-						},
-						minify: false,
+						target: 'es2015',
 					},
 				},
 			},
