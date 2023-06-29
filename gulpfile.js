@@ -13,6 +13,7 @@ import changed from 'gulp-changed'; // перевірка файлів.
 import del from 'del'; // видалення build.
 import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
+import notify from 'gulp-notify'; // сповіщення.
 import rename from 'gulp-rename'; // rename.
 import cached from 'gulp-cached'; // optimize css rebuild.
 import dependents from 'gulp-dependents'; // optimize css rebuild.
@@ -69,6 +70,16 @@ const isDev = !isBuild;
 
 const buildFolder = './build';
 const srcFolder = './src';
+
+/* ____________________________________________ */
+// Paths
+const plumberNotify = (title) => ({
+	errorHandler: notify.onError({
+		title,
+		message: 'Error <%= error.message %>',
+		sound: false,
+	}),
+});
 
 /* ____________________________________________ */
 // WebPack Config
@@ -191,7 +202,7 @@ function fontgen() {
 function svg() {
 	return gulp
 		.src(`${srcFolder}/img/svg/*.svg`)
-		.pipe(plumber())
+		.pipe(plumber(plumberNotify('Svg-Sprite')))
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
 			cheerio({
@@ -273,7 +284,7 @@ function html() {
 	return gulp
 		.src([`${srcFolder}/**/*.html`, `!${srcFolder}/components/**/*.html`])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
-		.pipe(plumber())
+		.pipe(plumber(plumberNotify('HTML')))
 		.pipe(fileinclude({ prefix: '@' }))
 		.pipe(
 			typograf({
@@ -319,7 +330,7 @@ function css() {
 		.pipe(gulpif(isDev, dependents()))
 		.pipe(scssGlob())
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
-		.pipe(plumber())
+		.pipe(plumber(plumberNotify('CSS')))
 		.pipe(gulpif(isBuild, shorthand()))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(gulpif(isBuild, cleanCSS({ level: 1 })))
@@ -345,7 +356,7 @@ function js() {
 	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
 	return gulp
 		.src(`${srcFolder}/**/*.{js,ts}`) // WebPack entry
-		.pipe(plumber())
+		.pipe(plumber(plumberNotify('JS')))
 		.pipe(gulpif(isBuild, webpack(webpackConfig))) // WebPack Config (73)
 		.pipe(gulpif(isBuild, rename('script.js')))
 		.pipe(gulpif(isBuild, gulp.dest(`${buildFolder}/js/`)))

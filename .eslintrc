@@ -52,7 +52,7 @@
 		"no-mixed-spaces-and-tabs": "off",
 		"object-curly-newline": "off",
 
-		"implicit-arrow-linebreak": ["warn", "below"],
+		"implicit-arrow-linebreak": ["off", "below"],
 		"function-paren-newline": ["off", "multiline-arguments"],
 		"operator-linebreak": ["warn", "before"],
 		"wrap-iife": ["error", "any"]
