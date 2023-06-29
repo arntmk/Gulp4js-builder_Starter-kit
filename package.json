@@ -15,6 +15,7 @@
 		"g-fontgen": "gulp fontGenTask",
 		"g-img": "gulp imgTask",
 		"g-svg-spt": "gulp svgSptTask",
+		"g-html": "gulp htmlTask",
 		"g-css": "gulp cssTask",
 		"g-js": "gulp jsTask",
 		"g-clean": "gulp delTask",

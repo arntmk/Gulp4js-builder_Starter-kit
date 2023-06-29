@@ -382,6 +382,7 @@ export const fontTask = font;
 export const fontGenTask = gulp.parallel(delfont, fontgen);
 export const imgTask = gulp.parallel(webp, img);
 export const svgSptTask = svg;
+export const htmlTask = html;
 export const cssTask = css;
 export const jsTask = js;
 export const delTask = delDev;
