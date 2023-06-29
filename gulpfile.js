@@ -128,7 +128,7 @@ function clr() {
 	return del(
 		isDev
 			? [
-					`${buildFolder}/**`,
+					// `${buildFolder}/**`,
 					`${buildFolder}/*.html`,
 					`!${buildFolder}/css/`,
 					`!${buildFolder}/js/`,
