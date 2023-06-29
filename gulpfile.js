@@ -286,7 +286,7 @@ function html() {
 		.src([`${srcFolder}/**/*.html`, `!${srcFolder}/components/**/*.html`])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('HTML')))
-		.pipe(fileinclude({ prefix: '@' }))
+		.pipe(fileinclude({ prefix: '@', basepath: '@file' }))
 		.pipe(
 			typograf({
 				locale: ['ru', 'en-US', 'uk'], // 'uk-UA'
