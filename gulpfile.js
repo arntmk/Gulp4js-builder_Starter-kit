@@ -51,7 +51,7 @@ import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 
 // JS/TS
 import terser from 'gulp-terser'; // мінімізація JS.
-import webpackConfig from './webpack.config.js';
+import webpackConfig from './webpack.config.js'; // webpackConfig
 
 /* ____________________________________________ */
 /* ____________________________________________ */
