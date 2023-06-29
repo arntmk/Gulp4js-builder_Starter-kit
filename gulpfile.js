@@ -162,19 +162,19 @@ function font() {
 	return (
 		gulp
 			.src(ttfTOwoff2)
-			.pipe(changed(`${buildFolder}/font/`, { extension: '.woff2' }))
+			.pipe(gulpif(isDev, changed(`${buildFolder}/font/`, { extension: '.woff2' })))
 			.pipe(ttf2woff2())
 			.pipe(gulp.dest(`${buildFolder}/font/`))
 			.pipe(browsersync.stream())
 
 			// .pipe(gulp.src(ttfTOwoff))
-			// .pipe(changed(`${buildFolder}/font/`, { extension: '.woff' }))
+			// .pipe(gulpif(isDev, changed(`${buildFolder}/font/`, { extension: '.woff' })))
 			// .pipe(fonter({ formats: ['woff'] }))
 			// .pipe(gulp.dest(`${buildFolder}/font/`))
 			// .pipe(browsersync.stream())
 
 			.pipe(gulp.src(copySvgFont))
-			.pipe(changed(`${buildFolder}/font/`, { extension: '.svg' }))
+			.pipe(gulpif(isDev, changed(`${buildFolder}/font/`, { extension: '.svg' })))
 			.pipe(gulp.dest(`${buildFolder}/font/`))
 			.pipe(browsersync.stream())
 	);
@@ -237,7 +237,7 @@ function img() {
 	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`;
 	return gulp
 		.src(srcSvgFiles)
-		.pipe(changed(`${buildFolder}/img/`))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/img/`)))
 		.pipe(
 			imagemin(
 				[
@@ -255,12 +255,12 @@ function img() {
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(copyManifest))
-		.pipe(changed(`${buildFolder}/img/`))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/img/`)))
 		.pipe(gulp.dest(`${buildFolder}/img/favicon/`))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(srcPngFiles))
-		.pipe(changed(`${buildFolder}/img/favicon/`, { extension: '.png' }))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/img/favicon/`, { extension: '.png' })))
 		.pipe(imagemin([imageminPngquant({ quality: [0.8, 1.0] })]))
 		.pipe(gulp.dest(`${buildFolder}/img/favicon/`))
 		.pipe(browsersync.stream());
@@ -270,7 +270,7 @@ function img() {
 function webp() {
 	return gulp
 		.src([`${srcFolder}/img/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/img/favicon/**/*.*`])
-		.pipe(changed(`${buildFolder}/img/`, { extension: '.webp' }))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/img/`, { extension: '.webp' })))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
 		.pipe(gulp.dest(`${buildFolder}/img/`))
@@ -314,7 +314,7 @@ function html() {
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(copyFavicon))
-		.pipe(changed(`${buildFolder}`))
+		.pipe(gulpif(isDev, changed(`${buildFolder}`)))
 		.pipe(gulp.dest(`${buildFolder}`))
 		.pipe(browsersync.stream());
 }
