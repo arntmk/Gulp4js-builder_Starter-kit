@@ -73,13 +73,20 @@ const buildFolder = './build';
 const srcFolder = './src';
 
 /* ____________________________________________ */
-// Paths
+// Notify
 const plumberNotify = (title) => ({
 	errorHandler: notify.onError({
 		title,
 		message: 'Error <%= error.message %>',
 		sound: false,
 	}),
+});
+
+const WebPackError = () => ({
+	function(err) {
+		console.error('WEBPACK ERROR', err);
+		this.emit('end');
+	},
 });
 
 /* ____________________________________________ */
@@ -330,11 +337,7 @@ function js() {
 		.pipe(gulpif(isProd, rename('script.js')))
 		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/js/`)))
 
-		.pipe(webpack(webpackConfig))
-		.on('error', function (err) {
-			console.error('WEBPACK ERROR', err);
-			this.emit('end');
-		})
+		.pipe(webpack(webpackConfig).on('error', WebPackError))
 		.pipe(gulp.dest(`${buildFolder}/js/`))
 		.pipe(browsersync.stream())
 
