@@ -106,6 +106,7 @@ const webpackConfig = {
 					loader: 'esbuild-loader',
 					options: {
 						target: 'es2015',
+						minify: true,
 					},
 				},
 			},
