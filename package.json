@@ -88,13 +88,6 @@
 		"imagemin-webp": "^6.0.1",
 		"sass": "^1.63.6",
 		"style-loader": "^3.3.3",
-		"stylelint": "^15.9.0",
-		"stylelint-config-recess-order": "^4.2.0",
-		"stylelint-config-standard": "^33.0.0",
-		"stylelint-config-standard-scss": "^9.0.0",
-		"stylelint-declaration-block-no-ignored-properties": "^2.7.0",
-		"stylelint-order": "^6.0.3",
-		"stylelint-scss": "^5.0.1",
 		"webpack": "^5.88.0",
 		"webpack-stream": "^7.0.0"
 	},
@@ -107,7 +100,14 @@
 		"gulp-svgmin": "^4.1.0",
 		"gulp-terser": "^2.1.0",
 		"gulp-typograf": "^4.1.0",
-		"gulp-version-number": "^0.2.4"
+		"gulp-version-number": "^0.2.4",
+		"stylelint": "^15.9.0",
+		"stylelint-config-recess-order": "^4.2.0",
+		"stylelint-config-standard": "^33.0.0",
+		"stylelint-config-standard-scss": "^9.0.0",
+		"stylelint-declaration-block-no-ignored-properties": "^2.7.0",
+		"stylelint-order": "^6.0.3",
+		"stylelint-scss": "^5.0.1"
 	},
 	"overrides": {
 		"chokidar": "3.5.3",
