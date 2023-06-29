@@ -60,6 +60,7 @@
 	"license": "WTFPL",
 	"devDependencies": {
 		"browser-sync": "^2.29.3",
+		"css-loader": "^6.8.1",
 		"del": "^6.1.1",
 		"esbuild-loader": "^3.0.1",
 		"eslint": "^8.43.0",
@@ -84,6 +85,7 @@
 		"gulp-svg-sprite": "^2.0.3",
 		"gulp-svgmin": "^4.1.0",
 		"sass": "^1.63.6",
+		"style-loader": "^3.3.3",
 		"stylelint": "^15.9.0",
 		"stylelint-config-recess-order": "^4.2.0",
 		"stylelint-config-standard": "^33.0.0",

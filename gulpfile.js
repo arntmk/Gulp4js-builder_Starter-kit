@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* eslint-disable import/extensions */
 /* const { src, dest, parallel, series, watch } = require('gulp'); */
 /* ____________________________________________ */
 // Load Gulp & WebPack
@@ -17,6 +18,12 @@ import notify from 'gulp-notify'; // сповіщення.
 import rename from 'gulp-rename'; // rename.
 import cached from 'gulp-cached'; // optimize css rebuild.
 import dependents from 'gulp-dependents'; // optimize css rebuild.
+
+// Svg Sprite
+import svgmin from 'gulp-svgmin'; // мінімізація svg.
+import cheerio from 'gulp-cheerio'; // видалення непотрібних атрибутів svg (Вбудовані стилі).
+import replace from 'gulp-replace'; // заміна символів після gulp-cheerio.
+import svgSprite from 'gulp-svg-sprite'; // об'єднання спрайтів.
 
 // Optimize images
 import imagemin from 'gulp-imagemin'; // оптимізація зображення.
@@ -44,12 +51,7 @@ import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 
 // JS/TS
 import terser from 'gulp-terser'; // мінімізація JS.
-
-// Svg Sprite
-import svgmin from 'gulp-svgmin'; // мінімізація svg.
-import cheerio from 'gulp-cheerio'; // видалення непотрібних атрибутів svg (Вбудовані стилі).
-import replace from 'gulp-replace'; // заміна символів після gulp-cheerio.
-import svgSprite from 'gulp-svg-sprite'; // об'єднання спрайтів.
+import webpackConfig from './webpack.config.js';
 
 /* ____________________________________________ */
 /* ____________________________________________ */
@@ -79,40 +81,6 @@ const plumberNotify = (title) => ({
 		sound: false,
 	}),
 });
-
-/* ____________________________________________ */
-// WebPack Config
-
-const webpackConfig = {
-	mode: isProd ? 'production' : 'development',
-	entry: {
-		script: './src/script.js',
-		// vendor: './src/vendor.js',
-	},
-	output: {
-		filename: '[name]-bundle.min.js',
-	},
-	module: {
-		rules: [
-			{
-				test: /\.m?(js|ts|jsx|tsx|css|json)$/,
-				resolve: {
-					fullySpecified: false,
-					extensions: ['.js', '.ts', '.jsx', '.tsx', 'css', '.json'],
-				},
-				exclude: /(node_modules|bower_components)/,
-				use: {
-					loader: 'esbuild-loader',
-					options: {
-						target: 'es2016',
-						minify: isProd,
-					},
-				},
-			},
-		],
-	},
-	devtool: isDev ? 'inline-source-map' : false,
-};
 
 /* ____________________________________________ */
 /* ____________________________________________ */
@@ -362,7 +330,7 @@ function js() {
 		.pipe(gulpif(isProd, rename('script.js')))
 		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/js/`)))
 
-		.pipe(webpack(webpackConfig)) // WebPack Config (73)
+		.pipe(webpack(webpackConfig))
 		.on('error', function (err) {
 			console.error('WEBPACK ERROR', err);
 			this.emit('end');
