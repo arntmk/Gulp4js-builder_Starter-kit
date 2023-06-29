@@ -231,7 +231,7 @@ function svg() {
 
 function img() {
 	// favicon
-	const srcPngFiles = [`${srcFolder}/img/favicon/*.png`, `${srcFolder}/*.png`];
+	const srcPngFiles = [`${srcFolder}/img/favicon/*.png`, `!${srcFolder}/*.png`];
 	const copyManifest = `${srcFolder}/img/favicon/*.{ico,webmanifest,json}`;
 	// content
 	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`;
