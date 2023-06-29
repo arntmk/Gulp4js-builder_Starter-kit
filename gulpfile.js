@@ -367,6 +367,7 @@ function browserSync() {
 		server: { baseDir: `${buildFolder}` },
 		notify: false,
 		online: false,
+		tunnel: false,
 		port: 3015,
 		ui: false,
 		logFileChanges: false,
