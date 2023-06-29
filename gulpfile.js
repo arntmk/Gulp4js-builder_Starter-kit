@@ -378,8 +378,10 @@ function browserSync() {
 /* ____________________________________________ */
 export const watch = gulp.parallel(watchFiles, browserSync);
 export default gulp.series(delDev, delProd, gulp.parallel(html, css, js, img, webp, font));
-export const imgTask = gulp.parallel(webp, img);
 export const fontTask = font;
 export const fontGenTask = gulp.parallel(delfont, fontgen);
-export const svgTask = svg;
+export const imgTask = gulp.parallel(webp, img);
+export const svgSptTask = svg;
+export const cssTask = css;
+export const jsTask = js;
 export const delTask = delDev;
