@@ -94,11 +94,11 @@ const WebPackError = () => ({
 /* ____________________________________________ */
 // Cleaner
 
-function clear() {
+function delProd() {
 	return del(isProd ? `${buildFolder}/**` : 'development');
 }
 
-function clr() {
+function delDev() {
 	return del(
 		isDev
 			? [
@@ -377,9 +377,9 @@ function browserSync() {
 
 /* ____________________________________________ */
 export const watch = gulp.parallel(watchFiles, browserSync);
-export default gulp.series(clr, clear, font, gulp.parallel(html, css, js, img, webp));
-export const imgTsk = gulp.series(webp, img);
-export const fontTsk = font;
-export const fontgenTsk = gulp.series(delfont, fontgen);
-export const svgTsk = svg;
-export const clrTsk = clr;
+export default gulp.series(delDev, delProd, font, gulp.parallel(html, css, js, img, webp));
+export const imgTask = gulp.series(webp, img);
+export const fontTask = font;
+export const fontGenTask = gulp.series(delfont, fontgen);
+export const svgTask = svg;
+export const delTask = delDev;
