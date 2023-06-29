@@ -95,10 +95,10 @@ const webpackConfig = {
 	module: {
 		rules: [
 			{
-				test: /\.m?(js|ts|jsx|tsx)$/,
+				test: /\.m?(js|ts|jsx|tsx|css|json)$/,
 				resolve: {
 					fullySpecified: false,
-					extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
+					extensions: ['.js', '.ts', '.jsx', '.tsx', 'css', '.json'],
 				},
 				exclude: /(node_modules|bower_components)/,
 				use: {
