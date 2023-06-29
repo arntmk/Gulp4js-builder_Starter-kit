@@ -36,16 +36,16 @@ import ttf2woff2 from 'gulp-ttf2woff2'; // конвертатор в woff2.
 import fontfacegen from 'gulp-fontfacegen'; // fontface gen.
 
 // Html/Pug
-import fileinclude from 'gulp-file-include'; // модульність для html.
+import fileinclude from 'gulp-file-include'; // include html.
 import htmlmin from 'gulp-htmlmin'; // мінімізація html.
-import typograf from 'gulp-typograf'; // правопис.
+import typograf from 'gulp-typograf'; // перевірка правопису.
 import version from 'gulp-version-number'; // build version.
 
 // CSS/SCSS
 import gulpSass from 'gulp-sass'; // препроцесор для css.
 import * as sass from 'sass'; // препроцесор для css.
-import scssGlob from 'gulp-sass-glob'; // препроцесор для css.
-import autoprefixer from 'gulp-autoprefixer'; // додавання префіксів для сумісності.
+import scssGlob from 'gulp-sass-glob'; // global imports.
+import autoprefixer from 'gulp-autoprefixer'; // css префікси для сумісності.
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 
@@ -310,7 +310,7 @@ function css() {
 		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
 		.pipe(gulpif(isProd, cleanCSS({ level: 1 })))
 		.pipe(gulpif(isProd, shorthand()))
-		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/css/`, { sourcemaps: isProd })))
+		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/css/`)))
 
 		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
