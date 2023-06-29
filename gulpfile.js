@@ -135,7 +135,7 @@ function clr() {
 					`!${buildFolder}/img/`,
 					`!${buildFolder}/img/favicon/`,
 					`!${buildFolder}/img/svg/`,
-					`!${buildFolder}/*.html`,
+					`!${buildFolder}/*.{html,ico,txt}`,
 					`!${buildFolder}/css/*.css`,
 					`!${buildFolder}/js/*.js`,
 					`!${buildFolder}/font/*.{woff,woff2}`,
