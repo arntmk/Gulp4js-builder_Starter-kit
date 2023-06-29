@@ -284,12 +284,12 @@ function html() {
 				removeStyleLinkTypeAttributes: isProd,
 			}),
 		)
-		.pipe(gulp.dest(`${buildFolder}`))
+		.pipe(gulp.dest(`${buildFolder}/`))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(copyFavicon))
-		.pipe(gulpif(isDev, changed(`${buildFolder}`)))
-		.pipe(gulp.dest(`${buildFolder}`))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/`)))
+		.pipe(gulp.dest(`${buildFolder}/`))
 		.pipe(browsersync.stream());
 }
 
