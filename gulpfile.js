@@ -90,7 +90,7 @@ const webpackConfig = {
 		// vendor: './src/vendor.js',
 	},
 	output: {
-		filename: '[name].min.js',
+		filename: '[name]-bundle.min.js',
 	},
 	module: {
 		rules: [
