@@ -29,7 +29,7 @@
 		"audit fix": "npm audit fix"
 	},
 	"browserslist": [
-		"> 1%",
+		"> 0.5%",
 		"last 3 version",
 		"defaults",
 		"supports es6-module",
