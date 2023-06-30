@@ -3,18 +3,19 @@
 /* Global CSS Imports */
 // @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
+/* SCSS Mixins imports */
+@import "./scss/mixins/mixins";
+
 /* Base SCSS imports */
 @import "./scss/variables";
 @import "./scss/normalize";
 @import "./scss/reset";
-@import "./scss/mixins";
 @import "./scss/font";
 @import "./scss/global";
 @import "./scss/effects";
 
 /* Default */
 // @import "./assets/default/console-log"; /* css console.log */
-@import "./assets/default/font-face"; /* local font */
 @import "./assets/default/forms";
 @import "./assets/default/accordion";
 
