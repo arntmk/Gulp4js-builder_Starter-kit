@@ -50,7 +50,7 @@
 	position: relative;
 	display: flex;
 	flex-flow: column nowrap;
-	overflow: clip; /* если используете на сайте position: sticky - используйте clip; вместо hidden */
+	overflow: clip; /* if you using position: sticky - then use overflow: clip; instead of hidden */
 	min-height: 100vh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 	min-height: 100dvh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 	min-height: 100svh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
@@ -97,7 +97,7 @@ div.container,
 }
 
 /* ____________________________________________ */
-/* ________ScrollBar(Select,Textarea)__________ */
+/* _____________ScrollBar(Global)______________ */
 /* ____________________________________________ */
 * {
 	scrollbar-color: var(--clr-scrollbar, #777) transparent;
@@ -176,66 +176,13 @@ body::-webkit-scrollbar-track {
 }
 
 /* ____________________________________________ */
-/* _____________Utility Classes________________ */
+/* ______________Global Styles_________________ */
 /* ____________________________________________ */
-/* Text-NoWrap */
-.nowrap {
-	white-space: nowrap;
-}
-
-/* Completely-Hidden */
-.hidden {
-	display: none !important;
-}
-
-/* Semantically: Visible */
-.visually-hidden {
-	@include visually-hidden;
-}
-
-/* Text-Ellipsis */
-.text-ellipsis {
-	@include text-ellipsis;
-}
-
-/* Align-Center */
-.align-center {
-	@include align-center;
-}
-
-/* Off-Screen */
-.offscreen {
-	@include offscreen;
-}
-
-/* Button-Reset */
-.btn-reset {
-	@include btn-reset;
-}
-
-/* Float clearfix */
-.floatfix {
-	display: flow-root;
-}
-
-/* Flex */
-.flex {
-	display: flex;
-}
-
-/* Grid */
-.grid {
-	display: grid;
-}
-
 /* Add basic space (to container) */
 .flow-space > * + * {
 	margin-top: var(--flow-space, 1em);
 }
 
-/* ____________________________________________ */
-/* ______________Global Styles_________________ */
-/* ____________________________________________ */
 /* editor.scrollBeyondLastLine */
 .footer {
 	margin-bottom: 50ch;

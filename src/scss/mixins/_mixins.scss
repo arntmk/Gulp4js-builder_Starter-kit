@@ -1,4 +1,4 @@
-/* stylelint-disable */
+/* stylelint-disable declaration-no-important */
 /* ____________________________________________ */
 /* _________________Mixins_____________________ */
 /* ____________________________________________ */
@@ -31,6 +31,32 @@
 
 /* ____________________________________________ */
 /* ____________________________________________ */
+/* ____________________________________________ */
+/* Text-NoWrap */
+@mixin nowrap {
+	white-space: nowrap;
+}
+
+// @include nowrap;
+
+/* ____________________________________________ */
+/* Completely-Hidden */
+@mixin hidden {
+	display: none !important;
+}
+
+// @include hidden;
+
+/* ____________________________________________ */
+/* Off-Screen */
+@mixin offscreen {
+	position: absolute;
+	left: -200%;
+}
+
+// @include offscreen;
+
+/* ____________________________________________ */
 /* Text-Ellipsis */
 @mixin text-ellipsis {
 	overflow: hidden;
@@ -47,15 +73,6 @@
 }
 
 // @include align-center;
-
-/* ____________________________________________ */
-/* Off-Screen */
-@mixin offscreen {
-	position: absolute;
-	left: -200%;
-}
-
-// @include offscreen;
 
 /* ____________________________________________ */
 /* List-Reset */
@@ -80,17 +97,15 @@
 /* ____________________________________________ */
 /* Input-Reset */
 @mixin input-reset {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
+	// number firefox
+	appearance: textfield;
 
 	// password
 	&::-ms-reveal {
 		display: none;
 	}
 
-	// number
-	appearance: textfield;
+	// number chrome
 	&::-webkit-inner-spin-button {
 		appearance: none;
 	}

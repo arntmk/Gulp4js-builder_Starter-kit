@@ -8,10 +8,11 @@
 
 /* Base SCSS imports */
 @import "./scss/variables";
-@import "./scss/normalize";
-@import "./scss/reset";
+@import "./scss/reset/normalize";
+@import "./scss/reset/reset";
 @import "./scss/font";
 @import "./scss/global";
+@import "./scss/utility";
 @import "./scss/effects";
 
 /* CSS Console.Log */

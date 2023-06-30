@@ -1,0 +1,52 @@
+/* ____________________________________________ */
+/* _____________Utility Classes________________ */
+/* ____________________________________________ */
+/* Text-NoWrap */
+.nowrap {
+	@include nowrap;
+}
+
+/* Completely-Hidden */
+.hidden {
+	@include hidden;
+}
+
+/* Semantically: Visible */
+.visually-hidden {
+	@include visually-hidden;
+}
+
+/* Off-Screen */
+.offscreen {
+	@include offscreen;
+}
+
+/* Text-Ellipsis */
+.text-ellipsis {
+	@include text-ellipsis;
+}
+
+/* Align-Center */
+.align-center {
+	@include align-center;
+}
+
+/* Button-Reset */
+.btn-reset {
+	@include btn-reset;
+}
+
+/* Float clearfix */
+.floatfix {
+	display: flow-root;
+}
+
+/* Flex */
+.flex {
+	display: flex;
+}
+
+/* Grid */
+.grid {
+	display: grid;
+}
