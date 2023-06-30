@@ -63,6 +63,7 @@
 		"node_modules",
 		"bower_components"
 	],
+	"homepage": "https://github.com/arntmk",
 	"private": "true",
 	"author": "OLEH SEMCHUK",
 	"license": "WTFPL",
