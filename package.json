@@ -91,10 +91,10 @@
 		"gulp-sass-glob": "^1.1.0",
 		"gulp-ttf2woff2": "^4.0.1",
 		"imagemin-pngquant": "^9.0.2",
-		"imagemin-webp": "^6.0.1",
+		"imagemin-webp": "^6.1.0",
 		"sass": "^1.63.6",
 		"style-loader": "^3.3.3",
-		"webpack": "^5.88.0",
+		"webpack": "^5.88.1",
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
@@ -113,7 +113,7 @@
 		"stylelint": "^15.9.0",
 		"stylelint-config-recess-order": "^4.2.0",
 		"stylelint-config-standard": "^33.0.0",
-		"stylelint-config-standard-scss": "^9.0.0",
+		"stylelint-config-standard-scss": "^10.0.0",
 		"stylelint-declaration-block-no-ignored-properties": "^2.7.0",
 		"stylelint-order": "^6.0.3",
 		"stylelint-scss": "^5.0.1"
