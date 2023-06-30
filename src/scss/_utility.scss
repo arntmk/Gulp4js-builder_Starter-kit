@@ -41,6 +41,12 @@
 	display: flow-root;
 }
 
+/* Grid */
+.d-grid {
+	display: grid;
+}
+
+/* ____________________________________________ */
 /* Flex */
 .d-flex {
 	display: flex;
@@ -66,7 +72,18 @@
 	align-items: center;
 }
 
-/* Grid */
-.d-grid {
-	display: grid;
+.ai-start {
+	align-items: flex-start;
+}
+
+.ai-end {
+	align-items: flex-end;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-dir-column {
+	flex-direction: column;
 }
