@@ -23,10 +23,22 @@ html {
 	background-repeat: inherit;
 }
 
+*::before,
+*::after {
+	vertical-align: inherit;
+	text-decoration: inherit;
+}
+
 /* ____________________________________________ */
 /* _______________Typography___________________ */
 /* ____________________________________________ */
-/* text */
+:where(:root) {
+	overflow-wrap: break-word;
+	tab-size: 4;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
 :where(html) {
 	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -81,15 +93,15 @@ html {
 }
 
 :where(h1) {
-	font-size: var(--fs-h1, 32px);
+	font-size: var(--fs-h1, 2em); // 32px
 }
 
 :where(h2) {
-	font-size: var(--fs-h2, 24px);
+	font-size: var(--fs-h2, 1.5em); // 24px
 }
 
 :where(h3, h4, h5, h6) {
-	font-size: var(--fs-h3-6, 18.72px);
+	font-size: var(--fs-h3-6, 1.17em); // 18.72px
 }
 
 /* ____________________________________________ */
