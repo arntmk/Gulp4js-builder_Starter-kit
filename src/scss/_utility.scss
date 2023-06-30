@@ -46,6 +46,26 @@
 	display: flex;
 }
 
+.jc-center {
+	justify-content: center;
+}
+
+.jc-between {
+	justify-content: space-between;
+}
+
+.jc-around {
+	justify-content: space-around;
+}
+
+.jc-evenly {
+	justify-content: space-evenly;
+}
+
+.ai-center {
+	align-items: center;
+}
+
 /* Grid */
 .d-grid {
 	display: grid;
