@@ -14,10 +14,12 @@
 @import "./scss/global";
 @import "./scss/effects";
 
-/* Default */
-// @import "./assets/default/console-log"; /* css console.log */
-@import "./assets/default/forms";
-@import "./assets/default/accordion";
+/* CSS Console.Log */
+// @import "./assets/tests/console-log";
+
+/* Tests */
+@import "./assets/tests/forms";
+@import "./assets/tests/accordion";
 
 /* Components SCSS files imports */
 @import "./components/block-scss/header";

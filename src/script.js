@@ -4,9 +4,9 @@
 import './js/_adap-body';
 import './js/main';
 
-/* Default */
-import './assets/default/_forms';
-import './assets/default/_accordion';
+/* Tests */
+import './assets/tests/_forms';
+import './assets/tests/_accordion';
 
 /* Components JS files imports */
 import './components/block-js/_hamburger';
