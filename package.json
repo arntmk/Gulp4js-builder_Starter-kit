@@ -59,8 +59,12 @@
 		"img/svg",
 		"svg-sprite"
 	],
-	"author": "OLEH SEMCHUK",
+	"ignore": [
+		"node_modules",
+		"bower_components"
+	],
 	"private": "true",
+	"author": "OLEH SEMCHUK",
 	"license": "WTFPL",
 	"devDependencies": {
 		"browser-sync": "^2.29.3",
