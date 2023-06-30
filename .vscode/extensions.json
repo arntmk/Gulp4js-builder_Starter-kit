@@ -31,7 +31,6 @@
 		"github.github-vscode-theme",
 		"zardoy.fix-all-json",
 		"herrmannplatz.npm-dependency-links",
-		"chakrounanas.turbo-console-log",
-		"mgmcdermott.vscode-language-babel"
+		"chakrounanas.turbo-console-log"
 	]
 }
