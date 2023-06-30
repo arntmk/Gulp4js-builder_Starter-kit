@@ -18,9 +18,12 @@ html {
 *::before,
 *::after {
 	break-inside: inherit;
-	min-width: 0;
 	box-sizing: inherit;
 	background-repeat: inherit;
+}
+
+* {
+	min-width: 0;
 }
 
 *::before,
@@ -32,6 +35,7 @@ html {
 /* ____________________________________________ */
 /* _______________Typography___________________ */
 /* ____________________________________________ */
+/* html */
 :where(:root) {
 	overflow-wrap: break-word;
 	tab-size: 4;
@@ -39,6 +43,7 @@ html {
 	-webkit-tap-highlight-color: transparent;
 }
 
+/* :root */
 :where(html) {
 	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
