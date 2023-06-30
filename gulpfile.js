@@ -308,7 +308,7 @@ function css() {
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
 		.pipe(gulpif(isProd, shorthand()))
 		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
-		.pipe(gulpif(isProd, cleanCSS({ level: 1 })))
+		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(gulpif(isProd, shorthand()))
 		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/css/`)))
 
