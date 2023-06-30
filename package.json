@@ -60,6 +60,7 @@
 		"svg-sprite"
 	],
 	"author": "OLEH SEMCHUK",
+	"private": "true",
 	"license": "WTFPL",
 	"devDependencies": {
 		"browser-sync": "^2.29.3",
