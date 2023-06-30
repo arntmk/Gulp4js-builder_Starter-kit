@@ -272,7 +272,7 @@ function html() {
 				isProd,
 				version({
 					value: '%DT%',
-					append: { key: '_v', cover: 0, to: ['image', 'css', 'js'] },
+					append: { key: '_v', cover: 0, to: ['image', 'css', 'js', 'preload'] },
 				}),
 			),
 		)
