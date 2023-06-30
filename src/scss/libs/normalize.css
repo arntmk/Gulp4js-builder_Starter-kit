@@ -23,15 +23,13 @@
 }
 
 /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  * 3. Prevent overflow of the container in all browsers (opinionated).
  */
 
 :where(pre) {
 	overflow: auto; /* 3 */
-	font-family: monospace; /* 1 */
-	font-size: 1em; /* 2 */
+	font-size: inherit; /* 2 */
 }
 
 /* Text-level semantics
@@ -54,13 +52,11 @@
 }
 
 /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
 :where(code, kbd, samp) {
-	font-family: monospace; /* 1 */
-	font-size: 1em; /* 2 */
+	font-size: inherit; /* 2 */
 }
 
 /**
@@ -196,18 +192,11 @@
 }
 
 /**
- * Remove the inner padding in Chrome, Edge, and Safari on macOS.
- */
-
-::-webkit-search-decoration {
-	appearance: none;
-}
-
-/**
  * 1. Correct the inability to style upload buttons in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
 
+::file-selector-button,
 ::-webkit-file-upload-button {
 	appearance: button; /* 1 */
 	font: inherit; /* 2 */
