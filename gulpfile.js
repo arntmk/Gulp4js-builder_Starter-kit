@@ -16,6 +16,7 @@ import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
 import notify from 'gulp-notify'; // сповіщення.
 import rename from 'gulp-rename'; // rename.
+import size from 'gulp-size'; // size.
 
 // Svg Sprite
 import svgmin from 'gulp-svgmin'; // мінімізація svg.
@@ -208,7 +209,7 @@ function img() {
 	const srcPngFiles = [`${srcFolder}/img/favicon/*.png`, `!${srcFolder}/*.png`];
 	const copyManifest = `${srcFolder}/img/favicon/*.{ico,webmanifest,json}`;
 	// content
-	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`;
+	const srcSvgFiles = [`${srcFolder}/img/**/*.{gif,svg}`, `!${srcFolder}/img/**/*.html`];
 	return gulp
 		.src(srcSvgFiles)
 		.pipe(gulpif(isDev, changed(`${buildFolder}/img/`)))
@@ -257,7 +258,11 @@ function webp() {
 function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
 	return gulp
-		.src([`${srcFolder}/**/*.html`, `!${srcFolder}/components/**/*.html`])
+		.src([
+			`${srcFolder}/**/*.html`,
+			`!${srcFolder}/components/**/*.html`,
+			`!${srcFolder}/img/**/*.html`,
+		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('Html/Pug')))
 		.pipe(fileinclude({ prefix: '@', basepath: '@file' }))
@@ -284,6 +289,7 @@ function html() {
 				removeStyleLinkTypeAttributes: isProd,
 			}),
 		)
+		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/`))
 		.pipe(browsersync.stream())
 
@@ -314,6 +320,7 @@ function css() {
 
 		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
+		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/css/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
