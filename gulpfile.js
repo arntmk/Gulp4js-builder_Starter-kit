@@ -209,7 +209,7 @@ function img() {
 	const srcPngFiles = [`${srcFolder}/img/favicon/*.png`, `!${srcFolder}/*.png`];
 	const copyManifest = `${srcFolder}/img/favicon/*.{ico,webmanifest,json}`;
 	// content
-	const srcSvgFiles = [`${srcFolder}/img/**/*.{gif,svg}`, `!${srcFolder}/img/**/*.html`];
+	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`;
 	return gulp
 		.src(srcSvgFiles)
 		.pipe(gulpif(isDev, changed(`${buildFolder}/img/`)))
