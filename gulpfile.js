@@ -35,14 +35,14 @@ import ttf2woff2 from 'gulp-ttf2woff2'; // конвертатор в woff2.
 import fontfacegen from 'gulp-fontfacegen'; // fontface gen.
 
 // Html/Pug
-import fileinclude from 'gulp-file-include'; // include html.
+import twig from 'gulp-twig'; // html preprocessors.
 import htmlmin from 'gulp-htmlmin'; // мінімізація html.
 import typograf from 'gulp-typograf'; // перевірка правопису.
 import version from 'gulp-version-number'; // build version.
 
 // CSS/SCSS
-import gulpSass from 'gulp-sass'; // препроцесор для css.
-import * as sass from 'sass'; // препроцесор для css.
+import gulpSass from 'gulp-sass'; // gulp css preprocessors.
+import * as sass from 'sass'; // css preprocessors.
 import scssGlob from 'gulp-sass-glob'; // global imports.
 import autoprefixer from 'gulp-autoprefixer'; // css префікси для сумісності.
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
@@ -266,7 +266,7 @@ function html() {
 		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('Html/Pug')))
-		.pipe(fileinclude({ prefix: '@', basepath: '@file' }))
+		.pipe(twig())
 		.pipe(
 			typograf({
 				locale: ['ru', 'en-US', 'uk'], // 'uk-UA'
