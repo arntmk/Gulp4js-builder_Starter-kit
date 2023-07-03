@@ -111,6 +111,8 @@
 		"gulp-svg-sprite": "^2.0.3",
 		"gulp-svgmin": "^4.1.0",
 		"gulp-terser": "^2.1.0",
+		"prettier": "^2.8.8",
+		"prettier-plugin-twig-melody": "^0.4.6",
 		"stylelint": "^15.9.0",
 		"stylelint-config-recess-order": "^4.2.0",
 		"stylelint-config-standard": "^33.0.0",

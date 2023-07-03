@@ -35,7 +35,7 @@
 	// Watcher Exclude Folders
 	"files.associations": {
 		"*.html": "twig",
-		"*.twig": "html",
+		"*.twig": "twig",
 		"*.hbs": "html",
 		"*.njk": "html"
 	},

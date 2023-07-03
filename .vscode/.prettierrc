@@ -31,5 +31,6 @@
 		"**/vendor/**",
 		"*.min.js",
 		"*.min.css"
-	]
+	],
+	"twigPrintWidth": 100
 }
