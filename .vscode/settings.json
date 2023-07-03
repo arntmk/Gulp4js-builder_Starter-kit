@@ -3,11 +3,42 @@
 	"files.exclude": {
 		"**/node_modules": true
 	},
+
+	// Stylelint
 	"css.validate": false,
 	"less.validate": false,
 	"scss.validate": false,
+
+	// Eslint
 	// "javascript.validate.enable": false,
 	// "typescript.validate.enable": false,
+
+	/* ____________________________________________ */
+	// Emmet
+	"emmet.excludeLanguages": [],
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact",
+		"typescript": "typescriptreact",
+		"vue-html": "html",
+		"vue": "html",
+		"postcss": "css",
+		"plaintext": "pug",
+		"markdown": "html",
+		"php": "html",
+		"blade": "html",
+		"twig": "html",
+		"hbs": "html",
+		"njk": "html"
+	},
+
+	/* ____________________________________________ */
+	// Watcher Exclude Folders
+	"files.associations": {
+		"*.html": "twig",
+		"*.twig": "html",
+		"*.hbs": "html",
+		"*.njk": "html"
+	},
 
 	/* ____________________Extensions________________________ */
 
