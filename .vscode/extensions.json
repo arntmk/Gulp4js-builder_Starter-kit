@@ -31,6 +31,7 @@
 		"github.github-vscode-theme",
 		"zardoy.fix-all-json",
 		"herrmannplatz.npm-dependency-links",
-		"chakrounanas.turbo-console-log"
+		"chakrounanas.turbo-console-log",
+		"mblode.twig-language-2"
 	]
 }
