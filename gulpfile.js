@@ -198,6 +198,7 @@ function svg() {
 				mode: { stack: { sprite: '../svg-sprite.svg', example: true } },
 			}),
 		)
+		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${srcFolder}/img/svg/`));
 }
 
