@@ -260,8 +260,8 @@ function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
 	return gulp
 		.src([
-			`${srcFolder}/**/*.twig`,
-			`!${srcFolder}/components/**/*.twig`,
+			`${srcFolder}/**/*.{html,twig}`,
+			`!${srcFolder}/components/**/*.{html,twig}`,
 			`!${srcFolder}/img/**/*.html`,
 		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
