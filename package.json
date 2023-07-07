@@ -102,7 +102,7 @@
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
-		"eslint": "^8.43.0",
+		"eslint": "^8.44.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-plugin-import": "^2.27.5",
 		"gulp-cheerio": "^1.0.0",
@@ -111,7 +111,7 @@
 		"gulp-svg-sprite": "^2.0.3",
 		"gulp-svgmin": "^4.1.0",
 		"gulp-terser": "^2.1.0",
-		"stylelint": "^15.9.0",
+		"stylelint": "^15.10.1",
 		"stylelint-config-recess-order": "^4.2.0",
 		"stylelint-config-standard": "^33.0.0",
 		"stylelint-config-standard-scss": "^10.0.0",
