@@ -34,7 +34,7 @@ import fonter from 'gulp-fonter'; // конвертатор шрифтів в wo
 import ttf2woff2 from 'gulp-ttf2woff2'; // конвертатор в woff2.
 import fontfacegen from 'gulp-fontfacegen'; // fontface gen.
 
-// Html/Pug
+// Html/Twig
 import twig from 'gulp-twig'; // html preprocessors.
 import htmlmin from 'gulp-htmlmin'; // мінімізація html.
 import typograf from 'gulp-typograf'; // перевірка правопису.
@@ -254,7 +254,7 @@ function webp() {
 }
 
 /* ____________________________________________ */
-// Html/Pug
+// Html/Twig
 
 function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;

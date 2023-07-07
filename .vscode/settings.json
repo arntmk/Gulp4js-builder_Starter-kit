@@ -40,6 +40,10 @@
 		"*.njk": "html"
 	},
 
+	"[twig]": {
+		"editor.defaultFormatter": "junstyle.twig-language"
+	},
+
 	/* ____________________Extensions________________________ */
 
 	// HTML CSS Support
@@ -80,7 +84,7 @@
 		"aria-.+",
 		"$unknown$"
 	],
-	//"stylelint.configFile": "./.vscode/.stylelintrc",
-	"prettier.configPath": "./.vscode/.prettierrc",
+	// "stylelint.configFile": "./.vscode/.stylelintrc",
+	// "prettier.configPath": "./.vscode/.prettierrc",
 	"prettier.ignorePath": "./.vscode/.prettierignore"
 }
