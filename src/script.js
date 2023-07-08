@@ -8,7 +8,7 @@ import './js/main';
 import './assets/tests/_forms';
 import './assets/tests/_accordion';
 
-/* Components JS files imports */
+/* Components JS imports */
 import './components/block-js/_hamburger';
 
 /* Libs */

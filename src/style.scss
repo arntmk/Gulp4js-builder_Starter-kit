@@ -3,7 +3,7 @@
 /* Global CSS Imports */
 // @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
-/* SCSS Mixins imports */
+/* Mixins */
 @import "./scss/mixins/mixins";
 
 /* Base SCSS imports */
@@ -13,8 +13,10 @@
 @import "./scss/font";
 @import "./scss/global";
 @import "./scss/utility";
+
+/* Effects */
 @import "./scss/effects/effects";
-@import "./scss/effects/*.*";
+@import "./scss/effects/underline";
 
 /* CSS Console.Log */
 // @import "./assets/tests/debug";
@@ -23,7 +25,7 @@
 @import "./assets/tests/forms";
 @import "./assets/tests/accordion";
 
-/* Components SCSS files imports */
+/* Components SCSS imports */
 @import "./components/block-scss/header";
 @import "./components/block-scss/main";
 @import "./components/block-scss/footer";
