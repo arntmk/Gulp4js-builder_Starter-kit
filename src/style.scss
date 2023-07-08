@@ -6,6 +6,9 @@
 /* Mixins */
 @import "./scss/mixins/mixins";
 
+/* CSS Console.Log */
+// @import "./scss/debug";
+
 /* Base SCSS imports */
 @import "./scss/variables";
 @import "./scss/reset/normalize";
@@ -20,8 +23,8 @@
 @import "./scss/effects/underline";
 
 /* Tests */
-@import "./assets/tests/forms";
-@import "./assets/tests/accordion";
+@import "./js/tests/forms";
+@import "./js/tests/accordion";
 
 /* Components SCSS imports */
 @import "./components/block-scss/header";
@@ -34,6 +37,3 @@
 // @import "./scss/feature/accordion";
 // @import "./scss/feature/tabs";
 // @import "./scss/feature/select";
-
-/* CSS Console.Log */
-// @import "./assets/tests/debug";
