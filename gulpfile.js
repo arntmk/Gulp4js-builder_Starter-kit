@@ -360,7 +360,7 @@ function js() {
 // Watch files
 
 function watchFiles() {
-	gulp.watch(`${srcFolder}/**/*.html`, html);
+	gulp.watch(`${srcFolder}/**/*.{html,twig}`, html);
 	gulp.watch(`${srcFolder}/**/*.{scss,sass}`, css);
 	gulp.watch(`${srcFolder}/**/*.{js,ts}`, js);
 	gulp.watch(`${srcFolder}/img/**/*.{png,ico,gif,svg,webmanifest,json}`, img);

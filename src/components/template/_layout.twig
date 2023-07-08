@@ -6,17 +6,19 @@
 		<noscript>You need to enable JavaScript to run this app</noscript>
 		<div id="root">
 			<!-- Header -->
-			{% include '../index-html/_header.twig' %}
+			{% block header %}
+				<h2 style="color: red;">Header</h2>
+			{% endblock %}
 			<main class="main">
 				<!-- Main Sections -->
 				{% block main %}
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, mollitia vitae
-						quaerat porro quis odio. Nemo voluptates fugiat rerum sunt ad quas dolor, excepturi
-						dicta atque saepe. Numquam, ad ex.</p>
+					<h2 style="color: red;">Main</h2>
 				{% endblock %}
 			</main>
 			<!-- Footer -->
-			{% include '../index-html/_footer.twig' %}
+			{% block footer %}
+				<h2 style="color: red;">Footer</h2>
+			{% endblock %}
 		</div>
 	</body>
 </html>
