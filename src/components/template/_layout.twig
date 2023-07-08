@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html class="html" lang="en">
-  {% include '../index-html/_head.twig' %}
-  <!-- (BEM) Block__Element-ChildElement- -Modifier -->
-  <body class="body">
-    <noscript>You need to enable JavaScript to run this app</noscript>
-    <div id="root">
-      <!-- Header -->
-      {% include '../index-html/_header.twig' %}
-      <main class="main">
-        <!-- Main Sections -->
-        {% block main %}
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, mollitia vitae quaerat porro quis odio. Nemo voluptates fugiat rerum sunt ad quas dolor, excepturi dicta atque saepe. Numquam, ad ex.</p>
-        {% endblock %}
-      </main>
-      <!-- Footer -->
-      {% include '../index-html/_footer.twig' %}
-    </div>
-  </body>
+	{% include '../index-html/_head.twig' %}
+	<!-- (BEM) Block__Element-ChildElement- -Modifier -->
+	<body class="body">
+		<noscript>You need to enable JavaScript to run this app</noscript>
+		<div id="root">
+			<!-- Header -->
+			{% include '../index-html/_header.twig' %}
+			<main class="main">
+				<!-- Main Sections -->
+				{% block main %}
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, mollitia vitae
+						quaerat porro quis odio. Nemo voluptates fugiat rerum sunt ad quas dolor, excepturi
+						dicta atque saepe. Numquam, ad ex.</p>
+				{% endblock %}
+			</main>
+			<!-- Footer -->
+			{% include '../index-html/_footer.twig' %}
+		</div>
+	</body>
 </html>
