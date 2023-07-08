@@ -12,3 +12,4 @@ import './js/tests/_accordion';
 import './components/block-js/_hamburger';
 
 /* Libs */
+// import './js/libs/swiper-bundle.min';
