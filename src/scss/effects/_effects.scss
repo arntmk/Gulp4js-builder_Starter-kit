@@ -116,48 +116,6 @@ input:not(
 }
 
 /* ____________________________________________ */
-/* Input Validation */
-input[type="text"]:valid,
-input[type="password"]:valid,
-input[type="email"]:valid,
-input[type="tel"]:valid {
-	border-color: transparent;
-	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f !important;
-}
-
-input[type="text"]:invalid,
-input[type="password"]:invalid,
-input[type="email"]:invalid,
-input[type="tel"]:invalid {
-	transition: 0.3s ease-in-out;
-
-	&:focus {
-		border-color: transparent;
-		box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500;
-	}
-}
-
-input[type="text"]:not(:focus):invalid,
-input[type="password"]:not(:focus):invalid,
-input[type="email"]:not(:focus):invalid,
-input[type="tel"]:not(:focus):invalid {
-	transition: 0.3s ease-in-out;
-
-	&:focus {
-		border-color: transparent;
-	}
-}
-
-/* Input Bg-color AutoFill */
-:-webkit-autofill,
-:-webkit-autofill:hover,
-:-webkit-autofill:focus,
-:-webkit-autofill:active {
-	-webkit-text-fill-color: inherit !important;
-	transition: background-color 5000s ease-in-out 0s;
-}
-
-/* ____________________________________________ */
 /* Text Selection */
 ::selection {
 	text-shadow: 0 0 0.625rem #000;
