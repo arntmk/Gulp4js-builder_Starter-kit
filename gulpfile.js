@@ -207,10 +207,7 @@ function svg() {
 
 function img() {
 	// favicon
-	const srcPngFiles = [
-		`${srcFolder}/assets/images/favicon/*.png`,
-		`!${srcFolder}/assets/images/*.png`,
-	];
+	const srcPngFiles = [`${srcFolder}/assets/images/favicon/*.png`, `${srcFolder}/assets/*.png`];
 	const copyManifest = `${srcFolder}/assets/images/favicon/*.{ico,webmanifest,json}`;
 	// content
 	const srcSvgFiles = `${srcFolder}/assets/images/**/*.{gif,svg}`;
@@ -234,7 +231,7 @@ function img() {
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(copyManifest))
-		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`)))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/images/favicon/`)))
 		.pipe(gulp.dest(`${buildFolder}/images/favicon/`))
 		.pipe(browsersync.stream())
 
