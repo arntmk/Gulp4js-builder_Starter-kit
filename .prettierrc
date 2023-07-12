@@ -4,7 +4,6 @@
 	"trailingComma": "all",
 	"endOfLine": "lf",
 	"printWidth": 100,
-	"twigPrintWidth": 100,
 	"bracketSameLine": true,
 	"bracketSpacing": true,
 	"useTabs": true,
@@ -33,6 +32,7 @@
 		"*.min.js",
 		"*.min.css"
 	],
+	"twigPrintWidth": 100,
 	"twigMultiTags": [
 		"nav,endnav",
 		"switch,case,default,endswitch",
