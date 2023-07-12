@@ -32,6 +32,6 @@
 		"zardoy.fix-all-json",
 		"herrmannplatz.npm-dependency-links",
 		"chakrounanas.turbo-console-log",
-		"junstyle.twig-language"
+		"rholdos.twig-language-support"
 	]
 }
