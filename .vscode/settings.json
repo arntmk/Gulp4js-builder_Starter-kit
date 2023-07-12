@@ -39,9 +39,6 @@
 		"*.hbs": "html",
 		"*.njk": "html"
 	},
-/* 	"[twig]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}, */
 
 	/* ____________________Extensions________________________ */
 

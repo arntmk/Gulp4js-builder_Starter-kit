@@ -21,13 +21,6 @@
 			"options": { "singleQuote": false }
 		}
 	],
-	"twigMultiTags": [
-		"nav,endnav",
-		"switch,case,default,endswitch",
-		"ifchildren,endifchildren",
-		"cache,endcache",
-		"js,endjs"
-	],
 	"ignorePath": [
 		"**/node_modules/**",
 		"**/dist/**",
@@ -39,5 +32,12 @@
 		"**/vendor/**",
 		"*.min.js",
 		"*.min.css"
+	],
+	"twigMultiTags": [
+		"nav,endnav",
+		"switch,case,default,endswitch",
+		"ifchildren,endifchildren",
+		"cache,endcache",
+		"js,endjs"
 	]
 }
