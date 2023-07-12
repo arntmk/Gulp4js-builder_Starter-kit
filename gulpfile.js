@@ -110,7 +110,7 @@ function delDev() {
 					`!${buildFolder}/images/`,
 					`!${buildFolder}/images/favicon/`,
 					`!${buildFolder}/images/svg/`,
-					`!${buildFolder}/*.{html,ico,txt}`,
+					`!${buildFolder}/*.{png,ico,txt,html}`,
 					`!${buildFolder}/scripts/*.css`,
 					`!${buildFolder}/scripts/*.js`,
 					`!${buildFolder}/fonts/*.{woff,woff2}`,
