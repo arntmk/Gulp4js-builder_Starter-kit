@@ -231,7 +231,7 @@ function img() {
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(copyManifest))
-		.pipe(gulpif(isDev, changed(`${buildFolder}/images/favicon/`)))
+		.pipe(changed(`${buildFolder}/images/`))
 		.pipe(gulp.dest(`${buildFolder}/images/favicon/`))
 		.pipe(browsersync.stream())
 
