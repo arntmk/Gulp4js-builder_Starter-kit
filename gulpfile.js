@@ -124,7 +124,7 @@ function delDev() {
 
 // clear css/font-face
 function delfont() {
-	return del([`${srcFolder}/scss/_font.{scss,sass}`]);
+	return del([`${srcFolder}/styles/_font.{scss,sass}`]);
 }
 
 /* ____________________________________________ */
@@ -177,7 +177,7 @@ function fontgen() {
 
 function svg() {
 	return gulp
-		.src(`${srcFolder}/images/svg/*.svg`)
+		.src(`${srcFolder}/assets/images/svg/*.svg`)
 		.pipe(plumber(plumberNotify('Svg-Sprite')))
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
@@ -199,7 +199,7 @@ function svg() {
 			}),
 		)
 		.pipe(size({ showFiles: true }))
-		.pipe(gulp.dest(`${srcFolder}/images/svg/`));
+		.pipe(gulp.dest(`${srcFolder}/assets/images/svg/`));
 }
 
 /* ____________________________________________ */
@@ -207,10 +207,13 @@ function svg() {
 
 function img() {
 	// favicon
-	const srcPngFiles = [`${srcFolder}/images/favicon/*.png`, `!${srcFolder}/*.png`];
-	const copyManifest = `${srcFolder}/images/favicon/*.{ico,webmanifest,json}`;
+	const srcPngFiles = [
+		`${srcFolder}/assets/images/favicon/*.png`,
+		`!${srcFolder}/assets/images/*.png`,
+	];
+	const copyManifest = `${srcFolder}/assets/images/favicon/*.{ico,webmanifest,json}`;
 	// content
-	const srcSvgFiles = `${srcFolder}/images/**/*.{gif,svg}`;
+	const srcSvgFiles = `${srcFolder}/assets/images/**/*.{gif,svg}`;
 	return gulp
 		.src(srcSvgFiles)
 		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`)))
@@ -245,7 +248,10 @@ function img() {
 // content
 function webp() {
 	return gulp
-		.src([`${srcFolder}/images/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/images/favicon/**/*.*`])
+		.src([
+			`${srcFolder}/assets/images/**/*.{png,jpg,jpeg,webp}`,
+			`!${srcFolder}/assets/images/favicon/**/*.*`,
+		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`, { extension: '.webp' })))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
@@ -262,8 +268,7 @@ function html() {
 		.src([
 			`${srcFolder}/**/*.{html,twig}`,
 			`!${srcFolder}/components/**/*.{html,twig}`,
-			`!${srcFolder}/images/**/*.html`,
-			`!${srcFolder}/assets/**/*.html`,
+			`!${srcFolder}/assets/**/*.{html,twig}`,
 		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('Html/Pug')))
@@ -305,10 +310,10 @@ function html() {
 // CSS/SCSS
 
 function css() {
-	const LibsCssFiles = `${srcFolder}/scss/libs/*.css`;
+	const LibsCssFiles = `${srcFolder}/styles/libs/*.css`;
 	return gulp
-		.src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
-		.pipe(gulpif(isDev, newer(`${buildFolder}/css/style.min.css`)))
+		.src(`${srcFolder}/**/*.{css,scss,sass}`, { sourcemaps: true })
+		.pipe(gulpif(isDev, newer(`${buildFolder}/styles/style.min.css`)))
 		.pipe(gulpif(isDev, cached('scss')))
 		.pipe(gulpif(isDev, dependents()))
 		.pipe(scssGlob())
@@ -318,18 +323,18 @@ function css() {
 		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
 		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(gulpif(isProd, shorthand()))
-		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/css/`)))
+		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)))
 
 		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(size({ showFiles: true }))
-		.pipe(gulp.dest(`${buildFolder}/css/`, { sourcemaps: isDev }))
+		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(LibsCssFiles))
-		.pipe(gulpif(isDev, changed(`${buildFolder}/css/`, { extension: '.css' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/`, { extension: '.css' })))
 		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
-		.pipe(gulp.dest(`${buildFolder}/css/`))
+		.pipe(gulp.dest(`${buildFolder}/styles/`))
 		.pipe(browsersync.stream());
 }
 
@@ -362,10 +367,10 @@ function js() {
 
 function watchFiles() {
 	gulp.watch(`${srcFolder}/**/*.{html,twig}`, html);
-	gulp.watch(`${srcFolder}/**/*.{scss,sass}`, css);
+	gulp.watch(`${srcFolder}/**/*.{css,scss,sass}`, css);
 	gulp.watch(`${srcFolder}/**/*.{js,ts}`, js);
-	gulp.watch(`${srcFolder}/images/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
-	gulp.watch(`${srcFolder}/images/**/*.{png,jpg,jpeg,webp}`, webp);
+	gulp.watch(`${srcFolder}/assets/images/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
+	gulp.watch(`${srcFolder}/assets/images/**/*.{png,jpg,jpeg,webp}`, webp);
 	gulp.watch(`${srcFolder}/assets/fonts/**/*.{otf,ttf,woff,woff2,svg}`, font);
 }
 
