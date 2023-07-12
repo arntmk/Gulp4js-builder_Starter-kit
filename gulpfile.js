@@ -312,7 +312,7 @@ function html() {
 function css() {
 	const LibsCssFiles = `${srcFolder}/styles/libs/*.css`;
 	return gulp
-		.src(`${srcFolder}/**/*.{css,scss,sass}`, { sourcemaps: true })
+		.src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
 		.pipe(gulpif(isDev, newer(`${buildFolder}/styles/style.min.css`)))
 		.pipe(gulpif(isDev, cached('scss')))
 		.pipe(gulpif(isDev, dependents()))
@@ -334,6 +334,7 @@ function css() {
 		.pipe(gulp.src(LibsCssFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/`, { extension: '.css' })))
 		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
+		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`))
 		.pipe(browsersync.stream());
 }
@@ -358,6 +359,7 @@ function js() {
 		.pipe(gulp.src(LibsJsFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
 		.pipe(gulpif(isProd, terser()))
+		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/scripts/`))
 		.pipe(browsersync.stream());
 }
@@ -367,7 +369,7 @@ function js() {
 
 function watchFiles() {
 	gulp.watch(`${srcFolder}/**/*.{html,twig}`, html);
-	gulp.watch(`${srcFolder}/**/*.{css,scss,sass}`, css);
+	gulp.watch(`${srcFolder}/**/*.{scss,sass}`, css);
 	gulp.watch(`${srcFolder}/**/*.{js,ts}`, js);
 	gulp.watch(`${srcFolder}/assets/images/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
 	gulp.watch(`${srcFolder}/assets/images/**/*.{png,jpg,jpeg,webp}`, webp);
