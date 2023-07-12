@@ -31,13 +31,5 @@
 		"**/vendor/**",
 		"*.min.js",
 		"*.min.css"
-	],
-	"twigPrintWidth": 100,
-	"twigMultiTags": [
-		"nav,endnav",
-		"switch,case,default,endswitch",
-		"ifchildren,endifchildren",
-		"cache,endcache",
-		"js,endjs"
 	]
 }
