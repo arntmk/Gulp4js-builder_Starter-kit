@@ -41,7 +41,7 @@
 	},
 
 	"[twig]": {
-		"editor.defaultFormatter": "junstyle.twig-language"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 
 	/* ____________________Extensions________________________ */
