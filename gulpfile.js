@@ -104,14 +104,14 @@ function delDev() {
 		isDev
 			? [
 					`${buildFolder}/**`,
-					`!${buildFolder}/scripts/`,
+					`!${buildFolder}/styles/`,
 					`!${buildFolder}/scripts/`,
 					`!${buildFolder}/fonts/`,
 					`!${buildFolder}/images/`,
 					`!${buildFolder}/images/favicon/`,
 					`!${buildFolder}/images/svg/`,
 					`!${buildFolder}/*.{png,ico,txt,html}`,
-					`!${buildFolder}/scripts/*.css`,
+					`!${buildFolder}/styles/*.css`,
 					`!${buildFolder}/scripts/*.js`,
 					`!${buildFolder}/fonts/*.{woff,woff2}`,
 					`!${buildFolder}/images/*.webp`,
