@@ -39,6 +39,9 @@
 		"*.hbs": "html",
 		"*.njk": "html"
 	},
+	"[twig]": {
+		"editor.defaultFormatter": "junstyle.twig-language"
+	},
 
 	/* ____________________Extensions________________________ */
 
