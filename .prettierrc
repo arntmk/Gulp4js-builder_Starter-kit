@@ -11,13 +11,14 @@
 	"tabWidth": 2,
 	"arrowParens": "always",
 	"singleQuote": true,
+	"plugins": ["./node_modules/prettier-plugin-twig-melody"],
 	"overrides": [
 		{
 			"files": ["*.css", "*.scss", "*.sass", "*.less", "*.postcss"],
 			"options": { "singleQuote": false }
 		},
 		{
-			"files": ["*.html", "*.twig"],
+			"files": ["*.html"],
 			"options": { "singleQuote": false }
 		}
 	],
