@@ -4,36 +4,36 @@
 // @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
 /* Mixins */
-@import "./scss/mixins/mixins";
+@import "./styles/mixins/mixins";
 
 /* CSS Console.Log */
-// @import "./scss/debug";
+// @import "./styles/debug";
 
 /* Base SCSS imports */
-@import "./scss/variables";
-@import "./scss/reset/normalize";
-@import "./scss/reset/reset";
-@import "./scss/font";
-@import "./scss/global";
-@import "./scss/utility";
+@import "./styles/variables";
+@import "./styles/reset/normalize";
+@import "./styles/reset/reset";
+@import "./styles/font";
+@import "./styles/global";
+@import "./styles/utility";
 
 /* Effects */
-@import "./scss/effects/effects";
-@import "./scss/effects/formvalid";
-@import "./scss/effects/underline";
+@import "./styles/effects/effects";
+@import "./styles/effects/formvalid";
+@import "./styles/effects/underline";
 
 /* Tests */
-@import "./js/tests/forms";
-@import "./js/tests/accordion";
+@import "./scripts/tests/forms";
+@import "./scripts/tests/accordion";
 
-/* Components SCSS imports */
+/* Components STYLES imports */
 @import "./components/block-scss/header";
 @import "./components/block-scss/main";
 @import "./components/block-scss/footer";
 @import "./components/**/*.*";
 
 /* Libs */
-// @import "./scss/feature/modal";
-// @import "./scss/feature/accordion";
-// @import "./scss/feature/tabs";
-// @import "./scss/feature/select";
+// @import "./styles/feature/modal";
+// @import "./styles/feature/accordion";
+// @import "./styles/feature/tabs";
+// @import "./styles/feature/select";

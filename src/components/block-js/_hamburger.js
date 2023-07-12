@@ -1,7 +1,7 @@
 /* ____________________________________________ */
 // ===Hamburger menu===
-import scrollController from '../../js/export/_disable-scroll';
-import trapFocus from '../../js/export/_trap-focus';
+import scrollController from '../../scripts/export/_disable-scroll';
+import trapFocus from '../../scripts/export/_trap-focus';
 
 const hamburgerController = function () {
 	const menu = document.querySelector('.header__nav');

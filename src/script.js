@@ -1,15 +1,15 @@
 // 'use strict';
 
 /* Base JS imports */
-import './js/_adap-body';
-import './js/main';
+import './scripts/_adap-body';
+import './scripts/main';
 
 /* Tests */
-import './js/tests/_forms';
-import './js/tests/_accordion';
+import './scripts/tests/_forms';
+import './scripts/tests/_accordion';
 
 /* Components JS imports */
 import './components/block-js/_hamburger';
 
 /* Libs */
-// import './js/libs/swiper-bundle.min';
+// import './scripts/libs/swiper-bundle.min';

@@ -104,19 +104,19 @@ function delDev() {
 		isDev
 			? [
 					`${buildFolder}/**`,
-					`!${buildFolder}/css/`,
-					`!${buildFolder}/js/`,
-					`!${buildFolder}/font/`,
-					`!${buildFolder}/img/`,
-					`!${buildFolder}/img/favicon/`,
-					`!${buildFolder}/img/svg/`,
+					`!${buildFolder}/scripts/`,
+					`!${buildFolder}/scripts/`,
+					`!${buildFolder}/fonts/`,
+					`!${buildFolder}/images/`,
+					`!${buildFolder}/images/favicon/`,
+					`!${buildFolder}/images/svg/`,
 					`!${buildFolder}/*.{html,ico,txt}`,
-					`!${buildFolder}/css/*.css`,
-					`!${buildFolder}/js/*.js`,
-					`!${buildFolder}/font/*.{woff,woff2}`,
-					`!${buildFolder}/img/*.webp`,
-					`!${buildFolder}/img/favicon/*.{png,svg}`,
-					`!${buildFolder}/img/svg/*.{gif,svg}`,
+					`!${buildFolder}/scripts/*.css`,
+					`!${buildFolder}/scripts/*.js`,
+					`!${buildFolder}/fonts/*.{woff,woff2}`,
+					`!${buildFolder}/images/*.webp`,
+					`!${buildFolder}/images/favicon/*.{png,svg}`,
+					`!${buildFolder}/images/svg/*.{gif,svg}`,
 			  ]
 			: 'production',
 	);
@@ -131,37 +131,37 @@ function delfont() {
 // Fonts
 
 function font() {
-	const ttfTOwoff2 = `${srcFolder}/assets/font/**/*.{ttf,woff2}`;
-	// const ttfTOwoff = `${srcFolder}/assets/font/**/*.{ttf,woff}`;
-	const copySvgFont = `${srcFolder}/assets/font/**/*.svg`; // {eot,otf,ttf,otc,ttc}
+	const ttfTOwoff2 = `${srcFolder}/assets/fonts/**/*.{ttf,woff2}`;
+	// const ttfTOwoff = `${srcFolder}/assets/fonts/**/*.{ttf,woff}`;
+	const copySvgFont = `${srcFolder}/assets/fonts/**/*.svg`; // {eot,otf,ttf,otc,ttc}
 	return (
 		gulp
 			.src(ttfTOwoff2)
-			.pipe(gulpif(isDev, changed(`${buildFolder}/font/`, { extension: '.woff2' })))
+			.pipe(gulpif(isDev, changed(`${buildFolder}/fonts/`, { extension: '.woff2' })))
 			.pipe(ttf2woff2())
-			.pipe(gulp.dest(`${buildFolder}/font/`))
+			.pipe(gulp.dest(`${buildFolder}/fonts/`))
 			.pipe(browsersync.stream())
 
 			// .pipe(gulp.src(ttfTOwoff))
-			// .pipe(gulpif(isDev, changed(`${buildFolder}/font/`, { extension: '.woff' })))
+			// .pipe(gulpif(isDev, changed(`${buildFolder}/fonts/`, { extension: '.woff' })))
 			// .pipe(fonter({ formats: ['woff'] }))
-			// .pipe(gulp.dest(`${buildFolder}/font/`))
+			// .pipe(gulp.dest(`${buildFolder}/fonts/`))
 			// .pipe(browsersync.stream())
 
 			.pipe(gulp.src(copySvgFont))
-			.pipe(gulpif(isDev, changed(`${buildFolder}/font/`, { extension: '.svg' })))
-			.pipe(gulp.dest(`${buildFolder}/font/`))
+			.pipe(gulpif(isDev, changed(`${buildFolder}/fonts/`, { extension: '.svg' })))
+			.pipe(gulp.dest(`${buildFolder}/fonts/`))
 			.pipe(browsersync.stream())
 	);
 }
 
 function fontgen() {
-	const otfTOtff = `${srcFolder}/assets/font/**/*.{otf,ttf}`; // tff to tff - extra optimization
-	const fontCss = `${srcFolder}/assets/font/*.{otf,ttf,woff,woff2}`;
+	const otfTOtff = `${srcFolder}/assets/fonts/**/*.{otf,ttf}`; // tff to tff - extra optimization
+	const fontCss = `${srcFolder}/assets/fonts/*.{otf,ttf,woff,woff2}`;
 	return gulp
 		.src(otfTOtff)
 		.pipe(fonter({ formats: ['ttf'] }))
-		.pipe(gulp.dest(`${srcFolder}/assets/font/`))
+		.pipe(gulp.dest(`${srcFolder}/assets/fonts/`))
 
 		.pipe(gulp.src(fontCss))
 		.pipe(
@@ -177,7 +177,7 @@ function fontgen() {
 
 function svg() {
 	return gulp
-		.src(`${srcFolder}/img/svg/*.svg`)
+		.src(`${srcFolder}/images/svg/*.svg`)
 		.pipe(plumber(plumberNotify('Svg-Sprite')))
 		.pipe(svgmin({ js2svg: { pretty: true } }))
 		.pipe(
@@ -199,7 +199,7 @@ function svg() {
 			}),
 		)
 		.pipe(size({ showFiles: true }))
-		.pipe(gulp.dest(`${srcFolder}/img/svg/`));
+		.pipe(gulp.dest(`${srcFolder}/images/svg/`));
 }
 
 /* ____________________________________________ */
@@ -207,13 +207,13 @@ function svg() {
 
 function img() {
 	// favicon
-	const srcPngFiles = [`${srcFolder}/img/favicon/*.png`, `!${srcFolder}/*.png`];
-	const copyManifest = `${srcFolder}/img/favicon/*.{ico,webmanifest,json}`;
+	const srcPngFiles = [`${srcFolder}/images/favicon/*.png`, `!${srcFolder}/*.png`];
+	const copyManifest = `${srcFolder}/images/favicon/*.{ico,webmanifest,json}`;
 	// content
-	const srcSvgFiles = `${srcFolder}/img/**/*.{gif,svg}`;
+	const srcSvgFiles = `${srcFolder}/images/**/*.{gif,svg}`;
 	return gulp
 		.src(srcSvgFiles)
-		.pipe(gulpif(isDev, changed(`${buildFolder}/img/`)))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`)))
 		.pipe(
 			imagemin(
 				[
@@ -227,29 +227,29 @@ function img() {
 				{ verbose: true },
 			),
 		)
-		.pipe(gulp.dest(`${buildFolder}/img/`))
+		.pipe(gulp.dest(`${buildFolder}/images/`))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(copyManifest))
-		.pipe(gulpif(isDev, changed(`${buildFolder}/img/`)))
-		.pipe(gulp.dest(`${buildFolder}/img/favicon/`))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`)))
+		.pipe(gulp.dest(`${buildFolder}/images/favicon/`))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(srcPngFiles))
-		.pipe(gulpif(isDev, changed(`${buildFolder}/img/favicon/`, { extension: '.png' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/images/favicon/`, { extension: '.png' })))
 		.pipe(imagemin([imageminPngquant({ quality: [0.8, 1.0] })]))
-		.pipe(gulp.dest(`${buildFolder}/img/favicon/`))
+		.pipe(gulp.dest(`${buildFolder}/images/favicon/`))
 		.pipe(browsersync.stream());
 }
 
 // content
 function webp() {
 	return gulp
-		.src([`${srcFolder}/img/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/img/favicon/**/*.*`])
-		.pipe(gulpif(isDev, changed(`${buildFolder}/img/`, { extension: '.webp' })))
+		.src([`${srcFolder}/images/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/images/favicon/**/*.*`])
+		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`, { extension: '.webp' })))
 		.pipe(imagemin([imageminWebp({ quality: 100 })]))
 		.pipe(rename({ extname: '.webp' }))
-		.pipe(gulp.dest(`${buildFolder}/img/`))
+		.pipe(gulp.dest(`${buildFolder}/images/`))
 		.pipe(browsersync.stream());
 }
 
@@ -257,12 +257,13 @@ function webp() {
 // Html/Twig
 
 function html() {
-	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt}`;
+	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt,html}`;
 	return gulp
 		.src([
 			`${srcFolder}/**/*.{html,twig}`,
 			`!${srcFolder}/components/**/*.{html,twig}`,
-			`!${srcFolder}/img/**/*.html`,
+			`!${srcFolder}/images/**/*.html`,
+			`!${srcFolder}/assets/**/*.html`,
 		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('Html/Pug')))
@@ -336,23 +337,23 @@ function css() {
 // JS/TS
 
 function js() {
-	const LibsJsFiles = `${srcFolder}/js/libs/*.js`;
+	const LibsJsFiles = `${srcFolder}/scripts/libs/*.js`;
 	return gulp
 		.src([`${srcFolder}/script.js`, `${srcFolder}/*.{js,ts}`]) // WebPack entry
-		.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { hasChanged: changed.compareContents })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
 		.pipe(plumber(plumberNotify('JS/TS')))
 		.pipe(gulpif(isProd, webpack(webpackConfig)))
 		.pipe(gulpif(isProd, rename('script.js')))
-		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/js/`)))
+		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/scripts/`)))
 
 		.pipe(webpack(webpackConfig).on('error', WebPackError))
-		.pipe(gulp.dest(`${buildFolder}/js/`))
+		.pipe(gulp.dest(`${buildFolder}/scripts/`))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(LibsJsFiles))
-		.pipe(gulpif(isDev, changed(`${buildFolder}/js/`, { extension: '.js' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
 		.pipe(gulpif(isProd, terser()))
-		.pipe(gulp.dest(`${buildFolder}/js/`))
+		.pipe(gulp.dest(`${buildFolder}/scripts/`))
 		.pipe(browsersync.stream());
 }
 
@@ -363,9 +364,9 @@ function watchFiles() {
 	gulp.watch(`${srcFolder}/**/*.{html,twig}`, html);
 	gulp.watch(`${srcFolder}/**/*.{scss,sass}`, css);
 	gulp.watch(`${srcFolder}/**/*.{js,ts}`, js);
-	gulp.watch(`${srcFolder}/img/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
-	gulp.watch(`${srcFolder}/img/**/*.{png,jpg,jpeg,webp}`, webp);
-	gulp.watch(`${srcFolder}/assets/font/**/*.{otf,ttf,woff,woff2,svg}`, font);
+	gulp.watch(`${srcFolder}/images/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
+	gulp.watch(`${srcFolder}/images/**/*.{png,jpg,jpeg,webp}`, webp);
+	gulp.watch(`${srcFolder}/assets/fonts/**/*.{otf,ttf,woff,woff2,svg}`, font);
 }
 
 // BrowserSync
