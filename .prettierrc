@@ -17,7 +17,7 @@
 			"options": { "singleQuote": false }
 		},
 		{
-			"files": ["*.html"],
+			"files": ["*.html", "*.twig"],
 			"options": { "singleQuote": false }
 		}
 	],
