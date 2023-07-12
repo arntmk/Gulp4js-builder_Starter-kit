@@ -36,8 +36,12 @@
 	"files.associations": {
 		"*.html": "html",
 		"*.twig": "twig",
-		"*.hbs": "html",
-		"*.njk": "html"
+		"*.hbs": "hbs",
+		"*.njk": "njk"
+	},
+
+	"[twig]": {
+		"editor.defaultFormatter": "junstyle.twig-language"
 	},
 
 	/* ____________________Extensions________________________ */
