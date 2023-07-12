@@ -166,7 +166,7 @@ function fontgen() {
 		.pipe(gulp.src(fontCss))
 		.pipe(
 			fontfacegen({
-				filepath: `${srcFolder}/scss`,
+				filepath: `${srcFolder}/styles/`,
 				filename: '_font.scss',
 			}),
 		);
