@@ -34,14 +34,14 @@
 	/* ____________________________________________ */
 	// Watcher Exclude Folders
 	"files.associations": {
-		"*.html": "twig",
+		"*.html": "html",
 		"*.twig": "twig",
 		"*.hbs": "html",
 		"*.njk": "html"
 	},
-	"[twig]": {
-		"editor.defaultFormatter": "junstyle.twig-language"
-	},
+/* 	"[twig]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}, */
 
 	/* ____________________Extensions________________________ */
 
