@@ -41,7 +41,7 @@
 	},
 
 	"[twig]": {
-		"editor.defaultFormatter": "junstyle.twig-language"
+		"editor.defaultFormatter": "mblode.twig-language-2"
 	},
 
 	/* ____________________Extensions________________________ */
