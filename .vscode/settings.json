@@ -45,6 +45,8 @@
 	},
 
 	/* ____________________Extensions________________________ */
+	// BemHelper
+	"bemHelper.showDepthWarnings": false, // low fps
 
 	// HTML CSS Support
 	"css.styleSheets": [
