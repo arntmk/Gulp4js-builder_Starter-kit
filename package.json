@@ -29,13 +29,13 @@
 		"check outdated": "npm outdated",
 		"update dep": "npm update --save-dev && npm update --save",
 		"update all": "npm update",
-		"audit fix": "npm audit fix"
+		"audit fix": "npm audit fix",
+		"check global": "npm ls -g --depth=0"
 	},
 	"browserslist": [
 		"> 0.3%",
 		"last 3 version",
 		"defaults",
-		"supports es6-module",
 		"not dead"
 	],
 	"babel": {
