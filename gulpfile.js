@@ -331,7 +331,7 @@ function css() {
 		.pipe(gulp.src(LibsCssFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/`, { extension: '.css' })))
 		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
-		.pipe(size({ showFiles: true }))
+		.pipe(gulpif(isProd, size({ showFiles: true })))
 		.pipe(gulp.dest(`${buildFolder}/styles/`))
 		.pipe(browsersync.stream());
 }
@@ -356,7 +356,7 @@ function js() {
 		.pipe(gulp.src(LibsJsFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
 		.pipe(gulpif(isProd, terser()))
-		.pipe(size({ showFiles: true }))
+		.pipe(gulpif(isProd, size({ showFiles: true })))
 		.pipe(gulp.dest(`${buildFolder}/scripts/`))
 		.pipe(browsersync.stream());
 }
