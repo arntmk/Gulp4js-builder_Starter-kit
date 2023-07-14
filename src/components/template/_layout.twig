@@ -1,23 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="html" lang="en">
-	{% include '../index-html/_head.twig' %}
+	{% include '../pages/index-html/_head.twig' %}
 	<!-- (BEM) Block__Element-ChildElement- -Modifier -->
 	<body class="body">
 		<noscript>You need to enable JavaScript to run this app</noscript>
 		<div id="root">
 			<!-- Header -->
 			{% block header %}
-			<h2 style="color: red">Header</h2>
+				<h2 style="color: red">Header</h2>
 			{% endblock %}
 			<main class="main">
 				<!-- Main Sections -->
 				{% block main %}
-				<h2 style="color: red">Main</h2>
+					<h2 style="color: red">Main</h2>
 				{% endblock %}
 			</main>
 			<!-- Footer -->
 			{% block footer %}
-			<h2 style="color: red">Footer</h2>
+				<h2 style="color: red">Footer</h2>
 			{% endblock %}
 		</div>
 	</body>
