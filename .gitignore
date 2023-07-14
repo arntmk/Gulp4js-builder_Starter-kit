@@ -1,4 +1,5 @@
 # Ignore
+
 __MACOSX
 _arc
 .publish
@@ -12,7 +13,7 @@ Thumbs.db
 *.log
 *.sublime-*
 #package-lock.json
-#/bower_components
+/bower_components
 /node_modules
 /dist
 /dest
