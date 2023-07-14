@@ -8,6 +8,10 @@
 	background: rgb(0 100 0 / 10%);
 }
 
+a[href="#"] {
+	color: #700c0c !important;
+}
+
 :not(
 		img,
 		svg,
@@ -27,8 +31,4 @@
 		br
 	):empty {
 	display: none !important;
-}
-
-a[href="#"] {
-	color: #700c0c !important;
 }
