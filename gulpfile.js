@@ -70,7 +70,7 @@ const isDev = !isProd;
 /* ____________________________________________ */
 // Paths
 
-const buildFolder = './public';
+const buildFolder = './build';
 const srcFolder = './src';
 
 /* ____________________________________________ */
