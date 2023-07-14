@@ -5,8 +5,8 @@ import './scripts/_adap-body';
 import './scripts/main';
 
 /* Tests */
-import './scripts/tests/_forms';
-import './scripts/tests/_accordion';
+import './assets/tests/js/_forms';
+import './assets/tests/js/_accordion';
 
 /* Components JS imports */
 import './components/block-js/_hamburger';
