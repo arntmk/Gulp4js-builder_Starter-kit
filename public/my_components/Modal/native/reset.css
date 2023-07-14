@@ -1,9 +1,8 @@
 /* stylelint-disable declaration-no-important */
-/* __________________Reset_____________________ */
+/* ____________________________________________ */
 /* elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e */
 /* https://www.youtube.com/shorts/2lyDv0wOQuQ */
 /* About container -> https://habr.com/ru/post/463923/ */
-
 /* ____________________________________________ */
 /* _________________General____________________ */
 /* ____________________________________________ */
@@ -18,22 +17,32 @@ html {
 *::before,
 *::after {
 	break-inside: inherit;
-	min-width: 0;
 	box-sizing: inherit;
 	background-repeat: inherit;
 }
 
-body {
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizespeed;
+* {
+	min-width: 0;
+}
+
+*::before,
+*::after {
+	vertical-align: inherit;
+	text-decoration: inherit;
 }
 
 /* ____________________________________________ */
 /* _______________Typography___________________ */
 /* ____________________________________________ */
-/* text */
+/* html */
+:where(:root) {
+	overflow-wrap: break-word;
+	tab-size: 4;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* :root */
 :where(html) {
 	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -47,6 +56,13 @@ body {
 	font-family: ui-monospace, "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
 		"Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
 		"Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:where(body) {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizespeed;
 }
 
 :where(cite, address) {
@@ -81,15 +97,15 @@ body {
 }
 
 :where(h1) {
-	font-size: var(--fs-h1, 32px);
+	font-size: var(--fs-h1, 2em); /* 32px */
 }
 
 :where(h2) {
-	font-size: var(--fs-h2, 24px);
+	font-size: var(--fs-h2, 1.5em); /* 24px */
 }
 
 :where(h3, h4, h5, h6) {
-	font-size: var(--fs-h3-6, 18.72px);
+	font-size: var(--fs-h3-6, 1.17em); /* 18.72px */
 }
 
 /* ____________________________________________ */
@@ -110,7 +126,21 @@ body {
 	object-fit: cover;
 }
 
-:where(img, svg, picture, iframe, input, video, select, textarea, details, dialog) {
+:where(
+		img,
+		svg,
+		picture,
+		iframe,
+		input,
+		video,
+		audio,
+		select,
+		textarea,
+		details,
+		dialog,
+		progress,
+		canvas
+	) {
 	height: auto;
 	max-width: 100%;
 }
@@ -133,15 +163,14 @@ body {
 }
 
 /* ____________________________________________ */
-/* form */
+/* form cursor */
 :where(form) {
 	cursor: default;
 }
 
-/* border */
+/* form border */
 :where(fieldset) {
 	margin: 0;
-	border-width: 0;
 	padding: 0;
 }
 
@@ -250,8 +279,7 @@ dialog::backdrop,
 		button,
 		input:not([type="checkbox"], [type="radio"], [type="color"]),
 		select,
-		textarea,
-
+		textarea
 	),
 [type="file"]::file-selector-button {
 	outline-offset: 0.1875rem;
