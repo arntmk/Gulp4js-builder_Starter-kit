@@ -34,6 +34,17 @@
 	width: 35px;
 }
 
+.header__skip-navbar {
+	position: absolute;
+	left: 16px;
+	transform: translateY(-300%);
+	transition: transform 0.3s linear;
+}
+
+.header__skip-navbar:focus-visible {
+	transform: translateY(0);
+}
+
 /* ____________________________________________ */
 .header__nav-wrapper {
 	display: flex;
