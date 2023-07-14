@@ -53,6 +53,10 @@
 	display: flex;
 }
 
+.d-flex {
+	display: inline-flex;
+}
+
 .jc-center {
 	justify-content: center;
 }
@@ -85,6 +89,14 @@
 	flex-wrap: wrap;
 }
 
+.fx-wrap {
+	flex-wrap: nowrap;
+}
+
 .fx-dir-column {
 	flex-direction: column;
+}
+
+.fx-dir-row {
+	flex-direction: row;
 }
