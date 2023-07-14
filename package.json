@@ -53,7 +53,7 @@
 		"gulp",
 		"webpack",
 		"linters",
-		"html/pug",
+		"html/twig",
 		"css/scss",
 		"js/ts",
 		"font",
