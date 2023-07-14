@@ -36,7 +36,8 @@
 		"> 0.3%",
 		"last 3 version",
 		"defaults",
-		"not dead"
+		"not dead",
+		"not op_mini all"
 	],
 	"babel": {
 		"presets": [
