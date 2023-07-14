@@ -268,7 +268,7 @@ function html() {
 			`!${srcFolder}/assets/**/*.{html,twig}`,
 		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
-		.pipe(plumber(plumberNotify('Html/Pug')))
+		.pipe(plumber(plumberNotify('Html/Twig')))
 		.pipe(twig())
 		.pipe(
 			typograf({
