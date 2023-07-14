@@ -45,7 +45,12 @@
 	},
 
 	"[twig]": {
-		"editor.defaultFormatter": "junstyle.twig-language"
+		"editor.defaultFormatter": "junstyle.twig-language",
+		"editor.quickSuggestions": {
+			"other": "on",
+			"comments": "off",
+			"strings": "on"
+		}
 	},
 
 	/* ______________________________________________________ */
