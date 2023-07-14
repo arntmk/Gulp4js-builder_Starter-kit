@@ -17,14 +17,14 @@
 	// Emmet
 	"emmet.excludeLanguages": [],
 	"emmet.includeLanguages": {
+		"postcss": "css",
+		"plaintext": "pug",
 		"javascript": "javascriptreact",
 		"typescript": "typescriptreact",
 		"vue-html": "html",
 		"vue": "html",
-		"postcss": "css",
-		"plaintext": "pug",
-		"markdown": "html",
 		"php": "html",
+		"markdown": "html",
 		"blade": "html",
 		"twig": "html",
 		"hbs": "html",
