@@ -9,11 +9,9 @@ const hamburgerController = function () {
 
 	if (menu && menuBtn) {
 		menuBtn.addEventListener('click', () => {
-			setTimeout(() => {
-				menu.classList.toggle('active');
-				menuBtn.classList.toggle('active');
-				menuBtn.setAttribute('aria-expanded', true);
-			}, 200);
+			menu.classList.toggle('active');
+			menuBtn.classList.toggle('active');
+			menuBtn.setAttribute('aria-expanded', true);
 			scrollController.disableScroll();
 			trapFocus(menu);
 		});
@@ -24,7 +22,7 @@ const hamburgerController = function () {
 					menu.classList.remove('active');
 					menuBtn.classList.remove('active');
 					menuBtn.setAttribute('aria-expanded', false);
-				}, 100);
+				}, 300);
 				scrollController.enableScroll();
 			}
 		});
