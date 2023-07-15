@@ -44,7 +44,7 @@ html {
 }
 
 .scroll-up::before {
-	content: "\21bb"; /* ↑ */
+	content: "\21d1"; /* ↑ */
 	position: absolute;
 	left: 0;
 	top: 0;
