@@ -57,10 +57,8 @@ input {
 label {
 	display: flex;
 	align-items: center;
-	border: thin solid #8f8f9d;
 	padding-left: 0.3125rem;
-	height: 4rem; /* This height value must be equal to max-height value of <details> element */
-	background-color: #fff;
+	height: 4.02rem; /* This height value must be equal to max-height value of <details> element */
 }
 
 /* ____________________________________________ */
@@ -70,20 +68,31 @@ label {
 */
 /* ____________________________________________ */
 details {
+	border: thin solid #8f8f9d;
 	overflow: hidden; /* Hide the rest of the content */
-	margin-top: 15px;
-	width: 25em;
-	max-height: 4.13rem; /* Set a max-height value just enough to show the summary content */
+	margin: 1rem 0;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
+	width: 100%;
+	border-radius: 0.5rem;
+	max-height: 4.08rem; /* Set a max-height value just enough to show the summary content */
 	background-color: #fff;
 	transition: max-height 0.5s ease-in-out;
+	color: #111;
+	background-color: #fff;
 }
 
 details .accordion-content {
 	margin-top: 0;
-	border: thin solid #8f8f9d;
-	padding: 0.3125rem;
+	padding: 0 0.3125rem 0.3125rem 0.3125rem;
 	text-align: center;
 	background-color: #fff;
+}
+
+.accordion-border-top {
+	border-top: 1px solid;
+	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+	padding: 1rem;
+	line-height: 1.5rem;
 }
 
 /* ____________________________________________ */
@@ -105,11 +114,11 @@ details:has(input:checked) {
 /* Animation Icon */
 label::before {
 	content: "";
-	width: 1.9em;
-	height: 1.9em;
+	width: 1.8em;
+	height: 1.8em;
 	background: transparent
 		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
-		no-repeat right center / 1.9em;
+		no-repeat right center / 1.8em;
 	transform: rotate(-90deg);
 	transition: transform 0.4s ease-in-out;
 }
