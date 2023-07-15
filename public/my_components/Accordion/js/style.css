@@ -13,7 +13,7 @@ div.flow-space > * + * {
 }
 
 body {
-	height: 2000px;
+	height: 1000px;
 	color: #fff;
 	background-color: #34495e;
 }
@@ -93,8 +93,8 @@ h1 {
 	height: 2em;
 	background: transparent
 		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
-		no-repeat right center / 2.5em;
-	transition: transform 0.2s ease-in-out;
+		no-repeat right center / 2em;
+	transition: transform 0.4s ease-in-out;
 }
 
 .accordion.active .accordion-button::after {

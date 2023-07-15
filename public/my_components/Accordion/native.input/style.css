@@ -55,6 +55,7 @@ input {
 
 /* <label> element to check the checkbox */
 label {
+	font-weight: 700;
 	display: flex;
 	align-items: center;
 	padding-left: 0.3125rem;
