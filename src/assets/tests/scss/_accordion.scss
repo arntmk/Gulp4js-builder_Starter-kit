@@ -5,25 +5,50 @@ summary::-webkit-details-marker {
 }
 
 summary {
+	font-weight: 700;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	list-style: none;
-	border: thin solid #8f8f9d;
 	padding: 0.3125em;
 	background-color: #fff;
 }
 
 details {
-	margin-bottom: 0.625rem;
+	border: thin solid #8f8f9d;
 	width: 25em;
+	margin-top: 16px;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 }
 
 details .accordion-content {
-	margin-top: 0.1875em;
-	border: thin solid #8f8f9d;
 	padding: 0.3125em;
 	background-color: #fff;
+}
+
+.accordion-border-top {
+	border-top: 1px solid;
+	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+	padding: 1rem;
+	line-height: 1.5rem;
+}
+
+/* ____________________________________________ */
+/* Border Radius */
+details,
+summary,
+.accordion-content {
+	border-radius: 0.5rem;
+}
+
+details[open] > summary {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+details[open] > .accordion-content {
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
 }
 
 /* ____________________________________________ */

@@ -43,21 +43,18 @@ summary {
 	align-items: center;
 	justify-content: space-between;
 	list-style: none;
-	border: thin solid #8f8f9d;
-	border-bottom: 0px solid transparent;
 	padding: 0.3125em;
 	background-color: #fff;
 }
 
 details {
+	border: thin solid #8f8f9d;
 	width: 100%;
 	margin-top: 16px;
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 }
 
 details .accordion-content {
-	border: thin solid #8f8f9d;
-	border-top: 0px solid transparent;
 	padding: 0.3125em;
 	background-color: #fff;
 }
@@ -70,6 +67,7 @@ details .accordion-content {
 }
 
 /* ____________________________________________ */
+/* Border Radius */
 details,
 summary,
 .accordion-content {
