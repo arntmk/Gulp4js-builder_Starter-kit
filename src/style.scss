@@ -5,6 +5,7 @@
 
 /* Mixins */
 @import "./styles/mixins/mixins";
+@import "./styles/mixins/*.*";
 
 /* CSS Console.Log */
 // @import "./styles/debug";
@@ -17,14 +18,13 @@
 @import "./styles/global";
 @import "./styles/utility";
 
-/* Effects */
+// Effects
 @import "./styles/effects/effects";
-@import "./styles/effects/formvalid";
-@import "./styles/effects/underline";
+@import "./styles/effects/*.*";
 
 /* Tests */
-@import "./assets/tests/scss/forms";
-@import "./assets/tests/scss/accordion";
+@import "./assets/tests/scss/tests";
+@import "./assets/tests/scss/*.*";
 
 /* Components style imports */
 @import "./components/block-scss/header";
