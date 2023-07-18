@@ -5,12 +5,9 @@
 
 /* Mixins */
 @import "./styles/mixins/mixins";
-@import "./styles/mixins/*.*";
-
-/* CSS Console.Log */
-// @import "./styles/debug";
 
 /* Base SCSS imports */
+// @import "./styles/debug";
 @import "./styles/variables";
 @import "./styles/reset/normalize";
 @import "./styles/reset/reset";
@@ -20,11 +17,9 @@
 
 // Effects
 @import "./styles/effects/effects";
-@import "./styles/effects/*.*";
 
 /* Tests */
 @import "./assets/tests/scss/tests";
-@import "./assets/tests/scss/*.*";
 
 /* Components style imports */
 @import "./components/block-scss/header";
