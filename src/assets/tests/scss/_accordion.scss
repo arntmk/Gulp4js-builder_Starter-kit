@@ -42,13 +42,13 @@ summary,
 }
 
 details[open] > summary {
-	border-bottom-left-radius: 0px;
-	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0rem;
+	border-bottom-right-radius: 0rem;
 }
 
-details[open] > .accordion-content {
-	border-top-left-radius: 0px;
-	border-top-right-radius: 0px;
+.accordion-content {
+	border-top-left-radius: 0rem;
+	border-top-right-radius: 0rem;
 }
 
 /* ____________________________________________ */
