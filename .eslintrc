@@ -19,7 +19,7 @@
 		"**/dest/**",
 		"**/app/**",
 		"**/build/**",
-		"**/public/**",
+		"**/Ppublic/**",
 		"**/libs/**",
 		"**/vendor/**",
 		"**/tests/**",
