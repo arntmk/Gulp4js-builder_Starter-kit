@@ -26,7 +26,6 @@
 		"**/dest/**",
 		"**/app/**",
 		"**/build/**",
-		"**/public/**",
 		"**/libs/**",
 		"**/vendor/**",
 		"*.min.js",

@@ -17,7 +17,6 @@
 		"**/dest/**",
 		"**/app/**",
 		"**/build/**",
-		"**/Ppublic/**",
 		"**/libs/**",
 		"**/vendor/**",
 		"**/tests/**",
