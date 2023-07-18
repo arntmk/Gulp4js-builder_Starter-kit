@@ -2,35 +2,12 @@
 /* ____________________________________________ */
 /* _________________Mixins_____________________ */
 /* ____________________________________________ */
-
-/* Disable mobile hover */
-@mixin disable-mobile-hover {
-	@media (any-hover: hover) {
-		&:focus-visible,
-		&:hover {
-			@content;
-		}
-	}
-}
-
-// @include disable-mobile-hover {
-// 	background-color: var(--accent-color);
-// }
+// Import
+@import "./breakpoint";
+@import "./disable-mob-hover";
 
 /* ____________________________________________ */
-/* BREAKPOINT */
-@mixin DesktopXL {
-	@media (max-width: $breakpoint-1450) {
-		@content;
-	}
-}
-
-// @include DesktopXL {
-// 	font-size: 22px;
-// }
-
-/* ____________________________________________ */
-/* ____________________________________________ */
+/* ________________Utility_____________________ */
 /* ____________________________________________ */
 /* Text-NoWrap */
 @mixin nowrap {

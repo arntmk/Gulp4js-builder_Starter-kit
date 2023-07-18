@@ -1,0 +1,15 @@
+/* stylelint-disable declaration-no-important */
+/* ____________________________________________ */
+/* Disable mobile hover */
+@mixin disable-mobile-hover {
+	@media (any-hover: hover) {
+		&:focus-visible,
+		&:hover {
+			@content;
+		}
+	}
+}
+
+// @include disable-mobile-hover {
+// 	background-color: var(--accent-color);
+// }
