@@ -104,19 +104,19 @@ function delDev() {
 		isDev
 			? [
 					`${buildFolder}/**`,
+					`!${buildFolder}/*.{png,ico,txt,html}`,
 					`!${buildFolder}/styles/`,
+					`!${buildFolder}/styles/*.css`,
 					`!${buildFolder}/scripts/`,
+					`!${buildFolder}/scripts/*.js`,
 					`!${buildFolder}/fonts/`,
+					`!${buildFolder}/fonts/*.{woff,woff2}`,
 					`!${buildFolder}/images/`,
 					`!${buildFolder}/images/favicon/`,
-					`!${buildFolder}/images/svg/`,
-					`!${buildFolder}/*.{png,ico,txt,html}`,
-					`!${buildFolder}/styles/*.css`,
-					`!${buildFolder}/scripts/*.js`,
-					`!${buildFolder}/fonts/*.{woff,woff2}`,
-					`!${buildFolder}/images/*.webp`,
 					`!${buildFolder}/images/favicon/*.{png,svg}`,
+					`!${buildFolder}/images/svg/`,
 					`!${buildFolder}/images/svg/*.{gif,svg}`,
+					`!${buildFolder}/images/*.webp`,
 			  ]
 			: 'production',
 	);
@@ -265,7 +265,7 @@ function html() {
 		.src([
 			`${srcFolder}/**/*.{html,twig}`,
 			`!${srcFolder}/components/**/*.{html,twig}`,
-			`!${srcFolder}/assets/**/*.{html,twig}`,
+			`!${srcFolder}/assets/**/*.html`,
 		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('Html/Twig')))
