@@ -3,7 +3,6 @@
 const headerFixed = document.querySelector('.header');
 const headerStyle = window.getComputedStyle(headerFixed);
 const isFirefoxBrowser = navigator.userAgent.indexOf('Firefox');
-const paddingOffset = `${window.innerWidth - document.body.offsetWidth}px`;
 const { body } = document;
 const { documentElement } = document;
 
@@ -12,12 +11,9 @@ const scrollController = {
 	disableScroll() {
 		scrollController.scrollPosition = window.scrollY;
 		documentElement.style.cssText = 'scroll-behavior: unset;';
-		body.style.paddingRight = paddingOffset;
-		if (
-			headerStyle.position === 'fixed' ||
-			headerStyle.getPropertyValue('position') === 'absolute'
-		) {
-			headerFixed.style.paddingRight = paddingOffset;
+		body.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px`;
+		if (headerStyle.position === 'fixed' || headerStyle.getPropertyValue('position') === 'fixed') {
+			headerFixed.style.paddingRight = `${window.innerWidth - document.body.offsetWidth}px`;
 		}
 		if (isFirefoxBrowser === -1) {
 			body.style.cssText = `
