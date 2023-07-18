@@ -7,7 +7,6 @@
 @import "./styles/mixins/mixins";
 
 /* Base SCSS imports */
-// @import "./styles/debug";
 @import "./styles/variables";
 @import "./styles/reset/normalize";
 @import "./styles/reset/reset";
@@ -15,8 +14,11 @@
 @import "./styles/global";
 @import "./styles/utility";
 
-// Effects
+/* Effects */
 @import "./styles/effects/effects";
+
+/* Console.Log */
+// @import "./styles/debug";
 
 /* Tests */
 @import "./assets/tests/scss/tests";
@@ -32,3 +34,4 @@
 // @import "./styles/feature/accordion";
 // @import "./styles/feature/tabs";
 // @import "./styles/feature/select";
+// @import "./styles/feature/**/*.*";
