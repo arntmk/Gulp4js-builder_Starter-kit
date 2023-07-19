@@ -26,7 +26,8 @@
 		"*.jsx",
 		"*.tsx",
 		"*.vue",
-		"*.min.css"
+		"*.min.css",
+		"**/*.min.css"
 	],
 	"rules": {
 		"order/order": [

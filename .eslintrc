@@ -27,7 +27,8 @@
 		"*.sass",
 		"*.less",
 		"*.postcss",
-		"*.min.js"
+		"*.min.js",
+		"**/*.min.js"
 	],
 	"rules": {
 		"no-unused-vars": "off",
