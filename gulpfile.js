@@ -263,11 +263,7 @@ function webp() {
 function html() {
 	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt,html}`;
 	return gulp
-		.src([
-			`${srcFolder}/**/*.{html,twig}`,
-			`!${srcFolder}/components/**/*.{html,twig}`,
-			`!${srcFolder}/assets/**/*.html`,
-		])
+		.src([`${srcFolder}/index.{html,twig}`, `${srcFolder}/*.{html,twig}`])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('Html/Twig')))
 		.pipe(twig())
@@ -331,10 +327,7 @@ function css() {
 }
 
 function optCss() {
-	const purgeCssFiles = [
-		`${buildFolder}/styles/*.css`,
-		`!${buildFolder}/styles/swiper-bundle.min.css`,
-	];
+	const purgeCssFiles = [`${buildFolder}/styles/*.css`, `!${buildFolder}/styles/*-bundle.min.css`];
 	return gulp
 		.src(purgeCssFiles)
 		.pipe(
