@@ -336,7 +336,7 @@ function optCss() {
 			gulpif(
 				isProd,
 				purgecss({
-					content: [`${buildFolder}/**/*.html`],
+					content: [`${buildFolder}/**/*.{html,js}`],
 					skippedContentGlobs: ['node_modules/**', 'libs/**', 'vendor/**'],
 					safelist: [':where', ':is', ':has', 'active', 'open', 'lock-fixed', 'lock'],
 					keyframes: true,
