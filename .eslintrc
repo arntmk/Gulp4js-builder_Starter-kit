@@ -56,6 +56,7 @@
 		"function-paren-newline": ["off", "multiline-arguments"],
 		"operator-linebreak": ["off", "before"],
 		"wrap-iife": ["error", "any"],
-		"newline-per-chained-call": ["off", { "ignoreChainWithDepth": 2 }]
+		"newline-per-chained-call": ["off", { "ignoreChainWithDepth": 2 }],
+		"import/no-unresolved": "off"
 	}
 }

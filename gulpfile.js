@@ -49,6 +49,7 @@ import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 import cached from 'gulp-cached'; // optimize css rebuild.
 import dependents from 'gulp-dependents'; // optimize css rebuild.
+import purgecss from 'gulp-purgecss'; // purge css [optimize].
 
 // JS/TS
 import terser from 'gulp-terser'; // мінімізація JS.
@@ -316,22 +317,42 @@ function css() {
 		.pipe(scssGlob())
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
-		.pipe(gulpif(isProd, shorthand()))
-		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
-		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
-		.pipe(gulpif(isProd, shorthand()))
 		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)))
 
-		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
-		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(LibsCssFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/`, { extension: '.css' })))
 		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`))
+		.pipe(browsersync.stream());
+}
+
+function optCss() {
+	const purgeCssFiles = [`${buildFolder}/styles/*.css`, `!${buildFolder}/styles/*-bundle.min.css`];
+	return gulp
+		.src(purgeCssFiles)
+		.pipe(
+			gulpif(
+				isProd,
+				purgecss({
+					content: [`${buildFolder}/**/*.html`],
+					skippedContentGlobs: ['node_modules/**', 'libs/**', 'vendor/**'],
+					safelist: [':where', ':is', ':has'],
+					keyframes: false,
+					variables: false,
+					fontFace: false,
+				}),
+			),
+		)
+		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
+		.pipe(gulpif(isProd, shorthand()))
+		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
+		.pipe(gulpif(isProd, cleanCSS()))
+		.pipe(gulpif(isProd, size({ showFiles: true })))
+		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)))
 		.pipe(browsersync.stream());
 }
 
@@ -390,12 +411,12 @@ function browserSync() {
 
 /* ____________________________________________ */
 export const watch = gulp.parallel(watchFiles, browserSync);
-export default gulp.series(delDev, delProd, gulp.parallel(html, css, js, img, webp, font));
 export const fontTask = font;
-export const fontGenTask = gulp.parallel(delfont, fontgen);
+export const fontGenTask = gulp.series(delfont, fontgen);
 export const imgTask = gulp.parallel(webp, img);
 export const svgSptTask = svg;
 export const htmlTask = html;
-export const cssTask = css;
+export const cssTask = gulp.series(css, optCss);
 export const jsTask = js;
 export const delTask = delDev;
+export default gulp.series(delDev, delProd, gulp.parallel(html, cssTask, js, imgTask, font));
