@@ -11,7 +11,7 @@ import webpack from 'webpack-stream';
 import sync from 'browser-sync'; // сервер.
 import newer from 'gulp-newer'; // перевірка файлів.
 import changed from 'gulp-changed'; // перевірка файлів.
-import del from 'del'; // видалення build.
+import del from 'del'; // видалення файлів.
 import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
 import notify from 'gulp-notify'; // сповіщення.
