@@ -12,23 +12,29 @@ const isDev = !isProd;
 const webpackConfig = {
 	mode: isProd ? 'production' : 'development',
 	devtool: isDev ? 'inline-source-map' : false,
+
 	entry: {
 		script: './src/script.js',
 		// vendor: './src/vendor.js',
 	},
+
 	output: {
 		filename: '[name].min.js',
 	},
+
 	optimization: {
 		minimizer: [
 			new EsbuildPlugin({
 				target: 'es2016',
-				css: true, // Apply minification to CSS assets
+				css: true, // Apply minification to CSS assets (External CSS)
 			}),
 		],
 	},
+
 	module: {
 		rules: [
+			/* ____________________________________________ */
+			// JS/TS
 			{
 				test: /\.m?(js|ts|jsx|tsx|css|json)$/,
 				resolve: {
@@ -44,6 +50,8 @@ const webpackConfig = {
 					},
 				},
 			},
+			/* ____________________________________________ */
+			// CSS/SCSS
 			{
 				test: /\.css$/,
 				resolve: {
