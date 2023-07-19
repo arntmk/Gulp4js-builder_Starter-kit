@@ -315,6 +315,7 @@ function css() {
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
+		.pipe(browsersync.stream())
 
 		.pipe(gulpif(isProd, rename('script.css')))
 		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)))
@@ -349,8 +350,7 @@ function optCss() {
 		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
 		.pipe(gulpif(isProd, cleanCSS()))
 		.pipe(gulpif(isProd, size({ showFiles: true })))
-		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)))
-		.pipe(browsersync.stream());
+		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)));
 }
 
 /* ____________________________________________ */
