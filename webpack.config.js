@@ -17,7 +17,7 @@ const webpackConfig = {
 		// vendor: './src/vendor.js',
 	},
 	output: {
-		filename: '[name]-bundle.min.js',
+		filename: '[name].min.js',
 	},
 	optimization: {
 		minimizer: [
