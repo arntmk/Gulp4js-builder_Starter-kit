@@ -331,7 +331,10 @@ function css() {
 }
 
 function optCss() {
-	const purgeCssFiles = [`${buildFolder}/styles/*.css`, `!${buildFolder}/styles/*-bundle.min.css`];
+	const purgeCssFiles = [
+		`${buildFolder}/styles/*.css`,
+		`!${buildFolder}/styles/swiper-bundle.min.css`,
+	];
 	return gulp
 		.src(purgeCssFiles)
 		.pipe(
