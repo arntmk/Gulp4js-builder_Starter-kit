@@ -313,10 +313,11 @@ function css() {
 		.pipe(scssGlob())
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
-		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)))
-
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
+
+		.pipe(gulpif(isProd, rename('script.css')))
+		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)))
 
 		.pipe(gulp.src(LibsCssFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/`, { extension: '.css' })))
@@ -336,9 +337,9 @@ function optCss() {
 				purgecss({
 					content: [`${buildFolder}/**/*.html`],
 					skippedContentGlobs: ['node_modules/**', 'libs/**', 'vendor/**'],
-					safelist: [':where', ':is', ':has'],
-					keyframes: false,
-					variables: false,
+					safelist: [':where', ':is', ':has', 'active', 'open', 'lock-fixed', 'lock'],
+					keyframes: true,
+					variables: true,
 					fontFace: false,
 				}),
 			),
@@ -361,13 +362,12 @@ function js() {
 		.src([`${srcFolder}/script.js`, `${srcFolder}/*.{js,ts}`]) // WebPack entry
 		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
 		.pipe(plumber(plumberNotify('JS/TS')))
-		.pipe(gulpif(isProd, webpack(webpackConfig)))
-		.pipe(gulpif(isProd, rename('script.js')))
-		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/scripts/`)))
-
 		.pipe(webpack(webpackConfig).on('error', WebPackError))
 		.pipe(gulp.dest(`${buildFolder}/scripts/`))
 		.pipe(browsersync.stream())
+
+		.pipe(gulpif(isProd, rename('script.js')))
+		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/scripts/`)))
 
 		.pipe(gulp.src(LibsJsFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
