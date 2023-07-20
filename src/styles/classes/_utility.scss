@@ -6,6 +6,7 @@
 @import "./flexbox";
 @import "./grid";
 
+// composition
 /* ____________________________________________ */
 /* add basic space (to container) */
 .flow-space > * + * {
