@@ -12,6 +12,21 @@
 	margin-top: var(--flow-space, 1em);
 }
 
+/* semantically: visible */
+.visually-hidden {
+	@include visually-hidden;
+}
+
+/* button-reset */
+.btn-reset {
+	@include btn-reset;
+}
+
+/* input-Reset */
+.input-reset {
+	@include input-reset;
+}
+
 /* text-noWrap */
 .nowrap {
 	white-space: nowrap;
@@ -53,21 +68,6 @@
 .ta-right {
 	vertical-align: middle;
 	text-align: right;
-}
-
-/* semantically: visible */
-.visually-hidden {
-	@include visually-hidden;
-}
-
-/* button-reset */
-.btn-reset {
-	@include btn-reset;
-}
-
-/* input-Reset */
-.input-reset {
-	@include input-reset;
 }
 
 /* float [clearfix] */
