@@ -14,7 +14,7 @@ if (togglePassword && password) {
 	});
 
 	password.addEventListener('input', function () {
-		togglePassword.classList.toggle('d-hidden', !this.value);
+		togglePassword.classList.toggle('hidden', !this.value);
 	});
 }
 
@@ -31,7 +31,7 @@ if (searchInput && clearButton) {
 	});
 
 	searchInput.addEventListener('input', function () {
-		clearButton.classList.toggle('d-hidden', !this.value);
+		clearButton.classList.toggle('hidden', !this.value);
 	});
 }
 
