@@ -4,12 +4,30 @@
 /* ____________________________________________ */
 /* Text-NoWrap */
 .nowrap {
-	@include nowrap;
+	white-space: nowrap;
+}
+
+/* Off-Screen */
+.offscreen {
+	position: absolute;
+	transform: translateX(-100%); // left: -100%;
+}
+
+/* Text-Ellipsis */
+.text-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Align-Center */
+.align-center {
+	vertical-align: middle;
+	text-align: center;
 }
 
 /* Completely-Hidden */
 .hidden {
-	@include hidden;
+	display: none !important;
 }
 
 /* Semantically: Visible */
@@ -17,27 +35,17 @@
 	@include visually-hidden;
 }
 
-/* Off-Screen */
-.offscreen {
-	@include offscreen;
-}
-
-/* Text-Ellipsis */
-.text-ellipsis {
-	@include text-ellipsis;
-}
-
-/* Align-Center */
-.align-center {
-	@include align-center;
-}
-
 /* Button-Reset */
 .btn-reset {
 	@include btn-reset;
 }
 
-/* Float clearfix */
+/* Input-Reset */
+.input-reset {
+	@include input-reset;
+}
+
+/* Float [clearfix] */
 .d-floatfix {
 	display: flow-root;
 }

@@ -9,49 +9,6 @@
 /* ____________________________________________ */
 /* ________________Utility_____________________ */
 /* ____________________________________________ */
-/* Text-NoWrap */
-@mixin nowrap {
-	white-space: nowrap;
-}
-
-// @include nowrap;
-
-/* ____________________________________________ */
-/* Completely-Hidden */
-@mixin hidden {
-	display: none !important;
-}
-
-// @include hidden;
-
-/* ____________________________________________ */
-/* Off-Screen */
-@mixin offscreen {
-	position: absolute;
-	left: -200%;
-}
-
-// @include offscreen;
-
-/* ____________________________________________ */
-/* Text-Ellipsis */
-@mixin text-ellipsis {
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-// @include text-ellipsis;
-
-/* ____________________________________________ */
-/* Align-Center */
-@mixin align-center {
-	vertical-align: middle;
-	text-align: center;
-}
-
-// @include align-center;
-
-/* ____________________________________________ */
 /* List-Reset */
 @mixin list-reset {
 	list-style: none inside;
