@@ -105,8 +105,12 @@ html {
 	font-size: var(--fs-h2, 1.5em); /* 24px */
 }
 
-:where(h3, h4, h5, h6) {
-	font-size: var(--fs-h3-6, 1.17em); /* 18.72px */
+:where(h3) {
+	font-size: var(--fs-h3, 1.17em); /* 18.72px */
+}
+
+:where(h4, h5, h6) {
+	font-size: var(--fs-h4-6, 1em); /* 16px */
 }
 
 /* ____________________________________________ */
