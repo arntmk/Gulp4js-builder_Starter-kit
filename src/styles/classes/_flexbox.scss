@@ -104,17 +104,29 @@
 	flex-wrap: wrap;
 }
 
+.fx-wrap-rev {
+	flex-wrap: wrap-reverse;
+}
+
 .fx-nowrap {
 	flex-wrap: nowrap;
 }
 
 /* flex-direction */
-.fx-dir-column {
+.fx-col {
 	flex-direction: column;
 }
 
-.fx-dir-row {
+.fx-col-rev {
+	flex-direction: column-reverse;
+}
+
+.fx-row {
 	flex-direction: row;
+}
+
+.fx-row-rev {
+	flex-direction: row-reverse;
 }
 
 /* flex-flow (shorthand) */
