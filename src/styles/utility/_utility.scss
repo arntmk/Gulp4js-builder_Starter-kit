@@ -7,85 +7,87 @@
 @import "./grid";
 
 /* ____________________________________________ */
-/* Add basic space (to container) */
+/* add basic space (to container) */
 .flow-space > * + * {
 	margin-top: var(--flow-space, 1em);
 }
 
-/* Text-NoWrap */
+/* text-noWrap */
 .nowrap {
 	white-space: nowrap;
 }
 
-/* Off-Screen */
+/* off-screen */
 .offscreen {
 	position: absolute;
 	transform: translateX(-100%); // left: -100%;
 }
 
-/* Text-Ellipsis */
+/* text-ellipsis */
 .text-ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
-/* Text-align */
-.align-center {
+/* overflow */
+.of-hidden {
+	overflow: hidden;
+}
+
+/* text-align */
+.ta-center {
 	vertical-align: middle;
 	text-align: center;
 }
 
-.align-center {
+.ta-center {
 	vertical-align: middle;
 	text-align: center;
 }
 
-.align-left {
+.ta-left {
 	vertical-align: middle;
 	text-align: left;
 }
 
-.align-right {
+.ta-right {
 	vertical-align: middle;
 	text-align: right;
 }
 
-/* Completely-Hidden */
-.hidden {
-	display: none !important;
-}
-
-/* Semantically: Visible */
+/* semantically: visible */
 .visually-hidden {
 	@include visually-hidden;
 }
 
-/* Button-Reset */
+/* button-reset */
 .btn-reset {
 	@include btn-reset;
 }
 
-/* Input-Reset */
+/* input-Reset */
 .input-reset {
 	@include input-reset;
 }
 
-/* Float [clearfix] */
+/* float [clearfix] */
 .d-floatfix {
 	display: flow-root;
 }
 
-/* block */
 .d-block {
 	display: block;
 }
 
-/* inline-block */
 .d-inblock {
 	display: inline-block;
 }
 
-/* inline */
 .d-inline {
 	display: inline;
+}
+
+/* hidden */
+.d-hidden {
+	display: none !important;
 }

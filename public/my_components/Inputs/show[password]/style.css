@@ -17,7 +17,7 @@ body {
 }
 
 /* Hidden */
-.hidden {
+.d-hidden {
 	display: none !important;
 }
 

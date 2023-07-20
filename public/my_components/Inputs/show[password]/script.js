@@ -14,7 +14,7 @@ if (togglePassword && password) {
 	});
 
 	password.addEventListener('input', function () {
-		togglePassword.classList.toggle('hidden', !this.value);
+		togglePassword.classList.toggle('d-hidden', !this.value);
 	});
 }
 

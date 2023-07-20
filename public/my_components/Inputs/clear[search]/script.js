@@ -11,6 +11,6 @@ if (searchInput && clearButton) {
 	});
 
 	searchInput.addEventListener('input', function () {
-		clearButton.classList.toggle('hidden', !this.value);
+		clearButton.classList.toggle('d-hidden', !this.value);
 	});
 }
