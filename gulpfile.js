@@ -44,15 +44,15 @@ import version from 'gulp-version-number'; // build version.
 import gulpSass from 'gulp-sass'; // gulp css preprocessors.
 import * as sass from 'sass'; // css preprocessors.
 import scssGlob from 'gulp-sass-glob'; // global imports.
+import cached from 'gulp-cached'; // optimize css rebuild.
+import dependents from 'gulp-dependents'; // optimize css rebuild.
 import autoprefixer from 'gulp-autoprefixer'; // css префікси для сумісності.
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
-import cached from 'gulp-cached'; // optimize css rebuild.
-import dependents from 'gulp-dependents'; // optimize css rebuild.
 import purgecss from 'gulp-purgecss'; // purge css [optimize].
 
 // JS/TS
-import terser from 'gulp-terser'; // мінімізація JS.
+import terser from 'gulp-terser'; // мінімізація JS/TS.
 import webpackConfig from './webpack.config.js'; // webpackConfig
 
 /* ____________________________________________ */
