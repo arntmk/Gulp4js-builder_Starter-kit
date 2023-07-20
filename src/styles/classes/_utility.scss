@@ -1,4 +1,6 @@
 /* stylelint-disable declaration-no-important */
+// composition
+// utility
 /* ____________________________________________ */
 /* _____________Utility Classes________________ */
 /* ____________________________________________ */
@@ -6,7 +8,6 @@
 @import "./flexbox";
 @import "./grid";
 
-// composition
 /* ____________________________________________ */
 /* add basic space (to container) */
 .flow-space > * + * {
@@ -28,11 +29,6 @@
 	@include input-reset;
 }
 
-/* text-noWrap */
-.nowrap {
-	white-space: nowrap;
-}
-
 /* off-screen */
 .offscreen {
 	position: absolute;
@@ -48,6 +44,11 @@
 /* overflow */
 .of-hidden {
 	overflow: hidden;
+}
+
+/* text-nowrap */
+.nowrap {
+	white-space: nowrap;
 }
 
 /* text-align */
