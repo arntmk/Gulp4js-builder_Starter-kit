@@ -57,7 +57,7 @@
 	/* ____________________Extensions________________________ */
 	/* ______________________________________________________ */
 	// BemHelper
-	"bemHelper.showDepthWarnings": false, // low fps
+	"bemHelper.showDepthWarnings": false, // "true" low fps
 
 	// HTML CSS Support
 	"css.styleSheets": [
