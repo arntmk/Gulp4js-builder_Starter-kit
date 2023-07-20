@@ -24,10 +24,25 @@
 	text-overflow: ellipsis;
 }
 
-/* Align-Center */
+/* Text-align */
 .align-center {
 	vertical-align: middle;
 	text-align: center;
+}
+
+.align-center {
+	vertical-align: middle;
+	text-align: center;
+}
+
+.align-left {
+	vertical-align: middle;
+	text-align: left;
+}
+
+.align-right {
+	vertical-align: middle;
+	text-align: right;
 }
 
 /* Completely-Hidden */
