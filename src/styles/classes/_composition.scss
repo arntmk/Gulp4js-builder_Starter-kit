@@ -1,0 +1,44 @@
+/* stylelint-disable declaration-no-important */
+/* ____________________________________________ */
+/* ___________Composition Classes______________ */
+/* ____________________________________________ */
+/* add basic space (to container) */
+.flow-space > * + * {
+	margin-top: var(--flow-space, 1em);
+}
+
+/* semantically: visible */
+.visually-hidden {
+	@include visually-hidden;
+}
+
+/* input-reset */
+.input-reset {
+	@include input-reset;
+}
+
+/* button-reset */
+.btn-reset {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+/* list-reset */
+.list-reset {
+	list-style: none inside;
+	margin: 0;
+	padding: 0;
+}
+
+/* off-screen */
+.offscreen {
+	position: absolute;
+	transform: translateX(-100%); // left: -100%;
+}
+
+/* text-ellipsis */
+.text-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

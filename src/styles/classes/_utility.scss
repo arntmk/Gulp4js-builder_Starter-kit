@@ -1,46 +1,13 @@
 /* stylelint-disable declaration-no-important */
-// composition
-// utility
 /* ____________________________________________ */
 /* _____________Utility Classes________________ */
 /* ____________________________________________ */
 // Import
+@import "./composition";
 @import "./flexbox";
 @import "./grid";
 
 /* ____________________________________________ */
-/* add basic space (to container) */
-.flow-space > * + * {
-	margin-top: var(--flow-space, 1em);
-}
-
-/* semantically: visible */
-.visually-hidden {
-	@include visually-hidden;
-}
-
-/* button-reset */
-.btn-reset {
-	@include btn-reset;
-}
-
-/* input-Reset */
-.input-reset {
-	@include input-reset;
-}
-
-/* off-screen */
-.offscreen {
-	position: absolute;
-	transform: translateX(-100%); // left: -100%;
-}
-
-/* text-ellipsis */
-.text-ellipsis {
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
 /* overflow */
 .of-hidden {
 	overflow: hidden;
@@ -52,23 +19,21 @@
 }
 
 /* text-align */
-.ta-center {
+.ta-center,
+.ta-left,
+.ta-right {
 	vertical-align: middle;
-	text-align: center;
 }
 
 .ta-center {
-	vertical-align: middle;
 	text-align: center;
 }
 
 .ta-left {
-	vertical-align: middle;
 	text-align: left;
 }
 
 .ta-right {
-	vertical-align: middle;
 	text-align: right;
 }
 

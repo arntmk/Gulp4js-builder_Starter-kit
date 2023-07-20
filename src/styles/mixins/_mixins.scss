@@ -7,27 +7,7 @@
 @import "./disable-mob-hover";
 
 /* ____________________________________________ */
-/* ________________Utility_____________________ */
-/* ____________________________________________ */
-/* List-Reset */
-@mixin list-reset {
-	list-style: none inside;
-	margin: 0;
-	padding: 0;
-}
-
-// @include list-reset;
-
-/* ____________________________________________ */
-/* Btn-Reset */
-@mixin btn-reset {
-	border-width: 0;
-	padding: 0;
-	background-color: transparent;
-}
-
-// @include btn-reset;
-
+/* ___________Composition Classes______________ */
 /* ____________________________________________ */
 /* Input-Reset */
 @mixin input-reset {
