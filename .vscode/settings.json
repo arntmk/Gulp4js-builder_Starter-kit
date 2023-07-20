@@ -80,6 +80,7 @@
 	"stylelint.snippet": ["css", "scss", "less", "postcss"],
 
 	// Htmlhint "shift+alt+s"
+	"htmlhint.documentSelector": ["html", "htm", "php", "blade", "twig", "hbs", "njk"],
 	"attrsSorter.order": [
 		"class",
 		"className",
