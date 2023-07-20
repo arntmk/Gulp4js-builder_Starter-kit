@@ -13,9 +13,13 @@
 	overflow: hidden;
 }
 
-/* text-nowrap */
+/* text-wrap */
 .nowrap {
 	white-space: nowrap;
+}
+
+.wrap {
+	white-space: wrap;
 }
 
 /* text-align */
