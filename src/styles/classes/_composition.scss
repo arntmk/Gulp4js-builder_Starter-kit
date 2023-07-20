@@ -42,3 +42,28 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
+/* ____________________________________________ */
+/* ___________Flexbox Composition______________ */
+/* ____________________________________________ */
+.fx-ai-center {
+	display: flex;
+	align-items: center;
+}
+
+.fx-jc-center {
+	display: flex;
+	justify-content: center;
+}
+
+.fx-all-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fx-all-ctr-betwn {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
