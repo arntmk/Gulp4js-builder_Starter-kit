@@ -2,6 +2,11 @@
 /* ____________________________________________ */
 /* _____________Utility Classes________________ */
 /* ____________________________________________ */
+// Import
+@import "./flexbox";
+@import "./grid";
+
+/* ____________________________________________ */
 /* Text-NoWrap */
 .nowrap {
 	white-space: nowrap;
@@ -50,61 +55,17 @@
 	display: flow-root;
 }
 
-/* Grid */
-.d-grid {
-	display: grid;
+/* block */
+.d-block {
+	display: block;
 }
 
-/* ____________________________________________ */
-/* Flexbox */
-.d-flex {
-	display: flex;
+/* inline-block */
+.d-inblock {
+	display: inline-block;
 }
 
-.d-flex {
-	display: inline-flex;
-}
-
-.jc-center {
-	justify-content: center;
-}
-
-.jc-between {
-	justify-content: space-between;
-}
-
-.jc-around {
-	justify-content: space-around;
-}
-
-.jc-evenly {
-	justify-content: space-evenly;
-}
-
-.ai-center {
-	align-items: center;
-}
-
-.ai-start {
-	align-items: flex-start;
-}
-
-.ai-end {
-	align-items: flex-end;
-}
-
-.fx-wrap {
-	flex-wrap: wrap;
-}
-
-.fx-nowrap {
-	flex-wrap: nowrap;
-}
-
-.fx-dir-column {
-	flex-direction: column;
-}
-
-.fx-dir-row {
-	flex-direction: row;
+/* inline */
+.d-inline {
+	display: inline;
 }

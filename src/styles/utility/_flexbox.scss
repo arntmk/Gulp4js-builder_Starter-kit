@@ -1,0 +1,120 @@
+/* stylelint-disable declaration-no-important */
+/* ____________________________________________ */
+/* _____________Flexbox Utility________________ */
+/* ____________________________________________ */
+/* display */
+.d-flex {
+	display: flex;
+}
+
+.d-inflex {
+	display: inline-flex;
+}
+
+/* justify-content */
+.jc-center {
+	justify-content: center;
+}
+
+.jc-start {
+	justify-content: flex-start;
+}
+
+.jc-end {
+	justify-content: flex-end;
+}
+
+.jc-between {
+	justify-content: space-between;
+}
+
+.jc-around {
+	justify-content: space-around;
+}
+
+.jc-evenly {
+	justify-content: space-evenly;
+}
+
+/* align-content */
+.ac-center {
+	align-content: center;
+}
+
+.ac-start {
+	align-content: flex-start;
+}
+
+.ac-end {
+	align-content: flex-end;
+}
+
+.ac-between {
+	align-content: space-between;
+}
+
+.ac-around {
+	align-content: space-around;
+}
+
+.ac-evenly {
+	align-content: space-evenly;
+}
+
+.ac-stretch {
+	align-content: stretch;
+}
+
+/* align-items */
+.ai-center {
+	align-items: center;
+}
+
+.ai-start {
+	align-items: flex-start;
+}
+
+.ai-end {
+	align-items: flex-end;
+}
+
+.ai-stretch {
+	align-items: stretch;
+}
+
+/* align-self */
+.as-center {
+	align-self: center;
+}
+
+.as-start {
+	align-self: flex-start;
+}
+
+.as-end {
+	align-self: flex-end;
+}
+
+.as-stretch {
+	align-self: stretch;
+}
+
+/* flex-wrap */
+.fx-wrap {
+	flex-wrap: wrap;
+}
+
+.fx-nowrap {
+	flex-wrap: nowrap;
+}
+
+/* flex-direction */
+.fx-dir-column {
+	flex-direction: column;
+}
+
+.fx-dir-row {
+	flex-direction: row;
+}
+
+/* flex-flow (shorthand) */

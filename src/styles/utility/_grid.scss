@@ -1,0 +1,66 @@
+/* stylelint-disable declaration-no-important */
+/* ____________________________________________ */
+/* _______________Grid Utility_________________ */
+/* ____________________________________________ */
+/* display */
+.d-grid {
+	display: grid;
+}
+
+.d-ingrid {
+	display: inline-grid;
+}
+
+/* justify-items */
+.ji-center {
+	justify-items: center;
+}
+
+.ji-start {
+	justify-items: start;
+}
+
+.ji-end {
+	justify-items: end;
+}
+
+.ji-stretch {
+	justify-items: stretch;
+}
+
+.ji-left {
+	justify-items: left;
+}
+
+.ji-right {
+	justify-items: right;
+}
+
+/* justify-self */
+.js-center {
+	justify-self: center;
+}
+
+.js-start {
+	justify-self: start;
+}
+
+.js-end {
+	justify-self: end;
+}
+
+.js-stretch {
+	justify-self: stretch;
+}
+
+.js-left {
+	justify-self: left;
+}
+
+.js-right {
+	justify-self: right;
+}
+
+/* place-items (grid shorthand) */
+
+/* place-content (grid shorthand) */
