@@ -152,11 +152,14 @@ html {
 
 /* ____________________________________________ */
 /* lists */
-:where(ul, ol, dl) {
+:where(ul, ol) {
 	list-style-type: none;
 	list-style-position: inside;
-	margin: 0;
 	padding: 0;
+}
+
+:where(ul, ol, dl, dd) {
+	margin: 0;
 }
 
 ::marker {
