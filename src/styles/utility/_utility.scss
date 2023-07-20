@@ -7,6 +7,11 @@
 @import "./grid";
 
 /* ____________________________________________ */
+/* Add basic space (to container) */
+.flow-space > * + * {
+	margin-top: var(--flow-space, 1em);
+}
+
 /* Text-NoWrap */
 .nowrap {
 	white-space: nowrap;

@@ -175,11 +175,6 @@ body::-webkit-scrollbar-track {
 /* ____________________________________________ */
 /* ______________Global Styles_________________ */
 /* ____________________________________________ */
-/* Add basic space (to container) */
-.flow-space > * + * {
-	margin-top: var(--flow-space, 1em);
-}
-
 /* editor.scrollBeyondLastLine */
 .footer {
 	margin-bottom: 50ch;
