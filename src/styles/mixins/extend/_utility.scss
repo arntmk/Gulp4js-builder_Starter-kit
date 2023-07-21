@@ -4,9 +4,15 @@
 /* ____________________________________________ */
 /* Exemple */
 // @extend .flow-space;	 (Combine selectors)
-// @include .flow-space; (Copy selectors)
+// @include .flow-space; (Spam selectors)
 
 /* ____________________________________________ */
+/* add basic space (to container) */
+.flow-space > * + * {
+	margin-top: var(--flow-space, 1em);
+}
+
+/* ------------------------------------ */
 @mixin overflow-hidden {
 	overflow: hidden;
 }
