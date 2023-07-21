@@ -3,52 +3,6 @@
 /* _________________Mixins_____________________ */
 /* ____________________________________________ */
 // Import
-@import "./breakpoint";
-@import "./disable-mob-hover";
+@import "./include/breakpoint";
+@import "./include/disable-mob-hover";
 @import "./extend/utility";
-
-/* ____________________________________________ */
-/* Exemple */
-// @include input-reset;
-/* ____________________________________________ */
-/* ___________Composition Classes______________ */
-/* ____________________________________________ */
-/* Input-Reset */
-@mixin input-reset {
-	// number firefox
-	appearance: textfield;
-
-	// password
-	&::-ms-reveal {
-		display: none;
-	}
-
-	// number chrome
-	&::-webkit-inner-spin-button {
-		appearance: none;
-	}
-
-	// search
-	&::-webkit-search-cancel-button,
-	&::-webkit-search-results-button,
-	&::-webkit-search-decoration,
-	&::-webkit-search-results-decoration {
-		appearance: none;
-	}
-}
-
-/* ____________________________________________ */
-/* Semantically: Visible */
-@mixin visually-hidden {
-	position: absolute;
-	clip-path: inset(100%);
-	overflow: hidden;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	width: 1px;
-	height: 1px;
-	white-space: nowrap;
-	pointer-events: none;
-	clip: rect(0 0 0 0);
-}
