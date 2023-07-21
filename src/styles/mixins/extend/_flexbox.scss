@@ -241,38 +241,38 @@
 }
 
 /* ------------------------------------ */
-@mixin fx-col {
+@mixin fx-dir-col {
 	flex-direction: column;
 }
 
-.fx-col {
+.fx-dir-col {
 	flex-direction: column;
 }
 
 /* ------------------------------------ */
-@mixin fx-col-rev {
+@mixin fx-dir-col-rev {
 	flex-direction: column-reverse;
 }
 
-.fx-col-rev {
+.fx-dir-col-rev {
 	flex-direction: column-reverse;
 }
 
 /* ------------------------------------ */
-@mixin fx-row {
+@mixin fx-dir-row {
 	flex-direction: row;
 }
 
-.fx-row {
+.fx-dir-row {
 	flex-direction: row;
 }
 
 /* ------------------------------------ */
-@mixin fx-row-rev {
+@mixin fx-dir-row-rev {
 	flex-direction: row-reverse;
 }
 
-.fx-row-rev {
+.fx-dir-row-rev {
 	flex-direction: row-reverse;
 }
 
