@@ -43,42 +43,35 @@
 }
 
 /* ------------------------------------ */
-/* text-align */
-@mixin ta-center, @mixin ta-left, @mixin ta-right {
-	vertical-align: middle;
-}
-
-/* ------------------------------------ */
-.ta-center,
-.ta-left,
-.ta-right {
-	vertical-align: middle;
-}
-
-/* ------------------------------------ */
 @mixin ta-center {
+	vertical-align: middle;
 	text-align: center;
 }
 
 .ta-center {
+	vertical-align: middle;
 	text-align: center;
 }
 
 /* ------------------------------------ */
 @mixin ta-left {
+	vertical-align: middle;
 	text-align: left;
 }
 
 .ta-left {
+	vertical-align: middle;
 	text-align: left;
 }
 
 /* ------------------------------------ */
 @mixin ta-right {
+	vertical-align: middle;
 	text-align: right;
 }
 
 .ta-right {
+	vertical-align: middle;
 	text-align: right;
 }
 
