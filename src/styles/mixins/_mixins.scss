@@ -7,6 +7,9 @@
 @import "./disable-mob-hover";
 
 /* ____________________________________________ */
+/* Exemple */
+// @include input-reset;
+/* ____________________________________________ */
 /* ___________Composition Classes______________ */
 /* ____________________________________________ */
 /* Input-Reset */
@@ -33,8 +36,6 @@
 	}
 }
 
-// @include input-reset;
-
 /* ____________________________________________ */
 /* Semantically: Visible */
 @mixin visually-hidden {
@@ -50,5 +51,3 @@
 	pointer-events: none;
 	clip: rect(0 0 0 0);
 }
-
-// @include visually-hidden;

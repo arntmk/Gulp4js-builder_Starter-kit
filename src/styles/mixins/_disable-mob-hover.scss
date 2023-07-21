@@ -1,5 +1,11 @@
 /* stylelint-disable declaration-no-important */
 /* ____________________________________________ */
+/* Exemple */
+// @include disable-mobile-hover {
+// 	background-color: var(--accent-color);
+// }
+
+/* ____________________________________________ */
 /* Disable mobile hover */
 @mixin disable-mobile-hover {
 	@media (any-hover: hover) {
@@ -9,7 +15,3 @@
 		}
 	}
 }
-
-// @include disable-mobile-hover {
-// 	background-color: var(--accent-color);
-// }
