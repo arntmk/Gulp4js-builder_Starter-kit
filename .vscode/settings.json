@@ -62,7 +62,7 @@
 	// HTML CSS Support
 	"css.styleSheets": [
 		// "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css",
-		"http://localhost:3015/styles/style.min.css",
+		// "http://localhost:3015/styles/style.min.css",
 		"style.css",
 		"style.min.css",
 		"./styles/style.css",
@@ -70,7 +70,8 @@
 		"./../styles/style.css",
 		"./../styles/style.min.css",
 		"${fileBasenameNoExtension}.css",
-		"${fileBasenameNoExtension}.scss"
+		"${fileBasenameNoExtension}.scss",
+		"./src/styles/**/*.scss"
 	],
 
 	// Eslint
