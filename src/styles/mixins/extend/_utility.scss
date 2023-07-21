@@ -2,14 +2,9 @@
 /* ____________________________________________ */
 /* _____________Utility Classes________________ */
 /* ____________________________________________ */
-// Import
-@import "./composition";
-@import "./flexbox";
-@import "./grid";
-
-/* ____________________________________________ */
 /* Exemple */
-// @extend .overflow-hidden;
+// @extend .flow-space;	 (Combine selectors)
+// @include .flow-space; (Copy selectors)
 
 /* ____________________________________________ */
 /* overflow */

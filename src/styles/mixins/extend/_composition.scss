@@ -12,8 +12,8 @@
 	margin-top: var(--flow-space, 1em);
 }
 
-/* semantically: visible */
-@mixin .visually-hidden {
+/* semantically-visible */
+@mixin visually-hidden {
 	position: absolute;
 	clip-path: inset(100%);
 	overflow: hidden;
@@ -27,8 +27,11 @@
 	clip: rect(0 0 0 0);
 }
 
-/* input-reset */
-@mixin .input-reset {
+.visually-hidden {
+	@include visually-hidden;
+}
+
+@mixin input-reset {
 	// number firefox
 	appearance: textfield;
 
@@ -51,53 +54,87 @@
 	}
 }
 
-/* button-reset */
-@mixin .btn-reset {
+.input-reset {
+	@include input-reset;
+}
+
+@mixin btn-reset {
 	border-width: 0;
 	padding: 0;
 	background-color: transparent;
 }
 
-/* list-reset */
-@mixin .list-reset {
+.btn-reset {
+	@include btn-reset;
+}
+
+@mixin list-reset {
 	list-style: none inside;
 	margin: 0;
 	padding: 0;
 }
 
+.list-reset {
+	@include list-reset;
+}
+
 /* off-screen */
-@mixin .offscreen {
+@mixin offscreen {
 	position: absolute;
 	transform: translateX(-100%); // left: -100%;
 }
 
+.offscreen {
+	@include offscreen;
+}
+
 /* text-ellipsis */
-@mixin .text-ellipsis {
+@mixin text-ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.text-ellipsis {
+	@include text-ellipsis;
 }
 
 /* ____________________________________________ */
 /* ___________Flexbox Composition______________ */
 /* ____________________________________________ */
-@mixin .fx-ai-center {
+@mixin fx-ai-center {
 	display: flex;
 	align-items: center;
 }
 
-@mixin .fx-jc-center {
+.fx-ai-center {
+	@include fx-ai-center;
+}
+
+@mixin fx-jc-center {
 	display: flex;
 	justify-content: center;
 }
 
-@mixin .fx-all-center {
+.fx-jc-center {
+	@include fx-jc-center;
+}
+
+@mixin fx-all-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-@mixin .fx-center-between {
+.fx-all-center {
+	@include fx-all-center;
+}
+
+@mixin fx-center-between {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.fx-center-between {
+	@include fx-center-between;
 }
