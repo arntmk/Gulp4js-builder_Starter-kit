@@ -12,6 +12,7 @@
 	margin-top: var(--flow-space, 1em);
 }
 
+/* ------------------------------------ */
 /* semantically-visible */
 @mixin visually-hidden {
 	position: absolute;
@@ -31,6 +32,7 @@
 	@include visually-hidden;
 }
 
+/* ------------------------------------ */
 @mixin input-reset {
 	// number firefox
 	appearance: textfield;
@@ -58,6 +60,7 @@
 	@include input-reset;
 }
 
+/* ------------------------------------ */
 @mixin btn-reset {
 	border-width: 0;
 	padding: 0;
@@ -68,6 +71,7 @@
 	@include btn-reset;
 }
 
+/* ------------------------------------ */
 @mixin list-reset {
 	list-style: none inside;
 	margin: 0;
@@ -78,7 +82,7 @@
 	@include list-reset;
 }
 
-/* off-screen */
+/* ------------------------------------ */
 @mixin offscreen {
 	position: absolute;
 	transform: translateX(-100%); // left: -100%;
@@ -88,7 +92,7 @@
 	@include offscreen;
 }
 
-/* text-ellipsis */
+/* ------------------------------------ */
 @mixin text-ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -110,6 +114,7 @@
 	@include fx-ai-center;
 }
 
+/* ------------------------------------ */
 @mixin fx-jc-center {
 	display: flex;
 	justify-content: center;
@@ -119,6 +124,7 @@
 	@include fx-jc-center;
 }
 
+/* ------------------------------------ */
 @mixin fx-all-center {
 	display: flex;
 	align-items: center;
@@ -129,6 +135,7 @@
 	@include fx-all-center;
 }
 
+/* ------------------------------------ */
 @mixin fx-center-between {
 	display: flex;
 	align-items: center;

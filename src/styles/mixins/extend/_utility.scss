@@ -7,69 +7,143 @@
 // @include .flow-space; (Copy selectors)
 
 /* ____________________________________________ */
-/* overflow */
-.overflow-hidden {
+@mixin overflow-hidden {
 	overflow: hidden;
 }
 
-.t-uppercase {
+.overflow-hidden {
+	@include overflow-hidden;
+}
+
+/* ------------------------------------ */
+@mixin t-uppercase {
 	text-transform: uppercase;
 }
 
-/* text-wrap */
-.nowrap {
+.t-uppercase {
+	@include t-uppercase;
+}
+
+/* ------------------------------------ */
+@mixin nowrap {
 	white-space: nowrap;
 }
 
-.wrap {
+.nowrap {
+	@include nowrap;
+}
+
+/* ------------------------------------ */
+@mixin wrap {
 	white-space: wrap;
 }
 
+.wrap {
+	@include wrap;
+}
+
+/* ------------------------------------ */
 /* text-align */
-.ta-center,
-.ta-left,
-.ta-right {
+@mixin ta-center, @mixin ta-left, @mixin ta-right {
 	vertical-align: middle;
 }
 
-.ta-center {
+/* ------------------------------------ */
+.ta-center,
+.ta-left,
+.ta-right {
+	@include ta-center;
+	@include ta-left;
+	@include ta-right;
+}
+
+/* ------------------------------------ */
+@mixin ta-center {
 	text-align: center;
 }
 
-.ta-left {
+.ta-center {
+	@include a-center;
+}
+
+/* ------------------------------------ */
+@mixin ta-left {
 	text-align: left;
 }
 
-.ta-right {
+.ta-left {
+	@include ta-left;
+}
+
+/* ------------------------------------ */
+@mixin ta-right {
 	text-align: right;
 }
 
+.ta-right {
+	@include ta-right;
+}
+
+/* ------------------------------------ */
 /* float [clearfix] */
-.floatfix {
+@mixin floatfix {
 	display: flow-root;
 }
 
-.block {
+.floatfix {
+	@include floatfix;
+}
+
+/* ------------------------------------ */
+@mixin block {
 	display: block;
 }
 
-.inline-block {
+.block {
+	@include block;
+}
+
+/* ------------------------------------ */
+@mixin inline-block {
 	display: inline-block;
 }
 
-.inline {
+.inline-block {
+	@include inline-block;
+}
+
+/* ------------------------------------ */
+@mixin inline {
 	display: inline;
 }
 
-/* hidden */
-.hidden {
+.inline {
+	@include inline;
+}
+
+/* ------------------------------------ */
+@mixin hidden {
 	display: none !important;
 }
 
-.m-left-auto {
+.hidden {
+	@include hidden;
+}
+
+/* ------------------------------------ */
+@mixin m-left-auto {
 	margin-left: auto;
 }
 
-.m-right-auto {
+.m-left-auto {
+	@include m-left-auto;
+}
+
+/* ------------------------------------ */
+@mixin m-right-auto {
 	margin-right: auto;
+}
+
+.m-right-auto {
+	@include m-right-auto;
 }
