@@ -322,7 +322,7 @@ function css() {
 
 		.pipe(gulp.src(LibsCssFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/`, { extension: '.css' })))
-		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
+		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true } } })))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`))
 		.pipe(browsersync.stream());
