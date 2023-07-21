@@ -83,6 +83,39 @@
 }
 
 /* ------------------------------------ */
+@mixin text-start {
+	vertical-align: middle;
+	text-align: start;
+}
+
+.text-start {
+	vertical-align: middle;
+	text-align: start;
+}
+
+/* ------------------------------------ */
+@mixin text-end {
+	vertical-align: middle;
+	text-align: end;
+}
+
+.text-end {
+	vertical-align: middle;
+	text-align: end;
+}
+
+/* ------------------------------------ */
+@mixin text-justify {
+	vertical-align: middle;
+	text-align: justify;
+}
+
+.text-justify {
+	vertical-align: middle;
+	text-align: justify;
+}
+
+/* ------------------------------------ */
 /* float [clearfix] */
 @mixin floatfix {
 	display: flow-root;
