@@ -284,7 +284,7 @@ function html() {
 		)
 		.pipe(
 			htmlmin({
-				removeComments: true,
+				removeComments: isProd,
 				collapseWhitespace: isProd,
 				removeScriptTypeAttributes: isProd,
 				removeStyleLinkTypeAttributes: isProd,
