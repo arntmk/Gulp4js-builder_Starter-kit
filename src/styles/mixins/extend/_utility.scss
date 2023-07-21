@@ -16,11 +16,11 @@
 }
 
 /* ------------------------------------ */
-@mixin t-uppercase {
+@mixin text-uppercase {
 	text-transform: uppercase;
 }
 
-.t-uppercase {
+.text-uppercase {
 	text-transform: uppercase;
 }
 
@@ -43,34 +43,34 @@
 }
 
 /* ------------------------------------ */
-@mixin ta-center {
+@mixin text-center {
 	vertical-align: middle;
 	text-align: center;
 }
 
-.ta-center {
+.text-center {
 	vertical-align: middle;
 	text-align: center;
 }
 
 /* ------------------------------------ */
-@mixin ta-left {
+@mixin text-left {
 	vertical-align: middle;
 	text-align: left;
 }
 
-.ta-left {
+.text-left {
 	vertical-align: middle;
 	text-align: left;
 }
 
 /* ------------------------------------ */
-@mixin ta-right {
+@mixin text-right {
 	vertical-align: middle;
 	text-align: right;
 }
 
-.ta-right {
+.text-right {
 	vertical-align: middle;
 	text-align: right;
 }
