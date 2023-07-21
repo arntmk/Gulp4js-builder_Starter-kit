@@ -32,6 +32,15 @@
 }
 
 /* ------------------------------------ */
+@mixin text-lowercase {
+	text-transform: lowercase;
+}
+
+.text-lowercase {
+	text-transform: lowercase;
+}
+
+/* ------------------------------------ */
 @mixin nowrap {
 	white-space: nowrap;
 }
