@@ -668,6 +668,7 @@
 		],
 		"scss/no-global-function-names": null,
 		"import-notation": null,
-		"media-feature-range-notation": "prefix"
+		"media-feature-range-notation": "prefix",
+		"media-query-no-invalid": null
 	}
 }
