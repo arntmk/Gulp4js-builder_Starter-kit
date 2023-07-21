@@ -30,7 +30,7 @@ import imageminPngquant from 'imagemin-pngquant'; // оптимізація png 
 import imageminWebp from 'imagemin-webp'; // конвертатор webp.
 
 // Font
-import fonter from 'gulp-fonter'; // конвертатор шрифтів в woff.
+import fonter from 'gulp-fonter-2'; // конвертатор шрифтів в woff.
 import ttf2woff2 from 'gulp-ttf2woff2'; // конвертатор в woff2.
 import fontfacegen from 'gulp-fontfacegen'; // fontface gen.
 

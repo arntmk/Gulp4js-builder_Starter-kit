@@ -58,6 +58,7 @@
 		"operator-linebreak": ["off", "before"],
 		"wrap-iife": ["error", "any"],
 		"newline-per-chained-call": ["off", { "ignoreChainWithDepth": 2 }],
-		"import/no-unresolved": "off"
+		"import/no-unresolved": "off",
+		"import/no-extraneous-dependencies": "off"
 	}
 }
