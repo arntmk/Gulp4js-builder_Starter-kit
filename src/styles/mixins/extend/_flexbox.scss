@@ -7,127 +7,269 @@
 // @include .flow-space; (Copy selectors)
 
 /* ____________________________________________ */
-/* display */
+@mixin flex {
+	display: flex;
+}
+
 .flex {
 	display: flex;
+}
+
+/* ------------------------------------ */
+@mixin inline-flex {
+	display: inline-flex;
 }
 
 .inline-flex {
 	display: inline-flex;
 }
 
-/* justify-content */
+/* ------------------------------------ */
+@mixin jc-center {
+	justify-content: center;
+}
+
 .jc-center {
 	justify-content: center;
+}
+
+/* ------------------------------------ */
+@mixin jc-start {
+	justify-content: flex-start;
 }
 
 .jc-start {
 	justify-content: flex-start;
 }
 
+/* ------------------------------------ */
+@mixin jc-end {
+	justify-content: flex-end;
+}
+
 .jc-end {
 	justify-content: flex-end;
+}
+
+/* ------------------------------------ */
+@mixin jc-between {
+	justify-content: space-between;
 }
 
 .jc-between {
 	justify-content: space-between;
 }
 
+/* ------------------------------------ */
+@mixin jc-around {
+	justify-content: space-around;
+}
+
 .jc-around {
 	justify-content: space-around;
+}
+
+/* ------------------------------------ */
+@mixin jc-evenly {
+	justify-content: space-evenly;
 }
 
 .jc-evenly {
 	justify-content: space-evenly;
 }
 
-/* align-content */
+/* ------------------------------------ */
+@mixin ac-center {
+	align-content: center;
+}
+
 .ac-center {
 	align-content: center;
+}
+
+/* ------------------------------------ */
+@mixin ac-start {
+	align-content: flex-start;
 }
 
 .ac-start {
 	align-content: flex-start;
 }
 
+/* ------------------------------------ */
+@mixin ac-end {
+	align-content: flex-end;
+}
+
 .ac-end {
 	align-content: flex-end;
+}
+
+/* ------------------------------------ */
+@mixin ac-between {
+	align-content: space-between;
 }
 
 .ac-between {
 	align-content: space-between;
 }
 
+/* ------------------------------------ */
+@mixin ac-around {
+	align-content: space-around;
+}
+
 .ac-around {
 	align-content: space-around;
+}
+
+/* ------------------------------------ */
+@mixin ac-evenly {
+	align-content: space-evenly;
 }
 
 .ac-evenly {
 	align-content: space-evenly;
 }
 
+/* ------------------------------------ */
+@mixin ac-stretch {
+	align-content: stretch;
+}
+
 .ac-stretch {
 	align-content: stretch;
 }
 
-/* align-items */
+/* ------------------------------------ */
+@mixin ai-center {
+	align-items: center;
+}
+
 .ai-center {
 	align-items: center;
+}
+
+/* ------------------------------------ */
+@mixin ai-start {
+	align-items: flex-start;
 }
 
 .ai-start {
 	align-items: flex-start;
 }
 
+/* ------------------------------------ */
+@mixin ai-end {
+	align-items: flex-end;
+}
+
 .ai-end {
 	align-items: flex-end;
+}
+
+/* ------------------------------------ */
+@mixin ai-stretch {
+	align-items: stretch;
 }
 
 .ai-stretch {
 	align-items: stretch;
 }
 
-/* align-self */
+/* ------------------------------------ */
+@mixin as-center {
+	align-self: center;
+}
+
 .as-center {
 	align-self: center;
+}
+
+/* ------------------------------------ */
+@mixin as-start {
+	align-self: flex-start;
 }
 
 .as-start {
 	align-self: flex-start;
 }
 
+/* ------------------------------------ */
+@mixin as-end {
+	align-self: flex-end;
+}
+
 .as-end {
 	align-self: flex-end;
+}
+
+/* ------------------------------------ */
+@mixin as-stretch {
+	align-self: stretch;
 }
 
 .as-stretch {
 	align-self: stretch;
 }
 
-/* flex-wrap */
+/* ------------------------------------ */
+@mixin fx-wrap {
+	flex-wrap: wrap;
+}
+
 .fx-wrap {
 	flex-wrap: wrap;
+}
+
+/* ------------------------------------ */
+@mixin fx-wrap-rev {
+	flex-wrap: wrap-reverse;
 }
 
 .fx-wrap-rev {
 	flex-wrap: wrap-reverse;
 }
 
+/* ------------------------------------ */
+@mixin fx-nowrap {
+	flex-wrap: nowrap;
+}
+
 .fx-nowrap {
 	flex-wrap: nowrap;
 }
 
-/* flex-direction */
+/* ------------------------------------ */
+@mixin fx-col {
+	flex-direction: column;
+}
+
 .fx-col {
 	flex-direction: column;
+}
+
+/* ------------------------------------ */
+@mixin fx-col-rev {
+	flex-direction: column-reverse;
 }
 
 .fx-col-rev {
 	flex-direction: column-reverse;
 }
 
+/* ------------------------------------ */
+@mixin fx-row {
+	flex-direction: row;
+}
+
 .fx-row {
 	flex-direction: row;
+}
+
+/* ------------------------------------ */
+@mixin fx-row-rev {
+	flex-direction: row-reverse;
 }
 
 .fx-row-rev {

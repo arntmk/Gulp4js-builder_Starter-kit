@@ -7,59 +7,125 @@
 // @include .flow-space; (Copy selectors)
 
 /* ____________________________________________ */
-/* display */
+@mixin grid {
+	display: grid;
+}
+
 .grid {
 	display: grid;
+}
+
+/* ------------------------------------ */
+@mixin inline-grid {
+	display: inline-grid;
 }
 
 .inline-grid {
 	display: inline-grid;
 }
 
-/* justify-items */
+/* ------------------------------------ */
+@mixin ji-center {
+	justify-items: center;
+}
+
 .ji-center {
 	justify-items: center;
+}
+
+/* ------------------------------------ */
+@mixin ji-start {
+	justify-items: start;
 }
 
 .ji-start {
 	justify-items: start;
 }
 
+/* ------------------------------------ */
+@mixin ji-end {
+	justify-items: end;
+}
+
 .ji-end {
 	justify-items: end;
+}
+
+/* ------------------------------------ */
+@mixin ji-stretch {
+	justify-items: stretch;
 }
 
 .ji-stretch {
 	justify-items: stretch;
 }
 
+/* ------------------------------------ */
+@mixin i-left {
+	justify-items: left;
+}
+
 .ji-left {
 	justify-items: left;
+}
+
+/* ------------------------------------ */
+@mixin ji-right {
+	justify-items: right;
 }
 
 .ji-right {
 	justify-items: right;
 }
 
-/* justify-self */
+/* ------------------------------------ */
+@mixin js-center {
+	justify-self: center;
+}
+
 .js-center {
 	justify-self: center;
+}
+
+/* ------------------------------------ */
+@mixin js-start {
+	justify-self: start;
 }
 
 .js-start {
 	justify-self: start;
 }
 
+/* ------------------------------------ */
+@mixin js-end {
+	justify-self: end;
+}
+
 .js-end {
 	justify-self: end;
+}
+
+/* ------------------------------------ */
+@mixin js-stretch {
+	justify-self: stretch;
 }
 
 .js-stretch {
 	justify-self: stretch;
 }
 
+/* ------------------------------------ */
+@mixin js-left {
+	justify-self: left;
+}
+
 .js-left {
 	justify-self: left;
+}
+
+/* ------------------------------------ */
+@mixin js-right {
+	justify-self: right;
 }
 
 .js-right {
