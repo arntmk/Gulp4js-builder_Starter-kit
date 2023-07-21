@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 /* eslint-disable import/extensions */
-/* const { src, dest, parallel, series, watch } = require('gulp'); */
 /* ____________________________________________ */
 // Load Gulp & WebPack
 import gulp from 'gulp';
