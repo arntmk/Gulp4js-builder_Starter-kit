@@ -1,4 +1,4 @@
-// 'use strict';
+// 'use strict'; //
 
 /* Base JS imports */
 import './scripts/_adap-body';
