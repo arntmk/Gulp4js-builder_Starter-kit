@@ -69,7 +69,8 @@
 		"./styles/style.min.css",
 		"./../styles/style.css",
 		"./../styles/style.min.css",
-		"${fileBasenameNoExtension}.css"
+		"${fileBasenameNoExtension}.css",
+		"${fileBasenameNoExtension}.scss"
 	],
 
 	// Eslint

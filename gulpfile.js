@@ -340,13 +340,13 @@ function optCss() {
 					skippedContentGlobs: ['node_modules/**', 'libs/**', 'vendor/**'],
 					safelist: [':where', ':is', ':has', 'active', 'open', 'lock-fixed', 'lock'],
 					keyframes: true,
-					variables: true,
+					variables: false,
 					fontFace: false,
 				}),
 			),
 		)
 		.pipe(gulpif(isProd, shorthand()))
-		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: false } } })))
+		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true } } })))
 		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
 		.pipe(gulpif(isProd, size({ showFiles: true })))
 		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)));
