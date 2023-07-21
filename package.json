@@ -132,6 +132,7 @@
 		"semver": "7.5.3",
 		"fonteditor-core": "2.1.10",
 		"got": "8.3.2",
-		"clean-css": "5.3.2"
+		"clean-css": "5.3.2",
+		"http-cache-semantics": "4.1.1"
 	}
 }
