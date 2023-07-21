@@ -12,37 +12,37 @@
 }
 
 /* semantically: visible */
-.visually-hidden {
+@mixin .visually-hidden {
 	@include visually-hidden;
 }
 
 /* input-reset */
-.input-reset {
+@mixin .input-reset {
 	@include input-reset;
 }
 
 /* button-reset */
-.btn-reset {
+@mixin .btn-reset {
 	border-width: 0;
 	padding: 0;
 	background-color: transparent;
 }
 
 /* list-reset */
-.list-reset {
+@mixin .list-reset {
 	list-style: none inside;
 	margin: 0;
 	padding: 0;
 }
 
 /* off-screen */
-.offscreen {
+@mixin .offscreen {
 	position: absolute;
 	transform: translateX(-100%); // left: -100%;
 }
 
 /* text-ellipsis */
-.text-ellipsis {
+@mixin .text-ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -50,23 +50,23 @@
 /* ____________________________________________ */
 /* ___________Flexbox Composition______________ */
 /* ____________________________________________ */
-.fx-ai-center {
+@mixin .fx-ai-center {
 	display: flex;
 	align-items: center;
 }
 
-.fx-jc-center {
+@mixin .fx-jc-center {
 	display: flex;
 	justify-content: center;
 }
 
-.fx-all-center {
+@mixin .fx-all-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.fx-center-between {
+@mixin .fx-center-between {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
