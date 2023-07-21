@@ -2,9 +2,11 @@
 /* ____________________________________________ */
 /* _________________Mixins_____________________ */
 /* ____________________________________________ */
-// Import
+// Include
 @import "./include/breakpoint";
 @import "./include/disable-mob-hover";
+
+// Extend
 @import "./extend/utility";
 @import "./extend/composition";
 @import "./extend/flexbox";
