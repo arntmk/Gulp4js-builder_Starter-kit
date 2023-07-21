@@ -345,10 +345,9 @@ function optCss() {
 				}),
 			),
 		)
-		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(gulpif(isProd, shorthand()))
+		.pipe(gulpif(isProd, cleanCSS({ level: 2 })))
 		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
-		.pipe(gulpif(isProd, cleanCSS()))
 		.pipe(gulpif(isProd, size({ showFiles: true })))
 		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)));
 }
