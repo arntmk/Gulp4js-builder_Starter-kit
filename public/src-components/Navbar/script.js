@@ -40,6 +40,22 @@ const scrollController = {
 };
 
 /* ____________________________________________ */
+// https://codepen.io/vaskort/pen/LYpwjoj
+// https://hidde.blog/using-javascript-to-trap-focus-in-an-element/
+/* ____________________________________________ */
+// ===Enable TrapFocus===
+const trapFocus = (element) => {
+	const focusableEls = Array.from(
+		element.querySelectorAll(
+			'a[href]:not([disabled]), button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), details:not([disabled]), [tabindex]:not([tabindex="-1"]), audio[controls], video[controls], [contenteditable]:not([contenteditable="false"])',
+		),
+	);
+	const firstFocusableEl = focusableEls[0];
+
+	firstFocusableEl.focus();
+};
+
+/* ____________________________________________ */
 // ===Hamburger menu===
 
 const hamburgerController = function () {
@@ -52,6 +68,7 @@ const hamburgerController = function () {
 			menuBtn.classList.toggle('active');
 			menuBtn.setAttribute('aria-expanded', true);
 			scrollController.disableScroll();
+			trapFocus(menu);
 		});
 
 		menu.addEventListener('click', (e) => {
