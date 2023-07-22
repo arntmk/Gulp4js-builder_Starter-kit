@@ -31,7 +31,7 @@ const scrollController = {
 			body.style.paddingRight = '';
 			window.scroll({ top: scrollController.scrollPosition });
 			documentElement.style.cssText = '';
-		}, 400);
+		}, 300);
 	},
 };
 
