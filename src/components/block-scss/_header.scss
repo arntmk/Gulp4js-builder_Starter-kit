@@ -107,7 +107,7 @@
 		opacity: 0;
 		visibility: hidden;
 		transform: translateX(-100%); /* left: -100%; */
-		transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+		transition: transform 0.3s, opacity 0.3s, visibility 0.3s linear;
 	}
 
 	.nav {
