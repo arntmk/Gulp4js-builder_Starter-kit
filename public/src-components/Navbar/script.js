@@ -61,6 +61,7 @@ const trapFocus = (element) => {
 const hamburgerController = function () {
 	const menu = document.querySelector('.header__nav');
 	const menuBtn = document.querySelector('.menu-button');
+	const navFucus = document.querySelector('[data-fucus]');
 
 	if (menu && menuBtn) {
 		menuBtn.addEventListener('click', () => {
@@ -68,7 +69,7 @@ const hamburgerController = function () {
 			menuBtn.classList.toggle('active');
 			menuBtn.setAttribute('aria-expanded', true);
 			scrollController.disableScroll();
-			trapFocus(menu);
+			trapFocus(navFucus);
 		});
 
 		menu.addEventListener('click', (e) => {
