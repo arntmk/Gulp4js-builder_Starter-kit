@@ -307,8 +307,7 @@ function css() {
 	return gulp
 		.src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
 		.pipe(gulpif(isDev, newer(`${buildFolder}/styles/style.min.css`)))
-		.pipe(gulpif(isDev, cached('scss')))
-		.pipe(gulpif(isDev, dependents()))
+		.pipe(gulpif(isDev, cached('scss'), dependents()))
 		.pipe(scssGlob())
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
@@ -316,8 +315,7 @@ function css() {
 		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
-		.pipe(gulpif(isProd, rename('script.css')))
-		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)))
+		.pipe(gulpif(isProd, rename('script.css'), gulp.dest(`${buildFolder}/styles/`)))
 
 		.pipe(gulp.src(LibsCssFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/`, { extension: '.css' })))
@@ -326,29 +324,24 @@ function css() {
 		.pipe(gulp.dest(`${buildFolder}/styles/`))
 		.pipe(browsersync.stream());
 }
-
 function optCss() {
 	const purgeCssFiles = [`${buildFolder}/styles/*.css`, `!${buildFolder}/styles/*-bundle.min.css`];
-	return gulp
-		.src(purgeCssFiles)
+	return gulpif(isProd, gulp.src(purgeCssFiles))
 		.pipe(
-			gulpif(
-				isProd,
-				purgecss({
-					content: [`${buildFolder}/**/*.{html,js}`],
-					skippedContentGlobs: ['node_modules/**', 'libs/**', 'vendor/**'],
-					safelist: [':where', ':is', ':has', 'active', 'open', 'lock-fixed', 'lock'],
-					keyframes: true,
-					variables: false,
-					fontFace: false,
-				}),
-			),
+			purgecss({
+				content: [`${buildFolder}/**/*.{html,js}`],
+				skippedContentGlobs: ['node_modules/**', 'libs/**', 'vendor/**'],
+				safelist: [':where', ':is', ':has', 'active', 'open', 'lock-fixed', 'lock'],
+				keyframes: true,
+				variables: false,
+				fontFace: false,
+			}),
 		)
-		.pipe(gulpif(isProd, shorthand()))
-		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true } } })))
-		.pipe(gulpif(isProd, autoprefixer({ cascade: false, grid: true })))
-		.pipe(gulpif(isProd, size({ showFiles: true })))
-		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/styles/`)));
+		.pipe(shorthand())
+		.pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
+		.pipe(autoprefixer({ cascade: false, grid: true }))
+		.pipe(size({ showFiles: true }))
+		.pipe(gulp.dest(`${buildFolder}/styles/`));
 }
 
 /* ____________________________________________ */
@@ -364,8 +357,7 @@ function js() {
 		.pipe(gulp.dest(`${buildFolder}/scripts/`))
 		.pipe(browsersync.stream())
 
-		.pipe(gulpif(isProd, rename('script.js')))
-		.pipe(gulpif(isProd, gulp.dest(`${buildFolder}/scripts/`)))
+		.pipe(gulpif(isProd, rename('script.js'), gulp.dest(`${buildFolder}/scripts/`)))
 
 		.pipe(gulp.src(LibsJsFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
