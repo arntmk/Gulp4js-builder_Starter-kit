@@ -331,7 +331,7 @@ function optCss() {
 			purgecss({
 				content: [`${buildFolder}/**/*.{html,js}`],
 				skippedContentGlobs: ['node_modules/**', 'libs/**', 'vendor/**'],
-				safelist: [':where', ':is', ':has', 'active', 'open', 'lock-fixed', 'lock'],
+				safelist: [':where', ':is', ':has', 'hidden', 'active', 'open', 'lock-fixed', 'lock'],
 				keyframes: true,
 				variables: false,
 				fontFace: false,
