@@ -187,3 +187,66 @@
 .m-right-auto {
 	margin-right: auto;
 }
+
+/* ------------------------------------ */
+@mixin m-inline-auto {
+	margin-inline: auto;
+}
+
+.m-inline-auto {
+	margin-inline: auto;
+}
+
+/* ------------------------------------ */
+@mixin static {
+	position: static;
+}
+
+.static {
+	position: static;
+}
+
+/* ------------------------------------ */
+@mixin relative {
+	position: relative;
+}
+
+.relative {
+	position: relative;
+}
+
+/* ------------------------------------ */
+@mixin absolute {
+	position: absolute;
+}
+
+.absolute {
+	position: absolute;
+}
+
+/* ------------------------------------ */
+@mixin fixed {
+	position: fixed;
+}
+
+.fixed {
+	position: fixed;
+}
+
+/* ------------------------------------ */
+@mixin sticky {
+	position: sticky;
+}
+
+.sticky {
+	position: sticky;
+}
+
+/* ------------------------------------ */
+@mixin inset-0 {
+	inset: 0;
+}
+
+.inset-0 {
+	inset: 0;
+}
