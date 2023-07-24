@@ -31,6 +31,7 @@
 		"zardoy.fix-all-json",
 		"herrmannplatz.npm-dependency-links",
 		"chakrounanas.turbo-console-log",
-		"junstyle.twig-language"
+		"junstyle.twig-language",
+		"michaelcurrin.auto-commit-msg"
 	]
 }
