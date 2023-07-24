@@ -1,4 +1,4 @@
-# Gulp4JS-Builder:Starter - for front-End Development
+# Gulp4JS-Builder:Starter-kit - for front-End Development
 
 # Commends: npm run "..."
 
