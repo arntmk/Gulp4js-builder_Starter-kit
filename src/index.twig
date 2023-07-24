@@ -1,8 +1,8 @@
-{% extends './components/template/_layout.twig' %}
+{% extends './components/block-html/template/_layout.twig' %}
 
 <!-- Header -->
 {% block header %}
-	{% include './components/block-html/index-html/_header.twig' %}
+	{% include './components/block-html/pages/index/_header.twig' %}
 {% endblock %}
 
 <!-- Main Sections -->
@@ -12,5 +12,5 @@
 
 <!-- Footer -->
 {% block footer %}
-	{% include './components/block-html/index-html/_footer.twig' %}
+	{% include './components/block-html/pages/index/_footer.twig' %}
 {% endblock %}
