@@ -3,8 +3,8 @@
 /* Global CSS Imports */
 // @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
-/* Utilities */
-@import "./styles/utilities/utility";
+/* Console.Log */
+// @import "./styles/debug";
 
 /* Base SCSS imports */
 @import "./styles/variables";
@@ -12,10 +12,10 @@
 @import "./styles/reset/reset";
 @import "./styles/font";
 @import "./styles/global";
-@import "./styles/utilities/effects/effects";
 
-/* Console.Log */
-// @import "./styles/debug";
+/* Utilities */
+@import "./styles/utilities/utility";
+@import "./styles/utilities/effects/effects";
 
 /* Tests */
 @import "./assets/tests/scss/tests";
