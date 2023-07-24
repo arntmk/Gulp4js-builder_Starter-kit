@@ -4,7 +4,7 @@
 // @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
 /* Utilities */
-@import "./styles/utilities/mixins/mixins";
+@import "./styles/utilities/utility";
 
 /* Base SCSS imports */
 @import "./styles/variables";
@@ -12,7 +12,7 @@
 @import "./styles/reset/reset";
 @import "./styles/font";
 @import "./styles/global";
-@import "./styles/effects/effects";
+@import "./styles/utilities/effects/effects";
 
 /* Console.Log */
 // @import "./styles/debug";
