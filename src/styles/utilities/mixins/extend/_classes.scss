@@ -250,3 +250,12 @@
 .inset-0 {
 	inset: 0;
 }
+
+/* ------------------------------------ */
+@mixin vertical-middle {
+	vertical-align: middle;
+}
+
+.vertical-middle {
+	vertical-align: middle;
+}
