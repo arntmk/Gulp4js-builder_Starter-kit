@@ -37,6 +37,19 @@ html {
 }
 
 /**
+ * 2. Breaks words to prevent overflow in all browsers.
+ * 3. Use a 4-space tab width in all browsers.
+ * 4. Remove the grey highlight on links in iOS.
+ * 5. Prevent adjustments of font size after orientation changes in iOS.
+ */
+:where(:root) {
+	overflow-wrap: break-word;
+	tab-size: 4;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/**
  * Prevent VoiceOver from ignoring list semantics in Safari.
  */
 :where(nav li)::before {
@@ -355,14 +368,6 @@ html {
 /* ____________________________________________ */
 /* _______________Typography___________________ */
 /* ____________________________________________ */
-/* html */
-:where(:root) {
-	overflow-wrap: break-word;
-	tab-size: 4;
-	text-size-adjust: 100%;
-	-webkit-tap-highlight-color: transparent;
-}
-
 /* :root */
 :where(html) {
 	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
