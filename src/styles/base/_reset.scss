@@ -95,7 +95,7 @@ html {
 /*
  * Change the alignment in all browsers.
  */
-:where(audio, canvas, iframe, img, svg, video, progress) {
+:where(audio, canvas, iframe, img, svg, picture, video, progress) {
 	vertical-align: middle;
 }
 
@@ -456,8 +456,7 @@ html {
 
 /* ____________________________________________ */
 /* images */
-:where(img, svg, picture) {
-	vertical-align: middle;
+:where(img, svg) {
 	object-fit: cover;
 }
 
