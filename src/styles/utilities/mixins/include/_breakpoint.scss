@@ -1,23 +1,23 @@
 /* stylelint-disable declaration-no-important */
 /* ____________________________________________ */
-// $breakpoint-1450: 1449.98 + px; /* Desktop-XL */
+// $breakpoint-1450: 1449.98 + px; /* Desktop-Large */
 // $breakpoint-1200: 1199.98 + px; /* Desktop */
-// $breakpoint-1024: 1023.98 + px; /* Laptop-XL */
+// $breakpoint-1024: 1023.98 + px; /* Laptop-Large */
 // $breakpoint-992: 991.98 + px; /* Laptop */
 // $breakpoint-768: 767.98 + px; /* Tablet */
-// $breakpoint-576: 575.98 + px; /* Mobile-XL */
+// $breakpoint-576: 575.98 + px; /* Mobile-Large */
 // $breakpoint-480: 479.98 + px; /* Mobile */
 // $breakpoint-320: 319.98 + px; /* Old-Mobile */
 
 /* ____________________________________________ */
 /* Exemple */
-// @include DesktopXL {
+// @include Desktop-Large {
 // 	font-size: 22px;
 // }
 
 /* ____________________________________________ */
 // BREAKPOINT
-@mixin Desktop-XL {
+@mixin Desktop-Large {
 	@media (max-width: ($breakpoint-1450)) {
 		@content;
 	}
@@ -29,7 +29,7 @@
 	}
 }
 
-@mixin Laptop-XL {
+@mixin Laptop-Large {
 	@media (max-width: ($breakpoint-1024)) {
 		@content;
 	}
@@ -47,7 +47,7 @@
 	}
 }
 
-@mixin Mobile-XL {
+@mixin Mobile-Large {
 	@media (max-width: ($breakpoint-576)) {
 		@content;
 	}
