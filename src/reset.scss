@@ -207,16 +207,6 @@ html {
 }
 
 /**
- * Restore the focus outline styles unset by the previous rule in Firefox.
- */
-:where(
-		button,
-		input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i])
-	):focus-visible {
-	outline: 0.125rem solid ButtonText;
-}
-
-/**
  * Remove the additional :invalid styles in Firefox.
  */
 :where(:-moz-ui-invalid) {
