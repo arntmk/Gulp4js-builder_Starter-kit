@@ -161,6 +161,15 @@
 }
 
 /* ------------------------------------ */
+@mixin m-auto {
+	margin: auto;
+}
+
+.m-auto {
+	margin: auto;
+}
+
+/* ------------------------------------ */
 @mixin m-left-auto {
 	margin-left: auto;
 }
@@ -194,4 +203,96 @@
 
 .vertical-middle {
 	vertical-align: middle;
+}
+
+/* ____________________________________________ */
+/* ___________Composition Classes______________ */
+/* ____________________________________________ */
+/* semantically-visible */
+@mixin visually-hidden {
+	position: absolute;
+	clip-path: inset(100%);
+	overflow: hidden;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	white-space: nowrap;
+	pointer-events: none;
+	clip: rect(0 0 0 0);
+}
+
+.visually-hidden {
+	@include visually-hidden;
+}
+
+/* ------------------------------------ */
+@mixin input-reset {
+	// number firefox
+	appearance: textfield;
+
+	// password Edge
+	&::-ms-reveal {
+		display: none;
+	}
+
+	// number Chrome
+	&::-webkit-inner-spin-button {
+		appearance: none;
+	}
+
+	// search Chrome
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-decoration,
+	&::-webkit-search-results-decoration {
+		appearance: none;
+	}
+}
+
+.input-reset {
+	@include input-reset;
+}
+
+/* ------------------------------------ */
+@mixin btn-reset {
+	border-width: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+.btn-reset {
+	@include btn-reset;
+}
+
+/* ------------------------------------ */
+@mixin list-reset {
+	list-style: none inside;
+	margin: 0;
+	padding: 0;
+}
+
+.list-reset {
+	@include list-reset;
+}
+
+/* ------------------------------------ */
+@mixin offscreen {
+	position: absolute;
+	transform: translateX(-100%); // left: -100%;
+}
+
+.offscreen {
+	@include offscreen;
+}
+
+/* ------------------------------------ */
+@mixin text-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.text-ellipsis {
+	@include text-ellipsis;
 }
