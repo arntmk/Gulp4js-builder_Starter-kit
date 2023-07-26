@@ -2,10 +2,6 @@
 /* _________________Default____________________ */
 /* ____________________________________________ */
 /* Table */
-:where(table) {
-	border-collapse: collapse;
-}
-
 :where(th, td) {
 	border: thin solid #a0a0a0;
 	padding: 0.5em;
