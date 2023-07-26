@@ -307,7 +307,8 @@ function css() {
 	return gulp
 		.src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
 		.pipe(gulpif(isDev, newer(`${buildFolder}/styles/style.min.css`)))
-		.pipe(gulpif(isDev, cached('scss'), dependents()))
+		.pipe(gulpif(isDev, cached('scss')))
+		.pipe(gulpif(isDev, dependents()))
 		.pipe(scssGlob())
 		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
