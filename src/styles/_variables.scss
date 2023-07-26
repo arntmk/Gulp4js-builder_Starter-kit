@@ -21,8 +21,8 @@ $burger-breakpoint: $breakpoint-768;
 	/* ________________CONTAINER___________________ */
 	/* ____________________________________________ */
 	--content-width: 1200px; /* 1200+30=1230px */
-	--container-padding: 15px; /* 15*2 Left-Right = 30px */
-	--container-width: calc(var(--content-width) + (var(--container-padding) * 2));
+	--container-offset: 15px; /* 15*2 Left-Right = 30px */
+	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
 	/* ____________________________________________ */
 	/* __________________COLOR_____________________ */
