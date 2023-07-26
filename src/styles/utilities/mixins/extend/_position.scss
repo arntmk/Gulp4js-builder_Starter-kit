@@ -1,0 +1,98 @@
+/* stylelint-disable declaration-no-important */
+/* ____________________________________________ */
+/* _____________Utility Classes________________ */
+/* ____________________________________________ */
+// https://stackoverflow.com/questions/45899894/when-to-use-extend-and-mixin-in-sass
+/* Exemple */
+// @extend .flow-space;	 (Combine selectors)
+// @include .flow-space; (Spam selectors)
+
+/* ____________________________________________ */
+@mixin static {
+	position: static;
+}
+
+.static {
+	position: static;
+}
+
+/* ------------------------------------ */
+@mixin relative {
+	position: relative;
+}
+
+.relative {
+	position: relative;
+}
+
+/* ------------------------------------ */
+@mixin absolute {
+	position: absolute;
+}
+
+.absolute {
+	position: absolute;
+}
+
+/* ------------------------------------ */
+@mixin fixed {
+	position: fixed;
+}
+
+.fixed {
+	position: fixed;
+}
+
+/* ------------------------------------ */
+@mixin sticky {
+	position: sticky;
+}
+
+.sticky {
+	position: sticky;
+}
+
+/* ------------------------------------ */
+@mixin inset-0 {
+	inset: 0;
+}
+
+.inset-0 {
+	inset: 0;
+}
+
+/* ------------------------------------ */
+@mixin top-0 {
+	top: 0;
+}
+
+.top-0 {
+	top: 0;
+}
+
+/* ------------------------------------ */
+@mixin right-0 {
+	right: 0;
+}
+
+.right-0 {
+	right: 0;
+}
+
+/* ------------------------------------ */
+@mixin left-0 {
+	right: 0;
+}
+
+.left-0 {
+	left: 0;
+}
+
+/* ------------------------------------ */
+@mixin bottom-0 {
+	bottom: 0;
+}
+
+.bottom-0 {
+	bottom: 0;
+}

@@ -71,56 +71,46 @@
 
 /* ------------------------------------ */
 @mixin text-left {
-	vertical-align: middle;
 	text-align: left;
 }
 
 .text-left {
-	vertical-align: middle;
 	text-align: left;
 }
 
 /* ------------------------------------ */
 @mixin text-right {
-	vertical-align: middle;
 	text-align: right;
 }
 
 .text-right {
-	vertical-align: middle;
 	text-align: right;
 }
 
 /* ------------------------------------ */
 @mixin text-start {
-	vertical-align: middle;
 	text-align: start;
 }
 
 .text-start {
-	vertical-align: middle;
 	text-align: start;
 }
 
 /* ------------------------------------ */
 @mixin text-end {
-	vertical-align: middle;
 	text-align: end;
 }
 
 .text-end {
-	vertical-align: middle;
 	text-align: end;
 }
 
 /* ------------------------------------ */
 @mixin text-justify {
-	vertical-align: middle;
 	text-align: justify;
 }
 
 .text-justify {
-	vertical-align: middle;
 	text-align: justify;
 }
 
@@ -195,60 +185,6 @@
 
 .m-inline-auto {
 	margin-inline: auto;
-}
-
-/* ------------------------------------ */
-@mixin static {
-	position: static;
-}
-
-.static {
-	position: static;
-}
-
-/* ------------------------------------ */
-@mixin relative {
-	position: relative;
-}
-
-.relative {
-	position: relative;
-}
-
-/* ------------------------------------ */
-@mixin absolute {
-	position: absolute;
-}
-
-.absolute {
-	position: absolute;
-}
-
-/* ------------------------------------ */
-@mixin fixed {
-	position: fixed;
-}
-
-.fixed {
-	position: fixed;
-}
-
-/* ------------------------------------ */
-@mixin sticky {
-	position: sticky;
-}
-
-.sticky {
-	position: sticky;
-}
-
-/* ------------------------------------ */
-@mixin inset-0 {
-	inset: 0;
-}
-
-.inset-0 {
-	inset: 0;
 }
 
 /* ------------------------------------ */

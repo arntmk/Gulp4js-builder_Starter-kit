@@ -61,7 +61,7 @@
 }
 
 /* ------------------------------------ */
-@mixin i-left {
+@mixin ji-left {
 	justify-items: left;
 }
 
@@ -133,5 +133,102 @@
 }
 
 /* place-items (grid shorthand) */
+/* ------------------------------------ */
+@mixin pi-start {
+	place-items: start;
+}
+
+.pi-start {
+	place-items: start;
+}
+
+/* ------------------------------------ */
+@mixin pi-end {
+	place-items: end;
+}
+
+.pi-end {
+	place-items: end;
+}
+
+/* ------------------------------------ */
+@mixin pi-center {
+	place-items: center;
+}
+
+.pi-center {
+	place-items: center;
+}
+
+/* ------------------------------------ */
+@mixin pi-stretch {
+	place-items: stretch;
+}
+
+.pi-stretch {
+	place-items: stretch;
+}
 
 /* place-content (grid shorthand) */
+/* ------------------------------------ */
+@mixin pc-start {
+	place-content: start;
+}
+
+.pc-start {
+	place-content: start;
+}
+
+/* ------------------------------------ */
+@mixin pc-end {
+	place-content: end;
+}
+
+.pc-end {
+	place-content: end;
+}
+
+/* ------------------------------------ */
+@mixin pc-center {
+	place-content: center;
+}
+
+.pc-center {
+	place-content: center;
+}
+
+/* ------------------------------------ */
+@mixin pc-stretch {
+	place-content: stretch;
+}
+
+.pc-stretch {
+	place-content: stretch;
+}
+
+/* ------------------------------------ */
+@mixin pc-between {
+	place-content: space-between;
+}
+
+.pc-between {
+	place-content: space-between;
+}
+
+/* ------------------------------------ */
+@mixin pc-around {
+	place-content: space-around;
+}
+
+.pc-around {
+	place-content: space-around;
+}
+
+/* ------------------------------------ */
+@mixin pc-evenly {
+	place-content: space-evenly;
+}
+
+.pc-evenly {
+	place-content: space-evenly;
+}
