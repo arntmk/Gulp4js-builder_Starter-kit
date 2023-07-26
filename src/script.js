@@ -2,7 +2,7 @@
 
 /* Base JS imports */
 import './scripts/_adap-body';
-import './scripts/main';
+import './scripts/_main';
 
 /* Components JS imports */
 import './components/block-js/_hamburger';
