@@ -444,7 +444,7 @@ html {
 
 /* ____________________________________________ */
 /* images */
-:where(img, svg) {
+:where(img, svg, picture) {
 	object-fit: cover;
 }
 
