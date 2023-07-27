@@ -159,13 +159,6 @@ html {
 }
 
 /**
- * Change the inconsistent appearance in all browsers.
- */
-:where(fieldset) {
-	border: 0.0625rem solid #a0a0a0;
-}
-
-/**
  * 1. Remove the margin in Firefox and Safari.
  * 2. Change the resize direction in all browsers.
  */
@@ -503,6 +496,7 @@ html {
 /* form border */
 :where(fieldset) {
 	margin: 0;
+	border: 0.0625rem solid #a0a0a0;
 	padding: 0;
 }
 
