@@ -21,12 +21,12 @@ html {
 *,
 *::before,
 *::after {
-	break-inside: inherit;
 	box-sizing: inherit;
 	background-repeat: inherit;
 }
 
 * {
+	break-inside: inherit;
 	min-width: 0;
 }
 
