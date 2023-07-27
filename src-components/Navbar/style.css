@@ -16,7 +16,7 @@ main {
 }
 
 /* ____________________________________________ */
-div#body-wrappar {
+div#root {
 	display: flex;
 	flex-flow: column nowrap;
 	overflow: clip; /* если используете на сайте position: sticky - используйте clip; вместо hidden */
