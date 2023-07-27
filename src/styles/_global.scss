@@ -68,7 +68,7 @@
 /* ____________________________________________ */
 .container {
 	margin-inline: auto;
-	padding-inline: clamp(10px, 1.5vw, var(--container-offset, 15px)); /* 10px - 15px */
+	padding-inline: clamp(10px, 1.5vw, var(--container-offset, 15px));
 	width: min(100%, var(--container-width, 1450px));
 
 	@media (max-width: $breakpoint-1450) {
