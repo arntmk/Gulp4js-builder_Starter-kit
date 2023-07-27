@@ -390,7 +390,7 @@ function browserSync() {
 		tunnel: false, // online (Internet)
 		port: 3015,
 		ui: false,
-		logFileChanges: false,
+		logFileChanges: true,
 		logConnections: false,
 		browser: ['chrome'], // , 'firefox'
 	});
