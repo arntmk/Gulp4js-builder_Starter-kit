@@ -5,7 +5,7 @@ const screenViewport = function () {
 		const oldViewport = document.querySelector('meta[name="viewport"]');
 		const viewport = document.createElement('meta');
 		viewport.setAttribute('name', 'viewport');
-		viewport.setAttribute('content', `width=${width <= 320 ? '320' : 'device-width'}`);
+		viewport.setAttribute('content', `width=${width <= 319.98 ? '319.98' : 'device-width'}`);
 		document.head.replaceChild(viewport, oldViewport);
 	})();
 };
