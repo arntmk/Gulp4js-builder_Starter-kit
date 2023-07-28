@@ -45,8 +45,8 @@ const hamburgerController = function () {
 	/* const anchors = document.querySelectorAll('a[href*="#"]');
 
 	anchors.forEach((anchor) => {
-		anchor.addEventListener('click', (event) => {
-			event.preventDefault();
+		anchor.addEventListener('click', (e) => {
+			e.preventDefault();
 
 			const blockID = anchor.getAttribute('href').substring(1);
 

@@ -8,7 +8,7 @@ const selectsController = function () {
 		const options = selects.querySelectorAll('.option');
 
 		if (select && optionsList && options) {
-		// show & hide options list
+			// show & hide options list
 			select.addEventListener('click', () => {
 				select.classList.toggle('active');
 				optionsList.classList.toggle('active');
