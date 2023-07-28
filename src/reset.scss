@@ -445,6 +445,7 @@ html {
 /* ____________________________________________ */
 /* images */
 :where(img, svg, picture) {
+	align-self: center;
 	object-fit: cover;
 }
 
