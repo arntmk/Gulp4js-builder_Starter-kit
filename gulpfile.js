@@ -310,7 +310,11 @@ function css() {
 		.pipe(gulpif(isDev, cached('scss')))
 		.pipe(gulpif(isDev, dependents()))
 		.pipe(scssGlob())
-		.pipe(scss.sync({ outputStyle: 'expanded' }).on('error', scss.logError))
+		.pipe(
+			scss
+				.sync({ outputStyle: 'expanded', includePaths: ['/node_modules/'] })
+				.on('error', scss.logError),
+		)
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
