@@ -16,7 +16,7 @@
 			"options": { "singleQuote": false }
 		},
 		{
-			"files": ["*.html", "*.twig"],
+			"files": ["*.html", "*.twig", "*.hbs", "*.njk"],
 			"options": { "singleQuote": false }
 		}
 	],
