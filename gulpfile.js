@@ -319,18 +319,22 @@ function css() {
 		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream())
 
-		.pipe(gulpif(isProd, rename('script.css'), gulp.dest(`${buildFolder}/styles/`)))
+		.pipe(gulpif(isProd, rename('script.css'), gulp.dest(`${buildFolder}/styles/`)));
+}
 
-		.pipe(gulp.src(LibsCssFiles))
+function LibsCss() {
+	const LibsCssFiles = `${srcFolder}/styles/libs/*.css`;
+	return gulp
+		.src(LibsCssFiles)
 		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/`, { extension: '.css' })))
 		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true } } })))
 		.pipe(size({ showFiles: true }))
-		.pipe(gulp.dest(`${buildFolder}/styles/`))
+		.pipe(gulp.dest(`${buildFolder}/styles/libs/`))
 		.pipe(browsersync.stream());
 }
 
 function optCss() {
-	const purgeCssFiles = [`${buildFolder}/styles/*.css`, `!${buildFolder}/styles/*-bundle.min.css`];
+	const purgeCssFiles = [`${buildFolder}/styles/*.css`, `!${buildFolder}/styles/vendor.min.js`];
 	return gulpif(isProd, gulp.src(purgeCssFiles))
 		.pipe(
 			purgecss({
@@ -353,23 +357,25 @@ function optCss() {
 // JS/TS
 
 function js() {
-	const LibsJsFiles = `${srcFolder}/scripts/libs/*.js`;
 	return gulp
 		.src([`${srcFolder}/script.js`, `${srcFolder}/*.{js,ts}`]) // WebPack entry
 		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
 		.pipe(plumber(plumberNotify('JS/TS')))
 		.pipe(webpack(webpackConfig).on('error', WebPackError))
 		.pipe(gulp.dest(`${buildFolder}/scripts/`))
-		.pipe(browsersync.stream())
+		.pipe(browsersync.stream());
 
-		.pipe(gulpif(isProd, rename('script.js'), gulp.dest(`${buildFolder}/scripts/`)))
+	// .pipe(gulpif(isProd, rename('script.js'), gulp.dest(`${buildFolder}/scripts/`)));
+}
 
-		.pipe(gulp.src(LibsJsFiles))
+function LibsJs() {
+	const LibsJsFiles = `${srcFolder}/scripts/libs/*.js`;
+	return gulp
+		.src(LibsJsFiles)
 		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
 		.pipe(gulpif(isProd, terser()))
 		.pipe(size({ showFiles: true }))
-		.pipe(gulp.dest(`${buildFolder}/scripts/`))
-		.pipe(browsersync.stream());
+		.pipe(gulp.dest(`${buildFolder}/scripts/libs/`));
 }
 
 /* ____________________________________________ */
@@ -407,7 +413,7 @@ export const fontGenTask = gulp.parallel(delfont, fontgen);
 export const imgTask = gulp.parallel(img, webp);
 export const svgSptTask = svg;
 export const htmlTask = html;
-export const cssTask = gulp.series(css, optCss);
-export const jsTask = js;
+export const cssTask = gulp.series(gulp.parallel(css, LibsCss), optCss);
+export const jsTask = gulp.parallel(js, LibsJs);
 export const delTask = delDev;
-export default gulp.series(delDev, delProd, gulp.parallel(html, cssTask, js, imgTask, font));
+export default gulp.series(delDev, delProd, gulp.parallel(html, cssTask, jsTask, imgTask, font));

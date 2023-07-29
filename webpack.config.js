@@ -1,3 +1,6 @@
+/* ____________________________________________ */
+// Load plugins
+
 import { EsbuildPlugin } from 'esbuild-loader';
 
 /* ____________________________________________ */
@@ -23,12 +26,7 @@ const webpackConfig = {
 	},
 
 	optimization: {
-		minimizer: [
-			new EsbuildPlugin({
-				target: 'es2016',
-				css: true, // Apply minification to CSS assets (External CSS)
-			}),
-		],
+		minimize: true, // default terser
 	},
 
 	module: {
@@ -46,7 +44,6 @@ const webpackConfig = {
 					loader: 'esbuild-loader',
 					options: {
 						target: 'es2016',
-						minify: isProd,
 					},
 				},
 			},
