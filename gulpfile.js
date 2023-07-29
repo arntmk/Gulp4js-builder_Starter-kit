@@ -418,4 +418,4 @@ export const htmlTask = html;
 export const cssTask = gulp.series(gulp.parallel(css, LibsCss), optCss);
 export const jsTask = gulp.parallel(js, LibsJs);
 export const delTask = delDev;
-export default gulp.series(delDev, delProd, gulp.parallel(html, cssTask, jsTask, imgTask, font));
+export default gulp.series(delDev, delProd, gulp.parallel(html, jsTask, cssTask, imgTask, font));
