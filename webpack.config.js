@@ -26,7 +26,7 @@ const webpackConfig = {
 	},
 
 	optimization: {
-		minimize: true, // default terser
+		minimize: isProd, // default terser
 	},
 
 	module: {
