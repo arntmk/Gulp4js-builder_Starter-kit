@@ -302,7 +302,6 @@ function html() {
 // CSS/SCSS
 
 function css() {
-	const LibsCssFiles = `${srcFolder}/styles/libs/*.css`;
 	return gulp
 		.src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
 		.pipe(gulpif(isDev, newer(`${buildFolder}/styles/style.min.css`)))
@@ -317,20 +316,19 @@ function css() {
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
-		.pipe(browsersync.stream())
+		.pipe(browsersync.stream());
 
-		.pipe(gulpif(isProd, rename('script.css'), gulp.dest(`${buildFolder}/styles/`)));
+	// .pipe(gulpif(isProd, rename('script.css'), gulp.dest(`${buildFolder}/styles/`)));
 }
 
 function LibsCss() {
 	const LibsCssFiles = `${srcFolder}/styles/libs/*.css`;
 	return gulp
 		.src(LibsCssFiles)
-		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/`, { extension: '.css' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/libs/`, { extension: '.css' })))
 		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true } } })))
 		.pipe(size({ showFiles: true }))
-		.pipe(gulp.dest(`${buildFolder}/styles/libs/`))
-		.pipe(browsersync.stream());
+		.pipe(gulp.dest(`${buildFolder}/styles/libs/`));
 }
 
 function optCss() {
@@ -372,7 +370,7 @@ function LibsJs() {
 	const LibsJsFiles = `${srcFolder}/scripts/libs/*.js`;
 	return gulp
 		.src(LibsJsFiles)
-		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/libs/`, { extension: '.js' })))
 		.pipe(gulpif(isProd, terser()))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/scripts/libs/`));
