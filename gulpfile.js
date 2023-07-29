@@ -241,7 +241,6 @@ function img() {
 		.pipe(gulp.dest(`${buildFolder}/images/favicon/`))
 		.pipe(browsersync.stream());
 }
-
 // content
 function webp() {
 	return gulp
@@ -329,6 +328,7 @@ function css() {
 		.pipe(gulp.dest(`${buildFolder}/styles/`))
 		.pipe(browsersync.stream());
 }
+
 function optCss() {
 	const purgeCssFiles = [`${buildFolder}/styles/*.css`, `!${buildFolder}/styles/*-bundle.min.css`];
 	return gulpif(isProd, gulp.src(purgeCssFiles))
