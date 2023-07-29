@@ -340,7 +340,7 @@ function optCss() {
 	return gulpif(isProd, gulp.src(purgeCssFiles))
 		.pipe(
 			purgecss({
-				content: [`${buildFolder}/**/*.{html,js}`],
+				content: [`${srcFolder}/**/*.{html,twig,js}`],
 				skippedContentGlobs: ['node_modules/**', 'bower_components/**'],
 				safelist: [':where', ':is', ':has', 'hidden', 'active', 'open', 'lock-fixed', 'lock'],
 				keyframes: true,
