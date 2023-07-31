@@ -4,8 +4,9 @@
 const tabsController = function () {
 	const tabsNav = document.querySelectorAll('.tabs__nav-btn');
 	const tabsContent = document.querySelectorAll('.tabs__content');
+	const tabsNavClick = document.querySelector('.tabs__nav-btn');
 
-	if (tabsNav && tabsContent) {
+	if (tabsNav && tabsContent && tabsNavClick) {
 		tabsNav.forEach((item) =>
 			item.addEventListener('click', (e) => {
 				e.preventDefault();
@@ -26,7 +27,7 @@ const tabsController = function () {
 				document.getElementById(id).setAttribute('aria-hidden', false);
 			}),
 		);
-		document.querySelector('.tabs__nav-btn').click();
+		tabsNavClick.click();
 	}
 };
 tabsController();
