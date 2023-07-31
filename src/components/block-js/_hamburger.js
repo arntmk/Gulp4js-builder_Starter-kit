@@ -6,7 +6,6 @@ import trapFocus from '../../scripts/export/_trap-focus';
 const hamburgerController = function () {
 	const menu = document.querySelector('.header__nav');
 	const menuBtn = document.querySelector('.menu-button');
-	const fucus = document.querySelector('[data-fucus]');
 
 	if (menu && menuBtn) {
 		menuBtn.addEventListener('click', () => {
@@ -14,7 +13,9 @@ const hamburgerController = function () {
 			menuBtn.classList.toggle('active');
 			menuBtn.setAttribute('aria-expanded', true);
 			scrollController.disableScroll();
-			trapFocus(fucus);
+			setTimeout(() => {
+				trapFocus(menu);
+			}, 300);
 		});
 
 		menu.addEventListener('click', (e) => {

@@ -447,6 +447,7 @@ html {
 :where(img, svg, picture) {
 	align-self: center;
 	object-fit: cover;
+	aspect-ratio: auto;
 }
 
 :where(
