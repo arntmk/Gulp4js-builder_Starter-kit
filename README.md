@@ -1,6 +1,6 @@
 # Gulp4JS-Builder:Starter-kit - for front-End Development
 
-# Commends: npm run "..."
+## Commends: npm run "..."
 
     "[ .git commite ]": "git add . && git commit -m 'commite.' && git push -u origin main",
     "g-watch": "gulp watch",
@@ -23,4 +23,4 @@
     "update all": "npm update",
     "audit fix": "npm audit fix"
 
-    Turn off Gulp watch: Ctrl+C+Y
+### Turn off Gulp watch: Ctrl+C+Y
