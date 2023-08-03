@@ -108,7 +108,7 @@ html {
 /*
  * Change the alignment in all browsers.
  */
-:where(audio, canvas, iframe, img, svg, picture, video, progress) {
+:where(audio, canvas, iframe, img, svg, picture, video, progress, input, button, textarea) {
 	vertical-align: middle;
 }
 
