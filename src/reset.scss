@@ -41,6 +41,7 @@ html {
 	display: none;
 }
 
+/* ____________________________________________ */
 /**
  * 2. Breaks words to prevent overflow in all browsers.
  * 3. Use a 4-space tab width in all browsers.
@@ -110,7 +111,7 @@ html {
 	font-size: 80%;
 }
 
-/*
+/**
  * Change the alignment in all browsers.
  */
 :where(audio, canvas, iframe, img, svg, picture, video, progress, input, button, textarea) {
@@ -224,7 +225,7 @@ html {
 	box-shadow: none;
 }
 
-/*
+/**
  * Add the correct styles in Safari.
  */
 :where(dialog) {
@@ -243,7 +244,7 @@ html {
 	display: none;
 }
 
-/*
+/**
  * Add the correct display in Safari.
  */
 :where(details > summary:first-of-type) {
@@ -257,14 +258,14 @@ html {
 	cursor: progress;
 }
 
-/*
+/**
  * Change the cursor on control elements in all browsers.
  */
 :where([aria-controls]) {
 	cursor: pointer;
 }
 
-/*
+/**
  * Change the cursor on disabled, not-editable, or otherwise
  * inoperable elements in all browsers.
  */
@@ -272,7 +273,7 @@ html {
 	cursor: not-allowed;
 }
 
-/*
+/**
  * Change the display on visually hidden accessible elements
  * in all browsers.
  */
@@ -285,6 +286,7 @@ html {
 	clip: rect(0, 0, 0, 0);
 }
 
+/* ____________________________________________ */
 /**
  * Add the correct system-ui font-family.
  */
