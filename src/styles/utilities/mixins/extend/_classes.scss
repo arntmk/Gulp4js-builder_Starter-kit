@@ -59,6 +59,15 @@
 }
 
 /* ------------------------------------ */
+@mixin vertical-middle {
+	vertical-align: middle;
+}
+
+.vertical-middle {
+	vertical-align: middle;
+}
+
+/* ------------------------------------ */
 @mixin text-center {
 	vertical-align: middle;
 	text-align: center;
@@ -212,15 +221,6 @@
 
 .m-inline-auto {
 	margin-inline: auto;
-}
-
-/* ------------------------------------ */
-@mixin vertical-middle {
-	vertical-align: middle;
-}
-
-.vertical-middle {
-	vertical-align: middle;
 }
 
 /* ____________________________________________ */
