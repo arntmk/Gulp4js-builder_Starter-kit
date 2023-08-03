@@ -11,7 +11,7 @@
 /* ____________________________________________ */
 /* _____________Normalize & Reset______________ */
 /* ____________________________________________ */
-/* all: unset; */
+/* Inherit(*) | all: unset; */
 html {
 	break-inside: avoid-column;
 	box-sizing: border-box;
