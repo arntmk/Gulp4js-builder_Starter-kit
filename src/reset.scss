@@ -36,6 +36,11 @@ html {
 	text-decoration: inherit;
 }
 
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+	display: none;
+}
+
 /**
  * 2. Breaks words to prevent overflow in all browsers.
  * 3. Use a 4-space tab width in all browsers.
