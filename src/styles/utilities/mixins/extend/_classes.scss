@@ -188,6 +188,24 @@
 }
 
 /* ------------------------------------ */
+@mixin m-top-auto {
+	margin-top: auto;
+}
+
+.m-top-auto {
+	margin-top: auto;
+}
+
+/* ------------------------------------ */
+@mixin m-bottom-auto {
+	margin-bottom: auto;
+}
+
+.m-bottom-auto {
+	margin-bottom: auto;
+}
+
+/* ------------------------------------ */
 @mixin m-inline-auto {
 	margin-inline: auto;
 }
