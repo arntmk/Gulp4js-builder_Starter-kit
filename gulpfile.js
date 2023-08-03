@@ -290,6 +290,9 @@ function html() {
 				collapseWhitespace: isProd,
 				removeScriptTypeAttributes: isProd,
 				removeStyleLinkTypeAttributes: isProd,
+				removeEmptyAttributes: isProd,
+				sortAttributes: isProd,
+				sortClassName: isProd,
 			}),
 		)
 		.pipe(size({ showFiles: true }))
