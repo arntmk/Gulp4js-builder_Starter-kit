@@ -15,10 +15,7 @@
 			"files": ["*.css", "*.scss", "*.sass", "*.less", "*.postcss"],
 			"options": { "singleQuote": false }
 		},
-		{
-			"files": ["*.html", "*.twig", "*.hbs", "*.njk"],
-			"options": { "singleQuote": false }
-		}
+		{ "files": ["*.html", "*.twig", "*.hbs", "*.njk"], "options": { "singleQuote": false } }
 	],
 	"ignorePath": [
 		"**/node_modules/**",
