@@ -44,16 +44,17 @@ html {
 }
 
 .scroll-up::before {
-	content: "\21d1"; /* ↑ */
+	content: "\203a"; /* ↑ */
 	position: absolute;
-	left: 0;
+	left: -6px;
 	top: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	font-size: 30px;
+	font-size: 45px;
+	transform: rotate(-90deg);
 }
 
 .scroll-up:hover {
@@ -74,5 +75,5 @@ html {
 	fill: none;
 	stroke: #ffa500;
 	stroke-width: 4px;
-	transition: 0.2s;
+	transition: 0.2s ease-in-out;
 }
