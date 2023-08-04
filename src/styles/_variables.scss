@@ -102,8 +102,6 @@ $burger-breakpoint: $breakpoint-768;
 	--space-md: 20px;
 	--space-lg: 30px;
 	--space-xl: 40px;
-
-	color-scheme: light;
 }
 
 /* ____________________________________________ */
@@ -114,7 +112,5 @@ $burger-breakpoint: $breakpoint-768;
 		/* scrollBar */
 		--clr-scrollbar: #777;
 		--clr-scrollbar-bg: #1c1c1c;
-
-		color-scheme: dark;
 	}
 }
