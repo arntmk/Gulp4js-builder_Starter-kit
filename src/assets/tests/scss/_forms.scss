@@ -14,6 +14,7 @@
 progress,
 table,
 input:not([type="radio"], [type="checkbox"], [type="file"], [type="color"]),
+[type="button"],
 select,
 textarea,
 ::file-selector-button {
