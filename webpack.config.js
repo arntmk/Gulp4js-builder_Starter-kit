@@ -32,12 +32,12 @@ const webpackConfig = {
 	module: {
 		rules: [
 			/* ____________________________________________ */
-			// JS/TS/JSX/TSX
+			// JS/JSX|TS/TSX
 			{
-				test: /\.m?(js|ts|jsx|tsx|css|json)$/,
+				test: /\.m?(js|jsx|ts|tsx|css|json)$/,
 				resolve: {
 					fullySpecified: false,
-					extensions: ['.js', '.ts', '.jsx', '.tsx', 'css', '.json'],
+					extensions: ['.js', '.jsx', '.ts', '.tsx', 'css', 'scss', '.json'],
 				},
 				exclude: /(node_modules|bower_components)/,
 				use: {
@@ -50,11 +50,12 @@ const webpackConfig = {
 			/* ____________________________________________ */
 			// CSS/SCSS
 			{
-				test: /\.css$/,
+				test: /\.(css|scss)$/,
 				resolve: {
 					fullySpecified: false,
-					extensions: ['css'],
+					extensions: ['css', 'scss'],
 				},
+				exclude: /(node_modules|bower_components)/,
 				use: ['style-loader', 'css-loader'],
 			},
 		],

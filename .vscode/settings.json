@@ -26,7 +26,6 @@
 		"javascript": "javascriptreact",
 		"typescript": "typescriptreact",
 		"vue-html": "html",
-		"vue": "html",
 		"php": "html",
 		"markdown": "html",
 		"blade": "html",
