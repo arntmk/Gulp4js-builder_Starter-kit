@@ -4,6 +4,7 @@
 const accordionsController = function () {
 	const accordions = document.querySelectorAll('.accordion');
 
+	// Клик аккордеону. Закрыть другие акардиони
 	function removeOpen(index1) {
 		accordions.forEach((item2, index2) => {
 			if (index1 !== index2) {
