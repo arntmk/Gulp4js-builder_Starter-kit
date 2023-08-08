@@ -375,7 +375,7 @@ html {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 16px;
-	line-height: 1.5;
+	line-height: 1.45;
 }
 
 :where(code, kbd, samp, pre) {
@@ -418,7 +418,7 @@ html {
 :where(h1, h2, h3, h4, h5, h6) {
 	margin: 0;
 	font-weight: var(--fw-h, 700);
-	line-height: 1.25;
+	line-height: 1.35;
 	text-wrap: balance;
 }
 
