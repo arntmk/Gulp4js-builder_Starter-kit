@@ -7,8 +7,8 @@ if (form) {
 			e.preventDefault();
 
 			// Передача даних на сервер
-			const formData = new FormData(form);
-			fetch('https://www.google.com/form-api/form.php', { method: 'POST', body: formData });
+			// const formData = new FormData(form);
+			// fetch('https://www.google.com/form-api/form.php', { method: 'POST', body: formData });
 		});
 	});
 }
