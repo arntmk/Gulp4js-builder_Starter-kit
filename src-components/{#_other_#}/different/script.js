@@ -26,3 +26,15 @@ link.forEach((links) => {
 		e.preventDefault();
 	});
 });
+
+/* ____________________________________________ */
+// worse
+window.addEventListener('load', () => {
+	log.textContent += 'load\n';
+});
+
+/* ____________________________________________ */
+// better
+document.addEventListener('DOMContentLoaded', () => {
+	log.textContent += 'DOMContentLoaded\n';
+});
