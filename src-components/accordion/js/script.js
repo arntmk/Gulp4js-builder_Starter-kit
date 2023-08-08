@@ -4,8 +4,8 @@
 const accordionsController = function () {
 	const accordions = document.querySelectorAll('.accordion');
 
-	// Клик аккордеону. Закрыть другие акардиони
-	function removeOpen(index1) {
+	// Клик по аккордеону. Закрыть другой акардион
+	/* 	function removeActive(index1) {
 		accordions.forEach((item2, index2) => {
 			if (index1 !== index2) {
 				item2.classList.remove('active');
@@ -17,7 +17,7 @@ const accordionsController = function () {
 				content2.setAttribute('aria-hidden', true);
 			}
 		});
-	}
+	} */
 
 	if (accordions) {
 		accordions.forEach((item, index) => {
@@ -35,9 +35,9 @@ const accordionsController = function () {
 					accordionBtn.setAttribute('aria-expanded', false);
 					content.setAttribute('aria-hidden', true);
 				}
-				removeOpen(index);
+				// removeActive(index);
 			});
-			// Клик снаружи дропдауна. Закрыть дропдаун
+			// Клик снаружи акардиона. Закрыть акардион
 			document.addEventListener('click', (e) => {
 				if (!item.contains(e.target)) {
 					content.style.maxHeight = '';
@@ -46,7 +46,7 @@ const accordionsController = function () {
 					content.setAttribute('aria-hidden', true);
 				}
 			});
-			// Нажатие на Tab или Escape. Закрыть дропдаун
+			// Нажатие на Tab или Escape. Закрыть акардион
 			document.addEventListener('keydown', (e) => {
 				if (e.key === 'Tab' || e.key === 'Escape') {
 					content.style.maxHeight = '';
