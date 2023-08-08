@@ -1,8 +1,7 @@
 // 'use strict'; //
 
 /* Base JS imports */
-import './scripts/_adapBody';
-import './scripts/_serviceWorker';
+import './scripts/_adap-body';
 import './scripts/_main';
 
 /* Components JS imports */
