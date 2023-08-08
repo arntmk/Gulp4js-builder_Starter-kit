@@ -24,6 +24,10 @@ const link = document.querySelectorAll('a[href*="#"]');
 link.forEach((links) => {
 	links.addEventListener('click', (e) => {
 		e.preventDefault();
+
+		// Передача даних на сервер
+		const formData = new FormData(form);
+		fetch('https://www.google.com/form-api/form.php', { method: 'POST', body: formData });
 	});
 });
 
