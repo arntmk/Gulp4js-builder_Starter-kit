@@ -12,8 +12,8 @@
 // ===Service Worker=== //
 
 // Cache
-const staticCacheName = 's-app-v2';
-const dynamicCacheName = 'd-app-v2';
+const staticCacheName = 's-app-v6';
+const dynamicCacheName = 'd-app-v6';
 const assetUrls = ['/index.html', '/offline.html'];
 
 // Files Cache
