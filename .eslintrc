@@ -1,6 +1,6 @@
 {
 	"extends": ["eslint:recommended", "airbnb-base"],
-	"parser": "esbuild-loader",
+	"parser": "@babel/eslint-parser",
 	"root": true,
 	"env": {
 		"browser": true

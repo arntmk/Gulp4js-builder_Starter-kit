@@ -18,7 +18,7 @@ const webpackConfig = {
 
 	entry: {
 		script: './src/script.js',
-		sw: './src/sw.js',
+		sw: './src/scripts/serviceWorker/sw.js',
 		// vendor: './src/vendor.js',
 	},
 

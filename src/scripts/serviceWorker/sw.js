@@ -5,14 +5,12 @@
 /* ____________________________________________ */
 // ===Service Worker API===
 
-const staticCacheName = 's-app-v2';
-const assetUrls = ['index.html'];
+const staticCacheName = 's-app-v3';
+const assetUrls = ['/index.html'];
 
 // Cache Files
 self.addEventListener('install', async (e) => {
-	const cache = await caches.open(staticCacheName);
-	await cache.addAll(assetUrls);
-	// e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(assetUrls)));
+	e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(assetUrls)));
 });
 
 // Cache Clear
@@ -33,6 +31,8 @@ async function cacheFirst(request) {
 	return cached ?? (await fetch(request));
 }
 
+/* 	const cache = await caches.open(staticCacheName);
+	await cache.addAll(assetUrls); */
 // console.log('[SW]: install');
 // console.log('[SW]: activate');
 // console.log('fetch', e.request.url);
