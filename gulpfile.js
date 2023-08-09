@@ -291,8 +291,8 @@ function html() {
 				removeScriptTypeAttributes: isProd,
 				removeStyleLinkTypeAttributes: isProd,
 				removeEmptyAttributes: isProd,
-				sortAttributes: isProd,
-				sortClassName: isProd,
+				sortAttributes: false,
+				sortClassName: false,
 			}),
 		)
 		.pipe(size({ showFiles: true }))
