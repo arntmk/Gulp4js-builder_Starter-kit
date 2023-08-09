@@ -5,7 +5,7 @@
 /* ____________________________________________ */
 // ===Service Worker API===
 
-const staticCacheName = 's-app-v4';
+const staticCacheName = 's-app-v1';
 const assetUrls = ['/index.html'];
 
 // Cache Files
