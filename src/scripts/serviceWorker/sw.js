@@ -6,7 +6,7 @@
 // ===Service Worker API===
 
 const staticCacheName = 's-app-v3';
-const assetUrls = ['/index.html'];
+const assetUrls = ['/', '/index.html'];
 
 // Cache Files
 self.addEventListener('install', async (e) => {
