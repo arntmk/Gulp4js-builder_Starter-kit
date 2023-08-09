@@ -3,7 +3,7 @@
 /* ____________________________________________ */
 // https://web.dev/codelab-make-installable/
 // https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent
-// https://www.youtube.com/watch?v=ifroMW_F4Sc
+// https://www.youtube.com/watch?v=ifroMW_F4Sc - 45:35 ( WorkBox )
 /* ____________________________________________ */
 // console.log('[SW]: install');
 // console.log('[SW]: activate');
