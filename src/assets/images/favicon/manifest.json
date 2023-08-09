@@ -1,11 +1,12 @@
 {
 	"name": "New Project | PWA",
 	"short_name": "NP | PWA",
-	"start_url": "/",
+	"start_url": ".",
 	"display": "standalone",
-	"description": "Web site created using gulp4js-builder",
-	"background_color": "#eee",
+	"orientation": "portrait",
 	"theme_color": "#4682b4",
+	"background_color": "#eee",
+	"description": "Web site created using gulp4js-builder",
 	"icons": [
 		{
 			"src": "/images/favicon/android-icon192.png",

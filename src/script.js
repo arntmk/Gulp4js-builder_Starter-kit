@@ -2,6 +2,7 @@
 
 /* Base JS imports */
 import './scripts/_adap-body';
+import './scripts/_service-worker';
 import './scripts/_main';
 
 /* Components JS imports */
