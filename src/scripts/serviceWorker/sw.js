@@ -1,19 +1,21 @@
 /* eslint-disable no-console */
 /* eslint-disable no-restricted-globals */
+/* ____________________________________________ */
 // https://web.dev/codelab-make-installable/
 // https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent
 /* ____________________________________________ */
-// ===Service Worker API===
+// ===Service Worker=== //
 
+// Cache
 const staticCacheName = 's-app-v1';
 const assetUrls = ['/index.html'];
 
-// Cache Files
-self.addEventListener('install', async (e) => {
+// Files Cache
+self.addEventListener('install', (e) => {
 	e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(assetUrls)));
 });
 
-// Cache Clear
+// Clear Cache
 self.addEventListener('activate', async (e) => {
 	const cachedNames = await caches.keys();
 	await Promise.all(
@@ -21,7 +23,7 @@ self.addEventListener('activate', async (e) => {
 	);
 });
 
-// Cache Request
+// Request Cache
 self.addEventListener('fetch', (e) => {
 	e.respondWith(cacheFirst(e.request));
 });
@@ -31,6 +33,7 @@ async function cacheFirst(request) {
 	return cached ?? (await fetch(request));
 }
 
+// async
 /* 	const cache = await caches.open(staticCacheName);
 	await cache.addAll(assetUrls); */
 // console.log('[SW]: install');

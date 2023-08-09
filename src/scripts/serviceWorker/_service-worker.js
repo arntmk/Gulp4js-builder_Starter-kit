@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-restricted-globals */
 /* ____________________________________________ */
-// ===SW===
+// ===Service Worker=== //
 window.addEventListener('load', async () => {
 	if ('serviceWorker' in navigator) {
 		try {
