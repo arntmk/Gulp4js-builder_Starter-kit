@@ -4,7 +4,7 @@ dist/ !*.html !*.css !*.js
 dest/ !*.html !*.css !*.js
 app/ !*.html !*.css !*.js
 build/ !*.html !*.css !*.js
-# libs/
+libs/
 vendor/
 *.min.js
 *.min.css
