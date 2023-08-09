@@ -104,7 +104,7 @@ function delDev() {
 		isDev
 			? [
 					`${buildFolder}/**`,
-					`!${buildFolder}/*.{png,ico,txt,html}`,
+					`!${buildFolder}/*.{png,ico,txt,html,webmanifest,json}`,
 					`!${buildFolder}/styles/`,
 					`!${buildFolder}/styles/*.css`,
 					`!${buildFolder}/styles/libs/`,
@@ -212,7 +212,7 @@ function svg() {
 function img() {
 	// favicon
 	const srcPngFiles = [`${srcFolder}/assets/images/favicon/*.png`, `${srcFolder}/assets/*.png`];
-	const copyManifest = `${srcFolder}/assets/images/favicon/*.{ico,webmanifest,json}`;
+	const copyIco = `${srcFolder}/assets/images/favicon/*.ico`;
 	// content
 	const srcSvgFiles = `${srcFolder}/assets/images/**/*.{gif,svg}`;
 	return gulp
@@ -234,7 +234,7 @@ function img() {
 		.pipe(gulp.dest(`${buildFolder}/images/`))
 		.pipe(browsersync.stream())
 
-		.pipe(gulp.src(copyManifest))
+		.pipe(gulp.src(copyIco))
 		.pipe(changed(`${buildFolder}/images/`))
 		.pipe(gulp.dest(`${buildFolder}/images/favicon/`))
 		.pipe(browsersync.stream())
@@ -263,7 +263,7 @@ function webp() {
 // Html/Twig
 
 function html() {
-	const copyFiles = `${srcFolder}/assets/*.{png,ico,txt,html}`;
+	const copyFiles = `${srcFolder}/assets/*.{png,ico,txt,html,webmanifest,json}`;
 	return gulp
 		.src([`${srcFolder}/index.{html,twig}`, `${srcFolder}/*.{html,twig}`])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
@@ -386,8 +386,7 @@ function watchFiles() {
 	gulp.watch(`${srcFolder}/**/*.{html,twig}`, html);
 	gulp.watch(`${srcFolder}/**/*.{scss,sass}`, css, libsCss);
 	gulp.watch(`${srcFolder}/**/*.{js,ts}`, js, libsJs);
-	gulp.watch(`${srcFolder}/assets/images/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
-	gulp.watch(`${srcFolder}/assets/images/**/*.{png,jpg,jpeg,webp}`, webp);
+	gulp.watch(`${srcFolder}/assets/images/**/*.{ico,gif,svg,png,jpg,jpeg,webp}`, img, webp);
 	gulp.watch(`${srcFolder}/assets/fonts/**/*.{otf,ttf,woff,woff2,svg}`, font);
 }
 
