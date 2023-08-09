@@ -263,7 +263,7 @@ function webp() {
 // Html/Twig
 
 function html() {
-	const copyFavicon = `${srcFolder}/assets/*.{png,ico,txt,html}`;
+	const copyFiles = `${srcFolder}/assets/*.{png,ico,txt,html,js}`;
 	return gulp
 		.src([`${srcFolder}/index.{html,twig}`, `${srcFolder}/*.{html,twig}`])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
@@ -299,7 +299,7 @@ function html() {
 		.pipe(gulp.dest(`${buildFolder}/`))
 		.pipe(browsersync.stream())
 
-		.pipe(gulp.src(copyFavicon))
+		.pipe(gulp.src(copyFiles))
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`)))
 		.pipe(gulp.dest(`${buildFolder}/`))
 		.pipe(browsersync.stream());
@@ -324,11 +324,9 @@ function css() {
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream());
-
-	// .pipe(gulpif(isProd, rename('script.css'), gulp.dest(`${buildFolder}/styles/`)));
 }
 
-function LibsCss() {
+function libsCss() {
 	const LibsCssFiles = `${srcFolder}/styles/libs/*.css`;
 	return gulp
 		.src(LibsCssFiles)
@@ -369,11 +367,9 @@ function js() {
 		.pipe(webpack(webpackConfig).on('error', WebPackError))
 		.pipe(gulp.dest(`${buildFolder}/scripts/`))
 		.pipe(browsersync.stream());
-
-	// .pipe(gulpif(isProd, rename('script.js'), gulp.dest(`${buildFolder}/scripts/`)));
 }
 
-function LibsJs() {
+function libsJs() {
 	const LibsJsFiles = `${srcFolder}/scripts/libs/*.js`;
 	return gulp
 		.src(LibsJsFiles)
@@ -388,8 +384,8 @@ function LibsJs() {
 
 function watchFiles() {
 	gulp.watch(`${srcFolder}/**/*.{html,twig}`, html);
-	gulp.watch(`${srcFolder}/**/*.{scss,sass}`, css);
-	gulp.watch(`${srcFolder}/**/*.{js,ts}`, js);
+	gulp.watch(`${srcFolder}/**/*.{scss,sass}`, css, libsCss);
+	gulp.watch(`${srcFolder}/**/*.{js,ts}`, js, libsJs);
 	gulp.watch(`${srcFolder}/assets/images/**/*.{png,ico,gif,svg,webmanifest,json}`, img);
 	gulp.watch(`${srcFolder}/assets/images/**/*.{png,jpg,jpeg,webp}`, webp);
 	gulp.watch(`${srcFolder}/assets/fonts/**/*.{otf,ttf,woff,woff2,svg}`, font);
@@ -418,7 +414,7 @@ export const fontGenTask = gulp.parallel(delfont, fontgen);
 export const imgTask = gulp.parallel(img, webp);
 export const svgSptTask = svg;
 export const htmlTask = html;
-export const cssTask = gulp.series(gulp.parallel(css, LibsCss), optCss);
-export const jsTask = gulp.parallel(js, LibsJs);
+export const cssTask = gulp.series(gulp.parallel(css, libsCss), optCss);
+export const jsTask = gulp.parallel(js, libsJs);
 export const delTask = delDev;
 export default gulp.series(delDev, delProd, gulp.parallel(html, jsTask, cssTask, imgTask, font));
