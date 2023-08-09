@@ -14,7 +14,7 @@
 // Cache
 const staticCacheName = 's-app-v6';
 const dynamicCacheName = 'd-app-v6';
-const assetUrls = ['/index.html', '/offline.html'];
+const assetUrls = ['/index.html', '/offline.html', '/404.html'];
 
 // Files Cache
 self.addEventListener('install', (e) => {
