@@ -1,12 +1,10 @@
 {
 	"extends": ["eslint:recommended", "airbnb-base"],
-	// "parser": "@typescript-eslint/parser",
-	// "parserOptions": { "project": ["./tsconfig.json"] },
-	// "plugins": ["@typescript-eslint"],
-	// "root": true,
+	"parser": "esbuild-loader",
+	"root": true,
 	"env": {
-		"browser": true,
-		"commonjs": true
+		"browser": true
+		// "commonjs": true
 		// "es6": true
 		// "node": true
 		// "jquery": true

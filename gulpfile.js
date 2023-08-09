@@ -263,7 +263,7 @@ function webp() {
 // Html/Twig
 
 function html() {
-	const copyFiles = `${srcFolder}/assets/*.{png,ico,txt,html,js}`;
+	const copyFiles = `${srcFolder}/assets/*.{png,ico,txt,html}`;
 	return gulp
 		.src([`${srcFolder}/index.{html,twig}`, `${srcFolder}/*.{html,twig}`])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
