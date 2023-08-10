@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 /* eslint-disable no-restricted-globals */
 /* ____________________________________________ */
+// https://web.dev/install-criteria/
+/* ____________________________________________ */
 // ===InitSW=== //
 document.addEventListener('DOMContentLoaded', async () => {
 	if ('serviceWorker' in navigator) {
