@@ -12,16 +12,16 @@
 /* ____________________________________________ */
 // ===Service Worker=== //
 
-// Cache Filies
+// Cache Filies & Versions
 const version = '2';
 const staticCacheName = `s-app-v${version}`;
 const dynamicCacheName = `d-app-v${version}`;
 const assetUrls = ['/index.html', '/offline.html', '/404.html'];
 
+// e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(assetUrls)));
 // async
 // const cache = await caches.open(staticCacheName);
 // await cache.addAll(assetUrls);
-// e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(assetUrls)));
 // InitCache
 self.addEventListener('install', (e) => {
 	e.waitUntil(
@@ -36,7 +36,7 @@ self.addEventListener('install', (e) => {
 	);
 });
 
-// Clear Cache
+// Delete Old Cache
 self.addEventListener('activate', async () => {
 	const cachedNames = await caches.keys();
 	await Promise.all(
