@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-restricted-globals */
 /* ____________________________________________ */
-// ===Service Worker=== //
+// ===InitSW=== //
 document.addEventListener('DOMContentLoaded', async () => {
 	if ('serviceWorker' in navigator) {
 		try {
@@ -10,4 +10,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 			console.log('service worker register failed');
 		}
 	}
+
+	// Prompt Install App
+	window.addEventListener('beforeinstallprompt', (e) => {
+		e.preventDefault();
+		window.deferredPrompt = e;
+	});
 });

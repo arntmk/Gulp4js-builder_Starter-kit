@@ -396,7 +396,7 @@ function browserSync() {
 	browsersync.init({
 		server: { baseDir: `${buildFolder}` },
 		notify: false,
-		online: false, // online (Local Router)
+		online: true, // online (Local Router)
 		tunnel: false, // online (Internet)
 		port: 3015,
 		ui: false,
