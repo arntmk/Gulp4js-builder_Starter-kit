@@ -5,6 +5,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent
 // https://www.youtube.com/watch?v=ifroMW_F4Sc - 45:35 ( WorkBox )
 // https://www.youtube.com/watch?v=kV9Gq6FrABg
+// https://www.youtube.com/watch?v=q5RLP-CDMvs
 /* ____________________________________________ */
 // console.log('[SW]: install');
 // console.log('[SW]: activate');
@@ -13,17 +14,20 @@
 // ===Service Worker=== //
 
 // Cache Filies & Versions
-const version = '2';
+const version = '4';
 const staticCacheName = `s-app-v${version}`;
 const dynamicCacheName = `d-app-v${version}`;
 const assetUrls = ['/index.html', '/offline.html', '/404.html'];
 
-// e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(assetUrls)));
-// async
-// const cache = await caches.open(staticCacheName);
-// await cache.addAll(assetUrls);
+// InitCache
+/* self.addEventListener('install', async (e) => {
+	const cache = await caches.open(staticCacheName);
+	await cache.addAll(assetUrls);
+}); */
+
 // InitCache
 self.addEventListener('install', (e) => {
+	// e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(assetUrls)));
 	e.waitUntil(
 		caches.open(staticCacheName).then(
 			(cache) => {
@@ -50,7 +54,6 @@ self.addEventListener('activate', async () => {
 // Request Cache
 self.addEventListener('fetch', (e) => {
 	const { request } = e;
-
 	if (URL.origin === location.origin) {
 		e.respondWith(cacheFirst(request));
 	} else {
@@ -58,9 +61,16 @@ self.addEventListener('fetch', (e) => {
 	}
 });
 
-async function cacheFirst(request) {
+/* async function cacheFirst(request) {
 	const cached = await caches.match(request);
 	return cached ?? (await fetch(request));
+} */
+
+function cacheFirst(e) {
+	const { request } = e;
+	return caches.match(request).then((cached) => {
+		return cached || fetch(request);
+	});
 }
 
 async function networkFirst(request) {
