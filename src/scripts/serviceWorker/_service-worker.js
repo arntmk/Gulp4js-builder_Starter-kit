@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 /* ____________________________________________ */
 // ===Service Worker=== //
-window.addEventListener('load', async () => {
+document.addEventListener('DOMContentLoaded', async () => {
 	if ('serviceWorker' in navigator) {
 		try {
 			await navigator.serviceWorker.register('/sw.js');
