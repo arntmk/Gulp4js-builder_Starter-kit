@@ -263,9 +263,14 @@ function webp() {
 // Html/Twig
 
 function html() {
-	const copyFiles = `${srcFolder}/assets/*.{png,ico,txt,html,webmanifest,json}`;
+	const copyFiles = `${srcFolder}/assets/*.{png,ico,txt,webmanifest,json}`;
 	return gulp
-		.src([`${srcFolder}/index.{html,twig}`, `${srcFolder}/*.{html,twig}`])
+		.src([
+			`${srcFolder}/*.{html,twig}`,
+			`!${srcFolder}/**/_*.{html,twig}`,
+			`${srcFolder}/assets/*.html`,
+			`!${srcFolder}/assets/images/**/*.html`,
+		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('Html/Twig')))
 		.pipe(twig())
@@ -293,6 +298,8 @@ function html() {
 				removeEmptyAttributes: isProd,
 				sortAttributes: false,
 				sortClassName: false,
+				minifyCSS: isProd,
+				minifyJS: isProd,
 			}),
 		)
 		.pipe(size({ showFiles: true }))
@@ -361,8 +368,10 @@ function optCss() {
 
 function js() {
 	return gulp
-		.src([`${srcFolder}/script.js`, `${srcFolder}/*.{js,ts}`]) // WebPack entry
-		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/`, { extension: '.js' })))
+		.src(`${srcFolder}/*.{js,ts}`) // WebPack entry
+		.pipe(
+			gulpif(isDev, changed(`${buildFolder}/scripts/`, { hasChanged: changed.compareContents })),
+		)
 		.pipe(plumber(plumberNotify('JS/TS')))
 		.pipe(webpack(webpackConfig).on('error', WebPackError))
 		.pipe(gulp.dest(`${buildFolder}/scripts/`))
