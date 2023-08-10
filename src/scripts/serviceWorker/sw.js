@@ -4,6 +4,7 @@
 // https://web.dev/codelab-make-installable/
 // https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent
 // https://www.youtube.com/watch?v=ifroMW_F4Sc - 45:35 ( WorkBox )
+// https://www.youtube.com/watch?v=kV9Gq6FrABg
 /* ____________________________________________ */
 // console.log('[SW]: install');
 // console.log('[SW]: activate');
@@ -11,18 +12,27 @@
 /* ____________________________________________ */
 // ===Service Worker=== //
 
-// Cache
-const staticCacheName = 's-app-v6';
-const dynamicCacheName = 'd-app-v6';
+// Cache Filies
+const staticCacheName = 's-app-v2';
+const dynamicCacheName = 'd-app-v2';
 const assetUrls = ['/index.html', '/offline.html', '/404.html'];
 
-// Files Cache
+// async
+// const cache = await caches.open(staticCacheName);
+// await cache.addAll(assetUrls);
+// e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(assetUrls)));
+// InitCache
 self.addEventListener('install', (e) => {
-	e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(assetUrls)));
-
-	// async
-	// const cache = await caches.open(staticCacheName);
-	// await cache.addAll(assetUrls);
+	e.waitUntil(
+		caches.open(staticCacheName).then(
+			(cache) => {
+				return cache.addAll(assetUrls);
+			},
+			(error) => {
+				console.log(error);
+			},
+		),
+	);
 });
 
 // Clear Cache
