@@ -1,16 +1,15 @@
 // 'use strict'; //
 
 /* Base JS imports */
-import './scripts/_adap-body';
+import './scripts/_form';
 import './scripts/serviceWorker/_service-worker';
-import './scripts/_main';
+import './scripts/_global';
 
 /* Components JS imports */
 import './components/block-js/_hamburger';
 
 /* Tests */
-import './assets/tests/js/_forms';
-import './assets/tests/js/_accordion';
+import './assets/tests/js/_tests';
 
 /* Libs */
 // import './scripts/libs/swiper-bundle.min';
