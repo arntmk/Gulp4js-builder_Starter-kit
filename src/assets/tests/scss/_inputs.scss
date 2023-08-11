@@ -204,6 +204,7 @@ textarea::-webkit-resizer {
 /* ____________________________________________ */
 [type="date"] {
 	width: 10em;
+	display: inline-flex;
 }
 
 [type="date"]::-webkit-calendar-picker-indicator {
