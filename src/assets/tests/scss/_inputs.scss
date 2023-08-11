@@ -17,6 +17,7 @@ input:not([type="radio"], [type="checkbox"], [type="file"], [type="color"]),
 [type="button"],
 select,
 textarea,
+[contenteditable],
 ::file-selector-button {
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 }
