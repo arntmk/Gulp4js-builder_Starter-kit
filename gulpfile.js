@@ -199,7 +199,7 @@ function svg() {
 		.pipe(replace('&gt;', '>'))
 		.pipe(
 			svgSprite({
-				mode: { stack: { sprite: 'svg-sprite.svg', example: true } },
+				mode: { stack: { sprite: 'svg-sprites.svg', example: true } },
 			}),
 		)
 		.pipe(size({ showFiles: true }))
