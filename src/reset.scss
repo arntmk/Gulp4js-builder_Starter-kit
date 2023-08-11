@@ -568,10 +568,7 @@ dialog::backdrop,
 [type="file"]::file-selector-button,
 [type="number"]::-webkit-inner-spin-button,
 [type="search"]::-webkit-search-cancel-button,
-[type="time"]::-webkit-calendar-picker-indicator,
-[type="week"]::-webkit-calendar-picker-indicator,
-[type="date"]::-webkit-calendar-picker-indicator,
-[type="datetime-local"]::-webkit-calendar-picker-indicator {
+/* [type="time"],[type="week"],[type="date"],[type="datetime-local"] */::-webkit-calendar-picker-indicator {
 	cursor: pointer;
 }
 
