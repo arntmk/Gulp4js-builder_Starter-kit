@@ -14,6 +14,10 @@ if (form) {
 	form.forEach((forms) => {
 		forms.addEventListener('submit', (e) => {
 			e.preventDefault();
+
+			// Передача даних на сервер
+			const formData = new FormData(form);
+			fetch('https://www.google.com/form-api/form.php', { method: 'POST', body: formData });
 		});
 	});
 }
@@ -24,12 +28,21 @@ const link = document.querySelectorAll('a[href*="#"]');
 link.forEach((links) => {
 	links.addEventListener('click', (e) => {
 		e.preventDefault();
-
-		// Передача даних на сервер
-		const formData = new FormData(form);
-		fetch('https://www.google.com/form-api/form.php', { method: 'POST', body: formData });
 	});
 });
+
+// ===Adaptive-body-min-width===
+const screenViewport = function () {
+	(() => {
+		const { width } = window.screen;
+		const oldViewport = document.querySelector('meta[name="viewport"]');
+		const viewport = document.createElement('meta');
+		viewport.setAttribute('name', 'viewport');
+		viewport.setAttribute('content', `width=${width <= 319.98 ? '319.98' : 'device-width'}`);
+		document.head.replaceChild(viewport, oldViewport);
+	})();
+};
+screenViewport();
 
 /* ____________________________________________ */
 // worse
