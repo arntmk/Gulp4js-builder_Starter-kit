@@ -442,7 +442,8 @@ html {
 /* add typography inheritance | input */
 :where(button, input, select, textarea, optgroup, option),
 ::placeholder,
-::file-selector-button {
+::file-selector-button,
+:-webkit-autofill {
 	font: inherit;
 	line-height: inherit;
 	letter-spacing: inherit;
