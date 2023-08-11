@@ -206,14 +206,6 @@ textarea::-webkit-resizer {
 	width: 10em;
 }
 
-input[type="date"]:empty::before {
-	content: attr(placeholder);
-	position: absolute;
-	display: none;
-	font-weight: 100;
-	font-size: 17.1px;
-}
-
 [type="time"]::-webkit-calendar-picker-indicator,
 [type="week"]::-webkit-calendar-picker-indicator,
 [type="date"]::-webkit-calendar-picker-indicator,
@@ -240,7 +232,7 @@ input[type="date"]:empty::before {
 }
 
 [type="datetime-local"] {
-	width: 13.8em;
+	width: 14.8em;
 }
 
 /* ____________________________________________ */
