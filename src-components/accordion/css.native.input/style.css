@@ -55,11 +55,11 @@ input {
 
 /* <label> element to check the checkbox */
 label {
-	font-weight: 700;
 	display: flex;
 	align-items: center;
 	padding-left: 0.3125rem;
 	height: 4.02rem; /* This height value must be equal to max-height value of <details> element */
+	font-weight: 700;
 }
 
 /* ____________________________________________ */
@@ -69,22 +69,21 @@ label {
 */
 /* ____________________________________________ */
 details {
-	border: thin solid #8f8f9d;
 	overflow: hidden; /* Hide the rest of the content */
 	margin: 1rem 0;
-	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
-	width: 100%;
+	border: thin solid #8f8f9d;
 	border-radius: 0.5rem;
+	width: 100%;
 	max-height: 4.08rem; /* Set a max-height value just enough to show the summary content */
-	background-color: #fff;
-	transition: max-height 0.5s ease-in-out;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 	color: #111;
 	background-color: #fff;
+	transition: max-height 0.5s ease-in-out;
 }
 
 details .accordion-content {
 	margin-top: 0;
-	padding: 0 0.3125rem 0.3125rem 0.3125rem;
+	padding: 0 0.3125rem 0.3125rem;
 	text-align: center;
 	background-color: #fff;
 }

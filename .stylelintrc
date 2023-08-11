@@ -19,7 +19,6 @@
 		"**/build/**",
 		"**/libs/**",
 		"**/vendor/**",
-		"**/tests/**",
 		"src/scss/_font.scss",
 		"*.js",
 		"*.ts",

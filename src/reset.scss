@@ -557,7 +557,10 @@ dialog::backdrop,
 [type="file"]::file-selector-button,
 [type="number"]::-webkit-inner-spin-button,
 [type="search"]::-webkit-search-cancel-button,
-[type="date"]::-webkit-calendar-picker-indicator {
+[type="time"]::-webkit-calendar-picker-indicator,
+[type="week"]::-webkit-calendar-picker-indicator,
+[type="date"]::-webkit-calendar-picker-indicator,
+[type="datetime-local"]::-webkit-calendar-picker-indicator {
 	cursor: pointer;
 }
 
@@ -585,7 +588,8 @@ dialog::backdrop,
 		[type="color"],
 		[type="radio"],
 		[type="checkbox"],
-		[tabindex="0"]
+		[tabindex="0"],
+		[contenteditable="true"]
 	):focus-visible {
 	outline: 0.125rem solid var(--clr-hover, #4682b4);
 }

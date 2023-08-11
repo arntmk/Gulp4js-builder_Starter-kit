@@ -19,7 +19,6 @@
 		"**/build/**",
 		"**/libs/**",
 		"**/vendor/**",
-		"**/tests/**",
 		"*.css",
 		"*.scss",
 		"*.sass",

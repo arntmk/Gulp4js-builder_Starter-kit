@@ -204,12 +204,43 @@ textarea::-webkit-resizer {
 /* ____________________________________________ */
 [type="date"] {
 	width: 10em;
+}
+
+input[type="date"]:empty::before {
+	content: attr(placeholder);
+	position: absolute;
+	display: none;
+	font-weight: 100;
+	font-size: 17.1px;
+}
+
+[type="time"]::-webkit-calendar-picker-indicator,
+[type="week"]::-webkit-calendar-picker-indicator,
+[type="date"]::-webkit-calendar-picker-indicator,
+[type="datetime-local"]::-webkit-calendar-picker-indicator {
+	width: 1.375em;
+	height: 1.1875em;
+}
+
+/* ------------------------------- */
+[type="date"],
+[type="time"],
+[type="week"],
+[type="datetime-local"] {
+	position: relative;
 	display: inline-flex;
 }
 
-[type="date"]::-webkit-calendar-picker-indicator {
-	width: 1.375em;
-	height: 1.1875em;
+[type="time"] {
+	width: 7.8em;
+}
+
+[type="week"] {
+	width: 10.5em;
+}
+
+[type="datetime-local"] {
+	width: 13.8em;
 }
 
 /* ____________________________________________ */
@@ -229,9 +260,9 @@ input[type="number"]:focus {
 [type="number"]::-webkit-inner-spin-button {
 	appearance: auto;
 	margin: auto;
-	font-size: 23px;
 	width: 1.5em;
 	height: 1.25em;
+	font-size: 23px;
 }
 
 /* ____________________________________________ */
