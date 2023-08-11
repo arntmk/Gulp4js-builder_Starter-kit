@@ -32,13 +32,3 @@ input[type="tel"]:not(:focus):invalid {
 		border-color: transparent;
 	}
 }
-
-/* Input Bg-color AutoFill */
-:-webkit-autofill,
-:-webkit-autofill:hover,
-:-webkit-autofill:focus,
-:-webkit-autofill:active,
-:-webkit-autofill::first-line {
-	-webkit-text-fill-color: inherit !important;
-	transition: background-color 5000s ease-in-out 0s;
-}

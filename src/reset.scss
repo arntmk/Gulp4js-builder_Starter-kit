@@ -450,6 +450,16 @@ html {
 	color: inherit;
 }
 
+/* Input change Bg-color | AutoFill */
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus,
+:-webkit-autofill:active,
+:-webkit-autofill::first-line {
+	-webkit-text-fill-color: inherit !important;
+	transition: background-color 5000s ease-in-out 0s !important;
+}
+
 /* ____________________________________________ */
 /* images */
 :where(img, svg, picture) {
