@@ -1,16 +1,7 @@
 /* ____________________________________________ */
-/* _________________Default____________________ */
+/* _________________Inputs_____________________ */
 /* ____________________________________________ */
-/* Table */
-:where(th, td) {
-	border: thin solid #a0a0a0;
-	padding: 0.5em;
-	text-align: center;
-	background-color: #fff;
-}
-
-/* ____________________________________________ */
-/* Shadow */
+/* Add Shadow */
 progress,
 table,
 input:not([type="radio"], [type="checkbox"], [type="file"], [type="color"]),

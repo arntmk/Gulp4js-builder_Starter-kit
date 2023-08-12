@@ -396,6 +396,15 @@ html {
 }
 
 /* ____________________________________________ */
+/* Table */
+:where(th, td) {
+	border: thin solid #a0a0a0;
+	padding: 0.5em;
+	text-align: center;
+	background-color: #fff;
+}
+
+/* ____________________________________________ */
 /* links */
 :where(a) {
 	display: inline-block;
