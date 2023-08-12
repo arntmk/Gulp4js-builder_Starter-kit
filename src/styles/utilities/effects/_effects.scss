@@ -8,6 +8,7 @@
 // Import
 @import "./underline";
 @import "./formvalid";
+@import "./animation";
 
 /* ____________________________________________ */
 /* Image scale :Hover */
@@ -125,27 +126,4 @@ input:not(
 	text-shadow: 0 0 0.625rem #000;
 	color: #fff;
 	background-color: #4682b4;
-}
-
-/* ____________________________________________ */
-/* _______________Animation____________________ */
-/* ____________________________________________ */
-@keyframes fade-in {
-	0% {
-		opacity: 0.5;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes fade-out {
-	0% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-	}
 }
