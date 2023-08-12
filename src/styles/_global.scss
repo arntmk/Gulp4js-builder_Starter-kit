@@ -47,7 +47,6 @@
 	}
 }
 
-header,
 section,
 footer {
 	contain-intrinsic-size: auto 500px;
@@ -61,10 +60,12 @@ footer {
 	position: relative;
 	display: flex;
 	flex-flow: column nowrap;
-	overflow: clip; /* if you using position: sticky - then use overflow: clip; instead of hidden */
 	min-height: 100vh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 	min-height: 100dvh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 	min-height: 100svh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
+	overscroll-behavior: contain;
+
+	// overflow: clip; /* if you using position: sticky - then use overflow: clip; instead of hidden */
 }
 
 .main {
