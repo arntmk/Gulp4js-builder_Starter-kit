@@ -5,19 +5,19 @@ summary::-webkit-details-marker {
 }
 
 summary {
-	font-weight: 700;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	list-style: none;
 	padding: 0.3125em;
+	font-weight: 700;
 	background-color: #fff;
 }
 
 details {
+	margin-top: 16px;
 	border: thin solid #8f8f9d;
 	width: 25em;
-	margin-top: 16px;
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 }
 
@@ -42,13 +42,13 @@ summary,
 }
 
 details[open] > summary {
-	border-bottom-left-radius: 0rem;
-	border-bottom-right-radius: 0rem;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 }
 
 .accordion-content {
-	border-top-left-radius: 0rem;
-	border-top-right-radius: 0rem;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 /* ____________________________________________ */
