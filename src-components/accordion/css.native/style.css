@@ -48,6 +48,7 @@ summary {
 }
 
 details {
+	overflow: hidden;
 	margin-top: 16px;
 	border: thin solid #8f8f9d;
 	width: 100%;
