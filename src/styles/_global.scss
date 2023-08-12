@@ -47,6 +47,13 @@
 	}
 }
 
+header,
+section,
+footer {
+	contain-intrinsic-size: auto 500px;
+	content-visibility: auto;
+}
+
 /* ____________________________________________ */
 /* _____________Sticky Footer__________________ */
 /* ____________________________________________ */
