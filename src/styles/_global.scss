@@ -30,21 +30,20 @@
 	background-color: var(--clr-body-bg);
 	accent-color: var(--clr-accent);
 
-	&.lock {
-		position: relative;
-		left: 0;
-		top: 0;
+	&.lock,
+	&.lock-fixed {
+		inset: 0;
 		overflow: hidden;
 		width: 100%;
 		height: 100vh;
 	}
 
+	&.lock {
+		position: relative;
+	}
+
 	&.lock-fixed {
 		position: fixed;
-		inset: 0;
-		overflow: hidden;
-		width: 100%;
-		height: 100vh;
 	}
 }
 
