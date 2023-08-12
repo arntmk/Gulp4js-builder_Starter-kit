@@ -14,10 +14,10 @@
 // ===Service Worker=== //
 
 // Cache Filies & Versions
-const version = '4';
+const version = '2';
 const staticCacheName = `s-app-v${version}`;
 const dynamicCacheName = `d-app-v${version}`;
-const assetUrls = ['/index.html', '/offline.html', '/404.html'];
+const assetUrls = ['/', '/index.html', '/offline.html', '/404.html'];
 
 // InitCache
 /* self.addEventListener('install', async (e) => {
