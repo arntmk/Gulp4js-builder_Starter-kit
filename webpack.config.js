@@ -31,6 +31,8 @@ const webpackConfig = {
 		minimize: isProd, // default terser
 	},
 
+	plugins: [],
+
 	module: {
 		rules: [
 			/* ____________________________________________ */
