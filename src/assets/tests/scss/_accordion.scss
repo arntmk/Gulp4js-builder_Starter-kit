@@ -22,7 +22,7 @@ details > div {
 
 details {
 	margin-top: 16px;
-	width: 25rem;
+	width: 25rem; /* "em" are bad */
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 	border-block: thin solid #8f8f9d;
 }
