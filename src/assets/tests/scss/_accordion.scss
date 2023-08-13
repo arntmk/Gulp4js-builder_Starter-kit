@@ -15,11 +15,16 @@ summary {
 	user-select: none;
 }
 
+summary,
+details > div {
+	border-inline: thin solid #8f8f9d;
+}
+
 details {
 	margin-top: 16px;
-	border: thin solid #8f8f9d;
 	width: 25em;
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
+	border-block: thin solid #8f8f9d;
 }
 
 details .accordion-content {
@@ -53,6 +58,22 @@ details[open] > summary {
 }
 
 /* ____________________________________________ */
+/* Animation Icon */
+summary::after {
+	content: "";
+	width: 1.8em;
+	height: 1.8em;
+	background: transparent
+		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
+		no-repeat right center / 1.8em;
+	transition: transform 0.4s ease-in-out;
+}
+
+details[open] summary::after {
+	transform: rotate(90deg);
+}
+
+/* ____________________________________________ */
 /* Animation Content */
 details[open] {
 	overflow: hidden;
@@ -71,20 +92,4 @@ details[open] > *:not(summary) {
 	100% {
 		max-height: 100vh;
 	}
-}
-
-/* ____________________________________________ */
-/* Animation Icon */
-summary::after {
-	content: "";
-	width: 1.8em;
-	height: 1.8em;
-	background: transparent
-		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
-		no-repeat right center / 1.8em;
-	transition: transform 0.4s ease-in-out;
-}
-
-details[open] summary::after {
-	transform: rotate(90deg);
 }
