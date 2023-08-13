@@ -51,6 +51,11 @@ summary {
 	user-select: none;
 }
 
+summary,
+details > div {
+	border-inline: thin solid #8f8f9d;
+}
+
 details {
 	margin-top: 16px;
 	width: 100%;
