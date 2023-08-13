@@ -53,6 +53,7 @@ details {
 	border: thin solid #8f8f9d;
 	width: 100%;
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
+	will-change: max-height;
 }
 
 details .accordion-content {
