@@ -4,7 +4,7 @@
 /* https://stackoverflow.com/questions/16751345/automatically-close-all-the-other-details-tags-after-opening-a-specific-detai
 */
 /* https://www.youtube.com/watch?v=gz1v1KenZWk */
-/* https://codepen.io/stoumann/pen/ExydEYL - animation */
+/* https://codepen.io/stoumann/pen/ExydEYL - animation | NEW */
 
 /* ____________________________________________ */
 @charset "UTF-8";
@@ -42,10 +42,13 @@ summary {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	list-style: none; /* marker */
+	list-style-type: none; /* marker */
+	outline: none;
+	border: 0;
 	padding: 0.3125em;
 	font-weight: 700;
 	background-color: #fff;
+	user-select: none;
 }
 
 details {
@@ -53,8 +56,7 @@ details {
 	width: 100%;
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 	will-change: max-height;
-
-	/* border: thin solid #8f8f9d; */
+	border-block: thin solid #8f8f9d;
 }
 
 details .accordion-content {
@@ -91,11 +93,11 @@ details[open] > .accordion-content {
 /* Animation Content */
 /* details[open] > *:not(summary) {
 	overflow: hidden;
-	animation: details 1s ease-in-out forwards;
+	animation: details-setHeight 1s ease-in-out forwards;
 	will-change: max-height;
 }
 
-@keyframes details {
+@keyframes details-setHeight {
 	0% {
 		margin-left: -20px;
 		max-height: 0;
@@ -109,20 +111,6 @@ details[open] > .accordion-content {
 	}
 }
  */
-
-/* ____________________________________________ */
-/* Animation Content | NEW */
-details {
-	overflow: hidden;
-	height: var(--collapsed);
-	transition: height 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
-	will-change: height;
-}
-
-details[open] {
-	height: var(--expanded);
-	will-change: height;
-}
 
 /* ____________________________________________ */
 /* Animation Icon */
@@ -140,33 +128,24 @@ details[open] summary::after {
 	transform: rotate(90deg);
 }
 
-/* summary {
-	list-style-type: none;
-	margin: 0.5rem 0;
-	outline: none;
-	border: 0;
-	border-radius: 5px;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	color: var(--c, inherit);
-	background-color: var(--bgc);
-	user-select: none;
-	padding-inline-end: 0.5rem;
-	padding-inline-start: 1rem;
-} */
-
-/* 4 States of summary */
-/* summary {
-	background-color: hsl(195deg 10% 90%);
+/* ____________________________________________ */
+/* Animation Content | NEW */
+details {
+	height: var(--collapsed);
+	transition: height 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
+	will-change: height;
 }
 
+details[open] {
+	overflow: hidden;
+	height: var(--expanded);
+	will-change: height;
+}
+
+/* 3 States of summary */
 details[open] > summary {
 	color: hsl(195deg 10% 92%);
 	background-color: hsl(195deg 10% 20%);
-}
-
-summary:focus {
-	background-color: hsl(195deg 10% 75%);
 }
 
 details[open] > summary:focus {
@@ -174,8 +153,6 @@ details[open] > summary:focus {
 	background-color: hsl(195deg 10% 10%);
 }
 
-summary + * {
-	padding: 0.5rem;
-	line-height: 1.6;
-	color: #777;
-} */
+summary:focus {
+	background-color: hsl(195deg 10% 75%);
+}
