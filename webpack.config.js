@@ -36,9 +36,9 @@ const webpackConfig = {
 	module: {
 		rules: [
 			/* ____________________________________________ */
-			// JS/JSX|TS/TSX
+			// m?/JS/JSX|TS/TSX
 			{
-				test: /\.m?(js|jsx|ts|tsx|css|json)$/,
+				test: /\.(js|jsx|ts|tsx|css|json)$/,
 				resolve: {
 					fullySpecified: false,
 					extensions: ['.js', '.jsx', '.ts', '.tsx', 'css', 'scss', '.json'],
