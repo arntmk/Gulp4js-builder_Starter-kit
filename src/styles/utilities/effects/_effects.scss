@@ -98,7 +98,7 @@ a,
 /* Simple |Input|Select|Textarea|Summary| :Hover */
 select,
 textarea,
-details,
+summary,
 input:not(
 		[type="button"],
 		[type="reset"],
@@ -119,6 +119,13 @@ input:not(
 			box-shadow: 0 0 0 0.0625rem var(--clr-hover), 0 0 0.625rem var(--clr-hover);
 		}
 	}
+}
+
+/* ____________________________________________ */
+/* Simple |Summary(Inside)| :Hover */
+details[open] > :is(summary, div) {
+	border-color: #8f8f9d;
+	transition: border-color 0s linear;
 }
 
 /* ____________________________________________ */
