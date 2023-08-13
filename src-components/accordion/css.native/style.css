@@ -43,8 +43,6 @@ summary {
 	align-items: center;
 	justify-content: space-between;
 	list-style-type: none; /* marker */
-	outline: none;
-	border: 0;
 	padding: 0.3125em;
 	font-weight: 700;
 	background-color: #fff;
