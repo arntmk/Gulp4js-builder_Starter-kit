@@ -5,11 +5,11 @@ const accordionsController = function () {
 	const accordion = document.querySelectorAll('details');
 
 	if (accordion) {
+		// Animation
 		accordion.forEach((summary) => {
 			summary.addEventListener('click', (e) => {
 				const self = e.currentTarget;
 				const content = self.querySelector('.accordion-content');
-
 				if (self.hasAttribute('open')) {
 					content.style.maxHeight = '';
 				} else {
@@ -41,6 +41,7 @@ const accordionsController = function () {
 };
 accordionsController();
 
+// Animation | NEW
 function setDetailsHeight(selector, wrapper = document) {
 	const setHeight = (detail, open = false) => {
 		detail.open = open;
