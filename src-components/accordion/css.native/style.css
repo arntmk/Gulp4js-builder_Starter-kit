@@ -89,7 +89,23 @@ details[open] > .accordion-content {
 }
 
 /* ____________________________________________ */
-/* Animation Content */
+/* Animation: Icon */
+summary::after {
+	content: "";
+	width: 1.8em;
+	height: 1.8em;
+	background: transparent
+		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
+		no-repeat right center / 1.8em;
+	transition: transform 0.4s ease-in-out;
+}
+
+details[open] summary::after {
+	transform: rotate(90deg);
+}
+
+/* ____________________________________________ */
+/* Animation: Content */
 /*
 details[open] {
 	overflow: hidden;
@@ -112,27 +128,10 @@ details[open] > *:not(summary) {
  */
 
 /* ____________________________________________ */
-/* Animation Icon */
-summary::after {
-	content: "";
-	width: 1.8em;
-	height: 1.8em;
-	background: transparent
-		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
-		no-repeat right center / 1.8em;
-	transition: transform 0.4s ease-in-out;
-}
-
-details[open] summary::after {
-	transform: rotate(90deg);
-}
-
-/* ____________________________________________ */
-/* Animation Content | NEW */
+/* Animation: Content | NEW */
 details {
 	height: var(--collapsed);
 	transition: height 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
-	will-change: height;
 }
 
 details[open] {
