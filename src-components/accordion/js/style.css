@@ -67,7 +67,7 @@ h1 {
 	transition: max-height 0.3s ease-in-out;
 }
 
-.accordion-border-top {
+.accordion-border-line {
 	border-top: 1px solid;
 	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 	padding: 1rem;

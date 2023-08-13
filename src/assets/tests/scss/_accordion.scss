@@ -29,7 +29,7 @@ details .accordion-content {
 	background-color: #fff;
 }
 
-.accordion-border-top {
+.accordion-border-line {
 	border-top: 1px solid;
 	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 	padding: 1rem;
@@ -56,10 +56,13 @@ details[open] > summary {
 
 /* ____________________________________________ */
 /* Animation Content */
-details[open] > *:not(summary) {
+details[open] {
 	overflow: hidden;
-	animation: details 1s ease-in-out forwards;
 	will-change: max-height;
+}
+
+details[open] > *:not(summary) {
+	animation: details 1s ease-in-out forwards;
 }
 
 @keyframes details {
