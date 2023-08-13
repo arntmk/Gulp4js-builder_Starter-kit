@@ -109,6 +109,7 @@ details[open] summary::after {
 
 /* ____________________________________________ */
 /* Animation: Content */
+
 /*
 details[open] {
 	overflow: hidden;
@@ -116,10 +117,10 @@ details[open] {
 }
 
 details[open] > *:not(summary) {
-	animation: details-setHeight 1s ease-in-out forwards;
+	animation: details-setheight 1s ease-in-out forwards;
 }
 
-@keyframes details-setHeight {
+@keyframes details-setheight {
 	0% {
 		max-height: 0;
 	}
@@ -128,7 +129,7 @@ details[open] > *:not(summary) {
 		max-height: 100vh;
 	}
 }
- */
+*/
 
 /* ____________________________________________ */
 /* Animation: Content | NEW */
