@@ -2,6 +2,7 @@
 // Load plugins
 
 import { EsbuildPlugin } from 'esbuild-loader';
+import path from 'path';
 
 /* ____________________________________________ */
 // Production mode | Build
