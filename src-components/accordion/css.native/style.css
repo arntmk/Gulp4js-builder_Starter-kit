@@ -144,6 +144,10 @@ details[open] {
 	will-change: height;
 }
 
+summary + * {
+	padding: 0.5rem;
+}
+
 /* 3 States of summary */
 /* details[open] > summary {
 	color: hsl(195deg 10% 92%);

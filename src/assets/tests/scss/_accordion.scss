@@ -22,7 +22,7 @@ details > div {
 
 details {
 	margin-top: 16px;
-	width: 25em;
+	width: 25rem;
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 	border-block: thin solid #8f8f9d;
 }
@@ -108,6 +108,10 @@ details[open] {
 	overflow: hidden;
 	height: var(--expanded);
 	will-change: height;
+}
+
+summary + * {
+	padding: 0.5rem;
 }
 
 /* 3 States of summary */
