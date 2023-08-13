@@ -142,7 +142,7 @@ details[open] {
 }
 
 /* 3 States of summary */
-details[open] > summary {
+/* details[open] > summary {
 	color: hsl(195deg 10% 92%);
 	background-color: hsl(195deg 10% 20%);
 }
@@ -154,4 +154,4 @@ details[open] > summary:focus {
 
 summary:focus {
 	background-color: hsl(195deg 10% 75%);
-}
+} */
