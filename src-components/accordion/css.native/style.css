@@ -50,7 +50,7 @@ summary {
 }
 
 summary,
-details > div {
+details .accordion-content {
 	border-inline: thin solid #8f8f9d;
 }
 
@@ -62,11 +62,14 @@ details {
 }
 
 details .accordion-content {
-	border-top: 1px solid;
-	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 	padding: 1rem;
 	line-height: 1.5rem;
 	background-color: #fff;
+}
+
+details .accordion-border-line {
+	border-top: 1px solid;
+	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 }
 
 /* ____________________________________________ */
