@@ -27,11 +27,6 @@ details {
 }
 
 details .accordion-content {
-	padding: 0.3125em;
-	background-color: #fff;
-}
-
-details .accordion-border-line {
 	border-top: 1px solid;
 	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 	padding: 1rem;
