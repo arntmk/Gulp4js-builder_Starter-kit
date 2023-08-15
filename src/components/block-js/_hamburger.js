@@ -58,4 +58,5 @@ const hamburgerController = function () {
 		});
 	}); */
 };
-hamburgerController();
+
+export default hamburgerController;
