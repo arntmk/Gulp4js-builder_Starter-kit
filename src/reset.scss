@@ -38,6 +38,10 @@ html {
 
 /* HTML5 hidden-attribute fix for newer browsers */
 *[hidden] {
+	display: none !important;
+}
+
+template {
 	display: none;
 }
 

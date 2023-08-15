@@ -147,6 +147,10 @@ progress::-webkit-progress-value {
 	box-sizing: border-box;
 }
 
+[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
 [type="color"]::-moz-color-swatch {
 	margin-top: 0.1875rem;
 	border-style: none;

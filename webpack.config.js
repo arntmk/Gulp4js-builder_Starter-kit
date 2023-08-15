@@ -1,6 +1,7 @@
 /* ____________________________________________ */
 // Load plugins
 
+// import webpack from 'webpack';
 // import path from 'path';
 // import { EsbuildPlugin } from 'esbuild-loader';
 // import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -34,8 +35,6 @@ const webpackConfig = {
 		minimize: isProd, // default terser
 	},
 
-	plugins: [],
-
 	module: {
 		rules: [
 			/* ____________________________________________ */
@@ -67,6 +66,9 @@ const webpackConfig = {
 			},
 		],
 	},
+	plugins: [
+		// new HtmlWebpackPlugin(),
+	],
 };
 
 export default webpackConfig;
