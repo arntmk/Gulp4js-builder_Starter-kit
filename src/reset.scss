@@ -529,11 +529,6 @@ template {
 }
 
 /* ____________________________________________ */
-/* form cursor */
-:where(form) {
-	cursor: default;
-}
-
 /* form border */
 :where(fieldset) {
 	margin: 0;
@@ -570,7 +565,15 @@ template {
 }
 
 /* ____________________________________________ */
-/* add cursor pointer */
+/* add cursor: pointer | text | default(form) */
+:where(form) {
+	cursor: default;
+}
+
+:where([contenteditable]) {
+	cursor: text;
+}
+
 :where(
 		a,
 		label,
