@@ -137,7 +137,9 @@
 	":Pseudo-class disable mobile :hover": {
 		"scope": "css,scss,sass,less",
 		"prefix": "dis:hover",
-		"body": ["@media (any-hover: hover) {\n\t &:is(:focus-visible, :hover){\n\t $1 \n\t} \n}"],
+		"body": [
+			"@media (any-hover: hover) {\n\t &:is(:focus-visible, :hover){\n\t $1 \n\t} \n\t &:active {\n\t $2 \n\t}\n}"
+		],
 		"description": ":Pseudo-class disable mobile :hover"
 	},
 	/* ____________________________________________ */
