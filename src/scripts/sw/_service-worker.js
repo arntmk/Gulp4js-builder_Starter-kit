@@ -3,7 +3,7 @@
 /* ____________________________________________ */
 // https://web.dev/install-criteria/
 /* ____________________________________________ */
-// ===InitSW=== //
+// ===Init serviceWorker=== //
 const serviceWorkerController = function () {
 	document.addEventListener('DOMContentLoaded', async () => {
 		if ('serviceWorker' in navigator) {

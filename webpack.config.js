@@ -19,7 +19,7 @@ const webpackConfig = {
 
 	entry: {
 		script: './src/script.js',
-		sw: { import: './src/scripts/serviceWorker/sw.js', filename: '[name].js' },
+		sw: { import: './src/scripts/sw/sw.js', filename: '[name].js' },
 		// vendor: './src/vendor.js',
 	},
 
