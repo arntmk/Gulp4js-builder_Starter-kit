@@ -601,7 +601,7 @@ dialog::backdrop,
 	outline: 0 !important;
 }
 
-:where(a, button, summary, select, textarea, input) {
+:where(a, button, summary, select, textarea, input, [contenteditable]) {
 	outline-width: 0;
 	outline-color: transparent;
 }
@@ -621,9 +621,9 @@ dialog::backdrop,
 		[type="color"],
 		[type="radio"],
 		[type="checkbox"],
-		[tabindex="0"],
-		[contenteditable="true"]
-	):focus-visible {
+		[tabindex="0"]
+	)
+	:focus-visible {
 	outline: 0.125rem solid var(--clr-hover, #4682b4);
 }
 

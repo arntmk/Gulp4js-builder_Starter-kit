@@ -109,7 +109,7 @@ input:not(
 		[type="checkbox"],
 		[type="file"]
 	),
-[contenteditable="true"],
+[contenteditable],
 [data-input-hover] {
 	transition: border-color 0.3s linear 0.02s, box-shadow 0.3s ease-in-out 0.02s, background 0s;
 
