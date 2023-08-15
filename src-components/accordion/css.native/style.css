@@ -62,7 +62,6 @@ details {
 }
 
 details .accordion-content {
-	padding: 1rem;
 	line-height: 1.5rem;
 	background-color: #fff;
 }
@@ -70,6 +69,7 @@ details .accordion-content {
 details .accordion-border-line {
 	border-top: 1px solid;
 	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+	padding: 0.5rem 1rem;
 }
 
 /* ____________________________________________ */

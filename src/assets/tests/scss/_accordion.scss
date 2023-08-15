@@ -22,13 +22,12 @@ details .accordion-content {
 
 details {
 	margin-top: 16px;
-	width: 100%; /* "em" are bad */
+	width: 25rem; /* "em" are bad */
 	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 	border-block: thin solid #8f8f9d;
 }
 
 details .accordion-content {
-	padding: 1rem;
 	line-height: 1.5rem;
 	background-color: #fff;
 }
@@ -36,6 +35,7 @@ details .accordion-content {
 details .accordion-border-line {
 	border-top: 1px solid;
 	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+	padding: 0.5rem 1rem;
 }
 
 /* ____________________________________________ */
