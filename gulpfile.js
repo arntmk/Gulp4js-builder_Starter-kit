@@ -338,7 +338,7 @@ function libsCss() {
 	return gulp
 		.src(LibsCssFiles)
 		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/libs/`, { extension: '.css' })))
-		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true } } })))
+		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true, mergeMedia: false } } })))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/styles/libs/`));
 }
@@ -357,7 +357,7 @@ function optCss() {
 			}),
 		)
 		.pipe(shorthand())
-		.pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
+		.pipe(cleanCSS({ level: { 2: { restructureRules: true, mergeMedia: false } } }))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`));
