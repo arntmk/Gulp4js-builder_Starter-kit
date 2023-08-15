@@ -69,13 +69,17 @@ template {
 
 /**
  * 1. Correct the border color in all browsers.
- * 2. Add the correct box sizing in Firefox.
  */
+
+:where(hr:not([size])) {
+	height: 1px;
+}
+
 :where(hr) {
-	border: thin solid;
-	border-color: #555 #808080 #808080 #555;
-	height: 0;
-	box-sizing: content-box;
+	border: 0;
+	color: inherit;
+	background-color: currentcolor;
+	opacity: 0.35;
 }
 
 /**
