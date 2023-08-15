@@ -29,7 +29,7 @@
 		"php": "html",
 		"markdown": "html",
 		"blade": "html",
-		"twig": "html",
+		// "twig": "html",
 		"hbs": "html",
 		"njk": "html"
 	},
