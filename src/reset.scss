@@ -140,6 +140,10 @@ template {
 	fill: currentcolor;
 }
 
+:where(svg) {
+	overflow: hidden;
+}
+
 /**
  * 1. Collapse border spacing in all browsers.
  * 2. Correct table border color inheritance in all Chrome, Edge, and Safari.
