@@ -49,6 +49,7 @@ import autoprefixer from 'gulp-autoprefixer'; // css префікси для с�
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 import purgecss from 'gulp-purgecss'; // purge css [optimize].
+import gcmq from 'gulp-group-css-media-queries'; // group-media.
 
 // JS/TS
 import terser from 'gulp-terser'; // мінімізація JS/TS.
@@ -338,7 +339,7 @@ function libsCss() {
 	return gulp
 		.src(LibsCssFiles)
 		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/libs/`, { extension: '.css' })))
-		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true, mergeMedia: true } } })))
+		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true, mergeMedia: false } } })))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/styles/libs/`));
 }
@@ -356,6 +357,7 @@ function optCss() {
 				fontFace: false,
 			}),
 		)
+		.pipe(gcmq())
 		.pipe(shorthand())
 		.pipe(cleanCSS({ level: { 2: { restructureRules: true, mergeMedia: true } } }))
 		.pipe(autoprefixer({ cascade: false, grid: true }))

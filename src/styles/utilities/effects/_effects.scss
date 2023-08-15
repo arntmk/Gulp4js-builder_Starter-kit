@@ -21,10 +21,10 @@
 		&:hover {
 			transform: scale(1.05);
 		}
-	}
 
-	&:active {
-		transform: scale(1);
+		&:active {
+			transform: scale(1);
+		}
 	}
 }
 
@@ -41,10 +41,10 @@ a:not([class*="__logo"]) img,
 			filter: invert(77%) sepia(21%) saturate(602%) hue-rotate(9deg) brightness(97%) contrast(90%);
 			transform: scale(1.1);
 		}
-	}
 
-	&:active {
-		transform: scale(1);
+		&:active {
+			transform: scale(1);
+		}
 	}
 }
 
@@ -58,10 +58,10 @@ a,
 		&:is(:focus-visible, :hover) {
 			color: var(--clr-hover);
 		}
-	}
 
-	&:active {
-		color: var(--clr-active);
+		&:active {
+			color: var(--clr-active);
+		}
 	}
 }
 
@@ -85,12 +85,12 @@ a,
 			transform: scale(1.01);
 			animation: fade-in 0.2s ease-in-out 0.01s;
 		}
-	}
 
-	&:active {
-		background-color: var(--clr-active);
-		box-shadow: 0 0 0.625rem var(--clr-active);
-		transform: scale(0.97);
+		&:active {
+			background-color: var(--clr-active);
+			box-shadow: 0 0 0.625rem var(--clr-active);
+			transform: scale(0.97);
+		}
 	}
 }
 

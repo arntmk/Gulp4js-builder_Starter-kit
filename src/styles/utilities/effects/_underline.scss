@@ -34,15 +34,15 @@
 				transform: scale(1, 1) translateY(0); // change
 			}
 		}
-	}
 
-	&:active {
-		z-index: 2;
-		color: var(--clr-active);
+		&:active {
+			z-index: 2;
+			color: var(--clr-active);
 
-		&::after {
-			z-index: 1;
-			background-color: var(--clr-active);
+			&::after {
+				z-index: 1;
+				background-color: var(--clr-active);
+			}
 		}
 	}
 }
