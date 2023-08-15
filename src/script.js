@@ -13,6 +13,6 @@ import './assets/tests/js/_tests';
 
 /* Libs */
 
-// Initialization;
+// Init | Initialization;
 serviceWorkerController();
 hamburgerController();
