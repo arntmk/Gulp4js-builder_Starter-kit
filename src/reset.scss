@@ -562,15 +562,15 @@ html {
 :where(
 		a,
 		label,
-		button,
 		summary,
-		[type="button"],
-		[type="reset"],
-		[type="submit"],
+		button:not(:disabled),
+		[type="button"]:not(:disabled),
+		[type="reset"]:not(:disabled),
+		[type="submit"]:not(:disabled),
 		[type="range"],
 		[type="color"],
-		[type="checkbox"],
-		[type="radio"]
+		[type="checkbox"]:not(:disabled),
+		[type="radio"]:not(:disabled)
 	),
 dialog::backdrop,
 [popover]::backdrop,

@@ -1,8 +1,11 @@
 /* ____________________________________________ */
 // Load plugins
 
-import { EsbuildPlugin } from 'esbuild-loader';
-import path from 'path';
+// import path from 'path';
+// import { EsbuildPlugin } from 'esbuild-loader';
+// import HtmlWebpackPlugin from 'html-webpack-plugin';
+// import miniCSS from 'mini-css-extract-plugin';
+// import devServer from 'webpack-dev-server';
 
 /* ____________________________________________ */
 // Production mode | Build
