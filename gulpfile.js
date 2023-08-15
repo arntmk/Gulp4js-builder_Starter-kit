@@ -359,7 +359,7 @@ function optCss() {
 		)
 		.pipe(gcmq())
 		.pipe(shorthand())
-		.pipe(cleanCSS({ level: { 2: { restructureRules: true, mergeMedia: true } } }))
+		.pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
 		.pipe(autoprefixer({ cascade: false, grid: true }))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`));
