@@ -69,13 +69,13 @@
 
 /* ------------------------------------ */
 @mixin text-center {
-	vertical-align: middle;
 	text-align: center;
+	vertical-align: middle;
 }
 
 .text-center {
-	vertical-align: middle;
 	text-align: center;
+	vertical-align: middle;
 }
 
 /* ------------------------------------ */
@@ -229,16 +229,16 @@
 /* semantically-visible */
 @mixin visually-hidden {
 	position: absolute;
-	clip-path: inset(100%);
-	overflow: hidden;
-	margin: -1px;
-	border: 0;
-	padding: 0;
 	width: 1px;
 	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
 	white-space: nowrap;
 	pointer-events: none;
-	clip: rect(0 0 0 0);
+	border: 0;
 }
 
 .visually-hidden {
@@ -275,9 +275,9 @@
 
 /* ------------------------------------ */
 @mixin btn-reset {
-	border-width: 0;
 	padding: 0;
 	background-color: transparent;
+	border-width: 0;
 }
 
 .btn-reset {
@@ -286,9 +286,9 @@
 
 /* ------------------------------------ */
 @mixin list-reset {
-	list-style: none inside;
-	margin: 0;
 	padding: 0;
+	margin: 0;
+	list-style: none inside;
 }
 
 .list-reset {

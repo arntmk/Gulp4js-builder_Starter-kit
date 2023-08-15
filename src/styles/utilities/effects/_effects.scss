@@ -72,24 +72,24 @@ a,
 [type="submit"],
 [type="file"]::file-selector-button,
 [data-button-hover] {
-	transform: scale(1);
 	transition: box-shadow 0.5s linear, border-color 0.5s linear, transform 0.1s ease-in-out,
 		background-color 0.2s linear, color 0.2s linear;
+	transform: scale(1);
 
 	@media (any-hover: hover) {
 		&:is(:focus-visible, :hover) {
-			border-color: transparent;
-			box-shadow: 0 0 0.625rem var(--clr-hover);
 			color: #fff;
 			background-color: var(--clr-hover);
+			border-color: transparent;
+			box-shadow: 0 0 0.625rem var(--clr-hover);
 			transform: scale(1.01);
 			animation: fade-in 0.2s ease-in-out 0.01s;
 		}
 	}
 
 	&:active {
-		box-shadow: 0 0 0.625rem var(--clr-active);
 		background-color: var(--clr-active);
+		box-shadow: 0 0 0.625rem var(--clr-active);
 		transform: scale(0.97);
 	}
 }
@@ -131,7 +131,7 @@ details[open] > :is(summary, div) {
 /* ____________________________________________ */
 /* Text Selection */
 ::selection {
-	text-shadow: 0 0 0.625rem #000;
 	color: #fff;
+	text-shadow: 0 0 0.625rem #000;
 	background-color: #4682b4;
 }
