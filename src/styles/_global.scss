@@ -23,19 +23,19 @@
 .body {
 	min-width: 320px;
 	font-family: var(--ff-primary);
-	font-weight: var(--fw-body);
 	font-size: var(--fs-body);
+	font-weight: var(--fw-body);
 	color: var(--clr-body);
+	accent-color: var(--clr-accent);
 	caret-color: var(--clr-caret);
 	background-color: var(--clr-body-bg);
-	accent-color: var(--clr-accent);
 
 	&.lock,
 	&.lock-fixed {
 		inset: 0;
-		overflow: hidden;
 		width: 100%;
 		height: 100vh;
+		overflow: hidden;
 		overscroll-behavior: contain;
 	}
 
@@ -62,10 +62,10 @@ footer {
 	position: relative;
 	display: flex;
 	flex-flow: column nowrap;
-	overflow: clip; /* if you using position: sticky - then use overflow: clip; instead of hidden */
 	min-height: 100vh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 	min-height: 100dvh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 	min-height: 100svh; /* stylelint-disable-line declaration-block-no-duplicate-properties */
+	overflow: clip; /* if you using position: sticky - then use overflow: clip; instead of hidden */
 	overscroll-behavior: contain;
 }
 
@@ -79,9 +79,9 @@ footer {
 /* _________________Container__________________ */
 /* ____________________________________________ */
 .container {
-	margin-inline: auto;
-	padding-inline: clamp(7.5px, 1.5vw, var(--container-offset, 30px));
 	width: min(100%, var(--container-width, 1450px));
+	padding-inline: clamp(7.5px, 1.5vw, var(--container-offset, 30px));
+	margin-inline: auto;
 
 	@media (max-width: $breakpoint-1450) {
 		max-width: 1320px;
@@ -141,10 +141,10 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
+	background-color: var(--clr-scrollbar, #777);
+	background-clip: content-box;
 	border: 5px solid transparent;
 	border-radius: 10px;
-	background-clip: content-box;
-	background-color: var(--clr-scrollbar, #777);
 
 	&:hover {
 		background-color: var(--clr-scrollbar-hover, #666);
@@ -167,8 +167,8 @@ body::-webkit-scrollbar-track {
 	::before,
 	::after {
 		background-attachment: initial !important;
-		transition-duration: 0s !important;
 		transition-delay: 0s !important;
+		transition-duration: 0s !important;
 		animation-duration: 1ms !important;
 		animation-delay: -1ms !important;
 		animation-iteration-count: 1 !important;

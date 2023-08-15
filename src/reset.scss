@@ -32,8 +32,8 @@ html {
 
 *::before,
 *::after {
-	vertical-align: inherit;
 	text-decoration: inherit;
+	vertical-align: inherit;
 }
 
 /* HTML5 hidden-attribute fix for newer browsers */
@@ -63,8 +63,8 @@ template {
  * Prevent VoiceOver from ignoring list semantics in Safari.
  */
 :where(nav li)::before {
-	content: "\200B";
 	float: left;
+	content: "\200B";
 }
 
 /**
@@ -76,9 +76,9 @@ template {
 }
 
 :where(hr) {
-	border: 0;
 	color: inherit;
 	background-color: currentcolor;
+	border: 0;
 	opacity: 0.35;
 }
 
@@ -150,9 +150,9 @@ template {
  * 3. Remove text indentation from table contents in Chrome, Edge, and Safari.
  */
 :where(table) {
-	border-color: #a0a0a0;
-	border-collapse: collapse;
 	text-indent: 0;
+	border-collapse: collapse;
+	border-color: #a0a0a0;
 }
 
 /**
@@ -215,8 +215,8 @@ template {
  */
 ::file-selector-button,
 ::-webkit-file-upload-button {
-	appearance: button;
 	font: inherit;
+	appearance: button;
 }
 
 /**
@@ -226,8 +226,8 @@ template {
 		button,
 		input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i])
 	)::-moz-focus-inner {
-	border-style: none;
 	padding: 0;
+	border-style: none;
 }
 
 /**
@@ -243,13 +243,13 @@ template {
 :where(dialog) {
 	position: fixed;
 	inset: 0 5px;
-	margin: auto;
-	border: solid;
-	padding: 1em;
 	width: fit-content;
 	height: fit-content;
+	padding: 1em;
+	margin: auto;
 	color: #000;
 	background-color: #fff;
+	border: solid;
 }
 
 :where(dialog:not([open])) {
@@ -303,38 +303,38 @@ template {
  * Add the correct system-ui font-family.
  */
 @font-face {
+	font-family: system-ui;
+	font-style: normal;
+	font-weight: 400;
 	src: local(".AppleSystemUIFont"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"),
 		local("HelveticaNeue");
-	font-family: system-ui;
-	font-weight: 400;
-	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
+	font-family: system-ui;
+	font-style: italic;
+	font-weight: 400;
 	src: local(".AppleSystemUIFont"), local("Segoe UI Italic"), local("Ubuntu-Italic"),
 		local("Roboto-Italic"), local("HelveticaNeue-Italic");
-	font-family: system-ui;
-	font-weight: 400;
-	font-style: italic;
 	font-display: swap;
 }
 
 @font-face {
+	font-family: system-ui;
+	font-style: normal;
+	font-weight: 700;
 	src: local(".AppleSystemUIFont"), local("Segoe UI Bold"), local("Ubuntu-Bold"),
 		local("Roboto-Bold"), local("HelveticaNeue-Bold");
-	font-family: system-ui;
-	font-weight: 700;
-	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
+	font-family: system-ui;
+	font-style: italic;
+	font-weight: 700;
 	src: local(".AppleSystemUIFont"), local("Segoe UI Bold Italic"), local("Ubuntu-BoldItalic"),
 		local("Roboto-BoldItalic"), local("HelveticaNeue-BoldItalic");
-	font-family: system-ui;
-	font-weight: 700;
-	font-style: italic;
 	font-display: swap;
 }
 
@@ -342,38 +342,38 @@ template {
  * Add the correct ui-monospace font-family.
  */
 @font-face {
+	font-family: ui-monospace;
+	font-style: normal;
+	font-weight: 400;
 	src: local(".AppleSystemUIFontMonospaced-Regular"), local("Segoe UI Mono"), local("UbuntuMono"),
 		local("Roboto-Mono"), local("Menlo");
-	font-family: ui-monospace;
-	font-weight: 400;
-	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
+	font-family: ui-monospace;
+	font-style: italic;
+	font-weight: 400;
 	src: local(".AppleSystemUIFontMonospaced-RegularItalic"), local("Segoe UI Mono Italic"),
 		local("UbuntuMono-Italic"), local("Roboto-Mono-Italic"), local("Menlo-Italic");
-	font-family: ui-monospace;
-	font-weight: 400;
-	font-style: italic;
 	font-display: swap;
 }
 
 @font-face {
+	font-family: ui-monospace;
+	font-style: normal;
+	font-weight: 700;
 	src: local(".AppleSystemUIFontMonospaced-Bold"), local("Segoe UI Mono Bold"),
 		local("UbuntuMono-Bold"), local("Roboto-Mono-Bold"), local("Menlo-Bold");
-	font-family: ui-monospace;
-	font-weight: 700;
-	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
+	font-family: ui-monospace;
+	font-style: italic;
+	font-weight: 700;
 	src: local(".AppleSystemUIFontMonospaced-BoldItalic"), local("Segoe UI Mono Bold Italic"),
 		local("UbuntuMono-BoldItalic"), local("Roboto-Mono-BoldItalic"), local("Menlo-BoldItalic");
-	font-family: ui-monospace;
-	font-weight: 700;
-	font-style: italic;
 	font-display: swap;
 }
 
@@ -384,9 +384,9 @@ template {
 :where(html) {
 	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	font-weight: 400;
-	font-style: normal;
 	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
 	line-height: 1.45;
 }
 
@@ -410,21 +410,21 @@ template {
 /* ____________________________________________ */
 /* Table */
 :where(th, td) {
-	border: thin solid #a0a0a0;
 	padding: 0.5em;
 	text-align: center;
 	background-color: #fff;
+	border: thin solid #a0a0a0;
 }
 
 /* ____________________________________________ */
 /* links */
 :where(a) {
 	display: inline-block;
-	overflow-anchor: none;
-	text-decoration: none;
 	color: inherit;
-	text-decoration-skip-ink: none;
+	text-decoration: none;
 	text-underline-offset: 0.25em;
+	overflow-anchor: none;
+	text-decoration-skip-ink: none;
 }
 
 /* ____________________________________________ */
@@ -467,8 +467,8 @@ template {
 :-webkit-autofill {
 	font: inherit;
 	line-height: inherit;
-	letter-spacing: inherit;
 	color: inherit;
+	letter-spacing: inherit;
 }
 
 /* Input change Bg-color | AutoFill */
@@ -504,8 +504,8 @@ template {
 		progress,
 		canvas
 	) {
-	height: auto;
 	max-width: 100%;
+	height: auto;
 }
 
 :where(figure, blockquote) {
@@ -515,9 +515,9 @@ template {
 /* ____________________________________________ */
 /* lists */
 :where(ul, ol) {
-	list-style-type: none;
-	list-style-position: inside;
 	padding: 0;
+	list-style-position: inside;
+	list-style-type: none;
 }
 
 :where(ul, ol, dl, dd) {
@@ -531,17 +531,17 @@ template {
 /* ____________________________________________ */
 /* form border */
 :where(fieldset) {
+	padding: 0;
 	margin: 0;
 	border: thin solid #a0a0a0;
-	padding: 0;
 }
 
 /* btn reset */
 :where(button, [type="buttton"]) {
-	overflow-anchor: none;
-	border-width: 0;
 	padding: 0;
 	background-color: transparent;
+	border-width: 0;
+	overflow-anchor: none;
 }
 
 /* input reset */

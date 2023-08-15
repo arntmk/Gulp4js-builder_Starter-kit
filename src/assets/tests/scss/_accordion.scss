@@ -8,11 +8,11 @@ summary {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	list-style-type: none; /* marker */
 	padding: 0.3125em;
 	font-weight: 700;
-	background-color: #fff;
+	list-style-type: none; /* marker */
 	user-select: none;
+	background-color: #fff;
 }
 
 summary,
@@ -21,10 +21,10 @@ details .accordion-content {
 }
 
 details {
-	margin-top: 16px;
 	width: 25rem; /* "em" are bad */
-	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
+	margin-top: 16px;
 	border-block: thin solid #8f8f9d;
+	box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
 }
 
 details .accordion-content {
@@ -33,9 +33,9 @@ details .accordion-content {
 }
 
 details .accordion-border-line {
+	padding: 0.5rem 1rem;
 	border-top: 1px solid;
 	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
-	padding: 0.5rem 1rem;
 }
 
 /* ____________________________________________ */
@@ -59,9 +59,9 @@ details[open] > .accordion-content {
 /* ____________________________________________ */
 /* Animation: Icon */
 summary::after {
-	content: "";
 	width: 1.8em;
 	height: 1.8em;
+	content: "";
 	background: transparent
 		url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' style='fill:black;'/%3E%3C/svg%3E")
 		no-repeat right center / 1.8em;
@@ -104,8 +104,8 @@ details {
 }
 
 details[open] {
-	overflow: hidden;
 	height: var(--expanded);
+	overflow: hidden;
 	will-change: height;
 }
 

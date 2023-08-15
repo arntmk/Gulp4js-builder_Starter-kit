@@ -23,9 +23,9 @@
 
 .header__container {
 	display: flex;
+	gap: 30px;
 	align-items: center;
 	justify-content: space-between;
-	gap: 30px;
 	margin-block: 30px;
 }
 
@@ -37,8 +37,8 @@
 .header__skip-navbar {
 	position: absolute;
 	left: 16px;
-	transform: translateY(-300%);
 	transition: transform 0.3s linear;
+	transform: translateY(-300%);
 }
 
 .header__skip-navbar:focus-visible {
@@ -49,16 +49,16 @@
 .header__nav-wrapper {
 	display: flex;
 	flex-basis: 680px; /* adjust */
+	gap: 10px;
 	align-items: center;
 	justify-content: space-between;
-	gap: 10px;
 	white-space: nowrap;
 }
 
 .header__buttons {
 	display: flex;
-	align-items: center;
 	gap: 10px;
+	align-items: center;
 }
 
 .header__nav {
@@ -71,8 +71,8 @@
 
 .nav {
 	display: flex;
-	justify-content: space-between;
 	gap: 10px;
+	justify-content: space-between;
 	width: 100%;
 }
 
@@ -82,10 +82,10 @@
 
 /* _____________Hamburger-Menu_________________ */
 .header__nav.active {
-	opacity: 1;
-	visibility: visible;
-	transform: none; /* left: 0; */
 	cursor: pointer;
+	visibility: visible;
+	opacity: 1;
+	transform: none; /* left: 0; */
 }
 
 @media (max-width: $burger-breakpoint) {
@@ -96,31 +96,31 @@
 
 	.header__nav {
 		position: absolute;
-		left: 0;
 		top: 0;
+		left: 0;
 		z-index: 99998;
 		justify-content: initial; /* flex-basis */
 		width: 100%;
 		height: calc(100vh + 2px);
+		visibility: hidden;
 		background-color: rgb(0 0 0 / 80%);
 		opacity: 0;
-		visibility: hidden;
-		transform: translateX(-100%); /* left: -100%; */
 		transition: transform 0.3s, opacity 0.3s, visibility 0.3s linear;
+		transform: translateX(-100%); /* left: -100%; */
 	}
 
 	.nav {
 		flex-direction: column;
-		justify-content: initial; /* flex-basis */
 		gap: 0;
-		overflow-y: auto;
-		padding: 30px;
+		justify-content: initial; /* flex-basis */
 		width: 65%;
 		height: 100%;
-		box-shadow: 10px 0 23px -1px rgb(34 60 80 / 20%);
+		padding: 30px;
+		overflow-y: auto;
 		text-align: center;
-		background-color: var(--clr-burger-menu-bg);
 		cursor: auto;
+		background-color: var(--clr-burger-menu-bg);
+		box-shadow: 10px 0 23px -1px rgb(34 60 80 / 20%);
 	}
 
 	.nav__li-link {
@@ -152,10 +152,10 @@
 	.menu-icon::after {
 		position: absolute;
 		display: inline-block;
-		border-radius: 5px;
 		width: 100%;
 		height: 3px;
 		background-color: var(--clr-burger-btn);
+		border-radius: 5px;
 		transition: all 0.3s ease-in-out;
 	}
 
