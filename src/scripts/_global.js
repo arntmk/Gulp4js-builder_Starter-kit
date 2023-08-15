@@ -9,4 +9,4 @@ const screenViewport = function () {
 		document.head.replaceChild(viewport, oldViewport);
 	})();
 };
-screenViewport();
+export default screenViewport;
