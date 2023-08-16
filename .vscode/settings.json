@@ -1,4 +1,5 @@
 {
+	"extensions.ignoreRecommendations": false,
 	// "files.autoSave": "onWindowChange",
 	"files.exclude": {
 		"**/node_modules": true
@@ -29,7 +30,7 @@
 		"php": "html",
 		"markdown": "html",
 		"blade": "html",
-		"twig": "html",
+		// "twig": "html",
 		"hbs": "html",
 		"njk": "html"
 	},
