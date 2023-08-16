@@ -3,23 +3,26 @@
 // https://www.postcss.parts/
 // https://www.npmjs.com/search?q=keywords%3Apostcss-plugin
 /* ____________________________________________ */
+
+import presetEnv from 'postcss-preset-env'; // Include: autoprefixer
 import pxtorem from 'postcss-pxtorem';
-import autoprefixer from 'autoprefixer';
-import mergerules from 'postcss-merge-rules';
-import mergelonghand from 'postcss-merge-longhand';
-import mergeidents from 'postcss-merge-idents';
-import purgecss from '@fullhuman/postcss-purgecss';
 import sortCSSmq from 'postcss-sort-media-queries';
-import optsvgo from 'postcss-svgo';
+import purgecss from '@fullhuman/postcss-purgecss';
+import optSvgo from 'postcss-svgo';
+import mergeLonghand from 'postcss-merge-longhand';
+import mergeRules from 'postcss-merge-rules';
+import mergeIdents from 'postcss-merge-idents';
 
 /* ____________________________________________ */
 const srcFolder = './src';
 const postcssConfig = [
+	presetEnv({
+		autoprefixer: { cascade: false, grid: true },
+	}),
 	sortCSSmq({ sort: 'desktop-first' }),
-	mergerules(),
-	mergelonghand(),
-	mergeidents(),
-	autoprefixer({ cascade: false, grid: true }),
+	mergeRules(),
+	mergeLonghand(),
+	mergeIdents(),
 	pxtorem({ rootValue: 16, propWhiteList: ['*'] }),
 	purgecss({
 		content: [`${srcFolder}/**/*.{html,twig,js,ts,jsx,tsx,vue}`],
@@ -29,7 +32,7 @@ const postcssConfig = [
 		variables: false,
 		fontFace: false,
 	}),
-	optsvgo({ encode: true }),
+	optSvgo({ encode: true }),
 ];
 
 export default postcssConfig;

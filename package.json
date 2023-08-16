@@ -70,7 +70,6 @@
 	"license": "WTFPL",
 	"devDependencies": {
 		"@fullhuman/postcss-purgecss": "^5.0.0",
-		"autoprefixer": "^10.4.15",
 		"browser-sync": "^2.29.3",
 		"css-loader": "^6.8.1",
 		"del": "^6.1.1",
@@ -109,6 +108,7 @@
 		"postcss-merge-idents": "^6.0.0",
 		"postcss-merge-longhand": "^6.0.0",
 		"postcss-merge-rules": "^6.0.1",
+		"postcss-preset-env": "^9.1.1",
 		"postcss-pxtorem": "^6.0.0",
 		"postcss-sort-media-queries": "^5.2.0",
 		"postcss-svgo": "^6.0.0",
