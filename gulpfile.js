@@ -298,8 +298,6 @@ function html() {
 				removeScriptTypeAttributes: isProd,
 				removeStyleLinkTypeAttributes: isProd,
 				removeEmptyAttributes: isProd,
-				sortAttributes: false,
-				sortClassName: false,
 				minifyCSS: isProd,
 				minifyJS: isProd,
 			}),
