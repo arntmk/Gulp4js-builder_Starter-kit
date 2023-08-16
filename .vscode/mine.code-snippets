@@ -91,7 +91,7 @@
 	/* ____________________________________________ */
 	// Main CSS Snippets
 	"@media query": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "q",
 		"body": ["@media (max-width: $$breakpoint-${1:768}) {\n\t $2 \n}"],
 		"description": "@media query (max-width: №)"
@@ -105,7 +105,7 @@
 	},
 	/* ____________________________________________ */
 	"::Pseudo-elements ::before": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "before",
 		"body": [
 			"&::before {",
@@ -120,7 +120,7 @@
 	},
 	/* ____________________________________________ */
 	"::Pseudo-elements ::after": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "after",
 		"body": [
 			"&::after {",
@@ -135,7 +135,7 @@
 	},
 	/* ____________________________________________ */
 	":Pseudo-class disable mobile :hover": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "dis:hover",
 		"body": [
 			"@media (any-hover: hover) {\n\t &:is(:focus-visible, :hover){\n\t $1 \n\t} \n\t &:active {\n\t $2 \n\t}\n}"
@@ -144,19 +144,19 @@
 	},
 	/* ____________________________________________ */
 	".class": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": ".",
 		"body": [".${1:class} {\n $0 \n}"]
 	},
 	/* ____________________________________________ */
 	"#id": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "#",
 		"body": ["#${1:id} {\n $0 \n}"]
 	},
 	/* ____________________________________________ */
 	".container": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "container",
 		"body": [
 			".container {",
@@ -169,28 +169,28 @@
 	},
 	/* ____________________________________________ */
 	"m-gap(:first-child)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "m-gap(:first-child)",
 		"body": [".flex-parent > *:not(:first-child) {", "margin-left: 30px;", "}"],
 		"description": "m-gap(:first-child)"
 	},
 	/* ____________________________________________ */
 	"m-gap(:last-child)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "m-gap(:last-child)",
 		"body": [".flex-parent > *:not(:last-child) {", "margin-right: 30px;", "}"],
 		"description": "m-gap(:last-child)"
 	},
 	/* ____________________________________________ */
 	"text-ellipsis": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "text-ellipsis",
 		"body": ["text-overflow: ellipsis;", "overflow: hidden;"],
 		"description": "initial value: clip"
 	},
 	/* ____________________________________________ */
 	"counter-number": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "counter",
 		"body": [
 			"counter-reset: CounterNumber;",
@@ -203,7 +203,7 @@
 	},
 	/* ____________________________________________ */
 	"grid text over image": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "grid-absolute",
 		"body": [
 			".img-text-wrapper {",
@@ -223,7 +223,7 @@
 	},
 	/* ____________________________________________ */
 	"::Pseudo absolute underline": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "absolute-underline",
 		"body": [
 			"&::${1:before} {",
@@ -247,7 +247,7 @@
 	/* ____________________________________________ */
 	/* ____________________________________________ */
 	"background-image:full": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "bg-img",
 		"body": [
 			"background-image: url('${1:../}');",
@@ -260,7 +260,7 @@
 	},
 	/* ____________________________________________ */
 	"background-icon:full": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "bg-icon",
 		"body": [
 			"background-image: url('${1:../}');",
@@ -272,7 +272,7 @@
 	},
 	/* ____________________________________________ */
 	"absolute position center:1": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "absolute-center:1",
 		"body": [
 			"position: absolute;",
@@ -284,14 +284,14 @@
 	},
 	/* ____________________________________________ */
 	"absolute position center:2": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "absolute-center:2",
 		"body": ["position: absolute;", "inset: 0;", "margin: auto;"],
 		"description": "absolute position center:2"
 	},
 	/* ____________________________________________ */
 	"::Pseudo absolute overlay": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "absolute-overlay",
 		"body": [
 			"&::${1:before} {",
@@ -311,7 +311,7 @@
 	},
 	/* ____________________________________________ */
 	"::Pseudo absolute background icon": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "absolute-bg-icon",
 		"body": [
 			"&::${1:before} {",
@@ -332,14 +332,14 @@
 	},
 	/* ____________________________________________ */
 	"width: 100%, height: 100vh": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "wh",
 		"body": ["width: ${1:100%;}", "height: ${2:100vh;}", "$3"],
 		"description": "width: 100%, height: 100vh"
 	},
 	/* ____________________________________________ */
 	"transition:": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "transition",
 		"body": [
 			"transition: ${3:all} ${2:0.3s} ${1|linear,ease-in-out,ease,ease-in,ease-out,step-start,step-end,steps,cubic-bezier|};"
@@ -348,14 +348,14 @@
 	},
 	/* ____________________________________________ */
 	"transform: translate": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "translate",
 		"body": ["transform: translate(-50% -50%);", "$1"],
 		"description": "transform: translate"
 	},
 	/* ____________________________________________ */
 	"Hint for CSS variables": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "cssvars",
 		"body": [
 			":root {",
@@ -371,7 +371,7 @@
 	},
 	/* ____________________________________________ */
 	"basic button with icon": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "btn-ico",
 		"body": [
 			".btn-ico {",
@@ -421,369 +421,369 @@
 	/* ______________________________________________________ */
 	// CSS Snippets
 	"align-items (flex, grid)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "align-items",
 		"body": "align-items: ${1|flex-start,flex-end,center,baseline,stretch,start,end,self-start,self-end|};",
 		"description": "initial value: stretch"
 	},
 	"align-self (flex, grid)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "align-self",
 		"body": "align-items: ${1|flex-start,flex-end,center,baseline,stretch,auto|};",
 		"description": "initial value: auto" // new
 	},
 	"align-content (flex, grid)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "align-content",
 		"body": "align-content: ${1|flex-start,flex-end,center,space-between,space-around,space-evenly,stretch|};",
 		"description": "initial value: stretch" // new
 	},
 	/* ____________________________________________ */
 	"animation": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ani",
 		"body": "animation: ${3:name} ${2:1s} ${1|linear,ease-in-out,ease,ease-in,ease-out,step-start,step-end,steps,cubic-bezier|};",
 		"description": "animation: name duration timing-function delay direction count fill-mode play-state"
 	},
 	"animation-delay": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ani-delay",
 		"body": "animation-delay: ${0:1s};"
 	},
 	"animation-direction": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ani-direction",
 		"body": "animation-direction: ${1|alternate,alternate-reverse,reverse,normal|};",
 		"description": "initial value: normal"
 	},
 	"animation-duratuion": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ani-duratuion",
 		"body": "animation-duration: ${0:1s};"
 	},
 	"animation-fill-mode": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ani-fill-mode",
 		"body": "animation-fill-mode: ${1|forwards,backwards,both,none|};",
 		"description": "initial value: none"
 	},
 	"animation-iteration-count": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ani-iteration-count",
 		"body": "animation-iteration-count: ${0:infinite};",
 		"description": "initial value: 1"
 	},
 	"animation-name": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ani-name",
 		"body": "animation-name: ${0:name};"
 	},
 	"animation-play-state": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ani-play-state",
 		"body": "animation-play-state: ${1|paused,running|};",
 		"description": "initial value: running"
 	},
 	"animation-timing-function": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ani-timing-function",
 		"body": "animation-timing-function: ${1|linear,ease,ease-in-out,ease-in,ease-out,step-start,step-end,steps,cubic-bezier|};",
 		"description": "initial value: ease"
 	},
 	/* ____________________________________________ */
 	"background (shorthand)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "background",
 		"body": "background: linear-gradient(to right, #eee, #014482) center center / 200px 200px no-repeat fixed padding-box content-box #fff;",
 		"description": "background: image position/size repeat attachment origin-box clip-box color;"
 	},
 	"background-attachment": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "bg-attachment",
 		"body": "background-attachment: ${1|fixed,scroll,local|};",
 		"description": "initial value: scroll"
 	},
 	"background-clip": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "bg-clip",
 		"body": "background-clip: ${1|border-box,padding-box,content-box,text|};",
 		"description": "initial value: border-box"
 	},
 	"background-image": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "bg-image",
 		"body": "background-image: ${1|url('');,conic-gradient();,linear-gradient();,radial-gradient();,repeating-conic-gradient();,repeating-linear-gradient();,repeating-radial-gradient();|}",
 		"description": "initial value: none"
 	},
 	"background-origin": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "bg-origin",
 		"body": "background-origin: ${1|border-box,padding-box,content-box|};",
 		"description": "initial value: padding-box"
 	},
 	"background-position": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "bg-position",
 		"body": "background-position: ${1:|center,top,left,right,bottom,50%,50px|} ${2:|center,top,left,right,bottom,50%,50px|};"
 	},
 	"background-repeat": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "bg-repeat",
 		"body": "background-repeat: ${1|no-repeat,repeat-x,repeat-y,repeat,space,round|};",
 		"description": "initial value: repeat"
 	},
 	"background-size": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "bg-size",
 		"body": "background-size: ${1|cover,contain,30%,200px|};"
 	},
 	/* ____________________________________________ */
 	"border": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "border",
 		"body": "border: ${1:1px} ${2|solid,dashed,dotted,double,groove,ridge,inset,outset,none,hidden|} ${0:#eee};"
 	},
 	"border-style": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "border-style",
 		"body": "border-style: ${1|solid,dashed,dotted,double,groove,ridge,inset,outset,none,hidden|};"
 	},
 	"border-image-source": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "border-img-src",
 		"body": "border-image-source: ${1|url('');,linear-gradient();,repeating-linear-gradient();|}",
 		"description": "initial value: none" // new
 	},
 	/* ____________________________________________ */
 	"box-shadow": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "box-shadow",
 		"body": "box-shadow: ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${0:rgba(0, 0, 0, .5)};",
 		"description": "box-shadow: x-offset y-offset blur spread color"
 	},
 	"box-sizing": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "box-sizing",
 		"body": "box-sizing: ${1|border-box,content-box|};",
 		"description": "initial value: content-box"
 	},
 	/* ____________________________________________ */
 	"clear": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "clear",
 		"body": "clear: ${1|both,left,right,none|};"
 	},
 	"content": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "content",
 		"body": "content: '$0';"
 	},
 	"cursor": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "cursor",
 		"body": "cursor: ${1|auto,default,alias,cell,copy,crosshair,context-menu,help,grab,grabbing,move,none,no-drop,not-allowed,pointer,progress,e-resize,all-scroll,text,wait,vertical-text,zoom-in,zoom-out|};",
 		"description": "initial value: auto"
 	},
 	"display": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "display",
 		"body": "display: ${1|none,block,inline,inline-block,flex,inline-flex,grid,inline-grid,list-item,contents,table,inline-table,table-caption,table-cell,table-row,table-row-group,table-column|};"
 	},
 	/* ____________________________________________ */
 	"flex (shorthand)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "flex",
 		"body": "flex: ${1:1} ${2:1} ${3:auto};",
 		"description": "flex: grow shrink basis"
 	},
 	"flex-direction": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "flex-direction",
 		"body": "flex-direction: ${1|row,row-reverse,column,column-reverse|};",
 		"description": "initial value: row"
 	},
 	"flex-flow (shorthand)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "flex-flow",
 		"body": "flex-flow: ${1|row,row-reverse,column,column-reverse|} ${2|wrap,wrap-reverse,nowrap|}",
 		"description": "initial value: (flex-direction:row, flex-wrap: nowrap)"
 	},
 	"flex-wrap": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "flex-wrap",
 		"body": "flex-wrap: ${1|wrap,wrap-reverse,nowrap|};",
 		"description": "initial value: nowrap"
 	},
 	/* ____________________________________________ */
 	"float": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "float",
 		"body": "float: ${1|left,right,none|};"
 	},
 	/* ____________________________________________ */
 	"font-size": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "fz",
 		"body": "font-size: ${1|16px,clamp(),calc()|};"
 	},
 	"font-family": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ff",
 		"body": "font-family: ${0:system-ui,-apple-system,Segoe UI,sans-serif};"
 	},
 	"font-style": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "fs",
 		"body": "font-style: ${1|italic,oblique,normal|};"
 	},
 	"font-weight": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "fw",
 		"body": "font-weight: ${1|thin,100,extralight,200,light,300,normal,400,medium,500,sembold,600,bold,700,extrabold,800,black,900|};"
 	},
 	"font": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "font",
 		"body": "font: ${0:16px/1.5};",
 		"description": "font: [weight style variant stretch] size/line-height family"
 	},
 	/* ____________________________________________ */
 	"grid-template-columns-repeat-m": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "grid-repeat-manually",
 		"body": "grid-template-columns: repeat(${1:12}, ${2:1fr}));"
 	},
 	"grid-template-columns-repeat-a": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "grid-repeat-auto",
 		"body": "grid-template-columns: repeat(${1|auto-fit,auto-fill|}, minmax(min(${2:300}px, 100%), 1fr));",
 		"description": "It's useful for card list layout" // best
 	},
 	"grid-auto-rows": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "grid-auto-rows",
 		"body": "grid-auto-rows: ${0:300}px;"
 	},
 	"grid-auto-column": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "grid-auto-column",
 		"body": "grid-auto-column: ${0:300}px;"
 	},
 	"grid-column": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "grid-column",
 		"body": "grid-column: ${0:span 2 / auto};"
 	},
 	"grid-row": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "grid-row",
 		"body": "grid-row: ${0:span 2 / auto};"
 	},
 	/* ____________________________________________ */
 	"justify-items (grid)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "justify-items",
 		"body": "justify-items: ${1|start,end,center,baseline,stretch,left,right|};",
 		"description": "initial value: legacy" // new
 	},
 	"justify-self (grid)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "justify-self",
 		"body": "justify-self: ${1|start,end,center,baseline,stretch,left,right|};",
 		"description": "initial value: auto" // new
 	},
 	"justify-content (flex, grid)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "justify-content",
 		"body": "justify-content: ${1|flex-start,flex-end,center,space-between,space-around,space-evenly,start,end|};",
 		"description": "initial value: flex-start"
 	},
 	/* ____________________________________________ */
 	"list-style": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "list-style",
 		"body": "list-style: ${1|disc,circle,square,decimal,lower-roman,upper-roman,lower-alpha,upper-alpha,none,armenian,cjk-ideographic,georgian,lower-greek,hebrew,hiragana,hiragana-iroha,katakana,katakana-iroha,lower-latin,upper-latin|} ${2|outside,inside|};",
 		"description": "list-style: type position image"
 	},
 	"list-style-position": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "list-style-position",
 		"body": "${1|outside,inside|}",
 		"description": "initial value: outside"
 	},
 	"list-style-type": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "list-style-type",
 		"body": "list-style-type: ${1|disc,circle,square,decimal,lower-roman,upper-roman,lower-alpha,upper-alpha,none,armenian,cjk-ideographic,georgian,lower-greek,hebrew,hiragana,hiragana-iroha,katakana,katakana-iroha,lower-latin,upper-latin|};",
 		"description": "initial value: disc"
 	},
 	"list-style-image": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "list-style-image",
 		"body": "list-style-image: url('${0:../list-image.jpg}');",
 		"description": "initial value: none" // new
 	},
 	/* ____________________________________________ */
 	"overflow": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "overflow",
 		"body": "overflow: ${1|visible,hidden,scroll,auto,clip|};"
 	},
 	/* ____________________________________________ */
 	"position": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "position",
 		"body": "position: ${1|relative,absolute,fixed,sticky,static|};",
 		"description": "initial value: static"
 	},
 	/* ____________________________________________ */
 	"text-align": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "text-align",
 		"body": "text-align: ${1|center,left,right,justify,start,end|};"
 	},
 	"text-decoration": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "text-decoration",
 		"body": "text-decoration: ${1|none,underline,overline,line-through|};"
 	},
 	"text-shadow": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "text-shadow",
 		"body": "text-shadow: ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${0:rgba(0, 0, 0, .5)};",
 		"description": "text-shadow: x-offset y-offset blur spread color"
 	},
 	"text-transform": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "text-transform",
 		"body": "text-transform: ${1|capitalize,uppercase,lowercase,full-width,none|};"
 	},
 	/* ____________________________________________ */
 	"vertical-align": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "vertical-align",
 		"body": "vertical-align: ${1|baseline,middle,top,bottom,sub,super,text-top,text-bottom|};"
 	},
 	"visibility": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "visibility",
 		"body": "visibility: ${1|visible,hidden,collapse|};"
 	},
 	/* ____________________________________________ */
 	"word-break": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "word-break",
 		"body": "word-break: ${1|break-all,keep-all,break-word,normal|};",
 		"description": "initial value: normal"
 	},
 	"white-space": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "white-space",
 		"body": "white-space: ${1|wrap,nowrap,pre,pre-wrap,pre-line,normal|};",
 		"description": "initial value: normal"
 	},
 	"word-wrap": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "word-wrap",
 		"body": "word-wrap: ${1|break-word,break-spaces,normal|};",
 		"description": "initial value: normal"
@@ -792,95 +792,95 @@
 	/* ____________________________________________ */
 	/* ____________________________________________ */
 	"place-items (grid shorthand)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "place-items",
 		"body": "place-items: ${1|start,end,center,baseline,stretch,self-start,self-end|} ${2|start,end,center,baseline,stretch,left,right|};",
 		"description": "initial value: (align-items: stretch, justify-items: legacy)" // new
 	},
 	"place-content (grid shorthand)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "place-content",
 		"body": "place-content: ${1|start,end,center,space-between,space-around,space-evenly|} ${2|start,end,center,space-between,space-around,space-evenly|};",
 		"description": "initial value: (align-content: stretch, justify-content: legacy)" // new
 	},
 	/* ____________________________________________ */
 	"text-wrap": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "text-wrap",
 		"body": "text-wrap: ${1|balance,stable,pretty,nowrap,wrap|};",
 		"description": "initial value: wrap" // new
 	},
 	/* ____________________________________________ */
 	"mix-blend-mode": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "mix-blend-mode",
 		"body": "mix-blend-mode: ${1|multiply,screen,overlay,darken,lighten,color-dodge,color-burn,difference,exclusion,hue,saturation,color,luminosity,normal|};",
 		"description": "initial value: normal" // new
 	},
 	/* ____________________________________________ */
 	"filter": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "filter",
 		"body": "filter: ${1|blur(px),brightness(%),contrast(%),drop-shadow(),grayscale(%),hue-rotate(deg),invert(%),opacity(%),saturate(%),sepia(%),url()|};",
 		"description": "initial value: none" // new
 	},
 	/* ____________________________________________ */
 	"isolation": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "isolation",
 		"body": "isolation : ${0:isolate};",
 		"description": "initial value: auto" // new
 	},
 	/* ____________________________________________ */
 	"inset (shorthand)": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "inset",
 		"body": "inset: ${0:0};",
 		"description": "inset (shorthand) - top, right, bottom, left" // new
 	},
 	/* ____________________________________________ */
 	"width": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "w",
 		"body": "width: ${1|100%,calc(),clamp(),fit-content,max-content,min-content,auto|};" // new
 	},
 	"height": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "h",
 		"body": "height: ${1|100vh,calc(),clamp(),fit-content,max-content,min-content,auto|};" // new
 	},
 	/* ____________________________________________ */
 	/* ____________________________________________ */
 	"@import": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "imp",
 		"body": "@import '${0:./filename.scss}';"
 	},
 	"@mixin": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "mix",
 		"body": "@mixin ${1:mixinName} {\n ${0:} \n}"
 	},
 	"@include": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "inc",
 		"body": "@include ${1:mixinName} {\n $0 \n};"
 	},
 
 	"@extend": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "ext",
 		"body": "@extend ${1:.className};"
 	},
 
 	"@keyframes": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "key",
 		"body": ["@keyframes ${1:name} {\n\t 0%{\n\t $2 \n\t}\n\t 100%{\n\t $3 \n\t} \n}"],
 		"description": "@keyframes:"
 	},
 	"@media": {
-		"scope": "css,scss,sass,less",
+		"scope": "css,scss,sass,less,postcss",
 		"prefix": "media",
 		"body": "@media (${1:max-width: 767.98px}) {\n $0 \n}"
 	}
