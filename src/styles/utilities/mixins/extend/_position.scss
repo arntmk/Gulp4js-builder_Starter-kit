@@ -8,47 +8,47 @@
 // @include .flow-space; (Spam selectors)
 
 /* ____________________________________________ */
-@mixin static {
+@mixin p-static {
 	position: static;
 }
 
-.static {
+.p-static {
 	position: static;
 }
 
 /* ------------------------------------ */
-@mixin relative {
+@mixin p-relative {
 	position: relative;
 }
 
-.relative {
+.p-relative {
 	position: relative;
 }
 
 /* ------------------------------------ */
-@mixin absolute {
+@mixin p-absolute {
 	position: absolute;
 }
 
-.absolute {
+.p-absolute {
 	position: absolute;
 }
 
 /* ------------------------------------ */
-@mixin fixed {
+@mixin p-fixed {
 	position: fixed;
 }
 
-.fixed {
+.p-fixed {
 	position: fixed;
 }
 
 /* ------------------------------------ */
-@mixin sticky {
+@mixin p-sticky {
 	position: sticky;
 }
 
-.sticky {
+.p-sticky {
 	position: sticky;
 }
 
