@@ -21,7 +21,7 @@ const postcssConfig = [
 	autoprefixer({ cascade: false, grid: true }),
 	pxtorem({ rootValue: 16, propWhiteList: ['*'] }),
 	purgecss({
-		content: [`${srcFolder}/**/*.{html,twig,js}`],
+		content: [`${srcFolder}/**/*.{html,twig,js,ts,jsx,tsx,vue}`],
 		skippedContentGlobs: ['node_modules/**', 'bower_components/**'],
 		safelist: [':where', ':is', ':has', 'hidden', 'active', 'open', 'lock-fixed', 'lock'],
 		keyframes: true,
