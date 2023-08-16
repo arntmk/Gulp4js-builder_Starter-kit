@@ -5,16 +5,16 @@
 /* ____________________________________________ */
 import pxtorem from 'postcss-pxtorem';
 import autoprefixer from 'autoprefixer';
-import gcmq from 'group-css-media-queries';
 import mergerules from 'postcss-merge-rules';
 import mergelonghand from 'postcss-merge-longhand';
 import mergeidents from 'postcss-merge-idents';
 import purgecss from '@fullhuman/postcss-purgecss';
+import sortCSSmq from 'postcss-sort-media-queries';
 
 /* ____________________________________________ */
 const srcFolder = './src';
 const postcssConfig = [
-	gcmq(),
+	sortCSSmq({ sort: 'desktop-first' }),
 	mergerules(),
 	mergelonghand(),
 	mergeidents(),
