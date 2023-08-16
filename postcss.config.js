@@ -29,15 +29,7 @@ const postcssConfig = [
 		variables: false,
 		fontFace: false,
 	}),
-	optsvgo({
-		encode: true,
-		plugins: [
-			{ removeDoctype: true },
-			{ removeComments: true },
-			{ cleanupNumericValues: { floatPrecision: 2 } },
-			{ convertColors: { names2hex: true, rgb2hex: true } },
-		],
-	}),
+	optsvgo({ encode: true }),
 ];
 
 export default postcssConfig;
