@@ -77,8 +77,8 @@
 	"eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
 
 	// Stylelint
-	"stylelint.validate": ["css", "scss", "less"],
-	"stylelint.snippet": ["css", "scss", "less"],
+	"stylelint.validate": ["css", "scss", "less", "postcss"],
+	"stylelint.snippet": ["css", "scss", "less", "postcss"],
 
 	// Htmlhint "shift+alt+s"
 	"htmlhint.documentSelector": ["html", "htm", "php", "blade", "twig", "hbs", "njk"],
