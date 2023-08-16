@@ -3,6 +3,7 @@
 // https://www.postcss.parts/
 // https://www.npmjs.com/search?q=keywords%3Apostcss-plugin
 // https://github.com/postcss/postcss
+// "selector-nested-pattern": "^&",
 /* ____________________________________________ */
 
 import presetEnv from 'postcss-preset-env'; // Include: autoprefixer
