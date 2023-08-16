@@ -45,15 +45,18 @@ import * as sass from 'sass'; // css preprocessors.
 import scssGlob from 'gulp-sass-glob'; // global imports.
 import cached from 'gulp-cached'; // optimize css rebuild.
 import dependents from 'gulp-dependents'; // optimize css rebuild.
-import autoprefixer from 'gulp-autoprefixer'; // css префікси для сумісності.
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 import purgecss from 'gulp-purgecss'; // purge css [optimize].
 import gcmq from 'gulp-group-css-media-queries'; // group-media.
+import postcss from 'gulp-postcss'; // postcss.
 
 // JS/TS
 import terser from 'gulp-terser'; // мінімізація JS/TS.
+
+// Config
 import webpackConfig from './webpack.config.js'; // webpackConfig
+import postcssConfig from './postcss.config.js'; // postcssConfig
 
 /* ____________________________________________ */
 /* ____________________________________________ */
@@ -360,7 +363,7 @@ function optCss() {
 		.pipe(gcmq())
 		.pipe(shorthand())
 		.pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
-		.pipe(autoprefixer({ cascade: false, grid: true }))
+		.pipe(postcss(postcssConfig))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`));
 }
