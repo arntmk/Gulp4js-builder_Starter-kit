@@ -17,6 +17,7 @@ import mergeIdents from 'postcss-merge-idents';
 const srcFolder = './src';
 const postcssConfig = [
 	presetEnv({
+		stage: 2,
 		autoprefixer: { cascade: false, grid: true },
 	}),
 	sortCSSmq({ sort: 'desktop-first' }),
