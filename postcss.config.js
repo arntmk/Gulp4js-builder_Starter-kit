@@ -10,6 +10,7 @@ import mergelonghand from 'postcss-merge-longhand';
 import mergeidents from 'postcss-merge-idents';
 import purgecss from '@fullhuman/postcss-purgecss';
 import sortCSSmq from 'postcss-sort-media-queries';
+import optsvgo from 'postcss-svgo';
 
 /* ____________________________________________ */
 const srcFolder = './src';
@@ -27,6 +28,15 @@ const postcssConfig = [
 		keyframes: true,
 		variables: false,
 		fontFace: false,
+	}),
+	optsvgo({
+		encode: true,
+		plugins: [
+			{ removeDoctype: true },
+			{ removeComments: true },
+			{ cleanupNumericValues: { floatPrecision: 2 } },
+			{ convertColors: { names2hex: true, rgb2hex: true } },
+		],
 	}),
 ];
 
