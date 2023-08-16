@@ -48,6 +48,7 @@ import dependents from 'gulp-dependents'; // optimize css rebuild.
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
 import postcss from 'gulp-postcss'; // postcss.
+import presetEnv from 'postcss-preset-env'; // Include: autoprefixer
 
 // JS/TS
 import terser from 'gulp-terser'; // мінімізація JS/TS.
@@ -328,6 +329,7 @@ function css() {
 				.on('error', scss.logError),
 		)
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
+		.pipe(gulpif(isDev, postcss([presetEnv({ autoprefixer: false })])))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream());
