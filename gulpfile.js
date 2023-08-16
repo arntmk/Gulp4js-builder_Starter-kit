@@ -351,8 +351,8 @@ function optCss() {
 	return gulpif(isProd, gulp.src(purgeCssFiles))
 		.pipe(gcmq())
 		.pipe(shorthand())
-		.pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
 		.pipe(postcss(postcssConfig))
+		.pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/styles/`));
 }
