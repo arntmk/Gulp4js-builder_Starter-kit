@@ -1,4 +1,5 @@
-// Postcss Plugins
+// Plugins
+
 // https://www.postcss.parts/
 // https://www.npmjs.com/search?q=keywords%3Apostcss-plugin
 /* ____________________________________________ */
@@ -10,13 +11,7 @@ import mergeidents from 'postcss-merge-idents';
 import purgecss from '@fullhuman/postcss-purgecss';
 
 /* ____________________________________________ */
-// Paths
-
-const buildFolder = './build';
 const srcFolder = './src';
-
-// postcssConfig
-
 const postcssConfig = [
 	mergerules(),
 	mergelonghand(),
