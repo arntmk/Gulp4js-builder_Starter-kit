@@ -7,6 +7,15 @@ import autoprefixer from 'autoprefixer';
 import mergerules from 'postcss-merge-rules';
 import mergelonghand from 'postcss-merge-longhand';
 import mergeidents from 'postcss-merge-idents';
+import purgecss from '@fullhuman/postcss-purgecss';
+
+/* ____________________________________________ */
+// Paths
+
+const buildFolder = './build';
+const srcFolder = './src';
+
+// postcssConfig
 
 const postcssConfig = [
 	mergerules(),
@@ -14,6 +23,14 @@ const postcssConfig = [
 	mergeidents(),
 	autoprefixer({ cascade: false, grid: true }),
 	pxtorem({ rootValue: 16, propWhiteList: ['*'] }),
+	purgecss({
+		content: [`${srcFolder}/**/*.{html,twig,js}`],
+		skippedContentGlobs: ['node_modules/**', 'bower_components/**'],
+		safelist: [':where', ':is', ':has', 'hidden', 'active', 'open', 'lock-fixed', 'lock'],
+		keyframes: true,
+		variables: false,
+		fontFace: false,
+	}),
 ];
 
 export default postcssConfig;

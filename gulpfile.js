@@ -47,7 +47,6 @@ import cached from 'gulp-cached'; // optimize css rebuild.
 import dependents from 'gulp-dependents'; // optimize css rebuild.
 import shorthand from 'gulp-shorthand'; // shorthand css properties.
 import cleanCSS from 'gulp-clean-css'; // мinimize-css, group-media, optimize.
-import purgecss from 'gulp-purgecss'; // purge css [optimize].
 import gcmq from 'gulp-group-css-media-queries'; // group-media.
 import postcss from 'gulp-postcss'; // postcss.
 
@@ -350,16 +349,6 @@ function libsCss() {
 function optCss() {
 	const purgeCssFiles = [`${buildFolder}/styles/*.css`, `!${buildFolder}/styles/vendor.min.js`];
 	return gulpif(isProd, gulp.src(purgeCssFiles))
-		.pipe(
-			purgecss({
-				content: [`${srcFolder}/**/*.{html,twig,js}`],
-				skippedContentGlobs: ['node_modules/**', 'bower_components/**'],
-				safelist: [':where', ':is', ':has', 'hidden', 'active', 'open', 'lock-fixed', 'lock'],
-				keyframes: true,
-				variables: false,
-				fontFace: false,
-			}),
-		)
 		.pipe(gcmq())
 		.pipe(shorthand())
 		.pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
