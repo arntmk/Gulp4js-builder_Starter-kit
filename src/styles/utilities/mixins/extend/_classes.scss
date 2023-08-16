@@ -125,38 +125,38 @@
 
 /* ------------------------------------ */
 /* float [clearfix] */
-@mixin floatfix {
+@mixin d-floatfix {
 	display: flow-root;
 }
 
-.floatfix {
+.d-floatfix {
 	display: flow-root;
 }
 
 /* ------------------------------------ */
-@mixin block {
+@mixin d-block {
 	display: block;
 }
 
-.block {
+.d-block {
 	display: block;
 }
 
 /* ------------------------------------ */
-@mixin inline-block {
+@mixin d-inline-block {
 	display: inline-block;
 }
 
-.inline-block {
+.d-inline-block {
 	display: inline-block;
 }
 
 /* ------------------------------------ */
-@mixin inline {
+@mixin d-inline {
 	display: inline;
 }
 
-.inline {
+.d-inline {
 	display: inline;
 }
 

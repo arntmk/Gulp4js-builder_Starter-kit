@@ -1,5 +1,5 @@
 import pxtorem from 'postcss-pxtorem';
-import autoprefixer from 'autoprefixer'; // css префікси для сумісності.
+import autoprefixer from 'autoprefixer';
 import mergerules from 'postcss-merge-rules';
 
 const postcssConfig = [

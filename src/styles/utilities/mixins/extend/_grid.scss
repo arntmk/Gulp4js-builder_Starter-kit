@@ -7,20 +7,20 @@
 // @include .flow-space; (Spam selectors)
 
 /* ____________________________________________ */
-@mixin grid {
+@mixin d-grid {
 	display: grid;
 }
 
-.grid {
+.d-grid {
 	display: grid;
 }
 
 /* ------------------------------------ */
-@mixin inline-grid {
+@mixin d-inline-grid {
 	display: inline-grid;
 }
 
-.inline-grid {
+.d-inline-grid {
 	display: inline-grid;
 }
 

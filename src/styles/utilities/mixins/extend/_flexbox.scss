@@ -7,20 +7,20 @@
 // @include .flow-space; (Spam selectors)
 
 /* ____________________________________________ */
-@mixin flex {
+@mixin d-flex {
 	display: flex;
 }
 
-.flex {
+.d-flex {
 	display: flex;
 }
 
 /* ------------------------------------ */
-@mixin inline-flex {
+@mixin d-inline-flex {
 	display: inline-flex;
 }
 
-.inline-flex {
+.d-inline-flex {
 	display: inline-flex;
 }
 
