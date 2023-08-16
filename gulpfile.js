@@ -76,7 +76,7 @@ const buildFolder = './build';
 const srcFolder = './src';
 
 /* ____________________________________________ */
-// Notify
+// Notify.onError
 const plumberNotify = (title) => ({
 	errorHandler: notify.onError({
 		title,
