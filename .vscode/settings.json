@@ -22,7 +22,7 @@
 	// Emmet
 	"emmet.excludeLanguages": [],
 	"emmet.includeLanguages": {
-		"postcss": "css",
+		"postcss": "scss",
 		"plaintext": "pug",
 		"javascript": "javascriptreact",
 		"typescript": "typescriptreact",
