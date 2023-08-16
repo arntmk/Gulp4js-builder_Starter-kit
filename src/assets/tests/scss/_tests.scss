@@ -16,3 +16,9 @@
 	color: #555;
 	content: attr(placeholder);
 }
+
+// Style video subtitles
+video::cue {
+	font-size: 32px;
+	color: #ff0;
+}
