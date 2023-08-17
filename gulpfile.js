@@ -61,6 +61,7 @@ import postcssConfig from './postcss.config.js'; // postcssConfig
 /* ____________________________________________ */
 /* ____________________________________________ */
 // Import BrowserSync || Import SCSS
+
 const browsersync = sync.create();
 const scss = gulpSass(sass);
 
@@ -81,6 +82,7 @@ export const paths = {
 
 /* ____________________________________________ */
 // Notify.onError
+
 const plumberNotify = (title) => ({
 	errorHandler: notify.onError({
 		title,
