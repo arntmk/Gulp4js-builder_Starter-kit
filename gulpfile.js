@@ -75,6 +75,9 @@ const isDev = !isProd;
 
 const buildFolder = './build';
 const srcFolder = './src';
+export const paths = {
+	purgecss: `${srcFolder}/**/*.{html,twig,js,ts,jsx,tsx,vue}`,
+};
 
 /* ____________________________________________ */
 // Notify.onError
