@@ -40,8 +40,8 @@
 		"typescript": "typescriptreact",
 		"vue-html": "html",
 		"php": "html",
-		"markdown": "html",
 		"blade": "html",
+		"markdown": "html",
 		// "twig": "html",
 		"hbs": "html",
 		"njk": "html"
