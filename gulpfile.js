@@ -54,6 +54,7 @@ import presetEnv from 'postcss-preset-env'; // Include: autoprefixer
 // JS/TS
 import terser from 'gulp-terser'; // мінімізація JS/TS.
 
+/* ____________________________________________ */
 // Config
 import webpackConfig from './webpack.config.js'; // webpackConfig
 import postcssConfig from './postcss.config.js'; // postcssConfig
