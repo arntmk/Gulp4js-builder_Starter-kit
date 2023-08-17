@@ -4,6 +4,7 @@
 // https://www.npmjs.com/search?q=keywords%3Apostcss-plugin
 // https://github.com/postcss/postcss
 // "selector-nested-pattern": "^&",
+// https://goalsmashers.github.io/css-minification-benchmark/
 /* ____________________________________________ */
 
 import presetEnv from 'postcss-preset-env'; // Include: autoprefixer
