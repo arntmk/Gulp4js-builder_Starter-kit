@@ -3,6 +3,7 @@
 	// "files.autoSave": "onWindowChange",
 	"extensions.ignoreRecommendations": false,
 	"files.exclude": {
+		"**/.vscode": false,
 		"**/node_modules": true,
 		"**/.editorconfig": true,
 		"**/.gitignore": true,
