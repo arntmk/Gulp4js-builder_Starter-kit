@@ -71,7 +71,7 @@
 	// Config
 	// "stylelint.configFile": "./.vscode/.stylelintrc",
 	// "prettier.configPath": "./.vscode/.prettierrc",
-	"prettier.ignorePath": "./.vscode/.prettierignore",
+	// "prettier.ignorePath": "./.vscode/.prettierignore",
 
 	/* ______________________________________________________ */
 	/* ____________________Extensions________________________ */
