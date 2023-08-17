@@ -5,13 +5,16 @@
 	"files.exclude": {
 		"**/.vscode": false,
 		"**/node_modules": true,
+		"**/.eslintrc": true,
+		"**/.stylelintrc": true,
 		"**/.editorconfig": true,
 		"**/.gitignore": true,
 		"**/.htmlhintrc": true,
 		"**/.prettierrc": true,
 		"**/.prettierignore": true,
 		"**/jsconfig.json": true,
-		"**/package-lock.json": true
+		"**/package-lock.json": true,
+		"**/README.md": true
 	},
 
 	// Stylelint
