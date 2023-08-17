@@ -79,7 +79,7 @@ const isDev = !isProd;
 const buildFolder = './build';
 const srcFolder = './src';
 export const paths = {
-	purgecss: `${srcFolder}/**/*.{html,twig,js,ts,jsx,tsx,vue}`,
+	purgecss: `${srcFolder}/**/*.{html,twig,hbs,njk,js,ts,jsx,tsx,vue}`,
 };
 
 /* ____________________________________________ */
