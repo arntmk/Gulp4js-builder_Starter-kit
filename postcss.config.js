@@ -1,4 +1,4 @@
-// Plugins
+// Load plugins
 
 // https://www.postcss.parts/
 // https://www.npmjs.com/search?q=keywords%3Apostcss-plugin
