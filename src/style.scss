@@ -9,6 +9,7 @@
 /* Base SCSS imports */
 @import "./styles/variables";
 @import "./styles/font";
+@import "./styles/reset";
 @import "./styles/global";
 
 /* Utilities */
@@ -17,16 +18,3 @@
 
 /* Tests */
 @import "./assets/tests/scss/tests";
-
-/* Components style imports */
-@import "./components/block-scss/header";
-@import "./components/block-scss/main";
-@import "./components/block-scss/footer";
-@import "./components/**/*.*";
-
-/* Libs */
-// @import "./styles/feature/modal";
-// @import "./styles/feature/accordion";
-// @import "./styles/feature/tabs";
-// @import "./styles/feature/select";
-// @import "./styles/feature/**/*.*";
