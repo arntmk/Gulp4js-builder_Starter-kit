@@ -15,10 +15,10 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin: 0 auto;
-	padding: 0 15px;
 	width: 100%;
 	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
 }
 
 /* ____________________________________________ */
@@ -41,18 +41,18 @@ body {
 .slider {
 	position: absolute;
 	inset: 0;
+	cursor: pointer;
 	background-color: #ccc;
 	transition: 0.4s;
-	cursor: pointer;
 }
 
 .slider::before {
-	content: "";
 	position: absolute;
-	left: 4px;
 	bottom: 4px;
+	left: 4px;
 	width: 26px;
 	height: 26px;
+	content: "";
 	background-color: #fff;
 	transition: 0.4s;
 }

@@ -5,7 +5,7 @@ const accordionsController = function () {
 	const accordion = document.querySelectorAll('details');
 
 	if (accordion) {
-		// Animation
+		// Animation | OLD
 		/* 		accordion.forEach((summary) => {
 			summary.addEventListener('click', (e) => {
 				const self = e.currentTarget;

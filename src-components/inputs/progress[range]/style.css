@@ -14,10 +14,10 @@ body {
 }
 
 .container {
-	margin: 0 auto;
-	padding: 0 15px;
 	width: 100%;
 	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
 }
 
 /* ____________________________________________ */
@@ -35,23 +35,23 @@ body {
 
 /* Range Track / All */
 [type="range"] {
-	border: thin solid #b2b2b2;
-	border-radius: 0.3125rem;
+	box-sizing: content-box;
 	width: 9.375em;
 	height: 0.4375em;
-	box-sizing: content-box;
-	background-color: rgb(239 239 239 / 80%);
-	transition: border 0.3s ease-in-out;
 	accent-color: #0075ff;
+	background-color: rgb(239 239 239 / 80%);
+	border: thin solid #b2b2b2;
+	border-radius: 0.3125rem;
+	transition: border 0.3s ease-in-out;
 }
 
 /* Range Thumb / Mozilla */
 [type="range"]::-moz-range-thumb {
-	appearance: none;
-	border-width: 0;
 	width: 0.94em;
 	height: 0.94em;
+	appearance: none;
 	background-color: #0075ff;
+	border-width: 0;
 }
 
 /* Hover, Focus, Active */
@@ -65,21 +65,21 @@ body {
 
 /* Range Thumb / WebKit */
 input[type="range"]::-webkit-slider-thumb {
-	margin-top: -4px;
-	border-width: 0;
-	border-radius: 50%;
 	width: 0.94em;
 	height: 0.94em;
+	margin-top: -4px;
 	background-color: #0075ff;
+	border-width: 0;
+	border-radius: 50%;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-	border: thin solid #b2b2b2;
-	border-width: 0;
-	border-radius: 0.3125rem;
 	width: 9.375em;
 	height: 0.4375em;
 	background-color: rgb(239 239 239 / 80%);
+	border: thin solid #b2b2b2;
+	border-width: 0;
+	border-radius: 0.3125rem;
 }
 
 /* Progress support JS / WebKit & Moz */

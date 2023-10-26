@@ -25,10 +25,10 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 220px auto;
-	padding: 0 15px;
 	width: 100%;
 	max-width: 1200px;
+	padding: 0 15px;
+	margin: 220px auto;
 }
 
 /* ____________________________________________ */
@@ -45,27 +45,27 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border: thin solid #8f8f9d;
-	border-radius: 6px;
-	padding: 20px;
 	width: 100%;
+	padding: 20px;
 	font-weight: 500;
 	color: #201e1e;
 	background-color: #f9f9f9;
+	border: thin solid #8f8f9d;
+	border-radius: 6px;
 }
 
 .options-list {
 	position: absolute;
-	overflow-y: auto;
-	margin-top: 2px;
-	outline: none;
-	border: 0 solid transparent;
-	border-radius: 6px;
-	padding: 0 20px;
 	width: 100%;
 	height: 0;
 	max-height: 190px;
+	padding: 0 20px;
+	margin-top: 2px;
+	overflow-y: auto;
 	background-color: #f9f9f9;
+	border: 0 solid transparent;
+	border-radius: 6px;
+	outline: none;
 
 	/* overflow-y: hidden; */
 	transition: 0.3s linear 0.2s;
@@ -74,8 +74,8 @@ body {
 
 .option {
 	padding: 8px 0;
-	font-weight: 500;
 	font-size: 14px;
+	font-weight: 500;
 	transition: 0.03s linear;
 }
 
@@ -92,8 +92,8 @@ body {
 }
 
 .options-list::-webkit-scrollbar-thumb {
-	border-radius: 0.625rem;
 	background-color: #00a8ff;
+	border-radius: 0.625rem;
 }
 
 .options-list {
@@ -102,8 +102,8 @@ body {
 }
 
 .options-list.active {
-	border: thin solid #8f8f9d;
 	height: 190px;
+	border: thin solid #8f8f9d;
 }
 
 .select-ico {

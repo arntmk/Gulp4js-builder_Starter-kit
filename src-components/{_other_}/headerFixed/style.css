@@ -16,10 +16,10 @@ body {
 }
 
 .container {
-	margin-inline: auto;
-	padding-inline: 15px;
 	width: 100%;
 	max-width: 1200px;
+	padding-inline: 15px;
+	margin-inline: auto;
 }
 
 /* ____________________________________________ */
@@ -35,10 +35,10 @@ body {
 }
 
 .header__logo {
-	border-radius: 30%;
-	padding: 5px;
 	max-width: 200px;
+	padding: 5px;
 	background-color: #34b3f1;
+	border-radius: 30%;
 }
 
 /* ____________________________________________ */
@@ -80,7 +80,7 @@ html {
 /* ____________________________________________ */
 /* .nav-scrolled .header */
 .nav-scrolled {
-	box-shadow: 0 3px 20px rgb(0 0 0 / 25%);
 	color: #fff;
 	background-color: rgb(253 184 39 / 90%);
+	box-shadow: 0 3px 20px rgb(0 0 0 / 25%);
 }

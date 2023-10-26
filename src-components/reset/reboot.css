@@ -18,13 +18,13 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
 		"Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
 		"Noto Color Emoji";
-	font-weight: 400;
 	font-size: 1rem;
+	font-weight: 400;
 	line-height: 1.5;
-	text-size-adjust: 100%;
 	color: #212529;
-	-webkit-tap-highlight-color: transparent;
 	background-color: #fff;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -33,9 +33,9 @@ body {
 
 hr {
 	margin: 1rem 0;
-	border: 0;
 	color: inherit;
 	background-color: currentcolor;
+	border: 0;
 	opacity: 0.25;
 }
 
@@ -141,9 +141,9 @@ small {
 sub,
 sup {
 	position: relative;
-	vertical-align: baseline;
 	font-size: 0.75em;
 	line-height: 0;
+	vertical-align: baseline;
 }
 
 sub {
@@ -155,19 +155,19 @@ sup {
 }
 
 a {
-	text-decoration: none;
 	color: #0d6efd;
+	text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline;
 	color: #024dbc;
+	text-decoration: underline;
 }
 
 a:not([href]),
 a:not([href]):hover {
-	text-decoration: none;
 	color: inherit;
+	text-decoration: none;
 }
 
 code,
@@ -181,22 +181,22 @@ samp {
 
 pre {
 	display: block;
-	overflow: auto;
 	margin-top: 0;
 	margin-bottom: 1rem;
+	overflow: auto;
 	font-size: 0.875em;
 }
 
 pre code {
 	font-size: inherit;
-	word-break: normal;
 	color: inherit;
+	word-break: normal;
 }
 
 code {
 	font-size: 0.875em;
-	word-wrap: break-word;
 	color: #d63384;
+	word-wrap: break-word;
 }
 
 a > code {
@@ -204,17 +204,17 @@ a > code {
 }
 
 kbd {
-	border-radius: 0.2rem;
 	padding: 0.2rem 0.4rem;
 	font-size: 0.875em;
 	color: #fff;
 	background-color: #212529;
+	border-radius: 0.2rem;
 }
 
 kbd kbd {
 	padding: 0;
-	font-weight: 700;
 	font-size: 1em;
+	font-weight: 700;
 }
 
 figure {
@@ -226,8 +226,8 @@ img {
 }
 
 svg {
-	vertical-align: middle;
 	overflow: hidden;
+	vertical-align: middle;
 }
 
 table {
@@ -235,11 +235,11 @@ table {
 }
 
 caption {
-	caption-side: bottom;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
-	text-align: left;
 	color: #6c757d;
+	text-align: left;
+	caption-side: bottom;
 }
 
 th {
@@ -303,8 +303,8 @@ button:not(:disabled) {
 }
 
 ::-moz-focus-inner {
-	border-style: none;
 	padding: 0;
+	border-style: none;
 }
 
 input[type="date"],
@@ -320,21 +320,21 @@ textarea {
 }
 
 fieldset {
+	min-width: 0;
+	padding: 0;
 	margin: 0;
 	border: 0;
-	padding: 0;
-	min-width: 0;
 }
 
 legend {
 	float: left;
-	margin-bottom: 0.5rem;
-	padding: 0;
 	width: 100%;
+	padding: 0;
+	margin-bottom: 0.5rem;
 	font-size: 1.5rem;
 	line-height: inherit;
-	white-space: normal;
 	color: inherit;
+	white-space: normal;
 }
 
 mark {
@@ -365,8 +365,8 @@ progress {
 }
 
 ::-webkit-file-upload-button {
-	appearance: button;
 	font: inherit;
+	appearance: button;
 }
 
 output {

@@ -76,6 +76,9 @@
 	/* ______________________________________________________ */
 	/* ____________________Extensions________________________ */
 	/* ______________________________________________________ */
+	// Prettier
+	"prettier.requireConfig": false,
+
 	// BemHelper
 	"bemHelper.showDepthWarnings": false, // "true" low fps
 
