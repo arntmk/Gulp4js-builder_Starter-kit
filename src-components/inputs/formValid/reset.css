@@ -27,8 +27,8 @@ html {
 
 *::before,
 *::after {
-	vertical-align: inherit;
 	text-decoration: inherit;
+	vertical-align: inherit;
 }
 
 /* ____________________________________________ */
@@ -46,9 +46,9 @@ html {
 :where(html) {
 	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	font-weight: 400;
-	font-style: normal;
 	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
 	line-height: 1.5;
 }
 
@@ -73,11 +73,11 @@ html {
 /* links */
 :where(a) {
 	display: inline-block;
-	overflow-anchor: none;
-	text-decoration: none;
 	color: inherit;
-	text-decoration-skip-ink: none;
+	text-decoration: none;
 	text-underline-offset: 0.25em;
+	overflow-anchor: none;
+	text-decoration-skip-ink: none;
 }
 
 /* ____________________________________________ */
@@ -115,8 +115,8 @@ html {
 ::file-selector-button {
 	font: inherit;
 	line-height: inherit;
-	letter-spacing: inherit;
 	color: inherit;
+	letter-spacing: inherit;
 }
 
 /* ____________________________________________ */
@@ -141,8 +141,8 @@ html {
 		progress,
 		canvas
 	) {
-	height: auto;
 	max-width: 100%;
+	height: auto;
 }
 
 :where(figure) {
@@ -152,10 +152,10 @@ html {
 /* ____________________________________________ */
 /* lists */
 :where(ul, ol, dl) {
-	list-style-type: none;
-	list-style-position: inside;
-	margin: 0;
 	padding: 0;
+	margin: 0;
+	list-style-position: inside;
+	list-style-type: none;
 }
 
 ::marker {
@@ -170,16 +170,16 @@ html {
 
 /* form border */
 :where(fieldset) {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 /* btn reset */
 :where(button, [type="buttton"]) {
-	overflow-anchor: none;
-	border-width: 0;
 	padding: 0;
 	background-color: transparent;
+	border-width: 0;
+	overflow-anchor: none;
 }
 
 /* input reset */
@@ -294,10 +294,10 @@ dialog::backdrop,
 /* ____________________________________________ */
 /* Table */
 :where(th, td) {
-	border: thin solid #a0a0a0;
 	padding: 0.5em;
 	text-align: center;
 	background-color: #fff;
+	border: thin solid #a0a0a0;
 }
 
 /* ____________________________________________ */
@@ -317,7 +317,7 @@ dialog::backdrop,
 		textarea
 	),
 [type="file"]::file-selector-button {
-	border: thin solid #a0a0a0;
 	padding: 0.25em 0.375em;
 	background-color: #fff;
+	border: thin solid #a0a0a0;
 }
