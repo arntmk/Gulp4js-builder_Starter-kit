@@ -31,6 +31,8 @@
 		"herrmannplatz.npm-dependency-links",
 		"chakrounanas.turbo-console-log",
 		"junstyle.twig-language",
-		"michaelcurrin.auto-commit-msg"
+		"michaelcurrin.auto-commit-msg",
+		"devsense.phptools-vscode",
+		"klippy.amxxpawn-language"
 	]
 }

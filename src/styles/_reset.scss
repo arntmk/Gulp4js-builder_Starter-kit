@@ -41,6 +41,11 @@ html {
 	display: none !important;
 }
 
+/* HTML5 New Tag fix for newer browsers */
+:where(search) {
+	display: block;
+}
+
 /* ____________________________________________ */
 /**
  * 2. Breaks words to prevent overflow in all browsers.
@@ -64,7 +69,7 @@ html {
 }
 
 /**
- * 1. Correct the border color in all browsers.
+ * 1. Correct the border color and size in all browsers.
  */
 
 :where(hr:not([size])) {
@@ -483,6 +488,10 @@ html {
 	align-self: center;
 	object-fit: cover;
 	aspect-ratio: auto;
+	font-style: italic;
+	background-repeat: no-repeat;
+	background-size: cover;
+	shape-margin: 0.75rem;
 }
 
 :where(
