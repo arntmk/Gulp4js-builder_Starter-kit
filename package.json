@@ -105,11 +105,11 @@
 		"gulp-version-number": "^0.2.4",
 		"imagemin-pngquant": "^9.0.2",
 		"imagemin-webp": "^6.1.0",
-		"postcss": "^8.4.31",
+		"postcss": "^8.4.32",
 		"postcss-merge-idents": "^6.0.0",
 		"postcss-merge-longhand": "^6.0.0",
 		"postcss-merge-rules": "^6.0.1",
-		"postcss-preset-env": "^9.2.0",
+		"postcss-preset-env": "^9.3.0",
 		"postcss-pxtorem": "^6.0.0",
 		"postcss-sort-media-queries": "^5.2.0",
 		"postcss-svgo": "^6.0.0",
@@ -119,16 +119,16 @@
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
-		"eslint": "^8.52.0",
+		"eslint": "^8.55.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-plugin-import": "^2.29.0",
 		"stylelint": "^15.11.0",
-		"stylelint-config-recess-order": "^4.3.0",
+		"stylelint-config-recess-order": "^4.4.0",
 		"stylelint-config-standard": "^34.0.0",
 		"stylelint-config-standard-scss": "^10.0.0",
 		"stylelint-declaration-block-no-ignored-properties": "^2.7.0",
 		"stylelint-order": "^6.0.3",
-		"stylelint-scss": "^5.2.1"
+		"stylelint-scss": "^5.3.1"
 	},
 	"overrides": {
 		"chokidar": "3.5.3",
