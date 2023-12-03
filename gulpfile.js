@@ -423,5 +423,5 @@ export const svgSptTask = svg;
 export const htmlTask = html;
 export const cssTask = gulp.series(gulp.parallel(css, libsCss), optCss);
 export const jsTask = gulp.parallel(js, libsJs);
-export const delTask = delDev;
+export const delTask = delProd;
 export default gulp.series(delDev, delProd, gulp.parallel(html, jsTask, cssTask, imgTask, font));
