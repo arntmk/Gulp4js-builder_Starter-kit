@@ -17,16 +17,17 @@
 		"**/README.md": true
 	},
 
-	// Stylelint
+	// Stylelint || default linter
 	"css.validate": false,
 	"less.validate": false,
 	"scss.validate": false,
 
-	// Eslint
+	// Eslint || default linter
 	// "javascript.validate.enable": false,
 	// "typescript.validate.enable": false,
 
 	/* ____________________________________________ */
+	// Npm
 	"npm.packageManager": "npm",
 	"npm.scriptExplorerAction": "run",
 
@@ -91,29 +92,14 @@
 
 	// Htmlhint "shift+alt+s"
 	"htmlhint.documentSelector": ["html", "htm", "blade", "twig", "hbs", "njk"],
-	"attrsSorter.order": [
-		"class",
-		"className",
-		"id",
-		"name",
-		"type",
-		"role",
-		"href",
-		"src",
-		"alt",
-		"data-.+",
-		"ng-.+",
-		"for",
-		"htmlFor",
-		"value",
-		"title",
-		"aria-.+",
-		"$unknown$"
-	]
+	"attrsSorter.order": ["class", "className", "id", "name", "type", "role", "href", "src", "alt", "data-.+", "ng-.+", "for", "htmlFor", "value", "title", "aria-.+", "$unknown$"]
 
 	/* ____________________________________________ */
 	// SCSS Everywhere-fork || Class Suggestions
-	/* 	"html-css-class-completion.remoteStyleSheets": [
+	/*
+	"html-css-class-completion.remoteStyleSheets": [
 		"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-	], */
+		"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	],
+	*/
 }

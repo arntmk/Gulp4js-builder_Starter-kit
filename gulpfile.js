@@ -263,7 +263,7 @@ function webp() {
 			`!${srcFolder}/assets/images/favicon/**/*.*`,
 		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`, { extension: '.webp' })))
-		.pipe(imagemin([imageminWebp({ quality: 100 })]))
+		.pipe(imagemin([imageminWebp({ quality: 90, method: 6 })]))
 		.pipe(rename({ extname: '.webp' }))
 		.pipe(gulp.dest(`${buildFolder}/images/`))
 		.pipe(browsersync.stream());
