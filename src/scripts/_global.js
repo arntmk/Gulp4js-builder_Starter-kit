@@ -1,4 +1,4 @@
-// ===Adaptive-body-min-width===
+// ===Adaptive-body-min-width for firefox===
 const screenViewport = function () {
 	(() => {
 		const { width } = window.screen;
