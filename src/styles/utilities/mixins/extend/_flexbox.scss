@@ -12,7 +12,7 @@
 }
 
 .d-flex {
-	display: flex;
+	display: flex !important;
 }
 
 /* ------------------------------------ */
@@ -21,7 +21,7 @@
 }
 
 .d-inline-flex {
-	display: inline-flex;
+	display: inline-flex !important;
 }
 
 /* ------------------------------------ */
@@ -30,7 +30,7 @@
 }
 
 .jc-center {
-	justify-content: center;
+	justify-content: center !important;
 }
 
 /* ------------------------------------ */
@@ -39,7 +39,7 @@
 }
 
 .jc-start {
-	justify-content: flex-start;
+	justify-content: flex-start !important;
 }
 
 /* ------------------------------------ */
@@ -48,7 +48,7 @@
 }
 
 .jc-end {
-	justify-content: flex-end;
+	justify-content: flex-end !important;
 }
 
 /* ------------------------------------ */
@@ -57,7 +57,7 @@
 }
 
 .jc-between {
-	justify-content: space-between;
+	justify-content: space-between !important;
 }
 
 /* ------------------------------------ */
@@ -66,7 +66,7 @@
 }
 
 .jc-around {
-	justify-content: space-around;
+	justify-content: space-around !important;
 }
 
 /* ------------------------------------ */
@@ -75,7 +75,7 @@
 }
 
 .jc-evenly {
-	justify-content: space-evenly;
+	justify-content: space-evenly !important;
 }
 
 /* ------------------------------------ */
@@ -84,7 +84,7 @@
 }
 
 .ac-center {
-	align-content: center;
+	align-content: center !important;
 }
 
 /* ------------------------------------ */
@@ -93,7 +93,7 @@
 }
 
 .ac-start {
-	align-content: flex-start;
+	align-content: flex-start !important;
 }
 
 /* ------------------------------------ */
@@ -102,7 +102,7 @@
 }
 
 .ac-end {
-	align-content: flex-end;
+	align-content: flex-end !important;
 }
 
 /* ------------------------------------ */
@@ -111,7 +111,7 @@
 }
 
 .ac-between {
-	align-content: space-between;
+	align-content: space-between !important;
 }
 
 /* ------------------------------------ */
@@ -120,7 +120,7 @@
 }
 
 .ac-around {
-	align-content: space-around;
+	align-content: space-around !important;
 }
 
 /* ------------------------------------ */
@@ -129,7 +129,7 @@
 }
 
 .ac-evenly {
-	align-content: space-evenly;
+	align-content: space-evenly !important;
 }
 
 /* ------------------------------------ */
@@ -138,7 +138,7 @@
 }
 
 .ac-stretch {
-	align-content: stretch;
+	align-content: stretch !important;
 }
 
 /* ------------------------------------ */
@@ -147,7 +147,7 @@
 }
 
 .ai-center {
-	align-items: center;
+	align-items: center !important;
 }
 
 /* ------------------------------------ */
@@ -156,7 +156,7 @@
 }
 
 .ai-start {
-	align-items: flex-start;
+	align-items: flex-start !important;
 }
 
 /* ------------------------------------ */
@@ -165,7 +165,7 @@
 }
 
 .ai-end {
-	align-items: flex-end;
+	align-items: flex-end !important;
 }
 
 /* ------------------------------------ */
@@ -174,7 +174,7 @@
 }
 
 .ai-stretch {
-	align-items: stretch;
+	align-items: stretch !important;
 }
 
 /* ------------------------------------ */
@@ -183,7 +183,7 @@
 }
 
 .as-center {
-	align-self: center;
+	align-self: center !important;
 }
 
 /* ------------------------------------ */
@@ -192,7 +192,7 @@
 }
 
 .as-start {
-	align-self: flex-start;
+	align-self: flex-start !important;
 }
 
 /* ------------------------------------ */
@@ -201,7 +201,7 @@
 }
 
 .as-end {
-	align-self: flex-end;
+	align-self: flex-end !important;
 }
 
 /* ------------------------------------ */
@@ -210,7 +210,7 @@
 }
 
 .as-stretch {
-	align-self: stretch;
+	align-self: stretch !important;
 }
 
 /* ------------------------------------ */
@@ -219,7 +219,7 @@
 }
 
 .fx-wrap {
-	flex-wrap: wrap;
+	flex-wrap: wrap !important;
 }
 
 /* ------------------------------------ */
@@ -228,7 +228,7 @@
 }
 
 .fx-wrap-rev {
-	flex-wrap: wrap-reverse;
+	flex-wrap: wrap-reverse !important;
 }
 
 /* ------------------------------------ */
@@ -237,7 +237,7 @@
 }
 
 .fx-nowrap {
-	flex-wrap: nowrap;
+	flex-wrap: nowrap !important;
 }
 
 /* ------------------------------------ */
@@ -246,7 +246,7 @@
 }
 
 .fx-dir-col {
-	flex-direction: column;
+	flex-direction: column !important;
 }
 
 /* ------------------------------------ */
@@ -255,7 +255,7 @@
 }
 
 .fx-dir-col-rev {
-	flex-direction: column-reverse;
+	flex-direction: column-reverse !important;
 }
 
 /* ------------------------------------ */
@@ -264,7 +264,7 @@
 }
 
 .fx-dir-row {
-	flex-direction: row;
+	flex-direction: row !important;
 }
 
 /* ------------------------------------ */
@@ -273,5 +273,5 @@
 }
 
 .fx-dir-row-rev {
-	flex-direction: row-reverse;
+	flex-direction: row-reverse !important;
 }

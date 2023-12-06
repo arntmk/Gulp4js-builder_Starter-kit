@@ -12,7 +12,7 @@
 }
 
 .d-grid {
-	display: grid;
+	display: grid !important;
 }
 
 /* ------------------------------------ */
@@ -21,7 +21,7 @@
 }
 
 .d-inline-grid {
-	display: inline-grid;
+	display: inline-grid !important;
 }
 
 /* ------------------------------------ */
@@ -30,7 +30,7 @@
 }
 
 .ji-center {
-	justify-items: center;
+	justify-items: center !important;
 }
 
 /* ------------------------------------ */
@@ -39,7 +39,7 @@
 }
 
 .ji-start {
-	justify-items: start;
+	justify-items: start !important;
 }
 
 /* ------------------------------------ */
@@ -48,7 +48,7 @@
 }
 
 .ji-end {
-	justify-items: end;
+	justify-items: end !important;
 }
 
 /* ------------------------------------ */
@@ -57,7 +57,7 @@
 }
 
 .ji-stretch {
-	justify-items: stretch;
+	justify-items: stretch !important;
 }
 
 /* ------------------------------------ */
@@ -66,7 +66,7 @@
 }
 
 .ji-left {
-	justify-items: left;
+	justify-items: left !important;
 }
 
 /* ------------------------------------ */
@@ -75,7 +75,7 @@
 }
 
 .ji-right {
-	justify-items: right;
+	justify-items: right !important;
 }
 
 /* ------------------------------------ */
@@ -84,7 +84,7 @@
 }
 
 .js-center {
-	justify-self: center;
+	justify-self: center !important;
 }
 
 /* ------------------------------------ */
@@ -93,7 +93,7 @@
 }
 
 .js-start {
-	justify-self: start;
+	justify-self: start !important;
 }
 
 /* ------------------------------------ */
@@ -102,7 +102,7 @@
 }
 
 .js-end {
-	justify-self: end;
+	justify-self: end !important;
 }
 
 /* ------------------------------------ */
@@ -111,7 +111,7 @@
 }
 
 .js-stretch {
-	justify-self: stretch;
+	justify-self: stretch !important;
 }
 
 /* ------------------------------------ */
@@ -120,7 +120,7 @@
 }
 
 .js-left {
-	justify-self: left;
+	justify-self: left !important;
 }
 
 /* ------------------------------------ */
@@ -129,7 +129,7 @@
 }
 
 .js-right {
-	justify-self: right;
+	justify-self: right !important;
 }
 
 /* place-items (grid shorthand) */
@@ -139,7 +139,7 @@
 }
 
 .pi-start {
-	place-items: start;
+	place-items: start !important;
 }
 
 /* ------------------------------------ */
@@ -148,7 +148,7 @@
 }
 
 .pi-end {
-	place-items: end;
+	place-items: end !important;
 }
 
 /* ------------------------------------ */
@@ -157,7 +157,7 @@
 }
 
 .pi-center {
-	place-items: center;
+	place-items: center !important;
 }
 
 /* ------------------------------------ */
@@ -166,7 +166,7 @@
 }
 
 .pi-stretch {
-	place-items: stretch;
+	place-items: stretch !important;
 }
 
 /* place-content (grid shorthand) */
@@ -176,7 +176,7 @@
 }
 
 .pc-start {
-	place-content: start;
+	place-content: start !important;
 }
 
 /* ------------------------------------ */
@@ -185,7 +185,7 @@
 }
 
 .pc-end {
-	place-content: end;
+	place-content: end !important;
 }
 
 /* ------------------------------------ */
@@ -194,7 +194,7 @@
 }
 
 .pc-center {
-	place-content: center;
+	place-content: center !important;
 }
 
 /* ------------------------------------ */
@@ -203,7 +203,7 @@
 }
 
 .pc-stretch {
-	place-content: stretch;
+	place-content: stretch !important;
 }
 
 /* ------------------------------------ */
@@ -212,7 +212,7 @@
 }
 
 .pc-between {
-	place-content: space-between;
+	place-content: space-between !important;
 }
 
 /* ------------------------------------ */
@@ -221,7 +221,7 @@
 }
 
 .pc-around {
-	place-content: space-around;
+	place-content: space-around !important;
 }
 
 /* ------------------------------------ */
@@ -230,5 +230,5 @@
 }
 
 .pc-evenly {
-	place-content: space-evenly;
+	place-content: space-evenly !important;
 }
