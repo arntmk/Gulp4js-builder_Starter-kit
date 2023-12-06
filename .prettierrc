@@ -20,7 +20,10 @@
 			"options": { "singleQuote": false, "printWidth": 500 }
 		},
 		{ "files": ["*.php"], "options": { "useTabs": false, "printWidth": 500 } },
-		{ "files": ["*.jsx", "*.ts", "*.tsx"], "options": { "useTabs": false, "printWidth": 500 } }
+		{
+			"files": ["*.jsx", "*.ts", "*.tsx"],
+			"options": { "useTabs": false, "printWidth": 500 }
+		}
 	],
 	"ignorePath": [
 		"**/node_modules/**",

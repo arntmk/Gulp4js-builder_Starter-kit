@@ -7,7 +7,7 @@
 // https://goalsmashers.github.io/css-minification-benchmark/
 /* ____________________________________________ */
 
-import presetEnv from 'postcss-preset-env'; // Include: autoprefixer
+import presetEnv from 'postcss-preset-env'; // Included: autoprefixer
 import purgecss from '@fullhuman/postcss-purgecss';
 import sortCSSmq from 'postcss-sort-media-queries';
 import pxtorem from 'postcss-pxtorem';
@@ -24,7 +24,7 @@ const postcssConfig = [
 		autoprefixer: { cascade: false, grid: true },
 	}),
 	purgecss({
-		content: [`${srcFolder}/**/*.{html,php,twig,hbs,njk,js,ts,jsx,tsx,vue}`],
+		content: [`${srcFolder}/**/*.{html,php,twig,hbs,njk,js,ts}`], // jsx,tsx,vue
 		skippedContentGlobs: ['node_modules/**', 'bower_components/**'],
 		safelist: [':where', ':is', ':has', 'hidden', 'active', 'open', 'lock-fixed', 'lock'],
 		keyframes: true,

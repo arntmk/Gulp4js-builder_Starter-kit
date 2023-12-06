@@ -79,7 +79,7 @@ const isDev = !isProd;
 const buildFolder = './build';
 const srcFolder = './src';
 export const paths = {
-	purgecss: `${srcFolder}/**/*.{html,twig,hbs,njk,js,ts,jsx,tsx,vue}`,
+	purgecss: `${srcFolder}/**/*.{html,php,twig,hbs,njk,js,ts}`, // jsx,tsx,vue
 };
 
 /* ____________________________________________ */
@@ -263,7 +263,7 @@ function webp() {
 			`!${srcFolder}/assets/images/favicon/**/*.*`,
 		])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`, { extension: '.webp' })))
-		.pipe(imagemin([imageminWebp({ quality: 90, method: 6 })]))
+		.pipe(imagemin([imageminWebp({ quality: 85, method: 6 })]))
 		.pipe(rename({ extname: '.webp' }))
 		.pipe(gulp.dest(`${buildFolder}/images/`))
 		.pipe(browsersync.stream());
