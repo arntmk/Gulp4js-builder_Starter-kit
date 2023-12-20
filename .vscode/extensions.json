@@ -37,7 +37,6 @@
 		"michaelcurrin.auto-commit-msg",
 		"devsense.phptools-vscode",
 		"junstyle.php-cs-fixer",
-		"seemasoft.minify-html-in-php",
-		"josee9988.minifyall"
+		"seemasoft.minify-html-in-php"
 	]
 }
