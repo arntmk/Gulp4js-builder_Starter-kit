@@ -355,7 +355,7 @@ function libsCss() {
 function optCss() {
 	const purgeCssFiles = [
 		`${buildFolder}/template/styles/*.css`,
-		`!${buildFolder}/template/styles/vendor.min.js`,
+		`!${buildFolder}/template/styles/vendor.min.css`,
 	];
 	return gulpif(isProd, gulp.src(purgeCssFiles))
 		.pipe(shorthand())
