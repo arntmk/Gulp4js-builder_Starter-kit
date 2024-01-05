@@ -114,23 +114,23 @@ function delDev() {
 		isDev
 			? [
 					`${buildFolder}/**`,
-					`!${buildFolder}/*.{png,ico,txt,html,webmanifest,json}`,
-					`!${buildFolder}/styles/`,
-					`!${buildFolder}/styles/*.css`,
-					`!${buildFolder}/styles/libs/`,
-					`!${buildFolder}/styles/libs/*.css`,
-					`!${buildFolder}/scripts/`,
-					`!${buildFolder}/scripts/*.js`,
-					`!${buildFolder}/scripts/libs/`,
-					`!${buildFolder}/scripts/libs/*.js`,
-					`!${buildFolder}/fonts/`,
-					`!${buildFolder}/fonts/*.{woff,woff2}`,
-					`!${buildFolder}/images/`,
-					`!${buildFolder}/images/favicon/`,
-					`!${buildFolder}/images/favicon/*.{png,svg}`,
-					`!${buildFolder}/images/svg/`,
-					`!${buildFolder}/images/svg/*.{gif,svg}`,
-					`!${buildFolder}/images/*.webp`,
+					`!${buildFolder}/*.{png,ico,txt,html,php,webmanifest,json}`,
+					`!${buildFolder}/template/styles/`,
+					`!${buildFolder}/template/styles/*.css`,
+					`!${buildFolder}/template/styles/libs/`,
+					`!${buildFolder}/template/styles/libs/*.css`,
+					`!${buildFolder}/template/scripts/`,
+					`!${buildFolder}/template/scripts/*.js`,
+					`!${buildFolder}/template/scripts/libs/`,
+					`!${buildFolder}/template/scripts/libs/*.js`,
+					`!${buildFolder}/template/fonts/`,
+					`!${buildFolder}/template/fonts/*.{woff,woff2}`,
+					`!${buildFolder}/template/images/`,
+					`!${buildFolder}/template/images/favicon/`,
+					`!${buildFolder}/template/images/favicon/*.{png,svg}`,
+					`!${buildFolder}/template/images/svg/`,
+					`!${buildFolder}/template/images/svg/*.{gif,svg}`,
+					`!${buildFolder}/template/images/*.webp`,
 			  ]
 			: 'production',
 	);
@@ -151,20 +151,20 @@ function font() {
 	return (
 		gulp
 			.src(ttfTOwoff2)
-			.pipe(gulpif(isDev, changed(`${buildFolder}/fonts/`, { extension: '.woff2' })))
+			.pipe(gulpif(isDev, changed(`${buildFolder}/template/fonts/`, { extension: '.woff2' })))
 			.pipe(ttf2woff2())
-			.pipe(gulp.dest(`${buildFolder}/fonts/`))
+			.pipe(gulp.dest(`${buildFolder}/template/fonts/`))
 			.pipe(browsersync.stream())
 
 			// .pipe(gulp.src(ttfTOwoff))
-			// .pipe(gulpif(isDev, changed(`${buildFolder}/fonts/`, { extension: '.woff' })))
+			// .pipe(gulpif(isDev, changed(`${buildFolder}/template/fonts/`, { extension: '.woff' })))
 			// .pipe(fonter({ formats: ['woff'] }))
-			// .pipe(gulp.dest(`${buildFolder}/fonts/`))
+			// .pipe(gulp.dest(`${buildFolder}/template/fonts/`))
 			// .pipe(browsersync.stream())
 
 			.pipe(gulp.src(copySvgFont))
-			.pipe(gulpif(isDev, changed(`${buildFolder}/fonts/`, { extension: '.svg' })))
-			.pipe(gulp.dest(`${buildFolder}/fonts/`))
+			.pipe(gulpif(isDev, changed(`${buildFolder}/template/fonts/`, { extension: '.svg' })))
+			.pipe(gulp.dest(`${buildFolder}/template/fonts/`))
 			.pipe(browsersync.stream())
 	);
 }
@@ -227,7 +227,7 @@ function img() {
 	const srcSvgFiles = `${srcFolder}/assets/images/**/*.{gif,svg}`;
 	return gulp
 		.src(srcSvgFiles)
-		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`)))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/template/images/`)))
 		.pipe(
 			imagemin(
 				[
@@ -241,18 +241,18 @@ function img() {
 				{ verbose: true },
 			),
 		)
-		.pipe(gulp.dest(`${buildFolder}/images/`))
+		.pipe(gulp.dest(`${buildFolder}/template/images/`))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(copyIco))
-		.pipe(changed(`${buildFolder}/images/`))
-		.pipe(gulp.dest(`${buildFolder}/images/favicon/`))
+		.pipe(changed(`${buildFolder}/template/images/`))
+		.pipe(gulp.dest(`${buildFolder}/template/images/favicon/`))
 		.pipe(browsersync.stream())
 
 		.pipe(gulp.src(srcPngFiles))
-		.pipe(gulpif(isDev, changed(`${buildFolder}/images/favicon/`, { extension: '.png' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/template/images/favicon/`, { extension: '.png' })))
 		.pipe(imagemin([imageminPngquant({ quality: [0.8, 1.0] })]))
-		.pipe(gulp.dest(`${buildFolder}/images/favicon/`))
+		.pipe(gulp.dest(`${buildFolder}/template/images/favicon/`))
 		.pipe(browsersync.stream());
 }
 // content
@@ -262,10 +262,10 @@ function webp() {
 			`${srcFolder}/assets/images/**/*.{png,jpg,jpeg,webp}`,
 			`!${srcFolder}/assets/images/favicon/**/*.*`,
 		])
-		.pipe(gulpif(isDev, changed(`${buildFolder}/images/`, { extension: '.webp' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/template/images/`, { extension: '.webp' })))
 		.pipe(imagemin([imageminWebp({ quality: 85, method: 6 })]))
 		.pipe(rename({ extname: '.webp' }))
-		.pipe(gulp.dest(`${buildFolder}/images/`))
+		.pipe(gulp.dest(`${buildFolder}/template/images/`))
 		.pipe(browsersync.stream());
 }
 
@@ -326,7 +326,7 @@ function html() {
 function css() {
 	return gulp
 		.src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
-		.pipe(gulpif(isDev, newer(`${buildFolder}/styles/style.min.css`)))
+		.pipe(gulpif(isDev, newer(`${buildFolder}/template/styles/style.min.css`)))
 		.pipe(gulpif(isDev, cached('scss')))
 		.pipe(gulpif(isDev, dependents()))
 		.pipe(scssGlob())
@@ -338,7 +338,7 @@ function css() {
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
 		.pipe(gulpif(isDev, postcss([presetEnv({ autoprefixer: false })])))
 		.pipe(rename({ suffix: '.min', extname: '.css' }))
-		.pipe(gulp.dest(`${buildFolder}/styles/`, { sourcemaps: isDev }))
+		.pipe(gulp.dest(`${buildFolder}/template/styles/`, { sourcemaps: isDev }))
 		.pipe(browsersync.stream());
 }
 
@@ -346,20 +346,23 @@ function libsCss() {
 	const LibsCssFiles = `${srcFolder}/styles/libs/*.css`;
 	return gulp
 		.src(LibsCssFiles)
-		.pipe(gulpif(isDev, changed(`${buildFolder}/styles/libs/`, { extension: '.css' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/template/styles/libs/`, { extension: '.css' })))
 		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true, mergeMedia: false } } })))
 		.pipe(size({ showFiles: true }))
-		.pipe(gulp.dest(`${buildFolder}/styles/libs/`));
+		.pipe(gulp.dest(`${buildFolder}/template/styles/libs/`));
 }
 
 function optCss() {
-	const purgeCssFiles = [`${buildFolder}/styles/*.css`, `!${buildFolder}/styles/vendor.min.js`];
+	const purgeCssFiles = [
+		`${buildFolder}/template/styles/*.css`,
+		`!${buildFolder}/template/styles/vendor.min.js`,
+	];
 	return gulpif(isProd, gulp.src(purgeCssFiles))
 		.pipe(shorthand())
 		.pipe(postcss(postcssConfig))
 		.pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
 		.pipe(size({ showFiles: true }))
-		.pipe(gulp.dest(`${buildFolder}/styles/`));
+		.pipe(gulp.dest(`${buildFolder}/template/styles/`));
 }
 
 /* ____________________________________________ */
@@ -369,11 +372,14 @@ function js() {
 	return gulp
 		.src(`${srcFolder}/*.{js,ts}`) // WebPack entry
 		.pipe(
-			gulpif(isDev, changed(`${buildFolder}/scripts/`, { hasChanged: changed.compareContents })),
+			gulpif(
+				isDev,
+				changed(`${buildFolder}/template/scripts/`, { hasChanged: changed.compareContents }),
+			),
 		)
 		.pipe(plumber(plumberNotify('JS/TS')))
 		.pipe(webpack(webpackConfig).on('error', WebPackError))
-		.pipe(gulp.dest(`${buildFolder}/scripts/`))
+		.pipe(gulp.dest(`${buildFolder}/template/scripts/`))
 		.pipe(browsersync.stream());
 }
 
@@ -381,10 +387,10 @@ function libsJs() {
 	const LibsJsFiles = `${srcFolder}/scripts/libs/*.js`;
 	return gulp
 		.src(LibsJsFiles)
-		.pipe(gulpif(isDev, changed(`${buildFolder}/scripts/libs/`, { extension: '.js' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/template/scripts/libs/`, { extension: '.js' })))
 		.pipe(gulpif(isProd, terser()))
 		.pipe(size({ showFiles: true }))
-		.pipe(gulp.dest(`${buildFolder}/scripts/libs/`));
+		.pipe(gulp.dest(`${buildFolder}/template/scripts/libs/`));
 }
 
 /* ____________________________________________ */
