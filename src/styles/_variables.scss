@@ -103,7 +103,12 @@ $clr-scrollbar: #777;
 		/* scrollBar */
 		--clr-scrollbar: #777;
 		--clr-scrollbar-bg: #1c1c1c;
+	}
 
-		color-scheme: dark light;
+	input,
+	[type="number"],
+	[type="checkbox"],
+	[type="radio"] {
+		color-scheme: light;
 	}
 }
