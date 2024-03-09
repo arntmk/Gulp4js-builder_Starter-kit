@@ -6,8 +6,11 @@
 /* Console.Log */
 // @import "./styles/debug";
 
-/* Base SCSS imports */
+/* Variables */
+@import "./styles/breakpoint";
 @import "./styles/variables";
+
+/* Base SCSS imports */
 @import "./styles/font";
 @import "./styles/reset";
 @import "./styles/global";

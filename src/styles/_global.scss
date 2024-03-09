@@ -11,7 +11,7 @@
 /* ____________________________________________ */
 .html {
 	scroll-behavior: smooth;
-	color-scheme: light;
+	color-scheme: light dark;
 	scroll-padding-top: var(--scroll-padding, 50px);
 
 	&.lock {
@@ -47,13 +47,6 @@
 		position: fixed;
 	}
 }
-
-// optimization || low page speed
-/* section,
-footer {
-	contain-intrinsic-size: auto 540px; // Hight
-	content-visibility: auto;
-} */
 
 /* ____________________________________________ */
 /* _____________Sticky Footer__________________ */
@@ -129,7 +122,7 @@ footer {
 }
 
 /* ____________________________________________ */
-/* __________ScrollBar(Page|Body)_______________ */
+/* __________ScrollBar(Pages|Body)_____________ */
 /* ____________________________________________ */
 html {
 	scrollbar-color: var(--clr-scrollbar, #777) var(--clr-scrollbar-bg, #1c1c1c);

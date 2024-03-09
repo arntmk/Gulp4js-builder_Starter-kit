@@ -2,23 +2,9 @@
 @import "./inputs";
 @import "./accordion";
 
-/* ____________________________________________ */
-/* ____________________________________________ */
-/* ____________________________________________ */
-// Test ::placeholder
-[contenteditable] {
-	max-width: 500px;
-	min-height: 70px;
-}
-
-[contenteditable][placeholder]:empty::before {
-	font-size: 17.1px;
-	color: #555;
-	content: attr(placeholder);
-}
-
-// Style video subtitles
-video::cue {
-	font-size: 32px;
-	color: #ff0;
-}
+// optimization || low page speed
+/* section,
+footer {
+	contain-intrinsic-size: auto 540px; // Hight
+	content-visibility: auto;
+} */
