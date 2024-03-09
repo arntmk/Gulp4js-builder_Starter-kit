@@ -32,3 +32,8 @@ a[href="#"] {
 	):empty {
 	display: none !important;
 }
+
+/* editor.scrollBeyondLastLine */
+.footer {
+	margin-bottom: 50ch;
+}
