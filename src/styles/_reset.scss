@@ -615,6 +615,10 @@ dialog::backdrop,
 	outline-color: transparent;
 }
 
+:where([contenteditable]):focus {
+	outline: 0;
+}
+
 :where([type="file"]):focus {
 	outline-width: 0;
 }

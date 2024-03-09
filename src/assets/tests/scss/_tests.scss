@@ -6,12 +6,12 @@
 /* ____________________________________________ */
 /* ____________________________________________ */
 // Test ::placeholder
-.contenteditable {
+[contenteditable] {
 	max-width: 500px;
 	min-height: 70px;
 }
 
-.contenteditable[placeholder]:empty::before {
+[contenteditable][placeholder]:empty::before {
 	font-size: 17.1px;
 	color: #555;
 	content: attr(placeholder);

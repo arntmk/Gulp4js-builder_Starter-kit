@@ -25,7 +25,7 @@ const postcssConfig = [
 	}),
 	purgecss({
 		content: [`${srcFolder}/**/*.{html,php,twig,hbs,njk,js,ts}`], // jsx,tsx,vue
-		skippedContentGlobs: ['node_modules/**', 'bower_components/**'],
+		skippedContentGlobs: ['node_modules/**', 'src_components/**'],
 		safelist: [':where', ':is', ':has', 'hidden', 'active', 'open', 'lock-fixed', 'lock'],
 		keyframes: true,
 		variables: false,
