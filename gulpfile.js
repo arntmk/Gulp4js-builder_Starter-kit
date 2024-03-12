@@ -285,9 +285,19 @@ function html() {
 		.pipe(plumber(plumberNotify('Html/Twig')))
 		.pipe(twig())
 		.pipe(
+			replace(
+				/(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+				'$1./$4$5$7$1',
+			),
+		)
+		.pipe(
 			typograf({
 				locale: ['ru', 'en-US', 'uk'], // 'uk-UA'
 				htmlEntity: { type: 'name' },
+				safeTags: [
+					['<\\?php', '\\?>'],
+					['<no-typography>', '</no-typography>'],
+				],
 			}),
 		)
 		.pipe(
@@ -334,6 +344,12 @@ function css() {
 			scss
 				.sync({ outputStyle: 'expanded', includePaths: ['/node_modules/'] })
 				.on('error', scss.logError),
+		)
+		.pipe(
+			replace(
+				/(['"]?)(\.\.\/)+(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+				'$1$2$3$4$6$1',
+			),
 		)
 		.pipe(plumber(plumberNotify('CSS/SCSS')))
 		.pipe(gulpif(isDev, postcss([presetEnv({ autoprefixer: false })])))
