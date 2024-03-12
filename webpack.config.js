@@ -42,7 +42,7 @@ const webpackConfig = {
 					fullySpecified: false,
 					extensions: ['.js', '.jsx', '.ts', '.tsx', 'css', 'scss', '.json'],
 				},
-				exclude: /(node_modules|bower_components)/,
+				exclude: /(node_modules|bower_components|src_components)/,
 				use: {
 					loader: 'esbuild-loader',
 					options: {
@@ -58,7 +58,7 @@ const webpackConfig = {
 					fullySpecified: false,
 					extensions: ['css', 'scss'],
 				},
-				exclude: /(node_modules|bower_components)/,
+				exclude: /(node_modules|bower_components|src_components)/,
 				use: ['style-loader', 'css-loader'],
 			},
 		],
