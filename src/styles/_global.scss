@@ -10,6 +10,7 @@
 /* _________________General____________________ */
 /* ____________________________________________ */
 .html {
+	text-transform: capitalize;
 	scroll-behavior: smooth;
 	color-scheme: light dark;
 	scroll-padding-top: var(--scroll-padding, 50px);

@@ -67,8 +67,6 @@
 	},
 
 	/* ____________________________________________ */
-	/* ____________________________________________ */
-	/* ____________________________________________ */
 	// Config
 	// "stylelint.configFile": "./.vscode/.stylelintrc",
 	// "prettier.configPath": "./.vscode/.prettierrc",
@@ -92,7 +90,25 @@
 
 	// Htmlhint "shift+alt+s"
 	"htmlhint.documentSelector": ["html", "htm", "blade", "twig", "hbs", "njk"],
-	"attrsSorter.order": ["class", "className", "id", "name", "type", "role", "href", "src", "alt", "data-.+", "ng-.+", "for", "htmlFor", "value", "title", "aria-.+", "$unknown$"]
+	"attrsSorter.order": [
+		"class",
+		"className",
+		"id",
+		"name",
+		"type",
+		"role",
+		"href",
+		"src",
+		"alt",
+		"data-.+",
+		"ng-.+",
+		"for",
+		"htmlFor",
+		"value",
+		"title",
+		"aria-.+",
+		"$unknown$"
+	]
 
 	/* ____________________________________________ */
 	// SCSS Everywhere-fork || Class Suggestions

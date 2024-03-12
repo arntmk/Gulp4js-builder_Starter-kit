@@ -63,7 +63,8 @@
 	],
 	"ignore": [
 		"node_modules",
-		"bower_components"
+		"bower_components",
+		"src_components"
 	],
 	"homepage": "https://github.com/arntmk",
 	"private": "true",
