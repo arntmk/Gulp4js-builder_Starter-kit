@@ -19,7 +19,7 @@
 }
 
 .overflow-hidden {
-	overflow: hidden;
+	overflow: hidden !important;
 }
 
 /* ------------------------------------ */
@@ -28,7 +28,7 @@
 }
 
 .text-uppercase {
-	text-transform: uppercase;
+	text-transform: uppercase !important;
 }
 
 /* ------------------------------------ */
@@ -37,7 +37,7 @@
 }
 
 .text-lowercase {
-	text-transform: lowercase;
+	text-transform: lowercase !important;
 }
 
 /* ------------------------------------ */
@@ -46,7 +46,7 @@
 }
 
 .nowrap {
-	white-space: nowrap;
+	white-space: nowrap !important;
 }
 
 /* ------------------------------------ */
@@ -55,7 +55,7 @@
 }
 
 .wrap {
-	white-space: wrap;
+	white-space: wrap !important;
 }
 
 /* ------------------------------------ */
@@ -64,7 +64,7 @@
 }
 
 .vertical-middle {
-	vertical-align: middle;
+	vertical-align: middle !important;
 }
 
 /* ------------------------------------ */
@@ -74,8 +74,8 @@
 }
 
 .text-center {
-	text-align: center;
-	vertical-align: middle;
+	text-align: center !important;
+	vertical-align: middle !important;
 }
 
 /* ------------------------------------ */
@@ -84,7 +84,7 @@
 }
 
 .text-left {
-	text-align: left;
+	text-align: left !important;
 }
 
 /* ------------------------------------ */
@@ -93,7 +93,7 @@
 }
 
 .text-right {
-	text-align: right;
+	text-align: right !important;
 }
 
 /* ------------------------------------ */
@@ -102,7 +102,7 @@
 }
 
 .text-start {
-	text-align: start;
+	text-align: start !important;
 }
 
 /* ------------------------------------ */
@@ -111,7 +111,7 @@
 }
 
 .text-end {
-	text-align: end;
+	text-align: end !important;
 }
 
 /* ------------------------------------ */
@@ -120,7 +120,7 @@
 }
 
 .text-justify {
-	text-align: justify;
+	text-align: justify !important;
 }
 
 /* ------------------------------------ */
@@ -130,7 +130,7 @@
 }
 
 .d-floatfix {
-	display: flow-root;
+	display: flow-root !important;
 }
 
 /* ------------------------------------ */
@@ -139,7 +139,7 @@
 }
 
 .d-block {
-	display: block;
+	display: block !important;
 }
 
 /* ------------------------------------ */
@@ -148,7 +148,7 @@
 }
 
 .d-inline-block {
-	display: inline-block;
+	display: inline-block !important;
 }
 
 /* ------------------------------------ */
@@ -157,12 +157,12 @@
 }
 
 .d-inline {
-	display: inline;
+	display: inline !important;
 }
 
 /* ------------------------------------ */
 @mixin hidden {
-	display: none !important;
+	display: none;
 }
 
 .hidden {
@@ -175,7 +175,7 @@
 }
 
 .m-auto {
-	margin: auto;
+	margin: auto !important;
 }
 
 /* ------------------------------------ */
@@ -184,7 +184,7 @@
 }
 
 .m-left-auto {
-	margin-left: auto;
+	margin-left: auto !important;
 }
 
 /* ------------------------------------ */
@@ -193,7 +193,7 @@
 }
 
 .m-right-auto {
-	margin-right: auto;
+	margin-right: auto !important;
 }
 
 /* ------------------------------------ */
@@ -202,7 +202,7 @@
 }
 
 .m-top-auto {
-	margin-top: auto;
+	margin-top: auto !important;
 }
 
 /* ------------------------------------ */
@@ -211,7 +211,7 @@
 }
 
 .m-bottom-auto {
-	margin-bottom: auto;
+	margin-bottom: auto !important;
 }
 
 /* ------------------------------------ */
@@ -220,7 +220,7 @@
 }
 
 .m-inline-auto {
-	margin-inline: auto;
+	margin-inline: auto !important;
 }
 
 /* ____________________________________________ */
