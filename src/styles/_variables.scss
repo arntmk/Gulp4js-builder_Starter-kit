@@ -19,7 +19,7 @@ $clr-scrollbar: #777;
 	/* scrollBar */
 	--clr-scrollbar: #{$clr-scrollbar};
 	--clr-scrollbar-hover: #{darken($clr-scrollbar, 10%)};
-	--clr-scrollbar-active: #{darken($clr-scrollbar, 20%)};
+	--clr-scrollbar-active: #{lighten($clr-scrollbar, 10%)};
 	--clr-scrollbar-bg: #1c1c1c;
 
 	/* burger menu */
