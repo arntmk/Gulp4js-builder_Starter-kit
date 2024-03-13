@@ -605,22 +605,18 @@ dialog::backdrop,
 /* ____________________________________________ */
 /* _________________Outline____________________ */
 /* ____________________________________________ */
+/* :where(a, button, summary, select, textarea, input) {
+	outline-width: 0;
+	outline-color: transparent;
+} */
+/* ____________________________________________ */
 /* keyboard Tabs */
 [tabindex="-1"]:focus:not(:focus-visible) {
 	outline: 0 !important;
 }
 
-:where(a, button, summary, select, textarea, input, [contenteditable]) {
-	outline-width: 0;
-	outline-color: transparent;
-}
-
-:where([contenteditable]):focus {
+:where([type="file"]) {
 	outline: 0;
-}
-
-:where([type="file"]):focus {
-	outline-width: 0;
 }
 
 :where(
@@ -635,14 +631,15 @@ dialog::backdrop,
 		[type="radio"],
 		[type="checkbox"],
 		[tabindex="0"]
-	)
-	:focus-visible {
+	):focus-visible,
+[type="file"]::file-selector-button:focus-visible {
 	outline: 0.125rem solid var(--clr-hover, #4682b4);
 }
 
 :where(
 		select,
 		textarea,
+		[contenteditable],
 		input:not(
 				[type="button"],
 				[type="reset"],
@@ -653,8 +650,7 @@ dialog::backdrop,
 				[type="checkbox"],
 				[type="file"]
 			)
-	):focus,
-[type="file"]::file-selector-button:focus {
+	):focus {
 	outline: 0.125rem solid transparent;
 }
 
