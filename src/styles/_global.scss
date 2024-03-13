@@ -72,6 +72,7 @@
 /* ____________________________________________ */
 /* _________________Container__________________ */
 /* ____________________________________________ */
+/* [class*="__container"], */
 .container {
 	width: min(100%, var(--container-width, 1450px));
 	padding-inline: clamp(7.5px, 1.5vw, var(--container-offset, 30px));
