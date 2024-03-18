@@ -10,13 +10,13 @@ import webpack from 'webpack-stream';
 
 import sync from 'browser-sync'; // сервер.
 import newer from 'gulp-newer'; // перевірка файлів.
-import changed from 'gulp-changed'; // перевірка файлів.
-import del from 'del'; // видалення файлів.
+import changed from 'gulp-changed'; // перевірка файлів. || ESM Only
+import { deleteAsync } from 'del'; // видалення файлів. || ESM Only
 import gulpif from 'gulp-if'; // режим dev or production.
 import plumber from 'gulp-plumber'; // пошук помилок.
 import notify from 'gulp-notify'; // сповіщення.
 import rename from 'gulp-rename'; // rename.
-import size from 'gulp-size'; // size.
+import size from 'gulp-size'; // size. || ESM Only
 
 // Svg Sprite
 import svgmin from 'gulp-svgmin'; // мінімізація svg.
@@ -25,9 +25,9 @@ import replace from 'gulp-replace'; // заміна символів після 
 import svgSprite from 'gulp-svg-sprite'; // об'єднання спрайтів.
 
 // Optimize images
-import imagemin from 'gulp-imagemin'; // оптимізація зображення.
+import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin'; // оптимізація зображення. || ESM Only
 import imageminPngquant from 'imagemin-pngquant'; // оптимізація png only.
-import imageminWebp from 'imagemin-webp'; // конвертатор webp.
+import imageminWebp from 'imagemin-webp'; // конвертатор webp. || ESM Only
 
 // Font
 import fonter from 'gulp-fonter-2'; // конвертатор шрифтів в woff.
@@ -106,11 +106,11 @@ const WebPackError = () => ({
 // Cleaner
 
 function delProd() {
-	return del(isProd ? `${buildFolder}/**` : 'development');
+	return deleteAsync(isProd ? `${buildFolder}/**` : 'development');
 }
 
 function delDev() {
-	return del(
+	return deleteAsync(
 		isDev
 			? [
 					`${buildFolder}/**`,
@@ -138,7 +138,7 @@ function delDev() {
 
 // clear css/font-face
 function delfont() {
-	return del([`${srcFolder}/styles/_font.{scss,sass}`]);
+	return deleteAsync([`${srcFolder}/styles/_font.{scss,sass}`]);
 }
 
 /* ____________________________________________ */
@@ -231,11 +231,14 @@ function img() {
 		.pipe(
 			imagemin(
 				[
-					imagemin.gifsicle({ interlaced: true }),
-					// imagemin.mozjpeg({ quality: 80, progressive: true }),
-					// imagemin.optipng({ optimizationLevel: 5 }),
-					imagemin.svgo({
-						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+					gifsicle({ interlaced: true }),
+					// mozjpeg({ quality: 80, progressive: true }),
+					// optipng({ optimizationLevel: 5 }),
+					svgo({
+						plugins: [
+							{ name: 'removeViewBox', active: true },
+							{ name: 'cleanupIDs', active: false },
+						],
 					}),
 				],
 				{ verbose: true },
@@ -281,7 +284,6 @@ function html() {
 			`${srcFolder}/assets/*.html`,
 			`!${srcFolder}/assets/images/**/*.html`,
 		])
-		.pipe(gulpif(isDev, changed(`${buildFolder}/`, { hasChanged: changed.compareContents })))
 		.pipe(plumber(plumberNotify('Html/Twig')))
 		.pipe(twig())
 		.pipe(
@@ -387,12 +389,6 @@ function optCss() {
 function js() {
 	return gulp
 		.src(`${srcFolder}/*.{js,ts}`) // WebPack entry
-		.pipe(
-			gulpif(
-				isDev,
-				changed(`${buildFolder}/template/scripts/`, { hasChanged: changed.compareContents }),
-			),
-		)
 		.pipe(plumber(plumberNotify('JS/TS')))
 		.pipe(webpack(webpackConfig).on('error', WebPackError))
 		.pipe(gulp.dest(`${buildFolder}/template/scripts/`))

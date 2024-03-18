@@ -19,5 +19,21 @@
 			"sizes": "512x512"
 		}
 	],
-	"prefer_related_applications": false
+	"prefer_related_applications": false,
+	"screenshots": [
+		{
+			"src": "./template/images/favicon/pwa-icon320.png",
+			"sizes": "320x320",
+			"type": "image/png",
+			"form_factor": "wide",
+			"label": "New Project | PWA"
+		},
+		{
+			"src": "./template/images/favicon/pwa-icon320.png",
+			"sizes": "320x320",
+			"type": "image/png",
+			"form_factor": "narrow",
+			"label": "New Project | PWA"
+		}
+	]
 }
