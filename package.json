@@ -123,13 +123,13 @@
 		"eslint": "^8.57.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-plugin-import": "^2.29.1",
-		"stylelint": "^15.11.0",
-		"stylelint-config-recess-order": "^4.6.0",
-		"stylelint-config-standard": "^34.0.0",
-		"stylelint-config-standard-scss": "^10.0.0",
+		"stylelint": "^16.2.1",
+		"stylelint-config-recess-order": "^5.0.0",
+		"stylelint-config-standard": "^36.0.0",
+		"stylelint-config-standard-scss": "^13.0.0",
 		"stylelint-declaration-block-no-ignored-properties": "^2.8.0",
 		"stylelint-order": "^6.0.4",
-		"stylelint-scss": "^5.3.2"
+		"stylelint-scss": "^6.2.1"
 	},
 	"overrides": {
 		"chokidar": "3.6.0",
