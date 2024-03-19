@@ -428,7 +428,7 @@ function browserSync() {
 		ui: false,
 		logFileChanges: true,
 		logConnections: false,
-		browser: ['chrome'], // , 'firefox'
+		browser: ['chrome'], // , 'firefox','chrome'
 	});
 }
 
