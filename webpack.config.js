@@ -9,7 +9,7 @@
 // Production mode | Build
 
 const isProd = process.argv.includes('--production');
-const isDev = !isProd;
+const isDev = !process.argv.includes('--production');
 
 /* ____________________________________________ */
 // WebPack Config
