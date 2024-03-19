@@ -409,11 +409,11 @@ function libsJs() {
 // Watch files
 
 function watchFiles() {
-	gulp.watch(`${srcFolder}/**/*.{html,twig}`, html);
-	gulp.watch(`${srcFolder}/**/*.{scss,sass}`, css, libsCss);
-	gulp.watch(`${srcFolder}/**/*.{js,ts}`, js, libsJs);
-	gulp.watch(`${srcFolder}/assets/images/**/*.{ico,gif,svg,png,jpg,jpeg,webp}`, img, webp);
-	gulp.watch(`${srcFolder}/assets/fonts/**/*.{otf,ttf,woff,woff2,svg}`, font);
+	gulp.watch(srcFolder + '/**/*.{html,twig}', html);
+	gulp.watch(srcFolder + '/**/*.{scss,sass}', css, libsCss);
+	gulp.watch(srcFolder + '/**/*.{js,ts}', js, libsJs);
+	gulp.watch(srcFolder + '/assets/images/**/*.{ico,gif,svg,png,jpg,jpeg,webp}', img, webp);
+	gulp.watch(srcFolder + '/assets/fonts/**/*.{otf,ttf,woff,woff2,svg}', font);
 }
 
 // BrowserSync
