@@ -39,10 +39,15 @@
 
 	<!-- ____________________CSS Import_________________________ -->
 	<link href="./template/styles/style.min.css" rel="stylesheet" />
-	<link href="./template/styles/index.min.css" rel="stylesheet" />
+	{% block css_import %}
+		<link href="./template/styles/index.min.css" rel="stylesheet" />
+	{% endblock %}
 
 	<!-- ____________________JS Import__________________________ -->
 	<script src="./template/scripts/script.min.js" defer></script>
+	{% block js_import %}
+		<script src="./template/scripts/index.min.js" defer></script>
+	{% endblock %}
 </head>
 
 {#

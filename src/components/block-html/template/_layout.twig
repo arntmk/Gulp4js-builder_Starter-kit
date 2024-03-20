@@ -1,6 +1,62 @@
+{% set title = 'New Project | MPA' %}
+
 <!DOCTYPE html>
 <html class="html" lang="en">
-	{% include './_head.twig' %}
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#4682b4" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="#4682b4" />
+		<meta name="apple-mobile-web-app-title" content="New Project" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="address=no" />
+		<meta name="description" content="Web site created using gulp4js-builder" />
+		<meta name="keywords" content="html, css, javascript" />
+		<meta name="author" content="Oleh Semchuk" />
+		<meta name="robots" content="nofollow" /> <!-- noindex -->
+		<title>{{ title }}</title>
+
+		<!-- ____________________Font Import________________________ -->
+		<!-- <link type="font/woff2" href="../font/Nunito-Regular.woff2" rel="preload" as="font" crossorigin /> -->
+
+		<!-- __________________Favicon.ico Import___________________ -->
+		<!-- Favicon SVG, sizes="any" -->
+		<link type="image/svg+xml"
+			href="./template/images/favicon/favicon.svg"
+			rel="icon" />
+
+		<!-- Favicon PNG, Four sizes, sizes="16x16, 32x32, 96x96, 120x120" -->
+		<link type="image/png"
+			href="./template/images/favicon/favicon120.png"
+			rel="icon" />
+
+		<!-- Apple PNG, One size, sizes="180x180px" -->
+		<link href="./template/images/favicon/apple-touch-icon.png"
+			rel="apple-touch-icon" />
+
+		<!-- Android PNG, Two sizes, sizes="192x192, 512x512px" -->
+		<link href="manifest.json" rel="manifest" />
+
+		<!-- ____________________CSS Import_________________________ -->
+		<link href="./template/styles/style.min.css" rel="stylesheet" />
+
+		{% block css_import %}
+			<link href="./template/styles/test.min.css" rel="stylesheet" />
+		{% endblock %}
+
+		<!-- ____________________JS Import__________________________ -->
+		<script src="./template/scripts/script.min.js" defer></script>
+
+		{% block js_import %}
+			<script src="./template/scripts/test.min.js" defer></script>
+		{% endblock %}
+	</head>
+
+	<!-- ______________________________________________ -->
+	<!-- ______________________________________________ -->
+	<!-- ______________________________________________ -->
 	<!-- (BEM) Block__Element-ChildElement- -Modifier -->
 	<body class="body">
 		<noscript>You need to enable JavaScript to run this app</noscript>

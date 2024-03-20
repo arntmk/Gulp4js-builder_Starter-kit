@@ -2,6 +2,13 @@
 {% extends './components/block-html/template/_layout.twig' %}
 
 {# <!-- Head --> #}
+{% block css_import %}
+	<link href="./template/styles/index.min.css" rel="stylesheet" />
+{% endblock %}
+
+{% block js_import %}
+	<script src="./template/scripts/index.min.js" defer></script>
+{% endblock %}
 
 {# <!-- Header --> #}
 {% block header %}
