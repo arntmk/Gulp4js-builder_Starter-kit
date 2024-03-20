@@ -36,6 +36,7 @@ import fontfacegen from 'gulp-fontfacegen'; // fontface gen.
 
 // Html/Twig
 import twig from 'gulp-twig'; // html preprocessors.
+import twigData from 'gulp-data';
 import htmlmin from 'gulp-htmlmin'; // мінімізація html.
 import typograf from 'gulp-typograf'; // перевірка правопису.
 import version from 'gulp-version-number'; // build version.
@@ -58,6 +59,7 @@ import terser from 'gulp-terser'; // мінімізація JS/TS.
 // Config
 import webpackConfig from './webpack.config.js'; // webpackConfig
 import postcssConfig from './postcss.config.js'; // postcssConfig
+import dataConfig from './src/twig-data.json' assert { type: 'json' }; // dataConfig
 
 /* ____________________________________________ */
 /* ____________________________________________ */
@@ -286,6 +288,7 @@ function html() {
 			`!${srcFolder}/assets/images/**/*.html`,
 		])
 		.pipe(plumber(plumberNotify('Html/Twig')))
+		.pipe(twigData(dataConfig))
 		.pipe(twig())
 		.pipe(
 			replace(
