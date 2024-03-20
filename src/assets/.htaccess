@@ -2,8 +2,8 @@ AddDefaultCharset utf-8
 
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST} ^www.docinfo.com.ua$ [NC]
-RewriteRule ^(.*)$ https://docinfo.com.ua/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www.exemple.com.ua$ [NC]
+RewriteRule ^(.*)$ https://exemple.com.ua/$1 [R=301,L]
 
 Options +FollowSymLinks
 RewriteBase /
