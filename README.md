@@ -21,6 +21,8 @@
     "check outdated": "npm outdated",
     "update dep": "npm update --save-dev && npm update --save",
     "update all": "npm update",
-    "audit fix": "npm audit fix"
+    "audit fix": "npm audit fix",
+    "check global": "npm ls -g --depth=0",
+    "check node": "node -v"
 
 ### Turn off Gulp watch: Ctrl+C+Y
