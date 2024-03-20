@@ -57,7 +57,17 @@
 		"*.njk": "njk"
 	},
 
+	// .twig | nunjucks(.njk)
 	"[twig]": {
+		"editor.defaultFormatter": "junstyle.twig-language",
+		"editor.quickSuggestions": {
+			"other": "on",
+			"comments": "off",
+			"strings": "on"
+		}
+	},
+	"vsicons.associations.files": [{ "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }],
+	"[njk]": {
 		"editor.defaultFormatter": "junstyle.twig-language",
 		"editor.quickSuggestions": {
 			"other": "on",
