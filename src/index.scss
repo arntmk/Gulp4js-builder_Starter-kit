@@ -3,9 +3,10 @@
 
 /* Components style imports */
 @import "./components/block-scss/header";
-@import "./components/block-scss/main";
 @import "./components/block-scss/footer";
-@import "./components/**/*.*";
+@import "./components/block-scss/pages/index/main";
+
+// @import "./components/**/*.*";
 
 /* Libs */
 // @import "./styles/feature/modal";
