@@ -19,5 +19,6 @@
 @import "./styles/utilities/utility";
 @import "./styles/utilities/effects/effects";
 
-/* Tests */
-@import "./assets/tests/scss/tests";
+/* Components style imports */
+@import "./components/block-scss/header";
+@import "./components/block-scss/footer";

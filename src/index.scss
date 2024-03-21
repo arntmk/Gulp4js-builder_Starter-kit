@@ -1,9 +1,10 @@
 /* Variables */
 @import "./styles/breakpoint";
 
+/* Tests */
+@import "./assets/tests/scss/tests";
+
 /* Components style imports */
-@import "./components/block-scss/header";
-@import "./components/block-scss/footer";
 @import "./components/block-scss/pages/index/main";
 
 // @import "./components/**/*.*";
