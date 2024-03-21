@@ -7,7 +7,7 @@
 		<meta name="keywords" content />
 		<meta name="author" content />
 		<title>Password</title>
-		<link href="reset.css" rel="stylesheet" />
+		<link href="../../reset.css" rel="stylesheet" />
 		<link href="style.css" rel="stylesheet" />
 		<script src="script.js" defer></script>
 	</head>
@@ -17,13 +17,7 @@
 
 			<div class="password-wrap">
 				<label for="password">Password:</label>
-				<input
-					id="password"
-					name="password"
-					type="password"
-					required
-					pattern="(?=.*[0-9!@#$%^&*_=+-])(?=.*[a-z]).{7,30}"
-					placeholder="Password" />
+				<input id="password" name="password" type="password" required pattern="(?=.*[0-9!@#$%^&*_=+-])(?=.*[a-z]).{7,30}" placeholder="Password" />
 				<span class="eye-open eye-close hidden" id="togglePassword"></span>
 			</div>
 		</div>

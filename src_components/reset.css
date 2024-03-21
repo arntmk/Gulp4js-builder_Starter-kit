@@ -1,0 +1,693 @@
+/* stylelint-disable declaration-no-important */
+/* ____________________________________________ */
+/* elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e */
+/* https://andy-bell.co.uk/a-modern-css-reset/ */
+/* https://webdevpuneet.com/reboot-css-bootstrap-4-for-css-reset/ */
+/* https://www.youtube.com/shorts/2lyDv0wOQuQ */
+/* https://github.com/csstools/normalize.css */
+/* https://github.com/csstools/sanitize.css */
+/* ____________________________________________ */
+/* 100-thin, 200-extralight, 300-light, 400-normal, 500-medium, 600-sembold, 700-bold, 800-extrabold, 900-black */
+/* ____________________________________________ */
+/* _____________Normalize & Reset______________ */
+/* ____________________________________________ */
+/* Inherit(*) | all: unset; */
+html {
+	break-inside: avoid-column;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	background-repeat: inherit;
+}
+
+* {
+	break-inside: inherit;
+	min-width: 0;
+}
+
+*::before,
+*::after {
+	text-decoration: inherit;
+	vertical-align: inherit;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+	display: none !important;
+}
+
+/* HTML5 New Tag fix for newer browsers */
+:where(search) {
+	display: block;
+}
+
+/* ____________________________________________ */
+/**
+ * 2. Breaks words to prevent overflow in all browsers.
+ * 3. Use a 4-space tab width in all browsers.
+ * 4. Remove the grey highlight on links in iOS.
+ * 5. Prevent adjustments of font size after orientation changes in iOS.
+ */
+:where(:root) {
+	overflow-wrap: break-word;
+	tab-size: 4;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/**
+ * Prevent VoiceOver from ignoring list semantics in Safari.
+ */
+:where(nav li)::before {
+	float: left;
+	content: "\200B";
+}
+
+/**
+ * 1. Correct the border color and size in all browsers.
+ */
+
+:where(hr:not([size])) {
+	height: 1px;
+}
+
+:where(hr) {
+	color: inherit;
+	background-color: currentcolor;
+	border: 0;
+	opacity: 0.35;
+}
+
+/**
+ * 2. Correct the odd `em` font sizing in all browsers.
+ * 3. Prevent overflow of the container in all browsers.
+ */
+:where(pre) {
+	overflow: auto;
+	font-size: inherit;
+}
+
+/**
+ * Add the correct text decoration in Safari.
+ */
+:where(abbr[title]) {
+	text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+:where(b, strong) {
+	font-weight: 700;
+}
+
+/**
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+:where(code, kbd, samp) {
+	font-size: inherit;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+:where(small) {
+	font-size: 80%;
+}
+
+/**
+ * Change the alignment in all browsers.
+ */
+:where(audio, canvas, iframe, img, svg, picture, video, progress, input, button) {
+	vertical-align: middle;
+}
+
+/**
+ * Remove the border on iframes in all browsers.
+ */
+:where(iframe) {
+	border-style: none;
+}
+
+/**
+ * Change the fill color to match the text color in all browsers.
+ */
+:where(svg:not([fill])) {
+	fill: currentcolor;
+}
+
+:where(svg) {
+	overflow: hidden;
+}
+
+/**
+ * 1. Collapse border spacing in all browsers.
+ * 2. Correct table border color inheritance in all Chrome, Edge, and Safari.
+ * 3. Remove text indentation from table contents in Chrome, Edge, and Safari.
+ */
+:where(table) {
+	text-indent: 0;
+	border-collapse: collapse;
+	border-color: #a0a0a0;
+}
+
+/**
+ * Remove the margin on controls in Safari.
+ */
+:where(button, input, select) {
+	margin: 0;
+}
+
+/**
+ * Remove the inheritance of text transform in Firefox.
+ */
+:where(button, select) {
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style buttons in iOS and Safari.
+ */
+:where(button, [type="button"], [type="reset"], [type="submit"]) {
+	appearance: button;
+}
+
+/**
+ * 1. Remove the margin in Firefox and Safari.
+ * 2. Change the resize direction in all browsers.
+ */
+:where(textarea) {
+	margin: 0;
+	resize: vertical;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ */
+:where([type="search"]) {
+	appearance: textfield;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+::-webkit-inner-spin-button {
+	height: auto;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+/* stylelint-disable-next-line selector-no-vendor-prefix */
+::placeholder,
+::-webkit-input-placeholder {
+	color: inherit;
+	opacity: 0.54;
+}
+
+/**
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::file-selector-button,
+::-webkit-file-upload-button {
+	font: inherit;
+	appearance: button;
+}
+
+/**
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
+:where(
+		button,
+		input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i])
+	)::-moz-focus-inner {
+	padding: 0;
+	border-style: none;
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+:where(:-moz-ui-invalid) {
+	box-shadow: none;
+}
+
+/**
+ * Add the correct styles in Safari.
+ */
+:where(dialog) {
+	position: fixed;
+	inset: 0 5px;
+	width: fit-content;
+	height: fit-content;
+	padding: 1em;
+	margin: auto;
+	color: #000;
+	background-color: #fff;
+	border: solid;
+}
+
+:where(dialog:not([open])) {
+	display: none;
+}
+
+/**
+ * Add the correct display in Safari.
+ */
+:where(details > summary:first-of-type) {
+	display: list-item;
+}
+
+/**
+ * Change the cursor on busy elements in all browsers.
+ */
+:where([aria-busy="true"]) {
+	cursor: progress;
+}
+
+/**
+ * Change the cursor on control elements in all browsers.
+ */
+:where([aria-controls]) {
+	cursor: pointer;
+}
+
+/**
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers.
+ */
+:where([aria-disabled="true"], [disabled]) {
+	cursor: not-allowed;
+}
+
+/**
+ * Change the display on visually hidden accessible elements
+ * in all browsers.
+ */
+:where([aria-hidden="false"][hidden]) {
+	display: initial;
+}
+
+:where([aria-hidden="false"][hidden]:not(:focus)) {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+}
+
+/* ____________________________________________ */
+/**
+ * Add the correct system-ui font-family.
+ */
+@font-face {
+	font-family: system-ui;
+	font-style: normal;
+	font-weight: 400;
+	src: local(".AppleSystemUIFont"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"),
+		local("HelveticaNeue");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: system-ui;
+	font-style: italic;
+	font-weight: 400;
+	src: local(".AppleSystemUIFont"), local("Segoe UI Italic"), local("Ubuntu-Italic"),
+		local("Roboto-Italic"), local("HelveticaNeue-Italic");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: system-ui;
+	font-style: normal;
+	font-weight: 700;
+	src: local(".AppleSystemUIFont"), local("Segoe UI Bold"), local("Ubuntu-Bold"),
+		local("Roboto-Bold"), local("HelveticaNeue-Bold");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: system-ui;
+	font-style: italic;
+	font-weight: 700;
+	src: local(".AppleSystemUIFont"), local("Segoe UI Bold Italic"), local("Ubuntu-BoldItalic"),
+		local("Roboto-BoldItalic"), local("HelveticaNeue-BoldItalic");
+	font-display: swap;
+}
+
+/**
+ * Add the correct ui-monospace font-family.
+ */
+@font-face {
+	font-family: ui-monospace;
+	font-style: normal;
+	font-weight: 400;
+	src: local(".AppleSystemUIFontMonospaced-Regular"), local("Segoe UI Mono"), local("UbuntuMono"),
+		local("Roboto-Mono"), local("Menlo");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: ui-monospace;
+	font-style: italic;
+	font-weight: 400;
+	src: local(".AppleSystemUIFontMonospaced-RegularItalic"), local("Segoe UI Mono Italic"),
+		local("UbuntuMono-Italic"), local("Roboto-Mono-Italic"), local("Menlo-Italic");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: ui-monospace;
+	font-style: normal;
+	font-weight: 700;
+	src: local(".AppleSystemUIFontMonospaced-Bold"), local("Segoe UI Mono Bold"),
+		local("UbuntuMono-Bold"), local("Roboto-Mono-Bold"), local("Menlo-Bold");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: ui-monospace;
+	font-style: italic;
+	font-weight: 700;
+	src: local(".AppleSystemUIFontMonospaced-BoldItalic"), local("Segoe UI Mono Bold Italic"),
+		local("UbuntuMono-BoldItalic"), local("Roboto-Mono-BoldItalic"), local("Menlo-BoldItalic");
+	font-display: swap;
+}
+
+/* ____________________________________________ */
+/* _______________Typography___________________ */
+/* ____________________________________________ */
+/* :root */
+:where(html) {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
+		"Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.45;
+}
+
+:where(code, kbd, samp, pre) {
+	font-family: ui-monospace, "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
+		"Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:where(body) {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizespeed;
+}
+
+:where(cite, address) {
+	font-style: normal;
+}
+
+/* ____________________________________________ */
+/* Table */
+:where(th, td) {
+	padding: 0.5em;
+	text-align: center;
+	background-color: #fff;
+	border: thin solid #a0a0a0;
+}
+
+/* ____________________________________________ */
+/* links */
+:where(a) {
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+	text-underline-offset: 0.25em;
+	overflow-anchor: none;
+	text-decoration-skip-ink: none;
+}
+
+/* ____________________________________________ */
+/* paragraph */
+:where(p) {
+	margin: 0;
+	text-wrap: balance;
+}
+
+/* ____________________________________________ */
+/* headers */
+:where(h1, h2, h3, h4, h5, h6) {
+	margin: 0;
+	font-weight: var(--fw-h, 700);
+	line-height: 1.35;
+	text-wrap: balance;
+}
+
+:where(h1) {
+	font-size: var(--fs-h1, 2em); /* 32px */
+}
+
+:where(h2) {
+	font-size: var(--fs-h2, 1.5em); /* 24px */
+}
+
+:where(h3) {
+	font-size: var(--fs-h3, 1.17em); /* 18.72px */
+}
+
+:where(h4, h5, h6) {
+	font-size: var(--fs-h4-6, 1em); /* 16px */
+}
+
+/* ____________________________________________ */
+/* add typography inheritance | input */
+:where(button, input, select, textarea, optgroup, option),
+::placeholder,
+::file-selector-button,
+:-webkit-autofill {
+	font: inherit;
+	line-height: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+}
+
+/* Input change Bg-color | AutoFill */
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus,
+:-webkit-autofill:active,
+:-webkit-autofill::first-line {
+	-webkit-text-fill-color: inherit !important;
+	transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* ____________________________________________ */
+/* images */
+:where(img, svg, picture) {
+	align-self: center;
+	aspect-ratio: auto;
+	font-style: italic;
+	object-fit: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	shape-margin: 0.75rem;
+}
+
+:where(
+		img,
+		svg,
+		picture,
+		iframe,
+		input,
+		video,
+		audio,
+		select,
+		textarea,
+		details,
+		dialog,
+		progress,
+		canvas
+	) {
+	max-width: 100%;
+	height: auto;
+}
+
+:where(figure, blockquote) {
+	margin: 0;
+}
+
+/* ____________________________________________ */
+/* lists */
+:where(ul, ol) {
+	padding: 0;
+	list-style-position: inside;
+	list-style-type: none;
+}
+
+:where(ul, ol, dl, dd) {
+	margin: 0;
+}
+
+::marker {
+	color: inherit;
+}
+
+/* ____________________________________________ */
+/* form border */
+:where(fieldset) {
+	padding: 0;
+	margin: 0;
+	border: thin solid #a0a0a0;
+}
+
+/* btn reset */
+:where(button, [type="buttton"]) {
+	padding: 0;
+	background-color: transparent;
+	border-width: 0;
+	overflow-anchor: none;
+}
+
+/* input reset */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-results-button,
+[type="search"]::-webkit-search-decoration,
+[type="search"]::-webkit-search-results-decoration {
+	appearance: none;
+}
+
+[type="password"]::-ms-reveal {
+	display: none;
+}
+
+[type="number"] {
+	appearance: textfield;
+}
+
+[type="number"]::-webkit-inner-spin-button {
+	appearance: none;
+}
+
+/* ____________________________________________ */
+/* add cursor: pointer | text | default(form) */
+:where(form) {
+	cursor: default;
+}
+
+:where([contenteditable]) {
+	cursor: text;
+}
+
+:where(
+		a,
+		label,
+		summary,
+		button:not(:disabled),
+		[type="button"]:not(:disabled),
+		[type="reset"]:not(:disabled),
+		[type="submit"]:not(:disabled),
+		[type="range"],
+		[type="color"],
+		[type="checkbox"]:not(:disabled),
+		[type="radio"]:not(:disabled)
+	),
+dialog::backdrop,
+[popover]::backdrop,
+[type="file"]::file-selector-button,
+[type="number"]::-webkit-inner-spin-button,
+[type="search"]::-webkit-search-cancel-button,
+/* [type="time"],[type="week"],[type="date"],[type="datetime-local"] */::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+}
+
+/* ____________________________________________ */
+/* _________________Outline____________________ */
+/* ____________________________________________ */
+/* :where(a, button, summary, select, textarea, input) {
+	outline-width: 0;
+	outline-color: transparent;
+} */
+/* ____________________________________________ */
+/* keyboard Tabs */
+[tabindex="-1"]:focus:not(:focus-visible) {
+	outline: 0 !important;
+}
+
+:where([type="file"]) {
+	outline: 0;
+}
+
+:where(
+		a,
+		button,
+		summary,
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		[type="range"],
+		[type="color"],
+		[type="radio"],
+		[type="checkbox"],
+		[tabindex="0"]
+	):focus-visible,
+[type="file"]::file-selector-button:focus-visible {
+	outline: 0.125rem solid var(--clr-hover, #4682b4);
+}
+
+:where(
+		select,
+		textarea,
+		[contenteditable],
+		input:not(
+				[type="button"],
+				[type="reset"],
+				[type="submit"],
+				[type="range"],
+				[type="color"],
+				[type="radio"],
+				[type="checkbox"],
+				[type="file"]
+			)
+	):focus {
+	outline: 0.125rem solid transparent;
+}
+
+/* outline-offset */
+:where(
+		summary,
+		button,
+		input:not([type="checkbox"], [type="radio"], [type="color"]),
+		select,
+		textarea
+	),
+[type="file"]::file-selector-button {
+	outline-offset: 0.1875rem;
+}
+
+:where([type="checkbox"], [type="radio"], [tabindex="0"]) {
+	outline-offset: 0.0625rem;
+}
+
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* Forms */
+/**
+ * Change the inconsistent appearance in all browsers (opinionated).
+ */
+
+:where(
+		[type="button"],
+		[type="reset"],
+		[type="submit"],
+		input:not([type="range"], [type="color"], [type="file"], [type="radio"], [type="checkbox"]),
+		select,
+		textarea
+	),
+[type="file"]::file-selector-button {
+	padding: 0.25em 0.375em;
+	background-color: #fff;
+	border: thin solid #a0a0a0;
+}
