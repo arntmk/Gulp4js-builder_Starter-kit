@@ -342,7 +342,7 @@ function html() {
 function css() {
 	return gulp
 		.src(`${srcFolder}/**/*.{scss,sass}`, { sourcemaps: true })
-		.pipe(gulpif(isDev, newer(`${buildFolder}/template/styles/style.min.css`)))
+		.pipe(gulpif(isDev, newer(`${buildFolder}/template/styles/**`, { extension: '.css' })))
 		.pipe(gulpif(isDev, cached('scss')))
 		.pipe(gulpif(isDev, dependents()))
 		.pipe(scssGlob())
@@ -368,7 +368,7 @@ function libsCss() {
 	const LibsCssFiles = `${srcFolder}/styles/libs/*.css`;
 	return gulp
 		.src(LibsCssFiles)
-		.pipe(gulpif(isDev, changed(`${buildFolder}/template/styles/libs/`, { extension: '.css' })))
+		.pipe(gulpif(isDev, changed(`${buildFolder}/template/styles/libs/**`, { extension: '.css' })))
 		.pipe(gulpif(isProd, cleanCSS({ level: { 2: { restructureRules: true, mergeMedia: false } } })))
 		.pipe(size({ showFiles: true }))
 		.pipe(gulp.dest(`${buildFolder}/template/styles/libs/`));
