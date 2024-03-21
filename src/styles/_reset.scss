@@ -487,9 +487,9 @@ html {
 /* images */
 :where(img, svg, picture) {
 	align-self: center;
-	object-fit: cover;
 	aspect-ratio: auto;
 	font-style: italic;
+	object-fit: cover;
 	background-repeat: no-repeat;
 	background-size: cover;
 	shape-margin: 0.75rem;

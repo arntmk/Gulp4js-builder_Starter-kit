@@ -348,7 +348,7 @@ function css() {
 		.pipe(scssGlob())
 		.pipe(
 			scss
-				.sync({ outputStyle: 'expanded', includePaths: ['/node_modules/'] })
+				.sync({ outputStyle: 'expanded', includePaths: ['node_modules/bootstrap/scss/'] })
 				.on('error', scss.logError),
 		)
 		.pipe(
