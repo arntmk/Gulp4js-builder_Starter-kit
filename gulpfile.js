@@ -59,7 +59,7 @@ import terser from 'gulp-terser'; // мінімізація JS/TS.
 // Config
 import webpackConfig from './webpack.config.js'; // webpackConfig
 import postcssConfig from './postcss.config.js'; // postcssConfig
-import dataConfig from './src/twig-data.json' assert { type: 'json' }; // dataConfig
+import dataConfig from './src/database.json' assert { type: 'json' }; // dataConfig
 
 /* ____________________________________________ */
 /* ____________________________________________ */
