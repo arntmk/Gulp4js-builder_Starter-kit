@@ -285,9 +285,7 @@ p {
 
 abbr[title] {
 	text-decoration: underline dotted;
-	text-decoration: underline dotted;
 	cursor: help;
-	text-decoration-skip-ink: none;
 	text-decoration-skip-ink: none;
 }
 
@@ -331,7 +329,7 @@ blockquote {
 
 b,
 strong {
-	font-weight: bolder;
+	font-weight: 700;
 }
 
 small {

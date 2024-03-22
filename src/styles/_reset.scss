@@ -308,17 +308,33 @@ search {
 	float: left; // 1
 	width: 100%;
 	padding: 0;
-	font: inherit;
 	line-height: inherit;
+}
 
-	+ * {
-		clear: left; // 2
-	}
+:where(legend + *) {
+	clear: left; // 2
 }
 
 // Correct element displays
-:where(output) {
+:where(output, label) {
 	display: inline-block;
+}
+
+:where(caption) {
+	text-align: left;
+}
+
+/* ____________________________________________ */
+/* Table */
+:where(th, td) {
+	padding: 0.5em;
+	text-align: center;
+	background-color: #fff;
+	border: thin solid #a0a0a0;
+}
+
+:where(th) {
+	text-align: -webkit-match-parent;
 }
 
 /* ____________________________________________ */
@@ -429,15 +445,6 @@ search {
 
 :where(cite, address) {
 	font-style: normal;
-}
-
-/* ____________________________________________ */
-/* Table */
-:where(th, td) {
-	padding: 0.5em;
-	text-align: center;
-	background-color: #fff;
-	border: thin solid #a0a0a0;
 }
 
 /* ____________________________________________ */
@@ -607,6 +614,7 @@ search {
 		a,
 		label,
 		summary,
+		[role="button"],
 		button:not(:disabled),
 		[type="button"]:not(:disabled),
 		[type="reset"]:not(:disabled),

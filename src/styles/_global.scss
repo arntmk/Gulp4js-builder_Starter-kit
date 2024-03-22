@@ -155,8 +155,14 @@ body::-webkit-scrollbar-track {
 }
 
 /* ____________________________________________ */
-/* _____________Reduced Motion_________________ */
+/* _____________Prefers Motion_________________ */
 /* ____________________________________________ */
+@media (prefers-reduced-motion: no-preference) {
+	:root {
+		scroll-behavior: smooth;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	::before,
