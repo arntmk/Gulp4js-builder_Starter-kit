@@ -302,22 +302,23 @@ search {
 }
 
 /* ____________________________________________ */
-
+/*
 // 1. By using `float: left`, the legend will behave like a block element.
 //    This way the border of a fieldset wraps around the legend if present.
 // 2. Fix wrapping bug.
+ */
 :where(legend) {
-	float: left; // 1
+	float: left; /* 1 */
 	width: 100%;
 	padding: 0;
 	line-height: inherit;
 }
 
 :where(legend + *) {
-	clear: left; // 2
+	clear: left; /* 2 */
 }
 
-// Correct element displays
+/* Correct element displays */
 :where(output, label) {
 	display: inline-block;
 }
