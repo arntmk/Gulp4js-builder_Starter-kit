@@ -62,11 +62,13 @@ $clr-scrollbar: #777;
 
 	/* ____________________________________________ */
 	/* font-size */
-	--fs-burger-menu: clamp(1.563rem, 1.339rem + 1.12vw, 1.875rem); /* 30px */
-	--fs-h1: clamp(1.5rem, 1.262rem + 1.19vw, 2rem);
-	--fs-h2: clamp(1.125rem, 0.946rem + 0.89vw, 1.5rem);
-	--fs-h3: clamp(1rem, 0.919rem + 0.4vw, 1.17rem);
-	--fs-h4-6: clamp(0.938rem, 0.908rem + 0.15vw, 1rem);
+	--fs-burger-menu: clamp(1.563rem, calc(1.339rem + 1.12vw), 1.875rem); /* 30px */
+	--fs-h1: clamp(2rem, calc(1.818rem + 0.91vw), 2.5rem);
+	--fs-h2: clamp(1.5rem, calc(1.318rem + 0.91vw), 2rem);
+	--fs-h3: clamp(1.25rem, calc(1.159rem + 0.45vw), 1.5rem);
+	--fs-h4: clamp(1.17rem, calc(1.141rem + 0.15vw), 1.25rem);
+	--fs-h5: clamp(1rem, calc(0.938rem + 0.31vw), 1.17rem);
+	--fs-h6: clamp(0.938rem, calc(0.908rem + 0.15vw), 1rem);
 	--fs-body: clamp(0.938rem, calc(0.908rem + 0.15vw), 1rem);
 
 	// --fs-18px: clamp();

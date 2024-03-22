@@ -97,6 +97,8 @@ search {
  */
 :where(abbr[title]) {
 	text-decoration: underline dotted;
+	cursor: help;
+	text-decoration-skip-ink: none;
 }
 
 /**
@@ -123,7 +125,7 @@ search {
 /**
  * Change the alignment in all browsers.
  */
-:where(audio, canvas, iframe, img, svg, picture, video, progress, input, button) {
+:where(audio, canvas, iframe, img, svg, picture, video, progress, input, button, textarea) {
 	vertical-align: middle;
 }
 
@@ -445,6 +447,7 @@ search {
 
 :where(cite, address) {
 	font-style: normal;
+	line-height: inherit;
 }
 
 /* ____________________________________________ */
@@ -475,19 +478,27 @@ search {
 }
 
 :where(h1) {
-	font-size: var(--fs-h1, 2em); /* 32px */
+	font-size: var(--fs-h1, 2.5em); /* 40px */
 }
 
 :where(h2) {
-	font-size: var(--fs-h2, 1.5em); /* 24px */
+	font-size: var(--fs-h2, 2em); /* 32px */
 }
 
 :where(h3) {
-	font-size: var(--fs-h3, 1.17em); /* 18.72px */
+	font-size: var(--fs-h3, 1.5em); /* 24px */
 }
 
-:where(h4, h5, h6) {
-	font-size: var(--fs-h4-6, 1em); /* 16px */
+:where(h4) {
+	font-size: var(--fs-h4, 1.25em); /* 20px */
+}
+
+:where(h5) {
+	font-size: var(--fs-h5, 1.17em); /* 18.72px */
+}
+
+:where(h6) {
+	font-size: var(--fs-h6, 1em); /* 16px */
 }
 
 /* ____________________________________________ */
