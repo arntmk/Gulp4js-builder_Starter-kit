@@ -42,7 +42,7 @@ html {
 }
 
 /* HTML5 New Tag fix for newer browsers */
-:where(search) {
+search {
 	display: block;
 }
 
@@ -300,6 +300,28 @@ html {
 }
 
 /* ____________________________________________ */
+
+// 1. By using `float: left`, the legend will behave like a block element.
+//    This way the border of a fieldset wraps around the legend if present.
+// 2. Fix wrapping bug.
+:where(legend) {
+	float: left; // 1
+	width: 100%;
+	padding: 0;
+	font: inherit;
+	line-height: inherit;
+
+	+ * {
+		clear: left; // 2
+	}
+}
+
+// Correct element displays
+:where(output) {
+	display: inline-block;
+}
+
+/* ____________________________________________ */
 /**
  * Add the correct system-ui font-family.
  */
@@ -537,6 +559,7 @@ html {
 /* ____________________________________________ */
 /* form border */
 :where(fieldset) {
+	min-width: 0;
 	padding: 0;
 	margin: 0;
 	border: thin solid #a0a0a0;
@@ -604,11 +627,6 @@ dialog::backdrop,
 
 /* ____________________________________________ */
 /* _________________Outline____________________ */
-/* ____________________________________________ */
-/* :where(a, button, summary, select, textarea, input) {
-	outline-width: 0;
-	outline-color: transparent;
-} */
 /* ____________________________________________ */
 /* keyboard Tabs */
 [tabindex="-1"]:focus:not(:focus-visible) {

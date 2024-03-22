@@ -6,7 +6,7 @@ const accordionsController = function () {
 
 	if (accordion) {
 		// Animation
-		/* 		accordion.forEach((summary) => {
+		accordion.forEach((summary) => {
 			summary.addEventListener('click', (e) => {
 				const self = e.currentTarget;
 				const content = self.querySelector('.accordion-content');
@@ -16,7 +16,7 @@ const accordionsController = function () {
 					content.style.maxHeight = `${content.scrollHeight}`;
 				}
 			});
-		}); */
+		});
 
 		// Клик снаружи аркадиона. Закрыть аркадион.
 		accordion.forEach((closeDetails) => {
@@ -42,7 +42,7 @@ const accordionsController = function () {
 accordionsController();
 
 // Animation | NEW
-function setDetailsHeight(selector, wrapper = document) {
+/* function setDetailsHeight(selector, wrapper = document) {
 	const setHeight = (detail, open = false) => {
 		detail.open = open;
 		const rect = detail.getBoundingClientRect();
@@ -67,5 +67,5 @@ function setDetailsHeight(selector, wrapper = document) {
 	});
 }
 
-/* Run it */
-setDetailsHeight('details');
+// Run it
+setDetailsHeight('details'); */
