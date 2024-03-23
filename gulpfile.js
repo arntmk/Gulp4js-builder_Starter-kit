@@ -425,6 +425,7 @@ function watchFiles() {
 function browserSync() {
 	browsersync.init({
 		server: { baseDir: `${buildFolder}` },
+		// proxy: 'local.dev', // php server
 		notify: false,
 		online: true, // online (Local Router)
 		tunnel: false, // online (Internet)
