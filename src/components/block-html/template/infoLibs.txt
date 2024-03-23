@@ -75,4 +75,9 @@ rel="stylesheet" />
 // GSAP CDN
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
          -->
+// HtmX
+https://htmx.org/
+<script src="https://unpkg.com/htmx.org@1.9.11"></script>
+
 #}
+
