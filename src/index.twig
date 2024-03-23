@@ -1,7 +1,7 @@
-{# <!-- Template --> #}
+{# <!-- Base Template --> #}
 {% extends './components/block-html/template/_layout.twig' %}
 
-{# <!-- Head --> #}
+{# <!-- <Head> Import--> #}
 {% block css_import %}
 	<link href="./template/styles/index.min.css" rel="stylesheet" />
 {% endblock %}
@@ -10,17 +10,17 @@
 	<script src="./template/scripts/index.min.js" defer></script>
 {% endblock %}
 
-{# <!-- Header --> #}
+{# <!-- <Header> --> #}
 {% block header %}
 	{% include './components/block-html/pages/_header.twig' %}
 {% endblock %}
 
-{# <!-- Main Content --> #}
+{# <!-- <Main> Content --> #}
 {% block main %}
 	{% include './assets/tests/_main.twig' %}
 {% endblock %}
 
-{# <!-- Footer --> #}
+{# <!-- <Footer> --> #}
 {% block footer %}
 	{% include './components/block-html/pages/_footer.twig' %}
 {% endblock %}
