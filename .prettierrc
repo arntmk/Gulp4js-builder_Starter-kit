@@ -25,17 +25,7 @@
 			"options": { "useTabs": false, "printWidth": 500 }
 		}
 	],
-	"ignorePath": [
-		"**/node_modules/**",
-		"**/dist/**",
-		"**/dest/**",
-		"**/app/**",
-		"**/build/**",
-		"**/libs/**",
-		"**/vendor/**",
-		"*.min.js",
-		"*.min.css"
-	],
+	"ignorePath": ["**/node_modules/**", "**/libs/**", "**/vendor/**", "*.min.js", "*.min.css"],
 	"htmlWhitespaceSensitivity": "css",
 	"twigPrintWidth": 80,
 	"allowUnknownTags": true,

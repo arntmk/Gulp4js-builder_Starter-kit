@@ -37,6 +37,7 @@
 		"devsense.phptools-vscode",
 		"junstyle.php-cs-fixer",
 		"seemasoft.minify-html-in-php",
-		"mrezechi3l.css-responsive"
+		"mrezechi3l.css-responsive",
+		"yandeu.five-server"
 	]
 }

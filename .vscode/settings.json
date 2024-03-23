@@ -15,7 +15,8 @@
 		"**/.prettierignore": true,
 		"**/jsconfig.json": true,
 		"**/package-lock.json": true,
-		"**/README.md": true
+		"**/README.md": true,
+		"**/fiveserver.config.cjs": true
 	},
 
 	// Stylelint || default linter
