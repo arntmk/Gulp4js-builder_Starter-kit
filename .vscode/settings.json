@@ -1,5 +1,6 @@
 /* cSpell:disable */
 {
+	// "files.autoSave": "afterDelay",
 	// "files.autoSave": "onWindowChange",
 	"extensions.ignoreRecommendations": false,
 	"files.exclude": {
