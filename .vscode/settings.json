@@ -56,7 +56,8 @@
 		"*.html": "html",
 		"*.twig": "twig",
 		"*.hbs": "hbs",
-		"*.njk": "njk"
+		"*.njk": "njk",
+		"*.module": "php"
 	},
 
 	// .twig | nunjucks(.njk)
