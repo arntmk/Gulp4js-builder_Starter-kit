@@ -9,7 +9,7 @@ const form = function () {
 
 				// Передача даних на сервер
 				// const formData = new FormData(form);
-				// fetch('https://www.google.com/form-api/form.php', { method: 'POST', body: formData });
+				// fetch('fetch/form.php', { method: 'POST', body: formData });
 			});
 		});
 	}
