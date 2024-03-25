@@ -1,6 +1,5 @@
 {
 	"extends": ["eslint:recommended", "airbnb-base"],
-	"parser": "@babel/eslint-parser",
 	"root": true,
 	"env": {
 		"browser": true
@@ -9,6 +8,8 @@
 		// "node": true
 		// "jquery": true
 	},
+	// "parser": "",
+	// "plugins": [""],
 	"ignorePatterns": [
 		"**/node_modules/**",
 		"**/.vscode/**",
