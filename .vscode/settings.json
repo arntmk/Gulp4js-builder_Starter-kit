@@ -49,10 +49,8 @@
 		"plaintext": "pug",
 		"javascript": "javascriptreact",
 		"typescript": "typescriptreact",
-		"vue-html": "html",
 		"php": "html",
 		"blade": "html",
-		"markdown": "html",
 		"twig": "html",
 		"njk": "html"
 	},
@@ -67,7 +65,7 @@
 	},
 
 	/* ____________________________________________ */
-	// .twig
+	// .twig || Extension
 	"[twig]": {
 		"editor.defaultFormatter": "junstyle.twig-language",
 		"editor.quickSuggestions": {
@@ -78,7 +76,7 @@
 	},
 
 	/* ____________________________________________ */
-	// nunjucks(.njk)
+	// nunjucks(.njk) || Extension
 	"vsicons.associations.files": [{ "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }],
 	"[njk]": {
 		"editor.defaultFormatter": "junstyle.twig-language",
