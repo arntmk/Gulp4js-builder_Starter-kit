@@ -1,5 +1,12 @@
 /* cSpell:disable */
 {
+	/* ____________________________________________ */
+	// Config
+	// "stylelint.configFile": "./.vscode/.stylelintrc",
+	// "prettier.configPath": "./.vscode/.prettierrc",
+	// "prettier.ignorePath": "./.vscode/.prettierignore",
+
+	/* ____________________________________________ */
 	// "files.autoSave": "afterDelay",
 	// "files.autoSave": "onWindowChange",
 	"extensions.ignoreRecommendations": false,
@@ -25,6 +32,7 @@
 	"scss.validate": false,
 
 	// Eslint || default linter
+	"php.validate.enable": false,
 	// "javascript.validate.enable": false,
 	// "typescript.validate.enable": false,
 
@@ -46,7 +54,6 @@
 		"blade": "html",
 		"markdown": "html",
 		"twig": "html",
-		"hbs": "html",
 		"njk": "html"
 	},
 
@@ -55,12 +62,12 @@
 	"files.associations": {
 		"*.html": "html",
 		"*.twig": "twig",
-		"*.hbs": "hbs",
 		"*.njk": "njk",
 		"*.module": "php"
 	},
 
-	// .twig | nunjucks(.njk)
+	/* ____________________________________________ */
+	// .twig
 	"[twig]": {
 		"editor.defaultFormatter": "junstyle.twig-language",
 		"editor.quickSuggestions": {
@@ -69,6 +76,9 @@
 			"strings": "on"
 		}
 	},
+
+	/* ____________________________________________ */
+	// nunjucks(.njk)
 	"vsicons.associations.files": [{ "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }],
 	"[njk]": {
 		"editor.defaultFormatter": "junstyle.twig-language",
@@ -78,12 +88,6 @@
 			"strings": "on"
 		}
 	},
-
-	/* ____________________________________________ */
-	// Config
-	// "stylelint.configFile": "./.vscode/.stylelintrc",
-	// "prettier.configPath": "./.vscode/.prettierrc",
-	// "prettier.ignorePath": "./.vscode/.prettierignore",
 
 	/* ______________________________________________________ */
 	/* ____________________Extensions________________________ */
@@ -102,7 +106,7 @@
 	"stylelint.snippet": ["css", "scss", "less", "postcss"],
 
 	// Htmlhint "shift+alt+s"
-	"htmlhint.documentSelector": ["html", "htm", "twig", "hbs", "njk"],
+	"htmlhint.documentSelector": ["html", "htm", "twig", "njk"],
 	"attrsSorter.order": [
 		"class",
 		"className",
