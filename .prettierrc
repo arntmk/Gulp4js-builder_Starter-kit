@@ -12,17 +12,20 @@
 	"singleQuote": true,
 	"overrides": [
 		{
-			"files": ["*.css", "*.scss", "*.sass", "*.less", "*.postcss"],
+			"files": ["*.css", "*.scss", "*.less", "*.postcss"],
 			"options": { "singleQuote": false }
 		},
 		{
-			"files": ["*.html", "*.twig", "*.hbs", "*.njk"],
+			"files": ["*.html", "*.twig", "*.njk"],
 			"options": { "singleQuote": false, "printWidth": 480 }
 		},
-		{ "files": ["*.php"], "options": { "useTabs": false, "printWidth": 480 } },
 		{
-			"files": ["*.jsx", "*.ts", "*.tsx"],
+			"files": ["*.php", "*.jsx", "*.tsx"],
 			"options": { "useTabs": false, "printWidth": 480 }
+		},
+		{
+			"files": ["**/dist/**", "**/dest/**", "**/app/**", "**/build/**"],
+			"options": { "useTabs": false }
 		}
 	],
 	"ignorePath": ["**/node_modules/**", "**/libs/**", "**/vendor/**", "*.min.js", "*.min.css"],
