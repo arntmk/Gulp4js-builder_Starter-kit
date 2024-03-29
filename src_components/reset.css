@@ -336,10 +336,6 @@ search {
 	border: thin solid #a0a0a0;
 }
 
-:where(th) {
-	text-align: -webkit-match-parent;
-}
-
 /* ____________________________________________ */
 /**
  * Add the correct system-ui font-family.
