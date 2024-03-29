@@ -82,14 +82,14 @@ a,
 			color: #fff;
 			background-color: var(--clr-hover);
 			border-color: transparent;
-			box-shadow: 0 0 0.625rem var(--clr-hover);
+			box-shadow: 0 0 0.625rem var(--clr-hover) !important;
 			transform: scale(1.01);
 			animation: fade-in 0.2s ease-in-out 0.01s;
 		}
 
 		&:active {
 			background-color: var(--clr-active);
-			box-shadow: 0 0 0.625rem var(--clr-active);
+			box-shadow: 0 0 0.625rem var(--clr-active) !important;
 			transform: scale(0.97);
 		}
 	}
@@ -117,7 +117,7 @@ input:not(
 	@media (any-hover: hover) {
 		&:is(:focus, :hover) {
 			border-color: transparent;
-			box-shadow: 0 0 0 0.0625rem var(--clr-hover), 0 0 0.625rem var(--clr-hover);
+			box-shadow: 0 0 0 0.0625rem var(--clr-hover), 0 0 0.625rem var(--clr-hover) !important;
 		}
 	}
 }
