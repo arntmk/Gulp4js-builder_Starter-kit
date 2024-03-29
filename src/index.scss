@@ -3,6 +3,9 @@
 /* Variables */
 @import "./styles/breakpoint";
 
+/* Tests */
+@import "./components/block-scss/test/tests";
+
 /* Components style imports */
 @import "./components/block-scss/pages/index/main";
 
