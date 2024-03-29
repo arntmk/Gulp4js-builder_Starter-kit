@@ -1,7 +1,7 @@
 // 'use strict';
 
 /* Tests */
-import './components/block-js/test/_tests';
+import './components/tests/js/_tests';
 
 /* Components JS imports */
 import form from './scripts/_form';
