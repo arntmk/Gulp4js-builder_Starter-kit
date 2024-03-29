@@ -24,6 +24,7 @@ textarea,
  */
 
 :where(
+		[role="button"],
 		[type="button"],
 		[type="reset"],
 		[type="submit"],
