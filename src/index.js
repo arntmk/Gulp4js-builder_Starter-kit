@@ -1,4 +1,4 @@
-// 'use strict'; //
+// 'use strict';
 
 /* Tests */
 import './assets/tests/js/_tests';

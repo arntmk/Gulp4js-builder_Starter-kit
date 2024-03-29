@@ -1,4 +1,4 @@
-// 'use strict'; //
+// 'use strict';
 
 /* Base JS imports */
 import serviceWorkerController from './scripts/sw/_service-worker';
