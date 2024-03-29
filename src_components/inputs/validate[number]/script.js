@@ -4,14 +4,16 @@
 /* https://www.youtube.com/shorts/nnZS761ngXE */
 
 /* ____________________________________________ */
-// ===Validate Numbers===
+// ===Validate Number===
 
-/* const ValidateNumbers = document.querySelector('[type="number"]');
-
+/*
+const ValidateNumbers = document.querySelector('[type="number"]');
+const Numbers = /[0-9.-]/;
 ValidateNumbers.onkeypress = function Validate(e) {
-	const isNumber = /[0-9.]/.test(String.fromCharCode(e.keyCode || e.which));
+	const isNumber = Numbers.test(String.fromCharCode(e.keyCode || e.which));
 	return isNumber;
-}; */
+};
+*/
 
 /* ____________________________________________ */
 // ===Validate Numbers===
