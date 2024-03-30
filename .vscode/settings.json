@@ -7,8 +7,7 @@
 	// "prettier.ignorePath": "./.vscode/.prettierignore",
 
 	/* ____________________________________________ */
-	// "files.autoSave": "afterDelay",
-	// "files.autoSave": "onWindowChange",
+	// "files.autoSave": "afterDelay", // afterDelay, onWindowChange
 	"extensions.ignoreRecommendations": false,
 	"files.exclude": {
 		"**/.vscode": false,
