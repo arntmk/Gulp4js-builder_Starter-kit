@@ -32,7 +32,12 @@ const postcssConfig = [
 		fontFace: false,
 	}),
 	sortCSSmq({ sort: 'desktop-first' }),
-	pxtorem({ rootValue: 16, propWhiteList: ['*'] }),
+	pxtorem({
+		rootValue: 16,
+		propList: ['*'],
+		propWhiteList: ['*'],
+		selectorBlackList: ['html', 'body'],
+	}),
 	mergeRules(),
 	mergeLonghand(),
 	mergeIdents(),
