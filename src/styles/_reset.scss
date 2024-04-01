@@ -522,7 +522,7 @@ search {
 
 /* ____________________________________________ */
 /* images */
-:where(img, svg, picture) {
+:where(img, svg, picture, [role="img"]) {
 	align-self: center;
 	aspect-ratio: auto;
 	font-style: italic;
@@ -545,7 +545,8 @@ search {
 		details,
 		dialog,
 		progress,
-		canvas
+		canvas,
+		[role="img"]
 	) {
 	max-width: 100%;
 	height: auto;
@@ -622,8 +623,8 @@ search {
 		a,
 		label,
 		summary,
-		[role="button"],
 		button:not(:disabled),
+		[role="button"]:not(:disabled),
 		[type="button"]:not(:disabled),
 		[type="reset"]:not(:disabled),
 		[type="submit"]:not(:disabled),
