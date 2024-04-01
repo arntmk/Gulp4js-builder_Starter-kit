@@ -12,7 +12,7 @@
 
 /* ____________________________________________ */
 /* Image scale :Hover */
-:where(img, svg, picture, [role="img"]),
+:where(img, svg, picture),
 [data-img-hover] {
 	overflow: hidden;
 	transition: all 0.4s ease-in-out 0.01s;
