@@ -65,8 +65,13 @@
 
 .main {
 	display: flex;
-	flex: 1 1 auto;
+	flex: 1 0 auto;
 	flex-flow: column nowrap;
+}
+
+.header,
+.footer {
+	flex-shrink: 0;
 }
 
 /* ____________________________________________ */
