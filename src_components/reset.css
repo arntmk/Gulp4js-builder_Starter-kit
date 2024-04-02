@@ -556,13 +556,13 @@ search {
 
 /* ____________________________________________ */
 /* lists */
-:where(ul, ol) {
+:where(ul, ol, menu) {
 	padding: 0;
 	list-style-position: inside;
 	list-style-type: none;
 }
 
-:where(ul, ol, dl, dd) {
+:where(ul, ol, dl, dd, menu) {
 	margin: 0;
 }
 
