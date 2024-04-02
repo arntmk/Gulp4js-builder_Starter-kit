@@ -25,7 +25,7 @@ html {
 	background-repeat: inherit;
 }
 
-* {
+body > * {
 	break-inside: inherit;
 	min-width: 0;
 }
@@ -712,12 +712,14 @@ dialog::backdrop,
  */
 
 :where(
+		[role="button"],
 		[type="button"],
 		[type="reset"],
 		[type="submit"],
 		input:not([type="range"], [type="color"], [type="file"], [type="radio"], [type="checkbox"]),
 		select,
-		textarea
+		textarea,
+		[contenteditable]
 	),
 [type="file"]::file-selector-button {
 	padding: 0.25em 0.375em;
