@@ -24,7 +24,7 @@ const postcssConfig = [
 		autoprefixer: { cascade: false, grid: true },
 	}),
 	purgecss({
-		content: [`${srcFolder}/**/*.{html,htm,php,twig,hbs,njk,js,ts}`], // jsx,tsx,vue
+		content: [`${srcFolder}/**/*.{html,php,twig,njk,js,ts}`], // jsx,tsx,vue
 		skippedContentGlobs: ['node_modules/**', 'bower_components/**', 'src_components/**'],
 		safelist: [':where', ':is', ':has', 'hidden', 'active', 'open', 'lock-fixed', 'lock'],
 		keyframes: true,

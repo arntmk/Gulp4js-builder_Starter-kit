@@ -96,7 +96,7 @@
 	"stylelint.snippet": ["css", "scss", "less", "postcss"],
 
 	// Htmlhint "shift+alt+s"
-	"htmlhint.documentSelector": ["html", "htm", "twig", "njk"],
+	"htmlhint.documentSelector": ["html", "twig", "njk"],
 	"attrsSorter.order": [
 		"class",
 		"className",
