@@ -1,23 +1,23 @@
 {
+	"singleQuote": false,
 	"jsxSingleQuote": true,
 	"semi": true,
 	"trailingComma": "all",
 	"endOfLine": "lf",
-	"printWidth": 100,
+	"printWidth": 110,
 	"bracketSameLine": false,
 	"bracketSpacing": true,
 	"useTabs": true,
 	"tabWidth": 2,
 	"arrowParens": "always",
-	"singleQuote": true,
 	"overrides": [
 		{
-			"files": ["*.css", "*.scss", "*.less", "*.postcss"],
-			"options": { "singleQuote": false }
+			"files": ["*.js", "*.ts", "*.jsx", "*.tsx"],
+			"options": { "singleQuote": true }
 		},
 		{
 			"files": ["*.html", "*.twig", "*.njk"],
-			"options": { "singleQuote": false, "printWidth": 480 }
+			"options": { "printWidth": 480 }
 		},
 		{
 			"files": ["*.php", "*.jsx", "*.tsx"],
