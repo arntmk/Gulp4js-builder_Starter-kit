@@ -320,17 +320,20 @@ search {
 	display: inline-block;
 }
 
+/* ____________________________________________ */
+/* Table */
 :where(caption) {
 	text-align: left;
 }
 
-/* ____________________________________________ */
-/* Table */
 :where(th, td) {
 	padding: 0.5em;
-	text-align: center;
 	background-color: #fff;
 	border: thin solid #a0a0a0;
+}
+
+:where(th) {
+	text-align: -webkit-match-parent;
 }
 
 /* ____________________________________________ */
