@@ -95,6 +95,9 @@
 	"stylelint.validate": ["css", "scss", "less", "postcss"],
 	"stylelint.snippet": ["css", "scss", "less", "postcss"],
 
+	// Auto close tag disable
+	"auto-close-tag.disableOnLanguage": ["php", "blade"],
+
 	// Htmlhint "shift+alt+s"
 	"htmlhint.documentSelector": ["html", "twig", "njk"],
 	"attrsSorter.order": [
