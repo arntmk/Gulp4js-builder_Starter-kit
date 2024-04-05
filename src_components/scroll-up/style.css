@@ -46,7 +46,7 @@ html {
 .scroll-up::before {
 	position: absolute;
 	top: 0;
-	left: -6px;
+	left: -7px;
 	display: flex;
 	align-items: center;
 	justify-content: center;

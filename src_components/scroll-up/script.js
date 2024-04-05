@@ -11,9 +11,10 @@ const scrollTotopController = function () {
 	if (scrollUp && scrollUpSvgPath) {
 		const pathLength = scrollUpSvgPath.getTotalLength();
 		scrollUpSvgPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
-		scrollUpSvgPath.style.transition = 'stroke-dashoffset 20ms';
+		scrollUpSvgPath.style.transition = 'stroke-dashoffset 0ms';
 
-		const getTop = () => window.pageYOffset || document.documentElement.scrollTop;
+		// window.pageYOffset || old browsers
+		const getTop = () => window.scrollY || document.documentElement.scrollTop;
 
 		// updateDashoffset
 		const updateDashoffset = () => {
