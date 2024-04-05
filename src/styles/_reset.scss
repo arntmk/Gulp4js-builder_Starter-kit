@@ -225,10 +225,7 @@ search {
 /**
  * Remove the inner border and padding of focus outlines in Firefox.
  */
-:where(
-		button,
-		input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i])
-	)::-moz-focus-inner {
+:where(button, input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i]))::-moz-focus-inner {
 	padding: 0;
 	border-style: none;
 }
@@ -344,8 +341,7 @@ search {
 	font-family: system-ui;
 	font-style: normal;
 	font-weight: 400;
-	src: local(".AppleSystemUIFont"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"),
-		local("HelveticaNeue");
+	src: local(".AppleSystemUIFont"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"), local("HelveticaNeue");
 	font-display: swap;
 }
 
@@ -383,8 +379,8 @@ search {
 	font-family: ui-monospace;
 	font-style: normal;
 	font-weight: 400;
-	src: local(".AppleSystemUIFontMonospaced-Regular"), local("Segoe UI Mono"), local("UbuntuMono"),
-		local("Roboto-Mono"), local("Menlo");
+	src: local(".AppleSystemUIFontMonospaced-Regular"), local("Segoe UI Mono"), local("UbuntuMono"), local("Roboto-Mono"),
+		local("Menlo");
 	font-display: swap;
 }
 
@@ -392,8 +388,8 @@ search {
 	font-family: ui-monospace;
 	font-style: italic;
 	font-weight: 400;
-	src: local(".AppleSystemUIFontMonospaced-RegularItalic"), local("Segoe UI Mono Italic"),
-		local("UbuntuMono-Italic"), local("Roboto-Mono-Italic"), local("Menlo-Italic");
+	src: local(".AppleSystemUIFontMonospaced-RegularItalic"), local("Segoe UI Mono Italic"), local("UbuntuMono-Italic"),
+		local("Roboto-Mono-Italic"), local("Menlo-Italic");
 	font-display: swap;
 }
 
@@ -429,9 +425,8 @@ search {
 }
 
 :where(code, kbd, samp, pre) {
-	font-family: ui-monospace, "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
-		"Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-		"Noto Color Emoji";
+	font-family: ui-monospace, "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono",
+		"Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 :where(body) {

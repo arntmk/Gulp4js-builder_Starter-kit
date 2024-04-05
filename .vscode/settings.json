@@ -1,12 +1,6 @@
 /* cSpell:disable */
 {
 	/* ____________________________________________ */
-	// Config
-	// "stylelint.configFile": "./.vscode/.stylelintrc",
-	// "prettier.configPath": "./.vscode/.prettierrc",
-	// "prettier.ignorePath": "./.vscode/.prettierignore",
-
-	/* ____________________________________________ */
 	// "files.autoSave": "afterDelay", // afterDelay, onWindowChange
 	"extensions.ignoreRecommendations": false,
 	"files.exclude": {
@@ -64,26 +58,14 @@
 		"*.tpl": "twig"
 	},
 
-	/* ____________________________________________ */
-	// .twig|.njk || Extension
-	"[twig][njk]": {
-		"editor.defaultFormatter": "junstyle.twig-language",
-		"editor.quickSuggestions": {
-			"other": "on",
-			"comments": "off",
-			"strings": "on"
-		}
-	},
-
-	/* ____________________________________________ */
-	// nunjucks(.njk) || Extension
-	"vsicons.associations.files": [{ "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }],
-
 	/* ______________________________________________________ */
 	/* ____________________Extensions________________________ */
 	/* ______________________________________________________ */
-	// Prettier
+	// Prettier || Config
 	"prettier.requireConfig": false,
+	// "prettier.configPath": "",
+	// "prettier.ignorePath": "",
+	// "stylelint.configFile": "",
 
 	// BemHelper
 	"bemHelper.showDepthWarnings": false, // "true" low fps
@@ -98,7 +80,7 @@
 	// Auto close tag disable
 	"auto-close-tag.disableOnLanguage": ["php", "blade"],
 
-	// Htmlhint "shift+alt+s"
+	// HtmlHint "shift+alt+s"
 	"htmlhint.documentSelector": ["html", "twig", "njk"],
 	"attrsSorter.order": [
 		"class",
