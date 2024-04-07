@@ -55,6 +55,7 @@ const modalController = function () {
 	const closeModals = document.querySelectorAll('[data-close-modal]');
 
 	if (modal && openModals && closeModals) {
+		// open modal
 		openModals.forEach((openModal) =>
 			openModal.addEventListener('click', () => {
 				scrollController.disableScroll();
@@ -64,6 +65,7 @@ const modalController = function () {
 			}),
 		);
 
+		// close modal
 		closeModals.forEach((closeModal) =>
 			closeModal.addEventListener('click', () => {
 				setTimeout(() => {
@@ -73,6 +75,7 @@ const modalController = function () {
 			}),
 		);
 
+		// click beyond modal to close
 		modal.addEventListener('click', (e) => {
 			const dialogDimensions = modal.getBoundingClientRect();
 			if (
@@ -94,6 +97,7 @@ modalController();
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
+// click beyond modal window to close(old)
 /* modal.addEventListener('click', (e) => {
 			if (e.target === modal) {
 				scrollController.enableScroll();

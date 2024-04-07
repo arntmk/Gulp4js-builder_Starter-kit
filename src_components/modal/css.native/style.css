@@ -127,7 +127,8 @@ dialog {
 	border-radius: 16px;
 	box-shadow: 0 0 1em rgb(0 0 0 / 30%);
 	opacity: 0;
-	transition: visibility 0.3s ease-in-out, opacity 0.3s linear;
+	transition: display 0.3s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s linear;
+	transition-behavior: allow-discrete; /* new */
 	animation: slide-out 0.4s cubic-bezier(0, 0, 0.2, 1);
 }
 
@@ -140,8 +141,12 @@ dialog:modal {
 dialog[open] {
 	display: block;
 	max-width: 475px;
+	overflow: hidden auto;
+
+	/*
 	overflow-x: hidden;
 	overflow-y: auto;
+	*/
 	pointer-events: all;
 	visibility: visible;
 	border: thin solid transparent;

@@ -73,8 +73,8 @@ a,
 [type="submit"],
 [type="file"]::file-selector-button,
 [data-button-hover] {
-	transition: box-shadow 0.5s linear, border-color 0.5s linear, transform 0.1s ease-in-out,
-		background-color 0.2s linear, color 0.2s linear;
+	transition: box-shadow 0.5s linear, border-color 0.5s linear, transform 0.1s ease-in-out, background-color 0.2s linear,
+		color 0.2s linear;
 	transform: scale(1);
 
 	@media (any-hover: hover) {
