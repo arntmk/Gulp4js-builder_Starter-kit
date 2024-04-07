@@ -32,13 +32,7 @@ body {
 	outline-color: none;
 }
 
-:where(
-		button,
-		input:not([type="checkbox"], [type="radio"], [type="color"]),
-		select,
-		textarea,
-		summary
-	) {
+:where(button, input:not([type="checkbox"], [type="radio"], [type="color"]), select, textarea, summary) {
 	outline-offset: 0.1875rem;
 }
 
@@ -68,10 +62,12 @@ input[type="tel"]:valid {
 	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f;
 }
 
-input[type="text"]:invalid,
-input[type="password"]:invalid,
-input[type="email"]:invalid,
-input[type="tel"]:invalid {
+input[type="text"]:user-invalid,
+input[type="password"]:user-invalid,
+input[type="email"]:user-invalid,
+input[type="tel"]:user-invalid {
+	border-color: transparent;
+	box-shadow: 0 0 0 0.0625rem #bb0808, 0 0 0.625rem #bb0808;
 	transition: 0.3s ease-in-out;
 }
 
