@@ -128,9 +128,9 @@ details[open] {
 
 details[open] > *:not(summary) {
 	animation: details-setheight 1s ease-in-out forwards;
-} */
+}
 
-/* @keyframes details-setheight {
+@keyframes details-setheight {
 	0% {
 		max-height: 0;
 	}
