@@ -6,7 +6,7 @@ const accordionsController = function () {
 
 	if (accordion) {
 		// Animation | OLD
-		accordion.forEach((summary) => {
+		/* 		accordion.forEach((summary) => {
 			summary.addEventListener('click', (e) => {
 				const self = e.currentTarget;
 				const content = self.querySelector('.accordion-content');
@@ -16,7 +16,7 @@ const accordionsController = function () {
 					content.style.maxHeight = `${content.scrollHeight}`;
 				}
 			});
-		});
+		}); */
 
 		// Клик снаружи аркадиона. Закрыть аркадион.
 		accordion.forEach((closeDetails) => {
@@ -41,31 +41,33 @@ const accordionsController = function () {
 };
 accordionsController();
 
+/* ____________________________________________ */
+// https://linkedlist.ch/animate_details_element_60/
 // Animation | NEW
-/* function setDetailsHeight(selector, wrapper = document) {
-	const setHeight = (detail, open = false) => {
-		detail.open = open;
-		const rect = detail.getBoundingClientRect();
-		detail.dataset.width = rect.width;
-		detail.style.setProperty(open ? `--expanded` : `--collapsed`, `${rect.height}px`);
-	};
-	const details = wrapper.querySelectorAll(selector);
-	const RO = new ResizeObserver((entries) => {
-		return entries.forEach((entry) => {
-			const detail = entry.target;
-			const width = parseInt(detail.dataset.width, 10);
-			if (width !== entry.contentRect.width) {
-				detail.removeAttribute('style');
-				setHeight(detail);
-				setHeight(detail, true);
-				detail.open = false;
-			}
-		});
-	});
-	details.forEach((detail) => {
-		RO.observe(detail);
-	});
-} */
+document.querySelectorAll('summary').forEach((element) =>
+	element.addEventListener('click', (event) => {
+		const detailsElement = event.target.parentElement;
+		const contentElement = event.target.nextElementSibling;
 
-/* Run it */
-/* setDetailsHeight('details'); */
+		if (contentElement.classList.contains('animation')) {
+			contentElement.classList.remove('animation', 'collapsing');
+			void element.offsetWidth;
+			return;
+		}
+
+		const onAnimationEnd = (cb) => contentElement.addEventListener('animationend', cb, { once: true });
+
+		requestAnimationFrame(() => contentElement.classList.add('animation'));
+		onAnimationEnd(() => contentElement.classList.remove('animation'));
+
+		const isDetailsOpen = detailsElement.getAttribute('open') !== null;
+		if (isDetailsOpen) {
+			event.preventDefault();
+			contentElement.classList.add('collapsing');
+			onAnimationEnd(() => {
+				detailsElement.removeAttribute('open');
+				contentElement.classList.remove('collapsing');
+			});
+		}
+	}),
+);

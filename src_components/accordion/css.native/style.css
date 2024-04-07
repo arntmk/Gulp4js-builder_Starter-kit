@@ -67,9 +67,13 @@ details .accordion-content {
 }
 
 details .accordion-border-line {
-	padding: 0.5rem 1rem;
+	/* padding: 0.5rem 1rem; /* animation bug */
 	border-top: 1px solid;
 	border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+.accordion-border-line p {
+	padding: 0.5rem 1rem;
 }
 
 /* ____________________________________________ */
@@ -107,9 +111,11 @@ details[open] summary::after {
 }
 
 /* ____________________________________________ */
-/* Animation: Content */
+/* ____________________________________________ */
+/* ____________________________________________ */
+/* Animation: Content | OLD */
 
-details,
+/* details,
 summary {
 	transition: all 0.3s linear;
 	transition-behavior: allow-discrete;
@@ -122,9 +128,9 @@ details[open] {
 
 details[open] > *:not(summary) {
 	animation: details-setheight 1s ease-in-out forwards;
-}
+} */
 
-@keyframes details-setheight {
+/* @keyframes details-setheight {
 	0% {
 		max-height: 0;
 	}
@@ -132,38 +138,40 @@ details[open] > *:not(summary) {
 	100% {
 		max-height: 100vh;
 	}
-}
+} */
 
 /* ____________________________________________ */
+/* ____________________________________________ */
+/* ____________________________________________ */
 /* Animation: Content | NEW */
-/* details {
-	height: var(--collapsed);
-	transition: height 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
-}
-
-details[open] {
-	height: var(--expanded);
+details > div {
+	display: grid;
 	overflow: hidden;
-	will-change: height;
+	animation-duration: 0.2s;
 }
 
-summary + * {
-	padding: 0.5rem;
-} */
-
-/* __________________________ */
-
-/* 3 States of summary */
-/* details[open] > summary {
-	color: hsl(195deg 10% 92%);
-	background-color: hsl(195deg 10% 20%);
+details > .animation {
+	animation-name: grid-expand;
+	animation-timing-function: ease-out;
+	will-change: min-height;
 }
 
-details[open] > summary:focus {
-	color: hsl(195deg 10% 99%);
-	background-color: hsl(195deg 10% 10%);
+details > .collapsing {
+	animation-timing-function: ease-in;
+	animation-direction: reverse;
+	will-change: min-height;
 }
 
-summary:focus {
-	background-color: hsl(195deg 10% 75%);
-} */
+details > div > div {
+	min-height: 0;
+}
+
+@keyframes grid-expand {
+	0% {
+		grid-template-rows: 0fr;
+	}
+
+	100% {
+		grid-template-rows: 1fr;
+	}
+}
