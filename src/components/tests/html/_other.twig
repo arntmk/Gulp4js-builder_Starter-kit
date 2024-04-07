@@ -1,0 +1,152 @@
+{% set username = '{3,20}' %}
+{% set password = '{7,30}' %}
+{% set email = '{1,}' %}
+
+<section class="section-other">
+	<div class="container">
+		<hr />
+		<article>
+			{# heading #}
+			<h2 style="color: green;">heading</h2>
+			<h1>This is heading 1</h1>
+			<h2>This is heading 2</h2>
+			<h3>This is heading 3</h3>
+			<h4>This is heading 4</h4>
+			<h5>This is heading 5</h5>
+			<h6>This is heading 6</h6>
+			<hr />
+			{# paragraph #}
+			<h2 style="color: green;">
+				<del>
+					<ins>Paragraph</ins>
+				</del>
+			</h2>
+			<p>
+				<em>Далеко-далеко</em> за <mark>словесными</mark> горами в <small>
+					стране
+				</small> гласных и согласных живутрыбные тексты. <strong>Живет</strong> семантика
+				<i>коварных</i> снова рукопись <sub>бросил</sub>, <sup>рыбными</sup> продолжил
+				переписали то строчка что текст?
+			</p>
+			<h3>code</h3>
+			<p>
+				<code>&lt;h1&gt;Hello World!&lt;/h1&gt;</code>
+			</p>
+			<h3>address</h3>
+			<address>
+				<i>
+					Margaritaville Island Reserve Riviera Cancún<br />
+					Bahia Petempich Puerto Morelos, Mexico<br />
+					Colonia Morelos, México 77580
+				</i>
+			</address>
+			<h3>cite</h3>
+			<p>
+				<cite>The Scream</cite> by Edward Munch. Painted in 1893.
+			</p>
+			<h3>time</h3>
+			<p>
+				I start at <time datetime="08:00">8 am</time> and I write code for <time datetime="PT3H">
+					3 hours
+				</time> every morning.
+			</p>
+			<hr />
+			{# List #}
+			<h2 style="color: green;">List ul,ol,menu</h2>
+			<ul>
+				<li>ul list 1</li>
+				<li>ul list 2</li>
+				<li>ul list 3</li>
+			</ul>
+			<br />
+			<ol>
+				<li>ol list 4</li>
+				<li>ol list 5</li>
+				<li>ol list 6</li>
+			</ol>
+			<br />
+			<h3>List dl</h3>
+			<dl>
+				<dt>North Pole</dt>
+				<dd>I hear this is <strong>cold</strong>!</dd>
+				<br />
+				<dt>Mountain Tops</dt>
+				<dd>These are also cold.</dd>
+			</dl>
+			<hr />
+			{# Link #}
+			<h2 style="color: green;">Link</h2>
+			<a href="https://www.google.com/" target="_blank">Google</a>
+			<h3>abbr</h3>
+			<abbr title="Mozilla Developer Network">
+				<a href="https://developer.mozilla.org/">MDN</a>
+			</abbr>
+			<hr />
+			{# Details #}
+			<aside>
+				<h2 style="color: green;">Details</h2>
+				<details>
+					<summary class="summary">Accordion</summary>
+					<div class="accordion-content">
+						<div class="accordion-border-line">
+							<p>Далеко-далеко за словесными горами в стране,гласных и согласных
+								живут рыбные тексты. Бросил заглавных вопрос переулка вскоре. Пор
+								своих ведущими власти. До коварный грамматики вопрос строчка
+								необходимыми большого силуэт рот взгляд щеке.</p>
+						</div>
+					</div>
+				</details>
+				<details>
+					<summary class="summary">Accordion</summary>
+					<div class="accordion-content">
+						<div class="accordion-border-line">
+							<p>Далеко-далеко за словесными горами в стране,гласных и согласных
+								живут рыбные тексты. Бросил заглавных вопрос переулка вскоре. Пор
+								своих ведущими власти. До коварный грамматики вопрос строчка
+								необходимыми большого силуэт рот взгляд щеке.</p>
+						</div>
+					</div>
+				</details>
+				<details>
+					<summary class="summary">Accordion</summary>
+					<div class="accordion-content">
+						<div class="accordion-border-line">
+							<p>Далеко-далеко за словесными горами в стране,гласных и согласных
+								живут рыбные тексты. Бросил заглавных вопрос переулка вскоре. Пор
+								своих ведущими власти. До коварный грамматики вопрос строчка
+								необходимыми большого силуэт рот взгляд щеке.</p>
+						</div>
+					</div>
+				</details>
+				<hr />
+			</aside>
+			{# Image #}
+			<h2 style="color: green;">Image</h2>
+			<picture>
+				<source type="image/webp"
+					media="(max-width: 768px)"
+					srcset="./template/images/404.webp"
+					width="128"
+					height="128" />
+				<img src="./template/images/404.webp"
+					title="I want to visit a Caribbean beach."
+					alt="image"
+					aria-hidden="true"
+					width="300"
+					height="300"
+					loading="lazy" />
+			</picture>
+			<br />
+			<figure>
+				<img src="./template/images/404.webp"
+					title="I want to visit a Caribbean beach."
+					alt="image"
+					aria-hidden="true"
+					width="240"
+					height="240"
+					loading="lazy" />
+				<figcaption>An Example of HTML5 code</figcaption>
+			</figure>
+		</article>
+	</div>
+</section>

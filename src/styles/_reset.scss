@@ -439,7 +439,7 @@ search {
 	text-rendering: optimizespeed;
 }
 
-:where(cite, address) {
+:where(address) {
 	font-style: normal;
 	line-height: inherit;
 }
