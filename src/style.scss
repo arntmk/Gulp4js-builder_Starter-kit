@@ -1,25 +1,25 @@
 @charset "UTF-8";
 
-/* Console.Log */
+/* MARK: Console.Log */
 // @import "./styles/debug";
 
-/* Bootstrap */
+/* MARK: Bootstrap */
 // ../node_modules/bootstrap/scss/bootstrap
 // @import "bootstrap";
 
-/* Variables */
+/* MARK: Variables */
 @import "./styles/breakpoint";
 @import "./styles/variables";
 
-/* Base SCSS imports */
+/* MARK: Base SCSS imports */
 @import "./styles/font";
 @import "./styles/reset";
 @import "./styles/global";
 
-/* Utilities */
+/* MARK: Utilities */
 @import "./styles/utilities/utility";
 @import "./styles/utilities/effects/effects";
 
-/* Components style imports */
+/* MARK: Components style imports */
 @import "./components/block-scss/header";
 @import "./components/block-scss/footer";
