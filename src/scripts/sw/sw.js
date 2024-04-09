@@ -12,6 +12,7 @@
 // console.log('fetch', e.request.url);
 /* ____________________________________________ */
 // ===Service Worker=== //
+/* ____________________________________________ */
 
 // Cache Filies & Versions
 const version = '2';
@@ -19,6 +20,7 @@ const staticCacheName = `s-app-v${version}`;
 const dynamicCacheName = `d-app-v${version}`;
 const assetUrls = ['/', '/index.html', '/offline.html', '/404.html'];
 
+/* ____________________________________________ */
 // InitCache
 /* self.addEventListener('install', async (e) => {
 	const cache = await caches.open(staticCacheName);
@@ -40,6 +42,7 @@ self.addEventListener('install', (e) => {
 	);
 });
 
+/* ____________________________________________ */
 // Delete Old Cache
 self.addEventListener('activate', async () => {
 	const cachedNames = await caches.keys();
@@ -51,6 +54,7 @@ self.addEventListener('activate', async () => {
 	);
 });
 
+/* ____________________________________________ */
 // Request Cache
 self.addEventListener('fetch', (e) => {
 	const { request } = e;
@@ -61,6 +65,8 @@ self.addEventListener('fetch', (e) => {
 	}
 });
 
+/* ____________________________________________ */
+// cacheFirst
 /* async function cacheFirst(request) {
 	const cached = await caches.match(request);
 	return cached ?? (await fetch(request));
@@ -73,6 +79,8 @@ function cacheFirst(e) {
 	});
 }
 
+/* ____________________________________________ */
+// networkFirst
 async function networkFirst(request) {
 	const cache = await caches.open(dynamicCacheName);
 	try {
