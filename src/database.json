@@ -1,3 +1,5 @@
 {
-	"title": "New Project | MPA"
+	"title": "New Project | MPA",
+	"description": "Web site created using gulp4js-builder",
+	"keywords": "html, css, javascript"
 }

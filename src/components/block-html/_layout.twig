@@ -1,4 +1,6 @@
 {# {% set title = 'New Project | MPA' %} #}
+{# {% set description = 'Web site created using gulp4js-builder' %} #}
+{# {% set keywords = 'html, css, javascript' %} #}
 
 <!DOCTYPE html>
 <html class="html" lang="en">
@@ -12,11 +14,22 @@
 		<meta name="color-scheme" content="light dark" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="format-detection" content="address=no" />
-		<meta name="description" content="Web site created using gulp4js-builder" />
-		<meta name="keywords" content="html, css, javascript" />
 		<meta name="author" content="Oleh Semchuk" />
 		<meta name="robots" content="nofollow" /> <!-- noindex -->
-		<title>{{ title }}</title>
+		<!-- ____________________________________________ -->
+		<meta name="keywords"
+			content="{% block keywords %}
+				{{ keywords }}
+			{% endblock %}" />
+		<meta name="description"
+			content="{% block description %}
+				{{ description }}
+			{% endblock %}" />
+		<title>
+			{% block title %}
+				{{ title }}
+			{% endblock %}
+		</title>
 
 		<!-- ____________________________________________ -->
 		<!-- _______________Font Import__________________ -->
@@ -54,7 +67,7 @@
 		<link href="./template/styles/style.min.css" rel="stylesheet" />
 
 		{% block css_import %}
-			<link href="./template/styles/test.min.css" rel="stylesheet" />
+			<link href="/link/placeholder.min.css" rel="stylesheet" />
 		{% endblock %}
 
 		<!-- ____________________________________________ -->
@@ -63,7 +76,7 @@
 		<script src="./template/scripts/script.min.js" defer></script>
 
 		{% block js_import %}
-			<script src="./template/scripts/test.min.js" defer></script>
+			<script src="/link/placeholder.min.js" defer></script>
 		{% endblock %}
 	</head>
 
@@ -76,17 +89,17 @@
 		<div id="root">
 			<!-- Header -->
 			{% block header %}
-				<h2 style="color: red">Header Placeholder</h2>
+				<h2 style="color: green">Header Placeholder</h2>
 			{% endblock %}
 			<main class="main" id="main">
 				<!-- Main Sections -->
 				{% block main %}
-					<h2 style="color: red">Main Placeholder</h2>
+					<h2 style="color: green">Main Placeholder</h2>
 				{% endblock %}
 			</main>
 			<!-- Footer -->
 			{% block footer %}
-				<h2 style="color: red">Footer Placeholder</h2>
+				<h2 style="color: green">Footer Placeholder</h2>
 			{% endblock %}
 		</div>
 	</body>
