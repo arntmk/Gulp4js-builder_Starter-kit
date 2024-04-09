@@ -264,10 +264,7 @@ function img() {
 // content
 function webp() {
 	return gulp
-		.src([
-			`${srcFolder}/assets/images/**/*.{png,jpg,jpeg,webp}`,
-			`!${srcFolder}/assets/images/favicon/**/*.*`,
-		])
+		.src([`${srcFolder}/assets/images/**/*.{png,jpg,jpeg,webp}`, `!${srcFolder}/assets/images/favicon/**/*.*`])
 		.pipe(gulpif(isDev, changed(`${buildFolder}/template/images/`, { extension: '.webp' })))
 		.pipe(imagemin([imageminWebp({ quality: 85, method: 6 })]))
 		.pipe(rename({ extname: '.webp' }))
@@ -284,7 +281,7 @@ function html() {
 		.src([
 			`${srcFolder}/*.{html,twig}`,
 			`!${srcFolder}/**/_*.{html,twig}`,
-			`${srcFolder}/assets/*.html`,
+			`!${srcFolder}/assets/*.html`,
 			`!${srcFolder}/assets/images/**/*.html`,
 		])
 		.pipe(plumber(plumberNotify('Html/Twig')))
@@ -347,9 +344,7 @@ function css() {
 		.pipe(gulpif(isDev, dependents()))
 		.pipe(scssGlob())
 		.pipe(
-			scss
-				.sync({ outputStyle: 'expanded', includePaths: ['node_modules/bootstrap/scss/'] })
-				.on('error', scss.logError),
+			scss.sync({ outputStyle: 'expanded', includePaths: ['node_modules/bootstrap/scss/'] }).on('error', scss.logError),
 		)
 		.pipe(
 			replace(
@@ -375,10 +370,7 @@ function libsCss() {
 }
 
 function optCss() {
-	const purgeCssFiles = [
-		`${buildFolder}/template/styles/*.css`,
-		`!${buildFolder}/template/styles/vendor.min.css`,
-	];
+	const purgeCssFiles = [`${buildFolder}/template/styles/*.css`, `!${buildFolder}/template/styles/vendor.min.css`];
 	return gulpif(isProd, gulp.src(purgeCssFiles))
 		.pipe(shorthand())
 		.pipe(postcss(postcssConfig))
