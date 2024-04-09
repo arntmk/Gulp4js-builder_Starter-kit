@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-no-important */
 @charset "UTF-8";
 
 /* Add basic space everywhere (to container) */
@@ -54,41 +55,46 @@ body {
 /* ____________________________________________ */
 /* Input Validation */
 
-input[type="text"]:valid,
-input[type="password"]:valid,
-input[type="email"]:valid,
-input[type="tel"]:valid {
-	border-color: transparent;
-	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f;
+[required]:valid,
+[type="text"]:valid,
+[type="password"]:valid,
+[type="email"]:valid,
+[type="tel"]:valid {
+	border-color: transparent !important;
+	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f !important;
 }
 
-input[type="text"]:user-invalid,
-input[type="password"]:user-invalid,
-input[type="email"]:user-invalid,
-input[type="tel"]:user-invalid {
-	border-color: transparent;
-	box-shadow: 0 0 0 0.0625rem #bb0808, 0 0 0.625rem #bb0808;
-	transition: 0.3s ease-in-out;
+[required]:user-invalid,
+[type="text"]:user-invalid,
+[type="password"]:user-invalid,
+[type="email"]:user-invalid,
+[type="tel"]:user-invalid {
+	border-color: transparent !important;
+	box-shadow: 0 0 0 0.0625rem #bb0808, 0 0 0.625rem #bb0808 !important;
+	transition: 0.3s ease-in-out !important;
 }
 
-input[type="text"]:invalid:focus,
-input[type="password"]:invalid:focus,
-input[type="email"]:invalid:focus,
-input[type="tel"]:invalid:focus {
+[required]:invalid:focus,
+[type="text"]:invalid:focus,
+[type="password"]:invalid:focus,
+[type="email"]:invalid:focus,
+[type="tel"]:invalid:focus {
 	border-color: transparent;
-	box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500;
+	box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500 !important;
 }
 
-input[type="text"]:not(:focus):invalid,
-input[type="password"]:not(:focus):invalid,
-input[type="email"]:not(:focus):invalid,
-input[type="tel"]:not(:focus):invalid {
-	transition: 0.3s ease-in-out;
+[required]:not(:focus):invalid,
+[type="text"]:not(:focus):invalid,
+[type="password"]:not(:focus):invalid,
+[type="email"]:not(:focus):invalid,
+[type="tel"]:not(:focus):invalid {
+	transition: 0.3s ease-in-out !important;
 }
 
-input[type="text"]:invalid:focus,
-input[type="password"]:invalid:focus,
-input[type="email"]:invalid:focus,
-input[type="tel"]:invalid:focus {
-	border-color: transparent;
+[required]:invalid:focus,
+[type="text"]:invalid:focus,
+[type="password"]:invalid:focus,
+[type="email"]:invalid:focus,
+[type="tel"]:invalid:focus {
+	border-color: transparent !important;
 }
