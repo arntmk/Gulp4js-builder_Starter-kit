@@ -513,7 +513,7 @@ search {
 :-webkit-autofill:active,
 :-webkit-autofill::first-line {
 	-webkit-text-fill-color: inherit !important;
-	transition: background-color 5000s ease-in-out 0s !important;
+	transition: background-color 5000s ease-in-out 0s, border-color 0.3s linear 0.02s, box-shadow 0.3s ease-in-out 0.02s !important;
 }
 
 /* ____________________________________________ */
@@ -559,7 +559,7 @@ search {
 	min-width: 0;
 	padding: 0;
 	margin: 0;
-	border: thin solid #a0a0a0;
+	border-style: none;
 }
 
 /* btn reset */

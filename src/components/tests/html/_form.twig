@@ -1,164 +1,243 @@
+{% set username = '{3,20}' %}
+{% set password = '{7,30}' %}
+{% set email = '{1,}' %}
+
 <section class="section-form">
 	<div class="container">
 		<article>
 			<hr />
+
 			{# Form #}
 			<h2 style="color: green;">Form</h2>
-			<form action="#!">
-				<input type="reset" value="input Reset" />
-				<input type="submit" value="input Submit" />
-				<input type="button" value="input Button" />
-				<button type="button">Button</button>
-				<button type="submit">button Submit</button>
-				<br />
-				<br />
-				<!-- <input type="week" name="week" id="week" /> -->
-				<input id="file" name="file" type="file" accept="image/png, image/jpeg" />
-				<br />
-				<input id="range-progress"
-					name="range"
-					type="range"
-					value="50"
-					min="0"
-					max="100" />
-				<br />
-				<textarea id="textarea" name="textarea" cols="30" rows="10"></textarea>
-				<br />
-				<input id="checkbox1" name="checkbox" type="checkbox" />
-				<input id="checkbox2" name="checkbox" type="checkbox" />
-				<input id="checkbox3" name="checkbox" type="checkbox" />
-				<input id="checkbox4" name="checkbox" type="checkbox" />
-				<input id="checkbox5" name="checkbox" type="checkbox" />
-				<input id="checkbox6" name="checkbox" type="checkbox" disabled />
-				<br />
-				<input id="radio7" name="radio" type="radio" />
-				<input id="radio8" name="radio" type="radio" />
-				<input id="radio9" name="radio" type="radio" />
-				<input id="radio10" name="radio" type="radio" />
-				<input id="radio11" name="radio" type="radio" disabled />
-				<br />
-				<input id="date" name="date" type="date" value="2023-08-11" />
-				<br />
-				<input id="time" name="time" type="time" value="13:30" />
-				<br />
-				<input id="week"
-					name="week"
-					type="week"
-					value="2023-W01"
-					placeholder="Weak --, ----" />
-				<br />
-				<input id="datetime-local"
-					name="datetime-local"
-					type="datetime-local"
-					value="2023-08-11T19:30" />
-				<br />
-				<br />
-				<div class="contenteditable"
-					placeholder="Type something..."
-					contenteditable="true"></div>
-				<br />
-				<br />
-				<!-- autofocus -->
-				<input id="username"
-					name="username"
-					type="text"
-					title="Must contain at least letters, and at least 3 or more characters."
-					required
-					autocomplete="on"
-					pattern="[a-zA-Zа-яА-Я\-].{{ username }}"
-					placeholder="Text"
-					autofocus />
-				<br />
-				<br />
-				<div class="input-number">
-					<input id="number" name="number" type="number" inputmode="numeric" />
-				</div>
-				<br />
-				<br />
-				<div class="search-wrap">
-					<input id="txtsearchinput"
-						name="s"
-						type="search"
-						placeholder="Search"
-						results="10" />
-					<span class="hidden clear" id="deltxtinput"></span>
-				</div>
-				<br />
-				<div class="password-wrap">
-					<input id="password"
-						name="password"
-						type="password"
-						title="Must contain at least one number and letter, and at least 7 or more characters."
+			<form action="https://httpbin.org/get" method="get">
+				<fieldset>
+					<legend style="color: green;">Personal Info</legend>
+
+					<!-- autofocus -->
+					<br /><br />
+					<label for="username">username:</label>
+					<input id="username"
+						name="username"
+						type="text"
+						title="Must contain at least letters, and at least 3 or more characters."
 						required
-						pattern="(?=.*[0-9!@#$%^&*_=+\-])(?=.*[a-z]).{{ password }}"
-						placeholder="Password" />
-					<span class="eye-open eye-close hidden" id="togglePassword"></span>
-				</div>
+						autocomplete="name"
+						pattern="[a-zA-Zа-яА-Я\-].{{ username }}"
+						placeholder="Text" />
+					<br /><br />
+
+					<div class="password-wrap">
+						<label for="password">password:</label>
+						<input id="password"
+							name="password"
+							type="password"
+							title="Must contain at least one number and letter, and at least 7 or more characters."
+							required
+							pattern="(?=.*[0-9!@#$%^&*_=+\-])(?=.*[a-z]).{{ password }}"
+							placeholder="Password" />
+						<span class="eye-open eye-close hidden" id="togglePassword"></span>
+					</div>
+					<br /><br />
+
+					<label for="email">email:</label>
+					<input id="email"
+						name="email"
+						type="email"
+						pattern="^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z].{{ email }}$"
+						placeholder="Email"
+						required
+						autocomplete="email" />
+					<br /><br />
+
+					<label for="phone">Phone:</label>
+					<input id="phone"
+						name="phone"
+						type="tel"
+						placeholder="096655555555"
+						pattern
+						required />
+
+					<br />
+					<hr /><br />
+					<div class="input-number">
+						<label for="number">number:</label>
+						<input id="number" name="number" type="number" inputmode="numeric" />
+					</div>
+					<br /><br />
+
+					<label for="decade">Favorite Decade:</label>
+					<input id="decade"
+						name="decade"
+						type="number"
+						value="1980"
+						min="1950"
+						max="2020"
+						step="10" />
+					<br /><hr /><br />
+
+					<div class="search-wrap">
+						<label for="txtsearchinput">Search:</label>
+						<input id="txtsearchinput"
+							name="s"
+							type="search"
+							placeholder="Search"
+							results="10" />
+						<span class="hidden clear" id="deltxtinput"></span>
+					</div>
+					<hr />
+					<label for="coffee">Favorite Coffee:</label>
+					<select id="coffee" name="coffee">
+						{# multiple size="5" #}
+						<optgroup label="Coffees">
+							<option value="regular coffee">Regular Coffee</option>
+							<option value="iced coffee">Iced Coffee</option>
+						</optgroup>
+						<optgroup label="Espresso Drinks">
+							<option value="latte" selected>Latte</option>
+							<option value="cappuccino">Cappuccino</option>
+							<option value="cortado">Cortado</option>
+							<option value="americano">Americano</option>
+						</optgroup>
+						<option value="other">Other</option>
+					</select>
+					<br /><br />
+					<label for="datalist">Choose a flavor:</label>
+					<input id="datalist" name="datalist" list="input-datalist" />
+					<datalist id="input-datalist">
+						<option value="Chocolate">11</option>
+						<option value="Coconut">22</option>
+						<option value="Mint">33</option>
+						<option value="Strawberry"></option>
+						<option value="Vanilla"></option>
+						<option value="Chocolate"></option>
+						<option value="Coconut"></option>
+						<option value="Mint"></option>
+						<option value="Strawberry"></option>
+						<option value="Vanilla"></option>
+					</datalist>
+				</fieldset>
+				<hr />
 				<br />
-				<input id="email"
-					name="email"
-					type="email"
-					pattern="^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z].{{ email }}$"
-					placeholder="Email"
-					required
-					autocomplete="on" />
+				<!-- ____________________________________________ -->
+				<fieldset>
+					<legend style="color: green;">What is your favorite food?</legend>
+					<p>
+						<input id="tacos" name="food" type="radio" value="tacos" />
+						<label for="tacos">Tacos</label>
+					</p>
+					<p>
+						<input id="pizza" name="food" type="radio" value="pizza" />
+						<label for="pizza">Pizza</label>
+					</p>
+					<p>
+						<input id="other" name="food" type="radio" value="other" />
+						<label for="other">Other</label>
+					</p>
+					<p>
+						<input id="radio11" name="radio" type="radio" disabled />
+					</p>
+				</fieldset>
+
+				<!-- ____________________________________________ -->
+				<fieldset>
+					<legend style="color: green;">Do you have pets?</legend>
+					<p>
+						<input id="dog" name="pets" type="checkbox" value="dog" />
+						<label for="dog">Dog</label>
+					</p>
+					<p>
+						<input id="cat" name="pets" type="checkbox" value="cat" />
+						<label for="cat">Cat</label>
+					</p>
+					<p>
+						<input id="fish" name="pets" type="checkbox" value="fish" />
+						<label for="fish">Fish</label>
+					</p>
+					<p>
+						<input id="otherPet" name="pets" type="checkbox" value="otherPet" />
+						<label for="otherPet">Other</label>
+					</p>
+					<p>
+						<input id="checkbox6" name="checkbox" type="checkbox" disabled />
+					</p>
+				</fieldset>
 				<br />
+				<!-- ____________________________________________ -->
+				<fieldset>
+					<legend style="color: green;">Send Me A Note</legend>
+					<label for="message">Your Message:</label>
+					<br />
+					<textarea id="message"
+						name="message"
+						cols="30"
+						rows="10"
+						placeholder="Type your message here"></textarea>
+					<br />
+					<br />
+					<div class="contenteditable"
+						placeholder="Type something..."
+						contenteditable="true"></div>
+				</fieldset>
+				<hr />
+
+				<!-- ____________________________________________ -->
+				<fieldset>
+					<legend style="color: green;">Other</legend>
+					<!-- <input type="week" name="week" id="week" /> -->
+					<input id="file" name="file" type="file" accept="image/png, image/jpeg" />
+					<br />
+					<input id="range-progress"
+						name="range"
+						type="range"
+						value="50"
+						min="0"
+						max="100" />
+					<br />
+					<br />
+					<br />
+					<input id="date" name="date" type="date" value="2023-08-11" />
+					<br />
+					<input id="time" name="time" type="time" value="13:30" />
+					<br />
+					<input id="week"
+						name="week"
+						type="week"
+						value="2023-W01"
+						placeholder="Weak --, ----" />
+					<br />
+					<input id="datetime-local"
+						name="datetime-local"
+						type="datetime-local"
+						value="2023-08-11T19:30" />
+					<br />
+					<br />
+					<label for="progress">Downloading progress:</label>
+					<progress id="progress" value="32" max="100"></progress>
+					<br />
+					<input id="color" name="color" type="color" value="#f15412" />
+				</fieldset>
+				<!-- ____________________________________________ -->
+				<!-- ____________________________________________ -->
+				<!-- ____________________________________________ -->
 				<br />
-				<select class="select" id="select" name="select">
-					<option value="">Oleg</option>
-					<option value="">Ira</option>
-					<option value="">Victor</option>
-					<option value="">Oksana</option>
-					<option value="">Igor</option>
-					<option value="">Taras</option>
-					<option value="">I am</option>
-					<option value="">Oleg</option>
-					<option value="">Ira</option>
-					<option value="">Victor</option>
-					<option value="">Oksana</option>
-					<option value="">Igor</option>
-					<option value="">Taras</option>
-					<option value="">I am</option>
-					<option value="">Oleg</option>
-					<option value="">Ira</option>
-					<option value="">Victor</option>
-					<option value="">Oksana</option>
-					<option value="">Igor</option>
-					<option value="">Taras</option>
-					<option value="">I am</option>
-					<option value="">Oleg</option>
-					<option value="">Ira</option>
-					<option value="">Victor</option>
-					<option value="">Oksana</option>
-					<option value="">Igor</option>
-					<option value="">Taras</option>
-					<option value="">I am</option>
-				</select>
-				<br />
-				<br />
-				<label for="datalist">Choose a flavor:</label>
-				<input id="datalist" name="datalist" list="input-datalist" />
-				<datalist id="input-datalist">
-					<option value="Chocolate"></option>
-					<option value="Coconut"></option>
-					<option value="Mint"></option>
-					<option value="Strawberry"></option>
-					<option value="Vanilla"></option>
-					<option value="Chocolate"></option>
-					<option value="Coconut"></option>
-					<option value="Mint"></option>
-					<option value="Strawberry"></option>
-					<option value="Vanilla"></option>
-				</datalist>
-				<br />
-				<br />
-				<label for="progress">Downloading progress:</label>
-				<progress id="progress" value="32" max="100"></progress>
-				<br />
-				<input id="color" name="color" type="color" value="#f15412" />
+				<hr />
+				<fieldset>
+					<legend style="background-color: ;">Buttons</legend>
+
+					<input type="reset" value="Reset" />
+					<input type="submit" value="I-Submit" />
+					<input type="button" value="I-Button" />
+					<button type="button">B-Button</button>
+					<button type="submit"
+						formaction="https://httpbin.org/post"
+						formmethod="post">
+						Submit-Post
+					</button>
+				</fieldset>
 			</form>
 		</article>
-		<hr />
+		<br />
+		<br />
 		<p>
 			<a href="#">Back to Top</a>
 		</p>
