@@ -145,7 +145,7 @@
 		"fonteditor-core": "2.1.10",
 		"got": "11.8.6",
 		"http-cache-semantics": "4.1.1",
-		"clean-css": "5.3.3",
+		"clean-css": "^5.3.3",
 		"cheerio": "1.0.0-rc.12"
 	}
 }
