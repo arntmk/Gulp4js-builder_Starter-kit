@@ -6,12 +6,13 @@
 [required]:valid {
 	border-color: transparent !important;
 	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f !important;
+	transition: border-color 0.3s linear 0.02s, box-shadow 0.3s ease-in-out 0.02s, background 0s;
 }
 
 [required]:user-invalid {
 	border-color: transparent !important;
 	box-shadow: 0 0 0 0.0625rem #bb0808, 0 0 0.625rem #bb0808 !important;
-	transition: 0.3s ease-in-out !important;
+	transition: border-color 0.3s linear 0.02s, box-shadow 0.3s ease-in-out 0.02s, background 0s;
 }
 
 [required]:invalid {
@@ -31,6 +32,10 @@
 }
 
 // Fix OutLine
-/* [required]:not(:focus):invalid {
-	transition: 0.3s ease-in-out !important;
-} */
+/*
+[required]:not(:focus):valid,
+[required]:not(:focus):invalid,
+[required]:not(:focus):user-invalid {
+		transition: border-color 0.3s linear 0.02s, box-shadow 0.3s ease-in-out 0.02s, background 0s !important;
+}
+*/
