@@ -15,7 +15,7 @@
 }
 
 [required]:invalid:focus {
-	border-color: transparent;
+	border-color: transparent !important;
 	box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500 !important;
 }
 

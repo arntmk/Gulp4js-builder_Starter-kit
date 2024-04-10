@@ -627,6 +627,7 @@ dialog::backdrop,
 /* _________________Outline____________________ */
 /* ____________________________________________ */
 /* keyboard Tabs */
+:user-invalid,
 [tabindex="-1"]:focus:not(:focus-visible) {
 	outline: 0 !important;
 }

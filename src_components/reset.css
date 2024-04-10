@@ -225,10 +225,7 @@ search {
 /**
  * Remove the inner border and padding of focus outlines in Firefox.
  */
-:where(
-		button,
-		input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i])
-	)::-moz-focus-inner {
+:where(button, input:is([type="button" i], [type="color" i], [type="reset" i], [type="submit" i]))::-moz-focus-inner {
 	padding: 0;
 	border-style: none;
 }
@@ -344,8 +341,7 @@ search {
 	font-family: system-ui;
 	font-style: normal;
 	font-weight: 400;
-	src: local(".AppleSystemUIFont"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"),
-		local("HelveticaNeue");
+	src: local(".AppleSystemUIFont"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"), local("HelveticaNeue");
 	font-display: swap;
 }
 
@@ -353,8 +349,8 @@ search {
 	font-family: system-ui;
 	font-style: italic;
 	font-weight: 400;
-	src: local(".AppleSystemUIFont"), local("Segoe UI Italic"), local("Ubuntu-Italic"),
-		local("Roboto-Italic"), local("HelveticaNeue-Italic");
+	src: local(".AppleSystemUIFont"), local("Segoe UI Italic"), local("Ubuntu-Italic"), local("Roboto-Italic"),
+		local("HelveticaNeue-Italic");
 	font-display: swap;
 }
 
@@ -362,8 +358,8 @@ search {
 	font-family: system-ui;
 	font-style: normal;
 	font-weight: 700;
-	src: local(".AppleSystemUIFont"), local("Segoe UI Bold"), local("Ubuntu-Bold"),
-		local("Roboto-Bold"), local("HelveticaNeue-Bold");
+	src: local(".AppleSystemUIFont"), local("Segoe UI Bold"), local("Ubuntu-Bold"), local("Roboto-Bold"),
+		local("HelveticaNeue-Bold");
 	font-display: swap;
 }
 
@@ -383,8 +379,8 @@ search {
 	font-family: ui-monospace;
 	font-style: normal;
 	font-weight: 400;
-	src: local(".AppleSystemUIFontMonospaced-Regular"), local("Segoe UI Mono"), local("UbuntuMono"),
-		local("Roboto-Mono"), local("Menlo");
+	src: local(".AppleSystemUIFontMonospaced-Regular"), local("Segoe UI Mono"), local("UbuntuMono"), local("Roboto-Mono"),
+		local("Menlo");
 	font-display: swap;
 }
 
@@ -392,8 +388,8 @@ search {
 	font-family: ui-monospace;
 	font-style: italic;
 	font-weight: 400;
-	src: local(".AppleSystemUIFontMonospaced-RegularItalic"), local("Segoe UI Mono Italic"),
-		local("UbuntuMono-Italic"), local("Roboto-Mono-Italic"), local("Menlo-Italic");
+	src: local(".AppleSystemUIFontMonospaced-RegularItalic"), local("Segoe UI Mono Italic"), local("UbuntuMono-Italic"),
+		local("Roboto-Mono-Italic"), local("Menlo-Italic");
 	font-display: swap;
 }
 
@@ -401,8 +397,8 @@ search {
 	font-family: ui-monospace;
 	font-style: normal;
 	font-weight: 700;
-	src: local(".AppleSystemUIFontMonospaced-Bold"), local("Segoe UI Mono Bold"),
-		local("UbuntuMono-Bold"), local("Roboto-Mono-Bold"), local("Menlo-Bold");
+	src: local(".AppleSystemUIFontMonospaced-Bold"), local("Segoe UI Mono Bold"), local("UbuntuMono-Bold"),
+		local("Roboto-Mono-Bold"), local("Menlo-Bold");
 	font-display: swap;
 }
 
@@ -420,8 +416,8 @@ search {
 /* ____________________________________________ */
 /* :root */
 :where(html) {
-	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
-		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
@@ -429,9 +425,8 @@ search {
 }
 
 :where(code, kbd, samp, pre) {
-	font-family: ui-monospace, "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
-		"Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol", "Noto Color Emoji";
+	font-family: ui-monospace, "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono",
+		"Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 :where(body) {
@@ -531,21 +526,7 @@ search {
 	shape-margin: 0.75rem;
 }
 
-:where(
-		img,
-		svg,
-		picture,
-		iframe,
-		input,
-		video,
-		audio,
-		select,
-		textarea,
-		details,
-		dialog,
-		progress,
-		canvas
-	) {
+:where(img, svg, picture, iframe, input, video, audio, select, textarea, details, dialog, progress, canvas) {
 	max-width: 100%;
 	height: auto;
 }
@@ -644,6 +625,7 @@ dialog::backdrop,
 /* _________________Outline____________________ */
 /* ____________________________________________ */
 /* keyboard Tabs */
+:user-invalid,
 [tabindex="-1"]:focus:not(:focus-visible) {
 	outline: 0 !important;
 }
@@ -688,13 +670,7 @@ dialog::backdrop,
 }
 
 /* outline-offset */
-:where(
-		summary,
-		button,
-		input:not([type="checkbox"], [type="radio"], [type="color"]),
-		select,
-		textarea
-	),
+:where(summary, button, input:not([type="checkbox"], [type="radio"], [type="color"]), select, textarea),
 [type="file"]::file-selector-button {
 	outline-offset: 0.1875rem;
 }
