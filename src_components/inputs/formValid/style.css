@@ -49,52 +49,37 @@ body {
 	margin: 0 auto;
 }
 
+/* [type="text"]:valid,
+[type="password"]:valid,
+[type="email"]:valid,
+[type="tel"]:valid  */
+
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* Input Validation */
 
-[required]:valid,
-[type="text"]:valid,
-[type="password"]:valid,
-[type="email"]:valid,
-[type="tel"]:valid {
+[required]:valid {
 	border-color: transparent !important;
 	box-shadow: 0 0 0 0.0625rem #adff2f, 0 0 0.625rem #adff2f !important;
 }
 
-[required]:user-invalid,
-[type="text"]:user-invalid,
-[type="password"]:user-invalid,
-[type="email"]:user-invalid,
-[type="tel"]:user-invalid {
+[required]:user-invalid {
 	border-color: transparent !important;
 	box-shadow: 0 0 0 0.0625rem #bb0808, 0 0 0.625rem #bb0808 !important;
 	transition: 0.3s ease-in-out !important;
 }
 
-[required]:invalid:focus,
-[type="text"]:invalid:focus,
-[type="password"]:invalid:focus,
-[type="email"]:invalid:focus,
-[type="tel"]:invalid:focus {
+[required]:invalid:focus {
 	border-color: transparent;
 	box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500 !important;
 }
 
-[required]:not(:focus):invalid,
-[type="text"]:not(:focus):invalid,
-[type="password"]:not(:focus):invalid,
-[type="email"]:not(:focus):invalid,
-[type="tel"]:not(:focus):invalid {
+[required]:not(:focus):invalid {
 	transition: 0.3s ease-in-out !important;
 }
 
-[required]:invalid:focus,
-[type="text"]:invalid:focus,
-[type="password"]:invalid:focus,
-[type="email"]:invalid:focus,
-[type="tel"]:invalid:focus {
+[required]:invalid:focus {
 	border-color: transparent !important;
 }
