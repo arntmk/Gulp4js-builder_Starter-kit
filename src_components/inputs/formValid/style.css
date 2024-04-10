@@ -54,6 +54,11 @@ body {
 [type="email"]:valid,
 [type="tel"]:valid  */
 
+/* Fix OutLine */
+/* [required]:not(:focus):invalid {
+	transition: 0.3s ease-in-out !important;
+} */
+
 /* ____________________________________________ */
 /* ____________________________________________ */
 /* ____________________________________________ */
@@ -71,15 +76,18 @@ body {
 	transition: 0.3s ease-in-out !important;
 }
 
-[required]:invalid:focus {
-	border-color: transparent !important;
-	box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500 !important;
+[required]:invalid {
+	transition: border-color 0.3s linear 0.02s, box-shadow 0.3s ease-in-out 0.02s, background 0s;
 }
 
-[required]:not(:focus):invalid {
-	transition: 0.3s ease-in-out !important;
-}
+@media (any-hover: hover) {
+	[required]:invalid:focus {
+		border-color: transparent !important;
+		box-shadow: 0 0 0 0.0625rem #ffa500, 0 0 0.625rem #ffa500 !important;
+	}
 
-[required]:invalid:focus {
-	border-color: transparent !important;
+	[required]:invalid:hover {
+		border-color: transparent !important;
+		box-shadow: 0 0 0 0.0625rem #4682b4, 0 0 0.625rem #4682b4 !important;
+	}
 }

@@ -102,6 +102,7 @@ textarea,
 summary,
 details,
 input:not(
+		[required],
 		[type="button"],
 		[type="reset"],
 		[type="submit"],
