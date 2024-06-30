@@ -38,6 +38,7 @@
 		"seemasoft.minify-html-in-php",
 		"mrezechi3l.css-responsive",
 		"yandeu.five-server",
-		"grapecity.gc-excelviewer"
+		"grapecity.gc-excelviewer",
+		"formulahendry.code-runner"
 	]
 }
