@@ -105,7 +105,7 @@
 		"gulp-twig": "^1.2.0",
 		"gulp-typograf": "^4.1.0",
 		"gulp-version-number": "^0.2.4",
-		"imagemin-pngquant": "^9.0.2",
+		"imagemin-pngquant": "^10.0.0",
 		"imagemin-webp": "^8.0.0",
 		"postcss": "^8.4.39",
 		"postcss-merge-idents": "^7.0.0",
@@ -143,7 +143,6 @@
 		"semver-regex": "3.1.4",
 		"semver": "7.5.3",
 		"fonteditor-core": "2.1.10",
-		"got": "11.8.6",
 		"http-cache-semantics": "4.1.1",
 		"clean-css": "5.3.3",
 		"cheerio": "1.0.0-rc.12"
