@@ -125,6 +125,7 @@
 		"eslint": "^8.57.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-plugin-import": "^2.29.1",
+		"npm": "^10.8.2",
 		"stylelint": "^16.7.0",
 		"stylelint-config-recess-order": "^5.0.1",
 		"stylelint-config-standard": "^36.0.1",
