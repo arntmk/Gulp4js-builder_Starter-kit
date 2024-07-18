@@ -31,7 +31,8 @@
 		"update all": "npm update",
 		"audit fix": "npm audit fix",
 		"check global": "npm ls -g --depth=0",
-		"check node": "node -v"
+		"check node": "node -v",
+		"check npm": "npm -v"
 	},
 	"browserslist": [
 		"> 0.3%",
