@@ -37,7 +37,8 @@ a:not([class*="__logo"]) img,
 	transition: filter 0.4s ease-in-out 0.01s, transform 0.4s ease-in-out 0.01s;
 
 	@media (any-hover: hover) {
-		&:is(:focus-visible, :hover) {
+		&:focus-visible,
+		&:hover {
 			filter: invert(77%) sepia(21%) saturate(602%) hue-rotate(9deg) brightness(97%) contrast(90%);
 			transform: scale(1.1);
 		}
@@ -55,7 +56,8 @@ a,
 	transition: color 0.3s ease-in-out 0.01s;
 
 	@media (any-hover: hover) {
-		&:is(:focus-visible, :hover) {
+		&:focus-visible,
+		&:hover {
 			color: var(--clr-hover);
 		}
 
@@ -78,7 +80,8 @@ a,
 	transform: scale(1);
 
 	@media (any-hover: hover) {
-		&:is(:focus-visible, :hover) {
+		&:focus-visible,
+		&:hover {
 			color: #fff;
 			background-color: var(--clr-hover);
 			border-color: transparent;
@@ -117,7 +120,8 @@ input:not(
 	transition: border-color 0.3s linear 0.02s, box-shadow 0.3s ease-in-out 0.02s, background 0s;
 
 	@media (any-hover: hover) {
-		&:is(:focus, :hover) {
+		&:focus,
+		&:hover {
 			border-color: transparent;
 			box-shadow: 0 0 0 0.0625rem var(--clr-hover), 0 0 0.625rem var(--clr-hover) !important;
 		}
