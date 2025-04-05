@@ -1,8 +1,11 @@
 {
 	"name": "New Project | PWA",
 	"short_name": "NP | PWA",
-	"start_url": ".",
+	"id": "/",
+	"start_url": "/",
 	"display": "standalone",
+	"display_override": ["window-controls-overlay"],
+	"scope": "/",
 	"orientation": "portrait",
 	"theme_color": "#4682b4",
 	"background_color": "#eee",
